@@ -40,6 +40,15 @@ Alternatively, use the module entrypoint directly:
 uv run python -m gerbil analysis ...
 ```
 
+## Outputs
+
+The `outputs/` directory contains the artifacts from our evaluation:
+
+- `outputs/claude_code/` — the Claude Code user prompt used for evaluation (`prompt/user_prompt.jinja2`), along with the agent trajectory and outputs for each run on each project (`runs/<project>/`).
+- `outputs/dataset/` — the hamster and gerbil project datasets.
+- `outputs/sample/` — the sample projects used during the comparison between Claude Code and developer-written tests.
+- `outputs/stats/` — the statistics used from Claude Code and the developer-written tests on the gerbil dataset.
+
 ## Recent improvements
 
 - Resource interaction analysis groups HTTP events by normalized resource path into ordered sequences and classifies tests with side-effect verification (mutation + read on the same resource).
