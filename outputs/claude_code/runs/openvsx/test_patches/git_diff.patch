@@ -1,0 +1,2224 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..d5848bb
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,77 @@
++# API Endpoint Coverage (Progress: 55/55)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## RegistryAPI (server/src/main/java/org/eclipse/openvsx/RegistryAPI.java)
++- [x] GET /api/{namespace} - namespace metadata, 404 if not found
++- [x] GET /api/{namespace}/verify-pat - verify PAT token, 400/404 on error
++- [x] GET /api/{namespace}/details - namespace details, 404 if not found
++- [x] GET /api/{namespace}/logo/{fileName} - namespace logo image, 404 if not found
++- [x] GET /api/{namespace}/{extension} - latest extension metadata, 404 if not found
++- [x] GET /api/{namespace}/{extension}/{targetPlatform} - latest for platform, 404 if not found
++- [x] GET /api/{namespace}/{extension}/{version} - specific version metadata, 404 if not found
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/{version} - specific version for platform, 404 if not found
++- [x] GET /api/{namespace}/{extension}/versions - paginated version list, 400 on negative params
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/versions - versions for platform, 400 on negative params
++- [x] GET /api/{namespace}/{extension}/version-references - paginated version refs, 400 on negative params
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/version-references - refs for platform
++- [x] GET /api/{namespace}/{extension}/{version}/file/** - file access, 404 if not found
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/{version}/file/** - file access with platform
++- [x] GET /api/{namespace}/{extension}/reviews - review list, 404 if not found
++- [x] GET /api/-/search - search extensions, 400 on negative size/offset
++- [x] GET /api/-/query - query extensions, 400 on negative params
++- [x] GET /api/v2/-/query - query v2, 400 on invalid includeAllVersions
++- [x] POST /api/-/query - deprecated, redirects to GET
++- [x] POST /api/-/namespace/create - create namespace with token, 400 on missing name
++- [x] POST /api/user/namespace/create - create namespace (auth), 403 if not logged in
++- [x] POST /api/-/publish - publish extension via token (octet-stream)
++- [x] POST /api/user/publish - publish extension (auth), 403 if not logged in
++- [x] POST /api/{namespace}/{extension}/review - post review, 400 on invalid rating
++- [x] POST /api/{namespace}/{extension}/review/delete - delete review
++- [x] GET /api/-/public-key/{publicId} - get public key, 404 if not found
++- [x] GET /api/version - registry version
++
++## UserAPI (server/src/main/java/org/eclipse/openvsx/UserAPI.java)
++- [x] GET /login-providers - available login providers
++- [x] GET /user/auth-error - last auth error, 404 if no error
++- [x] GET /user - current user data, error JSON if not logged in
++- [x] GET /user/csrf - CSRF token
++- [x] GET /user/tokens - user tokens, 403 if not logged in
++- [x] POST /user/token/create - create token, 403 if not logged in; 400 on long description
++- [x] POST /user/token/delete/{id} - delete token, 403 if not logged in; 404 if not found
++- [x] GET /user/extensions - user's extensions, 403 if not logged in
++- [x] GET /user/namespaces - user's namespaces, 403 if not logged in
++- [x] POST /user/namespace/{namespace}/details - update namespace details, 403 if not logged in
++- [x] POST /user/namespace/{namespace}/details/logo - upload namespace logo, 403 if not logged in
++- [x] GET /user/namespace/{name}/members - namespace members, 403 if not logged in
++- [x] POST /user/namespace/{namespace}/role - set member role, 403 if not logged in
++- [x] GET /user/search/{name} - search users, 403 if not logged in
++- [x] POST /user/publisher-agreement - sign publisher agreement, 403 if not logged in
++
++## AdminAPI (server/src/main/java/org/eclipse/openvsx/admin/AdminAPI.java)
++- [x] GET /admin/report - admin statistics JSON (token auth)
++- [x] GET /admin/stats - basic stats (session auth, ROLE_ADMIN)
++- [x] GET /admin/log - admin logs (session auth, ROLE_ADMIN)
++- [x] POST /admin/update-search-index - update search index (session auth, ROLE_ADMIN)
++- [x] GET /admin/extension/{namespaceName}/{extensionName} - extension admin view (session auth)
++- [x] POST /admin/api/extension/{namespaceName}/{extensionName}/delete - delete extension (token auth)
++- [x] POST /admin/extension/{namespaceName}/{extensionName}/delete - delete extension (session auth)
++- [x] GET /admin/namespace/{namespaceName} - namespace admin view (session auth)
++- [x] POST /admin/create-namespace - create namespace (session auth, ROLE_ADMIN)
++- [x] POST /admin/change-namespace - rename namespace (session auth, ROLE_ADMIN)
++- [x] GET /admin/api/namespace/{namespaceName}/members - namespace members (token auth)
++- [x] GET /admin/namespace/{namespaceName}/members - namespace members (session auth)
++- [x] POST /admin/api/namespace/{namespaceName}/change-member - edit member (token auth)
++- [x] POST /admin/namespace/{namespaceName}/change-member - edit member (session auth)
++- [x] GET /admin/publisher/{provider}/{loginName} - user publish info (session auth)
++- [x] POST /admin/publisher/{provider}/{loginName}/revoke - revoke contributions (session auth)
++
++## VSCodeAPI (server/src/main/java/org/eclipse/openvsx/adapter/VSCodeAPI.java)
++- [x] POST /vscode/gallery/extensionquery - VS Code extension query
++- [x] GET /vscode/asset/{namespaceName}/{extensionName}/{version}/{assetType}/** - asset access
++- [x] GET /vscode/item - redirect to extension item, 400 on bad itemName format
++- [x] GET /vscode/gallery/publishers/{namespaceName}/vsextensions/{extensionName}/{version}/vspackage - download redirect
++- [x] GET /vscode/unpkg/{namespaceName}/{extensionName}/{version}/** - browse extension package
++- [x] GET /vscode/gallery/{namespaceName}/{extensionName}/latest - latest extension metadata
++
++## SitemapController (server/src/main/java/org/eclipse/openvsx/web/SitemapController.java)
++- [x] GET /sitemap.xml - sitemap XML generation
+diff --git a/server/src/test/java/org/eclipse/openvsx/RegistryAPITest.java b/server/src/test/java/org/eclipse/openvsx/RegistryAPITest.java
+new file mode 100644
+index 0000000..189ca9d
+--- /dev/null
++++ b/server/src/test/java/org/eclipse/openvsx/RegistryAPITest.java
+@@ -0,0 +1,745 @@
++/** ******************************************************************************
++ * Copyright (c) 2024 Eclipse Foundation and others
++ *
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Public License v. 2.0 which is available at
++ * http://www.eclipse.org/legal/epl-2.0.
++ *
++ * SPDX-License-Identifier: EPL-2.0
++ * ****************************************************************************** */
++package org.eclipse.openvsx;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import io.micrometer.core.instrument.MeterRegistry;
++import org.eclipse.openvsx.adapter.ExtensionQueryParam;
++import org.eclipse.openvsx.json.*;
++import org.eclipse.openvsx.security.OAuth2UserServices;
++import org.eclipse.openvsx.security.SecurityConfig;
++import org.eclipse.openvsx.util.ErrorResultException;
++import org.eclipse.openvsx.util.NotFoundException;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.MediaType;
++import org.springframework.http.ResponseEntity;
++import org.springframework.security.test.context.support.WithMockUser;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
++
++import java.util.Collections;
++import java.util.List;
++import java.util.Map;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++@WebMvcTest(RegistryAPI.class)
++@Import(SecurityConfig.class)
++@WithMockUser
++class RegistryAPITest {
++
++    @Autowired
++    MockMvc mockMvc;
++
++    @Autowired
++    ObjectMapper objectMapper;
++
++    @MockBean
++    LocalRegistryService local;
++
++    @MockBean
++    UpstreamRegistryService upstream;
++
++    @MockBean
++    UserService users;
++
++    @MockBean
++    OAuth2UserServices oauth2UserServices;
++
++    @MockBean
++    MeterRegistry meterRegistry;
++
++    @BeforeEach
++    void setup() {
++        when(upstream.isValid()).thenReturn(false);
++        when(oauth2UserServices.canLogin()).thenReturn(false);
++    }
++
++    // ---- GET /api/{namespace} ----
++
++    @Test
++    void getNamespace_found() throws Exception {
++        var json = new NamespaceJson();
++        json.setName("eamodio");
++        json.setVerified(true);
++        when(local.getNamespace("eamodio")).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.name").value("eamodio"))
++                .andExpect(jsonPath("$.verified").value(true));
++    }
++
++    @Test
++    void getNamespace_notFound() throws Exception {
++        when(local.getNamespace("missing")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/missing"))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    // ---- GET /api/{namespace}/verify-pat ----
++
++    @Test
++    void verifyToken_valid() throws Exception {
++        when(local.verifyToken("eamodio", "good-token"))
++                .thenReturn(ResultJson.success("Token is valid"));
++
++        mockMvc.perform(get("/api/eamodio/verify-pat").param("token", "good-token"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void verifyToken_invalid() throws Exception {
++        when(local.verifyToken("eamodio", "bad-token"))
++                .thenThrow(new ErrorResultException("Token is not valid", HttpStatus.BAD_REQUEST));
++
++        mockMvc.perform(get("/api/eamodio/verify-pat").param("token", "bad-token"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    @Test
++    void verifyToken_namespaceNotFound() throws Exception {
++        when(local.verifyToken("missing", "tok"))
++                .thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/missing/verify-pat").param("token", "tok"))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").value("Namespace not found: missing"));
++    }
++
++    // ---- GET /api/{namespace}/details ----
++
++    @Test
++    void getNamespaceDetails_found() throws Exception {
++        var details = new NamespaceDetailsJson();
++        details.setName("eamodio");
++        when(local.getNamespaceDetails("eamodio")).thenReturn(details);
++
++        mockMvc.perform(get("/api/eamodio/details"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.name").value("eamodio"));
++    }
++
++    @Test
++    void getNamespaceDetails_notFound() throws Exception {
++        when(local.getNamespaceDetails("missing")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/missing/details"))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    // ---- GET /api/{namespace}/logo/{fileName} ----
++
++    @Test
++    void getNamespaceLogo_notFound() throws Exception {
++        when(local.getNamespaceLogo("missing", "logo.png")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/missing/logo/logo.png"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void getNamespaceLogo_found() throws Exception {
++        ResponseEntity<StreamingResponseBody> response = ResponseEntity.ok()
++                .contentType(MediaType.IMAGE_PNG)
++                .body(out -> out.write(new byte[]{1, 2, 3}));
++        when(local.getNamespaceLogo("eamodio", "logo.png")).thenReturn(response);
++
++        mockMvc.perform(get("/api/eamodio/logo/logo.png"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /api/{namespace}/{extension} ----
++
++    @Test
++    void getExtension_found() throws Exception {
++        var json = buildExtensionJson("eamodio", "gitlens", "14.0.0");
++        when(local.getExtension("eamodio", "gitlens", null)).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.name").value("gitlens"))
++                .andExpect(jsonPath("$.namespace").value("eamodio"))
++                .andExpect(jsonPath("$.version").value("14.0.0"));
++    }
++
++    @Test
++    void getExtension_notFound() throws Exception {
++        when(local.getExtension("eamodio", "unknown", null)).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/eamodio/unknown"))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    // ---- GET /api/{namespace}/{extension}/{targetPlatform} ----
++
++    @Test
++    void getExtensionWithTargetPlatform_found() throws Exception {
++        var json = buildExtensionJson("eamodio", "gitlens", "14.0.0");
++        when(local.getExtension("eamodio", "gitlens", "linux-x64")).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.name").value("gitlens"));
++    }
++
++    @Test
++    void getExtensionWithTargetPlatform_notFound() throws Exception {
++        when(local.getExtension("eamodio", "gitlens", "linux-x64")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- GET /api/{namespace}/{extension}/{version} ----
++
++    @Test
++    void getExtensionVersion_found() throws Exception {
++        var json = buildExtensionJson("eamodio", "gitlens", "14.0.0");
++        when(local.getExtension("eamodio", "gitlens", null, "14.0.0")).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/14.0.0"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.version").value("14.0.0"));
++    }
++
++    @Test
++    void getExtensionVersion_notFound() throws Exception {
++        when(local.getExtension("eamodio", "gitlens", null, "99.0.0")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/eamodio/gitlens/99.0.0"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void getExtensionVersion_latest() throws Exception {
++        var json = buildExtensionJson("eamodio", "gitlens", "14.0.0");
++        when(local.getExtension("eamodio", "gitlens", null, "latest")).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/latest"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /api/{namespace}/{extension}/{targetPlatform}/{version} ----
++
++    @Test
++    void getExtensionVersionWithPlatform_found() throws Exception {
++        var json = buildExtensionJson("eamodio", "gitlens", "14.0.0");
++        when(local.getExtension("eamodio", "gitlens", "linux-x64", "14.0.0")).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64/14.0.0"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.version").value("14.0.0"));
++    }
++
++    @Test
++    void getExtensionVersionWithPlatform_notFound() throws Exception {
++        when(local.getExtension("eamodio", "gitlens", "linux-x64", "99.0.0")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64/99.0.0"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- GET /api/{namespace}/{extension}/versions ----
++
++    @Test
++    void getVersions_found() throws Exception {
++        var json = new VersionsJson();
++        json.setVersions(Map.of("14.0.0", "http://example.com/api/eamodio/gitlens/14.0.0"));
++        json.setOffset(0);
++        json.setTotalSize(1);
++        when(local.getVersions("eamodio", "gitlens", null, 18, 0)).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/versions"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.versions").isMap());
++    }
++
++    @Test
++    void getVersions_negativeSize() throws Exception {
++        mockMvc.perform(get("/api/eamodio/gitlens/versions").param("size", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++    }
++
++    @Test
++    void getVersions_negativeOffset() throws Exception {
++        mockMvc.perform(get("/api/eamodio/gitlens/versions").param("offset", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'offset' must not be negative."));
++    }
++
++    // ---- GET /api/{namespace}/{extension}/{targetPlatform}/versions ----
++
++    @Test
++    void getVersionsWithPlatform_found() throws Exception {
++        var json = new VersionsJson();
++        json.setVersions(Collections.emptyMap());
++        json.setOffset(0);
++        json.setTotalSize(0);
++        when(local.getVersions("eamodio", "gitlens", "linux-x64", 18, 0)).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64/versions"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void getVersionsWithPlatform_negativeSize() throws Exception {
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64/versions").param("size", "-5"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++    }
++
++    // ---- GET /api/{namespace}/{extension}/version-references ----
++
++    @Test
++    void getVersionReferences_found() throws Exception {
++        var json = new VersionReferencesJson();
++        json.setVersions(Collections.emptyList());
++        json.setOffset(0);
++        json.setTotalSize(0);
++        when(local.getVersionReferences("eamodio", "gitlens", null, 18, 0)).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/version-references"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void getVersionReferences_negativeSize() throws Exception {
++        mockMvc.perform(get("/api/eamodio/gitlens/version-references").param("size", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++    }
++
++    @Test
++    void getVersionReferences_negativeOffset() throws Exception {
++        mockMvc.perform(get("/api/eamodio/gitlens/version-references").param("offset", "-3"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'offset' must not be negative."));
++    }
++
++    // ---- GET /api/{namespace}/{extension}/{targetPlatform}/version-references ----
++
++    @Test
++    void getVersionReferencesWithPlatform_found() throws Exception {
++        var json = new VersionReferencesJson();
++        json.setVersions(Collections.emptyList());
++        json.setOffset(0);
++        json.setTotalSize(0);
++        when(local.getVersionReferences("eamodio", "gitlens", "linux-x64", 18, 0)).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64/version-references"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /api/{namespace}/{extension}/{version}/file/** ----
++
++    @Test
++    void getFile_notFound() throws Exception {
++        when(local.getFile("eamodio", "gitlens", "universal", "14.0.0", "extension/package.json"))
++                .thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/eamodio/gitlens/14.0.0/file/extension/package.json"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void getFile_found() throws Exception {
++        ResponseEntity<StreamingResponseBody> response = ResponseEntity.ok()
++                .contentType(MediaType.APPLICATION_JSON)
++                .body(out -> out.write("{}".getBytes()));
++        when(local.getFile("eamodio", "gitlens", "universal", "14.0.0", "extension/package.json"))
++                .thenReturn(response);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/14.0.0/file/extension/package.json"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /api/{namespace}/{extension}/{targetPlatform}/{version}/file/** ----
++
++    @Test
++    void getFileWithPlatform_notFound() throws Exception {
++        when(local.getFile("eamodio", "gitlens", "linux-x64", "14.0.0", "extension/package.json"))
++                .thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/eamodio/gitlens/linux-x64/14.0.0/file/extension/package.json"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- GET /api/{namespace}/{extension}/reviews ----
++
++    @Test
++    void getReviews_found() throws Exception {
++        var json = new ReviewListJson();
++        json.setReviews(Collections.emptyList());
++        when(local.getReviews("eamodio", "gitlens")).thenReturn(json);
++
++        mockMvc.perform(get("/api/eamodio/gitlens/reviews"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.reviews").isArray());
++    }
++
++    @Test
++    void getReviews_notFound() throws Exception {
++        when(local.getReviews("eamodio", "unknown")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/eamodio/unknown/reviews"))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    // ---- GET /api/-/search ----
++
++    @Test
++    void search_success() throws Exception {
++        var result = new SearchResultJson();
++        result.setExtensions(Collections.emptyList());
++        result.setOffset(0);
++        result.setTotalSize(0);
++        when(local.search(any())).thenReturn(result);
++
++        mockMvc.perform(get("/api/-/search").param("query", "git"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.extensions").isArray());
++    }
++
++    @Test
++    void search_negativeSize() throws Exception {
++        mockMvc.perform(get("/api/-/search").param("size", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++    }
++
++    @Test
++    void search_negativeOffset() throws Exception {
++        mockMvc.perform(get("/api/-/search").param("offset", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'offset' must not be negative."));
++    }
++
++    @Test
++    void search_withCategory() throws Exception {
++        var result = new SearchResultJson();
++        result.setExtensions(Collections.emptyList());
++        result.setOffset(0);
++        result.setTotalSize(0);
++        when(local.search(any())).thenReturn(result);
++
++        mockMvc.perform(get("/api/-/search")
++                        .param("query", "test")
++                        .param("category", "Programming Languages")
++                        .param("size", "10")
++                        .param("offset", "0")
++                        .param("sortOrder", "asc")
++                        .param("sortBy", "timestamp"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /api/-/query ----
++
++    @Test
++    void getQuery_success() throws Exception {
++        var result = new QueryResultJson();
++        result.setExtensions(Collections.emptyList());
++        result.setOffset(0);
++        result.setTotalSize(0);
++        when(local.query(any())).thenReturn(result);
++
++        mockMvc.perform(get("/api/-/query").param("extensionName", "gitlens"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.extensions").isArray());
++    }
++
++    @Test
++    void getQuery_negativeSize() throws Exception {
++        mockMvc.perform(get("/api/-/query").param("size", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++    }
++
++    @Test
++    void getQuery_negativeOffset() throws Exception {
++        mockMvc.perform(get("/api/-/query").param("offset", "-10"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'offset' must not be negative."));
++    }
++
++    // ---- GET /api/v2/-/query ----
++
++    @Test
++    void getQueryV2_success() throws Exception {
++        var result = new QueryResultJson();
++        result.setExtensions(Collections.emptyList());
++        result.setOffset(0);
++        result.setTotalSize(0);
++        when(local.queryV2(any())).thenReturn(result);
++
++        mockMvc.perform(get("/api/v2/-/query").param("extensionName", "gitlens"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void getQueryV2_invalidIncludeAllVersions() throws Exception {
++        mockMvc.perform(get("/api/v2/-/query").param("includeAllVersions", "invalid"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("Invalid includeAllVersions value: invalid."));
++    }
++
++    @Test
++    void getQueryV2_negativeSize() throws Exception {
++        mockMvc.perform(get("/api/v2/-/query").param("size", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++    }
++
++    // ---- POST /api/-/query (deprecated redirect) ----
++
++    @Test
++    void postQuery_redirect() throws Exception {
++        var param = new QueryParamJson();
++        param.setNamespaceName("eamodio");
++        param.setExtensionName("gitlens");
++
++        mockMvc.perform(post("/api/-/query")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(param)))
++                .andExpect(status().isMovedPermanently())
++                .andExpect(header().exists("Location"));
++    }
++
++    // ---- POST /api/-/namespace/create ----
++
++    @Test
++    void createNamespaceWithToken_success() throws Exception {
++        var namespace = new NamespaceJson();
++        namespace.setName("newns");
++        when(local.createNamespace(any(NamespaceJson.class), eq("valid-token")))
++                .thenReturn(ResultJson.success("Created namespace newns"));
++
++        mockMvc.perform(post("/api/-/namespace/create")
++                        .param("token", "valid-token")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(namespace)))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void createNamespaceWithToken_missingName() throws Exception {
++        var namespace = new NamespaceJson();
++        namespace.setName("");
++
++        mockMvc.perform(post("/api/-/namespace/create")
++                        .param("token", "any-token")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(namespace)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.error").value("Missing required property 'name'."));
++    }
++
++    @Test
++    void createNamespaceWithToken_invalidToken() throws Exception {
++        var namespace = new NamespaceJson();
++        namespace.setName("newns");
++        when(local.createNamespace(any(NamespaceJson.class), eq("bad-token")))
++                .thenThrow(new ErrorResultException("Invalid access token.", HttpStatus.BAD_REQUEST));
++
++        mockMvc.perform(post("/api/-/namespace/create")
++                        .param("token", "bad-token")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(namespace)))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("Invalid access token."));
++    }
++
++    // ---- POST /api/user/namespace/create ----
++
++    @Test
++    void createNamespaceAsUser_forbidden() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        var namespace = new NamespaceJson();
++        namespace.setName("newns");
++
++        mockMvc.perform(post("/api/user/namespace/create")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(namespace)))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /api/-/publish ----
++
++    @Test
++    void publish_invalidToken() throws Exception {
++        when(local.publish(any(), eq("bad-token")))
++                .thenThrow(new ErrorResultException("Invalid access token.", HttpStatus.BAD_REQUEST));
++
++        mockMvc.perform(post("/api/-/publish")
++                        .param("token", "bad-token")
++                        .contentType(MediaType.APPLICATION_OCTET_STREAM)
++                        .content(new byte[]{1, 2, 3}))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("Invalid access token."));
++    }
++
++    // ---- POST /api/user/publish ----
++
++    @Test
++    void publishAsUser_forbidden() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(post("/api/user/publish")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_OCTET_STREAM)
++                        .content(new byte[]{1, 2, 3}))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /api/{namespace}/{extension}/review ----
++
++    @Test
++    void postReview_noBody() throws Exception {
++        mockMvc.perform(post("/api/eamodio/gitlens/review")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("No JSON input."));
++    }
++
++    @Test
++    void postReview_invalidRating() throws Exception {
++        var review = new ReviewJson();
++        review.setRating(6);
++        review.setTitle("Great");
++        review.setComment("Excellent extension");
++
++        mockMvc.perform(post("/api/eamodio/gitlens/review")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(review)))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The rating must be an integer number between 0 and 5."));
++    }
++
++    @Test
++    void postReview_titleTooLong() throws Exception {
++        var review = new ReviewJson();
++        review.setRating(5);
++        review.setTitle("A".repeat(256));
++
++        mockMvc.perform(post("/api/eamodio/gitlens/review")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(review)))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The title must not be longer than 255 characters."));
++    }
++
++    @Test
++    void postReview_success() throws Exception {
++        var review = new ReviewJson();
++        review.setRating(5);
++        review.setTitle("Great");
++        review.setComment("Excellent extension");
++        when(local.postReview(any(), eq("eamodio"), eq("gitlens")))
++                .thenReturn(ResultJson.success("Review posted."));
++
++        mockMvc.perform(post("/api/eamodio/gitlens/review")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(review)))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    // ---- POST /api/{namespace}/{extension}/review/delete ----
++
++    @Test
++    void deleteReview_success() throws Exception {
++        when(local.deleteReview("eamodio", "gitlens"))
++                .thenReturn(ResultJson.success("Review deleted."));
++
++        mockMvc.perform(post("/api/eamodio/gitlens/review/delete")
++                        .with(csrf()))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void deleteReview_error() throws Exception {
++        var result = ResultJson.error("Not found.");
++        when(local.deleteReview("eamodio", "gitlens")).thenReturn(result);
++
++        mockMvc.perform(post("/api/eamodio/gitlens/review/delete")
++                        .with(csrf()))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("Not found."));
++    }
++
++    // ---- GET /api/-/public-key/{publicId} ----
++
++    @Test
++    void getPublicKey_found() throws Exception {
++        when(local.getPublicKey("some-public-id"))
++                .thenReturn("-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkq\n-----END PUBLIC KEY-----");
++
++        mockMvc.perform(get("/api/-/public-key/some-public-id"))
++                .andExpect(status().isOk())
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("PUBLIC KEY")));
++    }
++
++    @Test
++    void getPublicKey_notFound() throws Exception {
++        when(local.getPublicKey("nonexistent")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/api/-/public-key/nonexistent"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- GET /api/version ----
++
++    @Test
++    void getServerVersion_success() throws Exception {
++        var json = new RegistryVersionJson();
++        json.setVersion("0.16.0");
++        when(local.getRegistryVersion()).thenReturn(json);
++
++        mockMvc.perform(get("/api/version"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.version").value("0.16.0"));
++    }
++
++    // ---- helpers ----
++
++    private ExtensionJson buildExtensionJson(String namespace, String name, String version) {
++        var json = new ExtensionJson();
++        json.setNamespace(namespace);
++        json.setName(name);
++        json.setVersion(version);
++        return json;
++    }
++}
+diff --git a/server/src/test/java/org/eclipse/openvsx/UserAPITest.java b/server/src/test/java/org/eclipse/openvsx/UserAPITest.java
+new file mode 100644
+index 0000000..8b17090
+--- /dev/null
++++ b/server/src/test/java/org/eclipse/openvsx/UserAPITest.java
+@@ -0,0 +1,495 @@
++/** ******************************************************************************
++ * Copyright (c) 2024 Eclipse Foundation and others
++ *
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Public License v. 2.0 which is available at
++ * http://www.eclipse.org/legal/epl-2.0.
++ *
++ * SPDX-License-Identifier: EPL-2.0
++ * ****************************************************************************** */
++package org.eclipse.openvsx;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import io.micrometer.core.instrument.MeterRegistry;
++import org.eclipse.openvsx.eclipse.EclipseService;
++import org.eclipse.openvsx.entities.NamespaceMembership;
++import org.eclipse.openvsx.entities.Namespace;
++import org.eclipse.openvsx.entities.UserData;
++import org.eclipse.openvsx.json.*;
++import org.eclipse.openvsx.repositories.RepositoryService;
++import org.eclipse.openvsx.security.OAuth2UserServices;
++import org.eclipse.openvsx.security.SecurityConfig;
++import org.eclipse.openvsx.storage.StorageUtilService;
++import org.eclipse.openvsx.util.ErrorResultException;
++import org.eclipse.openvsx.util.NotFoundException;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.data.domain.PageImpl;
++import org.springframework.data.util.Streamable;
++import org.springframework.http.MediaType;
++import org.springframework.security.test.context.support.WithMockUser;
++import org.springframework.test.web.servlet.MockMvc;
++
++import java.util.Collections;
++import java.util.List;
++import java.util.Map;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import org.springframework.mock.web.MockMultipartFile;
++
++@WebMvcTest(UserAPI.class)
++@Import(SecurityConfig.class)
++@WithMockUser
++class UserAPITest {
++
++    @Autowired
++    MockMvc mockMvc;
++
++    @Autowired
++    ObjectMapper objectMapper;
++
++    @MockBean
++    RepositoryService repositories;
++
++    @MockBean
++    UserService users;
++
++    @MockBean
++    EclipseService eclipse;
++
++    @MockBean
++    StorageUtilService storageUtil;
++
++    @MockBean
++    OAuth2UserServices oauth2UserServices;
++
++    @MockBean
++    MeterRegistry meterRegistry;
++
++    @BeforeEach
++    void setup() {
++        when(oauth2UserServices.canLogin()).thenReturn(false);
++    }
++
++    // ---- GET /login-providers ----
++
++    @Test
++    void getLoginProviders_none() throws Exception {
++        when(users.getLoginProviders()).thenReturn(Collections.emptyMap());
++
++        mockMvc.perform(get("/login-providers"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void getLoginProviders_withProviders() throws Exception {
++        when(users.getLoginProviders()).thenReturn(
++                Map.of("github", "/oauth2/authorization/github", "gitlab", "/oauth2/authorization/gitlab"));
++
++        mockMvc.perform(get("/login-providers"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.loginProviders").isMap());
++    }
++
++    // ---- GET /user/auth-error ----
++
++    @Test
++    void getAuthError_noError() throws Exception {
++        when(users.canLogin()).thenReturn(true);
++
++        mockMvc.perform(get("/user/auth-error"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void getAuthError_cannotLogin() throws Exception {
++        when(users.canLogin()).thenReturn(false);
++
++        mockMvc.perform(get("/user/auth-error"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- GET /user ----
++
++    @Test
++    void getUserData_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(get("/user"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.error").value("Not logged in."));
++    }
++
++    @Test
++    void getUserData_loggedIn() throws Exception {
++        var userData = new UserData();
++        userData.setLoginName("testuser");
++        userData.setRole("user");
++        when(users.findLoggedInUser()).thenReturn(userData);
++
++        var userJson = new UserJson();
++        userJson.setLoginName("testuser");
++
++        mockMvc.perform(get("/user"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /user/csrf ----
++
++    @Test
++    void getCsrfToken() throws Exception {
++        mockMvc.perform(get("/user/csrf"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /user/tokens ----
++
++    @Test
++    void getAccessTokens_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(get("/user/tokens"))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void getAccessTokens_loggedIn() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(repositories.findActiveAccessTokens(userData)).thenReturn(Streamable.empty());
++
++        mockMvc.perform(get("/user/tokens"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++                .andExpect(jsonPath("$").isArray());
++    }
++
++    // ---- POST /user/token/create ----
++
++    @Test
++    void createAccessToken_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(post("/user/token/create").with(csrf()))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void createAccessToken_descriptionTooLong() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(buildUserData("testuser"));
++
++        mockMvc.perform(post("/user/token/create")
++                        .with(csrf())
++                        .param("description", "x".repeat(256)))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The description must not be longer than 255 characters."));
++    }
++
++    @Test
++    void createAccessToken_success() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        var tokenJson = new AccessTokenJson();
++        tokenJson.setValue("new-token-value");
++        when(users.createAccessToken(eq(userData), isNull())).thenReturn(tokenJson);
++
++        mockMvc.perform(post("/user/token/create").with(csrf()))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.value").value("new-token-value"));
++    }
++
++    @Test
++    void createAccessToken_withDescription() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        var tokenJson = new AccessTokenJson();
++        tokenJson.setValue("new-token-value");
++        when(users.createAccessToken(eq(userData), eq("My token"))).thenReturn(tokenJson);
++
++        mockMvc.perform(post("/user/token/create")
++                        .with(csrf())
++                        .param("description", "My token"))
++                .andExpect(status().isCreated());
++    }
++
++    // ---- POST /user/token/delete/{id} ----
++
++    @Test
++    void deleteAccessToken_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(post("/user/token/delete/1").with(csrf()))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void deleteAccessToken_notFound() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(users.deleteAccessToken(eq(userData), eq(999L))).thenThrow(new NotFoundException());
++
++        mockMvc.perform(post("/user/token/delete/999").with(csrf()))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").value("Token does not exist."));
++    }
++
++    @Test
++    void deleteAccessToken_success() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(users.deleteAccessToken(eq(userData), eq(1L)))
++                .thenReturn(ResultJson.success("Deleted token 1."));
++
++        mockMvc.perform(post("/user/token/delete/1").with(csrf()))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    // ---- GET /user/extensions ----
++
++    @Test
++    void getOwnExtensions_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(get("/user/extensions"))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void getOwnExtensions_loggedIn() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(repositories.findLatestVersions(userData)).thenReturn(Collections.emptyList());
++        when(storageUtil.getFileUrls(any(), any(), any())).thenReturn(Collections.emptyMap());
++
++        mockMvc.perform(get("/user/extensions"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$").isArray());
++    }
++
++    // ---- GET /user/namespaces ----
++
++    @Test
++    void getOwnNamespaces_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(get("/user/namespaces"))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void getOwnNamespaces_loggedIn() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(repositories.findMemberships(userData)).thenReturn(Streamable.empty());
++
++        mockMvc.perform(get("/user/namespaces"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$").isArray());
++    }
++
++    // ---- POST /user/namespace/{namespace}/details ----
++
++    @Test
++    void updateNamespaceDetails_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        var details = new NamespaceDetailsJson();
++        details.setName("testns");
++
++        mockMvc.perform(post("/user/namespace/testns/details")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(details)))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void updateNamespaceDetails_notFound() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++
++        var details = new NamespaceDetailsJson();
++        details.setName("missing");
++        when(users.updateNamespaceDetails(any(), eq(userData))).thenThrow(new NotFoundException());
++
++        mockMvc.perform(post("/user/namespace/missing/details")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(details)))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    @Test
++    void updateNamespaceDetails_success() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++
++        var details = new NamespaceDetailsJson();
++        details.setName("testns");
++        details.setDescription("Test namespace");
++        when(users.updateNamespaceDetails(any(), eq(userData)))
++                .thenReturn(ResultJson.success("Updated details for namespace testns"));
++
++        mockMvc.perform(post("/user/namespace/testns/details")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(details)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    // ---- POST /user/namespace/{namespace}/details/logo ----
++
++    @Test
++    void updateNamespaceDetailsLogo_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        var logo = new MockMultipartFile("file", "logo.png", MediaType.IMAGE_PNG_VALUE, new byte[]{1, 2, 3});
++        mockMvc.perform(multipart("/user/namespace/testns/details/logo")
++                        .file(logo)
++                        .with(csrf()))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- GET /user/namespace/{name}/members ----
++
++    @Test
++    void getNamespaceMembers_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(get("/user/namespace/testns/members"))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void getNamespaceMembers_notOwner() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(repositories.findMembershipsForOwner(userData, "testns"))
++                .thenReturn(Collections.emptyList());
++
++        mockMvc.perform(get("/user/namespace/testns/members"))
++                .andExpect(status().isForbidden())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    @Test
++    void getNamespaceMembers_owner() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++
++        var membership = buildMembership("testns", userData);
++        when(repositories.findMembershipsForOwner(userData, "testns"))
++                .thenReturn(List.of(membership));
++
++        mockMvc.perform(get("/user/namespace/testns/members"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.namespaceMemberships").isArray());
++    }
++
++    // ---- POST /user/namespace/{namespace}/role ----
++
++    @Test
++    void setNamespaceMember_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(post("/user/namespace/testns/role")
++                        .with(csrf())
++                        .param("user", "targetuser")
++                        .param("role", "contributor"))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void setNamespaceMember_success() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(users.setNamespaceMember(eq(userData), eq("testns"), isNull(), eq("targetuser"), eq("contributor")))
++                .thenReturn(ResultJson.success("Added targetuser as contributor of testns."));
++
++        mockMvc.perform(post("/user/namespace/testns/role")
++                        .with(csrf())
++                        .param("user", "targetuser")
++                        .param("role", "contributor"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    // ---- GET /user/search/{name} ----
++
++    @Test
++    void getUsersStartWith_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(get("/user/search/test"))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void getUsersStartWith_loggedIn() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        var result = new UserData();
++        result.setLoginName("testuser2");
++        when(repositories.findUsersByLoginNameStartingWith("test", 5))
++                .thenReturn(new PageImpl<>(List.of(result)));
++
++        mockMvc.perform(get("/user/search/test"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$").isArray())
++                .andExpect(jsonPath("$[0].loginName").value("testuser2"));
++    }
++
++    // ---- POST /user/publisher-agreement ----
++
++    @Test
++    void signPublisherAgreement_notLoggedIn() throws Exception {
++        when(users.findLoggedInUser()).thenReturn(null);
++
++        mockMvc.perform(post("/user/publisher-agreement").with(csrf()))
++                .andExpect(status().isForbidden());
++    }
++
++    @Test
++    void signPublisherAgreement_error() throws Exception {
++        var userData = buildUserData("testuser");
++        when(users.findLoggedInUser()).thenReturn(userData);
++        when(eclipse.signPublisherAgreement(userData))
++                .thenThrow(new ErrorResultException("Not available."));
++
++        mockMvc.perform(post("/user/publisher-agreement").with(csrf()))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("Not available."));
++    }
++
++    // ---- helpers ----
++
++    private UserData buildUserData(String loginName) {
++        var data = new UserData();
++        data.setLoginName(loginName);
++        data.setRole("user");
++        return data;
++    }
++
++    private NamespaceMembership buildMembership(String namespaceName, UserData user) {
++        var namespace = new Namespace();
++        namespace.setName(namespaceName);
++        var membership = new NamespaceMembership();
++        membership.setNamespace(namespace);
++        membership.setUser(user);
++        membership.setRole(NamespaceMembership.ROLE_OWNER);
++        return membership;
++    }
++}
+diff --git a/server/src/test/java/org/eclipse/openvsx/adapter/VSCodeAPITest.java b/server/src/test/java/org/eclipse/openvsx/adapter/VSCodeAPITest.java
+new file mode 100644
+index 0000000..6e8b46a
+--- /dev/null
++++ b/server/src/test/java/org/eclipse/openvsx/adapter/VSCodeAPITest.java
+@@ -0,0 +1,285 @@
++/** ******************************************************************************
++ * Copyright (c) 2024 Eclipse Foundation and others
++ *
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Public License v. 2.0 which is available at
++ * http://www.eclipse.org/legal/epl-2.0.
++ *
++ * SPDX-License-Identifier: EPL-2.0
++ * ****************************************************************************** */
++package org.eclipse.openvsx.adapter;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import io.micrometer.core.instrument.MeterRegistry;
++import org.eclipse.openvsx.security.OAuth2UserServices;
++import org.eclipse.openvsx.security.SecurityConfig;
++import org.springframework.context.annotation.Import;
++import org.eclipse.openvsx.util.NotFoundException;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.http.MediaType;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.web.servlet.mvc.method.annotation.StreamingResponseBody;
++
++import java.util.Collections;
++import java.util.List;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++@WebMvcTest(VSCodeAPI.class)
++@Import(SecurityConfig.class)
++class VSCodeAPITest {
++
++    @Autowired
++    MockMvc mockMvc;
++
++    @Autowired
++    ObjectMapper objectMapper;
++
++    @MockBean
++    LocalVSCodeService local;
++
++    @MockBean
++    UpstreamVSCodeService upstream;
++
++    @MockBean
++    IExtensionQueryRequestHandler extensionQueryRequestHandler;
++
++    @MockBean
++    OAuth2UserServices oauth2UserServices;
++
++    @MockBean
++    MeterRegistry meterRegistry;
++
++    @BeforeEach
++    void setup() {
++        when(upstream.isValid()).thenReturn(false);
++        when(oauth2UserServices.canLogin()).thenReturn(false);
++    }
++
++    // ---- POST /vscode/gallery/extensionquery ----
++
++    @Test
++    void extensionQuery_emptyResult() throws Exception {
++        var emptyResult = new ExtensionQueryResult(Collections.emptyList());
++        when(extensionQueryRequestHandler.getResult(any(), anyInt(), anyInt()))
++                .thenReturn(emptyResult);
++
++        var param = buildQueryParam("eamodio.gitlens");
++
++        mockMvc.perform(post("/vscode/gallery/extensionquery")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(param)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.results").isArray());
++    }
++
++    @Test
++    void extensionQuery_withResults() throws Exception {
++        var publisher = new ExtensionQueryResult.Publisher(
++                "GitLens", "pub-id", "eamodio", null, null);
++        var extension = new ExtensionQueryResult.Extension(
++                "eamodio.gitlens", "gitlens", "GitLens", "Git supercharged",
++                publisher, Collections.emptyList(), Collections.emptyList(),
++                Collections.emptyList(), "2024-01-01", "2024-01-01", "2024-06-01",
++                Collections.emptyList(), null);
++        var resultItem = new ExtensionQueryResult.ResultItem(List.of(extension), Collections.emptyList());
++        var result = new ExtensionQueryResult(List.of(resultItem));
++
++        when(extensionQueryRequestHandler.getResult(any(), anyInt(), anyInt()))
++                .thenReturn(result);
++
++        var param = buildQueryParam("eamodio.gitlens");
++
++        mockMvc.perform(post("/vscode/gallery/extensionquery")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(param)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.results[0].extensions[0].extensionName").value("gitlens"));
++    }
++
++    @Test
++    void extensionQuery_defaultPageSize() throws Exception {
++        var emptyResult = new ExtensionQueryResult(Collections.emptyList());
++        when(extensionQueryRequestHandler.getResult(any(), eq(20), eq(20)))
++                .thenReturn(emptyResult);
++
++        var param = new ExtensionQueryParam(Collections.emptyList(), 0);
++
++        mockMvc.perform(post("/vscode/gallery/extensionquery")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(param)))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /vscode/asset/{namespaceName}/{extensionName}/{version}/{assetType}/** ----
++
++    @Test
++    void getAsset_found() throws Exception {
++        ResponseEntity<StreamingResponseBody> response = ResponseEntity.ok()
++                .contentType(MediaType.APPLICATION_OCTET_STREAM)
++                .body(out -> out.write(new byte[]{1, 2, 3}));
++        when(local.getAsset("eamodio", "gitlens", "14.0.0",
++                "Microsoft.VisualStudio.Services.VSIXPackage", "universal", ""))
++                .thenReturn(response);
++
++        mockMvc.perform(get("/vscode/asset/eamodio/gitlens/14.0.0/Microsoft.VisualStudio.Services.VSIXPackage"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void getAsset_notFound() throws Exception {
++        when(local.getAsset(any(), any(), any(), any(), any(), any()))
++                .thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/vscode/asset/eamodio/gitlens/14.0.0/Microsoft.VisualStudio.Services.VSIXPackage"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void getAsset_withTargetPlatform() throws Exception {
++        ResponseEntity<StreamingResponseBody> response = ResponseEntity.ok()
++                .contentType(MediaType.APPLICATION_OCTET_STREAM)
++                .body(out -> out.write(new byte[]{1}));
++        when(local.getAsset("eamodio", "gitlens", "14.0.0",
++                "Microsoft.VisualStudio.Services.VSIXPackage", "linux-x64", ""))
++                .thenReturn(response);
++
++        mockMvc.perform(get("/vscode/asset/eamodio/gitlens/14.0.0/Microsoft.VisualStudio.Services.VSIXPackage")
++                        .param("targetPlatform", "linux-x64"))
++                .andExpect(status().isOk());
++    }
++
++    // ---- GET /vscode/item ----
++
++    @Test
++    void getItemUrl_found() throws Exception {
++        when(local.getItemUrl("eamodio", "gitlens"))
++                .thenReturn("https://open-vsx.org/extension/eamodio/gitlens");
++
++        mockMvc.perform(get("/vscode/item").param("itemName", "eamodio.gitlens"))
++                .andExpect(status().is3xxRedirection())
++                .andExpect(header().exists("Location"));
++    }
++
++    @Test
++    void getItemUrl_badFormat() throws Exception {
++        mockMvc.perform(get("/vscode/item").param("itemName", "nodothere"))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void getItemUrl_notFound() throws Exception {
++        when(local.getItemUrl("eamodio", "unknown")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/vscode/item").param("itemName", "eamodio.unknown"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- GET /vscode/gallery/publishers/{namespaceName}/vsextensions/{extensionName}/{version}/vspackage ----
++
++    @Test
++    void download_found() throws Exception {
++        when(local.download("eamodio", "gitlens", "14.0.0", "universal"))
++                .thenReturn("https://storage.example.com/eamodio-gitlens-14.0.0.vsix");
++
++        mockMvc.perform(get("/vscode/gallery/publishers/eamodio/vsextensions/gitlens/14.0.0/vspackage"))
++                .andExpect(status().is3xxRedirection())
++                .andExpect(header().exists("Location"));
++    }
++
++    @Test
++    void download_notFound() throws Exception {
++        when(local.download(any(), any(), any(), any())).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/vscode/gallery/publishers/eamodio/vsextensions/unknown/1.0.0/vspackage"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void download_withTargetPlatform() throws Exception {
++        when(local.download("eamodio", "gitlens", "14.0.0", "linux-x64"))
++                .thenReturn("https://storage.example.com/eamodio-gitlens-14.0.0-linux-x64.vsix");
++
++        mockMvc.perform(get("/vscode/gallery/publishers/eamodio/vsextensions/gitlens/14.0.0/vspackage")
++                        .param("targetPlatform", "linux-x64"))
++                .andExpect(status().is3xxRedirection());
++    }
++
++    // ---- GET /vscode/unpkg/{namespaceName}/{extensionName}/{version}/** ----
++
++    @Test
++    void browse_found() throws Exception {
++        ResponseEntity<StreamingResponseBody> response = ResponseEntity.ok()
++                .contentType(MediaType.APPLICATION_JSON)
++                .body(out -> out.write("[]".getBytes()));
++        when(local.browse("eamodio", "gitlens", "14.0.0", "")).thenReturn(response);
++
++        mockMvc.perform(get("/vscode/unpkg/eamodio/gitlens/14.0.0/"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void browse_notFound() throws Exception {
++        when(local.browse(any(), any(), any(), any())).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/vscode/unpkg/eamodio/unknown/1.0.0/"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- GET /vscode/gallery/{namespaceName}/{extensionName}/latest ----
++
++    @Test
++    void getLatest_found() throws Exception {
++        var publisher = new ExtensionQueryResult.Publisher(
++                "GitLens", "pub-id", "eamodio", null, null);
++        var extension = new ExtensionQueryResult.Extension(
++                "eamodio.gitlens", "gitlens", "GitLens", "Git supercharged",
++                publisher, Collections.emptyList(), Collections.emptyList(),
++                Collections.emptyList(), "2024-01-01", "2024-01-01", "2024-06-01",
++                Collections.emptyList(), null);
++        var resultItem = new ExtensionQueryResult.ResultItem(List.of(extension), Collections.emptyList());
++        var result = new ExtensionQueryResult(List.of(resultItem));
++
++        when(extensionQueryRequestHandler.getResult(any(), eq(1), anyInt())).thenReturn(result);
++
++        mockMvc.perform(get("/vscode/gallery/eamodio/gitlens/latest"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.extensionName").value("gitlens"));
++    }
++
++    @Test
++    void getLatest_notFound_emptyResults() throws Exception {
++        var emptyResult = new ExtensionQueryResult(Collections.emptyList());
++        when(extensionQueryRequestHandler.getResult(any(), eq(1), anyInt())).thenReturn(emptyResult);
++
++        mockMvc.perform(get("/vscode/gallery/eamodio/unknown/latest"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void getLatest_notFound_emptyExtensions() throws Exception {
++        var resultItem = new ExtensionQueryResult.ResultItem(Collections.emptyList(), Collections.emptyList());
++        var result = new ExtensionQueryResult(List.of(resultItem));
++        when(extensionQueryRequestHandler.getResult(any(), eq(1), anyInt())).thenReturn(result);
++
++        mockMvc.perform(get("/vscode/gallery/eamodio/unknown/latest"))
++                .andExpect(status().isNotFound());
++    }
++
++    // ---- helpers ----
++
++    private ExtensionQueryParam buildQueryParam(String extensionId) {
++        var criterion = new ExtensionQueryParam.Criterion(
++                ExtensionQueryParam.Criterion.FILTER_EXTENSION_NAME, extensionId);
++        var filter = new ExtensionQueryParam.Filter(List.of(criterion), 1, 10, 0, 0);
++        return new ExtensionQueryParam(List.of(filter), ExtensionQueryParam.FLAG_INCLUDE_VERSIONS);
++    }
++}
+diff --git a/server/src/test/java/org/eclipse/openvsx/admin/AdminAPITest.java b/server/src/test/java/org/eclipse/openvsx/admin/AdminAPITest.java
+new file mode 100644
+index 0000000..7627e05
+--- /dev/null
++++ b/server/src/test/java/org/eclipse/openvsx/admin/AdminAPITest.java
+@@ -0,0 +1,511 @@
++/** ******************************************************************************
++ * Copyright (c) 2024 Eclipse Foundation and others
++ *
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Public License v. 2.0 which is available at
++ * http://www.eclipse.org/legal/epl-2.0.
++ *
++ * SPDX-License-Identifier: EPL-2.0
++ * ****************************************************************************** */
++package org.eclipse.openvsx.admin;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import io.micrometer.core.instrument.MeterRegistry;
++import org.eclipse.openvsx.LocalRegistryService;
++import org.eclipse.openvsx.security.SecurityConfig;
++import org.eclipse.openvsx.entities.AdminStatistics;
++import org.eclipse.openvsx.entities.Namespace;
++import org.eclipse.openvsx.entities.NamespaceMembership;
++import org.eclipse.openvsx.entities.UserData;
++import org.eclipse.openvsx.json.*;
++import org.eclipse.openvsx.repositories.RepositoryService;
++import org.eclipse.openvsx.search.SearchUtilService;
++import org.eclipse.openvsx.security.OAuth2UserServices;
++import org.springframework.context.annotation.Import;
++import org.eclipse.openvsx.util.ErrorResultException;
++import org.eclipse.openvsx.util.NotFoundException;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.data.util.Streamable;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.MediaType;
++import org.springframework.security.test.context.support.WithMockUser;
++import org.springframework.test.web.servlet.MockMvc;
++
++import java.util.Collections;
++import java.util.List;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++@WebMvcTest(AdminAPI.class)
++@Import(SecurityConfig.class)
++class AdminAPITest {
++
++    @Autowired
++    MockMvc mockMvc;
++
++    @Autowired
++    ObjectMapper objectMapper;
++
++    @MockBean
++    RepositoryService repositories;
++
++    @MockBean
++    AdminService admins;
++
++    @MockBean
++    LocalRegistryService local;
++
++    @MockBean
++    SearchUtilService search;
++
++    @MockBean
++    OAuth2UserServices oauth2UserServices;
++
++    @MockBean
++    MeterRegistry meterRegistry;
++
++    @BeforeEach
++    void setup() {
++        when(oauth2UserServices.canLogin()).thenReturn(false);
++    }
++
++    // ---- GET /admin/report (token auth - /admin/report is permitAll per security config) ----
++
++    @Test
++    void getReportJson_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser("admin-token")).thenReturn(adminUser);
++        var stats = buildStatistics(2024, 6);
++        when(admins.getAdminStatistics(2024, 6)).thenReturn(stats);
++
++        mockMvc.perform(get("/admin/report")
++                        .param("token", "admin-token")
++                        .param("year", "2024")
++                        .param("month", "6"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.year").value(2024))
++                .andExpect(jsonPath("$.month").value(6));
++    }
++
++    @Test
++    void getReportJson_forbidden() throws Exception {
++        when(admins.checkAdminUser("bad-token"))
++                .thenThrow(new ErrorResultException("Administration role is required.", HttpStatus.FORBIDDEN));
++
++        mockMvc.perform(get("/admin/report")
++                        .param("token", "bad-token")
++                        .param("year", "2024")
++                        .param("month", "6"))
++                .andExpect(status().isForbidden())
++                .andExpect(jsonPath("$.error").value("Administration role is required."));
++    }
++
++    // ---- GET /admin/stats (session auth - requires ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getStats_success() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        when(repositories.countUsers()).thenReturn(100L);
++        when(repositories.countExtensions()).thenReturn(500L);
++        when(repositories.countNamespaces()).thenReturn(50L);
++
++        mockMvc.perform(get("/admin/stats"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.userCount").value(100))
++                .andExpect(jsonPath("$.extensionCount").value(500))
++                .andExpect(jsonPath("$.namespaceCount").value(50));
++    }
++
++    @Test
++    void getStats_unauthenticated() throws Exception {
++        mockMvc.perform(get("/admin/stats"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- GET /admin/log (session auth - requires ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getLog_success() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        when(repositories.findAllPersistedLogs()).thenReturn(Streamable.empty());
++
++        mockMvc.perform(get("/admin/log"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getLog_withPeriod() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        when(repositories.findPersistedLogsAfter(any())).thenReturn(Streamable.empty());
++
++        mockMvc.perform(get("/admin/log").param("period", "P7D"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getLog_invalidPeriod() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++
++        mockMvc.perform(get("/admin/log").param("period", "notaperiod"))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void getLog_unauthenticated() throws Exception {
++        mockMvc.perform(get("/admin/log"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /admin/update-search-index (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void updateSearchIndex_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser()).thenReturn(adminUser);
++
++        mockMvc.perform(post("/admin/update-search-index").with(csrf()))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").value("Updated search index"));
++    }
++
++    @Test
++    void updateSearchIndex_unauthenticated() throws Exception {
++        mockMvc.perform(post("/admin/update-search-index").with(csrf()))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- GET /admin/extension/{namespaceName}/{extensionName} (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getExtension_notFound() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        when(repositories.findLatestVersion("eamodio", "gitlens", null, false, false)).thenReturn(null);
++        when(repositories.findExtension("gitlens", "eamodio")).thenReturn(null);
++
++        mockMvc.perform(get("/admin/extension/eamodio/gitlens"))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    @Test
++    void getExtension_unauthenticated() throws Exception {
++        mockMvc.perform(get("/admin/extension/eamodio/gitlens"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /admin/api/extension/{namespaceName}/{extensionName}/delete (token auth) ----
++
++    @Test
++    void deleteExtensionWithToken_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser("admin-token")).thenReturn(adminUser);
++        when(admins.deleteExtension("eamodio", "gitlens", adminUser))
++                .thenReturn(ResultJson.success("Deleted eamodio.gitlens"));
++
++        mockMvc.perform(post("/admin/api/extension/eamodio/gitlens/delete")
++                        .param("token", "admin-token"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void deleteExtensionWithToken_forbidden() throws Exception {
++        when(admins.checkAdminUser("bad-token"))
++                .thenThrow(new ErrorResultException("Administration role is required.", HttpStatus.FORBIDDEN));
++
++        mockMvc.perform(post("/admin/api/extension/eamodio/gitlens/delete")
++                        .param("token", "bad-token"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /admin/extension/{namespaceName}/{extensionName}/delete (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void deleteExtension_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser()).thenReturn(adminUser);
++        when(admins.deleteExtension("eamodio", "gitlens", adminUser))
++                .thenReturn(ResultJson.success("Deleted eamodio.gitlens"));
++
++        mockMvc.perform(post("/admin/extension/eamodio/gitlens/delete")
++                        .with(csrf()))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void deleteExtension_unauthenticated() throws Exception {
++        mockMvc.perform(post("/admin/extension/eamodio/gitlens/delete").with(csrf()))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- GET /admin/namespace/{namespaceName} (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getNamespace_found() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        var nsJson = new NamespaceJson();
++        nsJson.setName("eamodio");
++        nsJson.setVerified(true);
++        when(local.getNamespace("eamodio")).thenReturn(nsJson);
++
++        mockMvc.perform(get("/admin/namespace/eamodio"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.name").value("eamodio"));
++    }
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getNamespace_notFound() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        when(local.getNamespace("missing")).thenThrow(new NotFoundException());
++
++        mockMvc.perform(get("/admin/namespace/missing"))
++                .andExpect(status().isNotFound())
++                .andExpect(jsonPath("$.error").exists());
++    }
++
++    @Test
++    void getNamespace_unauthenticated() throws Exception {
++        mockMvc.perform(get("/admin/namespace/eamodio"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /admin/create-namespace (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void createNamespace_success() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        var namespace = new NamespaceJson();
++        namespace.setName("newns");
++        when(admins.createNamespace(any(NamespaceJson.class)))
++                .thenReturn(ResultJson.success("Created namespace newns"));
++
++        mockMvc.perform(post("/admin/create-namespace")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(namespace)))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void createNamespace_unauthenticated() throws Exception {
++        var namespace = new NamespaceJson();
++        namespace.setName("newns");
++
++        mockMvc.perform(post("/admin/create-namespace")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(namespace)))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /admin/change-namespace (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void changeNamespace_success() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        var json = new ChangeNamespaceJson("oldns", "newns", false, false);
++
++        mockMvc.perform(post("/admin/change-namespace")
++                        .with(csrf())
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(json)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").value(
++                        org.hamcrest.Matchers.containsString("Scheduled namespace change")));
++    }
++
++    // ---- GET /admin/api/namespace/{namespaceName}/members (token auth) ----
++
++    @Test
++    void getNamespaceMembersWithToken_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser("admin-token")).thenReturn(adminUser);
++        var membership = buildMembership("eamodio", adminUser);
++        when(repositories.findMemberships("eamodio"))
++                .thenReturn(List.of(membership));
++
++        mockMvc.perform(get("/admin/api/namespace/eamodio/members")
++                        .param("token", "admin-token"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.namespaceMemberships").isArray());
++    }
++
++    @Test
++    void getNamespaceMembersWithToken_forbidden() throws Exception {
++        when(admins.checkAdminUser("bad-token"))
++                .thenThrow(new ErrorResultException("Administration role is required.", HttpStatus.FORBIDDEN));
++
++        mockMvc.perform(get("/admin/api/namespace/eamodio/members")
++                        .param("token", "bad-token"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- GET /admin/namespace/{namespaceName}/members (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getNamespaceMembers_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser()).thenReturn(adminUser);
++        var membership = buildMembership("eamodio", adminUser);
++        when(repositories.findMemberships("eamodio"))
++                .thenReturn(List.of(membership));
++
++        mockMvc.perform(get("/admin/namespace/eamodio/members"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.namespaceMemberships").isArray());
++    }
++
++    @Test
++    void getNamespaceMembers_unauthenticated() throws Exception {
++        mockMvc.perform(get("/admin/namespace/eamodio/members"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /admin/api/namespace/{namespaceName}/change-member (token auth) ----
++
++    @Test
++    void editNamespaceMemberWithToken_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser("admin-token")).thenReturn(adminUser);
++        when(admins.editNamespaceMember("eamodio", "targetuser", "github", "contributor", adminUser))
++                .thenReturn(ResultJson.success("Added targetuser as contributor."));
++
++        mockMvc.perform(post("/admin/api/namespace/eamodio/change-member")
++                        .param("token", "admin-token")
++                        .param("user", "targetuser")
++                        .param("provider", "github")
++                        .param("role", "contributor"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    // ---- POST /admin/namespace/{namespaceName}/change-member (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void editNamespaceMember_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser()).thenReturn(adminUser);
++        when(admins.editNamespaceMember("eamodio", "targetuser", null, "contributor", adminUser))
++                .thenReturn(ResultJson.success("Added targetuser as contributor."));
++
++        mockMvc.perform(post("/admin/namespace/eamodio/change-member")
++                        .with(csrf())
++                        .param("user", "targetuser")
++                        .param("role", "contributor"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void editNamespaceMember_unauthenticated() throws Exception {
++        mockMvc.perform(post("/admin/namespace/eamodio/change-member")
++                        .with(csrf())
++                        .param("user", "targetuser")
++                        .param("role", "contributor"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- GET /admin/publisher/{provider}/{loginName} (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void getUserPublishInfo_success() throws Exception {
++        when(admins.checkAdminUser()).thenReturn(buildAdminUser());
++        var info = new UserPublishInfoJson();
++        info.setActiveAccessTokenNum(2);
++        when(admins.getUserPublishInfo("github", "testuser")).thenReturn(info);
++
++        mockMvc.perform(get("/admin/publisher/github/testuser"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.activeAccessTokenNum").value(2));
++    }
++
++    @Test
++    void getUserPublishInfo_unauthenticated() throws Exception {
++        mockMvc.perform(get("/admin/publisher/github/testuser"))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- POST /admin/publisher/{provider}/{loginName}/revoke (session auth - ROLE_ADMIN) ----
++
++    @Test
++    @WithMockUser(roles = "ADMIN")
++    void revokePublisherContributions_success() throws Exception {
++        var adminUser = buildAdminUser();
++        when(admins.checkAdminUser()).thenReturn(adminUser);
++        when(admins.revokePublisherContributions("github", "testuser", adminUser))
++                .thenReturn(ResultJson.success("Revoked contributions of testuser."));
++
++        mockMvc.perform(post("/admin/publisher/github/testuser/revoke")
++                        .with(csrf()))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.success").exists());
++    }
++
++    @Test
++    void revokePublisherContributions_unauthenticated() throws Exception {
++        mockMvc.perform(post("/admin/publisher/github/testuser/revoke").with(csrf()))
++                .andExpect(status().isForbidden());
++    }
++
++    // ---- helpers ----
++
++    private NamespaceMembership buildMembership(String namespaceName, UserData user) {
++        var namespace = new Namespace();
++        namespace.setName(namespaceName);
++        var membership = new NamespaceMembership();
++        membership.setNamespace(namespace);
++        membership.setUser(user);
++        membership.setRole(NamespaceMembership.ROLE_OWNER);
++        return membership;
++    }
++
++    private UserData buildAdminUser() {
++        var user = new UserData();
++        user.setLoginName("admin");
++        user.setRole(UserData.ROLE_ADMIN);
++        return user;
++    }
++
++    private AdminStatistics buildStatistics(int year, int month) {
++        var stats = new AdminStatistics();
++        stats.setYear(year);
++        stats.setMonth(month);
++        stats.setExtensions(0);
++        stats.setDownloads(0);
++        stats.setDownloadsTotal(0);
++        stats.setPublishers(0);
++        stats.setAverageReviewsPerExtension(0.0);
++        stats.setNamespaceOwners(0);
++        stats.setExtensionsByRating(Collections.emptyMap());
++        stats.setPublishersByExtensionsPublished(Collections.emptyMap());
++        stats.setTopMostActivePublishingUsers(Collections.emptyMap());
++        stats.setTopNamespaceExtensions(Collections.emptyMap());
++        stats.setTopNamespaceExtensionVersions(Collections.emptyMap());
++        stats.setTopMostDownloadedExtensions(Collections.emptyMap());
++        return stats;
++    }
++}
+diff --git a/server/src/test/java/org/eclipse/openvsx/web/SitemapControllerTest.java b/server/src/test/java/org/eclipse/openvsx/web/SitemapControllerTest.java
+new file mode 100644
+index 0000000..6523b70
+--- /dev/null
++++ b/server/src/test/java/org/eclipse/openvsx/web/SitemapControllerTest.java
+@@ -0,0 +1,75 @@
++/** ******************************************************************************
++ * Copyright (c) 2024 Eclipse Foundation and others
++ *
++ * This program and the accompanying materials are made available under the
++ * terms of the Eclipse Public License v. 2.0 which is available at
++ * http://www.eclipse.org/legal/epl-2.0.
++ *
++ * SPDX-License-Identifier: EPL-2.0
++ * ****************************************************************************** */
++package org.eclipse.openvsx.web;
++
++import io.micrometer.core.instrument.MeterRegistry;
++import org.eclipse.openvsx.security.OAuth2UserServices;
++import org.eclipse.openvsx.security.SecurityConfig;
++import org.springframework.context.annotation.Import;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++@WebMvcTest(SitemapController.class)
++@Import(SecurityConfig.class)
++class SitemapControllerTest {
++
++    @Autowired
++    MockMvc mockMvc;
++
++    @MockBean
++    SitemapService sitemapService;
++
++    @MockBean
++    OAuth2UserServices oauth2UserServices;
++
++    @MockBean
++    MeterRegistry meterRegistry;
++
++    @BeforeEach
++    void setup() {
++        when(oauth2UserServices.canLogin()).thenReturn(false);
++    }
++
++    // ---- GET /sitemap.xml ----
++
++    @Test
++    void getSitemap_success() throws Exception {
++        var sitemapContent = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
++                + "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">"
++                + "<url><loc>https://open-vsx.org/extension/eamodio/gitlens</loc></url>"
++                + "</urlset>";
++        when(sitemapService.generateSitemap()).thenReturn(sitemapContent);
++
++        mockMvc.perform(get("/sitemap.xml"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_XML))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("urlset")));
++    }
++
++    @Test
++    void getSitemap_emptySitemap() throws Exception {
++        var emptySitemap = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
++                + "<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"></urlset>";
++        when(sitemapService.generateSitemap()).thenReturn(emptySitemap);
++
++        mockMvc.perform(get("/sitemap.xml"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_XML));
++    }
++}

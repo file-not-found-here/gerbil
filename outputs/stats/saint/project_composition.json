@@ -1,0 +1,190 @@
+{
+  "scope": "all_projects",
+  "project_count": 5,
+  "projects_with_zero_tests": 0,
+  "quadrants": {
+    "endpoints_and_api_tests": {
+      "project_count": 5,
+      "test_count": 269,
+      "api_test_count": 269,
+      "projects_with_zero_tests": 0,
+      "tests_per_project": {
+        "count": 5,
+        "min": 30.0,
+        "max": 93.0,
+        "mean": 53.8,
+        "p25": 37.0,
+        "p50": 54.0,
+        "p75": 55.0,
+        "p90": 77.80000000000001
+      },
+      "api_tests_per_project": {
+        "count": 5,
+        "min": 30.0,
+        "max": 93.0,
+        "mean": 53.8,
+        "p25": 37.0,
+        "p50": 54.0,
+        "p75": 55.0,
+        "p90": 77.80000000000001
+      }
+    },
+    "endpoints_no_api_tests": {
+      "project_count": 0,
+      "test_count": 0,
+      "api_test_count": 0,
+      "projects_with_zero_tests": 0,
+      "tests_per_project": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      },
+      "api_tests_per_project": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      }
+    },
+    "api_tests_no_endpoints": {
+      "project_count": 0,
+      "test_count": 0,
+      "api_test_count": 0,
+      "projects_with_zero_tests": 0,
+      "tests_per_project": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      },
+      "api_tests_per_project": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      }
+    },
+    "no_endpoints_no_api_tests": {
+      "project_count": 0,
+      "test_count": 0,
+      "api_test_count": 0,
+      "projects_with_zero_tests": 0,
+      "tests_per_project": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      },
+      "api_tests_per_project": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      }
+    }
+  },
+  "api_test_universe": {
+    "scope": "projects_with_api_tests",
+    "project_count": 5,
+    "api_test_count": 269,
+    "api_test_class_count": 114,
+    "application_class_count": 565,
+    "application_method_count": 2926,
+    "endpoint_count": 116,
+    "api_tests_per_project": {
+      "count": 5,
+      "min": 30.0,
+      "max": 93.0,
+      "mean": 53.8,
+      "p25": 37.0,
+      "p50": 54.0,
+      "p75": 55.0,
+      "p90": 77.80000000000001
+    },
+    "api_test_classes_per_project": {
+      "count": 5,
+      "min": 11.0,
+      "max": 34.0,
+      "mean": 22.8,
+      "p25": 19.0,
+      "p50": 21.0,
+      "p75": 29.0,
+      "p90": 32.0
+    },
+    "api_test_ncloc": {
+      "count": 269,
+      "min": 8.0,
+      "max": 722.0,
+      "mean": 14.814126394052044,
+      "p25": 9.0,
+      "p50": 10.0,
+      "p75": 14.0,
+      "p90": 20.0
+    },
+    "fixtures_per_project": {
+      "count": 5,
+      "min": 2.0,
+      "max": 10.0,
+      "mean": 6.6,
+      "p25": 4.0,
+      "p50": 7.0,
+      "p75": 10.0,
+      "p90": 10.0
+    },
+    "application_classes_per_project": {
+      "count": 5,
+      "min": 23.0,
+      "max": 348.0,
+      "mean": 113.0,
+      "p25": 23.0,
+      "p50": 23.0,
+      "p75": 148.0,
+      "p90": 268.0
+    },
+    "application_methods_per_project": {
+      "count": 5,
+      "min": 82.0,
+      "max": 1512.0,
+      "mean": 585.2,
+      "p25": 116.0,
+      "p50": 147.0,
+      "p75": 1069.0,
+      "p90": 1334.8000000000002
+    },
+    "endpoints_per_project": {
+      "count": 5,
+      "min": 6.0,
+      "max": 48.0,
+      "mean": 23.2,
+      "p25": 17.0,
+      "p50": 18.0,
+      "p75": 27.0,
+      "p90": 39.6
+    }
+  }
+}

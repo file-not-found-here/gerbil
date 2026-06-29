@@ -1,0 +1,325 @@
+{
+  "scope": "endpoints_api_tests_and_resolved_endpoint_events",
+  "endpoint_count": 20391,
+  "coverage": {
+    "count": 3592,
+    "total": 20391,
+    "proportion": 0.17615614731989604
+  },
+  "among_covered": {
+    "endpoint_count": 3592,
+    "holistic": {
+      "exercise_rate": {
+        "count": 3583,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.8555983122202688,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "optional_exercise_rate": {
+        "count": 767,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.48838750703157485,
+        "p25": 0.0,
+        "p50": 0.5,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "required_exercise_rate": {
+        "count": 3296,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.9107157304669441,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "simple_1_way_optional_coverage": {
+        "count": 767,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.23689979982352863,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.41428571428571426,
+        "p90": 1.0
+      },
+      "simple_2_way_optional_coverage": {
+        "count": 368,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.010211783988957902,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "total_2_way_optional_coverage": {
+        "count": 368,
+        "min": 0.25,
+        "max": 1.0,
+        "mean": 0.35652664062990147,
+        "p25": 0.25,
+        "p50": 0.25,
+        "p75": 0.475,
+        "p90": 0.5055952380952382
+      }
+    },
+    "by_source": {
+      "exercise_rate": {
+        "path": {
+          "count": 1767,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "query": {
+          "count": 1340,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.5849965791208109,
+          "p25": 0.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 120,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.31666666666666665,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "body": {
+          "count": 1195,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.9799163179916318,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "form": {
+          "count": 13,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.07692307692307693,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "optional_exercise_rate": {
+        "query": {
+          "count": 697,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.4606903219528758,
+          "p25": 0.0,
+          "p50": 0.25,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 43,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.27906976744186046,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "form": {
+          "count": 4,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "simple_1_way_optional_coverage": {
+        "query": {
+          "count": 697,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.24098369946648282,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.42857142857142855,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 43,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.20930232558139536,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "form": {
+          "count": 4,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "simple_2_way_optional_coverage": {
+        "query": {
+          "count": 341,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.011020341665502956,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "header": {
+          "count": 3,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "form": {
+          "count": 1,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "total_2_way_optional_coverage": {
+        "query": {
+          "count": 341,
+          "min": 0.25,
+          "max": 1.0,
+          "mean": 0.3594680042993826,
+          "p25": 0.25,
+          "p50": 0.25,
+          "p75": 0.475,
+          "p90": 0.5357142857142857
+        },
+        "header": {
+          "count": 3,
+          "min": 0.25,
+          "max": 0.25,
+          "mean": 0.25,
+          "p25": 0.25,
+          "p50": 0.25,
+          "p75": 0.25,
+          "p90": 0.25
+        },
+        "form": {
+          "count": 1,
+          "min": 0.25,
+          "max": 0.25,
+          "mean": 0.25,
+          "p25": 0.25,
+          "p50": 0.25,
+          "p75": 0.25,
+          "p90": 0.25
+        }
+      }
+    },
+    "pooled_optional_exercise_by_source": {
+      "query": {
+        "exercised_parameter_count": 813,
+        "total_parameter_count": 1841,
+        "exercise_rate": 0.4416078218359587
+      },
+      "header": {
+        "exercised_parameter_count": 12,
+        "total_parameter_count": 46,
+        "exercise_rate": 0.2608695652173913
+      },
+      "form": {
+        "exercised_parameter_count": 0,
+        "total_parameter_count": 16,
+        "exercise_rate": 0.0
+      }
+    },
+    "optional_exercise_extremes": {
+      "holistic": {
+        "fully_exercised": {
+          "count": 307,
+          "total": 767,
+          "proportion": 0.4002607561929596
+        },
+        "none_exercised": {
+          "count": 297,
+          "total": 767,
+          "proportion": 0.38722294654498046
+        }
+      },
+      "by_source": {
+        "query": {
+          "fully_exercised": {
+            "count": 264,
+            "total": 697,
+            "proportion": 0.3787661406025825
+          },
+          "none_exercised": {
+            "count": 293,
+            "total": 697,
+            "proportion": 0.42037302725968434
+          }
+        },
+        "header": {
+          "fully_exercised": {
+            "count": 12,
+            "total": 43,
+            "proportion": 0.27906976744186046
+          },
+          "none_exercised": {
+            "count": 31,
+            "total": 43,
+            "proportion": 0.7209302325581395
+          }
+        },
+        "form": {
+          "fully_exercised": {
+            "count": 0,
+            "total": 4,
+            "proportion": 0.0
+          },
+          "none_exercised": {
+            "count": 4,
+            "total": 4,
+            "proportion": 1.0
+          }
+        }
+      }
+    }
+  }
+}

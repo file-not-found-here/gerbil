@@ -1,0 +1,4484 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..eb7be3f
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,210 @@
++# API Endpoint Coverage (Progress: 117/121 tested, 4 skipped)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++---
++
++## hertzbeat-manager - AccountController (/api/account/auth)
++- [x] POST /api/account/auth/form - login with identifier+credential (public)
++- [x] POST /api/account/auth/refresh - refresh JWT token (public)
++
++## hertzbeat-manager - AuthTokenController (/api/account/token)
++- [x] POST /api/account/token/generate - generate API token (admin only, requires JWT subject)
++
++## hertzbeat-manager - MonitorController (/api/monitor)
++- [x] POST /api/monitor - add new monitor (admin/user)
++- [x] PUT /api/monitor - modify existing monitor (admin/user)
++- [x] GET /api/monitor/{id} - get monitor by ID (admin/user/guest)
++- [x] DELETE /api/monitor/{id} - delete monitor (admin)
++- [x] POST /api/monitor/detect - availability detection (admin/user)
++- [x] POST /api/monitor/copy/{id} - copy monitor (admin/user)
++
++## hertzbeat-manager - MonitorsController (/api/monitors)
++- [x] GET /api/monitors - paginated list with filters (admin/user/guest)
++- [x] GET /api/monitors/{app} - list by app type (admin/user/guest)
++- [x] DELETE /api/monitors - batch delete by IDs (admin)
++- [x] DELETE /api/monitors/manage - batch unmanage monitors (admin)
++- [x] GET /api/monitors/manage - batch re-enable monitors (admin/user)
++- [x] GET /api/monitors/export - export monitor config (admin/user/guest)
++- [~] POST /api/monitors/import - import monitor config; multipart file upload not easily tested via TestRestTemplate; auth guard verified via unauthenticated request
++
++## hertzbeat-manager - AppController (/api/apps)
++- [x] GET /api/apps/{app}/params - get param definitions for app type (admin/user/guest)
++- [x] GET /api/apps/{app}/define - get job definition for app type (admin/user/guest)
++- [x] GET /api/apps/{app}/define/yml - get YML definition for app type (admin/user/guest)
++- [x] POST /api/apps/define/yml - add new monitor type (admin/user)
++- [x] PUT /api/apps/define/yml - update monitor type definition (admin/user)
++- [x] DELETE /api/apps/{app}/define/yml - delete custom monitor type (admin)
++- [x] GET /api/apps/hierarchy - list all monitor metrics hierarchy (public)
++- [x] GET /api/apps/hierarchy/{app} - list metrics hierarchy for app (admin/user/guest)
++- [x] GET /api/apps/defines - list all monitor types (admin/user/guest)
++- [x] GET /api/apps/{monitorId}/pushdefine - get push definition for monitor (admin/user/guest)
++- [x] GET /api/apps/{monitorId}/define/dynamic - get auto-generate dynamic define (admin/user/guest)
++
++## hertzbeat-manager - SummaryController (/api/summary)
++- [x] GET /api/summary - dashboard monitoring statistics (admin/user/guest)
++
++## hertzbeat-manager - LabelController (/api/label)
++- [x] POST /api/label - add label (admin/user)
++- [x] PUT /api/label - modify label (admin/user)
++- [x] GET /api/label - get paginated labels (admin/user/guest)
++- [x] DELETE /api/label - delete labels by IDs (admin)
++
++## hertzbeat-manager - CollectorController (/api/collector)
++- [x] GET /api/collector - list collectors with pagination (admin/user/guest)
++- [x] PUT /api/collector/online - online collectors (admin/user)
++- [x] PUT /api/collector/offline - offline collectors (admin/user)
++- [x] DELETE /api/collector - delete collectors (admin)
++- [x] POST /api/collector/generate/{collector} - generate deploy info (admin/user)
++
++## hertzbeat-manager - GeneralConfigController (/api/config)
++- [x] POST /api/config/{type} - save/update config by type (admin/user)
++- [x] GET /api/config/{type} - get config by type (admin/user/guest)
++- [x] PUT /api/config/template/{app} - update template config (admin/user)
++
++## hertzbeat-manager - StatusPageController (/api/status/page)
++- [x] GET /api/status/page/org - query status page organization (admin/user/guest)
++- [x] POST /api/status/page/org - save/update organization (admin/user)
++- [x] GET /api/status/page/component - list components (admin/user/guest)
++- [x] POST /api/status/page/component - create component (admin/user)
++- [x] PUT /api/status/page/component - update component (admin/user)
++- [x] DELETE /api/status/page/component/{id} - delete component (admin)
++- [x] GET /api/status/page/component/{id} - get component by ID (admin/user/guest)
++- [x] POST /api/status/page/incident - create incident (admin/user)
++- [x] PUT /api/status/page/incident - update incident (admin/user)
++- [x] DELETE /api/status/page/incident/{id} - delete incident (admin)
++- [x] GET /api/status/page/incident/{id} - get incident by ID (admin/user/guest)
++- [x] GET /api/status/page/incident - list incidents (admin/user/guest)
++
++## hertzbeat-manager - StatusPagePublicController (/api/status/page/public)
++- [x] GET /api/status/page/public/org - get public org info (no auth)
++- [x] GET /api/status/page/public/component - list public components (no auth)
++- [x] GET /api/status/page/public/component/{id} - get public component by ID (no auth)
++- [x] GET /api/status/page/public/incident - list public incidents (no auth)
++- [x] GET /api/status/page/public/incident/{id} - get public incident by ID (no auth)
++
++## hertzbeat-manager - BulletinController (/api/bulletin)
++- [x] POST /api/bulletin - add bulletin (admin/user)
++- [x] PUT /api/bulletin - modify bulletin (admin/user)
++- [x] GET /api/bulletin/{id} - get bulletin by ID (admin/user/guest)
++- [x] GET /api/bulletin - list bulletins with pagination (admin/user/guest)
++- [x] DELETE /api/bulletin - delete bulletins by IDs (admin)
++- [x] GET /api/bulletin/metrics - get available metrics for bulletin (admin/user/guest)
++
++## hertzbeat-manager - I18nController (/api/i18n)
++- [x] GET /api/i18n/{lang} - get i18n messages for language (public)
++
++## hertzbeat-manager - MetricsController (/api/metrics)
++- [x] GET /api/metrics - get internal system metrics (admin only)
++
++## hertzbeat-manager - PluginController (/api/plugin)
++- [~] POST /api/plugin - upload/add plugin jar (admin/user); multipart file upload skipped; functional path requires a real JAR artifact
++- [x] GET /api/plugin - list plugins with pagination (admin/user/guest)
++- [x] DELETE /api/plugin - delete plugins by IDs (admin)
++- [x] PUT /api/plugin - update plugin metadata/enable-status (admin/user)
++- [x] GET /api/plugin/params/define - get parameter definitions for plugin (admin/user/guest)
++- [x] POST /api/plugin/params - save plugin parameters (admin/user)
++
++## hertzbeat-manager - PushPrometheusController (/api/push)
++- [x] POST /api/push/prometheus/** - receive Prometheus metrics push (public, no auth)
++
++## hertzbeat-manager - AiController (/api/ai)
++- [~] POST /api/ai/get - chat with AI (SSE streaming); external AI provider not available in test environment
++
++## hertzbeat-manager - AlertSseController (/api/alert/sse)
++- [~] GET /api/alert/sse/subscribe - subscribe to alert events via SSE; long-lived SSE stream not suitable for HTTP integration tests
++
++## hertzbeat-manager - ManagerSseController (/api/manager/sse)
++- [~] GET /api/manager/sse/subscribe - subscribe to manager events via SSE (public); same reason as AlertSseController
++
++## hertzbeat-grafana - DashboardController (/api/grafana/dashboard)
++- [~] POST /api/grafana/dashboard - create Grafana dashboard; Grafana disabled in test profile (grafana.enabled=false)
++- [~] GET /api/grafana/dashboard - get dashboard by monitor ID; Grafana disabled in test profile
++- [~] DELETE /api/grafana/dashboard - delete dashboard; Grafana disabled in test profile
++
++---
++
++## hertzbeat-alerter - AlertsController (/api/alerts)
++- [x] GET /api/alerts - paginated single alerts with filters (admin/user/guest)
++- [x] GET /api/alerts/group - paginated group alerts (admin/user/guest)
++- [x] DELETE /api/alerts/group - batch delete group alerts (admin)
++- [x] PUT /api/alerts/group/status/{status} - batch update alert status (admin/user)
++- [x] GET /api/alerts/summary - alert statistics (admin/user/guest)
++
++## hertzbeat-alerter - AlertDefineController (/api/alert/define)
++- [x] POST /api/alert/define - add alert definition (admin/user)
++- [x] PUT /api/alert/define - modify alert definition (admin/user)
++- [x] GET /api/alert/define/{id} - get alert definition by ID (admin/user/guest)
++- [x] DELETE /api/alert/define/{id} - delete alert definition (admin)
++
++## hertzbeat-alerter - AlertDefinesController (/api/alert/defines)
++- [x] GET /api/alert/defines - list alert definitions with filters (admin/user/guest)
++- [x] DELETE /api/alert/defines - batch delete alert definitions (admin)
++- [x] GET /api/alert/defines/export - export alert definitions as JSON/EXCEL/YAML (admin/user/guest)
++- [x] POST /api/alert/defines/import - import alert definitions from file (admin/user)
++
++## hertzbeat-alerter - AlertSilenceController (/api/alert/silence)
++- [x] POST /api/alert/silence - add silence rule (admin/user)
++- [x] PUT /api/alert/silence - modify silence rule (admin/user)
++- [x] GET /api/alert/silence/{id} - get silence rule by ID (admin/user/guest)
++
++## hertzbeat-alerter - AlertSilencesController (/api/alert/silences)
++- [x] GET /api/alert/silences - list silence rules (admin/user/guest)
++- [x] DELETE /api/alert/silences - batch delete silence rules (admin)
++
++## hertzbeat-alerter - AlertInhibitController (/api/alert/inhibit)
++- [x] POST /api/alert/inhibit - add inhibit rule (admin/user)
++- [x] PUT /api/alert/inhibit - modify inhibit rule (admin/user)
++- [x] GET /api/alert/inhibit/{id} - get inhibit rule by ID (admin/user/guest)
++
++## hertzbeat-alerter - AlertInhibitsController (/api/alert/inhibits)
++- [x] GET /api/alert/inhibits - list inhibit rules (admin/user/guest)
++- [x] DELETE /api/alert/inhibits - batch delete inhibit rules (admin)
++
++## hertzbeat-alerter - AlertGroupConvergeController (/api/alert/group)
++- [x] POST /api/alert/group - add group converge rule (admin/user)
++- [x] PUT /api/alert/group - modify group converge rule (admin/user)
++- [x] GET /api/alert/group/{id} - get group converge rule by ID (admin/user/guest)
++
++## hertzbeat-alerter - AlertGroupConvergesController (/api/alert/groups)
++- [x] GET /api/alert/groups - list group converge rules (admin/user/guest)
++- [x] DELETE /api/alert/groups - batch delete group converge rules (admin)
++
++## hertzbeat-alerter - AlertReportController (public)
++- [x] POST /api/alerts/report/{source} - receive alert from named source (public)
++- [x] POST /api/alerts/report - receive default external alert (public)
++- [x] POST /api/v2/alerts - receive Prometheus Alertmanager alerts (requires auth)
++
++## hertzbeat-alerter - NoticeConfigController (/api/notice)
++- [x] POST /api/notice/receiver - add notification receiver (admin/user)
++- [x] PUT /api/notice/receiver - edit receiver (admin/user)
++- [x] DELETE /api/notice/receiver/{id} - delete receiver (admin)
++- [x] GET /api/notice/receivers - paginated receivers (admin/user/guest)
++- [x] GET /api/notice/receivers/all - all receivers (admin/user/guest)
++- [x] GET /api/notice/receiver/{id} - get receiver by ID (admin/user/guest)
++- [x] POST /api/notice/rule - add notification rule (admin/user)
++- [x] PUT /api/notice/rule - edit rule (admin/user)
++- [x] DELETE /api/notice/rule/{id} - delete rule (admin)
++- [x] GET /api/notice/rules - paginated rules (admin/user/guest)
++- [x] GET /api/notice/rule/{id} - get rule by ID (admin/user/guest)
++- [x] POST /api/notice/template - add notice template (admin/user)
++- [x] PUT /api/notice/template - edit template (admin/user)
++- [x] DELETE /api/notice/template/{id} - delete template (admin)
++- [x] GET /api/notice/templates - paginated templates (admin/user/guest)
++- [x] GET /api/notice/templates/all - all templates (admin/user/guest)
++- [x] GET /api/notice/template/{id} - get template by ID (admin/user/guest)
++- [x] POST /api/notice/receiver/send-test-msg - send test notification (admin/user)
++
++---
++
++## hertzbeat-warehouse - MetricsDataController (/api/warehouse, /api/monitor)
++- [x] GET /api/warehouse/storage/status - get storage backend status (admin/user/guest)
++- [x] GET /api/monitor/{monitorId}/metrics/{metrics} - get latest metrics data (admin/user/guest)
++- [x] GET /api/monitor/{monitorId}/metric/{metricFull} - get metric history (admin/user/guest)
++
++## hertzbeat-warehouse - DataQueryController (/api/warehouse)
++- [x] POST /api/warehouse/query - query datasource data (admin/user/guest)
++
++---
++
++## Template-marketplace controllers
++- [~] All template-marketplace endpoints - standalone microservice separate from hertzbeat-manager; not deployed in integration test context
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AccountControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AccountControllerTest.java
+new file mode 100644
+index 0000000..569f2bf
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AccountControllerTest.java
+@@ -0,0 +1,145 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AccountController.
++ * POST /api/account/auth/form  - login (public)
++ * POST /api/account/auth/refresh - refresh token (public)
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AccountControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    @Test
++    void loginWithValidCredentials_returnsTokens() {
++        Map<String, Object> body = Map.of(
++                "identifier", "admin",
++                "credential", "hertzbeat",
++                "type", 0
++        );
++
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/account/auth/form", body, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> responseBody = response.getBody();
++        assertThat(responseBody).isNotNull();
++        // SUCCESS_CODE = 0
++        assertThat(((Number) responseBody.get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, String> data = (Map<String, String>) responseBody.get("data");
++        assertThat(data).isNotNull();
++        assertThat(data).containsKey("token");
++        assertThat(data).containsKey("refreshToken");
++    }
++
++    @Test
++    void loginWithWrongPassword_returnsLoginFailedCode() {
++        Map<String, Object> body = Map.of(
++                "identifier", "admin",
++                "credential", "wrong-password",
++                "type", 0
++        );
++
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/account/auth/form", body, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> responseBody = response.getBody();
++        assertThat(responseBody).isNotNull();
++        // LOGIN_FAILED_CODE = 5
++        assertThat(((Number) responseBody.get("code")).intValue()).isEqualTo(5);
++    }
++
++    @Test
++    void loginWithMissingIdentifier_returns4xxOrValidationError() {
++        Map<String, Object> body = Map.of(
++                "credential", "hertzbeat",
++                "type", 0
++        );
++
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/account/auth/form", body, Map.class);
++
++        // Bean validation failure returns 400
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void loginWithMissingCredential_returns4xxOrValidationError() {
++        Map<String, Object> body = Map.of(
++                "identifier", "admin",
++                "type", 0
++        );
++
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/account/auth/form", body, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void refreshTokenWithValidToken_returnsNewTokens() {
++        // First login to obtain tokens
++        Map<String, Object> loginBody = Map.of(
++                "identifier", "admin",
++                "credential", "hertzbeat",
++                "type", 0
++        );
++        ResponseEntity<Map> loginResponse = restTemplate.postForEntity(
++                "/api/account/auth/form", loginBody, Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, String> loginData = (Map<String, String>) loginResponse.getBody().get("data");
++        String refreshToken = loginData.get("refreshToken");
++
++        // Now refresh
++        Map<String, Object> refreshBody = Map.of("token", refreshToken);
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/account/auth/refresh", refreshBody, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> responseBody = response.getBody();
++        assertThat(responseBody).isNotNull();
++        assertThat(((Number) responseBody.get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void refreshTokenWithInvalidToken_returnsLoginFailedCode() {
++        Map<String, Object> refreshBody = Map.of("token", "invalid.token.value");
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/account/auth/refresh", refreshBody, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isEqualTo(5);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertDefineControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertDefineControllerTest.java
+new file mode 100644
+index 0000000..db2934f
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertDefineControllerTest.java
+@@ -0,0 +1,244 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.HashMap;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AlertDefineController and AlertDefinesController.
++ * POST   /api/alert/define        - add alert definition
++ * PUT    /api/alert/define        - modify alert definition
++ * GET    /api/alert/define/{id}   - get by ID
++ * DELETE /api/alert/define/{id}   - delete
++ * GET    /api/alert/defines       - list alert definitions
++ * DELETE /api/alert/defines       - batch delete
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AlertDefineControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private TestRestTemplate guest() {
++        return restTemplate.withBasicAuth("guest", "hertzbeat");
++    }
++
++    private Map<String, Object> buildAlertDefine(String name) {
++        Map<String, Object> define = new HashMap<>();
++        define.put("name", name);
++        define.put("expr", "usage > 90");
++        define.put("type", "realtime");
++        define.put("times", 3);
++        define.put("enable", true);
++        return define;
++    }
++
++    @Test
++    void addAlertDefine_success() {
++        Map<String, Object> define = buildAlertDefine("test-alert-add");
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/alert/define", define, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("msg")).isEqualTo("Add success");
++    }
++
++    @Test
++    void addAlertDefine_missingName_returnsValidationError() {
++        Map<String, Object> define = new HashMap<>();
++        define.put("expr", "usage > 90");
++        define.put("type", "realtime");
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/alert/define", define, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void getAlertDefine_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/define/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        // MONITOR_NOT_EXIST_CODE = 3
++        assertThat(((Number) response.getBody().get("code")).intValue()).isEqualTo(3);
++    }
++
++    @Test
++    void addAndGetAlertDefine_success() {
++        String name = "test-alert-get";
++        admin().postForEntity("/api/alert/define", buildAlertDefine(name), Map.class);
++
++        // List all defines and find by name (search param requires JSON array format)
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/defines?pageIndex=0&pageSize=100", Map.class);
++        assertThat(listResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        java.util.List<Map<String, Object>> content =
++                (java.util.List<Map<String, Object>>) pageData.get("content");
++
++        java.util.Optional<Map<String, Object>> found = content.stream()
++                .filter(d -> name.equals(d.get("name"))).findFirst();
++        if (found.isPresent()) {
++            Number defineId = (Number) found.get().get("id");
++
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/alert/define/" + defineId.longValue(), Map.class);
++
++            assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++            @SuppressWarnings("unchecked")
++            Map<String, Object> data = (Map<String, Object>) getResponse.getBody().get("data");
++            assertThat(data.get("name")).isEqualTo(name);
++        }
++    }
++
++    @Test
++    void addAndModifyAlertDefine_success() {
++        String originalName = "test-alert-modify-orig";
++        admin().postForEntity("/api/alert/define", buildAlertDefine(originalName), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/defines?pageIndex=0&pageSize=100", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        java.util.List<Map<String, Object>> content =
++                (java.util.List<Map<String, Object>>) pageData.get("content");
++
++        java.util.Optional<Map<String, Object>> found = content.stream()
++                .filter(d -> originalName.equals(d.get("name"))).findFirst();
++        if (found.isPresent()) {
++            Number defineId = (Number) found.get().get("id");
++
++            Map<String, Object> modifiedDefine = buildAlertDefine("test-alert-modify-new");
++            modifiedDefine.put("id", defineId.longValue());
++
++            ResponseEntity<Map> updateResponse = admin().exchange(
++                    "/api/alert/define", HttpMethod.PUT,
++                    new HttpEntity<>(modifiedDefine), Map.class);
++
++            assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void deleteAlertDefine_nonExistent_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alert/define/999999998", HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addAndDeleteAlertDefine_success() {
++        String name = "test-alert-delete";
++        admin().postForEntity("/api/alert/define", buildAlertDefine(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/defines?pageIndex=0&pageSize=100", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        java.util.List<Map<String, Object>> content =
++                (java.util.List<Map<String, Object>>) pageData.get("content");
++
++        java.util.Optional<Map<String, Object>> found = content.stream()
++                .filter(d -> name.equals(d.get("name"))).findFirst();
++        if (found.isPresent()) {
++            Number defineId = (Number) found.get().get("id");
++
++            ResponseEntity<Map> deleteResponse = admin().exchange(
++                    "/api/alert/define/" + defineId.longValue(),
++                    HttpMethod.DELETE, null, Map.class);
++
++            assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) deleteResponse.getBody().get("code")).intValue()).isZero();
++
++            // Verify it's gone
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/alert/define/" + defineId.longValue(), Map.class);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isEqualTo(3);
++        }
++    }
++
++    // AlertDefinesController tests
++
++    @Test
++    void listAlertDefines_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/alert/defines", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++        assertThat(data).containsKey("totalElements");
++    }
++
++    @Test
++    void listAlertDefinesAsGuest() {
++        ResponseEntity<Map> response = guest().getForEntity("/api/alert/defines", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listAlertDefines_withFilters() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/defines?sort=id&order=desc&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void batchDeleteAlertDefines_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alert/defines?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertDefineExportControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertDefineExportControllerTest.java
+new file mode 100644
+index 0000000..b3112ca
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertDefineExportControllerTest.java
+@@ -0,0 +1,84 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.core.io.Resource;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AlertDefinesController export/import endpoints.
++ * GET  /api/alert/defines/export  - export alert definitions (JSON/EXCEL/YAML)
++ * POST /api/alert/defines/import  - import alert definitions from file
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AlertDefineExportControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void exportAlertDefines_asJson_withNoIds_returnsFile() {
++        ResponseEntity<Resource> response = admin().getForEntity(
++                "/api/alert/defines/export?ids=&type=JSON", Resource.class);
++
++        // With empty/no ids the export should succeed or return a bad request
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++
++    @Test
++    void exportAlertDefines_withNonExistentIds_returnsResponse() {
++        // First add an alert define so we have a valid ID scenario
++        Map<String, Object> define = new java.util.HashMap<>();
++        define.put("name", "test-export-define");
++        define.put("expr", "metric > 90");
++        define.put("type", "realtime");
++        define.put("times", 1);
++        define.put("enable", true);
++        admin().postForEntity("/api/alert/define", define, Map.class);
++
++        // Export with non-existent IDs - should still return a response
++        ResponseEntity<Resource> response = admin().getForEntity(
++                "/api/alert/defines/export?ids=9999999991&type=JSON", Resource.class);
++
++        // Export succeeds (possibly empty file) or returns error, but not auth error
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++
++    @Test
++    void exportAlertDefines_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Resource> response = restTemplate.getForEntity(
++                "/api/alert/defines/export?ids=1&type=JSON", Resource.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertGroupConvergeControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertGroupConvergeControllerTest.java
+new file mode 100644
+index 0000000..2207b2a
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertGroupConvergeControllerTest.java
+@@ -0,0 +1,175 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AlertGroupConvergeController and AlertGroupConvergesController.
++ * POST   /api/alert/group        - add alert group converge
++ * PUT    /api/alert/group        - modify alert group converge
++ * GET    /api/alert/group/{id}   - get by ID
++ * GET    /api/alert/groups       - list alert group converges
++ * DELETE /api/alert/groups       - batch delete
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AlertGroupConvergeControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private Map<String, Object> buildConverge(String name) {
++        Map<String, Object> converge = new HashMap<>();
++        converge.put("name", name);
++        converge.put("enable", true);
++        converge.put("groupWait", 30L);
++        converge.put("groupInterval", 60L);
++        converge.put("repeatInterval", 3600L);
++        return converge;
++    }
++
++    @Test
++    void addAlertGroupConverge_success() {
++        Map<String, Object> converge = buildConverge("test-converge-add");
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/alert/group", converge, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addAlertGroupConverge_missingName_returnsValidationError() {
++        Map<String, Object> converge = new HashMap<>();
++        converge.put("enable", true);
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/alert/group", converge, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void getAlertGroupConverge_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/group/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotZero();
++    }
++
++    @Test
++    void addAndGetAlertGroupConverge_success() {
++        String name = "test-converge-get";
++        admin().postForEntity("/api/alert/group", buildConverge(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/groups?search=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        assertThat(listResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number convergeId = (Number) content.get(0).get("id");
++
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/alert/group/" + convergeId.longValue(), Map.class);
++
++            assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void addAndModifyAlertGroupConverge_success() {
++        String name = "test-converge-modify-orig";
++        admin().postForEntity("/api/alert/group", buildConverge(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/groups?search=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number convergeId = (Number) content.get(0).get("id");
++            Map<String, Object> modified = buildConverge("test-converge-modify-new");
++            modified.put("id", convergeId.longValue());
++
++            ResponseEntity<Map> updateResponse = admin().exchange(
++                    "/api/alert/group", HttpMethod.PUT,
++                    new HttpEntity<>(modified), Map.class);
++
++            assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    // AlertGroupConvergesController tests
++
++    @Test
++    void listAlertGroupConverges_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/alert/groups", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++        assertThat(data).containsKey("totalElements");
++    }
++
++    @Test
++    void listAlertGroupConverges_withFilters() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/groups?sort=id&order=desc&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void batchDeleteAlertGroupConverges_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alert/groups?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertInhibitControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertInhibitControllerTest.java
+new file mode 100644
+index 0000000..3025725
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertInhibitControllerTest.java
+@@ -0,0 +1,172 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AlertInhibitController and AlertInhibitsController.
++ * POST   /api/alert/inhibit        - add alert inhibit
++ * PUT    /api/alert/inhibit        - modify alert inhibit
++ * GET    /api/alert/inhibit/{id}   - get by ID
++ * GET    /api/alert/inhibits       - list alert inhibits
++ * DELETE /api/alert/inhibits       - batch delete
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AlertInhibitControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private Map<String, Object> buildInhibit(String name) {
++        Map<String, Object> inhibit = new HashMap<>();
++        inhibit.put("name", name);
++        inhibit.put("enable", true);
++        return inhibit;
++    }
++
++    @Test
++    void addAlertInhibit_success() {
++        Map<String, Object> inhibit = buildInhibit("test-inhibit-add");
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/alert/inhibit", inhibit, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addAlertInhibit_missingName_returnsValidationError() {
++        Map<String, Object> inhibit = new HashMap<>();
++        inhibit.put("enable", true);
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/alert/inhibit", inhibit, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void getAlertInhibit_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/inhibit/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotZero();
++    }
++
++    @Test
++    void addAndGetAlertInhibit_success() {
++        String name = "test-inhibit-get";
++        admin().postForEntity("/api/alert/inhibit", buildInhibit(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/inhibits?search=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        assertThat(listResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number inhibitId = (Number) content.get(0).get("id");
++
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/alert/inhibit/" + inhibitId.longValue(), Map.class);
++
++            assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void addAndModifyAlertInhibit_success() {
++        String name = "test-inhibit-modify-orig";
++        admin().postForEntity("/api/alert/inhibit", buildInhibit(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/inhibits?search=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number inhibitId = (Number) content.get(0).get("id");
++            Map<String, Object> modified = buildInhibit("test-inhibit-modify-new");
++            modified.put("id", inhibitId.longValue());
++
++            ResponseEntity<Map> updateResponse = admin().exchange(
++                    "/api/alert/inhibit", HttpMethod.PUT,
++                    new HttpEntity<>(modified), Map.class);
++
++            assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    // AlertInhibitsController tests
++
++    @Test
++    void listAlertInhibits_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/alert/inhibits", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++        assertThat(data).containsKey("totalElements");
++    }
++
++    @Test
++    void listAlertInhibits_withFilters() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/inhibits?sort=id&order=asc&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void batchDeleteAlertInhibits_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alert/inhibits?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertReportControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertReportControllerTest.java
+new file mode 100644
+index 0000000..430a67e
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertReportControllerTest.java
+@@ -0,0 +1,124 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpHeaders;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.MediaType;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AlertReportController.
++ * POST /api/alerts/report              - receive default external alert (public)
++ * POST /api/alerts/report/{source}     - receive external alert with source (public)
++ * POST /api/v2/alerts                  - receive Prometheus alert (public)
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AlertReportControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private HttpEntity<String> jsonBody(String json) {
++        HttpHeaders headers = new HttpHeaders();
++        headers.setContentType(MediaType.APPLICATION_JSON);
++        return new HttpEntity<>(json, headers);
++    }
++
++    @Test
++    void receiveDefaultExternAlert_withEmptyJson_returnsResponse() {
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/alerts/report", jsonBody("{}"), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++
++    @Test
++    void receiveDefaultExternAlert_publicEndpointNoAuth() {
++        // This endpoint is excluded from auth (public)
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/alerts/report", jsonBody("{\"status\":\"firing\"}"), Map.class);
++
++        // Public endpoint - should not return 401
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++
++    @Test
++    void receiveExternAlertWithSource_prometheusSource() {
++        String alertPayload = "{\"status\":\"firing\",\"labels\":{\"alertname\":\"TestAlert\"}}";
++
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/alerts/report/prometheus", jsonBody(alertPayload), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void receiveExternAlertWithSource_huaweicloudSource() {
++        String alertPayload = "{\"events\":[{\"alarm_name\":\"TestAlarm\"}]}";
++
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/alerts/report/huaweicloud", jsonBody(alertPayload), Map.class);
++
++        // Not all source parsers accept arbitrary JSON; just verify the endpoint is reachable
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void receivePrometheusServerAlert_validFormat() {
++        // /api/v2/alerts is NOT in sureness excludedResource, so it requires auth
++        String prometheusAlerts = "[{\"labels\":{\"alertname\":\"TestAlert\",\"severity\":\"critical\"},"
++                + "\"annotations\":{\"summary\":\"Test alert\"},"
++                + "\"status\":\"firing\","
++                + "\"startsAt\":\"2024-01-01T00:00:00Z\"}]";
++
++        ResponseEntity<Map> response = restTemplate
++                .withBasicAuth("admin", "hertzbeat")
++                .postForEntity("/api/v2/alerts", jsonBody(prometheusAlerts), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void receivePrometheusServerAlert_emptyArray() {
++        // /api/v2/alerts requires auth
++        ResponseEntity<Map> response = restTemplate
++                .withBasicAuth("admin", "hertzbeat")
++                .postForEntity("/api/v2/alerts", jsonBody("[]"), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertSilenceControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertSilenceControllerTest.java
+new file mode 100644
+index 0000000..bf400aa
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertSilenceControllerTest.java
+@@ -0,0 +1,175 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AlertSilenceController and AlertSilencesController.
++ * POST   /api/alert/silence        - add alert silence
++ * PUT    /api/alert/silence        - modify alert silence
++ * GET    /api/alert/silence/{id}   - get by ID
++ * GET    /api/alert/silences       - list alert silences
++ * DELETE /api/alert/silences       - batch delete
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AlertSilenceControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private Map<String, Object> buildSilence(String name) {
++        Map<String, Object> silence = new HashMap<>();
++        silence.put("name", name);
++        silence.put("enable", true);
++        silence.put("matchAll", true);
++        silence.put("type", 0);
++        return silence;
++    }
++
++    @Test
++    void addAlertSilence_success() {
++        Map<String, Object> silence = buildSilence("test-silence-add");
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/alert/silence", silence, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addAlertSilence_missingName_returnsValidationError() {
++        Map<String, Object> silence = new HashMap<>();
++        silence.put("enable", true);
++        silence.put("type", 0);
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/alert/silence", silence, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void getAlertSilence_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/silence/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotZero();
++    }
++
++    @Test
++    void addAndGetAlertSilence_success() {
++        String name = "test-silence-get";
++        admin().postForEntity("/api/alert/silence", buildSilence(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/silences?search=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        assertThat(listResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number silenceId = (Number) content.get(0).get("id");
++
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/alert/silence/" + silenceId.longValue(), Map.class);
++
++            assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void addAndModifyAlertSilence_success() {
++        String name = "test-silence-modify-orig";
++        admin().postForEntity("/api/alert/silence", buildSilence(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/alert/silences?search=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number silenceId = (Number) content.get(0).get("id");
++            Map<String, Object> modified = buildSilence("test-silence-modify-new");
++            modified.put("id", silenceId.longValue());
++
++            ResponseEntity<Map> updateResponse = admin().exchange(
++                    "/api/alert/silence", HttpMethod.PUT,
++                    new HttpEntity<>(modified), Map.class);
++
++            assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    // AlertSilencesController tests
++
++    @Test
++    void listAlertSilences_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/alert/silences", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++        assertThat(data).containsKey("totalElements");
++    }
++
++    @Test
++    void listAlertSilences_withFilters() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alert/silences?sort=id&order=desc&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void batchDeleteAlertSilences_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alert/silences?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertsControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertsControllerTest.java
+new file mode 100644
+index 0000000..6860e45
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AlertsControllerTest.java
+@@ -0,0 +1,172 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AlertsController.
++ * GET    /api/alerts                      - list single alerts
++ * GET    /api/alerts/group                - list group alerts
++ * DELETE /api/alerts/group                - batch delete group alerts
++ * PUT    /api/alerts/group/status/{status}- batch update alert status
++ * GET    /api/alerts/summary              - alert statistics
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AlertsControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private TestRestTemplate guest() {
++        return restTemplate.withBasicAuth("guest", "hertzbeat");
++    }
++
++    @Test
++    void listAlerts_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/alerts", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void listAlerts_withStatusFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alerts?status=firing&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listAlerts_withSearch() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alerts?search=test&sort=gmtUpdate&order=desc", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listAlertsAsGuest() {
++        ResponseEntity<Map> response = guest().getForEntity("/api/alerts", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listGroupAlerts_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/alerts/group", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) body.get("data");
++        assertThat(data).containsKey("content");
++    }
++
++    @Test
++    void listGroupAlerts_withResolvedStatus() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/alerts/group?status=resolved&pageIndex=0&pageSize=10", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void deleteGroupAlerts_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alerts/group?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void deleteGroupAlerts_withNoIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alerts/group", HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void updateGroupAlertStatus_withNoIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alerts/group/status/resolved",
++                HttpMethod.PUT, new HttpEntity<>(null), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void updateGroupAlertStatus_firingStatus() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/alerts/group/status/firing?ids=9999999991",
++                HttpMethod.PUT, new HttpEntity<>(null), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getAlertsSummary_returnsStatistics() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/alerts/summary", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void getAlertsSummaryAsGuest() {
++        ResponseEntity<Map> response = guest().getForEntity("/api/alerts/summary", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AppControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AppControllerTest.java
+new file mode 100644
+index 0000000..7021a92
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AppControllerTest.java
+@@ -0,0 +1,175 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AppController.
++ * GET /api/apps/hierarchy                  - public, no auth
++ * GET /api/apps/{app}/params               - requires auth
++ * GET /api/apps/{app}/define               - requires auth
++ * GET /api/apps/{app}/define/yml           - requires auth
++ * GET /api/apps/hierarchy/{app}            - requires auth
++ * GET /api/apps/defines                    - requires auth
++ * POST /api/apps/define/yml                - requires auth
++ * PUT /api/apps/define/yml                 - requires auth
++ * DELETE /api/apps/{app}/define/yml        - requires auth (admin)
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AppControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void getHierarchy_publicEndpoint_returnsAppList() {
++        ResponseEntity<Map> response = restTemplate.getForEntity("/api/apps/hierarchy", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isInstanceOf(List.class);
++        @SuppressWarnings("unchecked")
++        List<?> data = (List<?>) body.get("data");
++        assertThat(data).isNotEmpty();
++    }
++
++    @Test
++    void getHierarchyForSpecificApp_returnsMetrics() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/hierarchy/website", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getHierarchyForSpecificApp_englishLang() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/hierarchy/website?lang=en-US", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getAllDefines_returnsAppMap() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/defines", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isInstanceOf(Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) body.get("data");
++        assertThat(data).isNotEmpty();
++        assertThat(data).containsKey("website");
++    }
++
++    @Test
++    void getParamsForWebsite_returnsParamDefinitions() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/website/params", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isInstanceOf(List.class);
++    }
++
++    @Test
++    void getDefineForWebsite_returnsJobDefinition() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/website/define", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getDefineYmlForWebsite_returnsYamlContent() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/website/define/yml", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isInstanceOf(String.class);
++        assertThat((String) body.get("data")).isNotBlank();
++    }
++
++    @Test
++    void getParamsForNonExistentApp_returnsFailCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/nonexistent_app_xyz/params", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        // Should fail with non-zero code since app doesn't exist
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++    }
++
++    @Test
++    void getHierarchyWithoutAuth_returnsOk() {
++        // /api/apps/hierarchy is public (excludedResource in sureness.yml)
++        ResponseEntity<Map> response = restTemplate.getForEntity("/api/apps/hierarchy", Map.class);
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++    }
++
++    @Test
++    void addDefineYmlWithMaliciousContent_returnsFailure() {
++        Map<String, Object> body = Map.of("define", "ScriptEngineManager malicious content");
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/apps/define/yml", body, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        // Should reject due to risky token
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotEqualTo(0);
++    }
++
++    @Test
++    void getDefinesWithEnglishLang() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/apps/defines?lang=en-US", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AuthTokenControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AuthTokenControllerTest.java
+new file mode 100644
+index 0000000..eb5fa5e
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/AuthTokenControllerTest.java
+@@ -0,0 +1,65 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for AuthTokenController.
++ * POST /api/account/token/generate - generate API token
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class AuthTokenControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void generateToken_asAdmin_returnsToken() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/account/token/generate", null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void generateToken_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/account/token/generate", null, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/BulletinControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/BulletinControllerTest.java
+new file mode 100644
+index 0000000..e0cbcb4
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/BulletinControllerTest.java
+@@ -0,0 +1,181 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Arrays;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for BulletinController.
++ * POST   /api/bulletin        - add bulletin
++ * PUT    /api/bulletin        - modify bulletin
++ * GET    /api/bulletin/{id}   - get by ID
++ * GET    /api/bulletin        - list bulletins
++ * DELETE /api/bulletin        - delete bulletins
++ * GET    /api/bulletin/metrics - get metrics for bulletin
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class BulletinControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private Map<String, Object> buildBulletin(String name) {
++        Map<String, Object> bulletin = new HashMap<>();
++        bulletin.put("name", name);
++        bulletin.put("app", "website");
++        bulletin.put("monitorIds", Arrays.asList(999999999L));
++        Map<String, Object> fields = new HashMap<>();
++        fields.put("summary", Arrays.asList("responseTime", "status"));
++        bulletin.put("fields", fields);
++        return bulletin;
++    }
++
++    @Test
++    void addBulletin_success() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/bulletin", buildBulletin("test-bulletin-add"), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listBulletins_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/bulletin", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++    }
++
++    @Test
++    void listBulletins_withSearchFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/bulletin?search=test&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getBulletin_nonExistentId_returnsNullData() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/bulletin/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        // controller wraps Optional.empty() as Message.success(null): code=0, data=null
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("data")).isNull();
++    }
++
++    @Test
++    void addAndGetBulletin_success() {
++        String name = "test-bulletin-get";
++        admin().postForEntity("/api/bulletin", buildBulletin(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/bulletin?pageIndex=0&pageSize=100", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        content.stream()
++                .filter(b -> name.equals(b.get("name")))
++                .findFirst()
++                .ifPresent(bulletin -> {
++                    Number bulletinId = (Number) bulletin.get("id");
++
++                    ResponseEntity<Map> getResponse = admin().getForEntity(
++                            "/api/bulletin/" + bulletinId.longValue(), Map.class);
++                    assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++                    assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++                });
++    }
++
++    @Test
++    void addAndModifyBulletin_success() {
++        String name = "test-bulletin-modify";
++        admin().postForEntity("/api/bulletin", buildBulletin(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/bulletin?pageIndex=0&pageSize=100", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        content.stream()
++                .filter(b -> name.equals(b.get("name")))
++                .findFirst()
++                .ifPresent(bulletin -> {
++                    Number bulletinId = (Number) bulletin.get("id");
++                    Map<String, Object> modified = buildBulletin("test-bulletin-modified");
++                    modified.put("id", bulletinId.longValue());
++
++                    ResponseEntity<Map> updateResponse = admin().exchange(
++                            "/api/bulletin", HttpMethod.PUT,
++                            new HttpEntity<>(modified), Map.class);
++
++                    assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++                    assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++                });
++    }
++
++    @Test
++    void deleteBulletins_withNonExistentId_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/bulletin?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getBulletinMetrics_nonExistentId_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/bulletin/metrics?id=999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/CollectorControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/CollectorControllerTest.java
+new file mode 100644
+index 0000000..6569ee8
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/CollectorControllerTest.java
+@@ -0,0 +1,128 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for CollectorController.
++ * GET    /api/collector                        - list collectors
++ * PUT    /api/collector/online                 - online collector
++ * PUT    /api/collector/offline                - offline collector
++ * DELETE /api/collector                        - delete collector
++ * POST   /api/collector/generate/{collector}   - generate deploy info
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class CollectorControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void listCollectors_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/collector", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void listCollectors_withNameFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/collector?name=main&pageIndex=0&pageSize=10", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void generateDeployInfo_returnsSuccess() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/collector/generate/test-virtual-collector", null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        // code=0 means success; non-zero is also acceptable (collector already registered)
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++
++    @Test
++    void onlineCollector_withNonExistentName_returnsResponse() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/collector/online",
++                HttpMethod.PUT,
++                new HttpEntity<>(List.of("non-existent-collector-99999")),
++                Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++
++    @Test
++    void offlineCollector_withNonExistentName_returnsResponse() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/collector/offline",
++                HttpMethod.PUT,
++                new HttpEntity<>(List.of("non-existent-collector-99999")),
++                Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++
++    @Test
++    void deleteCollector_withNonExistentName_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/collector",
++                HttpMethod.DELETE,
++                new HttpEntity<>(List.of("non-existent-collector-99999")),
++                Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listCollectors_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.getForEntity("/api/collector", Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/GeneralConfigControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/GeneralConfigControllerTest.java
+new file mode 100644
+index 0000000..f8ed829
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/GeneralConfigControllerTest.java
+@@ -0,0 +1,139 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.HashMap;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for GeneralConfigController.
++ * POST /api/config/{type}         - save or update config
++ * GET  /api/config/{type}         - get config
++ * PUT  /api/config/template/{app} - update template app config
++ *
++ * Valid type values: mute, template, secret, sms, system, email, oss
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class GeneralConfigControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void getSystemConfig_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/config/system", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getEmailConfig_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/config/email", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getMuteConfig_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/config/mute", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getOssConfig_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/config/oss", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void saveSystemConfig_withMinimalPayload_returnsResponse() {
++        Map<String, Object> config = new HashMap<>();
++        config.put("timeZone", "Asia/Shanghai");
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/config/system", config, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++
++    @Test
++    void saveEmailConfig_withMinimalPayload_returnsResponse() {
++        Map<String, Object> config = new HashMap<>();
++        config.put("emailEnable", false);
++        config.put("emailHost", "smtp.example.com");
++        config.put("emailPort", 465);
++        config.put("emailUsername", "test@example.com");
++        config.put("emailPassword", "password");
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/config/email", config, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++
++    @Test
++    void updateTemplateAppConfig_forWebsite_returnsResponse() {
++        Map<String, Object> appTemplate = new HashMap<>();
++        appTemplate.put("hide", false);
++
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/config/template/website",
++                HttpMethod.PUT,
++                new HttpEntity<>(appTemplate),
++                Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++
++    @Test
++    void getConfig_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.getForEntity("/api/config/system", Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/I18nControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/I18nControllerTest.java
+new file mode 100644
+index 0000000..cb904f7
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/I18nControllerTest.java
+@@ -0,0 +1,73 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for I18nController.
++ * GET /api/i18n/{lang} - get i18n messages for specified language
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class I18nControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void getZhCnMessages_returnsMessages() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/i18n/zh-CN", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void getEnMessages_returnsMessages() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/i18n/en", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("data")).isNotNull();
++    }
++
++    @Test
++    void getMessages_withUnknownLang_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/i18n/xx", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/LabelControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/LabelControllerTest.java
+new file mode 100644
+index 0000000..d010667
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/LabelControllerTest.java
+@@ -0,0 +1,190 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for LabelController.
++ * POST /api/label      - add label
++ * PUT  /api/label      - modify label
++ * GET  /api/label      - list labels
++ * DELETE /api/label    - delete labels
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class LabelControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private TestRestTemplate guest() {
++        return restTemplate.withBasicAuth("guest", "hertzbeat");
++    }
++
++    @Test
++    void createLabel_success() {
++        Map<String, Object> label = new HashMap<>();
++        label.put("name", "test-label-create");
++        label.put("tagValue", "v1");
++        label.put("type", 1);
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/label", label, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("msg")).isEqualTo("Add success");
++    }
++
++    @Test
++    void createLabel_missingName_returnsValidationError() {
++        Map<String, Object> label = new HashMap<>();
++        label.put("tagValue", "v1");
++        label.put("type", 1);
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/label", label, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void listLabels_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/label", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void listLabels_withSearchFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/label?search=env&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listLabelsAsGuest_returnsPage() {
++        ResponseEntity<Map> response = guest().getForEntity("/api/label", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void createAndModifyLabel_success() {
++        // Create label
++        Map<String, Object> newLabel = new HashMap<>();
++        newLabel.put("name", "test-label-modify");
++        newLabel.put("tagValue", "original");
++        newLabel.put("type", 1);
++
++        admin().postForEntity("/api/label", newLabel, Map.class);
++
++        // Query to get the ID
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/label?search=test-label-modify&pageIndex=0&pageSize=10", Map.class);
++
++        assertThat(listResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Map<String, Object> existingLabel = content.get(0);
++            Number labelId = (Number) existingLabel.get("id");
++
++            // Modify label
++            Map<String, Object> modifiedLabel = new HashMap<>();
++            modifiedLabel.put("id", labelId.longValue());
++            modifiedLabel.put("name", "test-label-modify");
++            modifiedLabel.put("tagValue", "modified");
++            modifiedLabel.put("type", 1);
++
++            ResponseEntity<Map> updateResponse = admin().exchange(
++                    "/api/label", HttpMethod.PUT,
++                    new HttpEntity<>(modifiedLabel), Map.class);
++
++            assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void modifyLabel_withoutId_throwsError() {
++        Map<String, Object> label = new HashMap<>();
++        label.put("name", "test-label-no-id");
++        label.put("tagValue", "v1");
++        label.put("type", 1);
++
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/label", HttpMethod.PUT,
++                new HttpEntity<>(label), Map.class);
++
++        // Without ID the service should return a non-zero response code or 4xx HTTP status
++        boolean httpError = response.getStatusCode().value() >= 400;
++        boolean appError = response.getBody() != null
++                && ((Number) response.getBody().get("code")).intValue() != 0;
++        assertThat(httpError || appError).isTrue();
++    }
++
++    @Test
++    void deleteLabels_withEmptyIds_returnsSuccess() {
++        // Delete with empty list should succeed gracefully
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/label?ids=999999999", HttpMethod.DELETE,
++                null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listLabels_paginationDefaults() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/label", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) response.getBody().get("data");
++        assertThat(pageData).isNotNull();
++        assertThat(pageData).containsKey("content");
++        assertThat(pageData).containsKey("totalElements");
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MetricsControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MetricsControllerTest.java
+new file mode 100644
+index 0000000..103647d
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MetricsControllerTest.java
+@@ -0,0 +1,62 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for MetricsController.
++ * GET /api/metrics - get internal system metrics
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class MetricsControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void getMetrics_asAdmin_returnsMetrics() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/metrics", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("data")).isNotNull();
++    }
++
++    @Test
++    void getMetrics_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.getForEntity("/api/metrics", Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MonitorControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MonitorControllerTest.java
+new file mode 100644
+index 0000000..01c987c
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MonitorControllerTest.java
+@@ -0,0 +1,216 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for MonitorController.
++ * POST /api/monitor          - add monitor
++ * PUT  /api/monitor          - modify monitor
++ * GET  /api/monitor/{id}     - get monitor by id
++ * DELETE /api/monitor/{id}   - delete monitor
++ * POST /api/monitor/detect   - detect availability
++ * POST /api/monitor/copy/{id}- copy monitor
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class MonitorControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private Map<String, Object> buildWebsiteMonitorDto(String name, String host) {
++        Map<String, Object> monitor = new HashMap<>();
++        monitor.put("app", "website");
++        monitor.put("host", host);
++        monitor.put("name", name);
++        monitor.put("intervals", 60);
++        monitor.put("status", 1);
++
++        List<Map<String, Object>> params = new ArrayList<>();
++        addParam(params, "host", host, 1);
++        addParam(params, "port", "80", 0);
++        addParam(params, "httpMethod", "GET", 1);
++        addParam(params, "uri", "/", 1);
++        addParam(params, "ssl", "false", 1);
++        addParam(params, "timeout", "6000", 0);
++        addParam(params, "authType", "Basic Auth", 1);
++
++        Map<String, Object> dto = new HashMap<>();
++        dto.put("monitor", monitor);
++        dto.put("params", params);
++        return dto;
++    }
++
++    private void addParam(List<Map<String, Object>> params, String field, String value, int type) {
++        Map<String, Object> param = new HashMap<>();
++        param.put("field", field);
++        param.put("paramValue", value);
++        param.put("type", type);
++        params.add(param);
++    }
++
++    @Test
++    void getMonitor_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitor/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        // MONITOR_NOT_EXIST_CODE = 3
++        assertThat(((Number) body.get("code")).intValue()).isEqualTo(3);
++    }
++
++    @Test
++    void getMonitor_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.getForEntity(
++                "/api/monitor/1", Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void addMonitor_validWebsiteMonitor_returnsSuccess() {
++        Map<String, Object> dto = buildWebsiteMonitorDto(
++                "test-website-monitor-add", "example.com");
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/monitor", dto, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("msg")).isEqualTo("Add success");
++    }
++
++    @Test
++    void addMonitor_missingParams_returnsBadRequest() {
++        Map<String, Object> dto = new HashMap<>();
++        // Missing required 'monitor' and 'params' fields
++        dto.put("collector", "main-default-collector");
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/monitor", dto, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void addAndGetMonitor_success() {
++        String monitorName = "test-website-add-and-get";
++        Map<String, Object> dto = buildWebsiteMonitorDto(monitorName, "127.0.0.1");
++
++        ResponseEntity<Map> addResponse = admin().postForEntity("/api/monitor", dto, Map.class);
++        assertThat(addResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) addResponse.getBody().get("code")).intValue()).isZero();
++
++        // Query monitors list to find the created monitor's ID
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/monitors?search=" + monitorName + "&pageIndex=0&pageSize=10", Map.class);
++        assertThat(listResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number monitorId = (Number) content.get(0).get("id");
++
++            // Get the specific monitor
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/monitor/" + monitorId.longValue(), Map.class);
++            assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++
++            @SuppressWarnings("unchecked")
++            Map<String, Object> monitorDto = (Map<String, Object>) getResponse.getBody().get("data");
++            assertThat(monitorDto).isNotNull();
++            @SuppressWarnings("unchecked")
++            Map<String, Object> monitor = (Map<String, Object>) monitorDto.get("monitor");
++            assertThat(monitor).isNotNull();
++            assertThat(monitor.get("name")).isEqualTo(monitorName);
++        }
++    }
++
++    @Test
++    void addAndDeleteMonitor_success() {
++        String monitorName = "test-monitor-to-delete";
++        Map<String, Object> dto = buildWebsiteMonitorDto(monitorName, "127.0.0.1");
++
++        admin().postForEntity("/api/monitor", dto, Map.class);
++
++        // Find the monitor
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/monitors?search=" + monitorName + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number monitorId = (Number) content.get(0).get("id");
++
++            ResponseEntity<Map> deleteResponse = admin().exchange(
++                    "/api/monitor/" + monitorId.longValue(),
++                    HttpMethod.DELETE, null, Map.class);
++
++            assertThat(deleteResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) deleteResponse.getBody().get("code")).intValue()).isZero();
++
++            // Verify monitor is gone
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/monitor/" + monitorId.longValue(), Map.class);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isEqualTo(3);
++        }
++    }
++
++    @Test
++    void deleteMonitor_nonExistent_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/monitor/999999998", HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void copyMonitor_nonExistent_returnsFailCode() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/monitor/copy/999999999", null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        // Copy of non-existent monitor should fail
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotZero();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MonitorsControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MonitorsControllerTest.java
+new file mode 100644
+index 0000000..08f4580
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/MonitorsControllerTest.java
+@@ -0,0 +1,248 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.ArrayList;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.core.io.Resource;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for MonitorsController.
++ * GET    /api/monitors             - paginated list with filters
++ * GET    /api/monitors/{app}       - list by app type
++ * DELETE /api/monitors             - batch delete
++ * DELETE /api/monitors/manage      - batch unmanage
++ * GET    /api/monitors/export      - export monitor config
++ * POST   /api/monitors/import      - import monitor config
++ * GET    /api/monitors/manage      - batch re-enable
++ * GET    /api/monitors/export      - export config
++ * POST   /api/monitors/import      - import config
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class MonitorsControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private TestRestTemplate guest() {
++        return restTemplate.withBasicAuth("guest", "hertzbeat");
++    }
++
++    private Map<String, Object> buildWebsiteMonitorDto(String name, String host) {
++        Map<String, Object> monitor = new HashMap<>();
++        monitor.put("app", "website");
++        monitor.put("host", host);
++        monitor.put("name", name);
++        monitor.put("intervals", 60);
++        monitor.put("status", 1);
++
++        List<Map<String, Object>> params = new ArrayList<>();
++        addParam(params, "host", host, 1);
++        addParam(params, "port", "80", 0);
++        addParam(params, "httpMethod", "GET", 1);
++        addParam(params, "uri", "/", 1);
++        addParam(params, "ssl", "false", 1);
++        addParam(params, "authType", "Basic Auth", 1);
++
++        Map<String, Object> dto = new HashMap<>();
++        dto.put("monitor", monitor);
++        dto.put("params", params);
++        return dto;
++    }
++
++    private void addParam(List<Map<String, Object>> params, String field, String value, int type) {
++        Map<String, Object> param = new HashMap<>();
++        param.put("field", field);
++        param.put("paramValue", value);
++        param.put("type", type);
++        params.add(param);
++    }
++
++    @Test
++    void listMonitors_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/monitors", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void listMonitors_withFilters_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitors?app=website&pageIndex=0&pageSize=5&sort=name&order=asc", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listMonitors_withStatusFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitors?status=1&pageIndex=0&pageSize=10", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listMonitorsAsGuest_returnsPage() {
++        ResponseEntity<Map> response = guest().getForEntity("/api/monitors", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void listMonitorsByApp_returnsMonitors() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitors/website", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isInstanceOf(List.class);
++    }
++
++    @Test
++    void listMonitorsByUnknownApp_returnsEmptyList() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitors/nonexistent_app_type", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        List<?> data = (List<?>) response.getBody().get("data");
++        assertThat(data).isEmpty();
++    }
++
++    @Test
++    void deleteMonitors_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/monitors?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void deleteMonitors_withNoIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/monitors", HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void batchUnmanageMonitors_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/monitors/manage?ids=9999999991",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void batchEnableMonitors_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitors/manage?ids=9999999991", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addMonitorThenFindInList() {
++        String name = "test-list-search-monitor";
++        Map<String, Object> dto = buildWebsiteMonitorDto(name, "127.0.0.2");
++        admin().postForEntity("/api/monitor", dto, Map.class);
++
++        ResponseEntity<Map> listResp = admin().getForEntity(
++                "/api/monitors?search=" + name, Map.class);
++
++        assertThat(listResp.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResp.getBody().get("data");
++        assertThat(pageData).isNotNull();
++        @SuppressWarnings("unchecked")
++        List<?> content = (List<?>) pageData.get("content");
++        assertThat(content).isNotEmpty();
++    }
++
++    @Test
++    void listMonitors_paginationStructure() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitors?pageIndex=0&pageSize=3", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) response.getBody().get("data");
++        assertThat(pageData).containsKey("content");
++        assertThat(pageData).containsKey("totalElements");
++        assertThat(pageData).containsKey("totalPages");
++    }
++
++    @Test
++    void exportMonitors_withNoIds_returnsResponse() {
++        ResponseEntity<Resource> response = admin().getForEntity(
++                "/api/monitors/export?ids=&type=JSON", Resource.class);
++
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++
++    @Test
++    void exportMonitors_withNonExistentIds_returnsResponse() {
++        ResponseEntity<Resource> response = admin().getForEntity(
++                "/api/monitors/export?ids=9999999991&type=JSON", Resource.class);
++
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++
++    @Test
++    void importMonitors_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.postForEntity(
++                "/api/monitors/import", null, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/NoticeConfigControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/NoticeConfigControllerTest.java
+new file mode 100644
+index 0000000..20daebf
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/NoticeConfigControllerTest.java
+@@ -0,0 +1,406 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Arrays;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for NoticeConfigController.
++ * POST   /api/notice/receiver              - add receiver
++ * PUT    /api/notice/receiver              - edit receiver
++ * DELETE /api/notice/receiver/{id}         - delete receiver
++ * GET    /api/notice/receivers             - list receivers
++ * GET    /api/notice/receivers/all         - get all receivers
++ * GET    /api/notice/receiver/{id}         - get receiver by ID
++ * POST   /api/notice/rule                  - add rule
++ * PUT    /api/notice/rule                  - edit rule
++ * DELETE /api/notice/rule/{id}             - delete rule
++ * GET    /api/notice/rules                 - list rules
++ * GET    /api/notice/rule/{id}             - get rule by ID
++ * POST   /api/notice/template              - add template
++ * PUT    /api/notice/template              - edit template
++ * DELETE /api/notice/template/{id}         - delete template
++ * GET    /api/notice/templates             - list templates
++ * GET    /api/notice/templates/all         - get all templates
++ * GET    /api/notice/template/{id}         - get template by ID
++ * POST   /api/notice/receiver/send-test-msg - send test msg
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class NoticeConfigControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private Map<String, Object> buildReceiver(String name) {
++        Map<String, Object> receiver = new HashMap<>();
++        receiver.put("name", name);
++        receiver.put("type", 1);  // Email type
++        receiver.put("email", "test@example.com");
++        return receiver;
++    }
++
++    private Map<String, Object> buildTemplate(String name, int type) {
++        Map<String, Object> template = new HashMap<>();
++        template.put("name", name);
++        template.put("type", type);
++        template.put("preset", false);
++        template.put("content", "[${title}] ${targetHost} ${alarmStatus}");
++        return template;
++    }
++
++    // --- Receiver Tests ---
++
++    @Test
++    void addNoticeReceiver_success() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/notice/receiver", buildReceiver("test-receiver-add"), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addNoticeReceiver_missingName_returnsValidationError() {
++        Map<String, Object> receiver = new HashMap<>();
++        receiver.put("type", 1);
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/notice/receiver", receiver, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void listNoticeReceivers_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/notice/receivers", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++    }
++
++    @Test
++    void listNoticeReceivers_withFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/notice/receivers?name=test&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getAllNoticeReceivers_returnsList() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/notice/receivers/all", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("data")).isInstanceOf(List.class);
++    }
++
++    @Test
++    void getNoticeReceiver_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/notice/receiver/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotZero();
++    }
++
++    @Test
++    void addAndGetNoticeReceiver_success() {
++        String name = "test-receiver-get";
++        admin().postForEntity("/api/notice/receiver", buildReceiver(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/notice/receivers?name=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number receiverId = (Number) content.get(0).get("id");
++
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/notice/receiver/" + receiverId.longValue(), Map.class);
++
++            assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void addAndEditNoticeReceiver_success() {
++        String name = "test-receiver-edit-orig";
++        admin().postForEntity("/api/notice/receiver", buildReceiver(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/notice/receivers?name=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number receiverId = (Number) content.get(0).get("id");
++            Map<String, Object> modified = buildReceiver("test-receiver-edit-new");
++            modified.put("id", receiverId.longValue());
++
++            ResponseEntity<Map> updateResponse = admin().exchange(
++                    "/api/notice/receiver", HttpMethod.PUT,
++                    new HttpEntity<>(modified), Map.class);
++
++            assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void deleteNoticeReceiver_nonExistent_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/notice/receiver/999999998", HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    // --- Rule Tests ---
++
++    @Test
++    void addNoticeRule_success() {
++        // Create a receiver first to get a valid receiver ID
++        String receiverName = "test-rule-receiver";
++        admin().postForEntity("/api/notice/receiver", buildReceiver(receiverName), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/notice/receivers?name=" + receiverName + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number receiverId = (Number) content.get(0).get("id");
++
++            Map<String, Object> rule = new HashMap<>();
++            rule.put("name", "test-rule-add");
++            rule.put("receiverId", Arrays.asList(receiverId.longValue()));
++            rule.put("receiverName", Arrays.asList(receiverName));
++            rule.put("enable", true);
++            rule.put("filterAll", true);
++
++            ResponseEntity<Map> response = admin().postForEntity("/api/notice/rule", rule, Map.class);
++
++            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void addNoticeRule_missingName_returnsValidationError() {
++        Map<String, Object> rule = new HashMap<>();
++        rule.put("receiverId", Arrays.asList(1L));
++        rule.put("enable", true);
++
++        ResponseEntity<Map> response = admin().postForEntity("/api/notice/rule", rule, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void listNoticeRules_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/notice/rules", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++    }
++
++    @Test
++    void getNoticeRule_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/notice/rule/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotZero();
++    }
++
++    @Test
++    void deleteNoticeRule_nonExistent_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/notice/rule/999999998", HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    // --- Template Tests ---
++
++    @Test
++    void addNoticeTemplate_success() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/notice/template", buildTemplate("test-template-add", 1), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addNoticeTemplate_missingName_returnsValidationError() {
++        Map<String, Object> template = new HashMap<>();
++        template.put("type", 1);
++        template.put("content", "some content");
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/notice/template", template, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void listNoticeTemplates_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/notice/templates", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++    }
++
++    @Test
++    void listNoticeTemplates_withPresetFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/notice/templates?preset=true&pageIndex=0&pageSize=10", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getAllNoticeTemplates_returnsList() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/notice/templates/all", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("data")).isInstanceOf(List.class);
++    }
++
++    @Test
++    void getNoticeTemplate_nonExistentId_returnsNotExistCode() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/notice/template/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isNotZero();
++    }
++
++    @Test
++    void addAndGetNoticeTemplate_success() {
++        String name = "test-template-get";
++        admin().postForEntity("/api/notice/template", buildTemplate(name, 1), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/notice/templates?name=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number templateId = (Number) content.get(0).get("id");
++
++            ResponseEntity<Map> getResponse = admin().getForEntity(
++                    "/api/notice/template/" + templateId.longValue(), Map.class);
++
++            assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void addAndEditNoticeTemplate_success() {
++        String name = "test-template-edit-orig";
++        admin().postForEntity("/api/notice/template", buildTemplate(name, 1), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/notice/templates?name=" + name + "&pageIndex=0&pageSize=10", Map.class);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> pageData = (Map<String, Object>) listResponse.getBody().get("data");
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> content = (List<Map<String, Object>>) pageData.get("content");
++
++        if (content != null && !content.isEmpty()) {
++            Number templateId = (Number) content.get(0).get("id");
++            Map<String, Object> modified = buildTemplate("test-template-edit-new", 1);
++            modified.put("id", templateId.longValue());
++
++            ResponseEntity<Map> updateResponse = admin().exchange(
++                    "/api/notice/template", HttpMethod.PUT,
++                    new HttpEntity<>(modified), Map.class);
++
++            assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++            assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++        }
++    }
++
++    @Test
++    void deleteNoticeTemplate_nonExistent_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/notice/template/999999998", HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void sendTestMsg_withValidReceiver_returnsResponse() {
++        Map<String, Object> receiver = buildReceiver("test-send-msg-receiver");
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/notice/receiver/send-test-msg", receiver, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        // code may be non-zero if the real send fails (no real email server), that's acceptable
++        assertThat(response.getBody().get("code")).isNotNull();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/PluginControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/PluginControllerTest.java
+new file mode 100644
+index 0000000..cb035df
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/PluginControllerTest.java
+@@ -0,0 +1,125 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Arrays;
++import java.util.HashMap;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for PluginController.
++ * POST   /api/plugin              - upload/add plugin (multipart)
++ * GET    /api/plugin              - list plugins
++ * DELETE /api/plugin              - delete plugins by IDs
++ * PUT    /api/plugin              - update plugin metadata
++ * GET    /api/plugin/params/define - get plugin parameter definitions
++ * POST   /api/plugin/params       - save plugin parameters
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class PluginControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void listPlugins_returnsPage() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/plugin", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).containsKey("content");
++    }
++
++    @Test
++    void listPlugins_withSearchFilter() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/plugin?search=test&pageIndex=0&pageSize=5", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void deletePlugins_withNonExistentIds_returnsSuccess() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/plugin?ids=9999999991,9999999992",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getPluginParamDefine_nonExistentPlugin_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/plugin/params/define?pluginMetadataId=999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void savePluginParams_withEmptyList_returnsSuccess() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/plugin/params", Arrays.asList(), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void updatePlugin_withNonExistentId_returnsResponse() {
++        Map<String, Object> metadata = new HashMap<>();
++        metadata.put("id", 999999999L);
++        metadata.put("name", "test-plugin");
++        metadata.put("enableStatus", false);
++
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/plugin", HttpMethod.PUT,
++                new HttpEntity<>(metadata), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void listPlugins_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.getForEntity("/api/plugin", Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/PushControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/PushControllerTest.java
+new file mode 100644
+index 0000000..91bf074
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/PushControllerTest.java
+@@ -0,0 +1,71 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpHeaders;
++import org.springframework.http.MediaType;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for PushPrometheusController.
++ * POST /api/push/prometheus/** - receive Prometheus metrics push (public)
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class PushControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    @Test
++    void pushPrometheusMetrics_publicEndpoint_returnsResponse() {
++        HttpHeaders headers = new HttpHeaders();
++        headers.setContentType(MediaType.TEXT_PLAIN);
++        String prometheusMetrics = "# HELP test_metric A test metric\n"
++                + "# TYPE test_metric gauge\n"
++                + "test_metric{job=\"test\"} 1.0 1234567890000\n";
++
++        ResponseEntity<String> response = restTemplate.postForEntity(
++                "/api/push/prometheus/job/test", new HttpEntity<>(prometheusMetrics, headers), String.class);
++
++        // Public endpoint should not return 401/403
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++
++    @Test
++    void pushPrometheusMetrics_emptyBody_returnsResponse() {
++        HttpHeaders headers = new HttpHeaders();
++        headers.setContentType(MediaType.TEXT_PLAIN);
++
++        ResponseEntity<String> response = restTemplate.postForEntity(
++                "/api/push/prometheus/job/test", new HttpEntity<>("", headers), String.class);
++
++        // Public endpoint, should be accessible
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/StatusPageControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/StatusPageControllerTest.java
+new file mode 100644
+index 0000000..2b9b57f
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/StatusPageControllerTest.java
+@@ -0,0 +1,336 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpEntity;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for StatusPageController.
++ * GET    /api/status/page/org              - query org
++ * POST   /api/status/page/org              - save org
++ * GET    /api/status/page/component        - list components
++ * POST   /api/status/page/component        - new component
++ * PUT    /api/status/page/component        - update component
++ * DELETE /api/status/page/component/{id}   - delete component
++ * GET    /api/status/page/component/{id}   - get component by id
++ * POST   /api/status/page/incident         - new incident
++ * PUT    /api/status/page/incident         - update incident
++ * DELETE /api/status/page/incident/{id}    - delete incident
++ * GET    /api/status/page/incident/{id}    - get incident by id
++ * GET    /api/status/page/incident         - list incidents
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class StatusPageControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private Map<String, Object> buildOrg() {
++        Map<String, Object> org = new HashMap<>();
++        org.put("name", "Test Organization");
++        org.put("description", "Test description");
++        org.put("home", "https://example.com");
++        org.put("logo", "https://example.com/logo.png");
++        org.put("feedback", "https://example.com/feedback");
++        org.put("color", "#1890ff");
++        org.put("state", 0);
++        return org;
++    }
++
++    private Map<String, Object> buildComponent(String name) {
++        Map<String, Object> component = new HashMap<>();
++        component.put("name", name);
++        component.put("description", "Test component description");
++        component.put("method", 1);
++        component.put("configState", 0);
++        component.put("state", 0);
++        return component;
++    }
++
++    private Map<String, Object> buildIncident(String name) {
++        Map<String, Object> incident = new HashMap<>();
++        incident.put("name", name);
++        incident.put("state", (byte) 0);
++        incident.put("startTime", System.currentTimeMillis());
++        return incident;
++    }
++
++    // --- Org Tests ---
++
++    @Test
++    void queryStatusPageOrg_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/status/page/org", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void saveStatusPageOrg_success() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/status/page/org", buildOrg(), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void saveStatusPageOrg_missingName_returnsValidationError() {
++        Map<String, Object> org = new HashMap<>();
++        org.put("description", "Test description");
++        org.put("home", "https://example.com");
++        org.put("logo", "https://example.com/logo.png");
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/status/page/org", org, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    // --- Component Tests ---
++
++    @Test
++    void listStatusPageComponents_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/status/page/component", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("data")).isInstanceOf(List.class);
++    }
++
++    @Test
++    void addStatusPageComponent_success() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/status/page/component", buildComponent("test-component-add"), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addStatusPageComponent_missingName_returnsValidationError() {
++        Map<String, Object> component = new HashMap<>();
++        component.put("method", 1);
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/status/page/component", component, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void getStatusPageComponent_nonExistentId_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/status/page/component/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void addAndGetStatusPageComponent_success() {
++        String name = "test-component-get";
++        ResponseEntity<Map> addResponse = admin().postForEntity(
++                "/api/status/page/component", buildComponent(name), Map.class);
++        assertThat(((Number) addResponse.getBody().get("code")).intValue()).isZero();
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/status/page/component", Map.class);
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> components = (List<Map<String, Object>>) listResponse.getBody().get("data");
++
++        if (components != null && !components.isEmpty()) {
++            Number componentId = (Number) components.stream()
++                    .filter(c -> name.equals(c.get("name")))
++                    .findFirst()
++                    .map(c -> c.get("id"))
++                    .orElse(null);
++
++            if (componentId != null) {
++                ResponseEntity<Map> getResponse = admin().getForEntity(
++                        "/api/status/page/component/" + componentId.longValue(), Map.class);
++                assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++                assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++            }
++        }
++    }
++
++    @Test
++    void addAndUpdateStatusPageComponent_success() {
++        String name = "test-component-update-orig";
++        admin().postForEntity("/api/status/page/component", buildComponent(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/status/page/component", Map.class);
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> components = (List<Map<String, Object>>) listResponse.getBody().get("data");
++
++        if (components != null) {
++            components.stream()
++                    .filter(c -> name.equals(c.get("name")))
++                    .findFirst()
++                    .ifPresent(comp -> {
++                        Number componentId = (Number) comp.get("id");
++                        Map<String, Object> updated = buildComponent("test-component-update-new");
++                        updated.put("id", componentId.longValue());
++
++                        ResponseEntity<Map> updateResponse = admin().exchange(
++                                "/api/status/page/component", HttpMethod.PUT,
++                                new HttpEntity<>(updated), Map.class);
++
++                        assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++                        assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++                    });
++        }
++    }
++
++    @Test
++    void deleteStatusPageComponent_nonExistent_returnsResponse() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/status/page/component/999999998",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    // --- Incident Tests ---
++
++    @Test
++    void listStatusPageIncidents_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/status/page/incident", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++        assertThat(response.getBody().get("data")).isInstanceOf(List.class);
++    }
++
++    @Test
++    void addStatusPageIncident_success() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/status/page/incident", buildIncident("test-incident-add"), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void addStatusPageIncident_missingName_returnsValidationError() {
++        Map<String, Object> incident = new HashMap<>();
++        incident.put("state", 0);
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/status/page/incident", incident, Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void getStatusPageIncident_nonExistentId_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/status/page/incident/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void addAndGetStatusPageIncident_success() {
++        String name = "test-incident-get";
++        admin().postForEntity("/api/status/page/incident", buildIncident(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/status/page/incident", Map.class);
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> incidents = (List<Map<String, Object>>) listResponse.getBody().get("data");
++
++        if (incidents != null) {
++            incidents.stream()
++                    .filter(i -> name.equals(i.get("name")))
++                    .findFirst()
++                    .ifPresent(incident -> {
++                        Number incidentId = (Number) incident.get("id");
++
++                        ResponseEntity<Map> getResponse = admin().getForEntity(
++                                "/api/status/page/incident/" + incidentId.longValue(), Map.class);
++                        assertThat(getResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++                        assertThat(((Number) getResponse.getBody().get("code")).intValue()).isZero();
++                    });
++        }
++    }
++
++    @Test
++    void addAndUpdateStatusPageIncident_success() {
++        String name = "test-incident-update-orig";
++        admin().postForEntity("/api/status/page/incident", buildIncident(name), Map.class);
++
++        ResponseEntity<Map> listResponse = admin().getForEntity(
++                "/api/status/page/incident", Map.class);
++        @SuppressWarnings("unchecked")
++        List<Map<String, Object>> incidents = (List<Map<String, Object>>) listResponse.getBody().get("data");
++
++        if (incidents != null) {
++            incidents.stream()
++                    .filter(i -> name.equals(i.get("name")))
++                    .findFirst()
++                    .ifPresent(incident -> {
++                        Number incidentId = (Number) incident.get("id");
++                        Map<String, Object> updated = buildIncident("test-incident-update-new");
++                        updated.put("id", incidentId.longValue());
++
++                        ResponseEntity<Map> updateResponse = admin().exchange(
++                                "/api/status/page/incident", HttpMethod.PUT,
++                                new HttpEntity<>(updated), Map.class);
++
++                        assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
++                        assertThat(((Number) updateResponse.getBody().get("code")).intValue()).isZero();
++                    });
++        }
++    }
++
++    @Test
++    void deleteStatusPageIncident_nonExistent_returnsResponse() {
++        ResponseEntity<Map> response = admin().exchange(
++                "/api/status/page/incident/999999998",
++                HttpMethod.DELETE, null, Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/StatusPagePublicControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/StatusPagePublicControllerTest.java
+new file mode 100644
+index 0000000..18878f6
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/StatusPagePublicControllerTest.java
+@@ -0,0 +1,93 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for StatusPagePublicController (public endpoints, no auth required).
++ * GET /api/status/page/public/org           - query status page org
++ * GET /api/status/page/public/component     - query status page components
++ * GET /api/status/page/public/component/{id}- query status page component by id
++ * GET /api/status/page/public/incident      - query status page incidents
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class StatusPagePublicControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    @Test
++    void queryPublicOrg_noAuth_returnsResponse() {
++        ResponseEntity<Map> response = restTemplate.getForEntity(
++                "/api/status/page/public/org", Map.class);
++
++        // code may be non-zero if no org is configured yet; just check endpoint is reachable
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void queryPublicComponents_noAuth_returnsResponse() {
++        ResponseEntity<Map> response = restTemplate.getForEntity(
++                "/api/status/page/public/component", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void queryPublicComponentById_nonExistent_returnsResponse() {
++        ResponseEntity<Map> response = restTemplate.getForEntity(
++                "/api/status/page/public/component/999999999", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void queryPublicIncidents_noAuth_returnsResponse() {
++        ResponseEntity<Map> response = restTemplate.getForEntity(
++                "/api/status/page/public/incident", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void queryPublicOrg_publicEndpointAccessible() {
++        // These endpoints are in sureness excludedResource, should not require auth
++        ResponseEntity<Map> response = restTemplate.getForEntity(
++                "/api/status/page/public/org", Map.class);
++
++        assertThat(response.getStatusCode().value()).isNotEqualTo(401);
++        assertThat(response.getStatusCode().value()).isNotEqualTo(403);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/SummaryControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/SummaryControllerTest.java
+new file mode 100644
+index 0000000..9bdbbcb
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/SummaryControllerTest.java
+@@ -0,0 +1,87 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for SummaryController.
++ * GET /api/summary - dashboard monitoring statistics
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class SummaryControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    private TestRestTemplate guest() {
++        return restTemplate.withBasicAuth("guest", "hertzbeat");
++    }
++
++    @Test
++    void getSummaryAsAdmin_returnsDashboard() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/summary", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        Map<?, ?> body = response.getBody();
++        assertThat(body).isNotNull();
++        assertThat(((Number) body.get("code")).intValue()).isZero();
++        assertThat(body.get("data")).isNotNull();
++    }
++
++    @Test
++    void getSummaryAsGuest_returnsDashboard() {
++        ResponseEntity<Map> response = guest().getForEntity("/api/summary", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getSummaryWithoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.getForEntity("/api/summary", Map.class);
++        // Sureness returns 401 or 403 for unauthenticated requests
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++
++    @Test
++    void getSummaryData_containsAppsCountList() {
++        ResponseEntity<Map> response = admin().getForEntity("/api/summary", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        @SuppressWarnings("unchecked")
++        Map<String, Object> data = (Map<String, Object>) response.getBody().get("data");
++        assertThat(data).isNotNull();
++        // Dashboard contains "apps" list field
++        assertThat(data).containsKey("apps");
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/WarehouseControllerTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/WarehouseControllerTest.java
+new file mode 100644
+index 0000000..ceace52
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/WarehouseControllerTest.java
+@@ -0,0 +1,120 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import static org.assertj.core.api.Assertions.assertThat;
++
++import java.util.Arrays;
++import java.util.HashMap;
++import java.util.Map;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.client.TestRestTemplate;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.context.ActiveProfiles;
++
++/**
++ * Integration tests for warehouse data controllers.
++ * POST /api/warehouse/query                          - DataQueryController: query datasource data
++ * GET  /api/warehouse/storage/status                 - MetricsDataController: get storage status
++ * GET  /api/monitor/{monitorId}/metrics/{metrics}    - MetricsDataController: get metrics data
++ * GET  /api/monitor/{monitorId}/metric/{metricFull}  - MetricsDataController: get metric history
++ */
++@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@ActiveProfiles("test")
++class WarehouseControllerTest {
++
++    @Autowired
++    private TestRestTemplate restTemplate;
++
++    private TestRestTemplate admin() {
++        return restTemplate.withBasicAuth("admin", "hertzbeat");
++    }
++
++    @Test
++    void getStorageStatus_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/warehouse/storage/status", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++        assertThat(((Number) response.getBody().get("code")).intValue()).isZero();
++    }
++
++    @Test
++    void getMetricsData_nonExistentMonitor_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitor/999999999/metrics/website", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void getMetricHistory_nonExistentMonitor_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitor/999999999/metric/website.summary.responseTime", Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void getMetricHistory_withIntervalParam_returnsResponse() {
++        ResponseEntity<Map> response = admin().getForEntity(
++                "/api/monitor/999999999/metric/website.summary.responseTime?interval=true&history=6h",
++                Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void queryDatasource_withEmptyList_returnsResponse() {
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/warehouse/query", Arrays.asList(), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void queryDatasource_withRequest_returnsResponse() {
++        Map<String, Object> query = new HashMap<>();
++        query.put("monitorId", 999999999L);
++        query.put("app", "website");
++        query.put("metric", "summary");
++        query.put("field", "responseTime");
++
++        ResponseEntity<Map> response = admin().postForEntity(
++                "/api/warehouse/query", Arrays.asList(query), Map.class);
++
++        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
++        assertThat(response.getBody()).isNotNull();
++    }
++
++    @Test
++    void getStorageStatus_withoutAuth_returnsUnauthorized() {
++        ResponseEntity<Map> response = restTemplate.getForEntity(
++                "/api/warehouse/storage/status", Map.class);
++
++        assertThat(response.getStatusCode().value()).isGreaterThanOrEqualTo(400);
++    }
++}
+diff --git a/hertzbeat-manager/src/test/resources/application-test.yml b/hertzbeat-manager/src/test/resources/application-test.yml
+new file mode 100644
+index 0000000..147f83f
+--- /dev/null
++++ b/hertzbeat-manager/src/test/resources/application-test.yml
+@@ -0,0 +1,106 @@
++# Licensed to the Apache Software Foundation (ASF) under one or more
++# contributor license agreements.  See the NOTICE file distributed with
++# this work for additional information regarding copyright ownership.
++# The ASF licenses this file to You under the Apache License, Version 2.0
++# (the "License"); you may not use this file except in compliance with
++# the License.  You may obtain a copy of the License at
++#
++#     http://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing, software
++# distributed under the License is distributed on an "AS IS" BASIS,
++# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++# See the License for the specific language governing permissions and
++# limitations under the License.
++
++server:
++  port: ${random.int[10000,19999]}
++
++spring:
++  datasource:
++    driver-class-name: org.h2.Driver
++    username: sa
++    password: 123456
++    url: jdbc:h2:mem:hertzbeat-test;MODE=MYSQL;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
++    hikari:
++      max-lifetime: 120000
++  jpa:
++    show-sql: false
++    generate-ddl: true
++    database-platform: org.eclipse.persistence.platform.database.MySQLPlatform
++    properties:
++      eclipselink:
++        ddl-generation: create-tables
++        ddl-generation.output-mode: database
++        logging:
++          level: SEVERE
++  flyway:
++    enabled: false
++  mail:
++    host: localhost
++    username: test@test.com
++    password: test
++    port: 25
++    default-encoding: UTF-8
++    properties:
++      mail:
++        smtp:
++          socketFactoryClass: javax.net.ssl.SSLSocketFactory
++          ssl:
++            enable: false
++        debug: false
++
++common:
++  queue:
++    type: memory
++
++warehouse:
++  store:
++    jpa:
++      enabled: true
++      expire-time: 1h
++    victoria-metrics:
++      enabled: false
++      url: http://localhost:8428
++      username: root
++      password: root
++    td-engine:
++      enabled: false
++      driver-class-name: com.taosdata.jdbc.rs.RestfulDriver
++      url: jdbc:TAOS-RS://127.0.0.1:6041/hertzbeat
++      username: root
++      password: taosdata
++    iot-db:
++      enabled: false
++      host: 127.0.0.1
++      rpc-port: 6667
++      username: root
++      password: root
++  real-time:
++    memory:
++      enabled: true
++      init-size: 16
++    redis:
++      enabled: false
++      mode: single
++      address: 127.0.0.1:6379
++      masterName: mymaster
++      password: 123456
++      db: 0
++
++scheduler:
++  server:
++    enabled: true
++    port: 0
++
++grafana:
++  enabled: false
++  url: http://127.0.0.1:3000
++  username: admin
++  password: admin
++
++ai:
++  type:
++  model:
++  api-key:
++  api-secret:

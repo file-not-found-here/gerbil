@@ -1,0 +1,156 @@
+{
+  "scope": "api_tests_with_dispatch_labels",
+  "labeled_test_count": 269,
+  "label_split": {
+    "local-network": {
+      "test_count": 269,
+      "pct_of_labeled_tests": 100.0
+    }
+  },
+  "multiple_label_tests": {
+    "count": 0,
+    "total": 269,
+    "proportion": 0.0
+  },
+  "per_label": {
+    "local-network": {
+      "test_count": 269,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 269,
+          "min": 8.0,
+          "max": 722.0,
+          "mean": 14.814126394052044,
+          "p25": 9.0,
+          "p50": 10.0,
+          "p75": 14.0,
+          "p90": 20.0
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 269,
+          "min": 1.0,
+          "max": 161.0,
+          "mean": 1.862453531598513,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "expanded_objects_created": {
+          "count": 269,
+          "min": 0.0,
+          "max": 3.0,
+          "mean": 0.07806691449814127,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "expanded_helper_method_count": {
+          "count": 269,
+          "min": 0.0,
+          "max": 42.0,
+          "mean": 0.15613382899628253,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "mocked_interaction_count": {
+          "count": 269,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 269,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 2,
+          "total": 269,
+          "proportion": 0.007434944237918215
+        },
+        "has_cleanup_delete": {
+          "count": 0,
+          "total": 269,
+          "proportion": 0.0
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 269,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 269,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.49814126394052044,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "3xx": {
+          "count": 269,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.1412639405204461,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "4xx": {
+          "count": 269,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.04460966542750929,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "5xx": {
+          "count": 269,
+          "min": 0.0,
+          "max": 6.0,
+          "mean": 0.5018587360594795,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "unknown": {
+          "count": 269,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    }
+  }
+}

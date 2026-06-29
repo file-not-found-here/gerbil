@@ -1,0 +1,430 @@
+{
+  "scope": "api_tests",
+  "api_test_count": 269,
+  "assertion_targets": {
+    "countable_assertion_count": 481,
+    "response_surface_assertion_count": 433,
+    "excluded_countable_assertions": {
+      "general": 48,
+      "exception": 0
+    },
+    "by_target": {
+      "status": {
+        "count": 319,
+        "total": 433,
+        "proportion": 0.7367205542725174,
+        "proportion_of_countable_assertions": 0.6632016632016632
+      },
+      "body": {
+        "count": 108,
+        "total": 433,
+        "proportion": 0.24942263279445728,
+        "proportion_of_countable_assertions": 0.22453222453222454
+      },
+      "header": {
+        "count": 6,
+        "total": 433,
+        "proportion": 0.013856812933025405,
+        "proportion_of_countable_assertions": 0.012474012474012475
+      }
+    }
+  },
+  "target_assertions_per_test": {
+    "status": {
+      "count": 269,
+      "min": 1.0,
+      "max": 9.0,
+      "mean": 1.1858736059479553,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "p90": 1.0
+    },
+    "body": {
+      "count": 269,
+      "min": 0.0,
+      "max": 30.0,
+      "mean": 0.40148698884758366,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 1.0
+    },
+    "header": {
+      "count": 269,
+      "min": 0.0,
+      "max": 3.0,
+      "mean": 0.022304832713754646,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 0.0
+    }
+  },
+  "response_surface_combinations": {
+    "total": 269,
+    "by_combination": {
+      "none": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      },
+      "status-only": {
+        "count": 217,
+        "total": 269,
+        "proportion": 0.8066914498141264
+      },
+      "body-only": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      },
+      "header-only": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      },
+      "status+body": {
+        "count": 49,
+        "total": 269,
+        "proportion": 0.1821561338289963
+      },
+      "status+header": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      },
+      "body+header": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      },
+      "status+body+header": {
+        "count": 3,
+        "total": 269,
+        "proportion": 0.011152416356877323
+      }
+    }
+  },
+  "oracle_types": {
+    "total": 269,
+    "by_type": {
+      "example-based": {
+        "count": 269,
+        "total": 269,
+        "proportion": 1.0
+      }
+    }
+  },
+  "status_assertions": {
+    "status_assertion_count": 319,
+    "status_asserted_test_count": 269,
+    "range_assertion_counts": {
+      "1xx": {
+        "count": 0,
+        "total": 319,
+        "proportion": 0.0
+      },
+      "2xx": {
+        "count": 134,
+        "total": 319,
+        "proportion": 0.4200626959247649
+      },
+      "3xx": {
+        "count": 38,
+        "total": 319,
+        "proportion": 0.11912225705329153
+      },
+      "4xx": {
+        "count": 12,
+        "total": 319,
+        "proportion": 0.03761755485893417
+      },
+      "5xx": {
+        "count": 135,
+        "total": 319,
+        "proportion": 0.4231974921630094
+      },
+      "unknown": {
+        "count": 0,
+        "total": 319,
+        "proportion": 0.0
+      }
+    },
+    "tests_with_range": {
+      "2xx": {
+        "count": 108,
+        "total": 269,
+        "proportion": 0.40148698884758366
+      },
+      "4xx": {
+        "count": 12,
+        "total": 269,
+        "proportion": 0.04460966542750929
+      },
+      "5xx": {
+        "count": 122,
+        "total": 269,
+        "proportion": 0.45353159851301117
+      }
+    },
+    "tests_with_range_among_status_asserted": {
+      "2xx": {
+        "count": 108,
+        "total": 269,
+        "proportion": 0.40148698884758366
+      },
+      "4xx": {
+        "count": 12,
+        "total": 269,
+        "proportion": 0.04460966542750929
+      },
+      "5xx": {
+        "count": 122,
+        "total": 269,
+        "proportion": 0.45353159851301117
+      }
+    },
+    "exact_status_code_assertion_count": 319,
+    "exact_status_code_assertion_counts": {
+      "200": {
+        "count": 120,
+        "total": 319,
+        "proportion": 0.3761755485893417
+      },
+      "201": {
+        "count": 10,
+        "total": 319,
+        "proportion": 0.03134796238244514
+      },
+      "204": {
+        "count": 4,
+        "total": 319,
+        "proportion": 0.012539184952978056
+      },
+      "302": {
+        "count": 38,
+        "total": 319,
+        "proportion": 0.11912225705329153
+      },
+      "400": {
+        "count": 9,
+        "total": 319,
+        "proportion": 0.02821316614420063
+      },
+      "404": {
+        "count": 2,
+        "total": 319,
+        "proportion": 0.006269592476489028
+      },
+      "415": {
+        "count": 1,
+        "total": 319,
+        "proportion": 0.003134796238244514
+      },
+      "500": {
+        "count": 135,
+        "total": 319,
+        "proportion": 0.4231974921630094
+      }
+    },
+    "tests_with_exact_status_code": {
+      "200": {
+        "count": 99,
+        "total": 269,
+        "proportion": 0.3680297397769517
+      },
+      "201": {
+        "count": 6,
+        "total": 269,
+        "proportion": 0.022304832713754646
+      },
+      "204": {
+        "count": 4,
+        "total": 269,
+        "proportion": 0.01486988847583643
+      },
+      "302": {
+        "count": 37,
+        "total": 269,
+        "proportion": 0.137546468401487
+      },
+      "400": {
+        "count": 9,
+        "total": 269,
+        "proportion": 0.03345724907063197
+      },
+      "404": {
+        "count": 2,
+        "total": 269,
+        "proportion": 0.007434944237918215
+      },
+      "415": {
+        "count": 1,
+        "total": 269,
+        "proportion": 0.0037174721189591076
+      },
+      "500": {
+        "count": 122,
+        "total": 269,
+        "proportion": 0.45353159851301117
+      }
+    }
+  },
+  "status_range_coverage": {
+    "resolved_assertion_range_share": {
+      "scope": "sequenced_status_assertions",
+      "status_assertion_count": 319,
+      "resolved_assertion_count": 319,
+      "unknown_assertion_count": 0,
+      "by_range": {
+        "1xx": {
+          "count": 0,
+          "total": 319,
+          "proportion": 0.0
+        },
+        "2xx": {
+          "count": 134,
+          "total": 319,
+          "proportion": 0.4200626959247649
+        },
+        "3xx": {
+          "count": 38,
+          "total": 319,
+          "proportion": 0.11912225705329153
+        },
+        "4xx": {
+          "count": 12,
+          "total": 319,
+          "proportion": 0.03761755485893417
+        },
+        "5xx": {
+          "count": 135,
+          "total": 319,
+          "proportion": 0.4231974921630094
+        }
+      }
+    },
+    "all_sequence_membership": {
+      "scope": "http_test_sequences",
+      "sequence_count": 319,
+      "by_range": {
+        "1xx": {
+          "count": 0,
+          "total": 319,
+          "proportion": 0.0
+        },
+        "2xx": {
+          "count": 134,
+          "total": 319,
+          "proportion": 0.4200626959247649
+        },
+        "3xx": {
+          "count": 38,
+          "total": 319,
+          "proportion": 0.11912225705329153
+        },
+        "4xx": {
+          "count": 12,
+          "total": 319,
+          "proportion": 0.03761755485893417
+        },
+        "5xx": {
+          "count": 135,
+          "total": 319,
+          "proportion": 0.4231974921630094
+        }
+      }
+    },
+    "sequence_membership": {
+      "scope": "http_test_sequences_with_resolved_status_assertion",
+      "status_bearing_sequence_count": 319,
+      "resolved_status_bearing_sequence_count": 319,
+      "by_range": {
+        "1xx": {
+          "count": 0,
+          "total": 319,
+          "proportion": 0.0
+        },
+        "2xx": {
+          "count": 134,
+          "total": 319,
+          "proportion": 0.4200626959247649
+        },
+        "3xx": {
+          "count": 38,
+          "total": 319,
+          "proportion": 0.11912225705329153
+        },
+        "4xx": {
+          "count": 12,
+          "total": 319,
+          "proportion": 0.03761755485893417
+        },
+        "5xx": {
+          "count": 135,
+          "total": 319,
+          "proportion": 0.4231974921630094
+        }
+      }
+    }
+  },
+  "status_outcome_mix": {
+    "scope": "api_tests_with_status_assertion",
+    "test_count": 269,
+    "by_mix": {
+      "2xx_only": {
+        "count": 103,
+        "total": 269,
+        "proportion": 0.3828996282527881
+      },
+      "4xx_only": {
+        "count": 8,
+        "total": 269,
+        "proportion": 0.02973977695167286
+      },
+      "5xx_only": {
+        "count": 121,
+        "total": 269,
+        "proportion": 0.44981412639405205
+      },
+      "4xx_and_5xx_only": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      },
+      "success_and_error": {
+        "count": 5,
+        "total": 269,
+        "proportion": 0.01858736059479554
+      },
+      "neither_success_nor_error": {
+        "count": 32,
+        "total": 269,
+        "proportion": 0.11895910780669144
+      }
+    },
+    "success_and_error_breakdown": {
+      "success_and_client_error": {
+        "count": 4,
+        "total": 5,
+        "proportion": 0.8
+      },
+      "success_and_server_error": {
+        "count": 1,
+        "total": 5,
+        "proportion": 0.2
+      },
+      "success_and_both_errors": {
+        "count": 0,
+        "total": 5,
+        "proportion": 0.0
+      }
+    }
+  },
+  "has_exception_assertion": {
+    "count": 0,
+    "total": 269,
+    "proportion": 0.0
+  }
+}

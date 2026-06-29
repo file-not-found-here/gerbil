@@ -1,0 +1,133 @@
+{
+  "selection": {
+    "strategy": "api_test_count",
+    "mode": "top",
+    "count": 10,
+    "percentile": null,
+    "seed": null,
+    "pool_percent": null,
+    "interesting_project_count": 183,
+    "pool_project_count": null,
+    "selected_project_count": 10
+  },
+  "summary": {
+    "project_count": 10,
+    "api_test_count": 6880,
+    "resolved_endpoint_test_count": 6648,
+    "multi_sequence_test_count": 4610,
+    "total_sequence_count": 28281,
+    "endpoint_count": 2410
+  },
+  "projects": [
+    {
+      "rank": 1,
+      "dataset_name": "DSpace_DSpace",
+      "api_test_count": 3134,
+      "resolved_endpoint_test_count": 3117,
+      "multi_sequence_test_count": 3117,
+      "total_sequence_count": 18731,
+      "max_sequence_count": 70,
+      "mean_sequence_count_per_test": 5.976707083599234,
+      "endpoint_count": 178
+    },
+    {
+      "rank": 2,
+      "dataset_name": "cloudfoundry_uaa",
+      "api_test_count": 1389,
+      "resolved_endpoint_test_count": 1325,
+      "multi_sequence_test_count": 933,
+      "total_sequence_count": 5669,
+      "max_sequence_count": 117,
+      "mean_sequence_count_per_test": 4.081353491720662,
+      "endpoint_count": 167
+    },
+    {
+      "rank": 3,
+      "dataset_name": "apache_kylin",
+      "api_test_count": 567,
+      "resolved_endpoint_test_count": 559,
+      "multi_sequence_test_count": 70,
+      "total_sequence_count": 735,
+      "max_sequence_count": 12,
+      "mean_sequence_count_per_test": 1.2962962962962963,
+      "endpoint_count": 553
+    },
+    {
+      "rank": 4,
+      "dataset_name": "spring-attic_spring-cloud-dataflow",
+      "api_test_count": 385,
+      "resolved_endpoint_test_count": 377,
+      "multi_sequence_test_count": 172,
+      "total_sequence_count": 1039,
+      "max_sequence_count": 16,
+      "mean_sequence_count_per_test": 2.6987012987012986,
+      "endpoint_count": 121
+    },
+    {
+      "rank": 5,
+      "dataset_name": "apache_incubator-kie-kogito-runtimes",
+      "api_test_count": 334,
+      "resolved_endpoint_test_count": 310,
+      "multi_sequence_test_count": 143,
+      "total_sequence_count": 760,
+      "max_sequence_count": 18,
+      "mean_sequence_count_per_test": 2.2754491017964074,
+      "endpoint_count": 72
+    },
+    {
+      "rank": 6,
+      "dataset_name": "spinnaker_spinnaker",
+      "api_test_count": 239,
+      "resolved_endpoint_test_count": 178,
+      "multi_sequence_test_count": 87,
+      "total_sequence_count": 343,
+      "max_sequence_count": 6,
+      "mean_sequence_count_per_test": 1.4351464435146444,
+      "endpoint_count": 558
+    },
+    {
+      "rank": 7,
+      "dataset_name": "eclipse_openvsx",
+      "api_test_count": 226,
+      "resolved_endpoint_test_count": 226,
+      "multi_sequence_test_count": 1,
+      "total_sequence_count": 257,
+      "max_sequence_count": 32,
+      "mean_sequence_count_per_test": 1.1371681415929205,
+      "endpoint_count": 67
+    },
+    {
+      "rank": 8,
+      "dataset_name": "cBioPortal_cbioportal",
+      "api_test_count": 218,
+      "resolved_endpoint_test_count": 217,
+      "multi_sequence_test_count": 15,
+      "total_sequence_count": 239,
+      "max_sequence_count": 6,
+      "mean_sequence_count_per_test": 1.0963302752293578,
+      "endpoint_count": 217
+    },
+    {
+      "rank": 9,
+      "dataset_name": "apache_dolphinscheduler",
+      "api_test_count": 204,
+      "resolved_endpoint_test_count": 158,
+      "multi_sequence_test_count": 59,
+      "total_sequence_count": 310,
+      "max_sequence_count": 8,
+      "mean_sequence_count_per_test": 1.5196078431372548,
+      "endpoint_count": 298
+    },
+    {
+      "rank": 10,
+      "dataset_name": "apache_hertzbeat",
+      "api_test_count": 184,
+      "resolved_endpoint_test_count": 181,
+      "multi_sequence_test_count": 13,
+      "total_sequence_count": 198,
+      "max_sequence_count": 3,
+      "mean_sequence_count_per_test": 1.076086956521739,
+      "endpoint_count": 179
+    }
+  ]
+}

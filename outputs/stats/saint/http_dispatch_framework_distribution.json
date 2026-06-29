@@ -1,0 +1,74 @@
+{
+  "scope": "http_call_sites",
+  "call_site_count": 1522,
+  "framework_split": {
+    "mockmvc": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "webtestclient": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "test-rest-template": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "rest-template": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "rest-client": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "webclient": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "rest-assured": {
+      "call_site_count": 1522,
+      "pct_of_call_sites": 100.0
+    },
+    "okhttp": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "apache-httpclient": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "java-httpclient": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "micronaut-client": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "jax-rs": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "feign": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "http-interface": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "karate": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "pact": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    },
+    "citrus": {
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
+    }
+  }
+}

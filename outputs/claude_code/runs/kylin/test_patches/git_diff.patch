@@ -1,0 +1,2334 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..2359f7f
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,111 @@
++# API Endpoint Coverage (Progress: 64/91 tested, 27 skipped)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## src/common-server - NAdminController
++- [x] GET /api/admin/public_config - public config export; no auth required
++- [x] GET /api/admin/instance_info - timezone info; no auth required
++
++## src/common-server - NSystemController
++- [x] PUT /api/system/roll_event_log - roll sparder event log
++- [x] GET /api/system/host - return local hostname
++- [x] POST /api/system/metadata/reload - reload metadata; delegates to systemService
++- [~] POST /api/system/transaction/simulation - simulate UnitOfWork; requires deep UnitOfWork mocking
++- [x] POST /api/system/do_cleanup_garbage - trigger routine cleanup; delegates to scheduleService
++- [~] POST /api/system/transaction/simulation/insert_meta - simulate insert; requires UnitOfWork mocking
++- [x] POST /api/system/broadcast_metadata_backup - RPC: broadcast backup; delegates to fileService
++- [x] DELETE /api/system/clean_sparder_event_log - RPC: clean sparder logs; delegates to systemService
++
++## src/common-server - NConfigController
++- [x] GET /api/config/is_cloud - check cloud vs on-prem via KapConfig
++- [x] GET /api/config/all - export all KylinConfig properties
++
++## src/common-server - NMonitorController
++- [x] GET /api/monitor/memory_info - deprecated; returns empty list
++- [x] GET /api/monitor/thread_info - deprecated; returns empty list
++- [x] GET /api/monitor/status - cluster current status; delegates to monitorService
++- [x] GET /api/monitor/status/statistics - cluster stats by time range; validates start<=end
++- [x] POST /api/monitor/alert - handle alert message; delegates to monitorService
++
++## src/common-server - HealthController
++- [~] POST /api/kg/health/instance_info - health status; token-validated internal API
++- [~] POST /api/kg/health/instance_service/{state} - change server state; token-validated internal API
++
++## src/metadata-server - NProjectController
++- [x] GET /api/projects - list projects; permission param validated
++- [x] POST /api/projects - create project; name validation
++- [x] DELETE /api/projects/{project} - delete project; delegates to projectService
++- [~] POST /api/projects/{project}/backup - backup project; requires ToolUtil mocking
++- [x] PUT /api/projects/{project}/default_database - update default DB; required arg check
++- [x] PUT /api/projects/{project}/query_accelerate_threshold - update threshold config
++- [x] GET /api/projects/{project}/query_accelerate_threshold - get threshold config
++- [x] GET /api/projects/{project}/storage_volume_info - get storage info; ACL check
++- [~] PUT /api/projects/{project}/storage - cleanup storage; delegates to async storage cleanup
++- [~] PUT /api/projects/{project}/optimize_index - optimize index; delegates to async index optimize
++- [x] PUT /api/projects/{project}/storage_quota - update quota; checkProjectName
++- [~] PUT /api/projects/{project}/shard_num_config - update shard config
++- [x] PUT /api/projects/{project}/garbage_cleanup_config - update garbage config
++- [x] PUT /api/projects/{project}/job_notification_config - update notification config
++- [x] PUT /api/projects/{project}/push_down_config - update push-down config
++- [x] PUT /api/projects/{project}/scd2_config - update SCD2 config
++- [~] PUT /api/projects/{project}/push_down_project_config - update push-down project config
++- [x] PUT /api/projects/{project}/snapshot_config - update snapshot config
++- [~] PUT /api/projects/{project}/computed_column_config - update computed column config
++- [x] PUT /api/projects/{project}/segment_config - update segment config
++- [x] PUT /api/projects/{project}/project_general_info - update general info
++- [x] PUT /api/projects/{project}/auto_semi_config - update auto-semi config
++- [x] GET /api/projects/{project}/project_config - get project config
++- [x] PUT /api/projects/{project}/project_config - reset project config item
++- [~] PUT /api/projects/{project}/source_type - set data source type; ACL write check
++- [x] PUT /api/projects/{project}/yarn_queue - update Yarn queue name
++- [x] PUT /api/projects/{project}/owner - update project owner; checkProjectName
++- [~] PUT /api/projects/{project}/config - update arbitrary project config keys
++- [~] DELETE /api/projects/{project}/config - delete project config key
++- [x] POST /api/projects/config/deletion - delete config key (POST body variant)
++- [x] GET /api/projects/default_configs - get non-custom config key set
++- [~] PUT /api/projects/{project}/jdbc_config - update JDBC config
++- [~] PUT /api/projects/{project}/multi_partition_config - update multi-partition config
++- [~] PUT /api/projects/{project}/jdbc_source_info_config - update JDBC source info
++- [~] PUT /api/projects/{project}/exclusion_enabled - update table exclusion rule
++- [~] PUT /api/projects/{project}/internal_table_enabled - update internal table config
++
++## src/metadata-server - NUserGroupController
++- [x] GET /api/user_group/groups - list all groups
++- [x] GET /api/user_group/users_with_group - users with group info
++- [x] GET /api/user_group/users_and_groups - users and groups combined
++- [x] POST /api/user_group - add user group
++- [x] DELETE /api/user_group/{uuid} - delete user group
++- [x] PUT /api/user_group/users - add/remove users in group
++- [x] POST /api/user_group/batch - batch add user groups
++- [x] DELETE /api/user_group/batch - batch delete user groups
++
++## src/metadata-server - NUserController
++- [~] POST /api/user - create user; requires complex password + group validation
++- [~] PUT /api/user - update user; requires admin auth setup
++- [~] DELETE /api/user/{uuid} - delete user by UUID; requires admin auth setup
++- [~] DELETE /api/user/batch - batch delete users; requires admin auth setup
++- [~] POST /api/user/batch - batch create users; requires admin auth setup
++- [x] GET /api/user - list users with pagination
++- [~] PUT /api/user/password - change password; requires current-password verification
++- [x] POST /api/user/authentication - authenticate user
++- [x] GET /api/user/authentication - get authenticated user info
++- [x] GET /api/user/super_admin - list super-admin users
++
++## src/query-server - NQueryController
++- [x] POST /api/query - execute SQL query; checkProjectName; delegates to queryService
++- [x] DELETE /api/query/{id} - cancel query; delegates to queryService + event bus
++- [x] DELETE /api/query/cache - clear query cache; admin check
++- [x] POST /api/query/cache/recovery - recover cache; admin check
++- [~] POST /api/query/prestate - prepare statement; checkProjectName
++- [x] POST /api/query/saved_queries - save query; name validation
++- [x] DELETE /api/query/saved_queries/{id} - delete saved query
++- [~] GET /api/query/saved_queries - get saved queries; checkProjectName + pagination
++- [x] GET /api/query/history_queries - get query history; checkProjectName
++- [x] GET /api/query/statistics - get query statistics; checkProjectName
++- [x] PUT /api/query/format - format SQL
++- [~] GET /api/query/tables_and_columns - get table metadata; checkProjectName
++- [x] GET /api/query/servers - get server list
++- [x] GET /api/query/query_histories - get query histories v2
++- [x] GET /api/query/query_history_submitters - get submitter usernames
++- [x] GET /api/query/query_history_models - get history model filters
++- [x] GET /api/query/statistics/count - get query count by dimension
++- [x] GET /api/query/statistics/duration - get avg duration by dimension
+diff --git a/src/common-server/src/test/java/org/apache/kylin/rest/controller/NAdminControllerTest.java b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NAdminControllerTest.java
+new file mode 100644
+index 0000000..318d9c6
+--- /dev/null
++++ b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NAdminControllerTest.java
+@@ -0,0 +1,109 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.metadata.resourcegroup.ResourceGroupManager;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.UserService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.powermock.api.mockito.PowerMockito;
++import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.powermock.modules.junit4.PowerMockRunner;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++@RunWith(PowerMockRunner.class)
++@PrepareForTest({ KylinConfig.class, ResourceGroupManager.class })
++public class NAdminControllerTest {
++
++    private MockMvc mockMvc;
++
++    @Mock
++    private KylinConfig kylinConfig;
++    @Mock
++    private ResourceGroupManager resourceGroupManager;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private ProjectService projectService;
++    @Mock
++    private UserService userService;
++
++    @InjectMocks
++    private NAdminController controller;
++
++    @Before
++    public void setUp() throws Exception {
++        PowerMockito.mockStatic(KylinConfig.class);
++        PowerMockito.mockStatic(ResourceGroupManager.class);
++
++        when(KylinConfig.getInstanceFromEnv()).thenReturn(kylinConfig);
++        when(kylinConfig.getPropertiesWhiteList()).thenReturn("");
++        when(kylinConfig.exportToString(org.mockito.ArgumentMatchers.anyCollection())).thenReturn("");
++        when(kylinConfig.isAllowedNonAdminGenerateQueryDiagPackage()).thenReturn(true);
++        when(kylinConfig.isStreamingEnabled()).thenReturn(false);
++        when(kylinConfig.getTimeZone()).thenReturn("UTC");
++        when(ResourceGroupManager.getInstance(kylinConfig)).thenReturn(resourceGroupManager);
++        when(resourceGroupManager.isResourceGroupEnabled()).thenReturn(false);
++
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "projectService", projectService);
++        ReflectionTestUtils.setField(controller, "userService", userService);
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void testGetPublicConfig_returnsSuccessCode() throws Exception {
++        mockMvc.perform(get("/api/admin/public_config")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testGetInstanceConfig_returnsTimezone() throws Exception {
++        mockMvc.perform(get("/api/admin/instance_info")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"))
++                .andExpect(jsonPath("$.data['instance.timezone']").value("UTC"));
++    }
++
++    @Test
++    public void testGetPublicConfig_responseContainsKylinStreaming() throws Exception {
++        when(kylinConfig.isStreamingEnabled()).thenReturn(true);
++
++        mockMvc.perform(get("/api/admin/public_config")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++}
+diff --git a/src/common-server/src/test/java/org/apache/kylin/rest/controller/NConfigControllerTest.java b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NConfigControllerTest.java
+new file mode 100644
+index 0000000..8ea09c3
+--- /dev/null
++++ b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NConfigControllerTest.java
+@@ -0,0 +1,112 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Properties;
++
++import org.apache.kylin.common.KapConfig;
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.UserService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.powermock.api.mockito.PowerMockito;
++import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.powermock.modules.junit4.PowerMockRunner;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++@RunWith(PowerMockRunner.class)
++@PrepareForTest({ KapConfig.class, KylinConfig.class })
++public class NConfigControllerTest {
++
++    private MockMvc mockMvc;
++
++    @Mock
++    private KapConfig kapConfig;
++    @Mock
++    private KylinConfig kylinConfig;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private ProjectService projectService;
++    @Mock
++    private UserService userService;
++
++    @InjectMocks
++    private NConfigController controller;
++
++    @Before
++    public void setUp() {
++        PowerMockito.mockStatic(KapConfig.class);
++        PowerMockito.mockStatic(KylinConfig.class);
++
++        when(KapConfig.getInstanceFromEnv()).thenReturn(kapConfig);
++        when(KylinConfig.getInstanceFromEnv()).thenReturn(kylinConfig);
++
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "projectService", projectService);
++        ReflectionTestUtils.setField(controller, "userService", userService);
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void testIsCloud_cloudDeployment_returnsTrue() throws Exception {
++        when(kapConfig.getChannelUser()).thenReturn("cloud");
++
++        mockMvc.perform(get("/api/config/is_cloud")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"))
++                .andExpect(jsonPath("$.data").value(true));
++    }
++
++    @Test
++    public void testIsCloud_onPremDeployment_returnsFalse() throws Exception {
++        when(kapConfig.getChannelUser()).thenReturn("on-premises");
++
++        mockMvc.perform(get("/api/config/is_cloud")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"))
++                .andExpect(jsonPath("$.data").value(false));
++    }
++
++    @Test
++    public void testFetchAll_returnsProperties() throws Exception {
++        Properties props = new Properties();
++        props.setProperty("kylin.env", "UT");
++        when(kylinConfig.exportToProperties()).thenReturn(props);
++
++        mockMvc.perform(get("/api/config/all")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++}
+diff --git a/src/common-server/src/test/java/org/apache/kylin/rest/controller/NMonitorControllerTest.java b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NMonitorControllerTest.java
+new file mode 100644
+index 0000000..617a252
+--- /dev/null
++++ b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NMonitorControllerTest.java
+@@ -0,0 +1,170 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.doNothing;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.times;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Collections;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.rest.request.AlertMessageRequest;
++import org.apache.kylin.rest.response.ClusterStatisticStatusResponse;
++import org.apache.kylin.rest.response.ClusterStatusResponse;
++import org.apache.kylin.rest.service.MonitorService;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.UserService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.powermock.api.mockito.PowerMockito;
++import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.powermock.modules.junit4.PowerMockRunner;
++import org.springframework.http.MediaType;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++
++@RunWith(PowerMockRunner.class)
++@PrepareForTest({ KylinConfig.class })
++public class NMonitorControllerTest {
++
++    private MockMvc mockMvc;
++    private final ObjectMapper objectMapper = new ObjectMapper();
++
++    @Mock
++    private MonitorService monitorService;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private ProjectService projectService;
++    @Mock
++    private UserService userService;
++    @Mock
++    private KylinConfig kylinConfig;
++
++    @InjectMocks
++    private NMonitorController controller;
++
++    @Before
++    public void setUp() {
++        PowerMockito.mockStatic(KylinConfig.class);
++        when(KylinConfig.getInstanceFromEnv()).thenReturn(kylinConfig);
++        when(kylinConfig.getDataBinderAutoGrowCollectionLimit()).thenReturn(256);
++
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "projectService", projectService);
++        ReflectionTestUtils.setField(controller, "userService", userService);
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void testGetMemoryMetrics_returnsEmptyList() throws Exception {
++        mockMvc.perform(get("/api/monitor/memory_info")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testGetThreadInfoMetrics_returnsEmptyList() throws Exception {
++        mockMvc.perform(get("/api/monitor/thread_info")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testGetClusterCurrentStatus_delegatesToMonitorService() throws Exception {
++        ClusterStatusResponse clusterStatus = mock(ClusterStatusResponse.class);
++        when(monitorService.currentClusterStatus()).thenReturn(clusterStatus);
++
++        mockMvc.perform(get("/api/monitor/status")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(monitorService, times(1)).currentClusterStatus();
++    }
++
++    @Test
++    public void testGetClusterStatisticStatus_validRange() throws Exception {
++        long now = System.currentTimeMillis();
++        long start = now - 10_000;
++        long end = now - 5_000;
++
++        ClusterStatisticStatusResponse response = mock(ClusterStatisticStatusResponse.class);
++        when(monitorService.statisticClusterByFloorTime(start, end)).thenReturn(response);
++
++        mockMvc.perform(get("/api/monitor/status/statistics")
++                .param("start", String.valueOf(start))
++                .param("end", String.valueOf(end))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(monitorService, times(1)).statisticClusterByFloorTime(start, end);
++    }
++
++    @Test
++    public void testGetClusterStatisticStatus_startAfterEnd_returns500() throws Exception {
++        long now = System.currentTimeMillis();
++        long start = now;
++        long end = now - 5_000;
++
++        mockMvc.perform(get("/api/monitor/status/statistics")
++                .param("start", String.valueOf(start))
++                .param("end", String.valueOf(end))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().is5xxServerError());
++    }
++
++    @Test
++    public void testAlert_validRequest_delegatesToMonitorService() throws Exception {
++        AlertMessageRequest.Labels labels = new AlertMessageRequest.Labels();
++        AlertMessageRequest.Alerts alert = new AlertMessageRequest.Alerts();
++        alert.setLabels(labels);
++
++        AlertMessageRequest request = new AlertMessageRequest();
++        request.setAlerts(Collections.singletonList(alert));
++
++        doNothing().when(monitorService).handleAlertMessage(any(AlertMessageRequest.class));
++
++        mockMvc.perform(post("/api/monitor/alert")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk());
++
++        verify(monitorService, times(1)).handleAlertMessage(any(AlertMessageRequest.class));
++    }
++}
+diff --git a/src/common-server/src/test/java/org/apache/kylin/rest/controller/NSystemControllerTest.java b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NSystemControllerTest.java
+new file mode 100644
+index 0000000..f18eb47
+--- /dev/null
++++ b/src/common-server/src/test/java/org/apache/kylin/rest/controller/NSystemControllerTest.java
+@@ -0,0 +1,198 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.Mockito.doNothing;
++import static org.mockito.Mockito.times;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.rest.request.MetadataBackupRequest;
++import org.apache.kylin.rest.service.FileService;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.ScheduleService;
++import org.apache.kylin.rest.service.SystemService;
++import org.apache.kylin.rest.service.UserService;
++import org.apache.kylin.rest.util.AclEvaluate;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.powermock.api.mockito.PowerMockito;
++import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.powermock.modules.junit4.PowerMockRunner;
++import org.springframework.http.MediaType;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++
++@RunWith(PowerMockRunner.class)
++@PrepareForTest({ org.apache.kylin.common.util.AddressUtil.class,
++        org.apache.kylin.tool.util.ToolUtil.class,
++        KylinConfig.class })
++public class NSystemControllerTest {
++
++    private MockMvc mockMvc;
++    private final ObjectMapper objectMapper = new ObjectMapper();
++
++    @Mock
++    private KylinConfig kylinConfig;
++    @Mock
++    private SystemService systemService;
++    @Mock
++    private AclEvaluate aclEvaluate;
++    @Mock
++    private ScheduleService scheduleService;
++    @Mock
++    private ProjectService projectService;
++    @Mock
++    private FileService fileService;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private UserService userService;
++
++    @InjectMocks
++    private NSystemController controller;
++
++    @Before
++    public void setUp() {
++        PowerMockito.mockStatic(KylinConfig.class);
++        when(KylinConfig.getInstanceFromEnv()).thenReturn(kylinConfig);
++        when(kylinConfig.getDataBinderAutoGrowCollectionLimit()).thenReturn(256);
++
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "projectService", projectService);
++        ReflectionTestUtils.setField(controller, "userService", userService);
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void testGetHostname_returnsLocalInstance() throws Exception {
++        PowerMockito.mockStatic(org.apache.kylin.common.util.AddressUtil.class);
++        when(org.apache.kylin.common.util.AddressUtil.getLocalInstance()).thenReturn("localhost:7070");
++
++        mockMvc.perform(get("/api/system/host")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"))
++                .andExpect(jsonPath("$.data").value("localhost:7070"));
++    }
++
++    @Test
++    public void testReloadMetadata_delegatesToSystemService() throws Exception {
++        doNothing().when(systemService).reloadMetadata();
++
++        mockMvc.perform(post("/api/system/metadata/reload")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(systemService, times(1)).reloadMetadata();
++    }
++
++    @Test
++    public void testCleanSparderEventLog_delegatesToSystemService() throws Exception {
++        doNothing().when(systemService).cleanSparderEventLog();
++
++        mockMvc.perform(delete("/api/system/clean_sparder_event_log")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(systemService, times(1)).cleanSparderEventLog();
++    }
++
++    @Test
++    public void testDoCleanupGarbage_delegatesToScheduleService() throws Exception {
++        doNothing().when(scheduleService).routineTask();
++
++        mockMvc.perform(post("/api/system/do_cleanup_garbage")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(scheduleService, times(1)).routineTask();
++    }
++
++    @Test
++    public void testRollEventLog_successReturnsCode000() throws Exception {
++        PowerMockito.mockStatic(org.apache.kylin.tool.util.ToolUtil.class);
++        when(org.apache.kylin.tool.util.ToolUtil.waitForSparderRollUp()).thenReturn(true);
++
++        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
++                .put("/api/system/roll_event_log")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testRollEventLog_failureReturnsCode999() throws Exception {
++        PowerMockito.mockStatic(org.apache.kylin.tool.util.ToolUtil.class);
++        when(org.apache.kylin.tool.util.ToolUtil.waitForSparderRollUp()).thenReturn(false);
++
++        mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders
++                .put("/api/system/roll_event_log")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("999"));
++    }
++
++    @Test
++    public void testBroadcastMetadataBackup_delegatesToFileService() throws Exception {
++        MetadataBackupRequest request = new MetadataBackupRequest();
++        request.setResourceGroupId("rg1");
++        request.setTmpFilePath("/tmp/backup");
++        request.setTmpFileSize(1024L);
++        request.setBackupDir("/backup");
++        request.setFromHost("host1");
++
++        doNothing().when(fileService).saveBroadcastMetadataBackup(
++                org.mockito.ArgumentMatchers.anyString(),
++                org.mockito.ArgumentMatchers.anyString(),
++                org.mockito.ArgumentMatchers.anyLong(),
++                org.mockito.ArgumentMatchers.anyString(),
++                org.mockito.ArgumentMatchers.anyString());
++
++        mockMvc.perform(post("/api/system/broadcast_metadata_backup")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(fileService, times(1)).saveBroadcastMetadataBackup(
++                org.mockito.ArgumentMatchers.anyString(),
++                org.mockito.ArgumentMatchers.anyString(),
++                org.mockito.ArgumentMatchers.anyLong(),
++                org.mockito.ArgumentMatchers.anyString(),
++                org.mockito.ArgumentMatchers.anyString());
++    }
++}
+diff --git a/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NProjectControllerTest.java b/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NProjectControllerTest.java
+new file mode 100644
+index 0000000..8053a31
+--- /dev/null
++++ b/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NProjectControllerTest.java
+@@ -0,0 +1,663 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyBoolean;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.ArgumentMatchers.eq;
++import static org.mockito.Mockito.doNothing;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.times;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Arrays;
++import java.util.Collections;
++import java.util.HashSet;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.metadata.project.NProjectManager;
++import org.apache.kylin.metadata.project.ProjectInstance;
++import org.apache.kylin.rest.request.DefaultDatabaseRequest;
++import org.apache.kylin.rest.request.FavoriteQueryThresholdRequest;
++import org.apache.kylin.rest.request.GarbageCleanUpConfigRequest;
++import org.apache.kylin.rest.request.JobNotificationConfigRequest;
++import org.apache.kylin.rest.request.OwnerChangeRequest;
++import org.apache.kylin.rest.request.ProjectConfigResetRequest;
++import org.apache.kylin.rest.request.ProjectRequest;
++import org.apache.kylin.rest.request.PushDownConfigRequest;
++import org.apache.kylin.rest.request.SCD2ConfigRequest;
++import org.apache.kylin.rest.request.SegmentConfigRequest;
++import org.apache.kylin.rest.request.SnapshotConfigRequest;
++import org.apache.kylin.rest.request.StorageQuotaRequest;
++import org.apache.kylin.rest.request.YarnQueueRequest;
++import org.apache.kylin.rest.response.FavoriteQueryThresholdResponse;
++import org.apache.kylin.rest.response.ProjectConfigResponse;
++import org.apache.kylin.rest.response.StorageVolumeInfoResponse;
++import org.apache.kylin.rest.response.UserProjectPermissionResponse;
++import org.apache.kylin.rest.service.ModelService;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.UserService;
++import org.apache.kylin.rest.util.AclEvaluate;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.powermock.api.mockito.PowerMockito;
++import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.powermock.modules.junit4.PowerMockRunner;
++import org.springframework.http.MediaType;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++
++@RunWith(PowerMockRunner.class)
++@PrepareForTest({ KylinConfig.class, NProjectManager.class })
++@org.powermock.core.classloader.annotations.PowerMockIgnore({ "javax.management.*", "javax.xml.*", "org.xml.*", "org.w3c.dom.*" })
++public class NProjectControllerTest {
++
++    private static final String PROJECT = "test_project";
++    private MockMvc mockMvc;
++    private final ObjectMapper objectMapper = new ObjectMapper();
++
++    @Mock
++    private ProjectService projectService;
++    @Mock
++    private ModelService modelService;
++    @Mock
++    private AclEvaluate aclEvaluate;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private UserService userService;
++    @Mock
++    private KylinConfig kylinConfig;
++    @Mock
++    private NProjectManager projectManager;
++
++    @InjectMocks
++    private NProjectController controller;
++
++    @Before
++    public void setUp() {
++        PowerMockito.mockStatic(KylinConfig.class);
++        PowerMockito.mockStatic(NProjectManager.class);
++
++        when(KylinConfig.getInstanceFromEnv()).thenReturn(kylinConfig);
++        when(NProjectManager.getInstance(kylinConfig)).thenReturn(projectManager);
++
++        ProjectInstance projectInstance = mock(ProjectInstance.class);
++        when(projectInstance.getName()).thenReturn(PROJECT);
++        when(projectManager.getProject(PROJECT)).thenReturn(projectInstance);
++
++        when(kylinConfig.getNonCustomProjectConfigs()).thenReturn(new HashSet<>());
++
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "userService", userService);
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    // ---- GET /api/projects ----
++
++    @Test
++    public void testGetProjects_noParams_returnsAllProjects() throws Exception {
++        when(projectService.getProjectsFilterByExactMatchAndPermissionWrapperUserPermission(
++                any(), anyBoolean(), any()))
++                .thenReturn(Collections.emptyList());
++
++        mockMvc.perform(get("/api/projects")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testGetProjects_withProjectFilter_returnsFiltered() throws Exception {
++        when(projectService.getProjectsFilterByExactMatchAndPermissionWrapperUserPermission(
++                eq(PROJECT), anyBoolean(), any()))
++                .thenReturn(Collections.emptyList());
++
++        mockMvc.perform(get("/api/projects")
++                .param("project", PROJECT)
++                .param("exact", "true")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testGetProjects_invalidPermission_returns500() throws Exception {
++        mockMvc.perform(get("/api/projects")
++                .param("permission", "INVALID_PERM")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    @Test
++    public void testGetProjects_pagination() throws Exception {
++        when(projectService.getProjectsFilterByExactMatchAndPermissionWrapperUserPermission(
++                any(), anyBoolean(), any()))
++                .thenReturn(Collections.emptyList());
++
++        mockMvc.perform(get("/api/projects")
++                .param("page_offset", "1")
++                .param("page_size", "5")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- POST /api/projects ----
++
++    @Test
++    public void testSaveProject_validName_createsProject() throws Exception {
++        ProjectRequest request = new ProjectRequest();
++        request.setName("valid_project");
++
++        ProjectInstance created = mock(ProjectInstance.class);
++        when(projectService.createProject(anyString(), any(ProjectInstance.class))).thenReturn(created);
++
++        mockMvc.perform(post("/api/projects")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(projectService, times(1)).createProject(eq("valid_project"), any(ProjectInstance.class));
++    }
++
++    @Test
++    public void testSaveProject_nameTooLong_returns500() throws Exception {
++        ProjectRequest request = new ProjectRequest();
++        char[] chars = new char[51];
++        java.util.Arrays.fill(chars, 'a');
++        request.setName(new String(chars));
++
++        mockMvc.perform(post("/api/projects")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- DELETE /api/projects/{project} ----
++
++    @Test
++    public void testDropProject_delegatesToProjectService() throws Exception {
++        doNothing().when(projectService).dropProject(eq(PROJECT), any());
++        doNothing().when(projectService).clearManagerCache(PROJECT);
++
++        mockMvc.perform(delete("/api/projects/{project}", PROJECT)
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(projectService, times(1)).dropProject(eq(PROJECT), any());
++        verify(projectService, times(1)).clearManagerCache(PROJECT);
++    }
++
++    // ---- GET /api/projects/{project}/query_accelerate_threshold ----
++
++    @Test
++    public void testGetQueryAccelerateThreshold_returnsConfig() throws Exception {
++        FavoriteQueryThresholdResponse response = mock(FavoriteQueryThresholdResponse.class);
++        when(projectService.getQueryAccelerateThresholdConfig(PROJECT)).thenReturn(response);
++
++        mockMvc.perform(get("/api/projects/{project}/query_accelerate_threshold", PROJECT)
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(projectService, times(1)).getQueryAccelerateThresholdConfig(PROJECT);
++    }
++
++    // ---- PUT /api/projects/{project}/query_accelerate_threshold ----
++
++    @Test
++    public void testUpdateQueryAccelerateThreshold_tipsEnabled_validThreshold() throws Exception {
++        FavoriteQueryThresholdRequest request = new FavoriteQueryThresholdRequest();
++        request.setTipsEnabled(true);
++        request.setThreshold(20);
++
++        doNothing().when(projectService).updateQueryAccelerateThresholdConfig(eq(PROJECT), any(Integer.class), anyBoolean());
++
++        mockMvc.perform(put("/api/projects/{project}/query_accelerate_threshold", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testUpdateQueryAccelerateThreshold_tipsEnabledButNoThreshold_returns500() throws Exception {
++        FavoriteQueryThresholdRequest request = new FavoriteQueryThresholdRequest();
++        request.setTipsEnabled(true);
++        // threshold is null
++
++        mockMvc.perform(put("/api/projects/{project}/query_accelerate_threshold", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    @Test
++    public void testUpdateQueryAccelerateThreshold_tipsDisabled() throws Exception {
++        FavoriteQueryThresholdRequest request = new FavoriteQueryThresholdRequest();
++        request.setTipsEnabled(false);
++
++        doNothing().when(projectService).updateQueryAccelerateThresholdConfig(eq(PROJECT), any(Integer.class), anyBoolean());
++
++        mockMvc.perform(put("/api/projects/{project}/query_accelerate_threshold", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- GET /api/projects/{project}/project_config ----
++
++    @Test
++    public void testGetProjectConfig_returnsConfig() throws Exception {
++        ProjectConfigResponse response = mock(ProjectConfigResponse.class);
++        when(projectService.getProjectConfig(PROJECT)).thenReturn(response);
++
++        mockMvc.perform(get("/api/projects/{project}/project_config", PROJECT)
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/project_config ----
++
++    @Test
++    public void testResetProjectConfig_validItem_returnsSuccess() throws Exception {
++        ProjectConfigResetRequest request = new ProjectConfigResetRequest();
++        request.setResetItem("kylin.query.timeout-seconds");
++
++        ProjectConfigResponse response = mock(ProjectConfigResponse.class);
++        when(projectService.resetProjectConfig(eq(PROJECT), anyString())).thenReturn(response);
++
++        mockMvc.perform(put("/api/projects/{project}/project_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testResetProjectConfig_emptyItem_returns500() throws Exception {
++        ProjectConfigResetRequest request = new ProjectConfigResetRequest();
++        // reset_item is null
++
++        mockMvc.perform(put("/api/projects/{project}/project_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- GET /api/projects/default_configs ----
++
++    @Test
++    public void testGetNonCustomProjectConfigs_returnsSet() throws Exception {
++        when(kylinConfig.getNonCustomProjectConfigs()).thenReturn(new HashSet<>(Arrays.asList("key1", "key2")));
++
++        mockMvc.perform(get("/api/projects/default_configs")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/default_database ----
++
++    @Test
++    public void testUpdateDefaultDatabase_validDatabase_succeeds() throws Exception {
++        DefaultDatabaseRequest request = new DefaultDatabaseRequest();
++        request.setDefaultDatabase("DEFAULT");
++
++        doNothing().when(projectService).updateDefaultDatabase(PROJECT, "DEFAULT");
++
++        mockMvc.perform(put("/api/projects/{project}/default_database", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(projectService, times(1)).updateDefaultDatabase(PROJECT, "DEFAULT");
++    }
++
++    @Test
++    public void testUpdateDefaultDatabase_emptyDatabase_returns500() throws Exception {
++        DefaultDatabaseRequest request = new DefaultDatabaseRequest();
++        // database is null
++
++        mockMvc.perform(put("/api/projects/{project}/default_database", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- PUT /api/projects/{project}/yarn_queue ----
++
++    @Test
++    public void testUpdateYarnQueue_validQueue_succeeds() throws Exception {
++        YarnQueueRequest request = new YarnQueueRequest();
++        request.setQueueName("default");
++
++        doNothing().when(projectService).updateYarnQueue(PROJECT, "default");
++
++        mockMvc.perform(put("/api/projects/{project}/yarn_queue", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(projectService, times(1)).updateYarnQueue(PROJECT, "default");
++    }
++
++    @Test
++    public void testUpdateYarnQueue_emptyQueue_returns500() throws Exception {
++        YarnQueueRequest request = new YarnQueueRequest();
++        // queueName is null
++
++        mockMvc.perform(put("/api/projects/{project}/yarn_queue", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- PUT /api/projects/{project}/push_down_config ----
++
++    @Test
++    public void testUpdatePushDownConfig_enabled_succeeds() throws Exception {
++        PushDownConfigRequest request = new PushDownConfigRequest();
++        request.setPushDownEnabled(true);
++
++        doNothing().when(projectService).updatePushDownConfig(eq(PROJECT), any(PushDownConfigRequest.class));
++
++        mockMvc.perform(put("/api/projects/{project}/push_down_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testUpdatePushDownConfig_nullEnabled_returns500() throws Exception {
++        PushDownConfigRequest request = new PushDownConfigRequest();
++        // pushDownEnabled is null
++
++        mockMvc.perform(put("/api/projects/{project}/push_down_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- GET /api/projects/{project}/storage_volume_info ----
++
++    @Test
++    public void testGetStorageVolumeInfo_returnsResponse() throws Exception {
++        doNothing().when(aclEvaluate).checkProjectReadPermission(PROJECT);
++        StorageVolumeInfoResponse response = mock(StorageVolumeInfoResponse.class);
++        when(projectService.getStorageVolumeInfoResponse(PROJECT)).thenReturn(response);
++
++        mockMvc.perform(get("/api/projects/{project}/storage_volume_info", PROJECT)
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/storage_quota ----
++
++    @Test
++    public void testUpdateStorageQuota_validQuota_succeeds() throws Exception {
++        StorageQuotaRequest request = new StorageQuotaRequest();
++        request.setStorageQuotaSize(1073741824L);
++
++        doNothing().when(projectService).updateStorageQuotaConfig(eq(PROJECT), eq(1073741824L));
++
++        mockMvc.perform(put("/api/projects/{project}/storage_quota", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testUpdateStorageQuota_nullSize_returns500() throws Exception {
++        StorageQuotaRequest request = new StorageQuotaRequest();
++        // storageQuotaSize is null (primitive with no value set)
++
++        mockMvc.perform(put("/api/projects/{project}/storage_quota", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"storage_quota_size\":null}")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- PUT /api/projects/{project}/snapshot_config ----
++
++    @Test
++    public void testUpdateSnapshotConfig_validConfig_succeeds() throws Exception {
++        SnapshotConfigRequest request = new SnapshotConfigRequest();
++        request.setSnapshotManualManagementEnabled(true);
++        request.setSnapshotAutoRefreshEnabled(false);
++
++        doNothing().when(projectService).updateSnapshotConfig(eq(PROJECT), any(SnapshotConfigRequest.class));
++
++        mockMvc.perform(put("/api/projects/{project}/snapshot_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/segment_config ----
++
++    @Test
++    public void testUpdateSegmentConfig_validConfig_succeeds() throws Exception {
++        SegmentConfigRequest request = new SegmentConfigRequest();
++        request.setAutoMergeEnabled(true);
++        request.setAutoMergeTimeRanges(Collections.emptyList());
++        request.setCreateEmptySegmentEnabled(false);
++
++        doNothing().when(projectService).updateSegmentConfig(eq(PROJECT), any(SegmentConfigRequest.class));
++
++        mockMvc.perform(put("/api/projects/{project}/segment_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testUpdateSegmentConfig_missingAutoMergeEnabled_returns500() throws Exception {
++        SegmentConfigRequest request = new SegmentConfigRequest();
++        request.setAutoMergeTimeRanges(Collections.emptyList());
++        request.setCreateEmptySegmentEnabled(false);
++        // autoMergeEnabled is null
++
++        mockMvc.perform(put("/api/projects/{project}/segment_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"auto_merge_time_ranges\":[],\"create_empty_segment_enabled\":false}")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- PUT /api/projects/{project}/garbage_cleanup_config ----
++
++    @Test
++    public void testUpdateGarbageCleanupConfig_validConfig_succeeds() throws Exception {
++        // Use raw JSON to avoid GarbageCleanUpConfigRequest getter returning int instead of enum
++        String requestJson = "{\"frequency_time_window\":\"MONTH\",\"low_frequency_threshold\":1}";
++
++        doNothing().when(projectService).updateGarbageCleanupConfig(eq(PROJECT), any(GarbageCleanUpConfigRequest.class));
++
++        mockMvc.perform(put("/api/projects/{project}/garbage_cleanup_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(requestJson)
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/job_notification_config ----
++
++    @Test
++    public void testUpdateJobNotificationConfig_validConfig_succeeds() throws Exception {
++        JobNotificationConfigRequest request = new JobNotificationConfigRequest();
++        request.setDataLoadEmptyNotificationEnabled(false);
++        request.setJobNotificationEmails(Arrays.asList("admin@test.com"));
++
++        doNothing().when(projectService).updateJobNotificationConfig(eq(PROJECT), any(JobNotificationConfigRequest.class));
++
++        mockMvc.perform(put("/api/projects/{project}/job_notification_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/scd2_config ----
++
++    @Test
++    public void testUpdateSCD2Config_validConfig_succeeds() throws Exception {
++        SCD2ConfigRequest request = new SCD2ConfigRequest();
++        request.setScd2Enabled(false);
++
++        doNothing().when(projectService).updateSCD2Config(eq(PROJECT), any(SCD2ConfigRequest.class), any(ModelService.class));
++
++        mockMvc.perform(put("/api/projects/{project}/scd2_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/owner ----
++
++    @Test
++    public void testUpdateProjectOwner_validOwner_succeeds() throws Exception {
++        OwnerChangeRequest request = new OwnerChangeRequest();
++        request.setOwner("new_admin");
++
++        doNothing().when(projectService).updateProjectOwner(eq(PROJECT), any(OwnerChangeRequest.class));
++
++        mockMvc.perform(put("/api/projects/{project}/owner", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testUpdateProjectOwner_emptyOwner_returns500() throws Exception {
++        OwnerChangeRequest request = new OwnerChangeRequest();
++        // owner is null
++
++        mockMvc.perform(put("/api/projects/{project}/owner", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- POST /api/projects/config/deletion ----
++
++    @Test
++    public void testDeleteProjectConfigPost_validRequest_succeeds() throws Exception {
++        when(kylinConfig.getNonCustomProjectConfigs()).thenReturn(Collections.emptySet());
++        doNothing().when(projectService).deleteProjectConfig(eq(PROJECT), anyString());
++
++        mockMvc.perform(post("/api/projects/config/deletion")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"project\":\"" + PROJECT + "\",\"config_name\":\"kylin.query.timeout-seconds\"}")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testDeleteProjectConfigPost_nonCustomConfig_returns500() throws Exception {
++        when(kylinConfig.getNonCustomProjectConfigs())
++                .thenReturn(new HashSet<>(Collections.singletonList("kylin.protected.key")));
++
++        mockMvc.perform(post("/api/projects/config/deletion")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"project\":\"" + PROJECT + "\",\"config_name\":\"kylin.protected.key\"}")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    // ---- PUT /api/projects/{project}/project_general_info ----
++
++    @Test
++    public void testUpdateProjectGeneralInfo_succeeds() throws Exception {
++        doNothing().when(projectService).updateProjectGeneralInfo(eq(PROJECT), any());
++
++        mockMvc.perform(put("/api/projects/{project}/project_general_info", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"description\":\"test\"}")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    // ---- PUT /api/projects/{project}/auto_semi_config ----
++
++    @Test
++    public void testUpdateProjectAutoSemi_succeeds() throws Exception {
++        doNothing().when(projectService).updateAutoSemiConfig(eq(PROJECT), any());
++
++        mockMvc.perform(put("/api/projects/{project}/auto_semi_config", PROJECT)
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{}")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++}
+diff --git a/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NUserControllerTest.java b/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NUserControllerTest.java
+new file mode 100644
+index 0000000..accd98a
+--- /dev/null
++++ b/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NUserControllerTest.java
+@@ -0,0 +1,235 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.doNothing;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.times;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Arrays;
++import java.util.Collections;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.common.scheduler.EventBusFactory;
++import org.apache.kylin.metadata.user.ManagedUser;
++import org.apache.kylin.rest.service.AccessService;
++import org.apache.kylin.rest.service.AclTCRService;
++import org.apache.kylin.rest.service.IUserGroupService;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.UserAclService;
++import org.apache.kylin.rest.service.UserService;
++import org.apache.kylin.rest.util.AclEvaluate;
++import org.junit.After;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.Mock;
++import org.mockito.Mockito;
++import org.mockito.MockitoAnnotations;
++import org.powermock.api.mockito.PowerMockito;
++import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.powermock.modules.junit4.PowerMockRunner;
++import org.springframework.core.env.Environment;
++import org.springframework.http.MediaType;
++import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.security.core.session.SessionRegistry;
++import org.springframework.security.core.userdetails.User;
++import org.springframework.security.core.userdetails.UserDetails;
++import org.springframework.session.FindByIndexNameSessionRepository;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
++import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
++
++@RunWith(PowerMockRunner.class)
++@PrepareForTest({ KylinConfig.class, EventBusFactory.class })
++@org.powermock.core.classloader.annotations.PowerMockIgnore({ "javax.management.*", "javax.xml.*", "org.xml.*", "org.w3c.dom.*" })
++public class NUserControllerTest {
++
++    private static final String ACCEPT = "application/vnd.apache.kylin-v4+json";
++
++    private MockMvc mockMvc;
++    private final ObjectMapper objectMapper = new ObjectMapper()
++            .setFilterProvider(new SimpleFilterProvider()
++                    .addFilter("passwordFilter", SimpleBeanPropertyFilter.serializeAllExcept("password")));
++
++    @Mock
++    private UserService userService;
++    @Mock
++    private AclEvaluate aclEvaluate;
++    @Mock
++    private AccessService accessService;
++    @Mock
++    private AclTCRService aclTCRService;
++    @Mock
++    private IUserGroupService userGroupService;
++    @Mock
++    private UserAclService userAclService;
++    @Mock
++    private SessionRegistry sessionRegistry;
++    @Mock
++    private FindByIndexNameSessionRepository sessionRepository;
++    @Mock
++    private Environment env;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private ProjectService projectService;
++
++    // Not @Mock — initialized before openMocks so the static mock can reference it
++    private KylinConfig kylinConfig;
++
++    // Not @InjectMocks — PowerMockRunner would instantiate it before @Before,
++    // triggering NUserController's static field PasswordEncodeFactory.newUserPasswordEncoder()
++    // which calls KylinConfig.getInstanceFromEnv() before the static mock is set up.
++    private NUserController controller;
++
++    private EventBusFactory mockEventBusFactory;
++
++    @Before
++    public void setUp() throws Exception {
++        // 1. Create kylinConfig mock first so we can stub it before class loading
++        kylinConfig = Mockito.mock(KylinConfig.class);
++        when(kylinConfig.getUserPasswordEncoder())
++                .thenReturn("org.apache.kylin.rest.security.CachedBCryptPasswordEncoder");
++        when(kylinConfig.getSpringStoreType()).thenReturn("redis");
++        when(kylinConfig.getDataBinderAutoGrowCollectionLimit()).thenReturn(256);
++
++        // 2. Set up KylinConfig static mock BEFORE loading NUserController
++        PowerMockito.mockStatic(KylinConfig.class);
++        when(KylinConfig.getInstanceFromEnv()).thenReturn(kylinConfig);
++
++        // 3. Set up EventBusFactory static mock
++        PowerMockito.mockStatic(EventBusFactory.class);
++        mockEventBusFactory = mock(EventBusFactory.class);
++        when(EventBusFactory.getInstance()).thenReturn(mockEventBusFactory);
++        doNothing().when(mockEventBusFactory).postAsync(any());
++
++        // 4. Initialize remaining @Mock fields (kylinConfig and controller are NOT @Mock/@InjectMocks)
++        MockitoAnnotations.openMocks(this);
++
++        // 5. Now safe to instantiate — static initializer will call the already-mocked KylinConfig
++        controller = new NUserController();
++
++        // 6. Inject dependencies
++        ReflectionTestUtils.setField(controller, "userService", userService);
++        ReflectionTestUtils.setField(controller, "aclEvaluate", aclEvaluate);
++        ReflectionTestUtils.setField(controller, "accessService", accessService);
++        ReflectionTestUtils.setField(controller, "aclTCRService", aclTCRService);
++        ReflectionTestUtils.setField(controller, "userGroupService", userGroupService);
++        ReflectionTestUtils.setField(controller, "userAclService", userAclService);
++        ReflectionTestUtils.setField(controller, "sessionRegistry", sessionRegistry);
++        ReflectionTestUtils.setField(controller, "sessionRepository", sessionRepository);
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "projectService", projectService);
++
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @After
++    public void tearDown() {
++        SecurityContextHolder.clearContext();
++    }
++
++    @Test
++    public void testGetAuthentication_withUserDetailsPrincipal_returnsUser() throws Exception {
++        UserDetails userDetails = new User("testuser", "password", Collections.emptyList());
++        SecurityContextHolder.getContext().setAuthentication(
++                new UsernamePasswordAuthenticationToken(userDetails, null, Collections.emptyList()));
++
++        mockMvc.perform(get("/api/user/authentication")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testGetAuthentication_noAuthentication_returnsError() throws Exception {
++        // No auth set — UnauthorizedException maps to 401
++        mockMvc.perform(get("/api/user/authentication")
++                .accept(ACCEPT))
++                .andExpect(status().isUnauthorized());
++    }
++
++    @Test
++    public void testPostAuthentication_withUserDetailsPrincipal_returnsUser() throws Exception {
++        UserDetails userDetails = new User("testuser", "password", Collections.emptyList());
++        SecurityContextHolder.getContext().setAuthentication(
++                new UsernamePasswordAuthenticationToken(userDetails, null, Collections.emptyList()));
++
++        mockMvc.perform(post("/api/user/authentication")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testListSuperAdmin_returnsList() throws Exception {
++        when(userService.listSuperAdminUsers()).thenReturn(Arrays.asList("admin"));
++
++        mockMvc.perform(get("/api/user/super_admin")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userService, times(1)).listSuperAdminUsers();
++    }
++
++    @Test
++    public void testListAllUsers_emptyResult_returnsOk() throws Exception {
++        when(userService.getManagedUsersByFuzzMatching(any(), any(Boolean.class)))
++                .thenReturn(Collections.emptyList());
++        when(userService.listSuperAdminUsers()).thenReturn(Collections.emptyList());
++
++        mockMvc.perform(get("/api/user")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userService, times(1)).getManagedUsersByFuzzMatching(any(), any(Boolean.class));
++    }
++
++    @Test
++    public void testUpdateUserWithoutAuth_delegatesToService() throws Exception {
++        ManagedUser managedUser = new ManagedUser();
++        managedUser.setUsername("testuser");
++        doNothing().when(userService).updateUser(any(ManagedUser.class));
++
++        mockMvc.perform(post("/api/user/update_user")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(managedUser))
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userService, times(1)).updateUser(any(ManagedUser.class));
++    }
++}
+diff --git a/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NUserGroupControllerTest.java b/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NUserGroupControllerTest.java
+new file mode 100644
+index 0000000..20d6490
+--- /dev/null
++++ b/src/metadata-server/src/test/java/org/apache/kylin/rest/controller/NUserGroupControllerTest.java
+@@ -0,0 +1,259 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.doNothing;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.times;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Arrays;
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.common.scheduler.EventBusFactory;
++import org.apache.kylin.metadata.usergroup.UserGroup;
++import org.apache.kylin.rest.request.UpdateGroupRequest;
++import org.apache.kylin.rest.request.UserGroupRequest;
++import org.apache.kylin.rest.response.UserGroupResponseKI;
++import org.apache.kylin.rest.service.AclTCRService;
++import org.apache.kylin.rest.service.IUserGroupService;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.UserService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.powermock.api.mockito.PowerMockito;
++import org.powermock.core.classloader.annotations.PrepareForTest;
++import org.powermock.modules.junit4.PowerMockRunner;
++import org.springframework.http.MediaType;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++
++@RunWith(PowerMockRunner.class)
++@PrepareForTest({ EventBusFactory.class, KylinConfig.class })
++@org.powermock.core.classloader.annotations.PowerMockIgnore({ "javax.management.*", "javax.xml.*", "org.xml.*", "org.w3c.dom.*" })
++public class NUserGroupControllerTest {
++
++    private MockMvc mockMvc;
++    private final ObjectMapper objectMapper = new ObjectMapper();
++
++    @Mock
++    private KylinConfig kylinConfig;
++    @Mock
++    private IUserGroupService userGroupService;
++    @Mock
++    private AclTCRService aclTCRService;
++    @Mock
++    private UserService userService;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private ProjectService projectService;
++
++    @InjectMocks
++    private NUserGroupController controller;
++
++    private EventBusFactory mockEventBusFactory;
++
++    @Before
++    public void setUp() throws Exception {
++        PowerMockito.mockStatic(KylinConfig.class);
++        when(KylinConfig.getInstanceFromEnv()).thenReturn(kylinConfig);
++
++        PowerMockito.mockStatic(EventBusFactory.class);
++        mockEventBusFactory = mock(EventBusFactory.class);
++        when(EventBusFactory.getInstance()).thenReturn(mockEventBusFactory);
++        doNothing().when(mockEventBusFactory).postAsync(any());
++
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "projectService", projectService);
++        ReflectionTestUtils.setField(controller, "userService", userService);
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void testListGroups_returnsGroups() throws Exception {
++        when(userGroupService.listAllAuthorities()).thenReturn(Arrays.asList("ROLE_ADMIN", "ROLE_ANALYST"));
++
++        mockMvc.perform(get("/api/user_group/groups")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(1)).listAllAuthorities();
++    }
++
++    @Test
++    public void testListGroups_withNameFilter() throws Exception {
++        when(userGroupService.listAllAuthorities()).thenReturn(Arrays.asList("ROLE_ADMIN", "ROLE_ANALYST"));
++
++        mockMvc.perform(get("/api/user_group/groups")
++                .param("name", "ADMIN")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testGetUsersWithGroup_returnsData() throws Exception {
++        UserGroup group = new UserGroup();
++        List<UserGroup> groups = Collections.singletonList(group);
++        List<UserGroupResponseKI> responses = Collections.emptyList();
++
++        when(userGroupService.getUserGroupsFilterByGroupName("")).thenReturn(groups);
++        when(userGroupService.getUserGroupResponse(any())).thenReturn(responses);
++
++        mockMvc.perform(get("/api/user_group/users_with_group")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(1)).getUserGroupsFilterByGroupName("");
++    }
++
++    @Test
++    public void testGetUsersAndGroups_returnsMap() throws Exception {
++        Map<String, List<String>> userAndGroup = new HashMap<>();
++        userAndGroup.put("user1", Collections.singletonList("ROLE_ADMIN"));
++        when(userGroupService.getUserAndUserGroup()).thenReturn(userAndGroup);
++
++        mockMvc.perform(get("/api/user_group/users_and_groups")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(1)).getUserAndUserGroup();
++    }
++
++    @Test
++    public void testAddUserGroup_validName_succeeds() throws Exception {
++        UserGroupRequest request = new UserGroupRequest();
++        request.setGroupName("ANALYSTS");
++
++        doNothing().when(userGroupService).addGroup("ANALYSTS");
++
++        mockMvc.perform(post("/api/user_group")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(1)).addGroup("ANALYSTS");
++    }
++
++    @Test
++    public void testAddUserGroup_emptyName_returnsError() throws Exception {
++        UserGroupRequest request = new UserGroupRequest();
++        request.setGroupName("");
++
++        mockMvc.perform(post("/api/user_group")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().is5xxServerError());
++    }
++
++    @Test
++    public void testDeleteUserGroup_delegatesAndFiresEvent() throws Exception {
++        when(userGroupService.getGroupNameByUuid("uuid-123")).thenReturn("ANALYSTS");
++        doNothing().when(userGroupService).deleteGroup("ANALYSTS");
++        doNothing().when(aclTCRService).revokeAclTCR("ANALYSTS", false);
++
++        mockMvc.perform(delete("/api/user_group/uuid-123")
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(1)).deleteGroup("ANALYSTS");
++        verify(aclTCRService, times(1)).revokeAclTCR("ANALYSTS", false);
++        verify(mockEventBusFactory, times(1)).postAsync(any());
++    }
++
++    @Test
++    public void testAddOrDelUsers_validGroup_succeeds() throws Exception {
++        UpdateGroupRequest request = new UpdateGroupRequest();
++        request.setGroup("ANALYSTS");
++        request.setUsers(Arrays.asList("user1", "user2"));
++
++        doNothing().when(userGroupService).modifyGroupUsers("ANALYSTS", Arrays.asList("user1", "user2"));
++
++        mockMvc.perform(put("/api/user_group/users")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(1)).modifyGroupUsers(anyString(), any());
++    }
++
++    @Test
++    public void testBatchAddUserGroups_validNames_succeeds() throws Exception {
++        List<String> groups = Arrays.asList("GROUP_A", "GROUP_B");
++
++        doNothing().when(userGroupService).addGroups(groups);
++
++        mockMvc.perform(post("/api/user_group/batch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(groups))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(1)).addGroups(any());
++    }
++
++    @Test
++    public void testBatchDeleteUserGroups_delegatesAndFiresEvents() throws Exception {
++        List<String> groups = Arrays.asList("GROUP_A", "GROUP_B");
++
++        doNothing().when(userGroupService).deleteGroup(anyString());
++        doNothing().when(aclTCRService).revokeAclTCR(anyString(), any(Boolean.class));
++
++        mockMvc.perform(delete("/api/user_group/batch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(groups))
++                .accept("application/vnd.apache.kylin-v4+json"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(userGroupService, times(2)).deleteGroup(anyString());
++        verify(mockEventBusFactory, times(2)).postAsync(any());
++    }
++}
+diff --git a/src/query-server/src/test/java/org/apache/kylin/rest/controller/NQueryControllerTest.java b/src/query-server/src/test/java/org/apache/kylin/rest/controller/NQueryControllerTest.java
+new file mode 100644
+index 0000000..373fe82
+--- /dev/null
++++ b/src/query-server/src/test/java/org/apache/kylin/rest/controller/NQueryControllerTest.java
+@@ -0,0 +1,423 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.kylin.rest.controller;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyInt;
++import static org.mockito.ArgumentMatchers.anyLong;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.doNothing;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.mockStatic;
++import static org.mockito.Mockito.times;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Arrays;
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.common.scheduler.EventBusFactory;
++import org.apache.kylin.metadata.project.NProjectManager;
++import org.apache.kylin.metadata.project.ProjectInstance;
++import org.apache.kylin.metadata.query.QueryHistoryRequest;
++import org.apache.kylin.rest.cluster.ClusterManager;
++import org.apache.kylin.rest.request.PrepareSqlRequest;
++import org.apache.kylin.rest.request.SQLFormatRequest;
++import org.apache.kylin.rest.request.SaveSqlRequest;
++import org.apache.kylin.rest.response.QueryHistoryFiltersResponse;
++import org.apache.kylin.rest.response.QueryStatisticsResponse;
++import org.apache.kylin.rest.response.SQLResponse;
++import org.apache.kylin.rest.response.ServerInfoResponse;
++import org.apache.kylin.rest.service.ModelService;
++import org.apache.kylin.rest.service.ProjectService;
++import org.apache.kylin.rest.service.QueryCacheManager;
++import org.apache.kylin.rest.service.QueryHistoryService;
++import org.apache.kylin.rest.service.QueryService;
++import org.apache.kylin.rest.service.TableService;
++import org.apache.kylin.rest.service.UserService;
++import org.apache.kylin.rest.util.AclEvaluate;
++import org.junit.After;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.junit.runners.JUnit4;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.MockedStatic;
++import org.mockito.MockitoAnnotations;
++import org.springframework.http.MediaType;
++import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
++import org.springframework.security.core.authority.SimpleGrantedAuthority;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.client.RestTemplate;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++
++@RunWith(JUnit4.class)
++public class NQueryControllerTest {
++
++    private static final String PROJECT = "test_project";
++    private static final String ACCEPT = "application/vnd.apache.kylin-v4+json";
++
++    private MockMvc mockMvc;
++    private final ObjectMapper objectMapper = new ObjectMapper();
++
++    @Mock
++    private QueryService queryService;
++    @Mock
++    private QueryHistoryService queryHistoryService;
++    @Mock
++    private ClusterManager clusterManager;
++    @Mock
++    private QueryCacheManager queryCacheManager;
++    @Mock
++    private AclEvaluate aclEvaluate;
++    @Mock
++    private TableService tableService;
++    @Mock
++    private RestTemplate normalRestTemplate;
++    @Mock
++    private ProjectService projectService;
++    @Mock
++    private UserService userService;
++    @Mock
++    private KylinConfig kylinConfig;
++    @Mock
++    private NProjectManager projectManager;
++
++    @InjectMocks
++    private NQueryController controller;
++
++    private MockedStatic<KylinConfig> kylinConfigMock;
++    private MockedStatic<NProjectManager> projectManagerMock;
++    private MockedStatic<EventBusFactory> eventBusMock;
++
++    @Before
++    public void setUp() {
++        MockitoAnnotations.openMocks(this);
++
++        kylinConfigMock = mockStatic(KylinConfig.class);
++        projectManagerMock = mockStatic(NProjectManager.class);
++        eventBusMock = mockStatic(EventBusFactory.class);
++
++        kylinConfigMock.when(KylinConfig::getInstanceFromEnv).thenReturn(kylinConfig);
++        projectManagerMock.when(() -> NProjectManager.getInstance(kylinConfig)).thenReturn(projectManager);
++        projectManagerMock.when(() -> NProjectManager.getProjectConfig(anyString())).thenReturn(kylinConfig);
++
++        EventBusFactory mockBus = mock(EventBusFactory.class);
++        eventBusMock.when(EventBusFactory::getInstance).thenReturn(mockBus);
++        doNothing().when(mockBus).postAsync(any());
++
++        ProjectInstance projectInstance = mock(ProjectInstance.class);
++        when(projectInstance.getName()).thenReturn(PROJECT);
++        when(projectManager.getProject(PROJECT)).thenReturn(projectInstance);
++
++        ReflectionTestUtils.setField(controller, "restTemplate", normalRestTemplate);
++        ReflectionTestUtils.setField(controller, "projectService", projectService);
++        ReflectionTestUtils.setField(controller, "userService", userService);
++
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @After
++    public void tearDown() {
++        kylinConfigMock.close();
++        projectManagerMock.close();
++        eventBusMock.close();
++        SecurityContextHolder.clearContext();
++    }
++
++    private void setAdminAuthentication() {
++        SecurityContextHolder.getContext().setAuthentication(
++                new UsernamePasswordAuthenticationToken("admin", null,
++                        Collections.singletonList(new SimpleGrantedAuthority("ROLE_ADMIN"))));
++    }
++
++    private void setUserAuthentication(String username) {
++        SecurityContextHolder.getContext().setAuthentication(
++                new UsernamePasswordAuthenticationToken(username, null, Collections.emptyList()));
++    }
++
++    @Test
++    public void testGetServers_returnsHostList() throws Exception {
++        ServerInfoResponse server = mock(ServerInfoResponse.class);
++        when(server.getHost()).thenReturn("node1:7070");
++        when(clusterManager.getServers()).thenReturn(Collections.singletonList(server));
++
++        mockMvc.perform(get("/api/query/servers")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(clusterManager, times(1)).getServers();
++    }
++
++    @Test
++    public void testClearCache_adminUser_succeeds() throws Exception {
++        setAdminAuthentication();
++        doNothing().when(queryCacheManager).clearProjectCache(PROJECT);
++
++        mockMvc.perform(delete("/api/query/cache")
++                .param("project", PROJECT)
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryCacheManager, times(1)).clearProjectCache(PROJECT);
++    }
++
++    @Test
++    public void testClearCache_nonAdminUser_returnsError() throws Exception {
++        // No authentication set — isAdmin() returns false
++        mockMvc.perform(delete("/api/query/cache")
++                .param("project", PROJECT)
++                .accept(ACCEPT))
++                .andExpect(status().is5xxServerError());
++    }
++
++    @Test
++    public void testRecoverCache_adminUser_succeeds() throws Exception {
++        setAdminAuthentication();
++        when(queryCacheManager.recoverCache()).thenReturn(true);
++
++        mockMvc.perform(post("/api/query/cache/recovery")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryCacheManager, times(1)).recoverCache();
++    }
++
++    @Test
++    public void testRecoverCache_nonAdminUser_returnsError() throws Exception {
++        mockMvc.perform(post("/api/query/cache/recovery")
++                .accept(ACCEPT))
++                .andExpect(status().is5xxServerError());
++    }
++
++    @Test
++    public void testStopQuery_delegatesAndFiresEvent() throws Exception {
++        doNothing().when(queryService).stopQuery("query-abc");
++
++        mockMvc.perform(delete("/api/query/query-abc")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryService, times(1)).stopQuery("query-abc");
++    }
++
++    @Test
++    public void testGetQueryHistories_validProject_returnsData() throws Exception {
++        Map<String, Object> result = new HashMap<>();
++        result.put("value", Collections.emptyList());
++        result.put("size", 0);
++        when(queryHistoryService.getQueryHistories(any(QueryHistoryRequest.class), anyInt(), anyInt()))
++                .thenReturn(result);
++
++        mockMvc.perform(get("/api/query/history_queries")
++                .param("project", PROJECT)
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryHistoryService, times(1)).getQueryHistories(any(QueryHistoryRequest.class), anyInt(), anyInt());
++    }
++
++    @Test
++    public void testGetQueryStatistics_validProject_returnsData() throws Exception {
++        long now = System.currentTimeMillis();
++        QueryStatisticsResponse stats = mock(QueryStatisticsResponse.class);
++        when(queryHistoryService.getQueryStatistics(PROJECT, now - 10000, now)).thenReturn(stats);
++
++        mockMvc.perform(get("/api/query/statistics")
++                .param("project", PROJECT)
++                .param("start_time", String.valueOf(now - 10000))
++                .param("end_time", String.valueOf(now))
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryHistoryService, times(1)).getQueryStatistics(anyString(), anyLong(), anyLong());
++    }
++
++    @Test
++    public void testGetQueryHistoriesV2_validProject_returnsData() throws Exception {
++        Map<String, Object> result = new HashMap<>();
++        when(queryHistoryService.getQueryHistories(any(QueryHistoryRequest.class), anyInt(), anyInt()))
++                .thenReturn(result);
++
++        mockMvc.perform(get("/api/query/query_histories")
++                .param("project", PROJECT)
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++    }
++
++    @Test
++    public void testFormatQuery_returnsSqls() throws Exception {
++        SQLFormatRequest request = new SQLFormatRequest();
++        request.setSqls(Arrays.asList("select 1", "select 2"));
++        when(queryService.format(any())).thenReturn(Arrays.asList("SELECT 1", "SELECT 2"));
++
++        mockMvc.perform(put("/api/query/format")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryService, times(1)).format(any());
++    }
++
++    @Test
++    public void testGetQueryHistorySubmitters_returnsUsernames() throws Exception {
++        when(queryHistoryService.getQueryHistoryUsernames(any(QueryHistoryRequest.class), anyInt()))
++                .thenReturn(Arrays.asList("user1", "user2"));
++
++        mockMvc.perform(get("/api/query/query_history_submitters")
++                .param("project", PROJECT)
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryHistoryService, times(1)).getQueryHistoryUsernames(any(QueryHistoryRequest.class), anyInt());
++    }
++
++    @Test
++    public void testGetQueryHistoryModels_returnsFiltersResponse() throws Exception {
++        QueryHistoryFiltersResponse filtersResponse = mock(QueryHistoryFiltersResponse.class);
++        when(queryHistoryService.getQueryHistoryModels(any(QueryHistoryRequest.class), anyInt()))
++                .thenReturn(filtersResponse);
++
++        mockMvc.perform(get("/api/query/query_history_models")
++                .param("project", PROJECT)
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryHistoryService, times(1)).getQueryHistoryModels(any(QueryHistoryRequest.class), anyInt());
++    }
++
++    @Test
++    public void testSaveQuery_validRequest_succeeds() throws Exception {
++        setUserAuthentication("user1");
++
++        SaveSqlRequest request = new SaveSqlRequest();
++        request.setName("myQuery");
++        request.setSql("SELECT 1");
++        request.setProject(PROJECT);
++
++        doNothing().when(queryService).saveQuery(anyString(), anyString(), any());
++
++        mockMvc.perform(post("/api/query/saved_queries")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryService, times(1)).saveQuery(anyString(), anyString(), any());
++    }
++
++    @Test
++    public void testRemoveSavedQuery_delegatesToService() throws Exception {
++        setUserAuthentication("user1");
++
++        doNothing().when(queryService).removeSavedQuery(anyString(), anyString(), anyString());
++
++        mockMvc.perform(delete("/api/query/saved_queries/qid-001")
++                .param("project", PROJECT)
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryService, times(1)).removeSavedQuery(anyString(), anyString(), anyString());
++    }
++
++    @Test
++    public void testRunQuery_simpleRequest_returnsResponse() throws Exception {
++        SQLResponse sqlResponse = mock(SQLResponse.class);
++        when(queryService.queryWithCache(any(PrepareSqlRequest.class))).thenReturn(sqlResponse);
++
++        PrepareSqlRequest request = new PrepareSqlRequest();
++        request.setProject(PROJECT);
++        request.setSql("SELECT 1");
++
++        mockMvc.perform(post("/api/query")
++                .header("User-Agent", "test-agent")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(objectMapper.writeValueAsString(request))
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryService, times(1)).queryWithCache(any(PrepareSqlRequest.class));
++    }
++
++    @Test
++    public void testGetQueryCount_validProject_returnsData() throws Exception {
++        long now = System.currentTimeMillis();
++        Map<String, Object> countData = Collections.singletonMap("count", 5L);
++        when(queryHistoryService.getQueryCount(anyString(), anyLong(), anyLong(), anyString())).thenReturn(countData);
++
++        mockMvc.perform(get("/api/query/statistics/count")
++                .param("project", PROJECT)
++                .param("start_time", String.valueOf(now - 10000))
++                .param("end_time", String.valueOf(now))
++                .param("dimension", "model")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryHistoryService, times(1)).getQueryCount(anyString(), anyLong(), anyLong(), anyString());
++    }
++
++    @Test
++    public void testGetAvgDuration_validProject_returnsData() throws Exception {
++        long now = System.currentTimeMillis();
++        Map<String, Object> durationData = Collections.singletonMap("duration", 200L);
++        when(queryHistoryService.getAvgDuration(anyString(), anyLong(), anyLong(), anyString()))
++                .thenReturn(durationData);
++
++        mockMvc.perform(get("/api/query/statistics/duration")
++                .param("project", PROJECT)
++                .param("start_time", String.valueOf(now - 10000))
++                .param("end_time", String.valueOf(now))
++                .param("dimension", "model")
++                .accept(ACCEPT))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("000"));
++
++        verify(queryHistoryService, times(1)).getAvgDuration(anyString(), anyLong(), anyLong(), anyString());
++    }
++}

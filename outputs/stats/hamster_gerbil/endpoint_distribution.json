@@ -1,0 +1,668 @@
+{
+  "endpoint_universe": {
+    "scope": "projects_with_endpoints",
+    "endpoint_count": 82578,
+    "parameter_surface": {
+      "endpoints_with_body": {
+        "count": 26027,
+        "total": 82578,
+        "proportion": 0.3151807987599603
+      },
+      "required_by_source": {
+        "path": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.5991062994986558,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "query": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 49.0,
+          "mean": 0.37111579355276225,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.08218896074014871,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "body": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.3036523044878781,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "form": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 27.0,
+          "mean": 0.051866114461478846,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "optional_by_source": {
+        "query": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 20.0,
+          "mean": 0.2279662864201119,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 4.0,
+          "mean": 0.006587711012618373,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "body": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.011528494272082152,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "form": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 0.0019981108769890287,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 82578,
+          "min": 0.0,
+          "max": 5.0,
+          "mean": 0.01342972704594444,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    }
+  },
+  "endpoint_coverage": {
+    "scope": "endpoints_api_tests_and_resolved_endpoint_events",
+    "endpoint_count": 28359,
+    "parameter_surface": {
+      "endpoints_with_body": {
+        "count": 6470,
+        "total": 28359,
+        "proportion": 0.22814626749885397
+      },
+      "required_by_source": {
+        "path": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.5733276913854508,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "query": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 17.0,
+          "mean": 0.30903769526429,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.022179907613103424,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "body": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.2204238513346733,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "form": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 0.015374307979830037,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "optional_by_source": {
+        "query": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 16.0,
+          "mean": 0.23213089319087415,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 4.0,
+          "mean": 0.013963821009203427,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "body": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.007722416164180683,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "form": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 0.002750449592721887,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 28359,
+          "min": 0.0,
+          "max": 4.0,
+          "mean": 0.016502697556331325,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    },
+    "coverage": {
+      "count": 5621,
+      "total": 28359,
+      "proportion": 0.1982086815473042
+    },
+    "tests_per_endpoint_among_covered": {
+      "count": 5621,
+      "min": 1.0,
+      "max": 3117.0,
+      "mean": 15.864970645792564,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 3.0,
+      "p90": 11.0
+    },
+    "coverage_buckets": {
+      "no_test": {
+        "endpoint_count": 22738,
+        "path_variable_count": {
+          "count": 22738,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.6111795232650189,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "query_variable_count": {
+          "count": 22738,
+          "min": 0.0,
+          "max": 20.0,
+          "mean": 0.5322367842378397,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "header_variable_count": {
+          "count": 22738,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.03944937989269065,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "form_variable_count": {
+          "count": 22738,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 0.020758202128595304,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "required_query_variable_count": {
+          "count": 22738,
+          "min": 0.0,
+          "max": 17.0,
+          "mean": 0.32368721963233354,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "optional_query_variable_count": {
+          "count": 22738,
+          "min": 0.0,
+          "max": 16.0,
+          "mean": 0.2085495646055062,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "route_depth": {
+          "count": 22738,
+          "min": 0.0,
+          "max": 13.0,
+          "mean": 3.2895593279971855,
+          "p25": 2.0,
+          "p50": 3.0,
+          "p75": 4.0,
+          "p90": 6.0
+        }
+      },
+      "one_to_three": {
+        "endpoint_count": 4285,
+        "path_variable_count": {
+          "count": 4285,
+          "min": 0.0,
+          "max": 5.0,
+          "mean": 0.3738623103850642,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "query_variable_count": {
+          "count": 4285,
+          "min": 0.0,
+          "max": 15.0,
+          "mean": 0.5698949824970828,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 2.0
+        },
+        "header_variable_count": {
+          "count": 4285,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.01866977829638273,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "form_variable_count": {
+          "count": 4285,
+          "min": 0.0,
+          "max": 7.0,
+          "mean": 0.005134189031505251,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "required_query_variable_count": {
+          "count": 4285,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 0.2508751458576429,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "optional_query_variable_count": {
+          "count": 4285,
+          "min": 0.0,
+          "max": 15.0,
+          "mean": 0.3190198366394399,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "route_depth": {
+          "count": 4285,
+          "min": 0.0,
+          "max": 11.0,
+          "mean": 2.754492415402567,
+          "p25": 2.0,
+          "p50": 3.0,
+          "p75": 3.0,
+          "p90": 5.0
+        }
+      },
+      "more_than_three": {
+        "endpoint_count": 1336,
+        "path_variable_count": {
+          "count": 1336,
+          "min": 0.0,
+          "max": 4.0,
+          "mean": 0.5688622754491018,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "query_variable_count": {
+          "count": 1336,
+          "min": 0.0,
+          "max": 20.0,
+          "mean": 0.6010479041916168,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 2.0
+        },
+        "header_variable_count": {
+          "count": 1336,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.03592814371257485,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "form_variable_count": {
+          "count": 1336,
+          "min": 0.0,
+          "max": 18.0,
+          "mean": 0.014970059880239521,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "required_query_variable_count": {
+          "count": 1336,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 0.24625748502994013,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "optional_query_variable_count": {
+          "count": 1336,
+          "min": 0.0,
+          "max": 16.0,
+          "mean": 0.35479041916167664,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "route_depth": {
+          "count": 1336,
+          "min": 0.0,
+          "max": 10.0,
+          "mean": 2.0441616766467066,
+          "p25": 1.0,
+          "p50": 2.0,
+          "p75": 3.0,
+          "p90": 4.0
+        }
+      }
+    },
+    "coverage_by_http_method": {
+      "GET": {
+        "endpoint_count": 14518,
+        "coverage": {
+          "count": 3505,
+          "total": 14518,
+          "proportion": 0.2414244386279102
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 3505,
+          "min": 1.0,
+          "max": 3117.0,
+          "mean": 15.446219686162625,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 3.0,
+          "p90": 11.0
+        }
+      },
+      "HEAD": {
+        "endpoint_count": 35,
+        "coverage": {
+          "count": 4,
+          "total": 35,
+          "proportion": 0.11428571428571428
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 4,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "POST": {
+        "endpoint_count": 7561,
+        "coverage": {
+          "count": 1191,
+          "total": 7561,
+          "proportion": 0.1575188467133977
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 1191,
+          "min": 1.0,
+          "max": 2389.0,
+          "mean": 21.655751469353483,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 4.0,
+          "p90": 12.0
+        }
+      },
+      "PUT": {
+        "endpoint_count": 1940,
+        "coverage": {
+          "count": 360,
+          "total": 1940,
+          "proportion": 0.18556701030927836
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 360,
+          "min": 1.0,
+          "max": 131.0,
+          "mean": 6.102777777777778,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 3.0,
+          "p90": 5.0
+        }
+      },
+      "PATCH": {
+        "endpoint_count": 108,
+        "coverage": {
+          "count": 30,
+          "total": 108,
+          "proportion": 0.2777777777777778
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 30,
+          "min": 1.0,
+          "max": 352.0,
+          "mean": 38.1,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 5.0,
+          "p90": 49.60000000000048
+        }
+      },
+      "DELETE": {
+        "endpoint_count": 1959,
+        "coverage": {
+          "count": 344,
+          "total": 1959,
+          "proportion": 0.1755997958141909
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 344,
+          "min": 1.0,
+          "max": 234.0,
+          "mean": 7.444767441860465,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 3.0,
+          "p90": 10.0
+        }
+      },
+      "OPTIONS": {
+        "endpoint_count": 66,
+        "coverage": {
+          "count": 30,
+          "total": 66,
+          "proportion": 0.45454545454545453
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 30,
+          "min": 1.0,
+          "max": 8.0,
+          "mean": 5.133333333333334,
+          "p25": 1.75,
+          "p50": 6.0,
+          "p75": 7.5,
+          "p90": 8.0
+        }
+      },
+      "TRACE": {
+        "endpoint_count": 2,
+        "coverage": {
+          "count": 0,
+          "total": 2,
+          "proportion": 0.0
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 0,
+          "min": null,
+          "max": null,
+          "mean": null,
+          "p25": null,
+          "p50": null,
+          "p75": null,
+          "p90": null
+        }
+      },
+      "CONNECT": {
+        "endpoint_count": 0,
+        "coverage": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 0,
+          "min": null,
+          "max": null,
+          "mean": null,
+          "p25": null,
+          "p50": null,
+          "p75": null,
+          "p90": null
+        }
+      },
+      "UNKNOWN": {
+        "endpoint_count": 0,
+        "coverage": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 0,
+          "min": null,
+          "max": null,
+          "mean": null,
+          "p25": null,
+          "p50": null,
+          "p75": null,
+          "p90": null
+        }
+      },
+      "wildcard": {
+        "endpoint_count": 2170,
+        "coverage": {
+          "count": 157,
+          "total": 2170,
+          "proportion": 0.07235023041474654
+        },
+        "tests_per_endpoint_among_covered": {
+          "count": 157,
+          "min": 1.0,
+          "max": 809.0,
+          "mean": 20.29936305732484,
+          "p25": 1.0,
+          "p50": 2.0,
+          "p75": 4.0,
+          "p90": 9.0
+        }
+      }
+    }
+  }
+}

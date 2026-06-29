@@ -1,0 +1,85 @@
+{
+  "scope": "all_tests",
+  "api": {
+    "test_count": 1243,
+    "parameterized": {
+      "count": 1,
+      "total": 1243,
+      "proportion": 0.0008045052292839903
+    },
+    "source_kinds": {
+      "scope": "parameterized_tests",
+      "test_count": 1,
+      "by_kind": {
+        "static_only": {
+          "count": 1,
+          "total": 1,
+          "proportion": 1.0
+        },
+        "dynamic_only": {
+          "count": 0,
+          "total": 1,
+          "proportion": 0.0
+        },
+        "mixed": {
+          "count": 0,
+          "total": 1,
+          "proportion": 0.0
+        },
+        "no_recognized_source": {
+          "count": 0,
+          "total": 1,
+          "proportion": 0.0
+        }
+      }
+    },
+    "source_annotations": {
+      "total": 1,
+      "by_annotation": {
+        "@ValueSource": {
+          "count": 1,
+          "total": 1,
+          "proportion": 1.0
+        }
+      }
+    }
+  },
+  "non_api": {
+    "test_count": 71,
+    "parameterized": {
+      "count": 0,
+      "total": 71,
+      "proportion": 0.0
+    },
+    "source_kinds": {
+      "scope": "parameterized_tests",
+      "test_count": 0,
+      "by_kind": {
+        "static_only": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "dynamic_only": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "mixed": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "no_recognized_source": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        }
+      }
+    },
+    "source_annotations": {
+      "total": 0,
+      "by_annotation": {}
+    }
+  }
+}

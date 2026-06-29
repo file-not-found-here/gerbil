@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "description": "Canonical registry of the Java HTTP services bundled under resources/. Consumed by setup-service.sh (via lib/manifest.py) and the sibling general-agent-eval Docker runner. Single source of truth: do not duplicate these recipes in the shell scripts. Each service may carry an optional `rest_assured` block (target_pom relative to the service repo root, group_id, artifact_id, version or null to inherit a Spring Boot dependency-management BOM, scope, optional exclusions list of group_id/artifact_id pairs for transitive deps that clash with the host project, e.g. under a maven-enforcer dependencyConvergence rule) consumed by the general-agent-eval runner's --inject-rest-assured step to provision RestAssured as a test dependency before the agent runs; omit the block to skip injection.",
+  "placeholders": {
+    "${PORT}": "HTTP port the service is launched on (default_port unless overridden via --port/PORT).",
+    "${ARTIFACT}": "Absolute path of the built artifact resolved from artifact_glob (only for run commands that need it)."
+  },
+  "rest_styles": {
+    "jax-rs": "JAX-RS / Jersey / RESTEasy JSON API.",
+    "spring-rest": "Spring @RestController JSON API.",
+    "spring-mvc": "Spring MVC, server-rendered; limited JSON endpoints.",
+    "servlet-mvc": "Servlet/JSP/Stripes web app, HTML responses (not a REST API).",
+    "custom-http": "Hand-rolled HTTP server exposing a JSON API."
+  },
+  "services": {
+    "features-service": {
+      "description": "Features Model microservice (Spring Boot 1.3.3 + Jersey JAX-RS).",
+      "repo_subdir": "features-service",
+      "java_version": 8,
+      "build_system": "maven",
+      "rest_style": "jax-rs",
+      "build": ["mvn -B -DskipTests clean package"],
+      "artifact_glob": "target/features-service-*.jar",
+      "run": "java -Dserver.port=${PORT} -jar ${ARTIFACT}",
+      "default_port": 8080,
+      "base_path": "/",
+      "health_path": "/products",
+      "health_timeout_seconds": 120,
+      "external_dependencies": [],
+      "env": {},
+      "notes": "Embedded in-memory H2, auto-seeded from data.sql. JDK 8 ONLY: the Spring Boot 1.3.3 / QueryDSL 3.7.2 / Jersey stack fails to build or run on JDK 11+. No actuator; /products is the readiness probe."
+    },
+    "restcountries": {
+      "description": "REST Countries API (RESTEasy JAX-RS on embedded Jetty).",
+      "repo_subdir": "restcountries",
+      "java_version": 8,
+      "build_system": "maven",
+      "rest_style": "jax-rs",
+      "build": ["mvn -B -DskipTests clean package"],
+      "artifact_glob": "",
+      "run": "mvn jetty:run -Djetty.port=${PORT}",
+      "default_port": 8080,
+      "base_path": "/rest",
+      "health_path": "/rest/v2/all",
+      "health_timeout_seconds": 120,
+      "external_dependencies": [],
+      "env": {},
+      "rest_assured": {
+        "target_pom": "pom.xml",
+        "group_id": "io.rest-assured",
+        "artifact_id": "rest-assured",
+        "version": "4.5.1",
+        "scope": "test"
+      },
+      "notes": "Country data ships as classpath JSON; no DB or network needed. JDK 8 ONLY: RESTEasy 3.1.4 and the 2014-era jetty-maven-plugin 9.2.2 depend on javax.* removed in JDK 11+. Read endpoints under /rest/v2 and /rest/v1; avoid POST /rest/v2/contribute (Stripe)."
+    },
+    "languagetool": {
+      "description": "LanguageTool embedded HTTP server (com.sun HttpServer JSON API).",
+      "repo_subdir": "languagetool",
+      "java_version": 8,
+      "build_system": "maven",
+      "rest_style": "custom-http",
+      "build": ["mvn -B --projects languagetool-standalone --also-make -DskipTests clean package"],
+      "artifact_glob": "",
+      "run": "cd languagetool-standalone/target/LanguageTool-*/LanguageTool-*/ && exec java -cp languagetool-server.jar org.languagetool.server.HTTPServer --port ${PORT} --public --allow-origin '*'",
+      "default_port": 8081,
+      "base_path": "/v2",
+      "health_path": "/v2/languages",
+      "health_timeout_seconds": 180,
+      "external_dependencies": [],
+      "env": {},
+      "rest_assured": {
+        "target_pom": "languagetool-server/pom.xml",
+        "group_id": "io.rest-assured",
+        "artifact_id": "rest-assured",
+        "version": "4.5.1",
+        "scope": "test",
+        "exclusions": [
+          {"group_id": "org.apache.commons", "artifact_id": "commons-lang3"},
+          {"group_id": "commons-codec", "artifact_id": "commons-codec"}
+        ]
+      },
+      "notes": "Heavy multi-module build (~35 language modules); pre-warm ~/.m2 and skip tests. The server binds localhost-only by default, so --public is required to reach it from outside the container. The run command cd's into the assembled distribution so the jar's relative Class-Path and unpacked language resources resolve; the assembly nests a base directory, hence the double LanguageTool-*/ glob. Optional n-gram/ML data is left off (large downloads). DB only used if databaseDriver is configured (it is not). The rest_assured exclusions satisfy the parent POM's dependencyConvergence enforcer rule: rest-assured 4.5.1 pulls commons-lang3 3.11 and commons-codec 1.11, clashing with the project's 3.9/1.12; the host versions serve the test classpath instead."
+    },
+    "sample.daytrader8": {
+      "description": "DayTrader 8 Jakarta EE 8 trading benchmark on Open Liberty (JAX-RS + JSF).",
+      "repo_subdir": "sample.daytrader8",
+      "java_version": 8,
+      "build_system": "maven",
+      "rest_style": "jax-rs",
+      "build": ["mvn -B -DskipTests clean package"],
+      "artifact_glob": "",
+      "run": "mvn liberty:run -DtestServerHttpPort=${PORT}",
+      "default_port": 9080,
+      "base_path": "/daytrader",
+      "health_path": "/daytrader/jaxrs/sync/echoText?input=ok",
+      "health_timeout_seconds": 300,
+      "external_dependencies": [],
+      "env": {},
+      "rest_assured": {
+        "target_pom": "pom.xml",
+        "group_id": "io.rest-assured",
+        "artifact_id": "rest-assured",
+        "version": "4.5.1",
+        "scope": "test"
+      },
+      "notes": "liberty:run downloads/provisions an Open Liberty runtime on first build (network required). Embedded Derby ships pre-seeded under resources/data/tradedb, so no external DB. The /jaxrs/sync/echoText endpoint is DB-independent (good liveness probe); /rest/quotes/* needs the seeded DB and may require hitting /daytrader/config (TradeBuild) once. Context root /daytrader. Avoid the DB2 path (Dockerfile-db2)."
+    },
+    "genome-nexus": {
+      "description": "Genome Nexus annotation API (Spring Boot 2.2 multi-module, MongoDB-backed).",
+      "repo_subdir": "genome-nexus",
+      "java_version": 8,
+      "build_system": "maven",
+      "rest_style": "spring-rest",
+      "build": ["mvn -B -DskipTests clean install"],
+      "artifact_glob": "web/target/web-*.war",
+      "run": "java -Dserver.port=${PORT} -Dspring.data.mongodb.uri=${MONGODB_URI} -Dspring.cache.type=NONE -jar ${ARTIFACT}",
+      "default_port": 8888,
+      "base_path": "/",
+      "health_path": "/actuator/health",
+      "health_timeout_seconds": 180,
+      "external_dependencies": ["mongodb"],
+      "env": {
+        "MONGODB_URI": "mongodb://127.0.0.1:27017/annotator"
+      },
+      "pre_run": [
+        {
+          "name": "mongod",
+          "command": "mkdir -p ${STATE_DIR}/mongo && exec mongod --dbpath ${STATE_DIR}/mongo --bind_ip 127.0.0.1 --port 27017 --quiet",
+          "ready_tcp": "127.0.0.1:27017",
+          "ready_timeout_seconds": 60
+        }
+      ],
+      "rest_assured": {
+        "target_pom": "web/pom.xml",
+        "group_id": "io.rest-assured",
+        "artifact_id": "rest-assured",
+        "version": null,
+        "scope": "test"
+      },
+      "notes": "The only service needing an out-of-process datastore. setup-service.sh auto-starts a bundled mongod (pre_run) on an empty database -- exactly how EMB runs it (Testcontainers mongo:3.6.2, dropped/empty, never seeded), so data endpoints (/annotation/**, /version) return empty/not-found while /actuator/health (Mongo reports UP on a reachable empty DB), /swagger-ui.html, and /v2/api-docs work. mongod is pinned to 4.2, the newest server the Spring Boot 2.2 Mongo driver (3.11) supports; -Dspring.cache.type=NONE mirrors EMB. Build is `clean install` (reactor installs sibling modules); the war ignores server.port from properties, so it is set via -Dserver.port. JDK 8 (EMB jdk_8_maven). For populated data instead of empty, point MONGODB_URI at a genomenexus/gn-mongo instance and skip the pre_run mongod."
+    },
+    "jpetstore-6": {
+      "description": "MyBatis JPetStore 6 (Spring + Stripes + JSP web app, embedded HSQLDB).",
+      "repo_subdir": "jpetstore-6",
+      "java_version": 17,
+      "build_system": "maven-wrapper",
+      "rest_style": "servlet-mvc",
+      "build": ["./mvnw -B -DskipTests clean package"],
+      "artifact_glob": "",
+      "run": "./mvnw cargo:run -P tomcat9 -Dcargo.servlet.port=${PORT}",
+      "default_port": 8080,
+      "base_path": "/jpetstore",
+      "health_path": "/jpetstore/",
+      "health_timeout_seconds": 300,
+      "external_dependencies": [],
+      "env": {},
+      "rest_assured": {
+        "target_pom": "pom.xml",
+        "group_id": "io.rest-assured",
+        "artifact_id": "rest-assured",
+        "version": "5.5.0",
+        "scope": "test"
+      },
+      "notes": "NOT a REST API: server-rendered JSP/Stripes returning HTML under /jpetstore/actions/*.action; assertions must target HTML/redirects and many flows need a session (login j2ee/j2ee). Embedded HSQLDB auto-seeds at startup (ephemeral). Cargo downloads Tomcat 9.0.97 from archive.apache.org on first run (network). Profile id is `tomcat9` (the README's tomcat90 does not exist). Uses the mvnw wrapper."
+    },
+    "spring-petclinic": {
+      "description": "Spring PetClinic (Spring Boot 3.4 MVC, mostly Thymeleaf UI, H2 default).",
+      "repo_subdir": "spring-petclinic",
+      "java_version": 17,
+      "build_system": "maven-wrapper",
+      "rest_style": "spring-mvc",
+      "build": ["./mvnw -B -DskipTests -Dspring-javaformat.skip=true -Dcheckstyle.skip=true package"],
+      "artifact_glob": "target/spring-petclinic-*.jar",
+      "run": "java -jar ${ARTIFACT} --server.port=${PORT}",
+      "default_port": 8080,
+      "base_path": "/",
+      "health_path": "/actuator/health",
+      "health_timeout_seconds": 120,
+      "external_dependencies": [],
+      "env": {},
+      "rest_assured": {
+        "target_pom": "pom.xml",
+        "group_id": "io.rest-assured",
+        "artifact_id": "rest-assured",
+        "version": null,
+        "scope": "test"
+      },
+      "notes": "Default in-memory H2, auto-seeded; no external services. Primarily server-rendered MVC: the only true JSON endpoint is GET /vets (GET /vets.html is HTML); form POSTs are application/x-www-form-urlencoded. Actuator fully exposed at /actuator/health (avoid /livez and /readyz, which exist only under the k8s config). JDK 17. Build skips spring-javaformat/checkstyle so incidental edits do not fail the build. Maven jar is *-SNAPSHOT, Gradle jar is not — always glob, never hard-code."
+    }
+  }
+}

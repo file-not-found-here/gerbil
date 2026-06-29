@@ -1,0 +1,561 @@
+{
+  "scope": "endpoints_api_tests_and_resolved_endpoint_events",
+  "endpoint_count": 28359,
+  "request_attributed": {
+    "count": 5621,
+    "total": 28359,
+    "proportion": 0.1982086815473042
+  },
+  "status_asserted": {
+    "count": 4219,
+    "total": 28359,
+    "proportion": 0.14877111322684156
+  },
+  "outcome_mix": {
+    "scope": "status_asserted_endpoints",
+    "endpoint_count": 4219,
+    "by_mix": {
+      "success_only": {
+        "count": 2818,
+        "total": 4219,
+        "proportion": 0.6679307892865608
+      },
+      "error_without_success": {
+        "count": 167,
+        "total": 4219,
+        "proportion": 0.039582839535434934
+      },
+      "success_and_error": {
+        "count": 1155,
+        "total": 4219,
+        "proportion": 0.2737615548708225
+      },
+      "neither_success_nor_error": {
+        "count": 79,
+        "total": 4219,
+        "proportion": 0.018724816307181796
+      }
+    },
+    "has_auth_denial_assertion": {
+      "count": 532,
+      "total": 4219,
+      "proportion": 0.12609623133443945
+    }
+  },
+  "asserted_status_ranges": {
+    "attributed_assertion_counts": {
+      "1xx": {
+        "count": 0,
+        "total": 66021,
+        "proportion": 0.0
+      },
+      "2xx": {
+        "count": 50046,
+        "total": 66021,
+        "proportion": 0.758031535420548
+      },
+      "3xx": {
+        "count": 721,
+        "total": 66021,
+        "proportion": 0.010920767634540526
+      },
+      "4xx": {
+        "count": 11149,
+        "total": 66021,
+        "proportion": 0.16887051089804758
+      },
+      "5xx": {
+        "count": 1401,
+        "total": 66021,
+        "proportion": 0.021220520743399827
+      },
+      "unknown": {
+        "count": 2704,
+        "total": 66021,
+        "proportion": 0.04095666530346405
+      }
+    },
+    "endpoints_with_range": {
+      "1xx": {
+        "count": 0,
+        "total": 4219,
+        "proportion": 0.0
+      },
+      "2xx": {
+        "count": 3973,
+        "total": 4219,
+        "proportion": 0.9416923441573832
+      },
+      "3xx": {
+        "count": 153,
+        "total": 4219,
+        "proportion": 0.03626451765821285
+      },
+      "4xx": {
+        "count": 1142,
+        "total": 4219,
+        "proportion": 0.27068025598483053
+      },
+      "5xx": {
+        "count": 355,
+        "total": 4219,
+        "proportion": 0.08414316188670301
+      },
+      "unknown": {
+        "count": 229,
+        "total": 4219,
+        "proportion": 0.0542782649917042
+      }
+    },
+    "endpoints_with_range_among_all_endpoints": {
+      "1xx": {
+        "count": 0,
+        "total": 28359,
+        "proportion": 0.0
+      },
+      "2xx": {
+        "count": 3973,
+        "total": 28359,
+        "proportion": 0.14009661835748793
+      },
+      "3xx": {
+        "count": 153,
+        "total": 28359,
+        "proportion": 0.005395112662646779
+      },
+      "4xx": {
+        "count": 1142,
+        "total": 28359,
+        "proportion": 0.04026940301138968
+      },
+      "5xx": {
+        "count": 355,
+        "total": 28359,
+        "proportion": 0.012518071864311153
+      },
+      "unknown": {
+        "count": 229,
+        "total": 28359,
+        "proportion": 0.008075037906837336
+      }
+    }
+  },
+  "asserted_status_codes": {
+    "attributed_assertion_counts": {
+      "200": {
+        "count": 42475,
+        "total": 62347,
+        "proportion": 0.6812677434359311
+      },
+      "201": {
+        "count": 4860,
+        "total": 62347,
+        "proportion": 0.07795082361621249
+      },
+      "202": {
+        "count": 211,
+        "total": 62347,
+        "proportion": 0.0033842847290166326
+      },
+      "203": {
+        "count": 2,
+        "total": 62347,
+        "proportion": 3.207852823712448e-05
+      },
+      "204": {
+        "count": 2187,
+        "total": 62347,
+        "proportion": 0.03507787062729562
+      },
+      "206": {
+        "count": 18,
+        "total": 62347,
+        "proportion": 0.00028870675413412034
+      },
+      "207": {
+        "count": 2,
+        "total": 62347,
+        "proportion": 3.207852823712448e-05
+      },
+      "210": {
+        "count": 1,
+        "total": 62347,
+        "proportion": 1.603926411856224e-05
+      },
+      "211": {
+        "count": 1,
+        "total": 62347,
+        "proportion": 1.603926411856224e-05
+      },
+      "212": {
+        "count": 1,
+        "total": 62347,
+        "proportion": 1.603926411856224e-05
+      },
+      "301": {
+        "count": 7,
+        "total": 62347,
+        "proportion": 0.00011227484882993568
+      },
+      "302": {
+        "count": 434,
+        "total": 62347,
+        "proportion": 0.006961040627456012
+      },
+      "304": {
+        "count": 2,
+        "total": 62347,
+        "proportion": 3.207852823712448e-05
+      },
+      "400": {
+        "count": 1555,
+        "total": 62347,
+        "proportion": 0.024941055704364282
+      },
+      "401": {
+        "count": 2436,
+        "total": 62347,
+        "proportion": 0.03907164739281762
+      },
+      "402": {
+        "count": 5,
+        "total": 62347,
+        "proportion": 8.01963205928112e-05
+      },
+      "403": {
+        "count": 2624,
+        "total": 62347,
+        "proportion": 0.042087029047107316
+      },
+      "404": {
+        "count": 2994,
+        "total": 62347,
+        "proportion": 0.048021556770975346
+      },
+      "405": {
+        "count": 168,
+        "total": 62347,
+        "proportion": 0.0026945963719184566
+      },
+      "406": {
+        "count": 35,
+        "total": 62347,
+        "proportion": 0.0005613742441496785
+      },
+      "409": {
+        "count": 99,
+        "total": 62347,
+        "proportion": 0.0015878871477376618
+      },
+      "410": {
+        "count": 3,
+        "total": 62347,
+        "proportion": 4.811779235568672e-05
+      },
+      "411": {
+        "count": 2,
+        "total": 62347,
+        "proportion": 3.207852823712448e-05
+      },
+      "412": {
+        "count": 18,
+        "total": 62347,
+        "proportion": 0.00028870675413412034
+      },
+      "413": {
+        "count": 2,
+        "total": 62347,
+        "proportion": 3.207852823712448e-05
+      },
+      "414": {
+        "count": 8,
+        "total": 62347,
+        "proportion": 0.00012831411294849792
+      },
+      "415": {
+        "count": 38,
+        "total": 62347,
+        "proportion": 0.0006094920365053651
+      },
+      "417": {
+        "count": 86,
+        "total": 62347,
+        "proportion": 0.0013793767141963527
+      },
+      "418": {
+        "count": 2,
+        "total": 62347,
+        "proportion": 3.207852823712448e-05
+      },
+      "422": {
+        "count": 984,
+        "total": 62347,
+        "proportion": 0.015782635892665244
+      },
+      "429": {
+        "count": 6,
+        "total": 62347,
+        "proportion": 9.623558471137344e-05
+      },
+      "431": {
+        "count": 8,
+        "total": 62347,
+        "proportion": 0.00012831411294849792
+      },
+      "500": {
+        "count": 1006,
+        "total": 62347,
+        "proportion": 0.016135499703273614
+      },
+      "502": {
+        "count": 4,
+        "total": 62347,
+        "proportion": 6.415705647424896e-05
+      },
+      "503": {
+        "count": 42,
+        "total": 62347,
+        "proportion": 0.0006736490929796141
+      },
+      "504": {
+        "count": 4,
+        "total": 62347,
+        "proportion": 6.415705647424896e-05
+      },
+      "509": {
+        "count": 1,
+        "total": 62347,
+        "proportion": 1.603926411856224e-05
+      },
+      "555": {
+        "count": 16,
+        "total": 62347,
+        "proportion": 0.00025662822589699583
+      }
+    },
+    "endpoints_with_code": {
+      "200": {
+        "count": 3471,
+        "total": 4219,
+        "proportion": 0.8227068025598483
+      },
+      "201": {
+        "count": 205,
+        "total": 4219,
+        "proportion": 0.04858971320218061
+      },
+      "202": {
+        "count": 50,
+        "total": 4219,
+        "proportion": 0.011851149561507466
+      },
+      "203": {
+        "count": 1,
+        "total": 4219,
+        "proportion": 0.00023702299123014932
+      },
+      "204": {
+        "count": 362,
+        "total": 4219,
+        "proportion": 0.08580232282531405
+      },
+      "206": {
+        "count": 8,
+        "total": 4219,
+        "proportion": 0.0018961839298411946
+      },
+      "207": {
+        "count": 2,
+        "total": 4219,
+        "proportion": 0.00047404598246029864
+      },
+      "210": {
+        "count": 1,
+        "total": 4219,
+        "proportion": 0.00023702299123014932
+      },
+      "211": {
+        "count": 1,
+        "total": 4219,
+        "proportion": 0.00023702299123014932
+      },
+      "212": {
+        "count": 1,
+        "total": 4219,
+        "proportion": 0.00023702299123014932
+      },
+      "301": {
+        "count": 2,
+        "total": 4219,
+        "proportion": 0.00047404598246029864
+      },
+      "302": {
+        "count": 90,
+        "total": 4219,
+        "proportion": 0.02133206921071344
+      },
+      "304": {
+        "count": 2,
+        "total": 4219,
+        "proportion": 0.00047404598246029864
+      },
+      "400": {
+        "count": 277,
+        "total": 4219,
+        "proportion": 0.06565536857075137
+      },
+      "401": {
+        "count": 370,
+        "total": 4219,
+        "proportion": 0.08769850675515525
+      },
+      "402": {
+        "count": 4,
+        "total": 4219,
+        "proportion": 0.0009480919649205973
+      },
+      "403": {
+        "count": 363,
+        "total": 4219,
+        "proportion": 0.08603934581654421
+      },
+      "404": {
+        "count": 473,
+        "total": 4219,
+        "proportion": 0.11211187485186062
+      },
+      "405": {
+        "count": 40,
+        "total": 4219,
+        "proportion": 0.009480919649205973
+      },
+      "406": {
+        "count": 35,
+        "total": 4219,
+        "proportion": 0.008295804693055226
+      },
+      "409": {
+        "count": 58,
+        "total": 4219,
+        "proportion": 0.01374733349134866
+      },
+      "410": {
+        "count": 2,
+        "total": 4219,
+        "proportion": 0.00047404598246029864
+      },
+      "411": {
+        "count": 1,
+        "total": 4219,
+        "proportion": 0.00023702299123014932
+      },
+      "412": {
+        "count": 9,
+        "total": 4219,
+        "proportion": 0.002133206921071344
+      },
+      "413": {
+        "count": 2,
+        "total": 4219,
+        "proportion": 0.00047404598246029864
+      },
+      "414": {
+        "count": 8,
+        "total": 4219,
+        "proportion": 0.0018961839298411946
+      },
+      "415": {
+        "count": 16,
+        "total": 4219,
+        "proportion": 0.003792367859682389
+      },
+      "417": {
+        "count": 83,
+        "total": 4219,
+        "proportion": 0.019672908272102396
+      },
+      "418": {
+        "count": 1,
+        "total": 4219,
+        "proportion": 0.00023702299123014932
+      },
+      "422": {
+        "count": 71,
+        "total": 4219,
+        "proportion": 0.016828632377340603
+      },
+      "429": {
+        "count": 5,
+        "total": 4219,
+        "proportion": 0.0011851149561507466
+      },
+      "431": {
+        "count": 8,
+        "total": 4219,
+        "proportion": 0.0018961839298411946
+      },
+      "500": {
+        "count": 265,
+        "total": 4219,
+        "proportion": 0.06281109267598957
+      },
+      "502": {
+        "count": 4,
+        "total": 4219,
+        "proportion": 0.0009480919649205973
+      },
+      "503": {
+        "count": 29,
+        "total": 4219,
+        "proportion": 0.00687366674567433
+      },
+      "504": {
+        "count": 4,
+        "total": 4219,
+        "proportion": 0.0009480919649205973
+      },
+      "509": {
+        "count": 1,
+        "total": 4219,
+        "proportion": 0.00023702299123014932
+      },
+      "555": {
+        "count": 8,
+        "total": 4219,
+        "proportion": 0.0018961839298411946
+      }
+    }
+  },
+  "per_endpoint": {
+    "attributed_request_count_among_attributed": {
+      "count": 5621,
+      "min": 1.0,
+      "max": 11651.0,
+      "mean": 29.206191069204767,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 4.0,
+      "p90": 12.0
+    },
+    "status_asserted_request_count_among_asserted": {
+      "count": 4219,
+      "min": 1.0,
+      "max": 2263.0,
+      "mean": 15.519317373785258,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 4.0,
+      "p90": 12.0
+    },
+    "asserting_test_count_among_asserted": {
+      "count": 4219,
+      "min": 1.0,
+      "max": 1270.0,
+      "mean": 10.405783360986016,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 4.0,
+      "p90": 10.0
+    }
+  }
+}
