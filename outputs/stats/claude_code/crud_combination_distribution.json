@@ -1,0 +1,238 @@
+{
+  "scope": "resolved_test_resource_sequences",
+  "api_test_count": 1243,
+  "resolved_sequence_count": 1325,
+  "unresolved_sequence_count": 0,
+  "total_sequence_count": 1325,
+  "combinations": {
+    "create-only": {
+      "operations": [
+        "create"
+      ],
+      "count": 349,
+      "pct": 26.339622641509433
+    },
+    "read-only": {
+      "operations": [
+        "read"
+      ],
+      "count": 761,
+      "pct": 57.43396226415094
+    },
+    "update-only": {
+      "operations": [
+        "update"
+      ],
+      "count": 95,
+      "pct": 7.169811320754717
+    },
+    "delete-only": {
+      "operations": [
+        "delete"
+      ],
+      "count": 87,
+      "pct": 6.566037735849057
+    },
+    "create-read": {
+      "operations": [
+        "create",
+        "read"
+      ],
+      "count": 15,
+      "pct": 1.1320754716981132
+    },
+    "create-update": {
+      "operations": [
+        "create",
+        "update"
+      ],
+      "count": 8,
+      "pct": 0.6037735849056604
+    },
+    "create-delete": {
+      "operations": [
+        "create",
+        "delete"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "read-update": {
+      "operations": [
+        "read",
+        "update"
+      ],
+      "count": 1,
+      "pct": 0.07547169811320754
+    },
+    "read-delete": {
+      "operations": [
+        "read",
+        "delete"
+      ],
+      "count": 1,
+      "pct": 0.07547169811320754
+    },
+    "update-delete": {
+      "operations": [
+        "update",
+        "delete"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "create-read-update": {
+      "operations": [
+        "create",
+        "read",
+        "update"
+      ],
+      "count": 4,
+      "pct": 0.3018867924528302
+    },
+    "create-read-delete": {
+      "operations": [
+        "create",
+        "read",
+        "delete"
+      ],
+      "count": 4,
+      "pct": 0.3018867924528302
+    },
+    "create-update-delete": {
+      "operations": [
+        "create",
+        "update",
+        "delete"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "read-update-delete": {
+      "operations": [
+        "read",
+        "update",
+        "delete"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "create-read-update-delete": {
+      "operations": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "count": 0,
+      "pct": 0.0
+    }
+  },
+  "multi_operation_combinations": {
+    "scope": "resolved_multi_operation_test_resource_sequences",
+    "multi_operation_sequence_count": 33,
+    "pct_of_resolved_sequences": 2.490566037735849,
+    "combinations": {
+      "create-read": {
+        "operations": [
+          "create",
+          "read"
+        ],
+        "count": 15,
+        "pct": 45.45454545454545
+      },
+      "create-update": {
+        "operations": [
+          "create",
+          "update"
+        ],
+        "count": 8,
+        "pct": 24.242424242424242
+      },
+      "create-delete": {
+        "operations": [
+          "create",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update": {
+        "operations": [
+          "read",
+          "update"
+        ],
+        "count": 1,
+        "pct": 3.0303030303030303
+      },
+      "read-delete": {
+        "operations": [
+          "read",
+          "delete"
+        ],
+        "count": 1,
+        "pct": 3.0303030303030303
+      },
+      "update-delete": {
+        "operations": [
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update": {
+        "operations": [
+          "create",
+          "read",
+          "update"
+        ],
+        "count": 4,
+        "pct": 12.121212121212121
+      },
+      "create-read-delete": {
+        "operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "count": 4,
+        "pct": 12.121212121212121
+      },
+      "create-update-delete": {
+        "operations": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update-delete": {
+        "operations": [
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update-delete": {
+        "operations": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      }
+    },
+    "create_delete_pairing": {
+      "scope": "resolved_multi_operation_sequences_with_create",
+      "create_sequence_count": 31,
+      "paired_with_delete_count": 4,
+      "pct_paired_with_delete": 12.903225806451612
+    }
+  }
+}

@@ -1,0 +1,238 @@
+{
+  "scope": "endpoints_api_tests_and_resolved_endpoint_events",
+  "endpoint_count": 2022,
+  "coverage": {
+    "count": 678,
+    "total": 2022,
+    "proportion": 0.3353115727002967
+  },
+  "among_covered": {
+    "endpoint_count": 678,
+    "holistic": {
+      "exercise_rate": {
+        "count": 678,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.8440186902576283,
+        "p25": 0.75,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "optional_exercise_rate": {
+        "count": 228,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.343770015316068,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "required_exercise_rate": {
+        "count": 587,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.9865133446905168,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "simple_1_way_optional_coverage": {
+        "count": 228,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.1906397939292676,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.2,
+        "p90": 1.0
+      },
+      "simple_2_way_optional_coverage": {
+        "count": 112,
+        "min": 0.0,
+        "max": 0.10714285714285714,
+        "mean": 0.0009566326530612245,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "total_2_way_optional_coverage": {
+        "count": 112,
+        "min": 0.25,
+        "max": 0.75,
+        "mean": 0.34468891723356004,
+        "p25": 0.25,
+        "p50": 0.25,
+        "p75": 0.40416666666666673,
+        "p90": 0.5666666666666667
+      }
+    },
+    "by_source": {
+      "exercise_rate": {
+        "path": {
+          "count": 359,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "query": {
+          "count": 348,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.6532485474295819,
+          "p25": 0.2,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 18,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.6111111111111112,
+          "p25": 0.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "body": {
+          "count": 145,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.9310344827586207,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "optional_exercise_rate": {
+        "query": {
+          "count": 212,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.32726209194369577,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.875,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 8,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.625,
+          "p25": 0.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "simple_1_way_optional_coverage": {
+        "query": {
+          "count": 212,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.19087675950883498,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.2,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 8,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.25,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.25,
+          "p90": 1.0
+        }
+      },
+      "simple_2_way_optional_coverage": {
+        "query": {
+          "count": 109,
+          "min": 0.0,
+          "max": 0.10714285714285714,
+          "mean": 0.000982961992136304,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "total_2_way_optional_coverage": {
+        "query": {
+          "count": 109,
+          "min": 0.25,
+          "max": 0.75,
+          "mean": 0.3472950342216397,
+          "p25": 0.25,
+          "p50": 0.25,
+          "p75": 0.4166666666666667,
+          "p90": 0.5666666666666667
+        }
+      }
+    },
+    "pooled_optional_exercise_by_source": {
+      "query": {
+        "exercised_parameter_count": 172,
+        "total_parameter_count": 592,
+        "exercise_rate": 0.2905405405405405
+      },
+      "header": {
+        "exercised_parameter_count": 5,
+        "total_parameter_count": 8,
+        "exercise_rate": 0.625
+      }
+    },
+    "optional_exercise_extremes": {
+      "holistic": {
+        "fully_exercised": {
+          "count": 60,
+          "total": 228,
+          "proportion": 0.2631578947368421
+        },
+        "none_exercised": {
+          "count": 122,
+          "total": 228,
+          "proportion": 0.5350877192982456
+        }
+      },
+      "by_source": {
+        "query": {
+          "fully_exercised": {
+            "count": 53,
+            "total": 212,
+            "proportion": 0.25
+          },
+          "none_exercised": {
+            "count": 118,
+            "total": 212,
+            "proportion": 0.5566037735849056
+          }
+        },
+        "header": {
+          "fully_exercised": {
+            "count": 5,
+            "total": 8,
+            "proportion": 0.625
+          },
+          "none_exercised": {
+            "count": 3,
+            "total": 8,
+            "proportion": 0.375
+          }
+        }
+      }
+    }
+  }
+}

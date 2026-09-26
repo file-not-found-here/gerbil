@@ -1,0 +1,176 @@
+{
+  "scope": "api_tests",
+  "api_test_count": 269,
+  "preconditions": {
+    "entry_count_per_test": {
+      "count": 269,
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 0.0
+    },
+    "entry_count_per_label_per_test": {
+      "db-seeding": {
+        "count": 269,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "container-bootstrap": {
+        "count": 269,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "mq-seeding": {
+        "count": 269,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "fs-seeding": {
+        "count": 269,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      }
+    },
+    "type_share": {
+      "total": 0,
+      "by_type": {
+        "db-seeding": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "container-bootstrap": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "mq-seeding": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "fs-seeding": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        }
+      }
+    }
+  },
+  "postconditions": {
+    "entry_count_per_test": {
+      "count": 269,
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 0.0
+    },
+    "entry_count_per_label_per_test": {
+      "db": {
+        "count": 269,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "mq": {
+        "count": 269,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "fs": {
+        "count": 269,
+        "min": 0.0,
+        "max": 0.0,
+        "mean": 0.0,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      }
+    },
+    "type_share": {
+      "total": 0,
+      "by_type": {
+        "db": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "mq": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        },
+        "fs": {
+          "count": 0,
+          "total": 0,
+          "proportion": null
+        }
+      }
+    }
+  },
+  "state_cooccurrence": {
+    "database": {
+      "precondition_type": "db-seeding",
+      "postcondition_type": "db",
+      "tests_with_precondition_and_postcondition": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      }
+    },
+    "message_queue": {
+      "precondition_type": "mq-seeding",
+      "postcondition_type": "mq",
+      "tests_with_precondition_and_postcondition": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      }
+    },
+    "file_system": {
+      "precondition_type": "fs-seeding",
+      "postcondition_type": "fs",
+      "tests_with_precondition_and_postcondition": {
+        "count": 0,
+        "total": 269,
+        "proportion": 0.0
+      }
+    }
+  }
+}

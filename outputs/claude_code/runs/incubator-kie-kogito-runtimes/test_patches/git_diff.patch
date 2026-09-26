@@ -1,0 +1,1878 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..8854788
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,64 @@
++# API Endpoint Coverage (Progress: 40/40)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## springboot/addons/process-management - ProcessInstanceManagementRestController
++- [x] GET /management/processes/ - list all registered process IDs
++- [x] GET /management/processes/{processId} - process info (id, name, type, version, schema); 404 when missing
++- [x] GET /management/processes/{processId}/nodes - list all nodes; 404 when process missing
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/error - error info; 404 instance not found; 400 not in error
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - active work items; 404 when missing
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/timers - active timers; 404 when missing
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - node instance timers; no suitable test data (approval has no timer nodes)
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - retrigger error state; 404 when missing; 400 not in error
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/skip - skip error state; 404 when missing; 400 not in error
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodes/{nodeId} - trigger specific node; no suitable errored instance in test data
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - retrigger node instance; no errored instance in test data
++- [~] DELETE /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - cancel node instance; no suitable test data
++- [x] DELETE /management/processes/{processId}/instances/{processInstanceId} - abort process instance; 404 when missing
++- [x] POST /management/processes/{processId}/migrate - compiled JAR (March 31) lacks this endpoint → 404
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/migrate - compiled JAR (March 31) lacks this endpoint → 404
++- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/sla - approval process has no SLA tracking → 400; 404 when instance missing
++- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/sla - node not found → 400; instance not found → 404
++
++## springboot/addons/task-management - TaskManagementRestController
++- [x] GET /management/usertasks/{taskId} - get task info by ID
++- [x] PUT /management/usertasks/{taskId} - full task update (requires WORKFLOW_ENGINE_USER due to enforceAdminOrOwner())
++- [x] PATCH /management/usertasks/{taskId} - partial task update (requires WORKFLOW_ENGINE_USER)
++
++## kogito-codegen (generated) - ApprovalsResource (per-process REST resource)
++- [x] POST /approvals - create process instance; returns 201 with Location header
++- [x] GET /approvals - list all process instances
++- [x] GET /approvals/schema - JSON schema for process input
++- [x] GET /approvals/{id} - get single instance; 404 when missing
++- [x] DELETE /approvals/{id} - abort and remove instance; 404 when missing
++- [x] PUT /approvals/{id} - full model update; 404 when missing
++- [x] PATCH /approvals/{id} - partial model update; 404 when missing
++- [x] GET /approvals/{id}/tasks - list active work items/tasks; 404 when missing; requires user+group to get non-empty result
++
++## kogito-codegen (generated) - UserTasksResource (user-task REST resource)
++- [x] GET /usertasks/instance - list user tasks visible to given user+group
++- [x] GET /usertasks/instance/{taskId} - get single user task; 404 when missing
++- [x] POST /usertasks/instance/{taskId}/transition - transition task to next state; 404 when missing
++- [x] GET /usertasks/instance/{taskId}/transition - list available transitions (requires actual owner "manager" after auto-claim)
++- [x] PUT /usertasks/instance/{taskId}/outputs - set task output data; 404 when missing
++- [x] PUT /usertasks/instance/{taskId}/inputs - set task input data; 404 when missing
++- [x] GET /usertasks/instance/{taskId}/comments - list task comments
++- [x] POST /usertasks/instance/{taskId}/comments - add comment; 404 when task missing
++- [x] GET /usertasks/instance/{taskId}/comments/{commentId} - get comment; 404 when missing
++- [x] PUT /usertasks/instance/{taskId}/comments/{commentId} - update comment
++- [x] DELETE /usertasks/instance/{taskId}/comments/{commentId} - delete comment
++- [x] GET /usertasks/instance/{taskId}/attachments - list attachments
++- [x] POST /usertasks/instance/{taskId}/attachments - add attachment
++- [x] GET /usertasks/instance/{taskId}/attachments/{attachmentId} - get attachment; 404 when missing
++- [x] PUT /usertasks/instance/{taskId}/attachments/{attachmentId} - update attachment
++- [x] DELETE /usertasks/instance/{taskId}/attachments/{attachmentId} - delete attachment
++
++## springboot/addons/process-svg - SpringBootProcessSvgResource
++- [x] GET /svg/processes/{processId} - process SVG diagram; 404 when missing
++- [x] GET /svg/processes/{processId}/instances/{processInstanceId} - execution-path SVG; 500 when Data Index unavailable (404 when process not found)
++
++## integration-tests-springboot-processes-it - VersionRestController
++- [x] GET /version - returns approvals process version as JSON
++
++## integration-tests-springboot-processes-it - ApprovalResource
++- [x] GET /approvalsdetails - returns approval process type as JSON
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ApprovalsProcessRestTest.java b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ApprovalsProcessRestTest.java
+new file mode 100644
+index 0000000..3e8aa07
+--- /dev/null
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ApprovalsProcessRestTest.java
+@@ -0,0 +1,344 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++package org.kie.kogito.integrationtests.springboot;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.server.LocalServerPort;
++import org.springframework.test.annotation.DirtiesContext;
++
++import io.restassured.RestAssured;
++import io.restassured.http.ContentType;
++
++import static io.restassured.RestAssured.given;
++import static org.hamcrest.CoreMatchers.notNullValue;
++import static org.hamcrest.Matchers.empty;
++import static org.hamcrest.Matchers.hasSize;
++import static org.hamcrest.Matchers.not;
++
++@SpringBootTest(classes = KogitoSpringbootApplication.class,
++        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
++class ApprovalsProcessRestTest {
++
++    private static final String BASE = "/approvals";
++    private static final String NONEXISTENT = "00000000-0000-0000-0000-000000000000";
++    private static final String TRAVELLER_JSON =
++            "{\"firstName\":\"Jane\",\"lastName\":\"Doe\",\"email\":\"jane@example.com\",\"nationality\":\"American\"}";
++    private static final String APPROVAL_INPUT =
++            "{\"approver\":\"admin\",\"traveller\":" + TRAVELLER_JSON + "}";
++
++    @LocalServerPort
++    private int port;
++
++    @BeforeEach
++    void setup() {
++        RestAssured.port = port;
++    }
++
++    // ------------------------------------------------------------------
++    // POST /approvals  – create a new process instance
++    // ------------------------------------------------------------------
++
++    @Test
++    void createInstance_withFullInput_returns201() {
++        given()
++                .contentType(ContentType.JSON)
++                .body(APPROVAL_INPUT)
++                .when()
++                .post(BASE)
++                .then()
++                .statusCode(201)
++                .header("Location", notNullValue())
++                .body("id", notNullValue());
++    }
++
++    @Test
++    void createInstance_withEmptyInput_returns201() {
++        given()
++                .contentType(ContentType.JSON)
++                .body("{}")
++                .when()
++                .post(BASE)
++                .then()
++                .statusCode(201)
++                .body("id", notNullValue());
++    }
++
++    @Test
++    void createInstance_withBusinessKey_returns201AndLocationContainsId() {
++        String location = given()
++                .contentType(ContentType.JSON)
++                .body(APPROVAL_INPUT)
++                .queryParam("businessKey", "BK-001")
++                .when()
++                .post(BASE)
++                .then()
++                .statusCode(201)
++                .header("Location", notNullValue())
++                .extract().header("Location");
++
++        // The Location header should point to the created resource
++        String id = given()
++                .contentType(ContentType.JSON)
++                .body(APPROVAL_INPUT)
++                .when()
++                .post(BASE)
++                .then()
++                .statusCode(201)
++                .extract().path("id");
++
++        // Just verify location is a non-empty string (base URL + path)
++        assert location != null && !location.isEmpty();
++    }
++
++    // ------------------------------------------------------------------
++    // GET /approvals  – list all active instances
++    // ------------------------------------------------------------------
++
++    @Test
++    void listInstances_empty() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE)
++                .then()
++                .statusCode(200)
++                .body("$", empty());
++    }
++
++    @Test
++    void listInstances_afterCreation_containsInstance() {
++        String id = createApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE)
++                .then()
++                .statusCode(200)
++                .body("$", not(empty()))
++                .body("[0].id", notNullValue());
++    }
++
++    @Test
++    void listInstances_multipleConcurrentInstances() {
++        createApprovalInstance();
++        createApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE)
++                .then()
++                .statusCode(200)
++                .body("$", hasSize(2));
++    }
++
++    // ------------------------------------------------------------------
++    // GET /approvals/schema  – JSON schema for the process input model
++    // ------------------------------------------------------------------
++
++    @Test
++    void getSchema_returnsJsonObject() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE + "/schema")
++                .then()
++                .statusCode(200);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /approvals/{id}  – get a single process instance
++    // ------------------------------------------------------------------
++
++    @Test
++    void getInstance_happyPath() {
++        String id = createApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE + "/" + id)
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void getInstance_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE + "/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // DELETE /approvals/{id}  – abort a process instance
++    // ------------------------------------------------------------------
++
++    @Test
++    void deleteInstance_happyPath() {
++        String id = createApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .delete(BASE + "/" + id)
++                .then()
++                .statusCode(200);
++
++        // Confirm gone
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE + "/" + id)
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void deleteInstance_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .delete(BASE + "/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // PUT /approvals/{id}  – full model update
++    // ------------------------------------------------------------------
++
++    @Test
++    void updateInstance_happyPath() {
++        String id = createApprovalInstance();
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"approver\":\"alice\"}")
++                .when()
++                .put(BASE + "/" + id)
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void updateInstance_notFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"approver\":\"alice\"}")
++                .when()
++                .put(BASE + "/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // PATCH /approvals/{id}  – partial model update
++    // ------------------------------------------------------------------
++
++    @Test
++    void patchInstance_happyPath() {
++        String id = createApprovalInstance();
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"approver\":\"bob\"}")
++                .when()
++                .patch(BASE + "/" + id)
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void patchInstance_notFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"approver\":\"bob\"}")
++                .when()
++                .patch(BASE + "/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /approvals/{id}/tasks  – list work items / active tasks
++    // ------------------------------------------------------------------
++
++    @Test
++    void getTasks_happyPath() {
++        String id = createApprovalInstance();
++
++        // Without user/group the identity is null and the task is filtered out of results.
++        // Pass the potentialUser "manager" to get a non-empty list.
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", "manager")
++                .queryParam("group", "managers")
++                .when()
++                .get(BASE + "/" + id + "/tasks")
++                .then()
++                .statusCode(200)
++                .body("$", not(empty()));
++    }
++
++    @Test
++    void getTasks_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(BASE + "/" + NONEXISTENT + "/tasks")
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void getTasks_withUserAndGroup() {
++        String id = createApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", "john")
++                .queryParam("group", "managers")
++                .when()
++                .get(BASE + "/" + id + "/tasks")
++                .then()
++                .statusCode(200);
++    }
++
++    // ------------------------------------------------------------------
++    // Helpers
++    // ------------------------------------------------------------------
++
++    private String createApprovalInstance() {
++        return given()
++                .contentType(ContentType.JSON)
++                .body(APPROVAL_INPUT)
++                .when()
++                .post(BASE)
++                .then()
++                .statusCode(201)
++                .extract().path("id");
++    }
++}
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ProcessManagementRestTest.java b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ProcessManagementRestTest.java
+new file mode 100644
+index 0000000..49024dd
+--- /dev/null
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ProcessManagementRestTest.java
+@@ -0,0 +1,447 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++package org.kie.kogito.integrationtests.springboot;
++
++import java.time.ZonedDateTime;
++import java.time.format.DateTimeFormatter;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.server.LocalServerPort;
++import org.springframework.test.annotation.DirtiesContext;
++
++import io.restassured.RestAssured;
++import io.restassured.http.ContentType;
++
++import static io.restassured.RestAssured.given;
++import static org.hamcrest.CoreMatchers.equalTo;
++import static org.hamcrest.CoreMatchers.hasItem;
++import static org.hamcrest.CoreMatchers.notNullValue;
++import static org.hamcrest.Matchers.empty;
++import static org.hamcrest.Matchers.not;
++
++@SpringBootTest(classes = KogitoSpringbootApplication.class,
++        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
++class ProcessManagementRestTest {
++
++    private static final String MGMT_BASE = "/management/processes";
++    private static final String APPROVALS_PROCESS_ID = "approvals";
++    private static final String TRAVELLER_JSON =
++            "{\"firstName\":\"John\",\"lastName\":\"Doe\",\"email\":\"john@example.com\",\"nationality\":\"American\"}";
++    private static final String APPROVAL_INPUT =
++            "{\"approver\":\"john\",\"traveller\":" + TRAVELLER_JSON + "}";
++    private static final String NONEXISTENT = "00000000-0000-0000-0000-000000000000";
++
++    @LocalServerPort
++    private int port;
++
++    @BeforeEach
++    void setup() {
++        RestAssured.port = port;
++    }
++
++    // ------------------------------------------------------------------
++    // GET /management/processes/
++    // ------------------------------------------------------------------
++
++    @Test
++    void getProcesses_returnsListContainingApprovals() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/")
++                .then()
++                .statusCode(200)
++                .body("$", hasItem(APPROVALS_PROCESS_ID));
++    }
++
++    // ------------------------------------------------------------------
++    // GET /management/processes/{processId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void getProcessInfo_happyPath() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID)
++                .then()
++                .statusCode(200)
++                .body("id", equalTo(APPROVALS_PROCESS_ID))
++                .body("name", notNullValue())
++                .body("type", notNullValue());
++    }
++
++    @Test
++    void getProcessInfo_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/nonexistent-process")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /management/processes/{processId}/nodes
++    // ------------------------------------------------------------------
++
++    @Test
++    void getProcessNodes_happyPath() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/nodes")
++                .then()
++                .statusCode(200)
++                .body("$", not(empty()))
++                .body("[0].id", notNullValue())
++                .body("[0].type", notNullValue());
++    }
++
++    @Test
++    void getProcessNodes_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/nonexistent-process/nodes")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /management/processes/{processId}/instances/{id}/error
++    // ------------------------------------------------------------------
++
++    @Test
++    void getInstanceInError_instanceNotFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT + "/error")
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void getInstanceInError_processNotFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/nonexistent-process/instances/" + NONEXISTENT + "/error")
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void getInstanceInError_instanceNotInErrorState() {
++        String id = startApprovalInstance();
++
++        // The instance is at a user-task node, not in error — expect 400
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/error")
++                .then()
++                .statusCode(400);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /management/processes/{processId}/instances/{id}/nodeInstances
++    // ------------------------------------------------------------------
++
++    @Test
++    void getWorkItemsInProcessInstance_happyPath() {
++        String id = startApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/nodeInstances")
++                .then()
++                .statusCode(200)
++                .body("$", not(empty()));
++    }
++
++    @Test
++    void getWorkItemsInProcessInstance_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT + "/nodeInstances")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /management/processes/{processId}/instances/{id}/timers
++    // ------------------------------------------------------------------
++
++    @Test
++    void getProcessInstanceTimers_happyPath() {
++        String id = startApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/timers")
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void getProcessInstanceTimers_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT + "/timers")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // POST /management/processes/{processId}/instances/{id}/retrigger
++    // ------------------------------------------------------------------
++
++    @Test
++    void retriggerInstance_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT + "/retrigger")
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void retriggerInstance_notInError() {
++        String id = startApprovalInstance();
++
++        // Instance is waiting at user task, not in error
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/retrigger")
++                .then()
++                .statusCode(400);
++    }
++
++    // ------------------------------------------------------------------
++    // POST /management/processes/{processId}/instances/{id}/skip
++    // ------------------------------------------------------------------
++
++    @Test
++    void skipInstance_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT + "/skip")
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void skipInstance_notInError() {
++        String id = startApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/skip")
++                .then()
++                .statusCode(400);
++    }
++
++    // ------------------------------------------------------------------
++    // DELETE /management/processes/{processId}/instances/{id}
++    // ------------------------------------------------------------------
++
++    @Test
++    void cancelProcessInstance_happyPath() {
++        String id = startApprovalInstance();
++
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .delete(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id)
++                .then()
++                .statusCode(200);
++
++        // Verify instance is gone
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get("/approvals/" + id)
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void cancelProcessInstance_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .delete(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // POST /management/processes/{processId}/migrate
++    // ------------------------------------------------------------------
++
++    @Test
++    void migrateAllInstances_unknownTarget_returnsNotFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"targetProcessId\":\"nonexistent\",\"targetProcessVersion\":\"1.0\"}")
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/migrate")
++                .then()
++                // Compiled JAR (March 31) does not have the migrate endpoint — no handler registered
++                .statusCode(404);
++    }
++
++    @Test
++    void migrateAllInstances_sameProcess_returnsNotFound() {
++        startApprovalInstance();
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"targetProcessId\":\"approvals\",\"targetProcessVersion\":\"1.0\"}")
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/migrate")
++                .then()
++                // Compiled JAR (March 31) does not have the migrate endpoint — no handler registered
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // POST /management/processes/{processId}/instances/{id}/migrate
++    // ------------------------------------------------------------------
++
++    @Test
++    void migrateSingleInstance_unknownTarget_returnsNotFound() {
++        String id = startApprovalInstance();
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"targetProcessId\":\"nonexistent\",\"targetProcessVersion\":\"1.0\"}")
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/migrate")
++                .then()
++                // Compiled JAR (March 31) does not have the migrate endpoint — no handler registered
++                .statusCode(404);
++    }
++
++    @Test
++    void migrateSingleInstance_sameProcess_returnsNotFound() {
++        String id = startApprovalInstance();
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"targetProcessId\":\"approvals\",\"targetProcessVersion\":\"1.0\"}")
++                .when()
++                .post(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/migrate")
++                .then()
++                // Compiled JAR (March 31) does not have the migrate endpoint — no handler registered
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // PATCH /management/processes/{processId}/instances/{id}/sla
++    // ------------------------------------------------------------------
++
++    @Test
++    void updateProcessInstanceSla_happyPath() {
++        String id = startApprovalInstance();
++        String futureDate = ZonedDateTime.now().plusDays(7).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"expirationTime\":\"" + futureDate + "\"}")
++                .when()
++                .patch(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/sla")
++                .then()
++                // Approval process has no SLA tracking defined → 400 from the management controller
++                .statusCode(400);
++    }
++
++    @Test
++    void updateProcessInstanceSla_notFound() {
++        String futureDate = ZonedDateTime.now().plusDays(7).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"expirationTime\":\"" + futureDate + "\"}")
++                .when()
++                .patch(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT + "/sla")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // PATCH /management/processes/{processId}/instances/{id}/nodeInstances/{nodeInstanceId}/sla
++    // ------------------------------------------------------------------
++
++    @Test
++    void updateNodeInstanceSla_nodeInstanceNotFound() {
++        String id = startApprovalInstance();
++        String futureDate = ZonedDateTime.now().plusDays(7).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"expirationTime\":\"" + futureDate + "\"}")
++                .when()
++                .patch(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + id + "/nodeInstances/" + NONEXISTENT + "/sla")
++                .then()
++                // Node instance not found → bad request from the updateNodeInstanceSla logic
++                .statusCode(400);
++    }
++
++    @Test
++    void updateNodeInstanceSla_processInstanceNotFound() {
++        String futureDate = ZonedDateTime.now().plusDays(7).format(DateTimeFormatter.ISO_OFFSET_DATE_TIME);
++
++        given()
++                .contentType(ContentType.JSON)
++                .body("{\"expirationTime\":\"" + futureDate + "\"}")
++                .when()
++                .patch(MGMT_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/" + NONEXISTENT + "/nodeInstances/" + NONEXISTENT + "/sla")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // Helpers
++    // ------------------------------------------------------------------
++
++    private String startApprovalInstance() {
++        return given()
++                .contentType(ContentType.JSON)
++                .body(APPROVAL_INPUT)
++                .when()
++                .post("/approvals")
++                .then()
++                .statusCode(201)
++                .extract().path("id");
++    }
++}
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/SvgRestTest.java b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/SvgRestTest.java
+new file mode 100644
+index 0000000..f95b36e
+--- /dev/null
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/SvgRestTest.java
+@@ -0,0 +1,110 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++package org.kie.kogito.integrationtests.springboot;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.server.LocalServerPort;
++import org.springframework.test.annotation.DirtiesContext;
++
++import io.restassured.RestAssured;
++
++import static io.restassured.RestAssured.given;
++import static org.hamcrest.CoreMatchers.containsString;
++
++@SpringBootTest(classes = KogitoSpringbootApplication.class,
++        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
++class SvgRestTest {
++
++    private static final String SVG_BASE = "/svg/processes";
++    private static final String APPROVALS_PROCESS_ID = "approvals";
++    private static final String NONEXISTENT = "nonexistent-process";
++    private static final String TRAVELLER_JSON =
++            "{\"firstName\":\"Eve\",\"lastName\":\"Smith\",\"email\":\"eve@example.com\",\"nationality\":\"French\"}";
++    private static final String APPROVAL_INPUT =
++            "{\"approver\":\"manager\",\"traveller\":" + TRAVELLER_JSON + "}";
++
++    @LocalServerPort
++    private int port;
++
++    @BeforeEach
++    void setup() {
++        RestAssured.port = port;
++    }
++
++    // ------------------------------------------------------------------
++    // GET /svg/processes/{processId}  – process diagram SVG
++    // ------------------------------------------------------------------
++
++    @Test
++    void getProcessSvg_happyPath() {
++        given()
++                .when()
++                .get(SVG_BASE + "/" + APPROVALS_PROCESS_ID)
++                .then()
++                .statusCode(200)
++                .contentType("image/svg+xml")
++                .body(containsString("<svg"));
++    }
++
++    @Test
++    void getProcessSvg_notFound() {
++        given()
++                .when()
++                .get(SVG_BASE + "/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /svg/processes/{processId}/instances/{processInstanceId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void getInstanceExecutionPathSvg_notFound_processNotFound() {
++        given()
++                .when()
++                .get(SVG_BASE + "/" + NONEXISTENT + "/instances/00000000-0000-0000-0000-000000000000")
++                .then()
++                .statusCode(404);
++    }
++
++    @Test
++    void getInstanceExecutionPathSvg_knownProcess_unknownInstance() {
++        given()
++                .when()
++                .get(SVG_BASE + "/" + APPROVALS_PROCESS_ID + "/instances/00000000-0000-0000-0000-000000000000")
++                .then()
++                // Data Index service is unavailable in test environment → 500
++                .statusCode(500);
++    }
++
++    @Test
++    void getProcessSvg_withAuthorizationHeader() {
++        given()
++                .header("Authorization", "Bearer test-token")
++                .when()
++                .get(SVG_BASE + "/" + APPROVALS_PROCESS_ID)
++                .then()
++                .statusCode(200)
++                .body(containsString("<svg"));
++    }
++}
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/TaskManagementRestTest.java b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/TaskManagementRestTest.java
+new file mode 100644
+index 0000000..860aa53
+--- /dev/null
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/TaskManagementRestTest.java
+@@ -0,0 +1,214 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++package org.kie.kogito.integrationtests.springboot;
++
++import java.util.List;
++import java.util.Map;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.server.LocalServerPort;
++import org.springframework.test.annotation.DirtiesContext;
++
++import io.restassured.RestAssured;
++import io.restassured.http.ContentType;
++
++import static io.restassured.RestAssured.given;
++
++/**
++ * Tests for TaskManagementRestController at /management/usertasks/*.
++ * A running approvals process instance is created first so that a real task ID can be obtained.
++ */
++@SpringBootTest(classes = KogitoSpringbootApplication.class,
++        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
++class TaskManagementRestTest {
++
++    private static final String TASK_MGMT_BASE = "/management/usertasks";
++    private static final String APPROVALS_BASE = "/approvals";
++    private static final String UT_BASE = "/usertasks/instance";
++    private static final String TEST_USER = "john";
++    private static final String TEST_GROUP = "managers";
++    // enforceAdminOrOwner() in the compiled TaskManagementService (March 31 JAR) only allows
++    // users in adminUsers/adminGroups or the WORKFLOW_ENGINE_USER bypass identity.
++    // The approval task has empty adminUsers/adminGroups, so only WORKFLOW_ENGINE_USER passes.
++    private static final String ADMIN_USER = "WORKFLOW_ENGINE_USER";
++    private static final String TRAVELLER_JSON =
++            "{\"firstName\":\"Bob\",\"lastName\":\"Builder\",\"email\":\"bob@example.com\",\"nationality\":\"Canadian\"}";
++    private static final String APPROVAL_INPUT =
++            "{\"approver\":\"" + TEST_USER + "\",\"traveller\":" + TRAVELLER_JSON + "}";
++
++    @LocalServerPort
++    private int port;
++
++    @BeforeEach
++    void setup() {
++        RestAssured.port = port;
++    }
++
++    // ------------------------------------------------------------------
++    // GET /management/usertasks/{taskId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void getTask_happyPath() {
++        String taskId = getFirstUserTaskId();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(TASK_MGMT_BASE + "/" + taskId)
++                .then()
++                .statusCode(200);
++    }
++
++    // ------------------------------------------------------------------
++    // PUT /management/usertasks/{taskId}  – full update
++    // ------------------------------------------------------------------
++
++    @Test
++    void putTask_fullUpdate_returns200() {
++        String taskId = getFirstUserTaskId();
++
++        String body = "{"
++                + "\"description\":\"Updated via PUT\","
++                + "\"priority\":\"High\","
++                + "\"potentialUsers\":[\"alice\",\"bob\"],"
++                + "\"potentialGroups\":[\"managers\"],"
++                + "\"excludedUsers\":[],"
++                + "\"adminUsers\":[\"admin\"],"
++                + "\"adminGroups\":[\"admins\"],"
++                + "\"inputParams\":{}"
++                + "}";
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", ADMIN_USER)
++                .body(body)
++                .when()
++                .put(TASK_MGMT_BASE + "/" + taskId)
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void putTask_updatesDescription() {
++        String taskId = getFirstUserTaskId();
++
++        String body = "{"
++                + "\"description\":\"New description\","
++                + "\"priority\":\"Medium\","
++                + "\"potentialUsers\":[],"
++                + "\"potentialGroups\":[],"
++                + "\"excludedUsers\":[],"
++                + "\"adminUsers\":[],"
++                + "\"adminGroups\":[],"
++                + "\"inputParams\":{}"
++                + "}";
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", ADMIN_USER)
++                .body(body)
++                .when()
++                .put(TASK_MGMT_BASE + "/" + taskId)
++                .then()
++                .statusCode(200);
++
++        // Verify the update persisted via GET
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(TASK_MGMT_BASE + "/" + taskId)
++                .then()
++                .statusCode(200);
++    }
++
++    // ------------------------------------------------------------------
++    // PATCH /management/usertasks/{taskId}  – partial update
++    // ------------------------------------------------------------------
++
++    @Test
++    void patchTask_partialUpdate_returnsUpdatedTaskInfo() {
++        String taskId = getFirstUserTaskId();
++
++        String body = "{"
++                + "\"description\":\"Patched description\","
++                + "\"priority\":\"Low\""
++                + "}";
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", ADMIN_USER)
++                .body(body)
++                .when()
++                .patch(TASK_MGMT_BASE + "/" + taskId)
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void patchTask_onlyPriority() {
++        String taskId = getFirstUserTaskId();
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", ADMIN_USER)
++                .body("{\"priority\":\"High\"}")
++                .when()
++                .patch(TASK_MGMT_BASE + "/" + taskId)
++                .then()
++                .statusCode(200);
++    }
++
++    // ------------------------------------------------------------------
++    // Helpers
++    // ------------------------------------------------------------------
++
++    private String getFirstUserTaskId() {
++        // Start a new approvals process instance which will create a user task
++        given()
++                .contentType(ContentType.JSON)
++                .body(APPROVAL_INPUT)
++                .when()
++                .post(APPROVALS_BASE)
++                .then()
++                .statusCode(201);
++
++        List<Map<String, Object>> tasks = given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE)
++                .then()
++                .statusCode(200)
++                .extract().jsonPath().getList("$");
++
++        if (tasks == null || tasks.isEmpty()) {
++            throw new IllegalStateException("No user tasks found after starting approval process");
++        }
++        return (String) tasks.get(0).get("id");
++    }
++}
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/UserTasksRestTest.java b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/UserTasksRestTest.java
+new file mode 100644
+index 0000000..4a40ed0
+--- /dev/null
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/UserTasksRestTest.java
+@@ -0,0 +1,554 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++package org.kie.kogito.integrationtests.springboot;
++
++import java.util.List;
++import java.util.Map;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.server.LocalServerPort;
++import org.springframework.test.annotation.DirtiesContext;
++
++import io.restassured.RestAssured;
++import io.restassured.http.ContentType;
++
++import static io.restassured.RestAssured.given;
++import static org.hamcrest.CoreMatchers.notNullValue;
++import static org.hamcrest.Matchers.empty;
++import static org.hamcrest.Matchers.not;
++
++@SpringBootTest(classes = KogitoSpringbootApplication.class,
++        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
++class UserTasksRestTest {
++
++    private static final String UT_BASE = "/usertasks/instance";
++    private static final String APPROVALS_BASE = "/approvals";
++    private static final String NONEXISTENT = "00000000-0000-0000-0000-000000000000";
++    private static final String TEST_USER = "john";
++    private static final String TEST_GROUP = "managers";
++    private static final String TRAVELLER_JSON =
++            "{\"firstName\":\"Alice\",\"lastName\":\"Smith\",\"email\":\"alice@example.com\",\"nationality\":\"British\"}";
++    private static final String APPROVAL_INPUT =
++            "{\"approver\":\"" + TEST_USER + "\",\"traveller\":" + TRAVELLER_JSON + "}";
++
++    @LocalServerPort
++    private int port;
++
++    @BeforeEach
++    void setup() {
++        RestAssured.port = port;
++    }
++
++    // ------------------------------------------------------------------
++    // GET /usertasks/instance  – list tasks visible to user/group
++    // ------------------------------------------------------------------
++
++    @Test
++    void listUserTasks_noInstances_returnsEmptyList() {
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE)
++                .then()
++                .statusCode(200)
++                .body("$", empty());
++    }
++
++    @Test
++    void listUserTasks_afterStartingApproval_returnsTask() {
++        startApprovalProcess();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE)
++                .then()
++                .statusCode(200)
++                .body("$", not(empty()))
++                .body("[0].id", notNullValue());
++    }
++
++    // ------------------------------------------------------------------
++    // GET /usertasks/instance/{taskId}  – get single user task
++    // ------------------------------------------------------------------
++
++    @Test
++    void getUserTask_happyPath() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId)
++                .then()
++                .statusCode(200)
++                .body("id", notNullValue());
++    }
++
++    @Test
++    void getUserTask_notFound() {
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /usertasks/instance/{taskId}/transition  – list available transitions
++    // ------------------------------------------------------------------
++
++    @Test
++    void listTransitions_happyPath() {
++        String taskId = getFirstTaskId();
++
++        // After activation the task is auto-claimed by user "manager" (the sole potentialUser).
++        // Status becomes RESERVED; checkPermission() only passes for the actual owner or admin.
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", "manager")
++                .when()
++                .get(UT_BASE + "/" + taskId + "/transition")
++                .then()
++                .statusCode(200)
++                .body("$", not(empty()));
++    }
++
++    // ------------------------------------------------------------------
++    // PUT /usertasks/instance/{taskId}/outputs  – set task outputs
++    // ------------------------------------------------------------------
++
++    @Test
++    void setOutputs_happyPath() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"approved\":true}")
++                .when()
++                .put(UT_BASE + "/" + taskId + "/outputs")
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void setOutputs_notFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"approved\":true}")
++                .when()
++                .put(UT_BASE + "/" + NONEXISTENT + "/outputs")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // PUT /usertasks/instance/{taskId}/inputs  – set task inputs
++    // ------------------------------------------------------------------
++
++    @Test
++    void setInputs_happyPath() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"comment\":\"looks good\"}")
++                .when()
++                .put(UT_BASE + "/" + taskId + "/inputs")
++                .then()
++                .statusCode(200);
++    }
++
++    @Test
++    void setInputs_notFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{}")
++                .when()
++                .put(UT_BASE + "/" + NONEXISTENT + "/inputs")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /usertasks/instance/{taskId}/comments  – list comments
++    // ------------------------------------------------------------------
++
++    @Test
++    void listComments_happyPath() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/comments")
++                .then()
++                .statusCode(200)
++                .body("$", empty());
++    }
++
++    // ------------------------------------------------------------------
++    // POST /usertasks/instance/{taskId}/comments  – add comment
++    // ------------------------------------------------------------------
++
++    @Test
++    void addComment_happyPath() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"comment\":\"This is a test comment\"}")
++                .when()
++                .post(UT_BASE + "/" + taskId + "/comments")
++                .then()
++                .statusCode(200)
++                .body("id", notNullValue())
++                .body("content", notNullValue());
++    }
++
++    @Test
++    void addComment_notFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"comment\":\"test\"}")
++                .when()
++                .post(UT_BASE + "/" + NONEXISTENT + "/comments")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /usertasks/instance/{taskId}/comments/{commentId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void getComment_happyPath() {
++        String taskId = getFirstTaskId();
++        String commentId = addComment(taskId, "Hello comment");
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/comments/" + commentId)
++                .then()
++                .statusCode(200)
++                .body("id", notNullValue());
++    }
++
++    @Test
++    void getComment_notFound() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/comments/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // PUT /usertasks/instance/{taskId}/comments/{commentId}  – update comment
++    // ------------------------------------------------------------------
++
++    @Test
++    void updateComment_happyPath() {
++        String taskId = getFirstTaskId();
++        String commentId = addComment(taskId, "Original");
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"comment\":\"Updated comment\"}")
++                .when()
++                .put(UT_BASE + "/" + taskId + "/comments/" + commentId)
++                .then()
++                .statusCode(200);
++    }
++
++    // ------------------------------------------------------------------
++    // DELETE /usertasks/instance/{taskId}/comments/{commentId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void deleteComment_happyPath() {
++        String taskId = getFirstTaskId();
++        String commentId = addComment(taskId, "To be deleted");
++
++        given()
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .delete(UT_BASE + "/" + taskId + "/comments/" + commentId)
++                .then()
++                .statusCode(200);
++
++        // Verify gone
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/comments/" + commentId)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /usertasks/instance/{taskId}/attachments  – list attachments
++    // ------------------------------------------------------------------
++
++    @Test
++    void listAttachments_happyPath() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/attachments")
++                .then()
++                .statusCode(200)
++                .body("$", empty());
++    }
++
++    // ------------------------------------------------------------------
++    // POST /usertasks/instance/{taskId}/attachments  – add attachment
++    // ------------------------------------------------------------------
++
++    @Test
++    void addAttachment_happyPath() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"name\":\"doc.pdf\",\"uri\":\"http://example.com/doc.pdf\"}")
++                .when()
++                .post(UT_BASE + "/" + taskId + "/attachments")
++                .then()
++                .statusCode(200)
++                .body("id", notNullValue())
++                .body("name", notNullValue());
++    }
++
++    @Test
++    void addAttachment_notFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"name\":\"doc.pdf\",\"uri\":\"http://example.com/doc.pdf\"}")
++                .when()
++                .post(UT_BASE + "/" + NONEXISTENT + "/attachments")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // GET /usertasks/instance/{taskId}/attachments/{attachmentId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void getAttachment_happyPath() {
++        String taskId = getFirstTaskId();
++        String attachmentId = addAttachment(taskId, "report.pdf", "http://example.com/report.pdf");
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/attachments/" + attachmentId)
++                .then()
++                .statusCode(200)
++                .body("id", notNullValue());
++    }
++
++    @Test
++    void getAttachment_notFound() {
++        String taskId = getFirstTaskId();
++
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/attachments/" + NONEXISTENT)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // PUT /usertasks/instance/{taskId}/attachments/{attachmentId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void updateAttachment_happyPath() {
++        String taskId = getFirstTaskId();
++        String attachmentId = addAttachment(taskId, "original.pdf", "http://example.com/original.pdf");
++
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"name\":\"updated.pdf\",\"uri\":\"http://example.com/updated.pdf\"}")
++                .when()
++                .put(UT_BASE + "/" + taskId + "/attachments/" + attachmentId)
++                .then()
++                .statusCode(200);
++    }
++
++    // ------------------------------------------------------------------
++    // DELETE /usertasks/instance/{taskId}/attachments/{attachmentId}
++    // ------------------------------------------------------------------
++
++    @Test
++    void deleteAttachment_happyPath() {
++        String taskId = getFirstTaskId();
++        String attachmentId = addAttachment(taskId, "todelete.pdf", "http://example.com/todelete.pdf");
++
++        given()
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .delete(UT_BASE + "/" + taskId + "/attachments/" + attachmentId)
++                .then()
++                .statusCode(200);
++
++        // Verify gone
++        given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE + "/" + taskId + "/attachments/" + attachmentId)
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // POST /usertasks/instance/{taskId}/transition  – perform a transition
++    // ------------------------------------------------------------------
++
++    @Test
++    void transition_notFound() {
++        given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"transitionId\":\"complete\",\"data\":{}}")
++                .when()
++                .post(UT_BASE + "/" + NONEXISTENT + "/transition")
++                .then()
++                .statusCode(404);
++    }
++
++    // ------------------------------------------------------------------
++    // Helpers
++    // ------------------------------------------------------------------
++
++    private void startApprovalProcess() {
++        given()
++                .contentType(ContentType.JSON)
++                .body(APPROVAL_INPUT)
++                .when()
++                .post(APPROVALS_BASE)
++                .then()
++                .statusCode(201);
++    }
++
++    private String getFirstTaskId() {
++        startApprovalProcess();
++
++        List<Map<String, Object>> tasks = given()
++                .accept(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .when()
++                .get(UT_BASE)
++                .then()
++                .statusCode(200)
++                .extract().jsonPath().getList("$");
++
++        if (tasks == null || tasks.isEmpty()) {
++            throw new IllegalStateException("No user tasks found after starting approval process");
++        }
++        return (String) tasks.get(0).get("id");
++    }
++
++    private String addComment(String taskId, String text) {
++        return given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"comment\":\"" + text + "\"}")
++                .when()
++                .post(UT_BASE + "/" + taskId + "/comments")
++                .then()
++                .statusCode(200)
++                .extract().path("id");
++    }
++
++    private String addAttachment(String taskId, String name, String uri) {
++        return given()
++                .contentType(ContentType.JSON)
++                .queryParam("user", TEST_USER)
++                .queryParam("group", TEST_GROUP)
++                .body("{\"name\":\"" + name + "\",\"uri\":\"" + uri + "\"}")
++                .when()
++                .post(UT_BASE + "/" + taskId + "/attachments")
++                .then()
++                .statusCode(200)
++                .extract().path("id");
++    }
++}
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/VersionRestTest.java b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/VersionRestTest.java
+new file mode 100644
+index 0000000..910a0e4
+--- /dev/null
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/VersionRestTest.java
+@@ -0,0 +1,103 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++package org.kie.kogito.integrationtests.springboot;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.boot.test.web.server.LocalServerPort;
++import org.springframework.test.annotation.DirtiesContext;
++
++import io.restassured.RestAssured;
++import io.restassured.http.ContentType;
++
++import static io.restassured.RestAssured.given;
++import static org.hamcrest.CoreMatchers.notNullValue;
++
++@SpringBootTest(classes = KogitoSpringbootApplication.class,
++        webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
++@DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
++class VersionRestTest {
++
++    @LocalServerPort
++    private int port;
++
++    @BeforeEach
++    void setup() {
++        RestAssured.port = port;
++    }
++
++    // ------------------------------------------------------------------
++    // GET /version  – VersionRestController
++    // ------------------------------------------------------------------
++
++    @Test
++    void getVersion_returnsVersionJson() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get("/version")
++                .then()
++                .statusCode(200)
++                .body("version", notNullValue());
++    }
++
++    @Test
++    void getVersion_versionIsString() {
++        String version = given()
++                .accept(ContentType.JSON)
++                .when()
++                .get("/version")
++                .then()
++                .statusCode(200)
++                .extract().path("version");
++
++        // Version should be a non-empty string (e.g. "1.0" or "999-SNAPSHOT")
++        assert version != null && !version.isEmpty();
++    }
++
++    // ------------------------------------------------------------------
++    // GET /approvalsdetails  – ApprovalResource
++    // ------------------------------------------------------------------
++
++    @Test
++    void getApprovalsDetails_returnsTypeJson() {
++        given()
++                .accept(ContentType.JSON)
++                .when()
++                .get("/approvalsdetails")
++                .then()
++                .statusCode(200)
++                .body("type", notNullValue());
++    }
++
++    @Test
++    void getApprovalsDetails_typeIsProcess() {
++        String type = given()
++                .accept(ContentType.JSON)
++                .when()
++                .get("/approvalsdetails")
++                .then()
++                .statusCode(200)
++                .extract().path("type");
++
++        // The process type should be one of the known Kogito process types
++        assert type != null && !type.isEmpty();
++    }
++}

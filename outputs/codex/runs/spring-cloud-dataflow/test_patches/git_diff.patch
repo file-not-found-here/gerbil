@@ -1,0 +1,838 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..d0348d5
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,180 @@
++# API Endpoint Coverage (Progress: 43/139)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++Auth: Data Flow route roles are configured in server defaults when authorization is enabled; Skipper enables authorization and assigns route roles. Standalone MockMvc tests do not run security filters.
++
++## spring-cloud-skipper/spring-cloud-skipper-server-core - AboutController
++- [x] GET /api/about - HTTP response includes version and server/shell metadata
++## spring-cloud-skipper/spring-cloud-skipper-server-core - PackageController
++- [x] GET /api/package - HAL-style command links advertise upload and install routes
++- [x] POST /api/package/install - malformed JSON rejected with HTTP 400 before service call
++- [x] POST /api/package/install/{id} - malformed JSON rejected with HTTP 400 before service call
++- [x] POST /api/package/upload - malformed JSON rejected with HTTP 400 before service call
++- [x] DELETE /api/package/{name} - deletion delegates release-safety check using package name
++## spring-cloud-skipper/spring-cloud-skipper-server-core - ReleaseController
++- [x] GET /api/release - command-link resource exposes release operations
++- [x] GET /api/release/actuator/{name}/{app}/{id} - proxy forwards endpoint and authorization header
++- [x] POST /api/release/actuator/{name}/{app}/{id} - malformed JSON rejected with HTTP 400 before proxy call
++- [x] POST /api/release/cancel - JSON cancel request returns accepted state
++- [x] GET /api/release/list - empty release collection response
++- [x] GET /api/release/list/{name} - name-filtered empty release collection response
++- [x] GET /api/release/logs/{name} - release logs return serialized log map
++- [x] GET /api/release/logs/{name}/{appName} - app-specific release logs return serialized log map
++- [x] GET /api/release/manifest/{name} - current manifest returns manifest data
++- [x] GET /api/release/manifest/{name}/{version} - versioned manifest returns manifest data
++- [x] POST /api/release/rollback - malformed JSON rejected with HTTP 400 before service call
++- [x] POST /api/release/rollback/{name}/{version} - versioned rollback accepts path version and dispatches
++- [x] POST /api/release/scale/{name} - malformed JSON rejected with HTTP 400 before service call
++- [x] GET /api/release/states - async state lookup accepts repeated names
++- [x] GET /api/release/status/{name} - current release status response links to its manifest
++- [x] GET /api/release/status/{name}/{version} - versioned status route responds
++- [x] GET /api/release/statuses - async status lookup accepts repeated names
++- [x] POST /api/release/upgrade - malformed JSON rejected with HTTP 400 before service call
++- [x] DELETE /api/release/{name} - deletes release without deleting package metadata
++- [x] DELETE /api/release/{name}/package - deletes release and requests package metadata deletion
++## spring-cloud-skipper/spring-cloud-skipper-server-core - RootController
++- [x] ANY / - Skipper UI root redirects to /api
++## spring-cloud-skipper/spring-cloud-skipper-server-core - DeployerRepository (Spring Data REST)
++- [~] GET /api/deployers - repository-backed collection; ROLE_VIEW; requires Data REST context and key-value store
++- [~] GET /api/deployers/{id} - repository-backed item; ROLE_VIEW; requires Data REST context and key-value store
++- [~] GET /api/deployers/search/findByName - repository search; ROLE_VIEW; requires Data REST context and key-value store
++## spring-cloud-skipper/spring-cloud-skipper-server-core - PackageMetadataRepository (Spring Data REST)
++- [~] GET /api/packageMetadata - repository-backed collection; ROLE_VIEW; requires Data REST context and key-value store
++- [~] POST /api/packageMetadata - create metadata; requires Data REST context and key-value store
++- [~] GET /api/packageMetadata/{id} - repository-backed item; ROLE_VIEW; requires Data REST context and key-value store
++- [~] PUT /api/packageMetadata/{id} - replace metadata; requires Data REST context and key-value store
++- [~] PATCH /api/packageMetadata/{id} - update metadata; requires Data REST context and key-value store
++- [~] DELETE /api/packageMetadata/{id} - delete metadata; requires Data REST context and key-value store
++- [~] GET /api/packageMetadata/search/findByName - repository search; ROLE_VIEW; requires Data REST context and key-value store
++- [~] GET /api/packageMetadata/search/findByNameContainingIgnoreCase - repository search; ROLE_VIEW; requires Data REST context and key-value store
++## spring-cloud-skipper/spring-cloud-skipper-server-core - ReleaseRepository (Spring Data REST)
++- [~] GET /api/releases - repository-backed collection; ROLE_VIEW; requires Data REST context and key-value store
++- [~] GET /api/releases/{id} - repository-backed item; ROLE_VIEW; requires Data REST context and key-value store
++- [~] GET /api/releases/search/findByNameIgnoreCaseContainingOrderByNameAscVersionDesc - repository search; ROLE_VIEW; requires Data REST context and key-value store
++## spring-cloud-skipper/spring-cloud-skipper-server-core - RepositoryRepository (Spring Data REST)
++- [~] GET /api/repositories - repository-backed collection; ROLE_VIEW; requires Data REST context and key-value store
++- [~] GET /api/repositories/{id} - repository-backed item; ROLE_VIEW; requires Data REST context and key-value store
++- [~] GET /api/repositories/search/findByName - repository search; ROLE_VIEW; requires Data REST context and key-value store
++## spring-cloud-dataflow-server-core - TaskValidationController
++- [x] GET /tasks/validation/{name} - returns definition and per-app validation status
++## spring-cloud-dataflow-server-core - AboutController
++- [x] GET /about - returns feature, dependency-version, and security state
++## spring-cloud-dataflow-server-core - AppRegistryController
++- [~] DELETE /apps - requires populated app-registry storage and resource services
++- [~] GET /apps - requires populated app-registry storage and resource services
++- [~] POST /apps - requires populated app-registry storage and resource services
++- [~] DELETE /apps/{type}/{name} - requires populated app-registry storage and resource services
++- [~] GET /apps/{type}/{name} - requires populated app-registry storage and resource services
++- [~] POST /apps/{type}/{name} - requires populated app-registry storage and resource services
++- [~] DELETE /apps/{type}/{name}/{version:.+} - requires populated app-registry storage and resource services
++- [~] GET /apps/{type}/{name}/{version:.+} - requires populated app-registry storage and resource services
++- [~] POST /apps/{type}/{name}/{version:.+} - requires populated app-registry storage and resource services
++- [~] PUT /apps/{type}/{name}/{version:.+} - requires populated app-registry storage and resource services
++## spring-cloud-dataflow-server-core - AuditRecordController
++- [~] GET /audit-records - requires audit persistence and pagination configuration
++- [~] GET /audit-records/audit-action-types - requires audit persistence and pagination configuration
++- [~] GET /audit-records/audit-operation-types - requires audit persistence and pagination configuration
++- [~] GET /audit-records/{id} - requires audit persistence and pagination configuration
++## spring-cloud-dataflow-server-core - CompletionController
++- [x] ANY /completions/stream - prefix and detail level produce stream suggestions
++- [x] ANY /completions/task - prefix uses default detail level and returns task suggestions
++## spring-cloud-dataflow-server-core - JobExecutionController
++- [~] GET /jobs/executions - requires Spring Batch metadata and job launcher state
++- [~] PUT /jobs/executions - requires Spring Batch metadata and job launcher state
++- [~] PUT /jobs/executions - requires Spring Batch metadata and job launcher state
++- [~] GET /jobs/executions/{id} - requires Spring Batch metadata and job launcher state
++## spring-cloud-dataflow-server-core - JobExecutionThinController
++- [~] GET /jobs/thinexecutions - requires task/batch execution metadata storage
++- [~] GET /jobs/thinexecutions - requires task/batch execution metadata storage
++- [~] GET /jobs/thinexecutions - requires task/batch execution metadata storage
++- [~] GET /jobs/thinexecutions - requires task/batch execution metadata storage
++- [~] GET /jobs/thinexecutions - requires task/batch execution metadata storage
++## spring-cloud-dataflow-server-core - JobInstanceController
++- [~] GET /jobs/instances - requires Spring Batch job-instance metadata
++- [~] GET /jobs/instances/{id} - requires Spring Batch job-instance metadata
++## spring-cloud-dataflow-server-core - JobStepExecutionController
++- [~] GET /jobs/executions/{jobExecutionId}/steps - requires Spring Batch step-execution metadata
++- [~] GET /jobs/executions/{jobExecutionId}/steps - requires Spring Batch step-execution metadata
++## spring-cloud-dataflow-server-core - JobStepExecutionProgressController
++- [~] GET /jobs/executions/{jobExecutionId}/steps/{stepExecutionId}/progress - requires live batch step-progress state
++## spring-cloud-dataflow-server-core - RootController
++- [~] ANY / - requires the full HATEOAS entity-link configuration
++## spring-cloud-dataflow-server-core - RuntimeAppInstanceController
++- [~] ANY /runtime/apps/{appId}/instances - requires a running deployer platform and actuator targets
++- [~] ANY /runtime/apps/{appId}/instances/{instanceId} - requires a running deployer platform and actuator targets
++- [~] GET /runtime/apps/{appId}/instances/{instanceId}/actuator - requires a running deployer platform and actuator targets
++- [~] POST /runtime/apps/{appId}/instances/{instanceId}/actuator - requires a running deployer platform and actuator targets
++- [~] POST /runtime/apps/{appId}/instances/{instanceId}/post - requires a running deployer platform and actuator targets
++## spring-cloud-dataflow-server-core - RuntimeAppsController
++- [~] ANY /runtime/apps - requires a running deployer platform
++- [~] ANY /runtime/apps/{appId} - requires a running deployer platform
++## spring-cloud-dataflow-server-core - RuntimeStreamsController
++- [~] GET /runtime/streams - requires stream-deployer runtime state
++- [~] GET /runtime/streams/{streamNames} - requires stream-deployer runtime state
++## spring-cloud-dataflow-server-core - StreamDefinitionController
++- [~] DELETE /streams/definitions - requires app registry and stream lifecycle services
++- [~] GET /streams/definitions - requires app registry and stream lifecycle services
++- [~] POST /streams/definitions - requires app registry and stream lifecycle services
++- [~] POST /streams/definitions - requires app registry and stream lifecycle services
++- [~] DELETE /streams/definitions/{name} - requires app registry and stream lifecycle services
++- [~] GET /streams/definitions/{name} - requires app registry and stream lifecycle services
++- [~] GET /streams/definitions/{name}/applications - requires app registry and stream lifecycle services
++- [~] GET /streams/definitions/{name}/related - requires app registry and stream lifecycle services
++## spring-cloud-dataflow-server-core - StreamDeploymentController
++- [~] DELETE /streams/deployments - requires Skipper and stream-deployer integrations
++- [~] GET /streams/deployments/history/{name} - requires Skipper and stream-deployer integrations
++- [~] GET /streams/deployments/manifest/{name}/{version} - requires Skipper and stream-deployer integrations
++- [~] GET /streams/deployments/platform/list - requires Skipper and stream-deployer integrations
++- [~] POST /streams/deployments/rollback/{name}/{version} - requires Skipper and stream-deployer integrations
++- [~] POST /streams/deployments/scale/{streamName}/{appName}/instances/{count} - requires Skipper and stream-deployer integrations
++- [~] POST /streams/deployments/update/{name} - requires Skipper and stream-deployer integrations
++- [~] DELETE /streams/deployments/{name} - requires Skipper and stream-deployer integrations
++- [~] GET /streams/deployments/{name} - requires Skipper and stream-deployer integrations
++- [~] POST /streams/deployments/{name} - requires Skipper and stream-deployer integrations
++## spring-cloud-dataflow-server-core - StreamLogsController
++- [~] ANY /streams/logs/{streamName} - requires platform log aggregation
++- [~] ANY /streams/logs/{streamName}/{appName} - requires platform log aggregation
++## spring-cloud-dataflow-server-core - StreamValidationController
++- [x] GET /streams/validation/{name} - returns definition and per-app validation status
++## spring-cloud-dataflow-server-core - TaskCtrController
++- [x] GET /tasks/ctr/options - returns configured composed-task-runner metadata properties
++## spring-cloud-dataflow-server-core - TaskDefinitionController
++- [x] DELETE /tasks/definitions - deletes all task definitions
++- [~] GET /tasks/definitions - read/write routes need task repository and assembler integration
++- [~] POST /tasks/definitions - read/write routes need task repository and assembler integration
++- [x] DELETE /tasks/definitions/{name} - deletes one definition with optional execution cleanup
++- [~] GET /tasks/definitions/{name} - read/write routes need task repository and assembler integration
++## spring-cloud-dataflow-server-core - TaskExecutionController
++- [~] DELETE /tasks/executions - requires persisted task executions and task-launcher state
++- [~] GET /tasks/executions - requires persisted task executions and task-launcher state
++- [~] GET /tasks/executions - requires persisted task executions and task-launcher state
++- [~] POST /tasks/executions - requires persisted task executions and task-launcher state
++- [~] GET /tasks/executions/current - requires persisted task executions and task-launcher state
++- [~] GET /tasks/executions/external/{externalExecutionId} - requires persisted task executions and task-launcher state
++- [~] POST /tasks/executions/launch - requires persisted task executions and task-launcher state
++- [~] DELETE /tasks/executions/{id} - requires persisted task executions and task-launcher state
++- [~] GET /tasks/executions/{id} - requires persisted task executions and task-launcher state
++- [~] POST /tasks/executions/{id} - requires persisted task executions and task-launcher state
++## spring-cloud-dataflow-server-core - TaskExecutionThinController
++- [~] GET /tasks/thinexecutions - requires persisted task-execution metadata
++- [~] GET /tasks/thinexecutions - requires persisted task-execution metadata
++## spring-cloud-dataflow-server-core - TaskLogsController
++- [~] GET /tasks/logs/{taskExternalExecutionId} - requires platform log aggregation
++## spring-cloud-dataflow-server-core - TaskPlatformController
++- [~] GET /tasks/platforms - requires pageable launcher service and HATEOAS argument resolvers
++## spring-cloud-dataflow-server-core - TaskSchedulerController
++- [~] GET /tasks/schedules - listing routes require scheduler platform and pageable HATEOAS context
++- [x] POST /tasks/schedules - creates schedule and parses deployment properties
++- [~] ANY /tasks/schedules/instances/{taskDefinitionName} - listing routes require scheduler platform and pageable HATEOAS context
++- [x] DELETE /tasks/schedules/instances/{taskDefinitionName} - removes all schedules for a task definition
++- [~] GET /tasks/schedules/{name} - listing routes require scheduler platform and pageable HATEOAS context
++- [x] DELETE /tasks/schedules/{scheduleName} - unschedules named schedule on selected platform
++## spring-cloud-dataflow-server-core - TasksInfoController
++- [~] GET /tasks/info/executions - requires persisted task execution statistics
++## spring-cloud-dataflow-server-core - ToolsController
++- [x] POST /tools/convertTaskGraphToText - round trip parsed task graph back to DSL
++- [x] POST /tools/parseTaskTextToGraph - valid and invalid task DSL responses
++## spring-cloud-dataflow-server-core - UiController
++- [x] ANY /dashboard - redirects to bundled UI index
++- [x] ANY /dashboard/ - trailing-slash redirect to bundled UI index
++## spring-cloud-dataflow-server-core - SecurityController
++- [x] GET /security/info - reports authentication disabled state
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowAboutApiHttpTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowAboutApiHttpTests.java
+new file mode 100644
+index 0000000..6abbdd0
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowAboutApiHttpTests.java
+@@ -0,0 +1,57 @@
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.beans.factory.ObjectProvider;
++import org.springframework.boot.actuate.info.BuildInfoContributor;
++import org.springframework.boot.actuate.info.GitInfoContributor;
++import org.springframework.cloud.common.security.support.SecurityStateBean;
++import org.springframework.cloud.dataflow.server.config.DataflowMetricsProperties;
++import org.springframework.cloud.dataflow.server.config.VersionInfoProperties;
++import org.springframework.cloud.dataflow.server.config.VersionInfoProperties.Dependencies;
++import org.springframework.cloud.dataflow.server.config.VersionInfoProperties.DependencyAboutInfo;
++import org.springframework.cloud.dataflow.server.config.VersionInfoProperties.DependencyStatus;
++import org.springframework.cloud.dataflow.server.config.features.FeaturesProperties;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.hamcrest.Matchers.is;
++import static org.mockito.Mockito.mock;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/** HTTP test for Data Flow server metadata endpoint. */
++class DataflowAboutApiHttpTests {
++
++	@Test
++	void aboutReturnsFeaturesVersionsAndSecurityState() throws Exception {
++		FeaturesProperties features = new FeaturesProperties();
++		features.setStreamsEnabled(false);
++		features.setTasksEnabled(false);
++		VersionInfoProperties versionInfo = new VersionInfoProperties();
++		Dependencies dependencies = new Dependencies();
++		dependencies.setSpringCloudDataflowDashboard(dependency("Dashboard"));
++		dependencies.setSpringCloudDataflowImplementation(dependency("Implementation"));
++		dependencies.setSpringCloudDataflowCore(dependency("Core"));
++		dependencies.setSpringCloudDataflowShell(dependency("Shell"));
++		versionInfo.setDependencies(dependencies);
++		versionInfo.setDependencyFetch(new DependencyStatus());
++		SecurityStateBean security = mock(SecurityStateBean.class);
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new AboutController(null, null, features, versionInfo,
++				security, new DataflowMetricsProperties(), mock(ObjectProvider.class), mock(ObjectProvider.class))).build();
++
++		mvc.perform(get("/about"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.featureInfo.streamsEnabled", is(false)))
++				.andExpect(jsonPath("$.securityInfo.authenticationEnabled", is(false)))
++				.andExpect(jsonPath("$.versionInfo.core.name", is("Core")));
++	}
++
++	private DependencyAboutInfo dependency(String name) {
++		DependencyAboutInfo dependency = new DependencyAboutInfo();
++		dependency.setName(name);
++		dependency.setVersion("test-version");
++		return dependency;
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowApiHttpTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowApiHttpTests.java
+new file mode 100644
+index 0000000..09152ba
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowApiHttpTests.java
+@@ -0,0 +1,57 @@
++package org.springframework.cloud.dataflow.server.controller;
++
++import com.fasterxml.jackson.databind.JsonNode;
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.junit.jupiter.api.Test;
++
++import org.springframework.cloud.dataflow.server.controller.ToolsController;
++import org.springframework.test.web.servlet.MvcResult;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.hamcrest.Matchers.hasSize;
++import static org.hamcrest.Matchers.empty;
++import static org.hamcrest.Matchers.notNullValue;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
++
++/** HTTP-level tests for Data Flow task graph tooling endpoints. */
++class DataflowApiHttpTests {
++
++	private final MockMvc mockMvc = MockMvcBuilders.standaloneSetup(new ToolsController()).build();
++
++	@Test
++	void parseTaskTextReturnsGraphForValidSequence() throws Exception {
++		this.mockMvc.perform(post("/tools/parseTaskTextToGraph")
++					.contentType("application/json")
++						.content("{\"name\":\"sample\",\"dsl\":\"one && two\"}"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.graph", notNullValue()))
++				.andExpect(jsonPath("$.errors", empty()));
++	}
++
++	@Test
++	void parsedGraphCanBeConvertedBackToTaskText() throws Exception {
++		MvcResult parsed = this.mockMvc.perform(post("/tools/parseTaskTextToGraph")
++					.contentType("application/json")
++					.content("{\"name\":\"sample\",\"dsl\":\"one && two\"}"))
++				.andExpect(status().isOk())
++				.andReturn();
++		JsonNode graph = new ObjectMapper().readTree(parsed.getResponse().getContentAsString()).get("graph");
++		this.mockMvc.perform(post("/tools/convertTaskGraphToText")
++					.contentType("application/json").content(graph.toString()))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.dsl", org.hamcrest.Matchers.is("one && two")))
++				.andExpect(jsonPath("$.errors", empty()));
++	}
++
++	@Test
++	void parseTaskTextReturnsErrorsForInvalidDsl() throws Exception {
++		this.mockMvc.perform(post("/tools/parseTaskTextToGraph")
++					.contentType("application/json").content("{\"name\":\"sample\",\"dsl\":\"not valid dsl @@@\"}"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.errors", hasSize(1)));
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowMetadataApiHttpTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowMetadataApiHttpTests.java
+new file mode 100644
+index 0000000..59da752
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowMetadataApiHttpTests.java
+@@ -0,0 +1,64 @@
++package org.springframework.cloud.dataflow.server.controller;
++
++import java.util.List;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.cloud.common.security.support.SecurityStateBean;
++import org.springframework.cloud.dataflow.completion.CompletionProposal;
++import org.springframework.cloud.dataflow.completion.StreamCompletionProvider;
++import org.springframework.cloud.dataflow.completion.TaskCompletionProvider;
++import org.springframework.cloud.dataflow.server.controller.security.SecurityController;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.hamcrest.Matchers.is;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
++
++/** HTTP tests for metadata and completion APIs that need no server infrastructure. */
++class DataflowMetadataApiHttpTests {
++
++	@Test
++	void securityInfoReportsAnonymousMode() throws Exception {
++		SecurityStateBean security = mock(SecurityStateBean.class);
++		when(security.isAuthenticationEnabled()).thenReturn(false);
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new SecurityController(security)).build();
++		mvc.perform(get("/security/info"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.authenticationEnabled", is(false)));
++	}
++
++	@Test
++	void dashboardAliasesRedirectToTheBundledUi() throws Exception {
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new UiController()).build();
++		mvc.perform(get("/dashboard")).andExpect(status().is3xxRedirection())
++				.andExpect(redirectedUrl("/dashboard/index.html"));
++		mvc.perform(get("/dashboard/")).andExpect(status().is3xxRedirection())
++				.andExpect(redirectedUrl("/dashboard/index.html"));
++	}
++
++	@Test
++	void completionEndpointsReturnProposalsForTheRequestedPrefix() throws Exception {
++		StreamCompletionProvider streams = mock(StreamCompletionProvider.class);
++		TaskCompletionProvider tasks = mock(TaskCompletionProvider.class);
++		when(streams.complete("str", 2)).thenReturn(List.of(new CompletionProposal("stream", "stream source")));
++		when(tasks.complete("ta", 1)).thenReturn(List.of(new CompletionProposal("task", "task name")));
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new CompletionController(streams, tasks)).build();
++
++		mvc.perform(get("/completions/stream").param("start", "str").param("detailLevel", "2"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.proposals[0].text", is("stream")))
++				.andExpect(jsonPath("$.proposals[0].explanation", is("stream source")));
++		mvc.perform(get("/completions/task").param("start", "ta"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.proposals[0].text", is("task")));
++		verify(streams).complete("str", 2);
++		verify(tasks).complete("ta", 1);
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowSchedulerApiHttpTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowSchedulerApiHttpTests.java
+new file mode 100644
+index 0000000..ebf3a1b
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowSchedulerApiHttpTests.java
+@@ -0,0 +1,40 @@
++package org.springframework.cloud.dataflow.server.controller;
++
++import java.util.List;
++import java.util.Map;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.cloud.dataflow.server.service.SchedulerService;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.verify;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/** HTTP tests for task schedule creation and deletion interactions. */
++class DataflowSchedulerApiHttpTests {
++
++	@Test
++	void scheduleCreationParsesRuntimeProperties() throws Exception {
++		SchedulerService scheduler = mock(SchedulerService.class);
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new TaskSchedulerController(scheduler)).build();
++		mvc.perform(post("/tasks/schedules").param("scheduleName", " daily ")
++					.param("taskDefinitionName", "sample").param("properties", "deployer.count=2"))
++				.andExpect(status().isCreated());
++		verify(scheduler).schedule("daily", "sample", Map.of("deployer.count", "2"), List.of(), null);
++	}
++
++	@Test
++	void scheduleDeletionSupportsOneScheduleOrEveryScheduleForTask() throws Exception {
++		SchedulerService scheduler = mock(SchedulerService.class);
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new TaskSchedulerController(scheduler)).build();
++		mvc.perform(delete("/tasks/schedules/daily").param("platform", "local")).andExpect(status().isOk());
++		mvc.perform(delete("/tasks/schedules/instances/sample")).andExpect(status().isOk());
++		verify(scheduler).unschedule("daily", "local");
++		verify(scheduler).unscheduleForTaskDefinition("sample");
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowTaskCtrApiHttpTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowTaskCtrApiHttpTests.java
+new file mode 100644
+index 0000000..4a5f8cb
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowTaskCtrApiHttpTests.java
+@@ -0,0 +1,42 @@
++package org.springframework.cloud.dataflow.server.controller;
++
++import java.net.URI;
++import java.util.Collections;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.cloud.dataflow.configuration.metadata.ApplicationConfigurationMetadataResolver;
++import org.springframework.cloud.dataflow.registry.support.AppResourceCommon;
++import org.springframework.cloud.dataflow.server.service.impl.ComposedTaskRunnerConfigurationProperties;
++import org.springframework.cloud.dataflow.server.service.impl.TaskConfigurationProperties;
++import org.springframework.core.io.Resource;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.hamcrest.Matchers.hasSize;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.isNull;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/** HTTP tests for composed-task-runner metadata lookup. */
++class DataflowTaskCtrApiHttpTests {
++
++	@Test
++	void optionsReturnsMetadataPropertiesForConfiguredRunnerUri() throws Exception {
++		ApplicationConfigurationMetadataResolver resolver = mock(ApplicationConfigurationMetadataResolver.class);
++		ComposedTaskRunnerConfigurationProperties composed = mock(ComposedTaskRunnerConfigurationProperties.class);
++		AppResourceCommon resourceCommon = mock(AppResourceCommon.class);
++		Resource metadata = mock(Resource.class);
++		when(composed.getUri()).thenReturn("https://example.invalid/composed-task-runner.jar");
++		when(resourceCommon.getMetadataResource(any(URI.class), isNull())).thenReturn(metadata);
++		when(resolver.listProperties(metadata)).thenReturn(Collections.emptyList());
++		TaskCtrController controller = new TaskCtrController(resolver, mock(TaskConfigurationProperties.class), composed, resourceCommon);
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(controller).build();
++		mvc.perform(get("/tasks/ctr/options"))
++				.andExpect(status().isOk()).andExpect(jsonPath("$", hasSize(0)));
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowTaskDefinitionApiHttpTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowTaskDefinitionApiHttpTests.java
+new file mode 100644
+index 0000000..576c8a4
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowTaskDefinitionApiHttpTests.java
+@@ -0,0 +1,42 @@
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.cloud.dataflow.server.controller.assembler.TaskDefinitionAssemblerProvider;
++import org.springframework.cloud.dataflow.server.task.DataflowTaskExplorer;
++import org.springframework.cloud.dataflow.server.service.TaskDeleteService;
++import org.springframework.cloud.dataflow.server.service.TaskSaveService;
++import org.springframework.cloud.dataflow.server.repository.TaskDefinitionRepository;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.verify;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/** HTTP tests for task definition deletion operations. */
++class DataflowTaskDefinitionApiHttpTests {
++
++	@Test
++	void deletesOneDefinitionWithOptionalExecutionCleanup() throws Exception {
++		TaskDeleteService deleteService = mock(TaskDeleteService.class);
++		MockMvc mvc = controller(deleteService);
++		mvc.perform(delete("/tasks/definitions/sample").param("cleanup", "true"))
++				.andExpect(status().isOk());
++		verify(deleteService).deleteTaskDefinition("sample", true);
++	}
++
++	@Test
++	void deletesAllDefinitions() throws Exception {
++		TaskDeleteService deleteService = mock(TaskDeleteService.class);
++		controller(deleteService).perform(delete("/tasks/definitions")).andExpect(status().isOk());
++		verify(deleteService).deleteAll();
++	}
++
++	private MockMvc controller(TaskDeleteService deleteService) {
++		return MockMvcBuilders.standaloneSetup(new TaskDefinitionController(mock(DataflowTaskExplorer.class),
++				mock(TaskDefinitionRepository.class), mock(TaskSaveService.class), deleteService,
++					mock(TaskDefinitionAssemblerProvider.class))).build();
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowValidationApiHttpTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowValidationApiHttpTests.java
+new file mode 100644
+index 0000000..678b801
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/DataflowValidationApiHttpTests.java
+@@ -0,0 +1,47 @@
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.cloud.dataflow.server.TaskValidationController;
++import org.springframework.cloud.dataflow.server.service.StreamService;
++import org.springframework.cloud.dataflow.server.service.TaskValidationService;
++import org.springframework.cloud.dataflow.server.service.ValidationStatus;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.hamcrest.Matchers.is;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/** HTTP tests for stream and task definition validation endpoints. */
++class DataflowValidationApiHttpTests {
++
++	@Test
++	void taskValidationReturnsDefinitionAndAppStatuses() throws Exception {
++		TaskValidationService service = mock(TaskValidationService.class);
++		ValidationStatus result = new ValidationStatus("sample", "step", "validated");
++		result.getAppsStatuses().put("step", "valid");
++		when(service.validateTask("sample")).thenReturn(result);
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new TaskValidationController(service)).build();
++		mvc.perform(get("/tasks/validation/sample"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.appName", is("sample")))
++				.andExpect(jsonPath("$.appStatuses.step", is("valid")));
++	}
++
++	@Test
++	void streamValidationReturnsDefinitionAndAppStatuses() throws Exception {
++		StreamService service = mock(StreamService.class);
++		ValidationStatus result = new ValidationStatus("sample", "source | sink", "validated");
++		result.getAppsStatuses().put("source", "valid");
++		when(service.validateStream("sample")).thenReturn(result);
++		MockMvc mvc = MockMvcBuilders.standaloneSetup(new StreamValidationController(service)).build();
++		mvc.perform(get("/streams/validation/sample"))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.appName", is("sample")))
++				.andExpect(jsonPath("$.appStatuses.source", is("valid")));
++	}
++}
+diff --git a/spring-cloud-skipper/spring-cloud-skipper-server-core/src/test/java/org/springframework/cloud/skipper/server/controller/SkipperApiHttpTests.java b/spring-cloud-skipper/spring-cloud-skipper-server-core/src/test/java/org/springframework/cloud/skipper/server/controller/SkipperApiHttpTests.java
+new file mode 100644
+index 0000000..0c9f133
+--- /dev/null
++++ b/spring-cloud-skipper/spring-cloud-skipper-server-core/src/test/java/org/springframework/cloud/skipper/server/controller/SkipperApiHttpTests.java
+@@ -0,0 +1,255 @@
++package org.springframework.cloud.skipper.server.controller;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.web.servlet.MvcResult;
++import reactor.core.publisher.Mono;
++
++import org.springframework.cloud.skipper.server.controller.VersionInfoProperties.Dependencies;
++import org.springframework.cloud.skipper.server.controller.VersionInfoProperties.DependencyAboutInfo;
++import org.springframework.cloud.skipper.server.controller.VersionInfoProperties.DependencyStatus;
++import org.springframework.cloud.skipper.server.service.PackageMetadataService;
++import org.springframework.cloud.skipper.server.service.PackageService;
++import org.springframework.cloud.skipper.server.statemachine.SkipperStateMachineService;
++import org.springframework.cloud.skipper.domain.Info;
++import org.springframework.cloud.skipper.domain.LogInfo;
++import org.springframework.cloud.skipper.domain.Manifest;
++import org.springframework.cloud.skipper.domain.Release;
++import org.springframework.cloud.skipper.domain.DeleteProperties;
++import org.springframework.cloud.skipper.domain.RollbackRequest;
++import org.springframework.cloud.skipper.domain.ScaleRequest;
++import org.springframework.cloud.skipper.domain.UpgradeRequest;
++import org.springframework.cloud.skipper.server.service.ReleaseService;
++import org.springframework.cloud.skipper.server.service.ActuatorService;
++import org.springframework.hateoas.MediaTypes;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.hamcrest.Matchers.hasItem;
++import static org.hamcrest.Matchers.hasSize;
++import static org.hamcrest.Matchers.is;
++import static org.hamcrest.Matchers.containsString;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.when;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.eq;
++import static org.mockito.Mockito.any;
++import static org.mockito.Mockito.eq;
++import static org.mockito.Mockito.anyString;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.asyncDispatch;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
++import static org.mockito.Mockito.mock;
++
++/** HTTP-level tests for lightweight Skipper API resources. */
++class SkipperApiHttpTests {
++
++	private MockMvc mockMvc;
++	private PackageMetadataService packageMetadataService;
++	private SkipperStateMachineService stateMachineService;
++	private ActuatorService actuatorService;
++	private ReleaseService releaseService;
++
++	@BeforeEach
++	void setUp() {
++		VersionInfoProperties properties = new VersionInfoProperties();
++		Dependencies dependencies = new Dependencies();
++		DependencyAboutInfo server = new DependencyAboutInfo();
++		server.setName("Skipper Server");
++		server.setVersion("test-version");
++		DependencyAboutInfo shell = new DependencyAboutInfo();
++		shell.setName("Skipper Shell");
++		shell.setVersion("test-version");
++		dependencies.setSpringCloudSkipperServer(server);
++		dependencies.setSpringCloudSkipperShell(shell);
++		properties.setDependencies(dependencies);
++		properties.setDependencyFetch(new DependencyStatus());
++
++		this.packageMetadataService = mock(PackageMetadataService.class);
++		this.stateMachineService = mock(SkipperStateMachineService.class);
++		this.actuatorService = mock(ActuatorService.class);
++		this.releaseService = mock(ReleaseService.class);
++		ReleaseService releaseService = this.releaseService;
++		when(releaseService.status("sample")).thenReturn(new Info());
++		when(releaseService.status("sample", 1)).thenReturn(new Info());
++		when(releaseService.getLog("sample")).thenReturn(new LogInfo(java.util.Collections.singletonMap("worker", "ok")));
++		when(releaseService.getLog("sample", "worker")).thenReturn(new LogInfo(java.util.Collections.singletonMap("worker", "ok")));
++		Manifest manifest = new Manifest();
++		manifest.setData("manifest-data");
++		when(releaseService.manifest("sample")).thenReturn(manifest);
++		when(releaseService.manifest("sample", 1)).thenReturn(manifest);
++		when(releaseService.list()).thenReturn(java.util.Collections.emptyList());
++		when(releaseService.list("sample")).thenReturn(java.util.Collections.emptyList());
++		when(releaseService.statusReactive(any(String[].class))).thenReturn(Mono.just(java.util.Collections.emptyMap()));
++		when(releaseService.states(any(String[].class))).thenReturn(Mono.just(java.util.Collections.emptyMap()));
++		PackageController packageController = new PackageController(mock(PackageService.class),
++				this.packageMetadataService, this.stateMachineService);
++		this.mockMvc = MockMvcBuilders.standaloneSetup(new AboutController(properties), packageController,
++				new ReleaseController(releaseService, this.stateMachineService, this.actuatorService),
++				new RootController()).build();
++	}
++
++	@Test
++	void aboutReturnsVersionInformation() throws Exception {
++		this.mockMvc.perform(get("/api/about").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaTypes.HAL_JSON))
++				.andExpect(jsonPath("$.versionInfo.server.name", is("Skipper Server")))
++				.andExpect(jsonPath("$.versionInfo.server.version", is("test-version")))
++				.andExpect(jsonPath("$.versionInfo.shell.name", is("Skipper Shell")));
++	}
++
++	@Test
++	void releaseIndexPublishesCommandLinks() throws Exception {
++		this.mockMvc.perform(get("/api/release").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.links[*].rel", hasItem("upgrade")))
++				.andExpect(jsonPath("$.links[*].rel", hasItem("rollback")))
++				.andExpect(jsonPath("$.links[*].rel", hasItem("list")));
++	}
++
++	@Test
++	void releaseDeleteVariantsCarryPackageDeletionChoice() throws Exception {
++		when(this.stateMachineService.deleteRelease(eq("sample"), any(DeleteProperties.class))).thenReturn(new Release());
++		this.mockMvc.perform(delete("/api/release/sample").accept(MediaTypes.HAL_JSON)).andExpect(status().isOk());
++		this.mockMvc.perform(delete("/api/release/sample/package").accept(MediaTypes.HAL_JSON)).andExpect(status().isOk());
++		org.mockito.ArgumentCaptor<DeleteProperties> properties = org.mockito.ArgumentCaptor.forClass(DeleteProperties.class);
++		verify(this.stateMachineService, org.mockito.Mockito.times(2)).deleteRelease(eq("sample"), properties.capture());
++		org.junit.jupiter.api.Assertions.assertFalse(properties.getAllValues().get(0).isDeletePackage());
++		org.junit.jupiter.api.Assertions.assertTrue(properties.getAllValues().get(1).isDeletePackage());
++	}
++
++	@Test
++	void releaseScaleUpgradeAndRollbackDispatchToStateMachine() throws Exception {
++		when(this.stateMachineService.scaleRelease(eq("sample"), any(ScaleRequest.class))).thenReturn(new Release());
++		when(this.stateMachineService.upgradeRelease(any(UpgradeRequest.class))).thenReturn(new Release());
++		when(this.stateMachineService.rollbackRelease(any(RollbackRequest.class))).thenReturn(new Release());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/scale/sample")
++					.contentType("application/json").content("{}").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isCreated());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/upgrade")
++					.contentType("application/json").content("{}").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isCreated());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/rollback")
++					.contentType("application/json").content("{}").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isCreated());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/rollback/sample/2")
++					.accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isCreated());
++		verify(this.stateMachineService).scaleRelease(eq("sample"), any(ScaleRequest.class));
++		verify(this.stateMachineService).upgradeRelease(any(UpgradeRequest.class));
++		verify(this.stateMachineService, org.mockito.Mockito.times(2)).rollbackRelease(any(RollbackRequest.class));
++	}
++
++	@Test
++	void releaseStatusesAndStatesAcceptNamesAndReturnJson() throws Exception {
++		MvcResult statuses = this.mockMvc.perform(get("/api/release/statuses").param("names", "alpha", "beta"))
++				.andExpect(request().asyncStarted()).andReturn();
++		this.mockMvc.perform(asyncDispatch(statuses)).andExpect(status().isOk()).andExpect(content().json("{}"));
++		MvcResult states = this.mockMvc.perform(get("/api/release/states").param("names", "alpha", "beta"))
++				.andExpect(request().asyncStarted()).andReturn();
++		this.mockMvc.perform(asyncDispatch(states)).andExpect(status().isOk()).andExpect(content().json("{}"));
++	}
++
++	@Test
++	void skipperRootRedirectsToApi() throws Exception {
++		this.mockMvc.perform(get("/"))
++				.andExpect(status().is3xxRedirection())
++				.andExpect(header().string("Location", containsString("/api")));
++	}
++
++	@Test
++	void deletingPackageChecksThatItsReleasesAreGone() throws Exception {
++		this.mockMvc.perform(delete("/api/package/sample")).andExpect(status().isOk());
++		verify(this.packageMetadataService).deleteIfAllReleasesDeleted(eq("sample"), any());
++	}
++
++	@Test
++	void cancelReturnsWhetherTheReleaseWasAccepted() throws Exception {
++		when(this.stateMachineService.cancelRelease("sample")).thenReturn(true);
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/cancel")
++					.contentType("application/json").content("{\"releaseName\":\"sample\"}"))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.accepted", is(true)));
++	}
++
++	@Test
++	void actuatorProxyPassesEndpointAndAuthorizationHeader() throws Exception {
++		when(this.actuatorService.getFromActuator(eq("sample"), eq("worker"), eq("0"), eq("health"), any()))
++				.thenReturn("{\"status\":\"UP\"}");
++		this.mockMvc.perform(get("/api/release/actuator/sample/worker/0").param("endpoint", "health")
++					.header("Authorization", "Bearer test-token"))
++				.andExpect(status().isOk()).andExpect(content().string("{\"status\":\"UP\"}"));
++	}
++
++	@Test
++	void releaseStatusRoutesExposeBothCurrentAndVersionedResources() throws Exception {
++		this.mockMvc.perform(get("/api/release/status/sample").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.links[*].rel", hasItem("manifest")));
++		this.mockMvc.perform(get("/api/release/status/sample/1").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk());
++	}
++
++	@Test
++	void releaseLogsAndManifestsSupportNameAndVersionVariants() throws Exception {
++		this.mockMvc.perform(get("/api/release/logs/sample").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.logs.worker", is("ok")));
++		this.mockMvc.perform(get("/api/release/logs/sample/worker").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.logs.worker", is("ok")));
++		this.mockMvc.perform(get("/api/release/manifest/sample").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.data", is("manifest-data")));
++		this.mockMvc.perform(get("/api/release/manifest/sample/1").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.data", is("manifest-data")));
++	}
++
++	@Test
++	void releaseListsReturnEmptyCollectionsWhenNoReleasesExist() throws Exception {
++		this.mockMvc.perform(get("/api/release/list").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.content", hasSize(0)));
++		this.mockMvc.perform(get("/api/release/list/sample").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk()).andExpect(jsonPath("$.content", hasSize(0)));
++	}
++
++	@Test
++	void releaseMutationsRejectMalformedJsonBodies() throws Exception {
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/scale/sample")
++					.contentType("application/json").content("{"))
++				.andExpect(status().isBadRequest());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/upgrade")
++					.contentType("application/json").content("{"))
++				.andExpect(status().isBadRequest());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/rollback")
++					.contentType("application/json").content("{"))
++				.andExpect(status().isBadRequest());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/release/actuator/sample/worker/0")
++					.contentType("application/json").content("{"))
++				.andExpect(status().isBadRequest());
++	}
++
++	@Test
++	void packageMutationsRejectMalformedJsonBodies() throws Exception {
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/package/upload")
++					.contentType("application/json").content("{"))
++				.andExpect(status().isBadRequest());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/package/install")
++					.contentType("application/json").content("{"))
++				.andExpect(status().isBadRequest());
++		this.mockMvc.perform(org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post("/api/package/install/1")
++					.contentType("application/json").content("{"))
++				.andExpect(status().isBadRequest());
++	}
++
++	@Test
++	void packageResourceAdvertisesMutatingRoutes() throws Exception {
++		this.mockMvc.perform(get("/api/package").accept(MediaTypes.HAL_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaTypes.HAL_JSON))
++				.andExpect(jsonPath("$.links[*].rel", hasItem("upload")))
++				.andExpect(jsonPath("$.links[*].rel", hasItem("install")))
++				.andExpect(jsonPath("$.links[*].rel", hasItem("install/id")));
++	}
++}

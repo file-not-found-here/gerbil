@@ -1,0 +1,103 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# Type checkers / linters
+.mypy_cache/
+.pyre/
+.ruff_cache/
+
+# Virtual environments / local env overrides
+.env.local
+.venv
+.uv-cache/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node artifacts
+package-lock.json
+
+# Docs & Plans
+docs/
+plans/
+.tmp/
+
+# Experiment outputs
+experiments/runs/
+
+# Keep outputs/ as an empty tracked directory, ignore its contents
+outputs/*
+!outputs/.gitkeep
+
+# CLDK analysis cache / test outputs (large, machine-generated)
+tests/analysis_outputs/
+tests/statistics_outputs/
+
+# Re-include the service-setup helpers despite the broad `lib/` packaging rule above
+!resources/scripts/lib/
+
+# AI agent files
+.claude/
+.codex/
+.amp/
+.factory/
+.conductor/
+.cursor/
+AGENTS.md
+CLAUDE.md

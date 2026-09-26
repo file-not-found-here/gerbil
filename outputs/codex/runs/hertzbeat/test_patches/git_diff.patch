@@ -1,0 +1,500 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..317cc31
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,224 @@
++# API Endpoint Coverage (Progress: 10/179)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## template-marketplace/hertzbeat-template-hub - VersionController
++- [~] GET version/version/{template} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET version/get/{versionId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET version/page/{template}/{isDel} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST version/upload - create/submit; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - TemplateController
++- [~] POST template/localFileUpload - create/submit; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST template/upload - create/submit; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/count/{isDel}/{offShelf} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/page/category/{categoryIdStr}/{isDel}/{orderOption}/{userId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/page/option/{nameLike}/{categoryIdStr}/{isDel}/{orderOption}/{userId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/page/order/{order}/{isDel}/{userId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/page/name/{name}/{isDel}/{orderOption}/{userId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/page/user/{user} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/page/{isDel}/{userId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/download/{ownerId}/{templateId}/{version}/{versionId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template/download/latest/{ownerId}/{templateId}/{versionId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] DELETE template/delete/{ownerId}/{templateId}/{version} - delete/remove; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET template - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST template/star - create/submit; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - ShareController
++- [~] GET share/getShareURL/{version} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET share/download/{key} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - ResourceController
++- [~] POST /resource - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] PUT /resource - update/change; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] DELETE /resource/{resourceId} - delete/remove; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET /resource/{currentPage}/{pageSize} - query/read; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - CategoryController
++- [~] POST category/upload/{name} - create/submit; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST category/modify/{id} - create/submit; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] DELETE category/delete/{id} - delete/remove; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET category/all/{isDel} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET category/page/isDel/{isDel} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - RoleController
++- [~] GET /role/resource/{roleId}/{currentPage}/{pageSize} - query/read; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET /role/resource/-/{roleId}/{currentPage}/{pageSize} - query/read; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST /role/authority/resource/{roleId}/{resourceId} - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] DELETE /role/authority/resource/{roleId}/{resourceId} - delete/remove; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST /role - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] PUT /role - update/change; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] DELETE /role/{roleId} - delete/remove; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET /role/{currentPage}/{pageSize} - query/read; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - AccountController
++- [~] POST /auth/login - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST /auth/refresh - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST /auth/token - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST /auth/custom/token - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST /auth/register - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - UserController
++- [~] GET user/role - query/read; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST user/authority/role/{appId}/{roleId} - create/submit; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] DELETE user/authority/role/{appId}/{roleId} - delete/remove; account/role authorization applies; skipped: template hub build blocked by existing StandardCharsets compile error
++## template-marketplace/hertzbeat-template-hub - StarController
++- [~] GET star/{user} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET star/isStar/{user}/{templateId} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] GET star/page/user/{user} - query/read; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++- [~] POST star/cancel/{user} - create/submit; module API; skipped: template hub build blocked by existing StandardCharsets compile error
++## hertzbeat-warehouse - DataQueryController
++- [~] POST /api/warehouse/query - create/submit; module API; skipped: storage/query backend fixtures not configured
++## hertzbeat-warehouse - MetricsDataController
++- [~] GET /api/warehouse/storage/status - query/read; module API; skipped: storage/query backend fixtures not configured
++- [~] GET /api/monitor/{monitorId}/metrics/{metrics} - query/read; module API; skipped: storage/query backend fixtures not configured
++- [~] GET /api/monitor/{monitorId}/metric/{metricFull} - query/read; module API; skipped: storage/query backend fixtures not configured
++## hertzbeat-manager - MetricsController
++- [~] GET /api/metrics - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - SummaryController
++- [x] GET /api/summary - dashboard summary query
++## hertzbeat-manager - PluginController
++- [~] POST /api/plugin - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/plugin - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/plugin - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/plugin - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/plugin/params/define - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/plugin/params - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - MonitorController
++- [~] POST /api/monitor - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/monitor - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/monitor/{id} - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/monitor/{id} - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/monitor/detect - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/monitor/copy/{id} - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - ManagerSseController
++- [~] GET /api/manager/sse/subscribe - SSE subscription stream; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - I18nController
++- [x] GET /api/i18n/{lang} - locale lookup; aliases normalized
++## hertzbeat-manager - AppController
++- [~] GET /api/apps/{app}/params - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/apps/{monitorId}/pushdefine - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/apps/{monitorId}/define/dynamic - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/apps/{app}/define - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/apps/{app}/define/yml - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/apps/{app}/define/yml - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/apps/define/yml - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/apps/define/yml - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/apps/hierarchy - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/apps/hierarchy/{app} - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/apps/defines - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - StatusPageController
++- [~] GET /api/status/page/org - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/status/page/org - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/status/page/component - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/status/page/component - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/status/page/component - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/status/page/component/{id} - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/status/page/component/{id} - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/status/page/incident - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/status/page/incident - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/status/page/incident/{id} - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/status/page/incident/{id} - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/status/page/incident - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - GeneralConfigController
++- [~] POST /api/config/{type} - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/config/{type} - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/config/template/{app} - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - BulletinController
++- [~] POST /api/bulletin - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/bulletin - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/bulletin/{id} - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/bulletin - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/bulletin - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/bulletin/metrics - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - AuthTokenController
++- [~] POST /api/account/token/generate - create/submit; account/role authorization applies; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - AccountController
++- [~] POST /api/account/auth/form - create/submit; account/role authorization applies; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/account/auth/refresh - create/submit; account/role authorization applies; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - MonitorsController
++- [~] GET /api/monitors - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/monitors/{app} - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/monitors - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/monitors/manage - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/monitors/manage - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/monitors/export - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/monitors/import - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - StatusPagePublicController
++- [x] GET /api/status/page/public/org - public status page read
++- [x] GET /api/status/page/public/component - public status page read
++- [x] GET /api/status/page/public/component/{id} - public status page read
++- [x] GET /api/status/page/public/incident - public status page read
++## hertzbeat-manager - CollectorController
++- [~] GET /api/collector - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/collector/online - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/collector/offline - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/collector - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] POST /api/collector/generate/{collector} - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - LabelController
++- [~] POST /api/label - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] PUT /api/label - update/change; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] GET /api/label - query/read; module API; skipped: endpoint-specific controller fixtures not added in this pass
++- [~] DELETE /api/label - delete/remove; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-manager - AiController
++- [~] POST /api/ai/get - create/submit; module API; skipped: endpoint-specific controller fixtures not added in this pass
++## hertzbeat-alerter - AlertsController
++- [~] GET /api/alerts - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/alerts/group - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/alerts/group - delete/remove; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/alerts/group/status/{status} - update/change; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/alerts/summary - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertDefineController
++- [~] POST /api/alert/define - create/submit; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/alert/define - update/change; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/alert/define/{id} - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/alert/define/{id} - delete/remove; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - NoticeConfigController
++- [~] POST /api/notice/receiver - create/submit; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/notice/receiver - update/change; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/notice/receiver/{id} - delete/remove; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/receivers - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/receivers/all - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/receiver/{id} - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] POST /api/notice/rule - create/submit; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/notice/rule - update/change; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/notice/rule/{id} - delete/remove; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/rules - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/rule/{id} - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] POST /api/notice/template - create/submit; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/notice/template - update/change; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/notice/template/{id} - delete/remove; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/templates - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/templates/all - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/notice/template/{id} - query/read; module API; skipped: alert engine and delivery integration fixtures not configured
++- [~] POST /api/notice/receiver/send-test-msg - create/submit; module API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertDefinesController
++- [~] GET /api/alert/defines - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/alert/defines - delete/remove; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/alert/defines/export - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] POST /api/alert/defines/import - create/submit; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertSilenceController
++- [~] POST /api/alert/silence - create/submit; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/alert/silence - update/change; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/alert/silence/{id} - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertInhibitsController
++- [~] GET /api/alert/inhibits - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/alert/inhibits - delete/remove; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertGroupConvergesController
++- [~] GET /api/alert/groups - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/alert/groups - delete/remove; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertSilencesController
++- [~] GET /api/alert/silences - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] DELETE /api/alert/silences - delete/remove; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertSseController
++- [~] GET /api/alert/sse/subscribe - SSE subscription stream; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertGroupConvergeController
++- [~] POST /api/alert/group - create/submit; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/alert/group - update/change; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/alert/group/{id} - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertReportController
++- [~] POST /api/alerts/report/{source} - alert report ingestion; skipped: alert engine and delivery integration fixtures not configured
++- [~] POST /api/alerts/report - alert report ingestion; skipped: alert engine and delivery integration fixtures not configured
++- [~] POST /api/v2/alerts - alert report ingestion; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-alerter - AlertInhibitController
++- [~] POST /api/alert/inhibit - create/submit; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] PUT /api/alert/inhibit - update/change; alert management API; skipped: alert engine and delivery integration fixtures not configured
++- [~] GET /api/alert/inhibit/{id} - query/read; alert management API; skipped: alert engine and delivery integration fixtures not configured
++## hertzbeat-push - PushPrometheusController
++- [x] POST /api/push/prometheus/** - Prometheus push; wrapper determines 200 vs 400
++## hertzbeat-grafana - DashboardController
++- [x] POST /api/grafana/dashboard - dashboard CRUD; service errors encoded in JSON envelope
++- [x] GET /api/grafana/dashboard - dashboard CRUD; service errors encoded in JSON envelope
++- [x] DELETE /api/grafana/dashboard - dashboard CRUD; service errors encoded in JSON envelope
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/grafana/controller/DashboardControllerApiTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/grafana/controller/DashboardControllerApiTest.java
+new file mode 100644
+index 0000000..1ced4a5
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/grafana/controller/DashboardControllerApiTest.java
+@@ -0,0 +1,81 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ */
++
++package org.apache.hertzbeat.grafana.controller;
++
++import org.apache.hertzbeat.grafana.service.DashboardService;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.http.ResponseEntity;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++class DashboardControllerApiTest {
++
++    private DashboardService dashboardService;
++    private MockMvc mvc;
++
++    @BeforeEach
++    void setUp() {
++        dashboardService = mock(DashboardService.class);
++        DashboardController controller = new DashboardController();
++        ReflectionTestUtils.setField(controller, "dashboardService", dashboardService);
++        mvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    void createDashboardReturnsSuccessWhenGrafanaAcceptsIt() throws Exception {
++        when(dashboardService.createOrUpdateDashboard("{\"title\":\"CPU\"}", 17L))
++                .thenReturn(ResponseEntity.ok().build());
++
++        mvc.perform(post("/api/grafana/dashboard")
++                        .param("dashboardJson", "{\"title\":\"CPU\"}")
++                        .param("monitorId", "17"))
++                .andExpect(status().isOk())
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("create dashboard success")));
++    }
++
++    @Test
++    void createDashboardConvertsServiceFailureToFailureMessage() throws Exception {
++        when(dashboardService.createOrUpdateDashboard("{}", 17L)).thenThrow(new IllegalStateException("offline"));
++
++        mvc.perform(post("/api/grafana/dashboard").param("dashboardJson", "{}").param("monitorId", "17"))
++                .andExpect(status().isOk())
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("offline")));
++    }
++
++    @Test
++    void getDashboardReturnsJsonMessageEnvelope() throws Exception {
++        when(dashboardService.getDashboardByMonitorId(17L)).thenReturn(null);
++
++        mvc.perform(get("/api/grafana/dashboard").param("monitorId", "17"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("\"code\"")));
++    }
++
++    @Test
++    void deleteDashboardReturnsJsonMessageEnvelope() throws Exception {
++        mvc.perform(delete("/api/grafana/dashboard").param("monitorId", "17"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("delete dashboard fail")));
++    }
++}
+diff --git a/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/ReadOnlyApiControllersTest.java b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/ReadOnlyApiControllersTest.java
+new file mode 100644
+index 0000000..c34eb6f
+--- /dev/null
++++ b/hertzbeat-manager/src/test/java/org/apache/hertzbeat/manager/controller/ReadOnlyApiControllersTest.java
+@@ -0,0 +1,103 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ */
++
++package org.apache.hertzbeat.manager.controller;
++
++import org.apache.hertzbeat.manager.service.AppService;
++import org.apache.hertzbeat.manager.service.MonitorService;
++import org.apache.hertzbeat.manager.service.StatusPageService;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Map;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++class ReadOnlyApiControllersTest {
++
++    private MockMvc statusPageMvc;
++    private MockMvc i18nMvc;
++    private MockMvc summaryMvc;
++
++    @BeforeEach
++    void setUp() {
++        StatusPageService statusPageService = mock(StatusPageService.class);
++        StatusPagePublicController statusPage = new StatusPagePublicController();
++        ReflectionTestUtils.setField(statusPage, "statusPageService", statusPageService);
++        statusPageMvc = MockMvcBuilders.standaloneSetup(statusPage).build();
++
++        AppService appService = mock(AppService.class);
++        when(appService.getI18nResources("zh-CN")).thenReturn(Map.of("hello", "你好"));
++        I18nController i18n = new I18nController();
++        ReflectionTestUtils.setField(i18n, "appService", appService);
++        i18nMvc = MockMvcBuilders.standaloneSetup(i18n).build();
++
++        MonitorService monitorService = mock(MonitorService.class);
++        SummaryController summary = new SummaryController();
++        ReflectionTestUtils.setField(summary, "monitorService", monitorService);
++        summaryMvc = MockMvcBuilders.standaloneSetup(summary).build();
++    }
++
++    @Test
++    void publicOrganizationEndpointReportsMissingOrganizationInJsonEnvelope() throws Exception {
++        statusPageMvc.perform(get("/api/status/page/public/org"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("Status Page Organization Not Found")));
++    }
++
++    @Test
++    void publicComponentCollectionEndpointReturnsJsonEnvelope() throws Exception {
++        statusPageMvc.perform(get("/api/status/page/public/component"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("\"data\"")));
++    }
++
++    @Test
++    void publicComponentByIdEndpointReturnsJsonEnvelope() throws Exception {
++        statusPageMvc.perform(get("/api/status/page/public/component/5"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("\"data\"")));
++    }
++
++    @Test
++    void publicIncidentCollectionEndpointReturnsJsonEnvelope() throws Exception {
++        statusPageMvc.perform(get("/api/status/page/public/incident"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("\"data\"")));
++    }
++
++    @Test
++    void i18nEndpointNormalizesLocaleAndReturnsLocalizedJson() throws Exception {
++        i18nMvc.perform(get("/api/i18n/zh_cn"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("你好")));
++    }
++
++    @Test
++    void summaryEndpointReturnsJsonEnvelope() throws Exception {
++        summaryMvc.perform(get("/api/summary"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("\"data\"")));
++    }
++}
+diff --git a/hertzbeat-push/src/test/java/org/apache/hertzbeat/push/controller/PushPrometheusControllerApiTest.java b/hertzbeat-push/src/test/java/org/apache/hertzbeat/push/controller/PushPrometheusControllerApiTest.java
+new file mode 100644
+index 0000000..9255937
+--- /dev/null
++++ b/hertzbeat-push/src/test/java/org/apache/hertzbeat/push/controller/PushPrometheusControllerApiTest.java
+@@ -0,0 +1,68 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ */
++
++package org.apache.hertzbeat.push.controller;
++
++import org.apache.hertzbeat.push.config.PushErrorRequestWrapper;
++import org.apache.hertzbeat.push.config.PushSuccessRequestWrapper;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import jakarta.servlet.Filter;
++import jakarta.servlet.http.HttpServletRequest;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.hamcrest.Matchers.containsString;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++class PushPrometheusControllerApiTest {
++
++    private MockMvc mvc;
++
++    @BeforeEach
++    void setUp() {
++        Filter pushWrapperFilter = (request, response, chain) -> {
++            HttpServletRequest httpRequest = (HttpServletRequest) request;
++            String mode = httpRequest.getHeader("X-Push-Test-Result");
++            if ("success".equals(mode)) {
++                chain.doFilter(new PushSuccessRequestWrapper(httpRequest, "cpu", "host-1"), response);
++            } else if ("failure".equals(mode)) {
++                chain.doFilter(new PushErrorRequestWrapper(httpRequest, "cpu", "host-1"), response);
++            } else {
++                chain.doFilter(request, response);
++            }
++        };
++        mvc = MockMvcBuilders.standaloneSetup(new PushPrometheusController()).addFilters(pushWrapperFilter).build();
++    }
++
++    @Test
++    void unmatchedPushRequestReturnsBadRequest() throws Exception {
++        mvc.perform(post("/api/push/prometheus/demo/job"))
++                .andExpect(status().isBadRequest())
++                .andExpect(content().string(containsString("not matched")));
++    }
++
++    @Test
++    void successfulPushWrapperReturnsJobAndInstance() throws Exception {
++        mvc.perform(post("/api/push/prometheus/demo/job").header("X-Push-Test-Result", "success"))
++                .andExpect(status().isOk())
++                .andExpect(content().string(containsString("Push success, job: cpu, instance: host-1")));
++    }
++
++    @Test
++    void failedPushWrapperReturnsBadRequestWithJobAndInstance() throws Exception {
++        mvc.perform(post("/api/push/prometheus/demo/job").header("X-Push-Test-Result", "failure"))
++                .andExpect(status().isBadRequest())
++                .andExpect(content().string(containsString("Push failed, job: cpu, instance: host-1")));
++    }
++}

@@ -1,0 +1,2466 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..a962f30
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,78 @@
++# API Endpoint Coverage (Progress: 52/52)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## legacy/web - CancerTypeController
++- [x] GET /api/cancer-types - list all cancer types; supports projection, pagination, sort
++- [x] GET /api/cancer-types (projection=META) - returns Total-Count header only
++- [x] GET /api/cancer-types/{cancerTypeId} - get single cancer type; 404 when missing
++
++## legacy/web - GeneController
++- [x] GET /api/genes - list all genes; supports keyword, alias, projection, pagination
++- [x] GET /api/genes (projection=META) - returns Total-Count header only
++- [x] GET /api/genes/{geneId} - get gene by Entrez ID or Hugo symbol; 404 when missing
++- [x] GET /api/genes/{geneId}/aliases - get aliases of a gene; 404 when missing
++- [x] POST /api/genes/fetch - fetch genes by ID list; supports geneIdType, projection
++
++## legacy/web - StudyController
++- [x] GET /api/studies - list all studies; supports keyword, projection, pagination
++- [x] GET /api/studies (projection=META) - returns Total-Count header only
++- [x] GET /api/studies/{studyId} - get single study; 404 when missing
++- [x] POST /api/studies/fetch - fetch studies by ID list
++- [x] POST /api/studies/fetch (projection=META) - returns Total-Count header only
++- [x] GET /api/studies/{studyId}/tags - get study tags; empty map when no tags
++- [x] POST /api/studies/tags/fetch - get tags for multiple studies
++
++## legacy/web - SampleController
++- [x] GET /api/samples - list samples matching keyword; auth-aware study filtering
++- [x] GET /api/studies/{studyId}/samples - list all samples in study
++- [x] GET /api/studies/{studyId}/samples (projection=META) - returns Total-Count header
++- [x] GET /api/studies/{studyId}/samples/{sampleId} - get single sample; 404 when missing
++- [x] GET /api/studies/{studyId}/patients/{patientId}/samples - list samples for patient
++- [x] POST /api/samples/fetch - fetch samples by SampleFilter (requires intercepted attributes)
++
++## legacy/web - PatientController
++- [x] GET /api/patients - list all patients; supports keyword, projection, pagination
++- [x] GET /api/patients (projection=META) - returns Total-Count header only
++- [x] GET /api/studies/{studyId}/patients - list patients in study
++- [x] GET /api/studies/{studyId}/patients/{patientId} - get single patient; 404 when missing
++- [x] POST /api/patients/fetch - fetch patients by PatientFilter (requires intercepted attributes)
++
++## legacy/web - MolecularProfileController
++- [x] GET /api/molecular-profiles - list all molecular profiles
++- [x] GET /api/molecular-profiles (projection=META) - returns Total-Count header
++- [x] GET /api/molecular-profiles/{molecularProfileId} - get profile; 404 when missing
++- [x] GET /api/studies/{studyId}/molecular-profiles - list profiles in study
++- [x] POST /api/molecular-profiles/fetch - fetch profiles by filter (requires intercepted attributes)
++
++## legacy/web - ClinicalAttributeController
++- [x] GET /api/clinical-attributes - list all clinical attributes
++- [x] GET /api/clinical-attributes (projection=META) - returns Total-Count header
++- [x] GET /api/studies/{studyId}/clinical-attributes - list attributes in study
++- [x] GET /api/studies/{studyId}/clinical-attributes/{clinicalAttributeId} - get attribute; 404 missing
++- [x] POST /api/clinical-attributes/fetch - fetch attributes by study ID list
++
++## legacy/web - ClinicalDataController
++- [x] GET /api/studies/{studyId}/clinical-data - list all clinical data in study
++- [x] GET /api/studies/{studyId}/samples/{sampleId}/clinical-data - get sample clinical data
++- [x] GET /api/studies/{studyId}/patients/{patientId}/clinical-data - get patient clinical data
++- [x] POST /api/studies/{studyId}/clinical-data/fetch - fetch clinical data in study
++- [x] POST /api/clinical-data/fetch - fetch clinical data across studies
++
++## legacy/web - MutationController
++- [x] GET /api/molecular-profiles/{molecularProfileId}/mutations - get mutations by sample list
++- [x] POST /api/molecular-profiles/{molecularProfileId}/mutations/fetch - fetch mutations
++- [x] POST /api/mutations/fetch - fetch mutations across multiple profiles
++
++## legacy/web - ServerStatusController
++- [x] GET /api/health - get server running status; no auth required
++
++## legacy/web - GenePanelController
++- [x] GET /api/gene-panels - list all gene panels
++- [x] GET /api/gene-panels/{genePanelId} - get single gene panel; 404 when missing
++- [x] POST /api/gene-panels/fetch - fetch gene panels by ID list
++
++## legacy/web - SampleListController
++- [x] GET /api/sample-lists - list all sample lists
++- [x] GET /api/studies/{studyId}/sample-lists - list sample lists in study
++- [x] GET /api/sample-lists/{sampleListId} - get single sample list; 404 when missing
++- [x] POST /api/sample-lists/fetch - fetch sample lists by ID
+diff --git a/src/test/java/org/cbioportal/legacy/web/CancerTypeControllerTest.java b/src/test/java/org/cbioportal/legacy/web/CancerTypeControllerTest.java
+new file mode 100644
+index 0000000..5385a0b
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/CancerTypeControllerTest.java
+@@ -0,0 +1,166 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.TypeOfCancer;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.CancerTypeService;
++import org.cbioportal.legacy.service.exception.CancerTypeNotFoundException;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@WebMvcTest(
++    controllers = CancerTypeController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class CancerTypeControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private CancerTypeService cancerTypeService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private TypeOfCancer createCancerType(String id, String name) {
++    TypeOfCancer type = new TypeOfCancer();
++    type.setTypeOfCancerId(id);
++    type.setName(name);
++    type.setDedicatedColor("HotPink");
++    type.setShortName(id.toUpperCase());
++    type.setParent("tissue");
++    return type;
++  }
++
++  @Test
++  void getAllCancerTypes_returnsListWithOk() throws Exception {
++    List<TypeOfCancer> types =
++        Arrays.asList(
++            createCancerType("acc", "Adrenocortical Carcinoma"),
++            createCancerType("blca", "Bladder Urothelial Carcinoma"));
++
++    when(cancerTypeService.getAllCancerTypes(any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(types);
++
++    mockMvc
++        .perform(
++            get("/api/cancer-types")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].name").value("Adrenocortical Carcinoma"))
++        .andExpect(jsonPath("$[1].name").value("Bladder Urothelial Carcinoma"));
++  }
++
++  @Test
++  void getAllCancerTypes_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(42);
++
++    when(cancerTypeService.getMetaCancerTypes()).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/cancer-types")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "42"));
++  }
++
++  @Test
++  void getCancerType_existingId_returnsType() throws Exception {
++    TypeOfCancer acc = createCancerType("acc", "Adrenocortical Carcinoma");
++
++    when(cancerTypeService.getCancerType("acc")).thenReturn(acc);
++
++    mockMvc
++        .perform(
++            get("/api/cancer-types/acc")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.name").value("Adrenocortical Carcinoma"));
++  }
++
++  @Test
++  void getCancerType_nonExistentId_returns404() throws Exception {
++    when(cancerTypeService.getCancerType("nonexistent"))
++        .thenThrow(new CancerTypeNotFoundException("nonexistent"));
++
++    mockMvc
++        .perform(
++            get("/api/cancer-types/nonexistent")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Cancer type not found: nonexistent"));
++  }
++
++  @Test
++  void getAllCancerTypes_withPagination_callsServiceWithCorrectParams() throws Exception {
++    List<TypeOfCancer> types = Arrays.asList(createCancerType("acc", "ACC"));
++
++    when(cancerTypeService.getAllCancerTypes(eq("SUMMARY"), eq(10), eq(2), any(), any()))
++        .thenReturn(types);
++
++    mockMvc
++        .perform(
++            get("/api/cancer-types")
++                .param("pageSize", "10")
++                .param("pageNumber", "2")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1));
++  }
++
++  @Test
++  void getAllCancerTypes_withDetailedProjection_returnsOk() throws Exception {
++    List<TypeOfCancer> types = Arrays.asList(createCancerType("acc", "Adrenocortical Carcinoma"));
++
++    when(cancerTypeService.getAllCancerTypes(eq("DETAILED"), anyInt(), anyInt(), any(), any()))
++        .thenReturn(types);
++
++    mockMvc
++        .perform(
++            get("/api/cancer-types")
++                .param("projection", "DETAILED")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1));
++  }
++
++  @Test
++  void getAllCancerTypes_emptyList_returnsEmptyArray() throws Exception {
++    when(cancerTypeService.getAllCancerTypes(any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(List.of());
++
++    mockMvc
++        .perform(
++            get("/api/cancer-types")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(0));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/ClinicalAttributeControllerTest.java b/src/test/java/org/cbioportal/legacy/web/ClinicalAttributeControllerTest.java
+new file mode 100644
+index 0000000..237eafb
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/ClinicalAttributeControllerTest.java
+@@ -0,0 +1,221 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.ClinicalAttribute;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.ClinicalAttributeService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.service.exception.ClinicalAttributeNotFoundException;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = ClinicalAttributeController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class ClinicalAttributeControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private ClinicalAttributeService clinicalAttributeService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private ClinicalAttribute createAttr(
++      String attrId, String studyId, String displayName, boolean patientAttribute) {
++    ClinicalAttribute attr = new ClinicalAttribute();
++    attr.setAttrId(attrId);
++    attr.setCancerStudyIdentifier(studyId);
++    attr.setDisplayName(displayName);
++    attr.setDescription("A clinical attribute");
++    attr.setDatatype("STRING");
++    attr.setPatientAttribute(patientAttribute);
++    attr.setPriority("1");
++    return attr;
++  }
++
++  @Test
++  void getAllClinicalAttributes_returnsListWithOk() throws Exception {
++    List<ClinicalAttribute> attrs =
++        Arrays.asList(
++            createAttr("CANCER_TYPE", "acc_tcga", "Cancer Type", false),
++            createAttr("AGE", "acc_tcga", "Age at Diagnosis", true),
++            createAttr("ETHNICITY", "blca_tcga", "Ethnicity", true));
++
++    when(clinicalAttributeService.getAllClinicalAttributes(
++            any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(attrs);
++
++    mockMvc
++        .perform(
++            get("/api/clinical-attributes")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(3))
++        .andExpect(jsonPath("$[0].clinicalAttributeId").value("CANCER_TYPE"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"))
++        .andExpect(jsonPath("$[0].displayName").value("Cancer Type"))
++        .andExpect(jsonPath("$[0].patientAttribute").value(false));
++  }
++
++  @Test
++  void getAllClinicalAttributes_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(84);
++
++    when(clinicalAttributeService.getMetaClinicalAttributes()).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/clinical-attributes")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "84"));
++  }
++
++  @Test
++  void getAllClinicalAttributesInStudy_returnsAttributeList() throws Exception {
++    List<ClinicalAttribute> attrs =
++        Arrays.asList(
++            createAttr("CANCER_TYPE", "acc_tcga", "Cancer Type", false),
++            createAttr("AGE", "acc_tcga", "Age at Diagnosis", true));
++
++    when(clinicalAttributeService.getAllClinicalAttributesInStudy(
++            eq("acc_tcga"), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(attrs);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/clinical-attributes")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].clinicalAttributeId").value("CANCER_TYPE"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getAllClinicalAttributesInStudy_withMetaProjection_returnsTotalCountHeader()
++      throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(20);
++
++    when(clinicalAttributeService.getMetaClinicalAttributesInStudy("acc_tcga")).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/clinical-attributes")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "20"));
++  }
++
++  @Test
++  void getClinicalAttributeInStudy_existingAttribute_returnsAttribute() throws Exception {
++    ClinicalAttribute attr = createAttr("CANCER_TYPE", "acc_tcga", "Cancer Type", false);
++
++    when(clinicalAttributeService.getClinicalAttribute("acc_tcga", "CANCER_TYPE")).thenReturn(attr);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/clinical-attributes/CANCER_TYPE")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.clinicalAttributeId").value("CANCER_TYPE"))
++        .andExpect(jsonPath("$.displayName").value("Cancer Type"))
++        .andExpect(jsonPath("$.studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getClinicalAttributeInStudy_nonExistentAttribute_returns404() throws Exception {
++    when(clinicalAttributeService.getClinicalAttribute("acc_tcga", "NONEXISTENT"))
++        .thenThrow(new ClinicalAttributeNotFoundException("acc_tcga", "NONEXISTENT"));
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/clinical-attributes/NONEXISTENT")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(
++            jsonPath("$.message")
++                .value("Clinical attribute not found in study acc_tcga: NONEXISTENT"));
++  }
++
++  @Test
++  void fetchClinicalAttributes_byStudyIdList_returnsAttributes() throws Exception {
++    List<ClinicalAttribute> attrs =
++        Arrays.asList(
++            createAttr("CANCER_TYPE", "acc_tcga", "Cancer Type", false),
++            createAttr("AGE", "blca_tcga", "Age", true));
++
++    when(clinicalAttributeService.fetchClinicalAttributes(anyList(), any())).thenReturn(attrs);
++
++    mockMvc
++        .perform(
++            post("/api/clinical-attributes/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"acc_tcga\",\"blca_tcga\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2));
++  }
++
++  @Test
++  void fetchClinicalAttributes_withMetaProjection_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(20);
++
++    when(clinicalAttributeService.fetchMetaClinicalAttributes(anyList())).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            post("/api/clinical-attributes/fetch")
++                .param("projection", "META")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"acc_tcga\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "20"));
++  }
++
++  @Test
++  void fetchClinicalAttributes_emptyBody_returnsBadRequest() throws Exception {
++    mockMvc
++        .perform(
++            post("/api/clinical-attributes/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isBadRequest());
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/ClinicalDataControllerTest.java b/src/test/java/org/cbioportal/legacy/web/ClinicalDataControllerTest.java
+new file mode 100644
+index 0000000..4ce3e53
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/ClinicalDataControllerTest.java
+@@ -0,0 +1,195 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.ClinicalData;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.ClinicalDataService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.web.parameter.ClinicalDataIdentifier;
++import org.cbioportal.legacy.web.parameter.ClinicalDataMultiStudyFilter;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = ClinicalDataController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class ClinicalDataControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private ClinicalDataService clinicalDataService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private ClinicalData createClinicalData(
++      String studyId, String sampleId, String attrId, String attrValue) {
++    ClinicalData data = new ClinicalData();
++    data.setStudyId(studyId);
++    data.setSampleId(sampleId);
++    data.setAttrId(attrId);
++    data.setAttrValue(attrValue);
++    data.setPatientId("TCGA-OR-A5J2");
++    return data;
++  }
++
++  @Test
++  void getAllClinicalDataInStudy_returnsListWithOk() throws Exception {
++    List<ClinicalData> dataList =
++        Arrays.asList(
++            createClinicalData("acc_tcga", "TCGA-OR-A5J2-01", "CANCER_TYPE", "ACC"),
++            createClinicalData("acc_tcga", "TCGA-OR-A5J3-01", "CANCER_TYPE", "ACC"));
++
++    when(clinicalDataService.getAllClinicalDataInStudy(
++            eq("acc_tcga"), any(), any(), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(dataList);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/clinical-data")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].clinicalAttributeId").value("CANCER_TYPE"))
++        .andExpect(jsonPath("$[0].value").value("ACC"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getAllClinicalDataInStudy_withMetaProjection_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(200);
++
++    when(clinicalDataService.getMetaAllClinicalData(eq("acc_tcga"), any(), any())).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/clinical-data")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "200"));
++  }
++
++  @Test
++  void getAllClinicalDataOfSampleInStudy_returnsOk() throws Exception {
++    List<ClinicalData> dataList =
++        List.of(createClinicalData("acc_tcga", "TCGA-OR-A5J2-01", "AGE", "58"));
++
++    when(clinicalDataService.getAllClinicalDataOfSampleInStudy(
++            eq("acc_tcga"),
++            eq("TCGA-OR-A5J2-01"),
++            any(),
++            any(),
++            anyInt(),
++            anyInt(),
++            any(),
++            any()))
++        .thenReturn(dataList);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/samples/TCGA-OR-A5J2-01/clinical-data")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].clinicalAttributeId").value("AGE"))
++        .andExpect(jsonPath("$[0].value").value("58"));
++  }
++
++  @Test
++  void getAllClinicalDataOfPatientInStudy_returnsOk() throws Exception {
++    List<ClinicalData> dataList =
++        List.of(createClinicalData("acc_tcga", null, "SEX", "Male"));
++
++    when(clinicalDataService.getAllClinicalDataOfPatientInStudy(
++            eq("acc_tcga"),
++            eq("TCGA-OR-A5J2"),
++            any(),
++            any(),
++            anyInt(),
++            anyInt(),
++            any(),
++            any()))
++        .thenReturn(dataList);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/patients/TCGA-OR-A5J2/clinical-data")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].clinicalAttributeId").value("SEX"));
++  }
++
++  @Test
++  void fetchAllClinicalDataInStudy_withSampleIds_returnsOk() throws Exception {
++    List<ClinicalData> dataList =
++        List.of(createClinicalData("acc_tcga", "TCGA-OR-A5J2-01", "CANCER_TYPE", "ACC"));
++
++    when(clinicalDataService.fetchAllClinicalDataInStudy(
++            eq("acc_tcga"), anyList(), any(), any(), any()))
++        .thenReturn(dataList);
++
++    mockMvc
++        .perform(
++            post("/api/studies/acc_tcga/clinical-data/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"ids\":[\"TCGA-OR-A5J2-01\"]}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void fetchClinicalData_withInterceptedFilter_returnsOk() throws Exception {
++    List<ClinicalData> dataList =
++        List.of(createClinicalData("acc_tcga", "TCGA-OR-A5J2-01", "CANCER_TYPE", "ACC"));
++
++    when(clinicalDataService.fetchClinicalData(anyList(), anyList(), any(), any(), any()))
++        .thenReturn(dataList);
++
++    ClinicalDataIdentifier identifier = new ClinicalDataIdentifier();
++    identifier.setStudyId("acc_tcga");
++    identifier.setEntityId("TCGA-OR-A5J2-01");
++    ClinicalDataMultiStudyFilter filter = new ClinicalDataMultiStudyFilter();
++    filter.setIdentifiers(List.of(identifier));
++
++    mockMvc
++        .perform(
++            post("/api/clinical-data/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"identifiers\":[{\"studyId\":\"acc_tcga\",\"entityId\":\"TCGA-OR-A5J2-01\"}]}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME)
++                .requestAttr("interceptedClinicalDataMultiStudyFilter", filter))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].clinicalAttributeId").value("CANCER_TYPE"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/GeneControllerTest.java b/src/test/java/org/cbioportal/legacy/web/GeneControllerTest.java
+new file mode 100644
+index 0000000..7c81f31
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/GeneControllerTest.java
+@@ -0,0 +1,274 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.Gene;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.GeneService;
++import org.cbioportal.legacy.service.exception.GeneNotFoundException;
++import org.cbioportal.legacy.service.exception.GeneWithMultipleEntrezIdsException;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@WebMvcTest(
++    controllers = GeneController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class GeneControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private GeneService geneService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private Gene createGene(int entrezId, String hugoSymbol) {
++    Gene gene = new Gene();
++    gene.setEntrezGeneId(entrezId);
++    gene.setHugoGeneSymbol(hugoSymbol);
++    gene.setGeneticEntityId(entrezId);
++    gene.setType("protein-coding");
++    return gene;
++  }
++
++  @Test
++  void getAllGenes_returnsListWithOk() throws Exception {
++    List<Gene> genes =
++        Arrays.asList(createGene(1, "A1BG"), createGene(2, "A2M"), createGene(7157, "TP53"));
++
++    when(geneService.getAllGenes(any(), any(), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(genes);
++
++    mockMvc
++        .perform(
++            get("/api/genes")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(3))
++        .andExpect(jsonPath("$[0].hugoGeneSymbol").value("A1BG"))
++        .andExpect(jsonPath("$[2].entrezGeneId").value(7157));
++  }
++
++  @Test
++  void getAllGenes_withKeyword_filtersGenes() throws Exception {
++    List<Gene> genes = List.of(createGene(7157, "TP53"));
++
++    when(geneService.getAllGenes(eq("TP53"), any(), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(genes);
++
++    mockMvc
++        .perform(
++            get("/api/genes")
++                .param("keyword", "TP53")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].hugoGeneSymbol").value("TP53"));
++  }
++
++  @Test
++  void getAllGenes_withAlias_returnsMatchingGenes() throws Exception {
++    List<Gene> genes = List.of(createGene(1, "A1BG"));
++
++    when(geneService.getAllGenes(any(), eq("A1BG-AS1"), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(genes);
++
++    mockMvc
++        .perform(
++            get("/api/genes")
++                .param("alias", "A1BG-AS1")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1));
++  }
++
++  @Test
++  void getAllGenes_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(25000);
++
++    when(geneService.getMetaGenes(any(), any())).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/genes")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "25000"));
++  }
++
++  @Test
++  void getGene_byEntrezId_returnsGene() throws Exception {
++    Gene tp53 = createGene(7157, "TP53");
++
++    when(geneService.getGene("7157")).thenReturn(tp53);
++
++    mockMvc
++        .perform(
++            get("/api/genes/7157")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.hugoGeneSymbol").value("TP53"))
++        .andExpect(jsonPath("$.entrezGeneId").value(7157));
++  }
++
++  @Test
++  void getGene_byHugoSymbol_returnsGene() throws Exception {
++    Gene tp53 = createGene(7157, "TP53");
++
++    when(geneService.getGene("TP53")).thenReturn(tp53);
++
++    mockMvc
++        .perform(
++            get("/api/genes/TP53")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.hugoGeneSymbol").value("TP53"));
++  }
++
++  @Test
++  void getGene_nonExistent_returns404() throws Exception {
++    when(geneService.getGene("NONEXISTENT")).thenThrow(new GeneNotFoundException("NONEXISTENT"));
++
++    mockMvc
++        .perform(
++            get("/api/genes/NONEXISTENT")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Gene not found: NONEXISTENT"));
++  }
++
++  @Test
++  void getGene_ambiguousHugoSymbol_returns500() throws Exception {
++    when(geneService.getGene("AMBIGUOUS"))
++        .thenThrow(new GeneWithMultipleEntrezIdsException("AMBIGUOUS"));
++
++    mockMvc
++        .perform(
++            get("/api/genes/AMBIGUOUS")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isInternalServerError())
++        .andExpect(
++            jsonPath("$.message").value("Gene data error: multiple Entrez gene IDs for AMBIGUOUS"));
++  }
++
++  @Test
++  void getAliasesOfGene_returnsAliasList() throws Exception {
++    when(geneService.getAliasesOfGene("TP53"))
++        .thenReturn(Arrays.asList("BCC7", "LFS1", "P53", "TRP53"));
++
++    mockMvc
++        .perform(
++            get("/api/genes/TP53/aliases")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(4))
++        .andExpect(jsonPath("$[0]").value("BCC7"));
++  }
++
++  @Test
++  void getAliasesOfGene_nonExistentGene_returns404() throws Exception {
++    when(geneService.getAliasesOfGene("NONEXISTENT"))
++        .thenThrow(new GeneNotFoundException("NONEXISTENT"));
++
++    mockMvc
++        .perform(
++            get("/api/genes/NONEXISTENT/aliases")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound());
++  }
++
++  @Test
++  void fetchGenes_byEntrezIds_returnsGeneList() throws Exception {
++    List<Gene> genes = Arrays.asList(createGene(1, "A1BG"), createGene(7157, "TP53"));
++
++    when(geneService.fetchGenes(anyList(), eq("ENTREZ_GENE_ID"), any())).thenReturn(genes);
++
++    mockMvc
++        .perform(
++            post("/api/genes/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"1\",\"7157\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2));
++  }
++
++  @Test
++  void fetchGenes_byHugoSymbols_returnsGeneList() throws Exception {
++    List<Gene> genes = List.of(createGene(7157, "TP53"));
++
++    when(geneService.fetchGenes(anyList(), eq("HUGO_GENE_SYMBOL"), any())).thenReturn(genes);
++
++    mockMvc
++        .perform(
++            post("/api/genes/fetch")
++                .param("geneIdType", "HUGO_GENE_SYMBOL")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"TP53\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].hugoGeneSymbol").value("TP53"));
++  }
++
++  @Test
++  void fetchGenes_withMetaProjection_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(2);
++
++    when(geneService.fetchMetaGenes(anyList(), any())).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            post("/api/genes/fetch")
++                .param("projection", "META")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"1\",\"7157\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "2"));
++  }
++
++  @Test
++  void fetchGenes_emptyBody_returnsBadRequest() throws Exception {
++    mockMvc
++        .perform(
++            post("/api/genes/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isBadRequest());
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/GenePanelControllerTest.java b/src/test/java/org/cbioportal/legacy/web/GenePanelControllerTest.java
+new file mode 100644
+index 0000000..1d6d581
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/GenePanelControllerTest.java
+@@ -0,0 +1,147 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.GenePanel;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.GenePanelService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.service.exception.GenePanelNotFoundException;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = GenePanelController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class GenePanelControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private GenePanelService genePanelService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private GenePanel createGenePanel(String id, String description) {
++    GenePanel panel = new GenePanel();
++    panel.setStableId(id);
++    panel.setDescription(description);
++    return panel;
++  }
++
++  @Test
++  void getAllGenePanels_returnsListWithOk() throws Exception {
++    List<GenePanel> panels =
++        Arrays.asList(
++            createGenePanel("IMPACT341", "MSK-IMPACT 341 Gene Panel"),
++            createGenePanel("IMPACT410", "MSK-IMPACT 410 Gene Panel"));
++
++    when(genePanelService.getAllGenePanels(any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(panels);
++
++    mockMvc
++        .perform(
++            get("/api/gene-panels")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].genePanelId").value("IMPACT341"))
++        .andExpect(jsonPath("$[0].description").value("MSK-IMPACT 341 Gene Panel"));
++  }
++
++  @Test
++  void getAllGenePanels_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(10);
++
++    when(genePanelService.getMetaGenePanels()).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/gene-panels")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "10"));
++  }
++
++  @Test
++  void getGenePanel_existingId_returnsPanel() throws Exception {
++    GenePanel panel = createGenePanel("IMPACT341", "MSK-IMPACT 341 Gene Panel");
++
++    when(genePanelService.getGenePanel("IMPACT341")).thenReturn(panel);
++
++    mockMvc
++        .perform(
++            get("/api/gene-panels/IMPACT341")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.genePanelId").value("IMPACT341"))
++        .andExpect(jsonPath("$.description").value("MSK-IMPACT 341 Gene Panel"));
++  }
++
++  @Test
++  void getGenePanel_nonExistentId_returns404() throws Exception {
++    when(genePanelService.getGenePanel("NONEXISTENT"))
++        .thenThrow(new GenePanelNotFoundException("NONEXISTENT"));
++
++    mockMvc
++        .perform(
++            get("/api/gene-panels/NONEXISTENT")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Gene panel not found: NONEXISTENT"));
++  }
++
++  @Test
++  void fetchGenePanels_byIdList_returnsPanels() throws Exception {
++    List<GenePanel> panels = List.of(createGenePanel("IMPACT341", "MSK-IMPACT 341 Gene Panel"));
++
++    when(genePanelService.fetchGenePanels(anyList(), any())).thenReturn(panels);
++
++    mockMvc
++        .perform(
++            post("/api/gene-panels/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"IMPACT341\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].genePanelId").value("IMPACT341"));
++  }
++
++  @Test
++  void fetchGenePanels_emptyBody_returnsBadRequest() throws Exception {
++    mockMvc
++        .perform(
++            post("/api/gene-panels/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isBadRequest());
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/MolecularProfileControllerTest.java b/src/test/java/org/cbioportal/legacy/web/MolecularProfileControllerTest.java
+new file mode 100644
+index 0000000..6437ac5
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/MolecularProfileControllerTest.java
+@@ -0,0 +1,191 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.MolecularProfile;
++import org.cbioportal.legacy.model.MolecularProfile.MolecularAlterationType;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.MolecularProfileService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.service.exception.MolecularProfileNotFoundException;
++import org.cbioportal.legacy.web.parameter.MolecularProfileFilter;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = MolecularProfileController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class MolecularProfileControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private MolecularProfileService molecularProfileService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private MolecularProfile createProfile(String stableId, String studyId, String name) {
++    MolecularProfile profile = new MolecularProfile();
++    profile.setStableId(stableId);
++    profile.setCancerStudyIdentifier(studyId);
++    profile.setName(name);
++    profile.setDatatype("MAF");
++    profile.setMolecularAlterationType(MolecularAlterationType.MUTATION_EXTENDED);
++    profile.setDescription("A test molecular profile");
++    profile.setShowProfileInAnalysisTab(true);
++    profile.setPatientLevel(false);
++    return profile;
++  }
++
++  @Test
++  void getAllMolecularProfiles_returnsListWithOk() throws Exception {
++    List<MolecularProfile> profiles =
++        Arrays.asList(
++            createProfile("acc_tcga_mutations", "acc_tcga", "Mutations"),
++            createProfile("blca_tcga_mutations", "blca_tcga", "Mutations"));
++
++    when(molecularProfileService.getAllMolecularProfiles(
++            any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(profiles);
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].molecularProfileId").value("acc_tcga_mutations"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"))
++        .andExpect(jsonPath("$[0].name").value("Mutations"));
++  }
++
++  @Test
++  void getAllMolecularProfiles_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(400);
++
++    when(molecularProfileService.getMetaMolecularProfiles()).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "400"));
++  }
++
++  @Test
++  void getMolecularProfile_existingId_returnsProfile() throws Exception {
++    MolecularProfile profile = createProfile("acc_tcga_mutations", "acc_tcga", "Mutations");
++
++    when(molecularProfileService.getMolecularProfile("acc_tcga_mutations")).thenReturn(profile);
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles/acc_tcga_mutations")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.molecularProfileId").value("acc_tcga_mutations"))
++        .andExpect(jsonPath("$.studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getMolecularProfile_nonExistentId_returns404() throws Exception {
++    when(molecularProfileService.getMolecularProfile("nonexistent"))
++        .thenThrow(new MolecularProfileNotFoundException("nonexistent"));
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles/nonexistent")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Molecular profile not found: nonexistent"));
++  }
++
++  @Test
++  void getAllMolecularProfilesInStudy_returnsProfileList() throws Exception {
++    List<MolecularProfile> profiles =
++        Arrays.asList(
++            createProfile("acc_tcga_mutations", "acc_tcga", "Mutations"),
++            createProfile("acc_tcga_gistic", "acc_tcga", "GISTIC CNA"));
++
++    when(molecularProfileService.getAllMolecularProfilesInStudy(
++            eq("acc_tcga"), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(profiles);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/molecular-profiles")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"))
++        .andExpect(jsonPath("$[1].name").value("GISTIC CNA"));
++  }
++
++  @Test
++  void getAllMolecularProfilesInStudy_withMetaProjection_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(5);
++
++    when(molecularProfileService.getMetaMolecularProfilesInStudy("acc_tcga")).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/molecular-profiles")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "5"));
++  }
++
++  @Test
++  void fetchMolecularProfiles_byStudyIds_returnsMatchingProfiles() throws Exception {
++    List<MolecularProfile> profiles =
++        List.of(createProfile("acc_tcga_mutations", "acc_tcga", "Mutations"));
++
++    when(molecularProfileService.getMolecularProfilesInStudies(anyList(), any()))
++        .thenReturn(profiles);
++
++    MolecularProfileFilter filter = new MolecularProfileFilter();
++    filter.setStudyIds(List.of("acc_tcga"));
++
++    mockMvc
++        .perform(
++            post("/api/molecular-profiles/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"studyIds\":[\"acc_tcga\"]}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME)
++                .requestAttr("involvedCancerStudies", List.of("acc_tcga"))
++                .requestAttr("interceptedMolecularProfileFilter", filter))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].molecularProfileId").value("acc_tcga_mutations"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/MutationControllerTest.java b/src/test/java/org/cbioportal/legacy/web/MutationControllerTest.java
+new file mode 100644
+index 0000000..273b992
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/MutationControllerTest.java
+@@ -0,0 +1,236 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.Mutation;
++import org.cbioportal.legacy.model.meta.MutationMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.MutationService;
++import org.cbioportal.legacy.web.parameter.MutationMultipleStudyFilter;
++import org.cbioportal.legacy.service.exception.MolecularProfileNotFoundException;
++import org.cbioportal.legacy.web.parameter.MutationFilter;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@WebMvcTest(
++    controllers = MutationController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class MutationControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private MutationService mutationService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private Mutation createMutation(
++      String sampleId, String studyId, String profileId, int entrezGeneId, String mutationType) {
++    Mutation mutation = new Mutation();
++    mutation.setSampleId(sampleId);
++    mutation.setStudyId(studyId);
++    mutation.setMolecularProfileId(profileId);
++    mutation.setEntrezGeneId(entrezGeneId);
++    mutation.setMutationType(mutationType);
++    mutation.setProteinChange("p.R175H");
++    mutation.setCenter("genome.wustl.edu");
++    return mutation;
++  }
++
++  @Test
++  void getMutationsInMolecularProfileBySampleListId_returnsMutationList() throws Exception {
++    List<Mutation> mutations =
++        Arrays.asList(
++            createMutation(
++                "TCGA-OR-A5J2-01", "acc_tcga", "acc_tcga_mutations", 7157, "Missense_Mutation"),
++            createMutation(
++                "TCGA-OR-A5J3-01", "acc_tcga", "acc_tcga_mutations", 672, "Nonsense_Mutation"));
++
++    when(mutationService.getMutationsInMolecularProfileBySampleListId(
++            eq("acc_tcga_mutations"),
++            eq("acc_tcga_all"),
++            any(),
++            anyBoolean(),
++            any(),
++            anyInt(),
++            anyInt(),
++            any(),
++            any()))
++        .thenReturn(mutations);
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles/acc_tcga_mutations/mutations")
++                .param("sampleListId", "acc_tcga_all")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].sampleId").value("TCGA-OR-A5J2-01"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"))
++        .andExpect(jsonPath("$[0].mutationType").value("Missense_Mutation"));
++  }
++
++  @Test
++  void getMutations_withProjectionMeta_returnsTotalCountAndSampleCountHeaders() throws Exception {
++    MutationMeta mutationMeta = new MutationMeta();
++    mutationMeta.setTotalCount(42);
++    mutationMeta.setSampleCount(10);
++
++    when(mutationService.getMetaMutationsInMolecularProfileBySampleListId(
++            eq("acc_tcga_mutations"), eq("acc_tcga_all"), any()))
++        .thenReturn(mutationMeta);
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles/acc_tcga_mutations/mutations")
++                .param("sampleListId", "acc_tcga_all")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "42"))
++        .andExpect(header().string("Sample-Count", "10"));
++  }
++
++  @Test
++  void getMutations_withEntrezGeneId_filtersToGene() throws Exception {
++    List<Mutation> tp53Mutations =
++        List.of(
++            createMutation(
++                "TCGA-OR-A5J2-01", "acc_tcga", "acc_tcga_mutations", 7157, "Missense_Mutation"));
++
++    when(mutationService.getMutationsInMolecularProfileBySampleListId(
++            eq("acc_tcga_mutations"),
++            eq("acc_tcga_all"),
++            eq(List.of(7157)),
++            anyBoolean(),
++            any(),
++            anyInt(),
++            anyInt(),
++            any(),
++            any()))
++        .thenReturn(tp53Mutations);
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles/acc_tcga_mutations/mutations")
++                .param("sampleListId", "acc_tcga_all")
++                .param("entrezGeneId", "7157")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].entrezGeneId").value(7157));
++  }
++
++  @Test
++  void getMutations_nonExistentMolecularProfile_returns404() throws Exception {
++    when(mutationService.getMutationsInMolecularProfileBySampleListId(
++            eq("nonexistent_mutations"),
++            anyString(),
++            any(),
++            anyBoolean(),
++            any(),
++            anyInt(),
++            anyInt(),
++            any(),
++            any()))
++        .thenThrow(new MolecularProfileNotFoundException("nonexistent_mutations"));
++
++    mockMvc
++        .perform(
++            get("/api/molecular-profiles/nonexistent_mutations/mutations")
++                .param("sampleListId", "acc_tcga_all")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Molecular profile not found: nonexistent_mutations"));
++  }
++
++  @Test
++  void fetchMutationsInMolecularProfile_withSampleIds_returnsMutations() throws Exception {
++    List<Mutation> mutations =
++        List.of(
++            createMutation(
++                "TCGA-OR-A5J2-01", "acc_tcga", "acc_tcga_mutations", 7157, "Missense_Mutation"));
++
++    when(mutationService.fetchMutationsInMolecularProfile(
++            eq("acc_tcga_mutations"),
++            anyList(),
++            any(),
++            anyBoolean(),
++            any(),
++            anyInt(),
++            anyInt(),
++            any(),
++            any()))
++        .thenReturn(mutations);
++
++    mockMvc
++        .perform(
++            post("/api/molecular-profiles/acc_tcga_mutations/mutations/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"sampleIds\":[\"TCGA-OR-A5J2-01\"]}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].mutationType").value("Missense_Mutation"));
++  }
++
++  @Test
++  void fetchMutationsInMolecularProfile_missingSampleListAndSampleIds_returnsBadRequest()
++      throws Exception {
++    mockMvc
++        .perform(
++            post("/api/molecular-profiles/acc_tcga_mutations/mutations/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isBadRequest());
++  }
++
++  @Test
++  void fetchMutationsInMultipleMolecularProfiles_byProfileIds_returnsMutations() throws Exception {
++    List<Mutation> mutations =
++        List.of(
++            createMutation(
++                "TCGA-OR-A5J2-01", "acc_tcga", "acc_tcga_mutations", 7157, "Missense_Mutation"));
++
++    when(mutationService.getMutationsInMultipleMolecularProfiles(
++            anyList(), any(), any(), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(mutations);
++
++    MutationMultipleStudyFilter filter = new MutationMultipleStudyFilter();
++    filter.setMolecularProfileIds(List.of("acc_tcga_mutations"));
++
++    mockMvc
++        .perform(
++            post("/api/mutations/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"molecularProfileIds\":[\"acc_tcga_mutations\"]}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME)
++                .requestAttr("interceptedMutationMultipleStudyFilter", filter))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].mutationType").value("Missense_Mutation"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/PatientControllerTest.java b/src/test/java/org/cbioportal/legacy/web/PatientControllerTest.java
+new file mode 100644
+index 0000000..70a14cb
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/PatientControllerTest.java
+@@ -0,0 +1,187 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.Patient;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.PatientService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.service.exception.PatientNotFoundException;
++import org.cbioportal.legacy.web.parameter.PatientFilter;
++import org.cbioportal.legacy.web.parameter.PatientIdentifier;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = PatientController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class PatientControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private PatientService patientService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private Patient createPatient(String patientId, String studyId) {
++    Patient patient = new Patient();
++    patient.setStableId(patientId);
++    patient.setCancerStudyIdentifier(studyId);
++    return patient;
++  }
++
++  @Test
++  void getAllPatients_returnsListWithOk() throws Exception {
++    List<Patient> patients =
++        Arrays.asList(
++            createPatient("TCGA-OR-A5J2", "acc_tcga"),
++            createPatient("TCGA-OR-A5J3", "acc_tcga"),
++            createPatient("TCGA-OR-A5J4", "acc_tcga"));
++
++    when(patientService.getAllPatients(any(), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(patients);
++
++    mockMvc
++        .perform(
++            get("/api/patients")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(3))
++        .andExpect(jsonPath("$[0].patientId").value("TCGA-OR-A5J2"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getAllPatients_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(92);
++
++    when(patientService.getMetaPatients(any())).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/patients")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "92"));
++  }
++
++  @Test
++  void getAllPatientsInStudy_returnsPatientList() throws Exception {
++    List<Patient> patients =
++        Arrays.asList(
++            createPatient("TCGA-OR-A5J2", "acc_tcga"),
++            createPatient("TCGA-OR-A5J3", "acc_tcga"));
++
++    when(patientService.getAllPatientsInStudy(
++            eq("acc_tcga"), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(patients);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/patients")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].patientId").value("TCGA-OR-A5J2"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getAllPatientsInStudy_withMetaProjection_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(92);
++
++    when(patientService.getMetaPatientsInStudy("acc_tcga")).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/patients")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "92"));
++  }
++
++  @Test
++  void getPatientInStudy_existingPatient_returnsPatient() throws Exception {
++    Patient patient = createPatient("TCGA-OR-A5J2", "acc_tcga");
++
++    when(patientService.getPatientInStudy("acc_tcga", "TCGA-OR-A5J2")).thenReturn(patient);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/patients/TCGA-OR-A5J2")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.patientId").value("TCGA-OR-A5J2"))
++        .andExpect(jsonPath("$.studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getPatientInStudy_nonExistentPatient_returns404() throws Exception {
++    when(patientService.getPatientInStudy("acc_tcga", "UNKNOWN"))
++        .thenThrow(new PatientNotFoundException("acc_tcga", "UNKNOWN"));
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/patients/UNKNOWN")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(
++            jsonPath("$.message").value("Patient not found in study acc_tcga: UNKNOWN"));
++  }
++
++  @Test
++  void fetchPatients_withPatientIdentifiers_returnsPatientList() throws Exception {
++    List<Patient> patients = List.of(createPatient("TCGA-OR-A5J2", "acc_tcga"));
++
++    when(patientService.fetchPatients(anyList(), anyList(), any())).thenReturn(patients);
++
++    PatientFilter filter = new PatientFilter();
++    PatientIdentifier id = new PatientIdentifier();
++    id.setStudyId("acc_tcga");
++    id.setPatientId("TCGA-OR-A5J2");
++    filter.setPatientIdentifiers(List.of(id));
++
++    mockMvc
++        .perform(
++            post("/api/patients/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content(
++                    "{\"patientIdentifiers\":[{\"studyId\":\"acc_tcga\",\"patientId\":\"TCGA-OR-A5J2\"}]}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME)
++                .requestAttr("involvedCancerStudies", List.of("acc_tcga"))
++                .requestAttr("interceptedPatientFilter", filter))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].patientId").value("TCGA-OR-A5J2"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/SampleControllerTest.java b/src/test/java/org/cbioportal/legacy/web/SampleControllerTest.java
+new file mode 100644
+index 0000000..9edabdf
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/SampleControllerTest.java
+@@ -0,0 +1,218 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.Sample;
++import org.cbioportal.legacy.model.Sample.SampleType;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.SampleListService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.service.SampleService;
++import org.cbioportal.legacy.service.StudyService;
++import org.cbioportal.legacy.service.exception.SampleNotFoundException;
++import org.cbioportal.legacy.web.parameter.SampleFilter;
++import org.cbioportal.legacy.web.parameter.SampleIdentifier;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.context.TestPropertySource;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = SampleController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++@TestPropertySource(properties = {"authenticate=false"})
++class SampleControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private SampleService sampleService;
++
++  @MockBean private SampleListService sampleListService;
++
++  @MockBean private StudyService studyService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private Sample createSample(String sampleId, String patientId, String studyId) {
++    Sample sample = new Sample();
++    sample.setStableId(sampleId);
++    sample.setPatientStableId(patientId);
++    sample.setCancerStudyIdentifier(studyId);
++    sample.setSampleType(SampleType.PRIMARY_SOLID_TUMOR);
++    sample.setSequenced(true);
++    sample.setCopyNumberSegmentPresent(false);
++    return sample;
++  }
++
++  @Test
++  void getAllSamplesInStudy_returnsListWithOk() throws Exception {
++    List<Sample> samples =
++        Arrays.asList(
++            createSample("TCGA-OR-A5J2-01", "TCGA-OR-A5J2", "acc_tcga"),
++            createSample("TCGA-OR-A5J3-01", "TCGA-OR-A5J3", "acc_tcga"));
++
++    when(sampleService.getAllSamplesInStudy(
++            eq("acc_tcga"), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(samples);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/samples")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].sampleId").value("TCGA-OR-A5J2-01"))
++        .andExpect(jsonPath("$[0].patientId").value("TCGA-OR-A5J2"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getAllSamplesInStudy_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(92);
++
++    when(sampleService.getMetaSamplesInStudy("acc_tcga")).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/samples")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "92"));
++  }
++
++  @Test
++  void getSampleInStudy_existingSample_returnsSample() throws Exception {
++    Sample sample = createSample("TCGA-OR-A5J2-01", "TCGA-OR-A5J2", "acc_tcga");
++
++    when(sampleService.getSampleInStudy("acc_tcga", "TCGA-OR-A5J2-01")).thenReturn(sample);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/samples/TCGA-OR-A5J2-01")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.sampleId").value("TCGA-OR-A5J2-01"))
++        .andExpect(jsonPath("$.studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getSampleInStudy_nonExistentSample_returns404() throws Exception {
++    when(sampleService.getSampleInStudy("acc_tcga", "UNKNOWN"))
++        .thenThrow(new SampleNotFoundException("acc_tcga", "UNKNOWN"));
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/samples/UNKNOWN")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Sample not found in study acc_tcga: UNKNOWN"));
++  }
++
++  @Test
++  void getAllSamplesOfPatientInStudy_returnsSampleList() throws Exception {
++    List<Sample> samples =
++        Arrays.asList(
++            createSample("TCGA-OR-A5J2-01", "TCGA-OR-A5J2", "acc_tcga"),
++            createSample("TCGA-OR-A5J2-02", "TCGA-OR-A5J2", "acc_tcga"));
++
++    when(sampleService.getAllSamplesOfPatientInStudy(
++            eq("acc_tcga"), eq("TCGA-OR-A5J2"), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(samples);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/patients/TCGA-OR-A5J2/samples")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].patientId").value("TCGA-OR-A5J2"))
++        .andExpect(jsonPath("$[1].sampleId").value("TCGA-OR-A5J2-02"));
++  }
++
++  @Test
++  void getAllSamplesOfPatientInStudy_withMetaProjection_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(2);
++
++    when(sampleService.getMetaSamplesOfPatientInStudy("acc_tcga", "TCGA-OR-A5J2"))
++        .thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/patients/TCGA-OR-A5J2/samples")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "2"));
++  }
++
++  @Test
++  void getAllSamplesByKeyword_withAuthDisabled_returnsSampleList() throws Exception {
++    List<Sample> samples = List.of(createSample("TCGA-OR-A5J2-01", "TCGA-OR-A5J2", "acc_tcga"));
++
++    when(sampleService.getAllSamples(any(), any(), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(samples);
++
++    mockMvc
++        .perform(
++            get("/api/samples")
++                .param("keyword", "TCGA-OR")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].sampleId").value("TCGA-OR-A5J2-01"));
++  }
++
++  @Test
++  void fetchSamples_withSampleIdentifiers_returnsSampleList() throws Exception {
++    List<Sample> samples = List.of(createSample("TCGA-OR-A5J2-01", "TCGA-OR-A5J2", "acc_tcga"));
++
++    when(sampleService.fetchSamples(anyList(), anyList(), any())).thenReturn(samples);
++
++    SampleIdentifier sampleIdentifier = new SampleIdentifier();
++    sampleIdentifier.setSampleId("TCGA-OR-A5J2-01");
++    sampleIdentifier.setStudyId("acc_tcga");
++    SampleFilter filter = new SampleFilter();
++    filter.setSampleIdentifiers(List.of(sampleIdentifier));
++
++    mockMvc
++        .perform(
++            post("/api/samples/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("{\"sampleIdentifiers\":[{\"sampleId\":\"TCGA-OR-A5J2-01\",\"studyId\":\"acc_tcga\"}]}")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME)
++                .requestAttr("interceptedSampleFilter", filter))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].sampleId").value("TCGA-OR-A5J2-01"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/SampleListControllerTest.java b/src/test/java/org/cbioportal/legacy/web/SampleListControllerTest.java
+new file mode 100644
+index 0000000..fe9d576
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/SampleListControllerTest.java
+@@ -0,0 +1,162 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.SampleList;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.SampleListService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.service.exception.SampleListNotFoundException;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = SampleListController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class SampleListControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private SampleListService sampleListService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private SampleList createSampleList(String id, String studyId, String name) {
++    SampleList sampleList = new SampleList();
++    sampleList.setStableId(id);
++    sampleList.setCancerStudyIdentifier(studyId);
++    sampleList.setName(name);
++    sampleList.setDescription("All samples");
++    sampleList.setCategory("all_cases_in_study");
++    sampleList.setSampleCount(92);
++    return sampleList;
++  }
++
++  @Test
++  void getAllSampleLists_returnsListWithOk() throws Exception {
++    List<SampleList> lists =
++        Arrays.asList(
++            createSampleList("acc_tcga_all", "acc_tcga", "All Tumors"),
++            createSampleList("blca_tcga_all", "blca_tcga", "All Tumors"));
++
++    when(sampleListService.getAllSampleLists(any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(lists);
++
++    mockMvc
++        .perform(
++            get("/api/sample-lists")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].sampleListId").value("acc_tcga_all"))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"))
++        .andExpect(jsonPath("$[0].name").value("All Tumors"));
++  }
++
++  @Test
++  void getAllSampleLists_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(500);
++
++    when(sampleListService.getMetaSampleLists()).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/sample-lists")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "500"));
++  }
++
++  @Test
++  void getSampleList_existingId_returnsSampleList() throws Exception {
++    SampleList sampleList = createSampleList("acc_tcga_all", "acc_tcga", "All Tumors");
++
++    when(sampleListService.getSampleList("acc_tcga_all")).thenReturn(sampleList);
++
++    mockMvc
++        .perform(
++            get("/api/sample-lists/acc_tcga_all")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.sampleListId").value("acc_tcga_all"))
++        .andExpect(jsonPath("$.studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void getSampleList_nonExistentId_returns404() throws Exception {
++    when(sampleListService.getSampleList("nonexistent"))
++        .thenThrow(new SampleListNotFoundException("nonexistent"));
++
++    mockMvc
++        .perform(
++            get("/api/sample-lists/nonexistent")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Sample list not found: nonexistent"));
++  }
++
++  @Test
++  void getAllSampleListsInStudy_returnsListForStudy() throws Exception {
++    List<SampleList> lists =
++        Arrays.asList(
++            createSampleList("acc_tcga_all", "acc_tcga", "All Tumors"),
++            createSampleList("acc_tcga_sequenced", "acc_tcga", "Sequenced Tumors"));
++
++    when(sampleListService.getAllSampleListsInStudy(
++            eq("acc_tcga"), any(), anyInt(), anyInt(), any(), any()))
++        .thenReturn(lists);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/sample-lists")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].sampleListId").value("acc_tcga_all"))
++        .andExpect(jsonPath("$[1].sampleListId").value("acc_tcga_sequenced"));
++  }
++
++  @Test
++  void fetchSampleLists_byIdList_returnsSampleLists() throws Exception {
++    List<SampleList> lists = List.of(createSampleList("acc_tcga_all", "acc_tcga", "All Tumors"));
++
++    when(sampleListService.fetchSampleLists(anyList(), any())).thenReturn(lists);
++
++    mockMvc
++        .perform(
++            post("/api/sample-lists/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"acc_tcga_all\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1))
++        .andExpect(jsonPath("$[0].sampleListId").value("acc_tcga_all"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/ServerStatusControllerTest.java b/src/test/java/org/cbioportal/legacy/web/ServerStatusControllerTest.java
+new file mode 100644
+index 0000000..b109622
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/ServerStatusControllerTest.java
+@@ -0,0 +1,65 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.ServerStatusService;
++import org.cbioportal.legacy.service.impl.ServerStatusServiceImpl.ServerStatusMessage;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++
++@WebMvcTest(
++    controllers = ServerStatusController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++class ServerStatusControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private ServerStatusService serverStatusService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  @Test
++  void getServerStatus_whenRunning_returnsUpStatus() throws Exception {
++    ServerStatusMessage message = mock(ServerStatusMessage.class);
++    when(message.getStatus()).thenReturn("UP");
++    when(serverStatusService.getServerStatus()).thenReturn(message);
++
++    mockMvc
++        .perform(
++            get("/api/health")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.status").value("UP"));
++  }
++
++  @Test
++  void getServerStatus_whenDown_returnsDownStatus() throws Exception {
++    ServerStatusMessage message = mock(ServerStatusMessage.class);
++    when(message.getStatus()).thenReturn("DOWN");
++    when(serverStatusService.getServerStatus()).thenReturn(message);
++
++    mockMvc
++        .perform(
++            get("/api/health")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.status").value("DOWN"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/StudyControllerTest.java b/src/test/java/org/cbioportal/legacy/web/StudyControllerTest.java
+new file mode 100644
+index 0000000..c915b9b
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/StudyControllerTest.java
+@@ -0,0 +1,248 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.ArgumentMatchers.*;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++import java.util.Arrays;
++import java.util.List;
++import org.cbioportal.legacy.model.CancerStudy;
++import org.cbioportal.legacy.model.CancerStudyTags;
++import org.cbioportal.legacy.model.meta.BaseMeta;
++import org.cbioportal.legacy.persistence.cachemaputil.CacheMapUtil;
++import org.cbioportal.legacy.service.StudyService;
++import org.cbioportal.legacy.web.config.JacksonConfig;
++import org.cbioportal.legacy.service.exception.StudyNotFoundException;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
++import org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration;
++import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
++import org.springframework.boot.test.mock.mockito.MockBean;
++import org.springframework.context.annotation.Import;
++import org.springframework.http.MediaType;
++import org.springframework.test.context.TestPropertySource;
++import org.springframework.test.web.servlet.MockMvc;
++
++@Import(JacksonConfig.class)
++@WebMvcTest(
++    controllers = StudyController.class,
++    excludeAutoConfiguration = {
++      SecurityAutoConfiguration.class,
++      SecurityFilterAutoConfiguration.class
++    })
++@TestPropertySource(
++    properties = {
++      "authenticate=false",
++      "app.name=test",
++      "skin.home_page.show_unauthorized_studies=false"
++    })
++class StudyControllerTest {
++
++  @Autowired private MockMvc mockMvc;
++
++  @MockBean private StudyService studyService;
++  @MockBean private CacheMapUtil cacheMapUtil;
++
++  private static final long START_TIME = System.currentTimeMillis();
++
++  private CancerStudy createStudy(String id, String name, String cancerTypeId) {
++    CancerStudy study = new CancerStudy();
++    study.setCancerStudyIdentifier(id);
++    study.setName(name);
++    study.setTypeOfCancerId(cancerTypeId);
++    study.setDescription("A test study");
++    study.setPublicStudy(true);
++    study.setAllSampleCount(100);
++    return study;
++  }
++
++  @Test
++  void getAllStudies_returnsListWithOk() throws Exception {
++    List<CancerStudy> studies =
++        Arrays.asList(
++            createStudy("acc_tcga", "Adrenocortical Carcinoma (TCGA)", "acc"),
++            createStudy("blca_tcga", "Bladder Urothelial Carcinoma (TCGA)", "blca"));
++
++    when(studyService.getAllStudies(any(), any(), anyInt(), anyInt(), any(), any(), any(), any()))
++        .thenReturn(studies);
++
++    mockMvc
++        .perform(
++            get("/api/studies")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"))
++        .andExpect(jsonPath("$[0].name").value("Adrenocortical Carcinoma (TCGA)"))
++        .andExpect(jsonPath("$[0].cancerTypeId").value("acc"));
++  }
++
++  @Test
++  void getAllStudies_withProjectionMeta_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(172);
++
++    when(studyService.getMetaStudies(any())).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            get("/api/studies")
++                .param("projection", "META")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "172"));
++  }
++
++  @Test
++  void getAllStudies_withKeyword_filtersStudies() throws Exception {
++    List<CancerStudy> studies = List.of(createStudy("acc_tcga", "Adrenocortical Carcinoma (TCGA)", "acc"));
++
++    when(studyService.getAllStudies(eq("Adrenocortical"), any(), anyInt(), anyInt(), any(), any(), any(), any()))
++        .thenReturn(studies);
++
++    mockMvc
++        .perform(
++            get("/api/studies")
++                .param("keyword", "Adrenocortical")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1));
++  }
++
++  @Test
++  void getStudy_existingId_returnsStudy() throws Exception {
++    CancerStudy study = createStudy("acc_tcga", "Adrenocortical Carcinoma (TCGA)", "acc");
++
++    when(studyService.getStudy("acc_tcga")).thenReturn(study);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.studyId").value("acc_tcga"))
++        .andExpect(jsonPath("$.name").value("Adrenocortical Carcinoma (TCGA)"));
++  }
++
++  @Test
++  void getStudy_nonExistentId_returns404() throws Exception {
++    when(studyService.getStudy("nonexistent")).thenThrow(new StudyNotFoundException("nonexistent"));
++
++    mockMvc
++        .perform(
++            get("/api/studies/nonexistent")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isNotFound())
++        .andExpect(jsonPath("$.message").value("Study not found: nonexistent"));
++  }
++
++  @Test
++  void fetchStudies_byIdList_returnsMatchingStudies() throws Exception {
++    List<CancerStudy> studies =
++        Arrays.asList(
++            createStudy("acc_tcga", "ACC", "acc"), createStudy("blca_tcga", "BLCA", "blca"));
++
++    when(studyService.fetchStudies(anyList(), any())).thenReturn(studies);
++
++    mockMvc
++        .perform(
++            post("/api/studies/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"acc_tcga\",\"blca_tcga\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(2))
++        .andExpect(jsonPath("$[0].studyId").value("acc_tcga"));
++  }
++
++  @Test
++  void fetchStudies_withMetaProjection_returnsTotalCountHeader() throws Exception {
++    BaseMeta meta = new BaseMeta();
++    meta.setTotalCount(2);
++
++    when(studyService.fetchMetaStudies(anyList())).thenReturn(meta);
++
++    mockMvc
++        .perform(
++            post("/api/studies/fetch")
++                .param("projection", "META")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"acc_tcga\",\"blca_tcga\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(header().string("Total-Count", "2"));
++  }
++
++  @Test
++  void getStudyTags_withTags_returnsTagMap() throws Exception {
++    CancerStudyTags tags = new CancerStudyTags();
++    tags.setCancerStudyId(1);
++    tags.setTags("{\"team\":\"MSK\",\"version\":\"1\"}");
++
++    when(studyService.getTags(eq("acc_tcga"), any())).thenReturn(tags);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/tags")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.team").value("MSK"))
++        .andExpect(jsonPath("$.version").value("1"));
++  }
++
++  @Test
++  void getStudyTags_withNoTags_returnsEmptyMap() throws Exception {
++    when(studyService.getTags(eq("acc_tcga"), any())).thenReturn(null);
++
++    mockMvc
++        .perform(
++            get("/api/studies/acc_tcga/tags")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(content().string("{}"));
++  }
++
++  @Test
++  void fetchStudies_emptyBody_returnsBadRequest() throws Exception {
++    mockMvc
++        .perform(
++            post("/api/studies/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isBadRequest());
++  }
++
++  @Test
++  void getTagsForMultipleStudies_returnsTagsForEachStudy() throws Exception {
++    CancerStudyTags tag = new CancerStudyTags();
++    tag.setCancerStudyId(1);
++    tag.setTags("{\"key\":\"value\"}");
++    List<CancerStudyTags> tagsList = List.of(tag);
++
++    when(studyService.getTagsForMultipleStudies(anyList())).thenReturn(tagsList);
++
++    mockMvc
++        .perform(
++            post("/api/studies/tags/fetch")
++                .contentType(MediaType.APPLICATION_JSON)
++                .content("[\"acc_tcga\"]")
++                .accept(MediaType.APPLICATION_JSON)
++                .requestAttr("startTime", START_TIME))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.length()").value(1));
++  }
++}

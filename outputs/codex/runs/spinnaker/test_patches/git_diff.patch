@@ -1,0 +1,1306 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 00000000..7fa1588a
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,1139 @@
++# API Endpoint Coverage (Progress: 5/883)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## clouddriver/cats - CatsSqlAdminController
++- [ ] PUT /admin/db/truncate/{namespace} - auth/behavior per handler
++- [ ] PUT /admin/db/drop/{namespace} - auth/behavior per handler
++## clouddriver/clouddriver-alicloud - AliCloudImageController
++- [ ] GET /alicloud/images/find - auth/behavior per handler
++## clouddriver/clouddriver-alicloud - AliCloudScalingActivitiesController
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName}/alicloud/serverGroups/{serverGroupName}/scalingActivities - auth/behavior per handler
++## clouddriver/clouddriver-appengine - AppengineStorageController
++- [ ] GET /storage - auth/behavior per handler
++## clouddriver/clouddriver-aws - AmazonClusterController
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName}/aws/serverGroups/{serverGroupName}/scalingActivities - auth/behavior per handler
++## clouddriver/clouddriver-aws - AmazonNamedImageLookupController
++- [ ] GET /aws/images - auth/behavior per handler
++- [ ] GET /aws/images - auth/behavior per handler
++## clouddriver/clouddriver-aws - CloudFormationController
++- [ ] GET /aws/cloudFormation/stacks - auth/behavior per handler
++- [ ] GET /aws/cloudFormation/stacks/** - auth/behavior per handler
++## clouddriver/clouddriver-aws - RoleController
++- [ ] GET /roles/{cloudProvider} - auth/behavior per handler
++## clouddriver/clouddriver-azure - AzureLoadBalancerProvider
++- [ ] GET /applications/{application}/loadBalancersL4 - auth/behavior per handler
++## clouddriver/clouddriver-azure - AzureVMImageLookupController
++- [ ] GET /azure/images - auth/behavior per handler
++- [ ] GET /azure/images - auth/behavior per handler
++## clouddriver/clouddriver-cloudfoundry - CloudFoundryImageController
++- [ ] GET /cloudfoundry/images/find - auth/behavior per handler
++## clouddriver/clouddriver-docker - DockerRegistryImageLookupController
++- [ ] GET /tags - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++## clouddriver/clouddriver-ecs - EcsCloudMetricController
++- [ ] ANY /ecs/cloudMetrics/alarms - auth/behavior per handler
++## clouddriver/clouddriver-ecs - EcsClusterController
++- [ ] ANY /ecs/ecsClusters - auth/behavior per handler
++- [ ] ANY / - auth/behavior per handler
++## clouddriver/clouddriver-ecs - EcsImagesController
++- [ ] GET /ecs/images/find - auth/behavior per handler
++## clouddriver/clouddriver-ecs - EcsSecretController
++- [ ] ANY /ecs/secrets - auth/behavior per handler
++## clouddriver/clouddriver-ecs - EcsServiceDiscoveryController
++- [ ] ANY /ecs/serviceDiscoveryRegistries - auth/behavior per handler
++## clouddriver/clouddriver-ecs - EcsServerGroupController
++- [ ] GET /applications/{application}/serverGroups/{account}/{serverGroupName}/events - auth/behavior per handler
++## clouddriver/clouddriver-google - GoogleNamedImageLookupController
++- [ ] GET /gce/images/find - auth/behavior per handler
++## clouddriver/clouddriver-huaweicloud - HuaweiCloudImageController
++- [ ] GET /huaweicloud/images/find - auth/behavior per handler
++## clouddriver/clouddriver-kubernetes - ManifestController
++- [ ] GET /manifests/{account:.+}/_/{name:.+} - auth/behavior per handler
++- [ ] GET /manifests/{account:.+}/{location:.+}/{name:.+} - auth/behavior per handler
++- [ ] GET /manifests/{account:.+}/{name:.+} - auth/behavior per handler
++- [ ] GET /manifests/{account:.+}/{location:.+}/{kind:.+}/cluster/{app:.+}/{cluster:.+}/dynamic/{criteria:.+} - auth/behavior per handler
++- [ ] GET /manifests/{account:.+}/{location:.+}/{kind:.+}/cluster/{app:.+}/{cluster:.+} - auth/behavior per handler
++## clouddriver/clouddriver-kubernetes - PodController
++- [ ] GET /applications/{application}/kubernetes/pods/{account}/{namespace}/{podName}/{fileName:.+} - auth/behavior per handler
++## clouddriver/clouddriver-kubernetes - RawResourceController
++- [ ] GET /applications/{application}/rawResources - auth/behavior per handler
++## clouddriver/clouddriver-oracle - OracleImageLookupController
++- [ ] GET /oracle/images - auth/behavior per handler
++- [ ] GET /oracle/images - auth/behavior per handler
++## clouddriver/clouddriver-saga - SagaController
++- [ ] GET /saga/{name}/{id} - auth/behavior per handler
++## clouddriver/clouddriver-web - ApplicationsController
++- [ ] GET /applications - auth/behavior per handler
++- [ ] GET /applications/{name:.+} - auth/behavior per handler
++## clouddriver/clouddriver-web - CacheController
++- [ ] POST /cache/{cloudProvider}/{type} - auth/behavior per handler
++- [ ] GET /cache/introspection - auth/behavior per handler
++- [ ] GET /cache/{cloudProvider}/{type} - auth/behavior per handler
++## clouddriver/clouddriver-web - CertificateController
++- [ ] GET /certificates - auth/behavior per handler
++- [ ] GET /certificates/{cloudProvider} - auth/behavior per handler
++## clouddriver/clouddriver-web - CloudMetricController
++- [ ] GET /cloudMetrics/{cloudProvider}/{account}/{region} - auth/behavior per handler
++- [ ] GET /cloudMetrics/{cloudProvider}/{account}/{region}/{metricName}/statistics - auth/behavior per handler
++## clouddriver/clouddriver-web - ClusterController
++- [ ] GET /applications/{application}/clusters - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+}/{name:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+}/{name:.+}/{type} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+}/{clusterName:.+}/{type}/serverGroups - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+}/{clusterName:.+}/{type}/serverGroups/{serverGroupName:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+}/{clusterName:.+}/{cloudProvider}/{scope}/serverGroups/target/{target:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+}/{clusterName:.+}/{cloudProvider}/{scope}/serverGroups/target/{target:.+}/{summaryType:.+} - auth/behavior per handler
++## clouddriver/clouddriver-web - DataController
++- [ ] GET /v1/data/static/{id} - auth/behavior per handler
++- [ ] ANY /v1/data/adhoc/{groupId}/{bucketId}/** - auth/behavior per handler
++## clouddriver/clouddriver-web - ElasticIpController
++- [ ] GET /elasticIps/{account} - auth/behavior per handler
++- [ ] GET /elasticIps/{account} - auth/behavior per handler
++## clouddriver/clouddriver-web - FeaturesController
++- [ ] GET /features/stages - auth/behavior per handler
++## clouddriver/clouddriver-web - InstanceController
++- [ ] GET /instances/{account}/{region}/{id:.+} - auth/behavior per handler
++- [ ] GET /instances/{account}/{region}/{id}/console - auth/behavior per handler
++## clouddriver/clouddriver-web - InstanceTypeController
++- [ ] GET /instanceTypes - auth/behavior per handler
++## clouddriver/clouddriver-web - JobController
++- [ ] GET /applications/{application}/jobs/{account}/{location}/{id:.+} - auth/behavior per handler
++- [ ] DELETE /applications/{application}/jobs/{account}/{location}/{id:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/jobs/{account}/{location}/{id}/{fileName:.+} - auth/behavior per handler
++## clouddriver/clouddriver-web - KeyPairController
++- [ ] GET /keyPairs - auth/behavior per handler
++## clouddriver/clouddriver-web - LoadBalancerController
++- [ ] GET /applications/{application}/loadBalancers - auth/behavior per handler
++- [ ] GET /{cloudProvider:.+}/loadBalancers - auth/behavior per handler
++- [ ] GET /{cloudProvider:.+}/loadBalancers/{name:.+} - auth/behavior per handler
++- [ ] GET /{cloudProvider:.+}/loadBalancers/{account:.+}/{region:.+}/{name:.+} - auth/behavior per handler
++## clouddriver/clouddriver-web - NetworkController
++- [ ] GET /networks - auth/behavior per handler
++- [ ] GET /networks/{cloudProvider} - auth/behavior per handler
++## clouddriver/clouddriver-web - OperationsController
++- [ ] POST /ops - auth/behavior per handler
++- [ ] POST /ops/{name} - auth/behavior per handler
++- [ ] POST /{cloudProvider}/ops - auth/behavior per handler
++- [ ] POST /{cloudProvider}/ops/{name} - auth/behavior per handler
++- [ ] PATCH /{cloudProvider}/task/{id} - auth/behavior per handler
++- [ ] GET /{cloudProvider}/task/{id}/owner - auth/behavior per handler
++- [ ] POST /{cloudProvider}/task/{id}/restart - auth/behavior per handler
++- [ ] GET /task/{id} - auth/behavior per handler
++- [ ] GET /task - auth/behavior per handler
++- [ ] POST /task/{id}:resume - auth/behavior per handler
++## clouddriver/clouddriver-web - ProjectController
++- [ ] GET /projects/{project}/clusters - auth/behavior per handler
++## clouddriver/clouddriver-web - ReservationReportController
++- [ ] GET /reports/reservation - auth/behavior per handler
++- [ ] GET /reports/reservation/{name} - auth/behavior per handler
++## clouddriver/clouddriver-web - SearchController
++- [ ] GET / - auth/behavior per handler
++## clouddriver/clouddriver-web - SecurityGroupController
++- [ ] GET /securityGroups - auth/behavior per handler
++- [ ] GET /securityGroups/{account} - auth/behavior per handler
++- [ ] GET /securityGroups/{account} - auth/behavior per handler
++- [ ] GET /securityGroups/{account}/{cloudProvider} - auth/behavior per handler
++- [ ] GET /securityGroups/{account}/{cloudProvider} - auth/behavior per handler
++- [ ] GET /securityGroups/{account}/{cloudProvider}/{securityGroupName:.+} - auth/behavior per handler
++- [ ] GET /securityGroups/{account}/{cloudProvider}/{region}/{securityGroupNameOrId:.+} - auth/behavior per handler
++## clouddriver/clouddriver-web - ServerGroupController
++- [ ] GET /applications/{application}/serverGroups/{account}/{region}/{name:.+} - auth/behavior per handler
++- [ ] GET /serverGroups/{account}/{region}/{name:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/serverGroups - auth/behavior per handler
++- [ ] GET /serverGroups - auth/behavior per handler
++## clouddriver/clouddriver-web - SubnetController
++- [ ] GET /subnets - auth/behavior per handler
++- [ ] GET /subnets/{cloudProvider} - auth/behavior per handler
++## clouddriver/clouddriver-web - VpcController
++- [ ] GET /vpcs - auth/behavior per handler
++## clouddriver/clouddriver-web - ArtifactController
++- [ ] GET /artifacts/credentials - auth/behavior per handler
++- [ ] PUT /artifacts/fetch - auth/behavior per handler
++- [ ] GET /artifacts/content-address/{application}/{hash} - auth/behavior per handler
++- [ ] GET /artifacts/account/{accountName}/names - auth/behavior per handler
++- [ ] GET /artifacts/account/{accountName}/versions - auth/behavior per handler
++## clouddriver/clouddriver-web - CredentialsController
++- [ ] GET /credentials - auth/behavior per handler
++- [ ] GET /credentials/{accountName} - auth/behavior per handler
++- [ ] GET /credentials/type/{accountType} - auth/behavior per handler
++- [ ] POST /credentials - auth/behavior per handler
++- [ ] PUT /credentials - auth/behavior per handler
++- [ ] PUT /credentials/{accountName} - auth/behavior per handler
++- [ ] DELETE /credentials/{accountName} - auth/behavior per handler
++- [ ] GET /credentials/{accountName}/history - auth/behavior per handler
++## clouddriver/clouddriver-web - EntityTagsController
++- [ ] GET /tags - auth/behavior per handler
++- [ ] GET /tags/** - auth/behavior per handler
++## clouddriver/clouddriver-web - FunctionController
++- [ ] GET /functions - auth/behavior per handler
++- [ ] GET /applications/{application}/functions - auth/behavior per handler
++## clouddriver/clouddriver-web - ImageController
++- [ ] GET /images/{provider}/{imageId} - auth/behavior per handler
++## clouddriver/clouddriver-web - ServerGroupManagerController
++- [ ] GET /applications/{application}/serverGroupManagers - auth/behavior per handler
++## clouddriver/clouddriver-web - ServiceBrokerController
++- [ ] GET /servicebroker/{account}/services - auth/behavior per handler
++- [ ] GET /servicebroker/{account}/serviceInstance - auth/behavior per handler
++## clouddriver/clouddriver-web - EntityTagsAdminController
++- [ ] POST /admin/tags/reindex - auth/behavior per handler
++- [ ] GET /admin/tags/delta - auth/behavior per handler
++- [ ] POST /admin/tags/reconcile - auth/behavior per handler
++- [ ] POST /admin/tags/deleteByNamespace/{namespace} - auth/behavior per handler
++- [ ] POST /admin/tags/deleteByTag/{tag} - auth/behavior per handler
++## clouddriver/clouddriver-yandex - YandexClusterController
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName}/yandex/serverGroups/{serverGroupName}/scalingActivities - auth/behavior per handler
++## clouddriver/clouddriver-yandex - YandexImageController
++- [ ] GET /yandex/images/find - auth/behavior per handler
++## clouddriver/clouddriver-yandex - YandexServiceAccountController
++- [ ] GET /yandex/serviceAcounts/{account} - auth/behavior per handler
++## echo/echo-notifications - NotificationController
++- [ ] POST /notifications - auth/behavior per handler
++- [ ] POST /notifications/callbacks/{source} - auth/behavior per handler
++- [ ] GET /notifications/metadata - auth/behavior per handler
++## echo/echo-pipelinetriggers - QuietPeriodController
++- [ ] GET /quietPeriod - auth/behavior per handler
++## echo/echo-pubsub-core - PubsubController
++- [ ] GET /pubsub/subscriptions - auth/behavior per handler
++- [ ] GET /pubsub/publishers - auth/behavior per handler
++## echo/echo-web - HistoryController
++- [ ] POST / - auth/behavior per handler
++## echo/echo-web - ScheduledActionsController
++- [ ] GET /scheduledActions - auth/behavior per handler
++- [ ] POST /scheduledActions - auth/behavior per handler
++- [ ] DELETE /scheduledActions/{id} - auth/behavior per handler
++## echo/echo-web - ValidationController
++- [ ] GET /validateCronExpression - auth/behavior per handler
++## echo/echo-webhooks - WebhooksController
++- [ ] POST / - auth/behavior per handler
++- [ ] POST / - auth/behavior per handler
++- [ ] POST / - auth/behavior per handler
++## fiat/fiat-web - AuthorizeController
++- [ ] GET /authorize - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+} - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/accounts - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/roles - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/accounts/{accountName:.+} - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/applications - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/applications/{applicationName:.+} - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/serviceAccounts - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/serviceAccounts/{serviceAccountName:.+} - auth/behavior per handler
++- [ ] GET /authorize/{userId:.+}/{resourceType:.+}/{resourceName:.+}/{authorization:.+} - auth/behavior per handler
++- [ ] POST /authorize/{userId:.+}/{resourceType:.+}/create - auth/behavior per handler
++## fiat/fiat-web - RolesController
++- [ ] POST /roles/{userId:.+} - auth/behavior per handler
++- [ ] PUT /roles/{userId:.+} - auth/behavior per handler
++- [ ] DELETE /roles/{userId:.+} - auth/behavior per handler
++- [ ] POST /roles/sync - auth/behavior per handler
++- [ ] POST /roles/sync/serviceAccount/{serviceAccountId:.+} - auth/behavior per handler
++## front50/front50-web - AdminController
++- [ ] POST /admin/recover - auth/behavior per handler
++## front50/front50-web - DeliveryController
++- [ ] GET /deliveries - auth/behavior per handler
++- [ ] GET /applications/{application}/deliveries - auth/behavior per handler
++- [ ] GET /deliveries/{id} - auth/behavior per handler
++- [ ] POST /deliveries - auth/behavior per handler
++- [ ] PUT /deliveries/{id} - auth/behavior per handler
++- [ ] DELETE /applications/{application}/deliveries/{id} - auth/behavior per handler
++## front50/front50-web - NotificationController
++- [ ] GET /notifications - auth/behavior per handler
++- [ ] GET /notifications/global - auth/behavior per handler
++- [ ] POST /notifications/global - auth/behavior per handler
++- [ ] GET /notifications/{type}/{name} - auth/behavior per handler
++- [ ] POST /notifications/batchUpdate - auth/behavior per handler
++- [ ] POST /notifications/{type}/{name} - auth/behavior per handler
++- [ ] DELETE /notifications/{type}/{name} - auth/behavior per handler
++## front50/front50-web - PermissionsController
++- [ ] GET /permissions/applications - auth/behavior per handler
++- [ ] GET /permissions/applications/{appName:.+} - auth/behavior per handler
++- [ ] POST /permissions/applications - auth/behavior per handler
++- [ ] PUT /permissions/applications/{appName:.+} - auth/behavior per handler
++- [ ] DELETE /permissions/applications/{appName:.+} - auth/behavior per handler
++## front50/front50-web - PipelineController
++- [ ] GET /pipelines - auth/behavior per handler
++- [ ] GET /pipelines/triggeredBy/{id:.+}/{status} - auth/behavior per handler
++- [ ] GET /pipelines/{application:.+} - auth/behavior per handler
++- [ ] GET /pipelines/{id:.+}/history - auth/behavior per handler
++- [ ] GET /pipelines/{id:.+}/get - auth/behavior per handler
++- [ ] GET /pipelines/{application:.+}/name/{name:.+} - auth/behavior per handler
++- [ ] POST /pipelines - auth/behavior per handler
++- [ ] POST /pipelines/batchUpdate - auth/behavior per handler
++- [ ] DELETE /pipelines/{application}/{pipeline:.+} - auth/behavior per handler
++- [ ] PUT /pipelines/{id} - auth/behavior per handler
++## front50/front50-web - PipelineTemplateController
++- [ ] GET /pipelineTemplates - auth/behavior per handler
++- [ ] POST /pipelineTemplates - auth/behavior per handler
++- [ ] GET /pipelineTemplates/{id} - auth/behavior per handler
++- [ ] PUT /pipelineTemplates/{id} - auth/behavior per handler
++- [ ] DELETE /pipelineTemplates/{id} - auth/behavior per handler
++- [ ] GET /pipelineTemplates/{id}/dependentPipelines - auth/behavior per handler
++## front50/front50-web - PluginBinaryController
++- [ ] POST /pluginBinaries/{id}/{version} - auth/behavior per handler
++- [ ] GET /pluginBinaries/{id}/{version} - auth/behavior per handler
++## front50/front50-web - PluginInfoController
++- [ ] GET /pluginInfo - auth/behavior per handler
++- [ ] GET /pluginInfo/{id} - auth/behavior per handler
++- [ ] POST /pluginInfo - auth/behavior per handler
++- [ ] DELETE /pluginInfo/{id} - auth/behavior per handler
++- [ ] POST /pluginInfo/{id}/releases - auth/behavior per handler
++- [ ] PUT /pluginInfo/{id}/releases - auth/behavior per handler
++- [ ] PUT /pluginInfo/{id}/releases/{releaseVersion} - auth/behavior per handler
++- [ ] DELETE /pluginInfo/{id}/releases/{releaseVersion} - auth/behavior per handler
++## front50/front50-web - PluginVersionController
++- [ ] PUT /pluginVersions/{serverGroupName} - auth/behavior per handler
++## front50/front50-web - ReorderPipelinesController
++- [ ] POST /actions/pipelines/reorder - auth/behavior per handler
++- [ ] POST /actions/strategies/reorder - auth/behavior per handler
++## front50/front50-web - ServiceAccountsController
++- [ ] GET /serviceAccounts - auth/behavior per handler
++- [ ] POST /serviceAccounts - auth/behavior per handler
++- [ ] DELETE /serviceAccounts/{serviceAccountId:.+} - auth/behavior per handler
++## front50/front50-web - SnapshotsController
++- [ ] GET /snapshots/{id:.+}/history - auth/behavior per handler
++- [ ] GET /snapshots/{id:.+} - auth/behavior per handler
++- [ ] GET /snapshots/{id:.+}/{timestamp:.+} - auth/behavior per handler
++- [ ] POST /snapshots - auth/behavior per handler
++## front50/front50-web - StrategyController
++- [ ] GET /strategies - auth/behavior per handler
++- [ ] GET /strategies/{application:.+} - auth/behavior per handler
++- [ ] GET /strategies/{id:.+}/history - auth/behavior per handler
++- [ ] POST /strategies - auth/behavior per handler
++- [ ] POST /strategies/batchUpdate - auth/behavior per handler
++- [ ] DELETE /strategies/{application}/{strategy:.+} - auth/behavior per handler
++- [ ] PUT /strategies/{id} - auth/behavior per handler
++## front50/front50-web - V2PipelineTemplateController
++- [ ] GET /v2/pipelineTemplates - auth/behavior per handler
++- [ ] GET /v2/pipelineTemplates/versions - auth/behavior per handler
++- [ ] POST /v2/pipelineTemplates - auth/behavior per handler
++- [ ] PUT /v2/pipelineTemplates/{id} - auth/behavior per handler
++- [ ] GET /v2/pipelineTemplates/{id} - auth/behavior per handler
++- [ ] DELETE /v2/pipelineTemplates/{id} - auth/behavior per handler
++- [ ] GET /v2/pipelineTemplates/{id}/dependentPipelines - auth/behavior per handler
++## front50/front50-web - ApplicationsController
++- [ ] GET /v2/applications - auth/behavior per handler
++- [ ] POST /v2/applications - auth/behavior per handler
++- [ ] DELETE /v2/applications/{applicationName:.+} - auth/behavior per handler
++- [ ] PATCH /v2/applications/{applicationName:.+} - auth/behavior per handler
++- [ ] PUT /v2/applications/{applicationName:.+} - auth/behavior per handler
++- [ ] GET /v2/applications/{applicationName:.+} - auth/behavior per handler
++- [ ] GET /v2/applications/{applicationName:.+}/history - auth/behavior per handler
++- [ ] POST /v2/applications/batch/applications - auth/behavior per handler
++## front50/front50-web - EntityTagsController
++- [ ] GET /v2/tags - auth/behavior per handler
++- [ ] GET /v2/tags/** - auth/behavior per handler
++- [ ] POST /v2/tags - auth/behavior per handler
++- [ ] POST /v2/tags/batchUpdate - auth/behavior per handler
++- [ ] POST /v2/tags/batchDelete - auth/behavior per handler
++- [ ] DELETE /v2/tags/** - auth/behavior per handler
++## front50/front50-web - ProjectsController
++- [ ] GET /v2/projects/search - auth/behavior per handler
++- [ ] GET /v2/projects - auth/behavior per handler
++- [ ] GET /v2/projects/{projectId} - auth/behavior per handler
++- [ ] PUT /v2/projects/{projectId} - auth/behavior per handler
++- [ ] POST /v2/projects - auth/behavior per handler
++- [ ] DELETE /v2/projects/{projectId} - auth/behavior per handler
++- [ ] POST /v2/projects/batchUpdate - auth/behavior per handler
++## gate/gate-integrations-gremlin - GremlinController
++- [ ] POST /integrations/gremlin/templates/command - auth/behavior per handler
++- [ ] POST /integrations/gremlin/templates/target - auth/behavior per handler
++## gate/gate-plugins - DeckPluginsController
++- [ ] GET /plugins/deck/plugin-manifest.json - auth/behavior per handler
++- [ ] GET /plugins/deck/{pluginId}/{pluginVersion}/{asset:.*} - auth/behavior per handler
++## gate/gate-plugins - PluginInfoController
++- [ ] POST /plugins/info - auth/behavior per handler
++- [ ] PUT /plugins/info - auth/behavior per handler
++- [ ] DELETE /plugins/info/{id:.+} - auth/behavior per handler
++- [ ] GET /plugins/info - auth/behavior per handler
++## gate/gate-plugins - PluginsInstalledController
++- [ ] GET /plugins/installed - auth/behavior per handler
++## gate/gate-plugins - PluginPublishController
++- [ ] POST /plugins/publish/{pluginId}/{pluginVersion} - auth/behavior per handler
++## gate/gate-proxy - ApiExtensionController
++- [ ] ANY /extensions/{extension}/** - auth/behavior per handler
++## gate/gate-proxy - ProxyController
++- [ ] ANY /proxies/{proxy}/** - auth/behavior per handler
++- [ ] ANY /proxies - auth/behavior per handler
++## gate/gate-web - ApplicationController
++- [ ] GET /applications - auth/behavior per handler
++- [ ] GET /applications/{application:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/history - auth/behavior per handler
++- [ ] GET /applications/{application}/tasks - auth/behavior per handler
++- [ ] GET /applications/{application}/pipelines - auth/behavior per handler
++- [ ] PUT /applications/{application}/pipelines/{id}/cancel - auth/behavior per handler
++- [ ] GET /applications/{application}/pipelineConfigs - auth/behavior per handler
++- [ ] GET /applications/{application}/pipelineConfigs/{pipelineName:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/strategyConfigs - auth/behavior per handler
++- [ ] GET /applications/{application}/strategyConfigs/{strategyName} - auth/behavior per handler
++- [ ] POST /applications/{application}/pipelineConfigs/{pipelineName:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/tasks/{id} - auth/behavior per handler
++- [ ] PUT /applications/{application}/tasks/{id}/cancel - auth/behavior per handler
++- [ ] GET /applications/{application}/tasks/{id}/details/{taskDetailsId} - auth/behavior per handler
++- [ ] POST /applications/{application}/tasks - auth/behavior per handler
++## gate/gate-web - ArtifactController
++- [ ] GET /artifacts/credentials - auth/behavior per handler
++- [ ] PUT /artifacts/fetch - auth/behavior per handler
++- [ ] GET /artifacts/account/{accountName}/names - auth/behavior per handler
++- [ ] GET /artifacts/account/{accountName}/versions - auth/behavior per handler
++- [ ] GET /artifacts/{provider}/{packageName} - auth/behavior per handler
++- [ ] GET /artifacts/{provider}/{packageName}/{version:.+} - auth/behavior per handler
++- [ ] GET /artifacts/content-address/{application}/{hash} - auth/behavior per handler
++## gate/gate-web - ArtifactoryController
++- [ ] GET /artifactory/names - auth/behavior per handler
++## gate/gate-web - AuthController
++- [ ] GET /auth/user - auth/behavior per handler
++- [ ] GET /auth/user/serviceAccounts - auth/behavior per handler
++- [ ] GET /auth/loggedOut - auth/behavior per handler
++- [ ] POST /auth/roles/sync - auth/behavior per handler
++- [ ] POST /auth/deleteSessionCache - auth/behavior per handler
++- [ ] GET /auth/redirect - auth/behavior per handler
++## gate/gate-web - AwsCodeBuildController
++- [ ] GET /codebuild/accounts - auth/behavior per handler
++- [ ] GET /codebuild/projects/{account} - auth/behavior per handler
++## gate/gate-web - BakeController
++- [ ] GET /bakery/options - auth/behavior per handler
++- [ ] GET /bakery/options/{cloudProvider} - auth/behavior per handler
++- [ ] GET /bakery/logs/{region}/{statusId} - auth/behavior per handler
++## gate/gate-web - BatchEntityTagsController
++- [ ] POST /batch/tags - auth/behavior per handler
++## gate/gate-web - BuildController
++- [ ] GET /v2/builds - auth/behavior per handler
++- [ ] GET /v2/builds/{buildMaster}/jobs - auth/behavior per handler
++- [ ] GET /v2/builds/{buildMaster}/jobs/** - auth/behavior per handler
++- [ ] GET /v2/builds/{buildMaster}/builds/** - auth/behavior per handler
++- [ ] GET /v2/builds/{buildMaster}/build/{number}/** - auth/behavior per handler
++- [ ] GET /v3/builds - auth/behavior per handler
++- [ ] GET /v3/builds/{buildMaster}/jobs - auth/behavior per handler
++- [ ] GET /v3/builds/{buildMaster}/job - auth/behavior per handler
++- [ ] GET /v3/builds/{buildMaster}/builds - auth/behavior per handler
++- [ ] GET /v3/builds/{buildMaster}/build/{number} - auth/behavior per handler
++## gate/gate-web - CanaryController
++- [ ] POST /canaries/{id:.+}/generateCanaryResult - auth/behavior per handler
++- [ ] GET /canaryDeployments/{canaryDeploymentId}/canaryAnalysisHistory - auth/behavior per handler
++- [ ] GET /canaries/{id} - auth/behavior per handler
++- [ ] PUT /canaries/{id:.+}/end - auth/behavior per handler
++- [ ] GET /canaryConfig/names - auth/behavior per handler
++- [ ] GET /canaryConfigs/{application} - auth/behavior per handler
++## gate/gate-web - CapabilitiesController
++- [ ] GET /capabilities/deploymentMonitors - auth/behavior per handler
++- [ ] GET /capabilities/expressions - auth/behavior per handler
++- [ ] GET /capabilities/quietPeriod - auth/behavior per handler
++## gate/gate-web - CertificateController
++- [ ] GET /certificates - auth/behavior per handler
++- [ ] GET /certificates/{cloudProvider} - auth/behavior per handler
++## gate/gate-web - CiController
++- [ ] GET /ci/builds - auth/behavior per handler
++- [ ] GET /ci/builds/{buildId}/output - auth/behavior per handler
++## gate/gate-web - CleanupController
++- [ ] GET /cleanup/resources/{namespace}/{resourceId}/optOut - auth/behavior per handler
++- [ ] GET /cleanup/resources/{namespace}/{resourceId} - auth/behavior per handler
++- [ ] GET /cleanup/resources/marked - auth/behavior per handler
++- [ ] GET /cleanup/resources/deleted - auth/behavior per handler
++## gate/gate-web - CloudMetricController
++- [ ] GET /cloudMetrics/{cloudProvider}/{account}/{region} - auth/behavior per handler
++- [ ] GET /cloudMetrics/{cloudProvider}/{account}/{region}/{metricName}/statistics - auth/behavior per handler
++## gate/gate-web - ClusterController
++- [ ] GET /applications/{application}/clusters - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName}/{type}/loadBalancers - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName}/serverGroups - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName}/serverGroups/{serverGroupName}/scalingActivities - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account}/{clusterName}/serverGroups/{serverGroupName:.+} - auth/behavior per handler
++- [ ] GET /applications/{application}/clusters/{account:.+}/{clusterName:.+}/{cloudProvider}/{scope}/serverGroups/target/{target:.+} - auth/behavior per handler
++## gate/gate-web - ConcourseController
++- [ ] GET /concourse/{buildMaster}/teams - auth/behavior per handler
++- [ ] GET /concourse/{buildMaster}/teams/{team}/pipelines - auth/behavior per handler
++- [ ] GET /concourse/{buildMaster}/teams/{team}/pipelines/{pipeline}/jobs - auth/behavior per handler
++- [ ] GET /concourse/{buildMaster}/teams/{team}/pipelines/{pipeline}/resources - auth/behavior per handler
++- [ ] POST /concourse/stage/start - auth/behavior per handler
++## gate/gate-web - CredentialsController
++- [ ] GET /credentials - auth/behavior per handler
++- [ ] GET /credentials - auth/behavior per handler
++- [ ] GET /credentials - auth/behavior per handler
++- [ ] POST /credentials - auth/behavior per handler
++- [ ] PUT /credentials - auth/behavior per handler
++- [ ] DELETE /credentials - auth/behavior per handler
++## gate/gate-web - CronController
++- [ ] GET /cron/validate - auth/behavior per handler
++## gate/gate-web - DataController
++- [ ] GET /v1/data/static/{id} - auth/behavior per handler
++- [ ] ANY /v1/data/adhoc/{groupId}/{bucketId}/** - auth/behavior per handler
++## gate/gate-web - EntityTagsController
++- [ ] GET /tags - auth/behavior per handler
++- [ ] GET /tags/** - auth/behavior per handler
++- [ ] DELETE /tags/{id}/{tag} - auth/behavior per handler
++- [ ] POST /tags - auth/behavior per handler
++## gate/gate-web - ExecutionsController
++- [ ] GET /executions - auth/behavior per handler
++- [ ] GET /applications/{application}/executions/search - auth/behavior per handler
++## gate/gate-web - FirewallController
++- [ ] GET /firewalls - auth/behavior per handler
++- [ ] GET /firewalls/{account} - auth/behavior per handler
++- [ ] GET /firewalls/{account}/{region} - auth/behavior per handler
++- [ ] GET /firewalls/{account}/{region}/{name:.+} - auth/behavior per handler
++## gate/gate-web - GoogleCloudBuildController
++- [ ] GET /gcb/accounts - auth/behavior per handler
++- [ ] GET /gcb/triggers/{account} - auth/behavior per handler
++## gate/gate-web - HistoryController
++- [ ] GET /history/{name} - auth/behavior per handler
++## gate/gate-web - ImageController
++- [ ] GET /images/{account}/{region}/{imageId:.+} - auth/behavior per handler
++- [ ] GET /images/find - auth/behavior per handler
++- [ ] GET /images/tags - auth/behavior per handler
++## gate/gate-web - InstanceController
++- [ ] GET /instances/{account}/{region}/{instanceId:.+} - auth/behavior per handler
++- [ ] GET /instances/{account}/{region}/{instanceId}/console - auth/behavior per handler
++## gate/gate-web - JobController
++- [ ] GET /applications/{applicationName}/jobs/{account}/{region}/{name} - auth/behavior per handler
++- [ ] GET /jobs/preconfigured - auth/behavior per handler
++## gate/gate-web - LoadBalancerController
++- [ ] GET / - auth/behavior per handler
++- [ ] GET /loadBalancers/{name:.+} - auth/behavior per handler
++- [ ] GET /loadBalancers/{account}/{region}/{name:.+} - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++## gate/gate-web - ManagedController
++- [ ] POST /managed/graphql - auth/behavior per handler
++- [ ] GET /managed/resources/{resourceId} - auth/behavior per handler
++- [ ] GET /managed/resources/{resourceId}.yml - auth/behavior per handler
++- [ ] GET /managed/resources/{resourceId}/status - auth/behavior per handler
++- [ ] POST /managed/resources/diff - auth/behavior per handler
++- [ ] POST /managed/resources/{resourceId}/pause - auth/behavior per handler
++- [ ] DELETE /managed/resources/{resourceId}/pause - auth/behavior per handler
++- [ ] GET /managed/resources/export/{cloudProvider}/{account}/{type}/{name} - auth/behavior per handler
++- [ ] GET /managed/resources/export/artifact/{cloudProvider}/{account}/{clusterName} - auth/behavior per handler
++- [ ] GET /managed/delivery-configs/{name} - auth/behavior per handler
++- [ ] GET /managed/delivery-configs/{name}.yml - auth/behavior per handler
++- [ ] GET /managed/delivery-configs/{name}/artifacts - auth/behavior per handler
++- [ ] POST /managed/delivery-configs - auth/behavior per handler
++- [ ] DELETE /managed/delivery-configs/{name} - auth/behavior per handler
++- [ ] POST /managed/delivery-configs/validate - auth/behavior per handler
++- [ ] POST /managed/delivery-configs/diff - auth/behavior per handler
++- [ ] GET /managed/delivery-configs/schema - auth/behavior per handler
++- [ ] GET /managed/application/{application}/environment/{environment}/constraints - auth/behavior per handler
++- [ ] GET /managed/application/{application}/config - auth/behavior per handler
++- [ ] DELETE /managed/application/{application}/config - auth/behavior per handler
++- [ ] POST /managed/application/{application}/environment/{environment}/constraint - auth/behavior per handler
++- [ ] GET /managed/application/{application} - auth/behavior per handler
++- [ ] POST /managed/application/{application}/pause - auth/behavior per handler
++- [ ] DELETE /managed/application/{application}/pause - auth/behavior per handler
++- [ ] POST /managed/application/{application}/pin - auth/behavior per handler
++- [ ] DELETE /managed/application/{application}/pin/{targetEnvironment} - auth/behavior per handler
++- [ ] POST /managed/application/{application}/veto - auth/behavior per handler
++- [ ] DELETE /managed/application/{application}/veto/{targetEnvironment}/{reference}/{version} - auth/behavior per handler
++- [ ] POST /managed/application/{application}/mark/bad - auth/behavior per handler
++- [ ] POST /managed/application/{application}/mark/good - auth/behavior per handler
++- [ ] POST /managed/{application}/environment/{environment}/verifications - auth/behavior per handler
++- [ ] POST /managed/{application}/environment/{environment}/verifications/retry - auth/behavior per handler
++- [ ] POST /managed/notifications/callbacks/{source} - auth/behavior per handler
++- [ ] GET /managed/reports/onboarding - auth/behavior per handler
++- [ ] GET /managed/reports/adoption - auth/behavior per handler
++- [ ] GET /managed/environments/{application} - auth/behavior per handler
++## gate/gate-web - ManifestController
++- [ ] GET /manifests/{account:.+}/{location:.+}/{name:.+} - auth/behavior per handler
++## gate/gate-web - NetworkController
++- [ ] GET /networks - auth/behavior per handler
++- [ ] GET /networks/{cloudProvider} - auth/behavior per handler
++## gate/gate-web - NexusController
++- [ ] GET /nexus/names - auth/behavior per handler
++## gate/gate-web - NotificationController
++- [ ] DELETE /notifications/{type}/{application:.+} - auth/behavior per handler
++- [ ] POST /notifications/{type}/{application:.+} - auth/behavior per handler
++- [ ] GET /notifications/{type}/{application:.+} - auth/behavior per handler
++- [ ] GET /notifications/metadata - auth/behavior per handler
++- [ ] POST /notifications - auth/behavior per handler
++## gate/gate-web - PagerDutyController
++- [ ] GET /pagerDuty/services - auth/behavior per handler
++- [ ] GET /pagerDuty/oncalls - auth/behavior per handler
++## gate/gate-web - PipelineConfigController
++- [ ] GET /pipelineConfigs - auth/behavior per handler
++- [ ] GET /pipelineConfigs/{pipelineConfigId}/history - auth/behavior per handler
++- [ ] GET /pipelineConfigs/{pipelineConfigId}/convertToTemplate - auth/behavior per handler
++## gate/gate-web - PipelineController
++- [ ] DELETE /pipelines/{application}/{pipelineName:.+} - auth/behavior per handler
++- [ ] POST /pipelines - auth/behavior per handler
++- [ ] POST /pipelines - auth/behavior per handler
++- [ ] POST /pipelines - auth/behavior per handler
++- [ ] GET /pipelines/{id} - auth/behavior per handler
++- [ ] PUT /pipelines/{id} - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/cancel - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/pause - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/resume - auth/behavior per handler
++- [ ] PATCH /pipelines/{id}/stages/{stageId} - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/stages/{stageId}/restart - auth/behavior per handler
++- [ ] DELETE /pipelines/{id} - auth/behavior per handler
++- [ ] POST /pipelines - auth/behavior per handler
++- [ ] POST /pipelines/{application}/{pipelineNameOrId:.+} - auth/behavior per handler
++- [ ] POST /pipelines/v2/{application}/{pipelineNameOrId:.+} - auth/behavior per handler
++- [ ] GET /pipelines/{id}/evaluateExpression - auth/behavior per handler
++- [ ] POST /pipelines/{id}/evaluateExpression - auth/behavior per handler
++- [ ] GET /pipelines/{id}/{stageId}/evaluateExpression - auth/behavior per handler
++- [ ] POST /pipelines/{id}/evaluateExpression - auth/behavior per handler
++- [ ] POST /pipelines/{id}/evaluateVariables - auth/behavior per handler
++## gate/gate-web - PipelineTemplatesController
++- [ ] GET /pipelineTemplates - auth/behavior per handler
++- [ ] POST /pipelineTemplates - auth/behavior per handler
++- [ ] GET /pipelineTemplates/resolve - auth/behavior per handler
++- [ ] GET /pipelineTemplates/{id} - auth/behavior per handler
++- [ ] POST /pipelineTemplates/{id} - auth/behavior per handler
++- [ ] DELETE /pipelineTemplates/{id} - auth/behavior per handler
++- [ ] GET /pipelineTemplates/{id}/dependents - auth/behavior per handler
++## gate/gate-web - ProjectController
++- [ ] GET /projects - auth/behavior per handler
++- [ ] GET /projects/{id:.+} - auth/behavior per handler
++- [ ] GET /projects/{id}/clusters - auth/behavior per handler
++- [ ] GET /projects/{id:.+}/pipelines - auth/behavior per handler
++## gate/gate-web - PubsubSubscriptionController
++- [ ] GET /pubsub/subscriptions - auth/behavior per handler
++## gate/gate-web - RawResourceController
++- [ ] GET /applications/{application}/rawResources - auth/behavior per handler
++## gate/gate-web - ReorderPipelinesController
++- [ ] POST /actions/pipelines/reorder - auth/behavior per handler
++- [ ] POST /actions/strategies/reorder - auth/behavior per handler
++## gate/gate-web - RoleController
++- [ ] GET /roles/{cloudProvider} - auth/behavior per handler
++## gate/gate-web - RootController
++- [ ] ANY / - auth/behavior per handler
++## gate/gate-web - SearchController
++- [ ] GET /search - auth/behavior per handler
++## gate/gate-web - SecurityGroupController
++- [ ] GET /securityGroups - auth/behavior per handler
++- [ ] GET /securityGroups/{account} - auth/behavior per handler
++- [ ] GET /securityGroups/{account}/{region}/{name:.+} - auth/behavior per handler
++## gate/gate-web - ServerGroupController
++- [ ] GET /applications/{applicationName}/serverGroups - auth/behavior per handler
++- [ ] GET /serverGroups - auth/behavior per handler
++- [ ] GET /applications/{applicationName}/serverGroups/{account}/{region}/{serverGroupName:.+} - auth/behavior per handler
++## gate/gate-web - ServerGroupManagerController
++- [ ] GET /applications/{application}/serverGroupManagers - auth/behavior per handler
++## gate/gate-web - ServiceBrokerController
++- [ ] GET /servicebroker/{account}/services - auth/behavior per handler
++- [ ] GET /servicebroker/{account}/serviceInstance - auth/behavior per handler
++## gate/gate-web - SlackController
++- [ ] ANY /slack/channels - auth/behavior per handler
++## gate/gate-web - SnapshotController
++- [ ] GET /applications/{application}/snapshots/{account} - auth/behavior per handler
++- [ ] GET /applications/{application}/snapshots/{account}/history - auth/behavior per handler
++## gate/gate-web - StorageAccountController
++- [ ] GET /storage - auth/behavior per handler
++## gate/gate-web - StrategyConfigController
++- [ ] GET /strategyConfigs - auth/behavior per handler
++- [ ] GET /strategyConfigs/{strategyConfigId}/history - auth/behavior per handler
++## gate/gate-web - StrategyController
++- [ ] DELETE /strategies/{application}/{strategyName:.+} - auth/behavior per handler
++- [ ] POST /strategies - auth/behavior per handler
++- [ ] POST /strategies - auth/behavior per handler
++- [ ] PUT /strategies/{id} - auth/behavior per handler
++## gate/gate-web - SubnetController
++- [ ] GET /subnets/{cloudProvider} - auth/behavior per handler
++## gate/gate-web - TaskController
++- [ ] GET /tasks/{id} - auth/behavior per handler
++- [ ] DELETE /tasks/{id} - auth/behavior per handler
++- [ ] POST /tasks - auth/behavior per handler
++- [ ] PUT /tasks/{id}/cancel - auth/behavior per handler
++- [ ] PUT /tasks/cancel - auth/behavior per handler
++- [ ] GET /tasks/{id}/details/{taskDetailsId} - auth/behavior per handler
++## gate/gate-web - V2CanaryConfigController
++- [ ] GET /v2/canaryConfig - auth/behavior per handler
++- [ ] GET /v2/canaryConfig/{id} - auth/behavior per handler
++- [ ] POST /v2/canaryConfig - auth/behavior per handler
++- [ ] PUT /v2/canaryConfig/{id} - auth/behavior per handler
++- [ ] DELETE /v2/canaryConfig/{id} - auth/behavior per handler
++## gate/gate-web - V2CanaryController
++- [ ] GET / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++- [ ] POST / - auth/behavior per handler
++- [ ] POST / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++## gate/gate-web - V2PipelineTemplatesController
++- [ ] GET /v2/pipelineTemplates - auth/behavior per handler
++- [ ] GET /v2/pipelineTemplates/versions - auth/behavior per handler
++- [ ] POST /v2/pipelineTemplates/plan - auth/behavior per handler
++- [ ] POST /v2/pipelineTemplates/create - auth/behavior per handler
++- [ ] POST /v2/pipelineTemplates/update/{id} - auth/behavior per handler
++- [ ] GET /v2/pipelineTemplates/{id} - auth/behavior per handler
++- [ ] DELETE /v2/pipelineTemplates/{id} - auth/behavior per handler
++- [ ] GET /v2/pipelineTemplates/{id}/dependents - auth/behavior per handler
++## gate/gate-web - VersionController
++- [ ] GET /version - auth/behavior per handler
++## gate/gate-web - WebhookController
++- [ ] POST /webhooks/{type}/{source} - auth/behavior per handler
++- [ ] POST /webhooks/cdevents/{source} - auth/behavior per handler
++- [ ] GET /webhooks/preconfigured - auth/behavior per handler
++## gate/gate-web - AmazonInfrastructureController
++- [ ] GET /instanceTypes - auth/behavior per handler
++- [ ] GET /keyPairs - auth/behavior per handler
++- [ ] GET /subnets - auth/behavior per handler
++- [ ] GET /vpcs - auth/behavior per handler
++- [ ] GET /functions - auth/behavior per handler
++- [ ] GET /applications/{application}/functions - auth/behavior per handler
++## gate/gate-web - EcsCloudMetricController
++- [ ] GET /ecs/cloudMetrics/alarms - auth/behavior per handler
++## gate/gate-web - EcsClusterController
++- [ ] GET /ecs/ecsClusters - auth/behavior per handler
++- [ ] GET /ecs/ecsClusterDescriptions/{account}/{region} - auth/behavior per handler
++## gate/gate-web - EcsSecretController
++- [ ] GET /ecs/secrets - auth/behavior per handler
++## gate/gate-web - EcsServerGroupEventsController
++- [ ] GET /applications/{application}/serverGroups/{account}/{serverGroupName}/events - auth/behavior per handler
++## gate/gate-web - EcsServiceDiscoveryController
++- [ ] GET /ecs/serviceDiscoveryRegistries - auth/behavior per handler
++## halyard/halyard-web - AccountController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/accounts/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/accounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/accounts/options - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/accounts/account/{accountName:.+}/options - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/accounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/accounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/accounts/ - auth/behavior per handler
++## halyard/halyard-web - AdminController
++- [ ] PUT /v1/admin/publishLatest - auth/behavior per handler
++- [ ] PUT /v1/admin/deprecateVersion - auth/behavior per handler
++- [ ] PUT /v1/admin/publishVersion - auth/behavior per handler
++- [ ] PUT /v1/admin/publishBom - auth/behavior per handler
++- [ ] PUT /v1/admin/publishProfile/{artifactName:.+} - auth/behavior per handler
++## halyard/halyard-web - ArtifactAccountController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+}/artifactAccounts/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+}/artifactAccounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+}/artifactAccounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+}/artifactAccounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+}/artifactAccounts/ - auth/behavior per handler
++## halyard/halyard-web - ArtifactProviderController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/artifactProviders/{providerName:.+}/enabled - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/artifactProviders/ - auth/behavior per handler
++## halyard/halyard-web - ArtifactTemplateController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/artifactTemplates/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/artifactTemplates/{templateName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/artifactTemplates/{templateName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/artifactTemplates/ - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/artifactTemplates/{templateName:.+} - auth/behavior per handler
++## halyard/halyard-web - BackupController
++- [ ] PUT /v1/backup/create - auth/behavior per handler
++- [ ] PUT /v1/backup/restore - auth/behavior per handler
++## halyard/halyard-web - BakeryController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/bakery/defaults/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/bakery/defaults/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/bakery/defaults/baseImage/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/bakery/defaults/baseImage/{baseImageId:.+} - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/bakery/defaults/baseImage/{baseImageId:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/bakery/defaults/baseImage/{baseImageId:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/bakery/defaults/baseImage/ - auth/behavior per handler
++## halyard/halyard-web - CanaryController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/canary/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/canary/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/canary/enabled/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/canary/{serviceIntegrationName:.+}/accounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/canary/{serviceIntegrationName:.+}/accounts/account/{accountName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/canary/{serviceIntegrationName:.+}/accounts/ - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/canary/{serviceIntegrationName:.+}/accounts/account/{accountName:.+} - auth/behavior per handler
++## halyard/halyard-web - ClusterController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/clusters/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/clusters/cluster/{clusterName:.+} - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/clusters/cluster/{clusterName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/clusters/cluster/{clusterName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/clusters/ - auth/behavior per handler
++## halyard/halyard-web - ConfigController
++- [ ] GET /v1/config/ - auth/behavior per handler
++- [ ] GET /v1/config/currentDeployment - auth/behavior per handler
++- [ ] PUT /v1/config/currentDeployment - auth/behavior per handler
++## halyard/halyard-web - DeploymentController
++- [ ] GET /v1/config/deployments/{deploymentName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+} - auth/behavior per handler
++- [ ] GET /v1/config/deployments/ - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/generate/ - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/clean/ - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/connect/ - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/rollback/ - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/prep/ - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/deploy/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/collectLogs/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/configDiff/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/version/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/version/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/details/{serviceName:.+}/ - auth/behavior per handler
++## halyard/halyard-web - DeploymentEnvironmentController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/deploymentEnvironment/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/deploymentEnvironment/ - auth/behavior per handler
++## halyard/halyard-web - FeaturesController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/features/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/features/ - auth/behavior per handler
++## halyard/halyard-web - HaServiceController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/deploymentEnvironment/haServices/{serviceName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/deploymentEnvironment/haServices/{serviceName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/deploymentEnvironment/haServices/{serviceName:.+}/enabled - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/deploymentEnvironment/haServices/ - auth/behavior per handler
++## halyard/halyard-web - MetricStoresController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/metricStores/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/metricStores/{metricStoreType:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/metricStores/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/metricStores/{metricStoreType:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/metricStores/{metricStoreType:.+}/enabled/ - auth/behavior per handler
++## halyard/halyard-web - NotificationController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/notifications/{notificationName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/notifications/{notificationName:.+}/enabled - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/notifications/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/notifications/{notificationName:.+} - auth/behavior per handler
++## halyard/halyard-web - PersistentStorageController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/persistentStorage/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/persistentStorage/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/persistentStorage/{persistentStoreType:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/persistentStorage/{persistentStoreType:.+} - auth/behavior per handler
++## halyard/halyard-web - PluginRepositoriesController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pluginRepositories/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pluginRepositories/{pluginRepositoryName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/pluginRepositories/{pluginRepositoryName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/pluginRepositories/ - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/pluginRepositories/{pluginRepositoryName:.+} - auth/behavior per handler
++## halyard/halyard-web - PluginsController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/plugins/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/plugins/{pluginName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/plugins/ - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/plugins/{pluginName:.+} - auth/behavior per handler
++## halyard/halyard-web - ProviderController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/providers/{providerName:.+}/enabled - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/providers/ - auth/behavior per handler
++## halyard/halyard-web - PublisherController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/publishers/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/publishers/publisher/{publisherName:.+} - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/publishers/publisher/{publisherName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/publishers/publisher/{publisherName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/publishers/ - auth/behavior per handler
++## halyard/halyard-web - PubsubController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/enabled - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pubsubs/ - auth/behavior per handler
++## halyard/halyard-web - RepositoriesController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/repository/{repositoryName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/repository/{repositoryName:.+}/enabled - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/repository/ - auth/behavior per handler
++## halyard/halyard-web - SearchController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/repository/{repositoryName:.+}/searches/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/repository/{repositoryName:.+}/searches/{searchName:.+} - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/repository/{repositoryName:.+}/searches/{searchName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/repository/{repositoryName:.+}/searches/{searchName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/repository/{repositoryName:.+}/searches/ - auth/behavior per handler
++## halyard/halyard-web - SecurityController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/ui/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/ui/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/ui/ssl/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/ui/ssl/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/ui/ssl/enabled/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/api/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/api/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/api/ssl/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/api/ssl/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/api/ssl/enabled/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/authz/groupMembership - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/authz/groupMembership - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/authn/{methodName:.+} - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/security/authz/groupMembership/{roleProviderName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/authn/{methodName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/authz/groupMembership/{roleProviderName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/authn/{methodName:.+}/enabled/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/security/authz/enabled/ - auth/behavior per handler
++## halyard/halyard-web - SpinController
++- [ ] GET /v1/spin/install/latest - auth/behavior per handler
++## halyard/halyard-web - StatsController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/stats/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/stats/enabled - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/stats/ - auth/behavior per handler
++## halyard/halyard-web - SubscriptionController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/subscriptions/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/subscriptions/subscription/{subscriptionName:.+} - auth/behavior per handler
++- [ ] DELETE /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/subscriptions/subscription/{subscriptionName:.+} - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/subscriptions/subscription/{subscriptionName:.+} - auth/behavior per handler
++- [ ] POST /v1/config/deployments/{deploymentName:.+}/pubsubs/{pubsubName:.+}/subscriptions/ - auth/behavior per handler
++## halyard/halyard-web - TaskController
++- [ ] GET /v1/tasks/{uuid:.+}/ - auth/behavior per handler
++- [ ] PUT /v1/tasks/{uuid:.+}/interrupt - auth/behavior per handler
++- [ ] GET /v1/tasks/ - auth/behavior per handler
++## halyard/halyard-web - VersionsController
++- [ ] GET /v1/versions/ - auth/behavior per handler
++- [ ] GET /v1/versions/latest/ - auth/behavior per handler
++- [ ] GET /v1/versions/bom/{version:.+} - auth/behavior per handler
++- [ ] GET /v1/versions/bom - auth/behavior per handler
++## halyard/halyard-web - WebhookController
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/webhook/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/webhook/ - auth/behavior per handler
++- [ ] GET /v1/config/deployments/{deploymentName:.+}/webhook/trust/ - auth/behavior per handler
++- [ ] PUT /v1/config/deployments/{deploymentName:.+}/webhook/trust/ - auth/behavior per handler
++## igor/igor-monitor-artifactory - ArtifactoryController
++- [ ] GET /artifactory/names - auth/behavior per handler
++## igor/igor-web - AdminController
++- [ ] POST /admin/pollers/fastforward/{monitorName} - auth/behavior per handler
++## igor/igor-web - AbstractCommitController
++- [ ] GET /{projectKey}/{repositorySlug}/compareCommits - auth/behavior per handler
++## igor/igor-web - ScmInfoController
++- [ ] GET /scm - auth/behavior per handler
++## igor/igor-web - CommitController
++- [ ] GET /bitbucket - auth/behavior per handler
++## igor/igor-web - CommitController
++- [ ] GET /github - auth/behavior per handler
++## igor/igor-web - CommitController
++- [ ] GET /gitlab/{projectKey}/{repositorySlug}/compareCommits - auth/behavior per handler
++## igor/igor-web - CommitController
++- [ ] GET /stash - auth/behavior per handler
++## igor/igor-web - ArtifactController
++- [ ] GET /artifacts/{provider}/{name} - auth/behavior per handler
++- [ ] GET /artifacts/{provider}/{name}/{version:.+} - auth/behavior per handler
++## igor/igor-web - CiController
++- [ ] GET /ci/builds - auth/behavior per handler
++- [ ] GET /ci/builds/{buildId}/output - auth/behavior per handler
++## igor/igor-web - AwsCodeBuildController
++- [ ] GET /codebuild/accounts - auth/behavior per handler
++- [ ] GET /codebuild/projects/{account} - auth/behavior per handler
++- [ ] POST /codebuild/builds/start/{account} - auth/behavior per handler
++- [ ] GET /codebuild/builds/{account}/{buildId} - auth/behavior per handler
++- [ ] GET /codebuild/builds/artifacts/{account}/{buildId} - auth/behavior per handler
++- [ ] POST /codebuild/builds/stop/{account}/{buildId} - auth/behavior per handler
++## igor/igor-web - ConcourseController
++- [ ] GET /concourse/{buildMaster}/teams - auth/behavior per handler
++- [ ] GET /concourse/{buildMaster}/teams/{team}/pipelines - auth/behavior per handler
++- [ ] GET /concourse/{buildMaster}/teams/{team}/pipelines/{pipeline}/jobs - auth/behavior per handler
++- [ ] GET /concourse/{buildMaster}/teams/{team}/pipelines/{pipeline}/resources - auth/behavior per handler
++## igor/igor-web - GoogleCloudBuildController
++- [ ] GET /gcb/accounts - auth/behavior per handler
++- [ ] POST /gcb/builds/create/{account} - auth/behavior per handler
++- [ ] PUT /gcb/builds/{account}/{buildId} - auth/behavior per handler
++- [ ] GET /gcb/builds/{account}/{buildId} - auth/behavior per handler
++- [ ] GET /gcb/builds/{account}/{buildId}/artifacts - auth/behavior per handler
++- [ ] PUT /gcb/artifacts/extract/{account} - auth/behavior per handler
++- [ ] GET /gcb/triggers/{account} - auth/behavior per handler
++- [ ] POST /gcb/triggers/{account}/{triggerId}/run - auth/behavior per handler
++- [ ] POST /gcb/builds/stop/{account}/{buildId} - auth/behavior per handler
++## igor/igor-web - NexusController
++- [ ] GET /nexus/names - auth/behavior per handler
++- [ ] POST /nexus/webhook - auth/behavior per handler
++## igor/igor-web - ManagedDeliveryScmController
++- [ ] GET /delivery-config/manifests - auth/behavior per handler
++- [ ] GET /delivery-config/manifest - auth/behavior per handler
++## kayenta/kayenta-atlas - AtlasFetchController
++- [ ] POST /fetch/atlas/query - auth/behavior per handler
++## kayenta/kayenta-datadog - DatadogFetchController
++- [ ] POST /fetch/datadog/query - auth/behavior per handler
++## kayenta/kayenta-graphite - GraphiteFetchController
++- [ ] POST /fetch/graphite/query - auth/behavior per handler
++## kayenta/kayenta-influxdb - InfluxDbFetchController
++- [ ] POST /fetch/influxdb/query - auth/behavior per handler
++## kayenta/kayenta-newrelic-insights - NewRelicFetchController
++- [ ] POST /fetch/newrelic/query - auth/behavior per handler
++## kayenta/kayenta-orca - AdminController
++- [ ] POST /admin/orca/instance/enabled - auth/behavior per handler
++## kayenta/kayenta-orca - PipelineController
++- [ ] POST /pipelines/start - auth/behavior per handler
++- [ ] GET /pipelines/{executionId} - auth/behavior per handler
++- [ ] PUT /pipelines/{executionId}/cancel - auth/behavior per handler
++- [ ] DELETE /pipelines/{executionId} - auth/behavior per handler
++- [ ] GET /pipelines - auth/behavior per handler
++## kayenta/kayenta-prometheus - PrometheusFetchController
++- [ ] POST /fetch/prometheus/query - auth/behavior per handler
++## kayenta/kayenta-stackdriver - StackdriverFetchController
++- [ ] POST /fetch/stackdriver/query - auth/behavior per handler
++## kayenta/kayenta-standalone-canary-analysis - StandaloneCanaryAnalysisController
++- [ ] ANY /standalone_canary_analysis/{canaryConfigId:.+} - auth/behavior per handler
++- [ ] ANY /standalone_canary_analysis - auth/behavior per handler
++- [ ] ANY /standalone_canary_analysis/{canaryAnalysisExecutionId:.+} - auth/behavior per handler
++## kayenta/kayenta-wavefront - WavefrontFetchController
++- [ ] POST /fetch/wavefront/query - auth/behavior per handler
++## kayenta/kayenta-web - CanaryConfigController
++- [ ] GET /canaryConfig/{canaryConfigId:.+} - auth/behavior per handler
++- [ ] POST /canaryConfig - auth/behavior per handler
++- [ ] PUT /canaryConfig/{canaryConfigId:.+} - auth/behavior per handler
++- [ ] DELETE /canaryConfig/{canaryConfigId:.+} - auth/behavior per handler
++- [ ] GET /canaryConfig - auth/behavior per handler
++## kayenta/kayenta-web - CanaryController
++- [ ] POST /canary/{canaryConfigId:.+} - auth/behavior per handler
++- [ ] POST /canary - auth/behavior per handler
++- [ ] GET /canary/{canaryExecutionId:.+} - auth/behavior per handler
++- [ ] GET /canary/executions - auth/behavior per handler
++## kayenta/kayenta-web - CanaryJudgesController
++- [ ] GET /judges - auth/behavior per handler
++- [ ] POST /judges/judge - auth/behavior per handler
++- [ ] POST /judges/comparison - auth/behavior per handler
++- [ ] GET /judges/comparison/{executionId:.+} - auth/behavior per handler
++## kayenta/kayenta-web - store
++- [ ] GET /canaryResultArchive/{pipelineId:.+} - auth/behavior per handler
++- [ ] POST /canaryResultArchive - auth/behavior per handler
++- [ ] PUT /canaryResultArchive/{pipelineId:.+} - auth/behavior per handler
++- [ ] DELETE /canaryResultArchive/{pipelineId:.+} - auth/behavior per handler
++- [ ] GET /canaryResultArchive - auth/behavior per handler
++## kayenta/kayenta-web - CredentialsController
++- [ ] GET /credentials - auth/behavior per handler
++- [ ] DELETE /credentials/{accountName} - auth/behavior per handler
++## kayenta/kayenta-web - MetricSetListController
++- [ ] GET /metricSetList/{metricSetListId:.+} - auth/behavior per handler
++- [ ] POST /metricSetList - auth/behavior per handler
++- [ ] DELETE /metricSetList/{metricSetListId:.+} - auth/behavior per handler
++- [ ] GET /metricSetList - auth/behavior per handler
++## kayenta/kayenta-web - MetricSetPairListController
++- [ ] GET /metricSetPairList/{metricSetPairListId:.+} - auth/behavior per handler
++- [ ] GET /metricSetPairList/{metricSetPairListId:.+}/{metricSetPairId:.+} - auth/behavior per handler
++- [ ] POST /metricSetPairList - auth/behavior per handler
++- [ ] DELETE /metricSetPairList/{metricSetPairListId:.+} - auth/behavior per handler
++- [ ] GET /metricSetPairList - auth/behavior per handler
++## kayenta/kayenta-web - MetricsServiceMetadataController
++- [ ] GET /metadata/metricsService - auth/behavior per handler
++## kayenta/kayenta-web - MetricsServicesController
++- [ ] GET /metricsServices - auth/behavior per handler
++## keel/keel-web - AdminController
++- [ ] DELETE /poweruser/applications/{application} - auth/behavior per handler
++- [ ] GET /poweruser/applications/paused - auth/behavior per handler
++- [ ] GET /poweruser/applications - auth/behavior per handler
++- [ ] POST /poweruser/recheck/{resourceId} - auth/behavior per handler
++- [ ] POST /poweruser/application/{application}/environment/{environment}/reevaluate - auth/behavior per handler
++- [ ] POST /poweruser/application/{application}/environment/{environment}/version/{version}/skip - auth/behavior per handler
++- [ ] POST /poweruser/application/{application}/environment/{environment}/version/{version}/fail - auth/behavior per handler
++- [ ] POST /poweruser/artifacts/metadata/backfill - auth/behavior per handler
++- [ ] POST /poweruser/cache/applications/refresh - auth/behavior per handler
++- [ ] POST /poweruser/git/migrate-pipelines - auth/behavior per handler
++- [ ] GET /poweruser/taskSummary/{id} - auth/behavior per handler
++## keel/keel-web - ApplicationController
++- [ ] GET /application/{application} - auth/behavior per handler
++- [ ] GET /application/{application}/config - auth/behavior per handler
++- [ ] GET /application/{application}/config/raw - auth/behavior per handler
++- [ ] DELETE /application/{application}/config - auth/behavior per handler
++- [ ] POST /application/{application}/environment/{environment}/constraint - auth/behavior per handler
++- [ ] GET /application/{application}/environment/{environment}/constraints - auth/behavior per handler
++- [ ] POST /application/{application}/pause - auth/behavior per handler
++- [ ] DELETE /application/{application}/pause - auth/behavior per handler
++- [ ] POST /application/{application}/pin - auth/behavior per handler
++- [ ] DELETE /application/{application}/pin/{targetEnvironment} - auth/behavior per handler
++- [ ] POST /application/{application}/veto - auth/behavior per handler
++- [ ] POST /application/{application}/mark/bad - auth/behavior per handler
++- [ ] POST /application/{application}/mark/good - auth/behavior per handler
++- [ ] DELETE /application/{application}/veto/{targetEnvironment}/{reference}/{version} - auth/behavior per handler
++- [ ] GET /application/{application}/events - auth/behavior per handler
++## keel/keel-web - ArtifactController
++- [ ] POST /artifacts/events - auth/behavior per handler
++- [ ] POST /artifacts/sync - auth/behavior per handler
++- [ ] GET /artifacts/build/{buildNumber}/commit/{commitId} - auth/behavior per handler
++## keel/keel-web - BaseAmiController
++- [ ] GET /base-amis - auth/behavior per handler
++## keel/keel-web - DeliveryConfigController
++- [ ] POST /delivery-configs - auth/behavior per handler
++- [ ] POST /delivery-configs/upsertGate - auth/behavior per handler
++- [ ] GET /delivery-configs/{name} - auth/behavior per handler
++- [ ] DELETE /delivery-configs/{name} - auth/behavior per handler
++- [ ] POST /delivery-configs/diff - auth/behavior per handler
++- [ ] POST /delivery-configs/validate - auth/behavior per handler
++- [ ] POST /delivery-configs/validate/gate - auth/behavior per handler
++- [ ] POST /delivery-configs/import - auth/behavior per handler
++- [ ] GET /delivery-configs/schema - auth/behavior per handler
++## keel/keel-web - EnvironmentController
++- [ ] GET /environments/{application} - auth/behavior per handler
++## keel/keel-web - ErrorSimulationController
++- [ ] GET /test/error - auth/behavior per handler
++## keel/keel-web - EventController
++- [ ] GET /resources/events/{id} - auth/behavior per handler
++## keel/keel-web - ExportController
++- [ ] GET /export/{cloudProvider}/{account}/{type}/{name} - auth/behavior per handler
++- [ ] GET /export/artifact/{cloudProvider}/{account}/{clusterName} - auth/behavior per handler
++- [ ] GET /export/{application} - auth/behavior per handler
++## keel/keel-web - ExtensionsController
++- [ ] GET /extensions - auth/behavior per handler
++## keel/keel-web - KindController
++- [ ] GET /kinds - auth/behavior per handler
++## keel/keel-web - PassThruController
++- [ ] GET /test/applications/{app}/clusters/{account}/{cluster}/{cloudProvider}/serverGroups - auth/behavior per handler
++## keel/keel-web - ResourceController
++- [ ] GET /resources/{id} - auth/behavior per handler
++- [ ] GET /resources/{id}/status - auth/behavior per handler
++- [ ] POST /resources/{id}/pause - auth/behavior per handler
++- [ ] DELETE /resources/{id}/pause - auth/behavior per handler
++- [ ] POST /resources/diff - auth/behavior per handler
++## keel/keel-web - VerificationController
++- [ ] POST /application/{application}/environment/{environment}/verifications - auth/behavior per handler
++- [ ] POST /application/{application}/environment/{environment}/verifications/retry - auth/behavior per handler
++## keel/keel-web - VetoController
++- [ ] GET / - auth/behavior per handler
++- [ ] GET /vetos/{name}/rejections - auth/behavior per handler
++- [ ] GET /vetos/application/{application}/rejections - auth/behavior per handler
++- [ ] POST /recheck/{resourceId} - auth/behavior per handler
++## kork/kork-web - GenericErrorController
++- [ ] ANY /${server.error.path:/error} - auth/behavior per handler
++## orca/orca-queue - QueueAdminController
++- [ ] POST /admin/queue/hydrate - auth/behavior per handler
++- [ ] POST /admin/queue/zombies:kill - auth/behavior per handler
++- [ ] POST /admin/queue/zombies/{executionId}:kill - auth/behavior per handler
++- [ ] POST /admin/queue/zombies/application/{application}:kill - auth/behavior per handler
++- [ ] POST /admin/queue/kickPending - auth/behavior per handler
++- [ ] POST /admin/queue/pushMessage - auth/behavior per handler
++## orca/orca-web - AdminController
++- [ ] POST /admin/instance/enabled - auth/behavior per handler
++- [ ] PUT /admin/forceCancelExecution - auth/behavior per handler
++## orca/orca-web - OperationsController
++- [ ] POST /orchestrate - auth/behavior per handler
++- [ ] POST /orchestrate/{pipelineConfigId} - auth/behavior per handler
++- [ ] POST /plan - auth/behavior per handler
++- [ ] POST /plan/{pipelineConfigId} - auth/behavior per handler
++- [ ] POST / - auth/behavior per handler
++- [ ] POST /ops - auth/behavior per handler
++- [ ] POST /ops - auth/behavior per handler
++- [ ] ANY /webhooks/preconfigured - auth/behavior per handler
++- [ ] ANY /jobs/preconfigured - auth/behavior per handler
++## orca/orca-web - PipelineTemplateController
++- [x] GET /pipelineTemplate - required source query parameter; missing source returns 400
++- [x] POST /convertPipelineToTemplate - JSON pipeline converts to text/x-yaml template
++## orca/orca-web - ProjectController
++- [ ] GET /projects/{projectId}/pipelines - auth/behavior per handler
++## orca/orca-web - TaskController
++- [ ] GET /applications/{application}/tasks - auth/behavior per handler
++- [ ] GET /tasks - auth/behavior per handler
++- [ ] GET /tasks/{id} - auth/behavior per handler
++- [ ] DELETE /tasks/{id} - auth/behavior per handler
++- [ ] PUT /tasks/{id}/cancel - auth/behavior per handler
++- [ ] PUT /tasks/cancel - auth/behavior per handler
++- [ ] GET /pipelines - auth/behavior per handler
++- [ ] GET /applications/{application}/pipelines/search - auth/behavior per handler
++- [ ] GET /pipelines/{id} - auth/behavior per handler
++- [ ] DELETE /pipelines/{id} - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/cancel - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/pause - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/resume - auth/behavior per handler
++- [ ] GET /pipelines/running - auth/behavior per handler
++- [ ] GET /pipelines/waiting - auth/behavior per handler
++- [ ] PATCH /pipelines/{id}/stages/{stageId} - auth/behavior per handler
++- [ ] PUT /pipelines/{id}/stages/{stageId}/restart - auth/behavior per handler
++- [ ] GET /pipelines/{id}/evaluateExpression - auth/behavior per handler
++- [ ] GET /pipelines/{id}/{stageId}/evaluateExpression - auth/behavior per handler
++- [ ] POST /pipelines/{id}/evaluateVariables - auth/behavior per handler
++- [ ] GET /v2/applications/{application}/pipelines - auth/behavior per handler
++- [ ] GET /applications/{application}/pipelines - auth/behavior per handler
++## orca/orca-web - CapabilitiesController
++- [x] GET /capabilities/deploymentMonitors - optional provider; empty array when absent
++- [x] GET /capabilities/expressions - returns expression function and evaluator capabilities
++## orca/orca-web - ConcourseController
++- [ ] POST /concourse/stage/start - auth/behavior per handler
++## orca/orca-web - CorrelatedTasksController
++- [x] GET /executions/correlated/{correlationId} - looks up pipeline and orchestration IDs by correlation ID
++## orca/orca-web - ExecutionsImportController
++- [ ] POST /admin/executions - auth/behavior per handler
++## orca/orca-web - V2PipelineTemplateController
++- [ ] POST /v2/pipelineTemplates/plan - auth/behavior per handler
++## rosco/rosco-web - BakeryController
++- [ ] GET / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++- [ ] GET / - auth/behavior per handler
++- [ ] POST / - auth/behavior per handler
++- [ ] GET /api/v1/{region}/status/{statusId} - auth/behavior per handler
++- [ ] GET /api/v1/{region}/bake/{bakeId} - auth/behavior per handler
++- [ ] GET /api/v1/{region}/logs/{statusId} - auth/behavior per handler
++- [ ] GET /api/v1/{region}/logs/image/{imageId} - auth/behavior per handler
++- [ ] DELETE / - auth/behavior per handler
++- [ ] POST / - auth/behavior per handler
++- [ ] GET /api/v1/{region}/cancel/{statusId} - auth/behavior per handler
++## rosco/rosco-web - StatusController
++- [ ] ANY /status/instance - auth/behavior per handler
++- [ ] ANY /status/all - auth/behavior per handler
++## rosco/rosco-web - V2BakeryController
++- [ ] POST /api/v2/manifest/bake/{type} - auth/behavior per handler
+diff --git a/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/CapabilitiesControllerApiTest.java b/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/CapabilitiesControllerApiTest.java
+new file mode 100644
+index 00000000..6b4511dc
+--- /dev/null
++++ b/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/CapabilitiesControllerApiTest.java
+@@ -0,0 +1,46 @@
++package com.netflix.spinnaker.orca.controllers;
++
++import static org.hamcrest.Matchers.hasSize;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import com.netflix.spinnaker.orca.capabilities.CapabilitiesService;
++import com.netflix.spinnaker.orca.capabilities.models.ExpressionCapabilityResult;
++import java.util.Optional;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++class CapabilitiesControllerApiTest {
++  private CapabilitiesService capabilities;
++  private MockMvc mvc;
++
++  @BeforeEach
++  void setUp() {
++    capabilities = mock(CapabilitiesService.class);
++    mvc = MockMvcBuilders.standaloneSetup(new CapabilitiesController(capabilities, Optional.empty())).build();
++  }
++
++  @Test
++  void deploymentMonitorsReturnsEmptyArrayWhenNoCapabilityProviderIsConfigured() throws Exception {
++    mvc.perform(get("/capabilities/deploymentMonitors"))
++        .andExpect(status().isOk())
++        .andExpect(content().json("[]"));
++  }
++
++  @Test
++  void expressionsReturnsTheCapabilityServiceResult() throws Exception {
++    ExpressionCapabilityResult result = new ExpressionCapabilityResult();
++    when(capabilities.getExpressionCapabilities()).thenReturn(result);
++
++    mvc.perform(get("/capabilities/expressions"))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.functions", hasSize(0)))
++        .andExpect(jsonPath("$.spelEvaluators").isArray());
++  }
++}
+diff --git a/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/CorrelatedTasksControllerApiTest.java b/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/CorrelatedTasksControllerApiTest.java
+new file mode 100644
+index 00000000..88ac32eb
+--- /dev/null
++++ b/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/CorrelatedTasksControllerApiTest.java
+@@ -0,0 +1,58 @@
++package com.netflix.spinnaker.orca.controllers;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.eq;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import com.netflix.spinnaker.orca.api.pipeline.models.ExecutionType;
++import com.netflix.spinnaker.orca.api.pipeline.models.PipelineExecution;
++import com.netflix.spinnaker.orca.pipeline.persistence.ExecutionRepository;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++class CorrelatedTasksControllerApiTest {
++  private ExecutionRepository executions;
++  private MockMvc mvc;
++
++  @BeforeEach
++  void setUp() {
++    executions = mock(ExecutionRepository.class);
++    mvc = MockMvcBuilders.standaloneSetup(new CorrelatedTasksController(executions)).build();
++  }
++
++  @Test
++  void returnsAnEmptyArrayWhenNoExecutionsHaveTheCorrelationId() throws Exception {
++    when(executions.retrieveByCorrelationId(any(ExecutionType.class), eq("missing"))).thenReturn(null);
++
++    mvc.perform(get("/executions/correlated/missing"))
++        .andExpect(status().isOk())
++        .andExpect(content().json("[]"));
++
++    verify(executions).retrieveByCorrelationId(ExecutionType.PIPELINE, "missing");
++    verify(executions).retrieveByCorrelationId(ExecutionType.ORCHESTRATION, "missing");
++  }
++  @Test
++  void returnsIdsFromBothExecutionTypes() throws Exception {
++    PipelineExecution pipeline = mock(PipelineExecution.class);
++    PipelineExecution orchestration = mock(PipelineExecution.class);
++    when(pipeline.getId()).thenReturn("pipeline-1");
++    when(orchestration.getId()).thenReturn("orchestration-1");
++    when(executions.retrieveByCorrelationId(ExecutionType.PIPELINE, "corr-1")).thenReturn(pipeline);
++    when(executions.retrieveByCorrelationId(ExecutionType.ORCHESTRATION, "corr-1"))
++        .thenReturn(orchestration);
++
++    mvc.perform(get("/executions/correlated/corr-1"))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$[0]").value("pipeline-1"))
++        .andExpect(jsonPath("$[1]").value("orchestration-1"));
++  }
++
++}
+diff --git a/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/PipelineTemplateControllerApiTest.java b/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/PipelineTemplateControllerApiTest.java
+new file mode 100644
+index 00000000..ea026e22
+--- /dev/null
++++ b/orca/orca-web/src/test/java/com/netflix/spinnaker/orca/controllers/PipelineTemplateControllerApiTest.java
+@@ -0,0 +1,39 @@
++package com.netflix.spinnaker.orca.controllers;
++
++import static org.hamcrest.Matchers.containsString;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++class PipelineTemplateControllerApiTest {
++  private MockMvc mvc;
++
++  @BeforeEach
++  void setUp() {
++    mvc = MockMvcBuilders.standaloneSetup(new PipelineTemplateController()).build();
++  }
++
++  @Test
++  void getRequiresATemplateSource() throws Exception {
++    mvc.perform(get("/pipelineTemplate"))
++        .andExpect(status().isBadRequest());
++  }
++
++  @Test
++  void convertsPipelineJsonToYaml() throws Exception {
++    mvc.perform(post("/convertPipelineToTemplate")
++            .contentType(MediaType.APPLICATION_JSON)
++            .content("{\"stages\": []}"))
++        .andExpect(status().isOk())
++        .andExpect(content().contentTypeCompatibleWith("text/x-yaml"))
++        .andExpect(content().string(containsString("id: spinnaker-generatedTemplate")))
++        .andExpect(content().string(containsString("stages: []")));
++  }
++}

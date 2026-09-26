@@ -1,0 +1,299 @@
+{
+  "scope": "api_tests_with_dispatch_labels",
+  "labeled_test_count": 89,
+  "label_split": {
+    "in-process": {
+      "test_count": 87,
+      "pct_of_labeled_tests": 97.75280898876404
+    },
+    "unknown": {
+      "test_count": 2,
+      "pct_of_labeled_tests": 2.247191011235955
+    }
+  },
+  "multiple_label_tests": {
+    "count": 0,
+    "total": 89,
+    "proportion": 0.0
+  },
+  "per_label": {
+    "in-process": {
+      "test_count": 87,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 87,
+          "min": 3.0,
+          "max": 253.0,
+          "mean": 25.60919540229885,
+          "p25": 11.5,
+          "p50": 21.0,
+          "p75": 36.5,
+          "p90": 44.0
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 87,
+          "min": 1.0,
+          "max": 73.0,
+          "mean": 3.218390804597701,
+          "p25": 2.0,
+          "p50": 2.0,
+          "p75": 2.0,
+          "p90": 4.0
+        },
+        "expanded_objects_created": {
+          "count": 87,
+          "min": 0.0,
+          "max": 80.0,
+          "mean": 6.011494252873563,
+          "p25": 1.0,
+          "p50": 3.0,
+          "p75": 9.0,
+          "p90": 14.0
+        },
+        "expanded_helper_method_count": {
+          "count": 87,
+          "min": 0.0,
+          "max": 68.0,
+          "mean": 0.9080459770114943,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "mocked_interaction_count": {
+          "count": 87,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 87,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.7701149425287356,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 0,
+          "total": 87,
+          "proportion": 0.0
+        },
+        "has_cleanup_delete": {
+          "count": 0,
+          "total": 87,
+          "proportion": 0.0
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 87,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 87,
+          "min": 0.0,
+          "max": 4.0,
+          "mean": 0.9770114942528736,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "3xx": {
+          "count": 87,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.05747126436781609,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "4xx": {
+          "count": 87,
+          "min": 0.0,
+          "max": 5.0,
+          "mean": 0.42528735632183906,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "5xx": {
+          "count": 87,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.022988505747126436,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 87,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.011494252873563218,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    },
+    "unknown": {
+      "test_count": 2,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 2,
+          "min": 67.0,
+          "max": 279.0,
+          "mean": 173.0,
+          "p25": 120.0,
+          "p50": 173.0,
+          "p75": 226.0,
+          "p90": 257.8
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 2,
+          "min": 6.0,
+          "max": 52.0,
+          "mean": 29.0,
+          "p25": 17.5,
+          "p50": 29.0,
+          "p75": 40.5,
+          "p90": 47.400000000000006
+        },
+        "expanded_objects_created": {
+          "count": 2,
+          "min": 4.0,
+          "max": 4.0,
+          "mean": 4.0,
+          "p25": 4.0,
+          "p50": 4.0,
+          "p75": 4.0,
+          "p90": 4.0
+        },
+        "expanded_helper_method_count": {
+          "count": 2,
+          "min": 2.0,
+          "max": 33.0,
+          "mean": 17.5,
+          "p25": 9.75,
+          "p50": 17.5,
+          "p75": 25.25,
+          "p90": 29.9
+        },
+        "mocked_interaction_count": {
+          "count": 2,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 2,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 0,
+          "total": 2,
+          "proportion": 0.0
+        },
+        "has_cleanup_delete": {
+          "count": 0,
+          "total": 2,
+          "proportion": 0.0
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 2,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 2,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.5,
+          "p25": 0.25,
+          "p50": 0.5,
+          "p75": 0.75,
+          "p90": 0.9
+        },
+        "3xx": {
+          "count": 2,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "4xx": {
+          "count": 2,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "5xx": {
+          "count": 2,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 2,
+          "min": 0.0,
+          "max": 16.0,
+          "mean": 8.0,
+          "p25": 4.0,
+          "p50": 8.0,
+          "p75": 12.0,
+          "p90": 14.4
+        }
+      }
+    }
+  }
+}

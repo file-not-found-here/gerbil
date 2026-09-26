@@ -1,0 +1,446 @@
+{
+  "scope": "api_tests",
+  "api_test_count": 34489,
+  "request_event_count": 94062,
+  "event_surfaces": {
+    "body_payload": {
+      "events": {
+        "count": 23733,
+        "total": 94062,
+        "proportion": 0.2523123046501244
+      },
+      "tests_with_any": {
+        "count": 12017,
+        "total": 34489,
+        "proportion": 0.3484299341819131
+      }
+    },
+    "headers": {
+      "events": {
+        "count": 30149,
+        "total": 94062,
+        "proportion": 0.32052263400735687
+      },
+      "tests_with_any": {
+        "count": 15276,
+        "total": 34489,
+        "proportion": 0.4429238307866276
+      }
+    },
+    "query_params": {
+      "events": {
+        "count": 14989,
+        "total": 94062,
+        "proportion": 0.1593523420722502
+      },
+      "tests_with_any": {
+        "count": 8488,
+        "total": 34489,
+        "proportion": 0.24610745455072633
+      }
+    },
+    "path_params": {
+      "events": {
+        "count": 6404,
+        "total": 94062,
+        "proportion": 0.06808275392826009
+      },
+      "tests_with_any": {
+        "count": 4065,
+        "total": 34489,
+        "proportion": 0.11786366667633158
+      }
+    },
+    "form_params": {
+      "events": {
+        "count": 478,
+        "total": 94062,
+        "proportion": 0.0050817545873998
+      },
+      "tests_with_any": {
+        "count": 429,
+        "total": 34489,
+        "proportion": 0.012438748586505842
+      }
+    }
+  },
+  "per_event": {
+    "query_param_names_per_event": {
+      "count": 94062,
+      "min": 0.0,
+      "max": 21.0,
+      "mean": 0.29891986136803383,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 1.0
+    },
+    "header_names_per_event": {
+      "count": 94062,
+      "min": 0.0,
+      "max": 11.0,
+      "mean": 0.3608364695626289,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "p90": 1.0
+    }
+  },
+  "builder_usage": {
+    "events_with_builder_correlation": {
+      "count": 64597,
+      "total": 94062,
+      "proportion": 0.6867491654440688
+    },
+    "tests_with_builder_correlation": {
+      "count": 25081,
+      "total": 34489,
+      "proportion": 0.7272173736553684
+    },
+    "builder_group_count": 64597,
+    "builder_count_total": 128365,
+    "contributed_properties": {
+      "total": 172758,
+      "by_property": {
+        "http_method": {
+          "count": 37714,
+          "total": 172758,
+          "proportion": 0.21830537514905243
+        },
+        "path": {
+          "count": 35174,
+          "total": 172758,
+          "proportion": 0.20360272751478947
+        },
+        "headers": {
+          "count": 12603,
+          "total": 172758,
+          "proportion": 0.07295175910811656
+        },
+        "header_names": {
+          "count": 33708,
+          "total": 172758,
+          "proportion": 0.19511686868336053
+        },
+        "query_param_names": {
+          "count": 25190,
+          "total": 172758,
+          "proportion": 0.14581090311302516
+        },
+        "path_param_names": {
+          "count": 1650,
+          "total": 172758,
+          "proportion": 0.009550932518320425
+        },
+        "form_param_names": {
+          "count": 948,
+          "total": 172758,
+          "proportion": 0.0054874448650713715
+        },
+        "has_body_payload": {
+          "count": 21086,
+          "total": 172758,
+          "proportion": 0.12205512914018453
+        },
+        "auth_hints": {
+          "count": 4685,
+          "total": 172758,
+          "proportion": 0.02711885990807951
+        }
+      }
+    }
+  },
+  "header_vocabulary": {
+    "distinct_header_name_count": 204,
+    "tests_with_any_header": {
+      "count": 13664,
+      "total": 34489,
+      "proportion": 0.39618429064339356
+    },
+    "distinct_header_names_per_test": {
+      "count": 34489,
+      "min": 0.0,
+      "max": 11.0,
+      "mean": 0.5664704688451391,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "p90": 2.0
+    },
+    "header_name_occurrences": {
+      "total": 71973,
+      "content_negotiation": {
+        "count": 55660,
+        "total": 71973,
+        "proportion": 0.7733455601406083
+      }
+    },
+    "header_name_test_frequency": {
+      "content-type": 10155,
+      "accept": 5494,
+      "authorization": 1466,
+      "host": 285,
+      "origin": 248,
+      "cookie": 148,
+      "user-agent": 115,
+      "accept-language": 107,
+      "apiversion": 93,
+      "access-control-request-method": 72,
+      "book": 58,
+      "sessionid": 58,
+      "content-disposition": 57,
+      "x-forwarded-for": 48,
+      "ce-id": 45,
+      "connection": 45,
+      "forwarded": 42,
+      "ce-source": 41,
+      "ce-type": 41,
+      "if-match": 39,
+      "x-forwarded-proto": 39,
+      "ce-specversion": 38,
+      "access-control-request-headers": 35,
+      "range": 30,
+      "x-on-behalf-of": 27,
+      "x-forwarded-host": 23,
+      "headername": 20,
+      "access-control-allow-origin": 18,
+      "access-control-expose-headers": 18,
+      "access-control-max-age": 18,
+      "accept-encoding": 17,
+      "sleep": 17,
+      "x-forwarded-prefix": 17,
+      "x-forwarded-server": 16,
+      "x-nakadi-cursors": 14,
+      "x-road-client": 14,
+      "access-control-allow-credentials": 13,
+      "referer": 13,
+      "x-iota-api-version": 13,
+      "content-encoding": 12,
+      "if-none-match": 12,
+      "access-control-allow-headers": 11,
+      "access-control-allow-methods": 11,
+      "proxy-authorization": 11,
+      "x-user": 11,
+      "foo": 10,
+      "password": 10,
+      "x-password": 10,
+      "x-correlation-id": 8,
+      "x-nakadi-streamid": 8,
+      "x-referrer": 8,
+      "header1": 7,
+      "x-amz-sns-message-type": 7,
+      "filter1": 6,
+      "filter2": 6,
+      "filter3": 6,
+      "i-know-what-i-m-doing": 6,
+      "responsefilter1": 6,
+      "responsefilter2": 6,
+      "responsefilter3": 6,
+      "user": 6,
+      "www-authenticate": 6,
+      "x-forwarded-ssl": 6,
+      "bar": 5,
+      "cache-control": 5,
+      "ce-subject": 5,
+      "name": 5,
+      "role": 5,
+      "x-forwarded-authorization": 5,
+      "x-forwarded-port": 5,
+      "x-nuget-apikey": 5,
+      "abort": 4,
+      "auth-failure": 4,
+      "challenge-data": 4,
+      "if-modified-since": 4,
+      "jane": 4,
+      "john": 4,
+      "myheader": 4,
+      "some-input": 4,
+      "x-api-key": 4,
+      "x-cf-forwarded-url": 4,
+      "a": 3,
+      "activityid": 3,
+      "apikey": 3,
+      "ce-custom": 3,
+      "ce-time": 3,
+      "content-length": 3,
+      "digest": 3,
+      "empno": 3,
+      "expect": 3,
+      "ignore": 3,
+      "sec-websocket-key": 3,
+      "token-code": 3,
+      "towhom": 3,
+      "userid": 3,
+      "x-captcha-payload": 3,
+      "x-cf-proxy-metadata": 3,
+      "x-forwarded-trusted-proxy": 3,
+      "x-gitlab-event": 3,
+      "x-line-signature": 3,
+      "x-real-ip": 3,
+      "x-requested-with": 3,
+      "x-set-accept-to-text": 3,
+      "x-user-secret": 3,
+      "x-username": 3,
+      "ce-customa": 2,
+      "ce-customb": 2,
+      "fail-augmentation": 2,
+      "fail-authentication": 2,
+      "fail-unhandled": 2,
+      "offiothread": 2,
+      "optional-input": 2,
+      "pepe": 2,
+      "preamble": 2,
+      "prematchfilter1": 2,
+      "prematchfilter2": 2,
+      "prematchfilter3": 2,
+      "response-input": 2,
+      "some-other-uni-exception-input": 2,
+      "some-other-uni-input": 2,
+      "some-uni-exception-input": 2,
+      "some-uni-input": 2,
+      "strict-transport-security": 2,
+      "tenantname": 2,
+      "test": 2,
+      "test-content-type": 2,
+      "useexceptionmapper": 2,
+      "x-cf-proxy-signature": 2,
+      "x-content-type-options": 2,
+      "x-frame-options": 2,
+      "x-grpc-web": 2,
+      "x-kogito-referenceid": 2,
+      "x-registry-artifacttype": 2,
+      "x-request-vary": 2,
+      "x-road-id": 2,
+      "x-test": 2,
+      "x-user-agent": 2,
+      "x-xss-protection": 2,
+      "b": 1,
+      "b3": 1,
+      "bypasscache": 1,
+      "ce-kogitoprocrefid": 1,
+      "custom": 1,
+      "custom-global": 1,
+      "custom-named": 1,
+      "customauthorization": 1,
+      "div": 1,
+      "expires": 1,
+      "fooheader": 1,
+      "formid": 1,
+      "header-param": 1,
+      "header2": 1,
+      "header3": 1,
+      "headername2": 1,
+      "headerp": 1,
+      "hush-hush": 1,
+      "internal-key": 1,
+      "ip": 1,
+      "keep-alive": 1,
+      "keep-event": 1,
+      "max-header-size": 1,
+      "my-header": 1,
+      "my-number-header": 1,
+      "myheader1": 1,
+      "myheader2": 1,
+      "mymultiheader": 1,
+      "not_too_large_header": 1,
+      "pragma": 1,
+      "secure": 1,
+      "shib-mail": 1,
+      "some-other-input": 1,
+      "structr-force-merge-of-nested-properties": 1,
+      "structr-return-details-for-created-objects": 1,
+      "tenant-id": 1,
+      "too_large_header": 1,
+      "transfer-encoding": 1,
+      "ttl": 1,
+      "unexpectedheader": 1,
+      "username": 1,
+      "vary": 1,
+      "x-amz-tagging": 1,
+      "x-app-name": 1,
+      "x-authorization": 1,
+      "x-b3-flags": 1,
+      "x-b3-parentspanid": 1,
+      "x-b3-spanid": 1,
+      "x-b3-traceid": 1,
+      "x-envoy-path": 1,
+      "x-example-header": 1,
+      "x-fhir-starter": 1,
+      "x-foo": 1,
+      "x-identity-zone-id": 1,
+      "x-identity-zone-subdomain": 1,
+      "x-next-url": 1,
+      "x-ratelimit-header": 1,
+      "x-registry-description": 1,
+      "x-registry-description-encoded": 1,
+      "x-registry-name": 1,
+      "x-request-foo": 1,
+      "x-request-id": 1,
+      "x-spinnaker-accounts": 1,
+      "x-spinnaker-user": 1,
+      "x-structr-edition": 1,
+      "x-test-header-1": 1
+    }
+  },
+  "builder_types_given_body": {
+    "scope": "per_dispatch_builder_groups_with_body_payload",
+    "builder_group_count": 64597,
+    "body_builder_group_count": 21086,
+    "share_of_builder_groups_with_body_payload": {
+      "count": 21086,
+      "total": 64597,
+      "proportion": 0.326423827731938
+    },
+    "builder_count": 50568,
+    "builder_types": {
+      "total": 50568,
+      "by_type": {
+        "http_method": {
+          "count": 5062,
+          "total": 50568,
+          "proportion": 0.10010283183040658
+        },
+        "path": {
+          "count": 6396,
+          "total": 50568,
+          "proportion": 0.12648315140009492
+        },
+        "headers": {
+          "count": 4692,
+          "total": 50568,
+          "proportion": 0.0927859515899383
+        },
+        "header_names": {
+          "count": 18788,
+          "total": 50568,
+          "proportion": 0.3715393133997785
+        },
+        "query_param_names": {
+          "count": 1049,
+          "total": 50568,
+          "proportion": 0.02074434424932764
+        },
+        "path_param_names": {
+          "count": 451,
+          "total": 50568,
+          "proportion": 0.008918683752570796
+        },
+        "form_param_names": {
+          "count": 47,
+          "total": 50568,
+          "proportion": 0.0009294415440594842
+        },
+        "has_body_payload": {
+          "count": 21086,
+          "total": 50568,
+          "proportion": 0.4169830722986869
+        },
+        "auth_hints": {
+          "count": 1564,
+          "total": 50568,
+          "proportion": 0.030928650529979434
+        }
+      }
+    }
+  }
+}

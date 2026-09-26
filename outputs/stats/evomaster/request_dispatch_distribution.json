@@ -1,0 +1,156 @@
+{
+  "scope": "api_tests_with_dispatch_labels",
+  "labeled_test_count": 3998,
+  "label_split": {
+    "local-network": {
+      "test_count": 3998,
+      "pct_of_labeled_tests": 100.0
+    }
+  },
+  "multiple_label_tests": {
+    "count": 0,
+    "total": 3998,
+    "proportion": 0.0
+  },
+  "per_label": {
+    "local-network": {
+      "test_count": 3998,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 3998,
+          "min": 24.0,
+          "max": 706.0,
+          "mean": 113.17083541770886,
+          "p25": 40.0,
+          "p50": 87.0,
+          "p75": 120.0,
+          "p90": 202.0
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 3998,
+          "min": 4.0,
+          "max": 5.0,
+          "mean": 4.000250125062531,
+          "p25": 4.0,
+          "p50": 4.0,
+          "p75": 4.0,
+          "p90": 4.0
+        },
+        "expanded_objects_created": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "expanded_helper_method_count": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "mocked_interaction_count": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 788,
+          "total": 3998,
+          "proportion": 0.19709854927463732
+        },
+        "has_cleanup_delete": {
+          "count": 8,
+          "total": 3998,
+          "proportion": 0.002001000500250125
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 0.5420210105052526,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "3xx": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 3.0,
+          "mean": 0.04552276138069034,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "4xx": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 1.5090045022511256,
+          "p25": 0.0,
+          "p50": 1.0,
+          "p75": 2.0,
+          "p90": 4.0
+        },
+        "5xx": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 3998,
+          "min": 0.0,
+          "max": 6.0,
+          "mean": 0.2088544272136068,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        }
+      }
+    }
+  }
+}

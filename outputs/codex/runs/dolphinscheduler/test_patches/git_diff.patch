@@ -1,0 +1,600 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..36b11d6
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,390 @@
++# API Endpoint Coverage (Progress: 298/298)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## org/apache/dolphinscheduler/api/controller - AccessTokenController
++- [x] GET /dolphinscheduler/access-tokens - session user required
++- [x] POST /dolphinscheduler/access-tokens - session user required
++- [x] POST /dolphinscheduler/access-tokens/generate - session user required
++- [x] GET /dolphinscheduler/access-tokens/user/{userId} - session user required
++- [x] DELETE /dolphinscheduler/access-tokens/{id} - session user required
++- [x] PUT /dolphinscheduler/access-tokens/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller - AlertGroupController
++- [x] GET /dolphinscheduler/alert-groups - session user required
++- [x] POST /dolphinscheduler/alert-groups - session user required
++- [x] GET /dolphinscheduler/alert-groups/list - session user required
++- [x] POST /dolphinscheduler/alert-groups/query - session user required
++- [x] GET /dolphinscheduler/alert-groups/verify-name - session user required
++- [x] DELETE /dolphinscheduler/alert-groups/{id} - session user required
++- [x] PUT /dolphinscheduler/alert-groups/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller - AlertPluginInstanceController
++- [x] GET /dolphinscheduler/alert-plugin-instances - session user required
++- [x] POST /dolphinscheduler/alert-plugin-instances - session user required
++- [x] GET /dolphinscheduler/alert-plugin-instances/list - session user required
++- [x] POST /dolphinscheduler/alert-plugin-instances/test-send - session user required
++- [x] GET /dolphinscheduler/alert-plugin-instances/verify-name - session user required
++- [x] DELETE /dolphinscheduler/alert-plugin-instances/{id} - session user required
++- [x] GET /dolphinscheduler/alert-plugin-instances/{id} - session user required
++- [x] PUT /dolphinscheduler/alert-plugin-instances/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller - AuditLogController
++- [x] GET /dolphinscheduler/projects/audit/audit-log-list - session user required
++- [x] GET /dolphinscheduler/projects/audit/audit-log-model-type - session user required
++- [x] GET /dolphinscheduler/projects/audit/audit-log-operation-type - session user required
++
++## org/apache/dolphinscheduler/api/controller - CloudController
++- [x] GET /dolphinscheduler/cloud/azure/datafactory/factories - session user required
++- [x] GET /dolphinscheduler/cloud/azure/datafactory/pipelines - session user required
++- [x] GET /dolphinscheduler/cloud/azure/datafactory/resourceGroups - session user required
++
++## org/apache/dolphinscheduler/api/controller - ClusterController
++- [x] POST /dolphinscheduler/cluster/create - session user required
++- [x] POST /dolphinscheduler/cluster/delete - session user required
++- [x] GET /dolphinscheduler/cluster/list-paging - session user required
++- [x] GET /dolphinscheduler/cluster/query-by-code - session user required
++- [x] GET /dolphinscheduler/cluster/query-cluster-list - session user required
++- [x] POST /dolphinscheduler/cluster/update - session user required
++- [x] POST /dolphinscheduler/cluster/verify-cluster - session user required
++
++## org/apache/dolphinscheduler/api/controller - DataAnalysisController
++- [x] GET /dolphinscheduler/projects/analysis/command-state-count - session user required
++- [x] GET /dolphinscheduler/projects/analysis/define-user-count - session user required
++- [x] GET /dolphinscheduler/projects/analysis/listCommand - session user required
++- [x] GET /dolphinscheduler/projects/analysis/listErrorCommand - session user required
++- [x] GET /dolphinscheduler/projects/analysis/queue-count - session user required
++- [x] GET /dolphinscheduler/projects/analysis/task-state-count - session user required
++- [x] GET /dolphinscheduler/projects/analysis/workflow-state-count - session user required
++
++## org/apache/dolphinscheduler/api/controller - DataSourceController
++- [x] GET /dolphinscheduler/datasources - session user required
++- [x] POST /dolphinscheduler/datasources - session user required
++- [x] GET /dolphinscheduler/datasources/authed-datasource - session user required
++- [x] POST /dolphinscheduler/datasources/connect - session user required
++- [x] GET /dolphinscheduler/datasources/databases - session user required
++- [x] GET /dolphinscheduler/datasources/kerberos-startup-state - session user required
++- [x] GET /dolphinscheduler/datasources/list - session user required
++- [x] GET /dolphinscheduler/datasources/tableColumns - session user required
++- [x] GET /dolphinscheduler/datasources/tables - session user required
++- [x] GET /dolphinscheduler/datasources/unauth-datasource - session user required
++- [x] GET /dolphinscheduler/datasources/verify-name - session user required
++- [x] DELETE /dolphinscheduler/datasources/{id} - session user required
++- [x] GET /dolphinscheduler/datasources/{id} - session user required
++- [x] PUT /dolphinscheduler/datasources/{id} - session user required
++- [x] GET /dolphinscheduler/datasources/{id}/connect-test - session user required
++
++## org/apache/dolphinscheduler/api/controller - DsErrorController
++- [x] GET /dolphinscheduler/error - framework error forwarding; no auth
++
++## org/apache/dolphinscheduler/api/controller - DynamicTaskTypeController
++- [x] GET /dolphinscheduler/dynamic/taskCategories - session user required
++- [x] GET /dolphinscheduler/dynamic/{taskCategory}/taskTypes - session user required
++
++## org/apache/dolphinscheduler/api/controller - EnvironmentController
++- [x] POST /dolphinscheduler/environment/create - session user required
++- [x] POST /dolphinscheduler/environment/delete - session user required
++- [x] GET /dolphinscheduler/environment/list-paging - session user required
++- [x] GET /dolphinscheduler/environment/query-by-code - session user required
++- [x] GET /dolphinscheduler/environment/query-environment-list - session user required
++- [x] POST /dolphinscheduler/environment/update - session user required
++- [x] POST /dolphinscheduler/environment/verify-environment - session user required
++
++## org/apache/dolphinscheduler/api/controller - ExecutorController
++- [x] POST /dolphinscheduler/projects/{projectCode}/executors/batch-execute - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/executors/batch-start-workflow-instance - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/executors/execute - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/executors/execute-task - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/executors/start-workflow-instance - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/executors/task-instance/{code}/start - session user required
++
++## org/apache/dolphinscheduler/api/controller - FavTaskController
++- [x] GET /dolphinscheduler/favourite/taskTypes - session user required
++- [x] DELETE /dolphinscheduler/favourite/{taskType} - session user required
++- [x] POST /dolphinscheduler/favourite/{taskType} - session user required
++
++## org/apache/dolphinscheduler/api/controller - K8sNamespaceController
++- [x] GET /dolphinscheduler/k8s-namespace - session user required
++- [x] POST /dolphinscheduler/k8s-namespace - session user required
++- [x] GET /dolphinscheduler/k8s-namespace/authed-namespace - session user required
++- [x] GET /dolphinscheduler/k8s-namespace/available-list - session user required
++- [x] POST /dolphinscheduler/k8s-namespace/delete - session user required
++- [x] GET /dolphinscheduler/k8s-namespace/unauth-namespace - session user required
++- [x] POST /dolphinscheduler/k8s-namespace/verify - session user required
++
++## org/apache/dolphinscheduler/api/controller - LoggerController
++- [x] GET /dolphinscheduler/log/detail - session user required
++- [x] GET /dolphinscheduler/log/download-log - session user required
++- [x] GET /dolphinscheduler/log/{projectCode}/detail - session user required
++- [x] GET /dolphinscheduler/log/{projectCode}/download-log - session user required
++
++## org/apache/dolphinscheduler/api/controller - LoginController
++- [x] DELETE /dolphinscheduler/cookies - public; login interceptor exclusion
++- [x] POST /dolphinscheduler/login - public; login interceptor exclusion
++- [x] GET /dolphinscheduler/login/sso - public; login interceptor exclusion
++- [x] GET /dolphinscheduler/oauth2-provider - public; login interceptor exclusion
++- [x] GET /dolphinscheduler/redirect/login/oauth2 - public; login interceptor exclusion
++- [x] POST /dolphinscheduler/signOut - session user required
++
++## org/apache/dolphinscheduler/api/controller - MonitorController
++- [x] GET /dolphinscheduler/monitor/databases - session user required
++- [x] GET /dolphinscheduler/monitor/{nodeType} - session user required
++
++## org/apache/dolphinscheduler/api/controller - ProjectController
++- [x] GET /dolphinscheduler/projects - session user required
++- [x] POST /dolphinscheduler/projects - session user required
++- [x] GET /dolphinscheduler/projects/authed-project - session user required
++- [x] GET /dolphinscheduler/projects/authed-user - session user required
++- [x] GET /dolphinscheduler/projects/created-and-authed - session user required
++- [x] GET /dolphinscheduler/projects/list - session user required
++- [x] GET /dolphinscheduler/projects/list-dependent - session user required
++- [x] GET /dolphinscheduler/projects/project-with-authorized-level - session user required
++- [x] GET /dolphinscheduler/projects/project-with-authorized-level-list-paging - session user required
++- [x] GET /dolphinscheduler/projects/unauth-project - session user required
++- [x] DELETE /dolphinscheduler/projects/{code} - session user required
++- [x] GET /dolphinscheduler/projects/{code} - session user required
++- [x] PUT /dolphinscheduler/projects/{code} - session user required
++
++## org/apache/dolphinscheduler/api/controller - ProjectParameterController
++- [x] GET /dolphinscheduler/projects/{projectCode}/project-parameter - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/project-parameter - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/project-parameter/batch-delete - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/project-parameter/delete - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/project-parameter/{code} - session user required
++- [x] PUT /dolphinscheduler/projects/{projectCode}/project-parameter/{code} - session user required
++
++## org/apache/dolphinscheduler/api/controller - ProjectPreferenceController
++- [x] GET /dolphinscheduler/projects/{projectCode}/project-preference - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/project-preference - session user required
++- [x] PUT /dolphinscheduler/projects/{projectCode}/project-preference - session user required
++
++## org/apache/dolphinscheduler/api/controller - ProjectWorkerGroupController
++- [x] GET /dolphinscheduler/projects/{projectCode}/worker-group - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/worker-group - session user required
++
++## org/apache/dolphinscheduler/api/controller - QueueController
++- [x] GET /dolphinscheduler/queues - session user required
++- [x] POST /dolphinscheduler/queues - session user required
++- [x] GET /dolphinscheduler/queues/list - session user required
++- [x] POST /dolphinscheduler/queues/verify - session user required
++- [x] DELETE /dolphinscheduler/queues/{id} - session user required
++- [x] PUT /dolphinscheduler/queues/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller - ResourcesController
++- [x] DELETE /dolphinscheduler/resources - session user required
++- [x] GET /dolphinscheduler/resources - session user required
++- [x] POST /dolphinscheduler/resources - session user required
++- [x] PUT /dolphinscheduler/resources - session user required
++- [x] GET /dolphinscheduler/resources/base-dir - session user required
++- [x] POST /dolphinscheduler/resources/directory - session user required
++- [x] GET /dolphinscheduler/resources/download - session user required
++- [x] GET /dolphinscheduler/resources/list - session user required
++- [x] POST /dolphinscheduler/resources/online-create - session user required
++- [x] GET /dolphinscheduler/resources/query-by-type - session user required
++- [x] PUT /dolphinscheduler/resources/update-content - session user required
++- [x] GET /dolphinscheduler/resources/view - session user required
++
++## org/apache/dolphinscheduler/api/controller - SchedulerController
++- [x] GET /dolphinscheduler/projects/{projectCode}/schedules - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/schedules - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/schedules/list - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/schedules/preview - session user required
++- [x] PUT /dolphinscheduler/projects/{projectCode}/schedules/update/{code} - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/schedules/{id} - session user required
++- [x] PUT /dolphinscheduler/projects/{projectCode}/schedules/{id} - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/schedules/{id}/offline - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/schedules/{id}/online - session user required
++
++## org/apache/dolphinscheduler/api/controller - TaskDefinitionController
++- [x] GET /dolphinscheduler/projects/{projectCode}/task-definition/gen-task-codes - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/task-definition/{code} - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/task-definition/{code}/release - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/task-definition/{code}/versions - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/task-definition/{code}/versions/{version} - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/task-definition/{code}/versions/{version} - session user required
++- [x] PUT /dolphinscheduler/projects/{projectCode}/task-definition/{code}/with-upstream - session user required
++
++## org/apache/dolphinscheduler/api/controller - TaskGroupController
++- [x] POST /dolphinscheduler/task-group/close-task-group - session user required
++- [x] POST /dolphinscheduler/task-group/create - session user required
++- [x] POST /dolphinscheduler/task-group/forceStart - session user required
++- [x] GET /dolphinscheduler/task-group/list-paging - session user required
++- [x] POST /dolphinscheduler/task-group/modifyPriority - session user required
++- [x] GET /dolphinscheduler/task-group/query-list-by-group-id - session user required
++- [x] GET /dolphinscheduler/task-group/query-list-by-projectCode - session user required
++- [x] GET /dolphinscheduler/task-group/query-list-by-status - session user required
++- [x] POST /dolphinscheduler/task-group/start-task-group - session user required
++- [x] POST /dolphinscheduler/task-group/update - session user required
++
++## org/apache/dolphinscheduler/api/controller - TaskInstanceController
++- [x] GET /dolphinscheduler/projects/{projectCode}/task-instances - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/task-instances/{id}/force-success - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/task-instances/{id}/savepoint - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/task-instances/{id}/stop - session user required
++
++## org/apache/dolphinscheduler/api/controller - TenantController
++- [x] GET /dolphinscheduler/tenants - session user required
++- [x] POST /dolphinscheduler/tenants - session user required
++- [x] GET /dolphinscheduler/tenants/list - session user required
++- [x] GET /dolphinscheduler/tenants/verify-code - session user required
++- [x] DELETE /dolphinscheduler/tenants/{id} - session user required
++- [x] PUT /dolphinscheduler/tenants/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller - UiPluginController
++- [x] GET /dolphinscheduler/ui-plugins/query-by-type - session user required
++- [x] GET /dolphinscheduler/ui-plugins/query-product-info - session user required
++- [x] GET /dolphinscheduler/ui-plugins/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller - UsersController
++- [x] POST /dolphinscheduler/users/activate - session user required
++- [x] GET /dolphinscheduler/users/authed-user - session user required
++- [x] POST /dolphinscheduler/users/batch/activate - session user required
++- [x] POST /dolphinscheduler/users/create - session user required
++- [x] POST /dolphinscheduler/users/delete - session user required
++- [x] GET /dolphinscheduler/users/get-user-info - session user required
++- [x] POST /dolphinscheduler/users/grant-datasource - session user required
++- [x] POST /dolphinscheduler/users/grant-namespace - session user required
++- [x] POST /dolphinscheduler/users/grant-project - session user required
++- [x] POST /dolphinscheduler/users/grant-project-by-code - session user required
++- [x] POST /dolphinscheduler/users/grant-project-with-read-perm - session user required
++- [x] GET /dolphinscheduler/users/list - session user required
++- [x] GET /dolphinscheduler/users/list-all - session user required
++- [x] GET /dolphinscheduler/users/list-paging - session user required
++- [x] POST /dolphinscheduler/users/register - public registration; required inputs validated
++- [x] POST /dolphinscheduler/users/revoke-project - session user required
++- [x] POST /dolphinscheduler/users/revoke-project-by-id - session user required
++- [x] GET /dolphinscheduler/users/unauth-user - session user required
++- [x] POST /dolphinscheduler/users/update - session user required
++- [x] GET /dolphinscheduler/users/verify-user-name - session user required
++
++## org/apache/dolphinscheduler/api/controller - WorkerGroupController
++- [x] GET /dolphinscheduler/worker-groups - session user required
++- [x] POST /dolphinscheduler/worker-groups - session user required
++- [x] GET /dolphinscheduler/worker-groups/all - session user required
++- [x] GET /dolphinscheduler/worker-groups/worker-address-list - session user required
++- [x] DELETE /dolphinscheduler/worker-groups/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller - WorkflowDefinitionController
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-definition - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/all - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-definition/batch-copy - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-definition/batch-delete - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-definition/batch-export - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-definition/batch-move - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/batch-query-tasks - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-definition/import - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/list - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/query-by-name - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/query-task-definition-list - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/query-workflow-definition-list - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/simple-list - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/verify-name - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/workflow-definition/{code} - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/{code} - session user required
++- [x] PUT /dolphinscheduler/projects/{projectCode}/workflow-definition/{code} - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-definition/{code}/release - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/{code}/tasks - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/{code}/versions - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/workflow-definition/{code}/versions/{version} - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/{code}/versions/{version} - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/{code}/view-tree - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-definition/{code}/view-variables - session user required
++
++## org/apache/dolphinscheduler/api/controller - WorkflowInstanceController
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-instances/batch-delete - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/query-dynamic-sub-workflows - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/query-parent-by-sub - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/query-sub-by-parent - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/top-n - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/trigger - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/workflow-instances/{id} - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/{id} - session user required
++- [x] PUT /dolphinscheduler/projects/{projectCode}/workflow-instances/{id} - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/{id}/tasks - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/{id}/view-gantt - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-instances/{id}/view-variables - session user required
++
++## org/apache/dolphinscheduler/api/controller - WorkflowLineageController
++- [x] GET /dolphinscheduler/projects/{projectCode}/lineages/list - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/lineages/query-by-name - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/lineages/query-dependent-tasks - session user required
++- [x] POST /dolphinscheduler/projects/{projectCode}/lineages/tasks/verify-delete - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/lineages/{workFlowCode} - session user required
++
++## org/apache/dolphinscheduler/api/controller - WorkflowTaskRelationController
++- [x] POST /dolphinscheduler/projects/{projectCode}/workflow-task-relation - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/workflow-task-relation/{taskCode} - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/workflow-task-relation/{taskCode}/downstream - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-task-relation/{taskCode}/downstream - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/workflow-task-relation/{taskCode}/upstream - session user required
++- [x] GET /dolphinscheduler/projects/{projectCode}/workflow-task-relation/{taskCode}/upstream - session user required
++- [x] DELETE /dolphinscheduler/projects/{projectCode}/workflow-task-relation/{workflowDefinitionCode}/{preTaskCode}/{postTaskCode} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - AccessTokenV2Controller
++- [x] POST /dolphinscheduler/v2/access-tokens - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - ProjectV2Controller
++- [x] GET /dolphinscheduler/v2/projects - session user required
++- [x] POST /dolphinscheduler/v2/projects - session user required
++- [x] GET /dolphinscheduler/v2/projects/authed-project - session user required
++- [x] GET /dolphinscheduler/v2/projects/authed-user - session user required
++- [x] GET /dolphinscheduler/v2/projects/created-and-authed - session user required
++- [x] GET /dolphinscheduler/v2/projects/list - session user required
++- [x] GET /dolphinscheduler/v2/projects/list-dependent - session user required
++- [x] GET /dolphinscheduler/v2/projects/unauth-project - session user required
++- [x] DELETE /dolphinscheduler/v2/projects/{code} - session user required
++- [x] GET /dolphinscheduler/v2/projects/{code} - session user required
++- [x] PUT /dolphinscheduler/v2/projects/{code} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - QueueV2Controller
++- [x] GET /dolphinscheduler/v2/queues - session user required
++- [x] POST /dolphinscheduler/v2/queues - session user required
++- [x] GET /dolphinscheduler/v2/queues/list - session user required
++- [x] POST /dolphinscheduler/v2/queues/verify - session user required
++- [x] PUT /dolphinscheduler/v2/queues/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - ScheduleV2Controller
++- [x] POST /dolphinscheduler/v2/schedules - session user required
++- [x] POST /dolphinscheduler/v2/schedules/filter - session user required
++- [x] DELETE /dolphinscheduler/v2/schedules/{id} - session user required
++- [x] GET /dolphinscheduler/v2/schedules/{id} - session user required
++- [x] PUT /dolphinscheduler/v2/schedules/{id} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - StatisticsV2Controller
++- [x] GET /dolphinscheduler/v2/statistics/tasks/states/count - session user required
++- [x] GET /dolphinscheduler/v2/statistics/tasks/{taskCode}/states/count - session user required
++- [x] GET /dolphinscheduler/v2/statistics/workflows/states/count - session user required
++- [x] GET /dolphinscheduler/v2/statistics/workflows/users/count - session user required
++- [x] GET /dolphinscheduler/v2/statistics/workflows/users/{userId}/count - session user required
++- [x] GET /dolphinscheduler/v2/statistics/workflows/users/{userId}/{releaseState}/count - session user required
++- [x] GET /dolphinscheduler/v2/statistics/{workflowCode}/states/count - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - TaskDefinitionV2Controller
++- [x] POST /dolphinscheduler/v2/tasks/query - session user required
++- [x] GET /dolphinscheduler/v2/tasks/{code} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - TaskInstanceV2Controller
++- [x] GET /dolphinscheduler/v2/projects/{projectCode}/task-instances - session user required
++- [x] POST /dolphinscheduler/v2/projects/{projectCode}/task-instances/{id}/force-success - session user required
++- [x] POST /dolphinscheduler/v2/projects/{projectCode}/task-instances/{id}/savepoint - session user required
++- [x] POST /dolphinscheduler/v2/projects/{projectCode}/task-instances/{id}/stop - session user required
++- [x] POST /dolphinscheduler/v2/projects/{projectCode}/task-instances/{taskInstanceId} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - WorkflowInstanceV2Controller
++- [x] GET /dolphinscheduler/v2/workflow-instances - session user required
++- [x] DELETE /dolphinscheduler/v2/workflow-instances/{workflowInstanceId} - session user required
++- [x] GET /dolphinscheduler/v2/workflow-instances/{workflowInstanceId} - session user required
++- [x] POST /dolphinscheduler/v2/workflow-instances/{workflowInstanceId}/execute/{executeType} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - WorkflowTaskRelationV2Controller
++- [x] POST /dolphinscheduler/v2/relations - session user required
++- [x] DELETE /dolphinscheduler/v2/relations/{code-pair} - session user required
++- [x] PUT /dolphinscheduler/v2/relations/{code} - session user required
++
++## org/apache/dolphinscheduler/api/controller/v2 - WorkflowV2Controller
++- [x] POST /dolphinscheduler/v2/workflows - session user required
++- [x] POST /dolphinscheduler/v2/workflows/query - session user required
++- [x] DELETE /dolphinscheduler/v2/workflows/{code} - session user required
++- [x] GET /dolphinscheduler/v2/workflows/{code} - session user required
++- [x] PUT /dolphinscheduler/v2/workflows/{code} - session user required
+diff --git a/dolphinscheduler-api/src/test/java/org/apache/dolphinscheduler/api/controller/ApiEndpointHttpSmokeTest.java b/dolphinscheduler-api/src/test/java/org/apache/dolphinscheduler/api/controller/ApiEndpointHttpSmokeTest.java
+new file mode 100644
+index 0000000..98aa44e
+--- /dev/null
++++ b/dolphinscheduler-api/src/test/java/org/apache/dolphinscheduler/api/controller/ApiEndpointHttpSmokeTest.java
+@@ -0,0 +1,198 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one or more
++ * contributor license agreements.  See the NOTICE file distributed with
++ * this work for additional information regarding copyright ownership.
++ * The ASF licenses this file to You under the Apache License, Version 2.0
++ * (the "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *    http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.apache.dolphinscheduler.api.controller;
++
++import static org.junit.jupiter.api.Assertions.assertEquals;
++import static org.junit.jupiter.api.Assertions.assertNotEquals;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.apache.dolphinscheduler.api.interceptor.LoginHandlerInterceptor;
++import org.apache.dolphinscheduler.api.security.Authenticator;
++import org.apache.dolphinscheduler.dao.mapper.UserMapper;
++
++import java.io.IOException;
++import java.nio.file.Files;
++import java.nio.file.Path;
++import java.util.ArrayList;
++import java.util.LinkedHashMap;
++import java.util.List;
++import java.util.Map;
++import java.util.regex.Matcher;
++import java.util.regex.Pattern;
++
++import org.junit.jupiter.api.Test;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.MvcResult;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/** HTTP dispatch coverage for the API route inventory, with real login interception. */
++class ApiEndpointHttpSmokeTest {
++
++    private static final Pattern ENDPOINT = Pattern.compile("^- \\[.\\] (GET|POST|PUT|DELETE|PATCH) (\\S+) - .+$");
++    private static final Pattern SECTION = Pattern.compile("^## ([^ ]+) - ([A-Za-z0-9]+)$");
++
++    @Test
++    void everyProtectedEndpointRejectsAnAnonymousHttpRequest() throws Exception {
++        Map<Class<?>, List<Endpoint>> byController = readInventory();
++        int checked = 0;
++        for (Map.Entry<Class<?>, List<Endpoint>> entry : byController.entrySet()) {
++            if (entry.getKey() == LoginController.class || entry.getKey() == DsErrorController.class) {
++                continue;
++            }
++            Object controller = entry.getKey().getDeclaredConstructor().newInstance();
++            MockMvc mvc = MockMvcBuilders.standaloneSetup(controller)
++                    .addInterceptors(anonymousInterceptor())
++                    .build();
++            for (Endpoint endpoint : entry.getValue()) {
++                if (endpoint.path.endsWith("/users/register")) {
++                    continue; // This public registration route is explicitly excluded by AppConfiguration.
++                }
++                MvcResult result = mvc.perform(request(endpoint)
++                        .contentType(org.springframework.http.MediaType.APPLICATION_JSON))
++                        .andReturn();
++                assertEquals(401, result.getResponse().getStatus(), endpoint.toString());
++                checked++;
++            }
++        }
++        assertEquals(290, checked, "Every secured route in the inventory must reject anonymous requests");
++    }
++
++    @Test
++    void publicLoginRoutesDispatchAndValidateInputs() throws Exception {
++        LoginController controller = new LoginController();
++        Authenticator authenticator = mock(Authenticator.class);
++        ReflectionTestUtils.setField(controller, "authenticator", authenticator);
++        MockMvc mvc = MockMvcBuilders.standaloneSetup(controller).build();
++
++        mvc.perform(post("/login"))
++                .andExpect(status().isBadRequest());
++        mvc.perform(get("/login/sso"))
++                .andExpect(status().isOk());
++        mvc.perform(get("/oauth2-provider"))
++                .andExpect(status().isOk());
++        mvc.perform(get("/redirect/login/oauth2"))
++                .andExpect(status().isBadRequest());
++        MockMvc userMvc = MockMvcBuilders.standaloneSetup(new UsersController()).build();
++        userMvc.perform(post("/users/register"))
++                .andExpect(status().isBadRequest());
++        mvc.perform(delete("/cookies").cookie(new javax.servlet.http.Cookie("sessionId", "test")))
++                .andExpect(status().isOk());
++
++        // The sign-out handler is intentionally protected, even though its sibling login URLs are public.
++        LoginHandlerInterceptor interceptor = anonymousInterceptor();
++        MockMvc secured = MockMvcBuilders.standaloneSetup(controller).addInterceptors(interceptor).build();
++        secured.perform(post("/signOut")).andExpect(status().isUnauthorized());
++    }
++
++    @Test
++    void errorRouteForwardsNotFoundToTheUi() throws Exception {
++        MockMvc mvc = MockMvcBuilders.standaloneSetup(new DsErrorController()).build();
++        MvcResult result = mvc.perform(get("/error").requestAttr("javax.servlet.error.status_code", 404))
++                .andReturn();
++        assertEquals(200, result.getResponse().getStatus());
++        assertTrue(result.getModelAndView().getViewName().contains("ui/index.html"));
++    }
++
++    private LoginHandlerInterceptor anonymousInterceptor() {
++        LoginHandlerInterceptor interceptor = new LoginHandlerInterceptor();
++        Authenticator authenticator = mock(Authenticator.class);
++        when(authenticator.getAuthUser(org.mockito.ArgumentMatchers.any())).thenReturn(null);
++        ReflectionTestUtils.setField(interceptor, "authenticator", authenticator);
++        ReflectionTestUtils.setField(interceptor, "userMapper", mock(UserMapper.class));
++        return interceptor;
++    }
++
++    private org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder request(Endpoint endpoint) {
++        String path = endpoint.path.replace("/dolphinscheduler", "");
++        Matcher matcher = Pattern.compile("\\{[^/]+}").matcher(path);
++        StringBuffer concrete = new StringBuffer();
++        int value = 1;
++        while (matcher.find()) {
++            matcher.appendReplacement(concrete, Integer.toString(value++));
++        }
++        matcher.appendTail(concrete);
++        switch (endpoint.method) {
++            case "POST":
++                return post(concrete.toString());
++            case "PUT":
++                return org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put(concrete.toString());
++            case "DELETE":
++                return delete(concrete.toString());
++            case "PATCH":
++                return org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch(concrete.toString());
++            default:
++                return get(concrete.toString());
++        }
++    }
++
++    private Map<Class<?>, List<Endpoint>> readInventory() throws IOException, ClassNotFoundException {
++        Path inventory = Path.of("").toAbsolutePath();
++        while (inventory != null && !Files.exists(inventory.resolve("API_ENDPOINT_COVERAGE.md"))) {
++            inventory = inventory.getParent();
++        }
++        if (inventory == null) {
++            throw new IllegalStateException(
++                    "Could not locate API_ENDPOINT_COVERAGE.md from the test working directory");
++        }
++
++        Map<Class<?>, List<Endpoint>> result = new LinkedHashMap<>();
++        Class<?> current = null;
++        for (String line : Files.readAllLines(inventory.resolve("API_ENDPOINT_COVERAGE.md"))) {
++            Matcher section = SECTION.matcher(line);
++            if (section.matches()) {
++                current = Class.forName(section.group(1).replace('/', '.') + "." + section.group(2));
++                result.computeIfAbsent(current, ignored -> new ArrayList<>());
++                continue;
++            }
++            Matcher endpoint = ENDPOINT.matcher(line);
++            if (endpoint.matches()) {
++                if (current == null) {
++                    throw new IllegalStateException("Endpoint appeared before a controller section: " + line);
++                }
++                result.get(current).add(new Endpoint(endpoint.group(1), endpoint.group(2)));
++            }
++        }
++        assertNotEquals(0, result.size(), "The durable endpoint inventory must not be empty");
++        assertEquals(298, result.values().stream().mapToInt(List::size).sum(),
++                "Keep the durable route inventory complete");
++        return result;
++    }
++
++    private static final class Endpoint {
++
++        private final String method;
++        private final String path;
++
++        private Endpoint(String method, String path) {
++            this.method = method;
++            this.path = path;
++        }
++
++        @Override
++        public String toString() {
++            return method + " " + path;
++        }
++    }
++}

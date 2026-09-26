@@ -1,0 +1,7588 @@
+{
+  "mode": "hamster",
+  "gerbil": false,
+  "project_count": 2527,
+  "projects": [
+    {
+      "name": "0x727_BypassPro"
+    },
+    {
+      "name": "0x727_SpringBootExploit"
+    },
+    {
+      "name": "4thline_cling"
+    },
+    {
+      "name": "500px_500px-android-blur"
+    },
+    {
+      "name": "500px_greedo-layout-for-android"
+    },
+    {
+      "name": "52inc_Scoops"
+    },
+    {
+      "name": "6thsolution_EasyMVP"
+    },
+    {
+      "name": "AOF-Dev_MCinaBox"
+    },
+    {
+      "name": "API-Security_APIKit"
+    },
+    {
+      "name": "ATLauncher_ATLauncher"
+    },
+    {
+      "name": "Activiti_Activiti"
+    },
+    {
+      "name": "AdevintaSpain_Parallax-Layer-Layout"
+    },
+    {
+      "name": "AdguardTeam_ContentBlocker"
+    },
+    {
+      "name": "AdoptOpenJDK_jitwatch"
+    },
+    {
+      "name": "Aizistral-Studios_No-Chat-Reports"
+    },
+    {
+      "name": "Akarin-project_Akarin"
+    },
+    {
+      "name": "Aliucord_Aliucord"
+    },
+    {
+      "name": "AlloyTools_org.alloytools.alloy"
+    },
+    {
+      "name": "Alluxio_alluxio"
+    },
+    {
+      "name": "Alovoa_alovoa"
+    },
+    {
+      "name": "AlphaWallet_alpha-wallet-android"
+    },
+    {
+      "name": "AltBeacon_android-beacon-library"
+    },
+    {
+      "name": "AndroidIDEOfficial_AndroidIDE"
+    },
+    {
+      "name": "AndroidKnife_RxBus"
+    },
+    {
+      "name": "AndroidVTS_android-vts"
+    },
+    {
+      "name": "Angel-ML_angel"
+    },
+    {
+      "name": "AntennaPod_AntennaPod"
+    },
+    {
+      "name": "AnyChart_AnyChart-Android"
+    },
+    {
+      "name": "AnySoftKeyboard_AnySoftKeyboard"
+    },
+    {
+      "name": "Apicurio_apicurio-registry"
+    },
+    {
+      "name": "AppiumTestDistribution_AppiumTestDistribution"
+    },
+    {
+      "name": "AppliedEnergistics_Applied-Energistics-2"
+    },
+    {
+      "name": "ApplikeySolutions_CosmoCalendar"
+    },
+    {
+      "name": "ArcadeData_arcadedb"
+    },
+    {
+      "name": "Arcticons-Team_Arcticons"
+    },
+    {
+      "name": "Arello-Mobile_Moxy"
+    },
+    {
+      "name": "AsyncHttpClient_async-http-client"
+    },
+    {
+      "name": "AthenZ_athenz"
+    },
+    {
+      "name": "Atmosphere_atmosphere"
+    },
+    {
+      "name": "Audiveris_audiveris"
+    },
+    {
+      "name": "AuthMe_AuthMeReloaded"
+    },
+    {
+      "name": "Auto-Accounting_Qianji_auto"
+    },
+    {
+      "name": "AutoMQ_automq"
+    },
+    {
+      "name": "AutohomeCorp_frostmourne"
+    },
+    {
+      "name": "Automattic_simplenote-android"
+    },
+    {
+      "name": "Avocarrot_json2view"
+    },
+    {
+      "name": "AwakenCN_InChat"
+    },
+    {
+      "name": "AxonFramework_AxonFramework"
+    },
+    {
+      "name": "AzBuilder_terrakube"
+    },
+    {
+      "name": "AzimoLabs_AndroidKeyboardWatcher"
+    },
+    {
+      "name": "Azoft_CarouselLayoutManager"
+    },
+    {
+      "name": "BUAA-BDA_OpenHuFu"
+    },
+    {
+      "name": "Backblaze_JavaReedSolomon"
+    },
+    {
+      "name": "Baeldung_spring-security-oauth"
+    },
+    {
+      "name": "Baeldung_spring-security-registration"
+    },
+    {
+      "name": "Baidu-AIP_java-sdk"
+    },
+    {
+      "name": "Baidu-AIP_speech-demo"
+    },
+    {
+      "name": "Baqend_Orestes-Bloomfilter"
+    },
+    {
+      "name": "BaseXdb_basex"
+    },
+    {
+      "name": "Baseflow_PhotoView"
+    },
+    {
+      "name": "BashSupport_BashSupport"
+    },
+    {
+      "name": "Bearded-Hen_Android-Bootstrap"
+    },
+    {
+      "name": "Berkeley-CS61B_skeleton-sp21"
+    },
+    {
+      "name": "Bigkoo_Android-PickerView"
+    },
+    {
+      "name": "BiglySoftware_BiglyBT"
+    },
+    {
+      "name": "BishopFox_GadgetProbe"
+    },
+    {
+      "name": "Blazebit_blaze-persistence"
+    },
+    {
+      "name": "BlueMap-Minecraft_BlueMap"
+    },
+    {
+      "name": "BoltsFramework_Bolts-Android"
+    },
+    {
+      "name": "BotLibre_BotLibre"
+    },
+    {
+      "name": "BottegaIT_ddd-leaven-v2"
+    },
+    {
+      "name": "BroadleafCommerce_BroadleafCommerce"
+    },
+    {
+      "name": "BuglyDevTeam_Bugly-Android-Demo"
+    },
+    {
+      "name": "BuildCms"
+    },
+    {
+      "name": "Bukkit_Bukkit"
+    },
+    {
+      "name": "ByteLegend_ByteLegend"
+    },
+    {
+      "name": "CIDARLAB_cello"
+    },
+    {
+      "name": "CNSRE_HTTPDNSLib"
+    },
+    {
+      "name": "CaffeineMC_hydrogen-fabric"
+    },
+    {
+      "name": "CaffeineMC_lithium"
+    },
+    {
+      "name": "CaffeineMC_phosphor-fabric"
+    },
+    {
+      "name": "CaffeineMC_sodium"
+    },
+    {
+      "name": "CameraKit_blurkit-android"
+    },
+    {
+      "name": "Cap-go_capacitor-updater"
+    },
+    {
+      "name": "Card-Forge_forge"
+    },
+    {
+      "name": "CardboardPowered_cardboard"
+    },
+    {
+      "name": "CatimaLoyalty_Android"
+    },
+    {
+      "name": "CellularPrivacy_Android-IMSI-Catcher-Detector"
+    },
+    {
+      "name": "ChickenHook_RestrictionBypass"
+    },
+    {
+      "name": "Cleveroad_AdaptiveTableLayout"
+    },
+    {
+      "name": "Cleveroad_FanLayoutManager"
+    },
+    {
+      "name": "Cleveroad_FireworkyPullToRefresh"
+    },
+    {
+      "name": "Cleveroad_LoopBar"
+    },
+    {
+      "name": "Cleveroad_MusicBobber"
+    },
+    {
+      "name": "Cleveroad_SlidingTutorial-Android"
+    },
+    {
+      "name": "Cleveroad_WaveInApp"
+    },
+    {
+      "name": "ClickHouse_clickhouse-java"
+    },
+    {
+      "name": "ClouGence_hasor"
+    },
+    {
+      "name": "CloudExplorer-Dev_CloudExplorer-Lite"
+    },
+    {
+      "name": "CloudburstMC_Nukkit"
+    },
+    {
+      "name": "Cloudslab_cloudsim"
+    },
+    {
+      "name": "CodeIntelligenceTesting_jazzer"
+    },
+    {
+      "name": "CodePhiliaX_Chat2DB"
+    },
+    {
+      "name": "Codecademy_EventHub"
+    },
+    {
+      "name": "CodelightStudios_Android-Smart-Login"
+    },
+    {
+      "name": "CodingDocs_springboot-guide"
+    },
+    {
+      "name": "Comcast_FreeFlow"
+    },
+    {
+      "name": "CommandAPI_CommandAPI"
+    },
+    {
+      "name": "Consensys_teku"
+    },
+    {
+      "name": "CorfuDB_CorfuDB"
+    },
+    {
+      "name": "Cosmic-Ide_Cosmic-IDE"
+    },
+    {
+      "name": "Countly_countly-sdk-android"
+    },
+    {
+      "name": "CrawlScript_WebCollector"
+    },
+    {
+      "name": "CreativeInquiry_PEmbroider"
+    },
+    {
+      "name": "Creators-of-Create_Create"
+    },
+    {
+      "name": "DSAppTeam_Anchors"
+    },
+    {
+      "name": "DSAppTeam_PanelSwitchHelper"
+    },
+    {
+      "name": "DSpace_DSpace"
+    },
+    {
+      "name": "DTStack_Taier"
+    },
+    {
+      "name": "DTStack_chunjun"
+    },
+    {
+      "name": "DTStack_flinkStreamSQL"
+    },
+    {
+      "name": "DWorkS_VolleyPlus"
+    },
+    {
+      "name": "DataDog_dd-trace-java"
+    },
+    {
+      "name": "DataLinkDC_dinky"
+    },
+    {
+      "name": "Decodo_Decodo"
+    },
+    {
+      "name": "DeemOpen_zkui"
+    },
+    {
+      "name": "Delta-Icons_android"
+    },
+    {
+      "name": "DependencyTrack_dependency-track"
+    },
+    {
+      "name": "Devlight_ArcProgressStackView"
+    },
+    {
+      "name": "Devlight_InfiniteCycleViewPager"
+    },
+    {
+      "name": "Devlight_NavigationTabBar"
+    },
+    {
+      "name": "Devlight_NavigationTabStrip"
+    },
+    {
+      "name": "Devlight_ShadowLayout"
+    },
+    {
+      "name": "Devskiller_jfairy"
+    },
+    {
+      "name": "DiUS_java-faker"
+    },
+    {
+      "name": "Discord4J_Discord4J"
+    },
+    {
+      "name": "DiscordSRV_DiscordSRV"
+    },
+    {
+      "name": "Divested-Mobile_Hypatia"
+    },
+    {
+      "name": "DozerMapper_dozer"
+    },
+    {
+      "name": "DragonetMC_DragonProxy"
+    },
+    {
+      "name": "DroidPlanner_Tower"
+    },
+    {
+      "name": "DroidPluginTeam_DroidPlugin"
+    },
+    {
+      "name": "DuGuQiuBai_Java"
+    },
+    {
+      "name": "ESAPI_esapi-java-legacy"
+    },
+    {
+      "name": "EXALAB_AnLinux-App"
+    },
+    {
+      "name": "Ebryx_AES-Killer"
+    },
+    {
+      "name": "ElderDrivers_EdXposed"
+    },
+    {
+      "name": "ElderDrivers_EdXposedManager"
+    },
+    {
+      "name": "Endava_cats"
+    },
+    {
+      "name": "EngineHub_WorldEdit"
+    },
+    {
+      "name": "EngineHub_WorldGuard"
+    },
+    {
+      "name": "EnterpriseQualityCoding_FizzBuzzEnterpriseEdition"
+    },
+    {
+      "name": "Erudika_para"
+    },
+    {
+      "name": "Erudika_scoold"
+    },
+    {
+      "name": "EsotericSoftware_kryonet"
+    },
+    {
+      "name": "EsotericSoftware_reflectasm"
+    },
+    {
+      "name": "EsotericSoftware_yamlbeans"
+    },
+    {
+      "name": "Esri_arcgis-runtime-samples-android"
+    },
+    {
+      "name": "Esri_geometry-api-java"
+    },
+    {
+      "name": "EssentialsX_Essentials"
+    },
+    {
+      "name": "Etar-Group_Etar-Calendar"
+    },
+    {
+      "name": "Evernote_android-job"
+    },
+    {
+      "name": "Evernote_android-state"
+    },
+    {
+      "name": "EverythingMe_overscroll-decor"
+    },
+    {
+      "name": "EvoSuite_evosuite"
+    },
+    {
+      "name": "FIRST-Tech-Challenge_FtcRobotController"
+    },
+    {
+      "name": "FXMisc_RichTextFX"
+    },
+    {
+      "name": "FabricMC_fabric"
+    },
+    {
+      "name": "FabricMC_fabric-example-mod"
+    },
+    {
+      "name": "FabricMC_fabric-loader"
+    },
+    {
+      "name": "FabricMC_yarn"
+    },
+    {
+      "name": "FastBootWeixin_FastBootWeixin"
+    },
+    {
+      "name": "FasterXML_jackson-annotations"
+    },
+    {
+      "name": "FasterXML_jackson-core"
+    },
+    {
+      "name": "FasterXML_jackson-databind"
+    },
+    {
+      "name": "FasterXML_jackson-dataformat-xml"
+    },
+    {
+      "name": "FinalTeam_RxGalleryFinal"
+    },
+    {
+      "name": "Flipboard_bottomsheet"
+    },
+    {
+      "name": "FlowCI_flow-core-x"
+    },
+    {
+      "name": "FluentLenium_FluentLenium"
+    },
+    {
+      "name": "FormidableLabs_react-native-app-auth"
+    },
+    {
+      "name": "FreeCol_freecol"
+    },
+    {
+      "name": "Freeyourgadget_Gadgetbridge"
+    },
+    {
+      "name": "FudanNLP_fnlp"
+    },
+    {
+      "name": "G-Joker_WeaponApp"
+    },
+    {
+      "name": "GCX-HCI_ThirtyInch"
+    },
+    {
+      "name": "GCX-HCI_tray"
+    },
+    {
+      "name": "GDG-Korea_PinterestLikeAdapterView"
+    },
+    {
+      "name": "GDGAhmedabad_Awesome-Learning-Resources"
+    },
+    {
+      "name": "GIScience_openrouteservice"
+    },
+    {
+      "name": "Genymobile_gnirehtet"
+    },
+    {
+      "name": "GerritCodeReview_gerrit"
+    },
+    {
+      "name": "Getshell_Mshell"
+    },
+    {
+      "name": "GeyserMC_Floodgate"
+    },
+    {
+      "name": "GeyserMC_Geyser"
+    },
+    {
+      "name": "GeyserMC_MCProtocolLib"
+    },
+    {
+      "name": "Glitchfiend_BiomesOPlenty"
+    },
+    {
+      "name": "GlowstoneMC_Glowstone"
+    },
+    {
+      "name": "GoClipse_goclipse"
+    },
+    {
+      "name": "GoodieBag_CarouselPicker"
+    },
+    {
+      "name": "GoogleChrome_android-browser-helper"
+    },
+    {
+      "name": "GoogleChrome_custom-tabs-client"
+    },
+    {
+      "name": "GoogleCloudPlatform_DataflowTemplates"
+    },
+    {
+      "name": "GoogleCloudPlatform_bank-of-anthos"
+    },
+    {
+      "name": "GoogleCloudPlatform_community"
+    },
+    {
+      "name": "GoogleCloudPlatform_java-docs-samples"
+    },
+    {
+      "name": "GoogleContainerTools_jib"
+    },
+    {
+      "name": "GrailStack_Moss"
+    },
+    {
+      "name": "GrapheneOS_Auditor"
+    },
+    {
+      "name": "GrapheneOS_Camera"
+    },
+    {
+      "name": "GrapheneOS_PdfViewer"
+    },
+    {
+      "name": "GrimAnticheat_Grim"
+    },
+    {
+      "name": "Guardsquare_proguard"
+    },
+    {
+      "name": "GumTreeDiff_gumtree"
+    },
+    {
+      "name": "HMCL-dev_HMCL"
+    },
+    {
+      "name": "HMCL-dev_HMCL-PE"
+    },
+    {
+      "name": "HXSecurity_DongTai-agent-java"
+    },
+    {
+      "name": "HackPlan_AndroidCharts"
+    },
+    {
+      "name": "HamburgChimps_apple-notes-liberator"
+    },
+    {
+      "name": "Haptic-Apps_Slide"
+    },
+    {
+      "name": "HdrHistogram_HdrHistogram"
+    },
+    {
+      "name": "Hive2Hive_Hive2Hive"
+    },
+    {
+      "name": "HiveGamesOSS_Chunker"
+    },
+    {
+      "name": "HotswapProjects_HotswapAgent"
+    },
+    {
+      "name": "Huawei-Hadoop_hindex"
+    },
+    {
+      "name": "HubSpot_Singularity"
+    },
+    {
+      "name": "HubSpot_jinjava"
+    },
+    {
+      "name": "HumbleUI_Skija"
+    },
+    {
+      "name": "HummerRisk_HummerRisk"
+    },
+    {
+      "name": "HuolalaTech_hll-wp-therouter-android"
+    },
+    {
+      "name": "HypixelDev_PublicAPI"
+    },
+    {
+      "name": "ICIJ_datashare"
+    },
+    {
+      "name": "ICT-BDA_EasyML"
+    },
+    {
+      "name": "INRIA_spoon"
+    },
+    {
+      "name": "IQSS_dataverse"
+    },
+    {
+      "name": "IbcAlpha_IBC"
+    },
+    {
+      "name": "Idean_sonar-swift"
+    },
+    {
+      "name": "Igalia_wolvic"
+    },
+    {
+      "name": "Impetus_kundera"
+    },
+    {
+      "name": "InQBarna_TableFixHeaders"
+    },
+    {
+      "name": "Instagram_ig-json-parser"
+    },
+    {
+      "name": "InstantWebP2P_node-android"
+    },
+    {
+      "name": "Intel-bigdata_HiBench"
+    },
+    {
+      "name": "IntellectualSites_FastAsyncWorldEdit"
+    },
+    {
+      "name": "IntellectualSites_PlotSquared"
+    },
+    {
+      "name": "InterviewReady_Low-Level-Design"
+    },
+    {
+      "name": "IoT-Technology_Groza"
+    },
+    {
+      "name": "IoT-Technology_IoT-Technical-Guide"
+    },
+    {
+      "name": "IrisShaders_Iris"
+    },
+    {
+      "name": "JCTools_JCTools"
+    },
+    {
+      "name": "JFXtras_jfxtras"
+    },
+    {
+      "name": "JOML-CI_JOML"
+    },
+    {
+      "name": "JSQLParser_JSqlParser"
+    },
+    {
+      "name": "JZ-Darkal_AndroidHttpCapture"
+    },
+    {
+      "name": "JabRef_jabref"
+    },
+    {
+      "name": "JanssenProject_jans"
+    },
+    {
+      "name": "JanusGraph_janusgraph"
+    },
+    {
+      "name": "Jasonette_JASONETTE-Android"
+    },
+    {
+      "name": "Jaspersoft_jasperreports"
+    },
+    {
+      "name": "Java-aid_Hackerrank-Solutions"
+    },
+    {
+      "name": "JavaCourse00_JavaCourseCodes"
+    },
+    {
+      "name": "Javacord_Javacord"
+    },
+    {
+      "name": "Jay-Goo_RangeSeekBar"
+    },
+    {
+      "name": "Jay-Goo_WaveLineView"
+    },
+    {
+      "name": "JetBrains_Arend"
+    },
+    {
+      "name": "JetBrains_Grammar-Kit"
+    },
+    {
+      "name": "JetBrains_intellij-sdk-code-samples"
+    },
+    {
+      "name": "JetBrains_jediterm"
+    },
+    {
+      "name": "JetBrains_js-graphql-intellij-plugin"
+    },
+    {
+      "name": "JetBrains_skija"
+    },
+    {
+      "name": "JetBrains_xodus"
+    },
+    {
+      "name": "JetradarMobile_desertplaceholder"
+    },
+    {
+      "name": "Jigsaw-Code_Intra"
+    },
+    {
+      "name": "JingZhuanDuoYing_JZAndroidChart"
+    },
+    {
+      "name": "JodaOrg_joda-money"
+    },
+    {
+      "name": "JodaOrg_joda-time"
+    },
+    {
+      "name": "JumeiRdGroup_Router"
+    },
+    {
+      "name": "JumpMind_symmetric-ds"
+    },
+    {
+      "name": "Jzvd_JZVideo"
+    },
+    {
+      "name": "Kaopiz_KProgressHUD"
+    },
+    {
+      "name": "Kaopiz_android-segmented-control"
+    },
+    {
+      "name": "Karumi_Dexter"
+    },
+    {
+      "name": "Karumi_ExpandableSelector"
+    },
+    {
+      "name": "Karumi_KataSuperHeroesAndroid"
+    },
+    {
+      "name": "Karumi_Rosie"
+    },
+    {
+      "name": "Katana-Official_SPatch-Update"
+    },
+    {
+      "name": "KeepSafe_ReLinker"
+    },
+    {
+      "name": "KeepSafe_TapTargetView"
+    },
+    {
+      "name": "KeepSafe_dexcount-gradle-plugin"
+    },
+    {
+      "name": "Keyfactor_ejbca-ce"
+    },
+    {
+      "name": "Kickflip_kickflip-android-sdk"
+    },
+    {
+      "name": "Kong_unirest-java"
+    },
+    {
+      "name": "Kotlin_kotlin-interactive-shell"
+    },
+    {
+      "name": "KylinOLAP_Kylin"
+    },
+    {
+      "name": "KyoriPowered_adventure"
+    },
+    {
+      "name": "LFDT-web3j_web3j"
+    },
+    {
+      "name": "LINBIT_linstor-server"
+    },
+    {
+      "name": "LMAX-Exchange_disruptor"
+    },
+    {
+      "name": "LSPosed_AndroidHiddenApiBypass"
+    },
+    {
+      "name": "LSPosed_CorePatch"
+    },
+    {
+      "name": "LSPosed_DisableFlagSecure"
+    },
+    {
+      "name": "LSPosed_LSPatch"
+    },
+    {
+      "name": "LSPosed_LSPosed"
+    },
+    {
+      "name": "LWJGL_lwjgl"
+    },
+    {
+      "name": "LaiFeng-Android_SopCastComponent"
+    },
+    {
+      "name": "Launcher3-dev_Launcher3"
+    },
+    {
+      "name": "LawnchairLauncher_lawnchair"
+    },
+    {
+      "name": "LeavesMC_Leaves"
+    },
+    {
+      "name": "LegacyLands_legacy-lands-library"
+    },
+    {
+      "name": "LianjiaTech_retrofit-spring-boot-starter"
+    },
+    {
+      "name": "LibraryOfCongress_api.congress.gov"
+    },
+    {
+      "name": "LibrePDF_OpenPDF"
+    },
+    {
+      "name": "LinkedInAttic_camus"
+    },
+    {
+      "name": "LinkedInAttic_cleo"
+    },
+    {
+      "name": "LinkedInAttic_datafu"
+    },
+    {
+      "name": "LinkedInAttic_indextank-engine"
+    },
+    {
+      "name": "LinkedInAttic_sensei"
+    },
+    {
+      "name": "LiteAVSDK_Player_Android"
+    },
+    {
+      "name": "LogNet_grpc-spring-boot-starter"
+    },
+    {
+      "name": "LuckPerms_LuckPerms"
+    },
+    {
+      "name": "MAXDeliveryNG_slideview"
+    },
+    {
+      "name": "MCreator_MCreator"
+    },
+    {
+      "name": "MSPaintIDE_MSPaintIDE"
+    },
+    {
+      "name": "ManbangGroup_Phantom"
+    },
+    {
+      "name": "MangoAutomation_modbus4j"
+    },
+    {
+      "name": "MariaDB4j_MariaDB4j"
+    },
+    {
+      "name": "MarquezProject_marquez"
+    },
+    {
+      "name": "MeetMe_Android-HorizontalListView"
+    },
+    {
+      "name": "Meetic_MaryPopup"
+    },
+    {
+      "name": "Meetic_Shuffle"
+    },
+    {
+      "name": "Meituan-Dianping_Leaf"
+    },
+    {
+      "name": "Meituan-Dianping_Robust"
+    },
+    {
+      "name": "Meituan-Dianping_Shield"
+    },
+    {
+      "name": "Meituan-Dianping_Zebra"
+    },
+    {
+      "name": "Meituan-Dianping_octo-rpc"
+    },
+    {
+      "name": "Meituan-Dianping_walle"
+    },
+    {
+      "name": "MeteorDevelopment_meteor-client"
+    },
+    {
+      "name": "MiCode_FileExplorer"
+    },
+    {
+      "name": "MiCode_Notes"
+    },
+    {
+      "name": "MiCode_SoundRecorder"
+    },
+    {
+      "name": "MiPushFramework_MiPushFramework"
+    },
+    {
+      "name": "MilkBowl_Vault"
+    },
+    {
+      "name": "MineDojo_MineDojo"
+    },
+    {
+      "name": "MinecraftForge_ForgeGradle"
+    },
+    {
+      "name": "MinecraftForge_MinecraftForge"
+    },
+    {
+      "name": "Minestom_Minestom"
+    },
+    {
+      "name": "MinicraftPlus_minicraft-plus-revived"
+    },
+    {
+      "name": "MoKee_android_packages_apps_WarpShare"
+    },
+    {
+      "name": "MobiVM_robovm"
+    },
+    {
+      "name": "MockBukkit_MockBukkit"
+    },
+    {
+      "name": "ModelEngine-Group_app-platform"
+    },
+    {
+      "name": "ModelEngine-Group_fit-framework"
+    },
+    {
+      "name": "ModelioOpenSource_Modelio"
+    },
+    {
+      "name": "MohistMC_Mohist"
+    },
+    {
+      "name": "Mojang_DataFixerUpper"
+    },
+    {
+      "name": "Mojang_brigadier"
+    },
+    {
+      "name": "MorphiaOrg_morphia"
+    },
+    {
+      "name": "MovingBlocks_Terasology"
+    },
+    {
+      "name": "MozillaReality_FirefoxReality"
+    },
+    {
+      "name": "MultiPaper_MultiPaper"
+    },
+    {
+      "name": "Multiverse_Multiverse-Core"
+    },
+    {
+      "name": "MyCATApache_Mycat-Server"
+    },
+    {
+      "name": "MyCATApache_Mycat2"
+    },
+    {
+      "name": "MyCollab_mycollab"
+    },
+    {
+      "name": "NASAWorldWind_WorldWindJava"
+    },
+    {
+      "name": "NLPchina_Word2VEC_java"
+    },
+    {
+      "name": "NLPchina_ansj_seg"
+    },
+    {
+      "name": "NLPchina_elasticsearch-analysis-ansj"
+    },
+    {
+      "name": "NLPchina_elasticsearch-sql"
+    },
+    {
+      "name": "NLPchina_nlp-lang"
+    },
+    {
+      "name": "NanoHttpd_nanohttpd"
+    },
+    {
+      "name": "NationalSecurityAgency_datawave"
+    },
+    {
+      "name": "NeoApplications_Neo-Launcher"
+    },
+    {
+      "name": "NeoTerrm_NeoTerm"
+    },
+    {
+      "name": "Nepxion_Discovery"
+    },
+    {
+      "name": "Nepxion_DiscoveryGuide"
+    },
+    {
+      "name": "Netflix_EVCache"
+    },
+    {
+      "name": "Netflix_Fenzo"
+    },
+    {
+      "name": "Netflix_Hystrix"
+    },
+    {
+      "name": "Netflix_Prana"
+    },
+    {
+      "name": "Netflix_Priam"
+    },
+    {
+      "name": "Netflix_SimianArmy"
+    },
+    {
+      "name": "Netflix_Turbine"
+    },
+    {
+      "name": "Netflix_astyanax"
+    },
+    {
+      "name": "Netflix_blitz4j"
+    },
+    {
+      "name": "Netflix_concurrency-limits"
+    },
+    {
+      "name": "Netflix_conductor"
+    },
+    {
+      "name": "Netflix_curator"
+    },
+    {
+      "name": "Netflix_denominator"
+    },
+    {
+      "name": "Netflix_eureka"
+    },
+    {
+      "name": "Netflix_genie"
+    },
+    {
+      "name": "Netflix_governator"
+    },
+    {
+      "name": "Netflix_hollow"
+    },
+    {
+      "name": "Netflix_maestro"
+    },
+    {
+      "name": "Netflix_mantis"
+    },
+    {
+      "name": "Netflix_metacat"
+    },
+    {
+      "name": "Netflix_netflix-graph"
+    },
+    {
+      "name": "Netflix_ribbon"
+    },
+    {
+      "name": "Netflix_servo"
+    },
+    {
+      "name": "Netflix_spectator"
+    },
+    {
+      "name": "Netflix_suro"
+    },
+    {
+      "name": "Netflix_zuul"
+    },
+    {
+      "name": "Nevolution_sdk"
+    },
+    {
+      "name": "NightscoutFoundation_xDrip"
+    },
+    {
+      "name": "NordicSemiconductor_Android-BLE-Library"
+    },
+    {
+      "name": "NordicSemiconductor_Android-DFU-Library"
+    },
+    {
+      "name": "NordicSemiconductor_Android-Scanner-Compat-Library"
+    },
+    {
+      "name": "NotEnoughUpdates_NotEnoughUpdates"
+    },
+    {
+      "name": "Nukkit_Nukkit"
+    },
+    {
+      "name": "OAuth-Apis_apis"
+    },
+    {
+      "name": "OCR4all_OCR4all"
+    },
+    {
+      "name": "OWASP-Benchmark_BenchmarkJava"
+    },
+    {
+      "name": "OWASP_MASTG-Hacking-Playground"
+    },
+    {
+      "name": "OWASP_SecurityShepherd"
+    },
+    {
+      "name": "OWASP_crAPI"
+    },
+    {
+      "name": "OWASP_java-html-sanitizer"
+    },
+    {
+      "name": "OWASP_wrongsecrets"
+    },
+    {
+      "name": "OfficeDev_ews-java-api"
+    },
+    {
+      "name": "OneBusAway_onebusaway-android"
+    },
+    {
+      "name": "OpenAPITools_openapi-diff"
+    },
+    {
+      "name": "OpenAPITools_openapi-generator"
+    },
+    {
+      "name": "OpenBAS-Platform_openbas"
+    },
+    {
+      "name": "OpenCubicChunks_CubicChunks"
+    },
+    {
+      "name": "OpenEMS_openems"
+    },
+    {
+      "name": "OpenFeign_feign"
+    },
+    {
+      "name": "OpenGamma_Strata"
+    },
+    {
+      "name": "OpenHFT_Chronicle-Core"
+    },
+    {
+      "name": "OpenHFT_Chronicle-Map"
+    },
+    {
+      "name": "OpenHFT_Chronicle-Queue"
+    },
+    {
+      "name": "OpenHFT_Chronicle-Wire"
+    },
+    {
+      "name": "OpenHFT_Java-Runtime-Compiler"
+    },
+    {
+      "name": "OpenHFT_Java-Thread-Affinity"
+    },
+    {
+      "name": "OpenHFT_Zero-Allocation-Hashing"
+    },
+    {
+      "name": "OpenIdentityPlatform_OpenAM"
+    },
+    {
+      "name": "OpenLauncherTeam_openlauncher"
+    },
+    {
+      "name": "OpenLiberty_open-liberty"
+    },
+    {
+      "name": "OpenLineage_OpenLineage"
+    },
+    {
+      "name": "OpenRefine_OpenRefine"
+    },
+    {
+      "name": "OpenSPG_openspg"
+    },
+    {
+      "name": "OpenTSDB_asynchbase"
+    },
+    {
+      "name": "OpenTSDB_opentsdb"
+    },
+    {
+      "name": "OpenTracksApp_OpenTracks"
+    },
+    {
+      "name": "OpnTec_bodyapps-android"
+    },
+    {
+      "name": "OpnTec_open-event-android"
+    },
+    {
+      "name": "OpnTec_ots15-companion"
+    },
+    {
+      "name": "OryxProject_oryx"
+    },
+    {
+      "name": "PAGalaxyLab_YAHFA"
+    },
+    {
+      "name": "PBH-BTN_PeerBanHelper"
+    },
+    {
+      "name": "PGSSoft_scrollscreenshot"
+    },
+    {
+      "name": "PSDev_LicensesDialog"
+    },
+    {
+      "name": "PacktPublishing_Java-Coding-Problems"
+    },
+    {
+      "name": "PaladinCloud_CE"
+    },
+    {
+      "name": "PaperMC_Folia"
+    },
+    {
+      "name": "PaperMC_Paper"
+    },
+    {
+      "name": "PaperMC_Starlight"
+    },
+    {
+      "name": "PaperMC_Velocity"
+    },
+    {
+      "name": "Pay-Group_best-pay-sdk"
+    },
+    {
+      "name": "PebbleTemplates_pebble"
+    },
+    {
+      "name": "Peergos_Peergos"
+    },
+    {
+      "name": "PerfMa_xpocket"
+    },
+    {
+      "name": "PhoenicisOrg_phoenicis"
+    },
+    {
+      "name": "Pi4J_pi4j-v1"
+    },
+    {
+      "name": "Pixplicity_HtmlCompat"
+    },
+    {
+      "name": "Pixplicity_MultiViewPager"
+    },
+    {
+      "name": "PlaceholderAPI_PlaceholderAPI"
+    },
+    {
+      "name": "PlayEdu_PlayEdu"
+    },
+    {
+      "name": "PlayPro_CoreProtect"
+    },
+    {
+      "name": "PlaytikaOSS_testcontainers-spring-boot"
+    },
+    {
+      "name": "PojavLauncherTeam_PojavLauncher"
+    },
+    {
+      "name": "PolyhedralDev_Terra"
+    },
+    {
+      "name": "PorkStudios_FarPlaneTwo"
+    },
+    {
+      "name": "PortSwigger_backslash-powered-scanner"
+    },
+    {
+      "name": "PortSwigger_http-request-smuggler"
+    },
+    {
+      "name": "PortSwigger_param-miner"
+    },
+    {
+      "name": "PowerJob_PowerJob"
+    },
+    {
+      "name": "Project-Books_book-project"
+    },
+    {
+      "name": "ProtocolSupport_ProtocolSupport"
+    },
+    {
+      "name": "PureWriter_ToastCompat"
+    },
+    {
+      "name": "PureWriter_desktop"
+    },
+    {
+      "name": "PurpurMC_Purpur"
+    },
+    {
+      "name": "Q42_AndroidScrollingImageView"
+    },
+    {
+      "name": "QNJR-GROUP_EasyTransaction"
+    },
+    {
+      "name": "Qihoo360_ArgusAPM"
+    },
+    {
+      "name": "Qihoo360_RePlugin"
+    },
+    {
+      "name": "Qihoo360_hbox"
+    },
+    {
+      "name": "QuickLyric_QuickLyric"
+    },
+    {
+      "name": "ROS-Mobile_ROS-Mobile-Android"
+    },
+    {
+      "name": "RadiusNetworks_android-ibeacon-service"
+    },
+    {
+      "name": "Railcraft_Railcraft"
+    },
+    {
+      "name": "Rajawali_Rajawali"
+    },
+    {
+      "name": "Ramotion_android-ui-animation-components-and-libraries"
+    },
+    {
+      "name": "Ramotion_cardslider-android"
+    },
+    {
+      "name": "Ramotion_circle-menu-android"
+    },
+    {
+      "name": "Ramotion_direct-select-android"
+    },
+    {
+      "name": "Ramotion_expanding-collection-android"
+    },
+    {
+      "name": "Ramotion_folding-cell-android"
+    },
+    {
+      "name": "Ramotion_garland-view-android"
+    },
+    {
+      "name": "Ramotion_paper-onboarding-android"
+    },
+    {
+      "name": "ReChronoRain_Cemiuiler"
+    },
+    {
+      "name": "ReChronoRain_HyperCeiler"
+    },
+    {
+      "name": "ReVanced_revanced-integrations"
+    },
+    {
+      "name": "ReactVision_viro"
+    },
+    {
+      "name": "ReactiveX_RxAndroid"
+    },
+    {
+      "name": "ReactiveX_RxJava"
+    },
+    {
+      "name": "ReactiveX_RxJavaFX"
+    },
+    {
+      "name": "ReactiveX_RxNetty"
+    },
+    {
+      "name": "Red5_red5-server"
+    },
+    {
+      "name": "RedApparat_FaceDetector"
+    },
+    {
+      "name": "RedSpider1_concurrent"
+    },
+    {
+      "name": "RefactoringGuru_design-patterns-java"
+    },
+    {
+      "name": "RelativityMC_C2ME-fabric"
+    },
+    {
+      "name": "ReplayMod_ReplayMod"
+    },
+    {
+      "name": "RikkaApps_Shizuku-API"
+    },
+    {
+      "name": "RikkaApps_Sui"
+    },
+    {
+      "name": "RipMeApp_ripme"
+    },
+    {
+      "name": "RoboBinding_RoboBinding"
+    },
+    {
+      "name": "SAML-Toolkits_java-saml"
+    },
+    {
+      "name": "SAP_abap-cleaner"
+    },
+    {
+      "name": "SCADA-LTS_Scada-LTS"
+    },
+    {
+      "name": "SDUOJ_OnlineJudge"
+    },
+    {
+      "name": "SKCraft_Launcher"
+    },
+    {
+      "name": "SafeGroceryStore_MDUT"
+    },
+    {
+      "name": "Sakion-Team_Re-Telegram"
+    },
+    {
+      "name": "Samourai-Wallet_samourai-wallet-android"
+    },
+    {
+      "name": "Scalified_fab"
+    },
+    {
+      "name": "SceneView_sceneform-android"
+    },
+    {
+      "name": "SeaOfNodes_Simple"
+    },
+    {
+      "name": "SeldonIO_seldon-server"
+    },
+    {
+      "name": "SeleniumHQ_selenium"
+    },
+    {
+      "name": "SelfLender_react-native-biometrics"
+    },
+    {
+      "name": "SilenceIM_Silence"
+    },
+    {
+      "name": "Sinytra_Connector"
+    },
+    {
+      "name": "Sixt_ja-micro"
+    },
+    {
+      "name": "Sketchware-Pro_Sketchware-Pro"
+    },
+    {
+      "name": "SkinsRestorer_SkinsRestorer"
+    },
+    {
+      "name": "SkriptLang_Skript"
+    },
+    {
+      "name": "SkyTubeTeam_SkyTube"
+    },
+    {
+      "name": "SleepyTrousers_EnderIO-1.5-1.12"
+    },
+    {
+      "name": "SlimeKnights_TinkersConstruct"
+    },
+    {
+      "name": "Slimefun_Slimefun4"
+    },
+    {
+      "name": "SmartBear_soapui"
+    },
+    {
+      "name": "SmartPack_PackageManager"
+    },
+    {
+      "name": "SmartPack_SmartPack-Kernel-Manager"
+    },
+    {
+      "name": "SoftInstigate_restheart"
+    },
+    {
+      "name": "Solartisan_WaveSideBar"
+    },
+    {
+      "name": "SonarOpenCommunity_sonar-cxx"
+    },
+    {
+      "name": "SonarSource_sonarqube"
+    },
+    {
+      "name": "Sonelli_juicessh-performancemonitor"
+    },
+    {
+      "name": "SonicCloudOrg_sonic-agent"
+    },
+    {
+      "name": "SonicCloudOrg_sonic-server"
+    },
+    {
+      "name": "SpaceMadness_lunar-unity-console"
+    },
+    {
+      "name": "SpigotMC_BungeeCord"
+    },
+    {
+      "name": "SpongePowered_Mixin"
+    },
+    {
+      "name": "SpongePowered_SpongeAPI"
+    },
+    {
+      "name": "SpongePowered_SpongeForge"
+    },
+    {
+      "name": "SpringCloud_spring-cloud-code"
+    },
+    {
+      "name": "SpringCloud_spring-cloud-gray"
+    },
+    {
+      "name": "SpringForAll_spring-boot-starter-swagger"
+    },
+    {
+      "name": "SpringForAll_springcloud-thoth"
+    },
+    {
+      "name": "StarRocks_starrocks"
+    },
+    {
+      "name": "Stirling-Tools_Stirling-PDF"
+    },
+    {
+      "name": "Stratio_cassandra-lucene-index"
+    },
+    {
+      "name": "Stryker-Defense-Inc_strykerapp"
+    },
+    {
+      "name": "Subito-it_Masaccio"
+    },
+    {
+      "name": "SufficientlySecure_document-viewer"
+    },
+    {
+      "name": "SufficientlySecure_html-textview"
+    },
+    {
+      "name": "Suwayomi_Suwayomi-Server"
+    },
+    {
+      "name": "Swagger2Markup_swagger2markup"
+    },
+    {
+      "name": "TDuckCloud_tduck-platform"
+    },
+    {
+      "name": "TEAMMATES_teammates"
+    },
+    {
+      "name": "TNG_ArchUnit"
+    },
+    {
+      "name": "TNG_ArchUnit-Examples"
+    },
+    {
+      "name": "TachibanaGeneralLaboratories_download-navi"
+    },
+    {
+      "name": "TaleLin_lin-cms-spring-boot"
+    },
+    {
+      "name": "TangoAgency_material-intro-screen"
+    },
+    {
+      "name": "Team-xManager_xManager"
+    },
+    {
+      "name": "TeamAmaze_AmazeFileManager"
+    },
+    {
+      "name": "TeamNewPipe_NewPipe"
+    },
+    {
+      "name": "TeamNewPipe_NewPipeExtractor"
+    },
+    {
+      "name": "Teevity_ice"
+    },
+    {
+      "name": "Telenav_ExpandablePager"
+    },
+    {
+      "name": "TencentBlueKing_bk-job"
+    },
+    {
+      "name": "TencentCloud_TIMSDK"
+    },
+    {
+      "name": "Tencent_APIJSON"
+    },
+    {
+      "name": "Tencent_GT"
+    },
+    {
+      "name": "Tencent_MSEC"
+    },
+    {
+      "name": "Tencent_QMUI_Android"
+    },
+    {
+      "name": "Tencent_RapidView"
+    },
+    {
+      "name": "Tencent_Shadow"
+    },
+    {
+      "name": "Tencent_TencentKona-8"
+    },
+    {
+      "name": "Tencent_VasDolly"
+    },
+    {
+      "name": "Tencent_VasSonic"
+    },
+    {
+      "name": "Tencent_matrix"
+    },
+    {
+      "name": "Tencent_soter"
+    },
+    {
+      "name": "Tencent_spring-cloud-tencent"
+    },
+    {
+      "name": "Tencent_tinker"
+    },
+    {
+      "name": "Teradata_kylo"
+    },
+    {
+      "name": "TerraFirmaCraft_TerraFirmaCraft"
+    },
+    {
+      "name": "TheAlgorithms_Java"
+    },
+    {
+      "name": "ThreeTen_threetenbp"
+    },
+    {
+      "name": "TimefoldAI_timefold-solver"
+    },
+    {
+      "name": "TogetherOS_cicada"
+    },
+    {
+      "name": "TongchengOpenSource_smart-doc"
+    },
+    {
+      "name": "Tophold_FinancialCustomerView"
+    },
+    {
+      "name": "TownyAdvanced_Towny"
+    },
+    {
+      "name": "TraceNature_redissyncer-server"
+    },
+    {
+      "name": "TrackerControl_tracker-control-android"
+    },
+    {
+      "name": "TuGraph-family_tugraph-analytics"
+    },
+    {
+      "name": "TwitchRecover_TwitchRecover"
+    },
+    {
+      "name": "UNIVALI-LITE_Portugol-Studio"
+    },
+    {
+      "name": "UnderwaterApps_overlap2d"
+    },
+    {
+      "name": "UnevenSoftware_LeafPic"
+    },
+    {
+      "name": "UniversalMediaServer_UniversalMediaServer"
+    },
+    {
+      "name": "VUE_VUE"
+    },
+    {
+      "name": "VazkiiMods_Botania"
+    },
+    {
+      "name": "VazkiiMods_Quark"
+    },
+    {
+      "name": "Vencord_Vendroid"
+    },
+    {
+      "name": "VerbalExpressions_JavaVerbalExpressions"
+    },
+    {
+      "name": "VertaAI_modeldb"
+    },
+    {
+      "name": "ViaVersion_ViaVersion"
+    },
+    {
+      "name": "ViceFantasyPlace_activate-power-mode"
+    },
+    {
+      "name": "VinylMusicPlayer_VinylMusicPlayer"
+    },
+    {
+      "name": "Waikato_moa"
+    },
+    {
+      "name": "WeBankBlockchain_WeEvent"
+    },
+    {
+      "name": "WeBankBlockchain_WeIdentity"
+    },
+    {
+      "name": "WeBankFinTech_DataSphereStudio"
+    },
+    {
+      "name": "WeBankFinTech_Qualitis"
+    },
+    {
+      "name": "WhatsApp_stickers"
+    },
+    {
+      "name": "Winds-Studio_Leaf"
+    },
+    {
+      "name": "Wizcorp_phonegap-facebook-plugin"
+    },
+    {
+      "name": "WorksApplications_Sudachi"
+    },
+    {
+      "name": "WorldQL_mammoth"
+    },
+    {
+      "name": "WuKongOpenSource_WukongCRM-11.0-JAVA"
+    },
+    {
+      "name": "WuKongOpenSource_WukongCRM-9.0-JAVA"
+    },
+    {
+      "name": "WuKongOpenSource_Wukong_HRM"
+    },
+    {
+      "name": "WuKongOpenSource_Wukong_nocode"
+    },
+    {
+      "name": "Wurst-Imperium_Wurst7"
+    },
+    {
+      "name": "XRecyclerView_XRecyclerView"
+    },
+    {
+      "name": "Xed-Editor_Xed-Editor"
+    },
+    {
+      "name": "XiaoMi_android_tv_metro"
+    },
+    {
+      "name": "XiaoMi_mone"
+    },
+    {
+      "name": "YahooArchive_anthelion"
+    },
+    {
+      "name": "Yalantis_CameraModule"
+    },
+    {
+      "name": "Yalantis_Euclid"
+    },
+    {
+      "name": "Yalantis_FlipViewPager.Draco"
+    },
+    {
+      "name": "Yalantis_GuillotineMenu-Android"
+    },
+    {
+      "name": "Yalantis_Horizon"
+    },
+    {
+      "name": "Yalantis_Phoenix"
+    },
+    {
+      "name": "Yalantis_Side-Menu.Android"
+    },
+    {
+      "name": "Yalantis_StarWars.Android"
+    },
+    {
+      "name": "Yalantis_Taurus"
+    },
+    {
+      "name": "Yalantis_ToDoList"
+    },
+    {
+      "name": "Yalantis_pull-to-make-soup"
+    },
+    {
+      "name": "Yalantis_uCrop"
+    },
+    {
+      "name": "ZalithLauncher_ZalithLauncher"
+    },
+    {
+      "name": "Zettelkasten-Team_Zettelkasten"
+    },
+    {
+      "name": "Zomato_AndroidPhotoFilters"
+    },
+    {
+      "name": "abbyy_ocrsdk.com"
+    },
+    {
+      "name": "abixen_abixen-platform"
+    },
+    {
+      "name": "abstracta_jmeter-java-dsl"
+    },
+    {
+      "name": "actiontech_dble"
+    },
+    {
+      "name": "activej_activej"
+    },
+    {
+      "name": "actorapp_actor-platform"
+    },
+    {
+      "name": "addthis_stream-lib"
+    },
+    {
+      "name": "adempiere_adempiere"
+    },
+    {
+      "name": "adjust_android_sdk"
+    },
+    {
+      "name": "adobe_aem-core-wcm-components"
+    },
+    {
+      "name": "adorsys_keycloak-config-cli"
+    },
+    {
+      "name": "advantageous_qbit"
+    },
+    {
+      "name": "aerogear_keycloak-metrics-spi"
+    },
+    {
+      "name": "aeron-io_aeron"
+    },
+    {
+      "name": "aeron-io_agrona"
+    },
+    {
+      "name": "aeron-io_simple-binary-encoding"
+    },
+    {
+      "name": "aimacode_aima-java"
+    },
+    {
+      "name": "airbnb_AirMapView"
+    },
+    {
+      "name": "airbnb_DeepLinkDispatch"
+    },
+    {
+      "name": "airbnb_RxGroups"
+    },
+    {
+      "name": "airbnb_airpal"
+    },
+    {
+      "name": "airbnb_epoxy"
+    },
+    {
+      "name": "airbnb_lottie-android"
+    },
+    {
+      "name": "airbnb_native-navigation"
+    },
+    {
+      "name": "airlift_aircompressor"
+    },
+    {
+      "name": "airlift_airlift"
+    },
+    {
+      "name": "airlift_airline"
+    },
+    {
+      "name": "airlift_slice"
+    },
+    {
+      "name": "airsonic_airsonic"
+    },
+    {
+      "name": "aizuda_flowlong"
+    },
+    {
+      "name": "aizuda_snail-job"
+    },
+    {
+      "name": "aklivity_zilla"
+    },
+    {
+      "name": "akto-api-security_akto"
+    },
+    {
+      "name": "alan-eu_react-native-fast-shadow"
+    },
+    {
+      "name": "alexa_alexa-skills-kit-sdk-for-java"
+    },
+    {
+      "name": "alfio-event_alf.io"
+    },
+    {
+      "name": "alibaba_AGEIPort"
+    },
+    {
+      "name": "alibaba_ARouter"
+    },
+    {
+      "name": "alibaba_Alink"
+    },
+    {
+      "name": "alibaba_COLA"
+    },
+    {
+      "name": "alibaba_DataX"
+    },
+    {
+      "name": "alibaba_QLExpress"
+    },
+    {
+      "name": "alibaba_SREWorks"
+    },
+    {
+      "name": "alibaba_Sentinel"
+    },
+    {
+      "name": "alibaba_SmartEngine"
+    },
+    {
+      "name": "alibaba_TProfiler"
+    },
+    {
+      "name": "alibaba_Tangram-Android"
+    },
+    {
+      "name": "alibaba_UltraViewPager"
+    },
+    {
+      "name": "alibaba_Virtualview-Android"
+    },
+    {
+      "name": "alibaba_alibaba-rsocket-broker"
+    },
+    {
+      "name": "alibaba_arthas"
+    },
+    {
+      "name": "alibaba_asyncload"
+    },
+    {
+      "name": "alibaba_atlas"
+    },
+    {
+      "name": "alibaba_bulbasaur"
+    },
+    {
+      "name": "alibaba_bytekit"
+    },
+    {
+      "name": "alibaba_canal"
+    },
+    {
+      "name": "alibaba_cobar"
+    },
+    {
+      "name": "alibaba_cobarclient"
+    },
+    {
+      "name": "alibaba_compileflow"
+    },
+    {
+      "name": "alibaba_dexposed"
+    },
+    {
+      "name": "alibaba_druid"
+    },
+    {
+      "name": "alibaba_dubbo-spring-boot-starter"
+    },
+    {
+      "name": "alibaba_easyexcel"
+    },
+    {
+      "name": "alibaba_fastjson"
+    },
+    {
+      "name": "alibaba_fastjson2"
+    },
+    {
+      "name": "alibaba_fluss"
+    },
+    {
+      "name": "alibaba_freeline"
+    },
+    {
+      "name": "alibaba_java-dns-cache-manipulator"
+    },
+    {
+      "name": "alibaba_jetcache"
+    },
+    {
+      "name": "alibaba_jstorm"
+    },
+    {
+      "name": "alibaba_jvm-sandbox"
+    },
+    {
+      "name": "alibaba_jvm-sandbox-repeater"
+    },
+    {
+      "name": "alibaba_mdrill"
+    },
+    {
+      "name": "alibaba_metrics"
+    },
+    {
+      "name": "alibaba_nacos"
+    },
+    {
+      "name": "alibaba_one-java-agent"
+    },
+    {
+      "name": "alibaba_otter"
+    },
+    {
+      "name": "alibaba_sca-best-practice"
+    },
+    {
+      "name": "alibaba_simpleimage"
+    },
+    {
+      "name": "alibaba_spring-ai-alibaba"
+    },
+    {
+      "name": "alibaba_spring-cloud-alibaba"
+    },
+    {
+      "name": "alibaba_taokeeper"
+    },
+    {
+      "name": "alibaba_testable-mock"
+    },
+    {
+      "name": "alibaba_transmittable-thread-local"
+    },
+    {
+      "name": "alibaba_vlayout"
+    },
+    {
+      "name": "alibaba_yugong"
+    },
+    {
+      "name": "alipay_SoloPi"
+    },
+    {
+      "name": "alipay_alipay-easysdk"
+    },
+    {
+      "name": "aliyun_aliyun-oss-android-sdk"
+    },
+    {
+      "name": "aliyun_aliyun-oss-java-sdk"
+    },
+    {
+      "name": "alkacon_opencms-core"
+    },
+    {
+      "name": "alldatacenter_alldata"
+    },
+    {
+      "name": "allegro_hermes"
+    },
+    {
+      "name": "allenai_science-parse"
+    },
+    {
+      "name": "allure-framework_allure1"
+    },
+    {
+      "name": "allure-framework_allure2"
+    },
+    {
+      "name": "alphacep_vosk-android-demo"
+    },
+    {
+      "name": "amazon-archives_realworld-serverless-application"
+    },
+    {
+      "name": "amazon-ion_ion-java"
+    },
+    {
+      "name": "amigoscode_microservices"
+    },
+    {
+      "name": "amigoscode_spring-boot-security-course"
+    },
+    {
+      "name": "amigoscode_spring-data-jpa-course"
+    },
+    {
+      "name": "ananas-analytics_ananas-desktop"
+    },
+    {
+      "name": "andOTP_andOTP"
+    },
+    {
+      "name": "android-async-http_android-async-http"
+    },
+    {
+      "name": "android-cn_android-open-project-demo"
+    },
+    {
+      "name": "android-exchange_Android-Interview"
+    },
+    {
+      "name": "android-hacker_VirtualXposed"
+    },
+    {
+      "name": "android-hacker_exposed"
+    },
+    {
+      "name": "android_android-test"
+    },
+    {
+      "name": "android_animation-samples"
+    },
+    {
+      "name": "android_codelab-android-lifecycles"
+    },
+    {
+      "name": "android_codelab-android-room-with-a-view"
+    },
+    {
+      "name": "android_connectivity-samples"
+    },
+    {
+      "name": "android_media-samples"
+    },
+    {
+      "name": "android_testing-samples"
+    },
+    {
+      "name": "android_views-widgets-samples"
+    },
+    {
+      "name": "androidannotations_androidannotations"
+    },
+    {
+      "name": "androidthings_sample-tensorflow-imageclassifier"
+    },
+    {
+      "name": "androidx_constraintlayout"
+    },
+    {
+      "name": "androidx_media"
+    },
+    {
+      "name": "angryip_ipscan"
+    },
+    {
+      "name": "anji-plus_captcha"
+    },
+    {
+      "name": "anjlab_android-inapp-billing-v3"
+    },
+    {
+      "name": "annotation-tools"
+    },
+    {
+      "name": "ant-media_Ant-Media-Server"
+    },
+    {
+      "name": "antlr_antlr4"
+    },
+    {
+      "name": "antlr_stringtemplate4"
+    },
+    {
+      "name": "anvil-ui_anvil"
+    },
+    {
+      "name": "anzaizai_EasyRefreshLayout"
+    },
+    {
+      "name": "anzaizai_EasySwipeMenuLayout"
+    },
+    {
+      "name": "aol_cyclops"
+    },
+    {
+      "name": "aol_micro-server"
+    },
+    {
+      "name": "aosp-mirror_platform_frameworks_support"
+    },
+    {
+      "name": "apache_accumulo"
+    },
+    {
+      "name": "apache_activemq-artemis"
+    },
+    {
+      "name": "apache_amoro"
+    },
+    {
+      "name": "apache_atlas"
+    },
+    {
+      "name": "apache_aurora"
+    },
+    {
+      "name": "apache_bahir-flink"
+    },
+    {
+      "name": "apache_beam"
+    },
+    {
+      "name": "apache_bifromq"
+    },
+    {
+      "name": "apache_bookkeeper"
+    },
+    {
+      "name": "apache_calcite"
+    },
+    {
+      "name": "apache_cassandra-java-driver"
+    },
+    {
+      "name": "apache_causeway"
+    },
+    {
+      "name": "apache_celeborn"
+    },
+    {
+      "name": "apache_cloudstack"
+    },
+    {
+      "name": "apache_commons-math"
+    },
+    {
+      "name": "apache_commons-pool"
+    },
+    {
+      "name": "apache_cordova-plugin-inappbrowser"
+    },
+    {
+      "name": "apache_curator"
+    },
+    {
+      "name": "apache_cxf"
+    },
+    {
+      "name": "apache_datasketches-java"
+    },
+    {
+      "name": "apache_dolphinscheduler"
+    },
+    {
+      "name": "apache_doris"
+    },
+    {
+      "name": "apache_drill"
+    },
+    {
+      "name": "apache_druid"
+    },
+    {
+      "name": "apache_dubbo"
+    },
+    {
+      "name": "apache_dubbo-admin"
+    },
+    {
+      "name": "apache_dubbo-samples"
+    },
+    {
+      "name": "apache_dubbo-spring-boot-project"
+    },
+    {
+      "name": "apache_eventmesh"
+    },
+    {
+      "name": "apache_fineract"
+    },
+    {
+      "name": "apache_flink-cdc"
+    },
+    {
+      "name": "apache_flink-kubernetes-operator"
+    },
+    {
+      "name": "apache_flink-playgrounds"
+    },
+    {
+      "name": "apache_flink-statefun"
+    },
+    {
+      "name": "apache_flink-training"
+    },
+    {
+      "name": "apache_fory"
+    },
+    {
+      "name": "apache_freemarker"
+    },
+    {
+      "name": "apache_fury"
+    },
+    {
+      "name": "apache_geode"
+    },
+    {
+      "name": "apache_giraph"
+    },
+    {
+      "name": "apache_gobblin"
+    },
+    {
+      "name": "apache_gravitino"
+    },
+    {
+      "name": "apache_groovy"
+    },
+    {
+      "name": "apache_guacamole-client"
+    },
+    {
+      "name": "apache_hertzbeat"
+    },
+    {
+      "name": "apache_hop"
+    },
+    {
+      "name": "apache_hudi"
+    },
+    {
+      "name": "apache_iceberg"
+    },
+    {
+      "name": "apache_incubator-baremaps"
+    },
+    {
+      "name": "apache_incubator-heron"
+    },
+    {
+      "name": "apache_incubator-hugegraph"
+    },
+    {
+      "name": "apache_incubator-kie-drools"
+    },
+    {
+      "name": "apache_incubator-kie-kogito-runtimes"
+    },
+    {
+      "name": "apache_incubator-kie-optaplanner"
+    },
+    {
+      "name": "apache_incubator-seata"
+    },
+    {
+      "name": "apache_incubator-seata-samples"
+    },
+    {
+      "name": "apache_incubator-xtable"
+    },
+    {
+      "name": "apache_inlong"
+    },
+    {
+      "name": "apache_james-project"
+    },
+    {
+      "name": "apache_jena"
+    },
+    {
+      "name": "apache_jmeter"
+    },
+    {
+      "name": "apache_kafka"
+    },
+    {
+      "name": "apache_karaf"
+    },
+    {
+      "name": "apache_kylin"
+    },
+    {
+      "name": "apache_linkis"
+    },
+    {
+      "name": "apache_logging-flume"
+    },
+    {
+      "name": "apache_lucene"
+    },
+    {
+      "name": "apache_maven-mvnd"
+    },
+    {
+      "name": "apache_metron"
+    },
+    {
+      "name": "apache_mina-sshd"
+    },
+    {
+      "name": "apache_nifi"
+    },
+    {
+      "name": "apache_ofbiz-framework"
+    },
+    {
+      "name": "apache_oozie"
+    },
+    {
+      "name": "apache_openmeetings"
+    },
+    {
+      "name": "apache_opennlp"
+    },
+    {
+      "name": "apache_orc"
+    },
+    {
+      "name": "apache_paimon"
+    },
+    {
+      "name": "apache_parquet-java"
+    },
+    {
+      "name": "apache_phoenix"
+    },
+    {
+      "name": "apache_pinot"
+    },
+    {
+      "name": "apache_plc4x"
+    },
+    {
+      "name": "apache_polaris"
+    },
+    {
+      "name": "apache_pulsar"
+    },
+    {
+      "name": "apache_ranger"
+    },
+    {
+      "name": "apache_ratis"
+    },
+    {
+      "name": "apache_rocketmq"
+    },
+    {
+      "name": "apache_rocketmq-dashboard"
+    },
+    {
+      "name": "apache_rocketmq-externals"
+    },
+    {
+      "name": "apache_rocketmq-spring"
+    },
+    {
+      "name": "apache_samza"
+    },
+    {
+      "name": "apache_seatunnel"
+    },
+    {
+      "name": "apache_seatunnel-web"
+    },
+    {
+      "name": "apache_sedona"
+    },
+    {
+      "name": "apache_servicecomb-java-chassis"
+    },
+    {
+      "name": "apache_servicecomb-pack"
+    },
+    {
+      "name": "apache_servicecomb-samples"
+    },
+    {
+      "name": "apache_shardingsphere"
+    },
+    {
+      "name": "apache_shardingsphere-elasticjob"
+    },
+    {
+      "name": "apache_shardingsphere-example"
+    },
+    {
+      "name": "apache_shenyu"
+    },
+    {
+      "name": "apache_skywalking"
+    },
+    {
+      "name": "apache_skywalking-java"
+    },
+    {
+      "name": "apache_solr"
+    },
+    {
+      "name": "apache_sqoop"
+    },
+    {
+      "name": "apache_storm"
+    },
+    {
+      "name": "apache_stormcrawler"
+    },
+    {
+      "name": "apache_streampark"
+    },
+    {
+      "name": "apache_streampipes"
+    },
+    {
+      "name": "apache_struts"
+    },
+    {
+      "name": "apache_submarine"
+    },
+    {
+      "name": "apache_systemds"
+    },
+    {
+      "name": "apache_tomcat"
+    },
+    {
+      "name": "apache_usergrid"
+    },
+    {
+      "name": "apache_zeppelin"
+    },
+    {
+      "name": "apereo_cas"
+    },
+    {
+      "name": "apereo_java-cas-client"
+    },
+    {
+      "name": "apilayer_restcountries"
+    },
+    {
+      "name": "apiman_apiman"
+    },
+    {
+      "name": "apolloconfig_apollo"
+    },
+    {
+      "name": "apolloconfig_apollo-use-cases"
+    },
+    {
+      "name": "appium_java-client"
+    },
+    {
+      "name": "apple_pkl"
+    },
+    {
+      "name": "apple_servicetalk"
+    },
+    {
+      "name": "arduino_Arduino"
+    },
+    {
+      "name": "arianne_stendhal"
+    },
+    {
+      "name": "artipie_artipie"
+    },
+    {
+      "name": "asciidocfx_AsciidocFX"
+    },
+    {
+      "name": "asciidoctor_asciidoctorj"
+    },
+    {
+      "name": "asdsolutions-os_duo-navigation-drawer"
+    },
+    {
+      "name": "assertj_assertj"
+    },
+    {
+      "name": "atilika_kuromoji"
+    },
+    {
+      "name": "atomix_copycat"
+    },
+    {
+      "name": "atool_fluent-mybatis"
+    },
+    {
+      "name": "auth0_java-jwt"
+    },
+    {
+      "name": "avast_android-butterknife-zelezny"
+    },
+    {
+      "name": "avast_android-styled-dialogs"
+    },
+    {
+      "name": "aventrix_jnanoid"
+    },
+    {
+      "name": "awaitility_awaitility"
+    },
+    {
+      "name": "aws-amplify_aws-sdk-android"
+    },
+    {
+      "name": "aws-samples_aws-big-data-blog"
+    },
+    {
+      "name": "aws-samples_kubernetes-for-java-developers"
+    },
+    {
+      "name": "aws_aws-sdk-java-v2"
+    },
+    {
+      "name": "aws_event-ruler"
+    },
+    {
+      "name": "aws_serverless-java-container"
+    },
+    {
+      "name": "awsdocs_aws-doc-sdk-examples"
+    },
+    {
+      "name": "awsdocs_aws-lambda-developer-guide"
+    },
+    {
+      "name": "awslabs_amazon-kinesis-client"
+    },
+    {
+      "name": "awslabs_aws-athena-query-federation"
+    },
+    {
+      "name": "awslabs_aws-saas-boost"
+    },
+    {
+      "name": "awslabs_aws-sdk-android-samples"
+    },
+    {
+      "name": "awslabs_multi-model-server"
+    },
+    {
+      "name": "axelor_axelor-open-suite"
+    },
+    {
+      "name": "azkaban_azkaban"
+    },
+    {
+      "name": "baasbox_baasbox"
+    },
+    {
+      "name": "badoo_Chateau"
+    },
+    {
+      "name": "badoo_android-weak-handler"
+    },
+    {
+      "name": "baidu_Jprotobuf-rpc-socket"
+    },
+    {
+      "name": "baidu_starlight"
+    },
+    {
+      "name": "baidu_uid-generator"
+    },
+    {
+      "name": "ballcat-projects_ballcat"
+    },
+    {
+      "name": "bamlab_react-native-image-resizer"
+    },
+    {
+      "name": "baomidou_dynamic-datasource"
+    },
+    {
+      "name": "baomidou_generator"
+    },
+    {
+      "name": "baomidou_mybatis-plus"
+    },
+    {
+      "name": "baomidou_mybatis-plus-samples"
+    },
+    {
+      "name": "bardsoftware_ganttproject"
+    },
+    {
+      "name": "bastillion-io_Bastillion"
+    },
+    {
+      "name": "batfish_batfish"
+    },
+    {
+      "name": "battcn_spring-boot2-learning"
+    },
+    {
+      "name": "bazaarvoice_jolt"
+    },
+    {
+      "name": "bazelbuild_bazel"
+    },
+    {
+      "name": "bazelbuild_intellij"
+    },
+    {
+      "name": "bbossgroups_bboss-elasticsearch"
+    },
+    {
+      "name": "bcgit_bc-java"
+    },
+    {
+      "name": "beanshell_beanshell"
+    },
+    {
+      "name": "beefe_react-native-picker"
+    },
+    {
+      "name": "beehive-lab_TornadoVM"
+    },
+    {
+      "name": "beemdevelopment_Aegis"
+    },
+    {
+      "name": "bepass-org_oblivion"
+    },
+    {
+      "name": "bevy_photo-editor-android"
+    },
+    {
+      "name": "bilibili_DanmakuFlameMaster"
+    },
+    {
+      "name": "bilibili_MagicaSakura"
+    },
+    {
+      "name": "bilibili_boxing"
+    },
+    {
+      "name": "bilibili_drawee-text-view"
+    },
+    {
+      "name": "biojava_biojava"
+    },
+    {
+      "name": "bisq-network_bisq"
+    },
+    {
+      "name": "bitcoin-wallet_bitcoin-wallet"
+    },
+    {
+      "name": "bitcoinj_bitcoinj"
+    },
+    {
+      "name": "blackuy_react-native-twilio-video-webrtc"
+    },
+    {
+      "name": "blazegraph_database"
+    },
+    {
+      "name": "blossom-editor_blossom"
+    },
+    {
+      "name": "blox_blox"
+    },
+    {
+      "name": "bluelinelabs_Conductor"
+    },
+    {
+      "name": "bluelinelabs_LoganSquare"
+    },
+    {
+      "name": "bndtools_bnd"
+    },
+    {
+      "name": "bolo-blog_bolo-solo"
+    },
+    {
+      "name": "bookdash_bookdash-android-app"
+    },
+    {
+      "name": "boonproject_boon"
+    },
+    {
+      "name": "bootique_bootique"
+    },
+    {
+      "name": "braisdom_ObjectiveSql"
+    },
+    {
+      "name": "brave_link-bubble"
+    },
+    {
+      "name": "bravobit_FFmpeg-Android"
+    },
+    {
+      "name": "brmson_yodaqa"
+    },
+    {
+      "name": "broadinstitute_gatk"
+    },
+    {
+      "name": "broadinstitute_picard"
+    },
+    {
+      "name": "btraceio_btrace"
+    },
+    {
+      "name": "bttv-android_bttv"
+    },
+    {
+      "name": "bucket4j_bucket4j"
+    },
+    {
+      "name": "bufferapp_AdaptableBottomNavigation"
+    },
+    {
+      "name": "bufferapp_BufferTextInputLayout"
+    },
+    {
+      "name": "buildfarm_buildfarm"
+    },
+    {
+      "name": "bumptech_glide"
+    },
+    {
+      "name": "byteam_SuperAdapter"
+    },
+    {
+      "name": "bytedance_AabResGuard"
+    },
+    {
+      "name": "bytedance_AlphaPlayer"
+    },
+    {
+      "name": "bytedance_BoostMultiDex"
+    },
+    {
+      "name": "bytedance_ByteX"
+    },
+    {
+      "name": "bytedance_CodeLocator"
+    },
+    {
+      "name": "bytedance_bitsail"
+    },
+    {
+      "name": "bytedance_scene"
+    },
+    {
+      "name": "c-kzxvldkhX_receiptnotice"
+    },
+    {
+      "name": "cBioPortal_cbioportal"
+    },
+    {
+      "name": "cSploit_android"
+    },
+    {
+      "name": "cabaletta_baritone"
+    },
+    {
+      "name": "cache2k_cache2k"
+    },
+    {
+      "name": "camelinaction_camelinaction2"
+    },
+    {
+      "name": "campusappcn_AndRouter"
+    },
+    {
+      "name": "camunda-consulting_camunda-7-code-examples"
+    },
+    {
+      "name": "camunda_camunda-bpm-examples"
+    },
+    {
+      "name": "camunda_camunda-bpm-platform"
+    },
+    {
+      "name": "card-io_card.io-Android-SDK"
+    },
+    {
+      "name": "careercup_CtCI-6th-Edition"
+    },
+    {
+      "name": "careercup_ctci"
+    },
+    {
+      "name": "carrot2_carrot2"
+    },
+    {
+      "name": "carrotsearch_hppc"
+    },
+    {
+      "name": "casbin_jcasbin"
+    },
+    {
+      "name": "cassandre-tech_cassandre-trading-bot"
+    },
+    {
+      "name": "castorini_anserini"
+    },
+    {
+      "name": "cats-oss_android-gpuimage"
+    },
+    {
+      "name": "cc-tweaked_CC-Tweaked"
+    },
+    {
+      "name": "cdapio_cdap"
+    },
+    {
+      "name": "cdk_cdk"
+    },
+    {
+      "name": "census-instrumentation_opencensus-java"
+    },
+    {
+      "name": "cfg4j_cfg4j"
+    },
+    {
+      "name": "cgeo_cgeo"
+    },
+    {
+      "name": "cglib_cglib"
+    },
+    {
+      "name": "chainbase-labs_manuscript-core"
+    },
+    {
+      "name": "chandevel_Clover"
+    },
+    {
+      "name": "chariotsolutions_phonegap-nfc"
+    },
+    {
+      "name": "chat-sdk_chat-sdk-android"
+    },
+    {
+      "name": "chatty_chatty"
+    },
+    {
+      "name": "chennaione_sugar"
+    },
+    {
+      "name": "chocoteam_choco-solver"
+    },
+    {
+      "name": "chromium_dom-distiller"
+    },
+    {
+      "name": "chromiumembedded_java-cef"
+    },
+    {
+      "name": "cincheo_jsweet"
+    },
+    {
+      "name": "cisagov_log4j-scanner"
+    },
+    {
+      "name": "citerus_dddsample-core"
+    },
+    {
+      "name": "claritylab_lucida"
+    },
+    {
+      "name": "classgraph_classgraph"
+    },
+    {
+      "name": "clojure_clojure"
+    },
+    {
+      "name": "cloudera_flume"
+    },
+    {
+      "name": "cloudfoundry_uaa"
+    },
+    {
+      "name": "cmu-db_benchbase"
+    },
+    {
+      "name": "cmusphinx_pocketsphinx-android-demo"
+    },
+    {
+      "name": "cmusphinx_sphinx4"
+    },
+    {
+      "name": "cnescatlab_sonar-cnes-report"
+    },
+    {
+      "name": "cod3rcursos_curso-java"
+    },
+    {
+      "name": "code-troopers_android-betterpickers"
+    },
+    {
+      "name": "codecentric_chaos-monkey-spring-boot"
+    },
+    {
+      "name": "codecentric_spring-boot-admin"
+    },
+    {
+      "name": "codelibs_fess"
+    },
+    {
+      "name": "codemybrainsout_ahoy-onboarding"
+    },
+    {
+      "name": "codingapi_tx-lcn"
+    },
+    {
+      "name": "cometd_cometd"
+    },
+    {
+      "name": "commonmark_commonmark-java"
+    },
+    {
+      "name": "conductor-oss_conductor"
+    },
+    {
+      "name": "conduktor_kafka-beginners-course"
+    },
+    {
+      "name": "confluentinc_examples"
+    },
+    {
+      "name": "consenlabs_token-core-android"
+    },
+    {
+      "name": "consulo_consulo"
+    },
+    {
+      "name": "continew-org_continew-admin"
+    },
+    {
+      "name": "controlsfx_controlsfx"
+    },
+    {
+      "name": "cordova-plugin-camera-preview_cordova-plugin-camera-preview"
+    },
+    {
+      "name": "corona-warn-app_cwa-server"
+    },
+    {
+      "name": "corretto_corretto-11"
+    },
+    {
+      "name": "corretto_corretto-8"
+    },
+    {
+      "name": "couchbase_couchbase-lite-android"
+    },
+    {
+      "name": "crashinvaders_gdx-texture-packer-gui"
+    },
+    {
+      "name": "crashub_crash"
+    },
+    {
+      "name": "crawljax_crawljax"
+    },
+    {
+      "name": "crmeb_crmeb_java"
+    },
+    {
+      "name": "cropsly_ffmpeg-android-java"
+    },
+    {
+      "name": "crosg_FloatMenuSample"
+    },
+    {
+      "name": "crossbario_autobahn-java"
+    },
+    {
+      "name": "cryptomator_cryptomator"
+    },
+    {
+      "name": "ctripcorp_C-OCR"
+    },
+    {
+      "name": "ctripcorp_dal"
+    },
+    {
+      "name": "ctripcorp_x-pipe"
+    },
+    {
+      "name": "cuba-platform_cuba"
+    },
+    {
+      "name": "cucumber_cucumber-jvm"
+    },
+    {
+      "name": "database-rider_database-rider"
+    },
+    {
+      "name": "databricks_learning-spark"
+    },
+    {
+      "name": "datacleaner_DataCleaner"
+    },
+    {
+      "name": "dataease_dataease"
+    },
+    {
+      "name": "datafaker-net_datafaker"
+    },
+    {
+      "name": "datahub-project_datahub"
+    },
+    {
+      "name": "datastax_jvector"
+    },
+    {
+      "name": "datatheorem_TrustKit-Android"
+    },
+    {
+      "name": "datavane_datasophon"
+    },
+    {
+      "name": "datavane_datavines"
+    },
+    {
+      "name": "datavane_tis"
+    },
+    {
+      "name": "dbeaver_dbeaver"
+    },
+    {
+      "name": "dcevm_dcevm"
+    },
+    {
+      "name": "dcm4che_dcm4che"
+    },
+    {
+      "name": "ddd-by-examples_all-things-cqrs"
+    },
+    {
+      "name": "ddd-by-examples_factory"
+    },
+    {
+      "name": "ddd-by-examples_library"
+    },
+    {
+      "name": "debezium_debezium"
+    },
+    {
+      "name": "decentralized-identity_universal-resolver"
+    },
+    {
+      "name": "deepjavalibrary_djl"
+    },
+    {
+      "name": "deeplearning4j_deeplearning4j-examples"
+    },
+    {
+      "name": "deepmedia_Transcoder"
+    },
+    {
+      "name": "delight-im_Android-AdvancedWebView"
+    },
+    {
+      "name": "deliveredtechnologies_rulebook"
+    },
+    {
+      "name": "deltachat_deltachat-android"
+    },
+    {
+      "name": "dependency-check_DependencyCheck"
+    },
+    {
+      "name": "dependency-check_dependency-check-sonar-plugin"
+    },
+    {
+      "name": "derive4j_derive4j"
+    },
+    {
+      "name": "desktopqa_Cynthia"
+    },
+    {
+      "name": "devSquad-study_2023-CS-Study"
+    },
+    {
+      "name": "devlive-community_datacap"
+    },
+    {
+      "name": "devoxx_DevoxxGenieIDEAPlugin"
+    },
+    {
+      "name": "dhatim_fastexcel"
+    },
+    {
+      "name": "dialogflow_dialogflow-android-client"
+    },
+    {
+      "name": "dianping_cat"
+    },
+    {
+      "name": "dibo-software_diboot"
+    },
+    {
+      "name": "didi_DDMQ"
+    },
+    {
+      "name": "didi_DRouter"
+    },
+    {
+      "name": "didi_DoKit"
+    },
+    {
+      "name": "didi_DroidAssist"
+    },
+    {
+      "name": "didi_KnowStreaming"
+    },
+    {
+      "name": "didi_VirtualAPK"
+    },
+    {
+      "name": "didi_super-jacoco"
+    },
+    {
+      "name": "didi_tinyid"
+    },
+    {
+      "name": "didi_turbo"
+    },
+    {
+      "name": "diffplug_spotless"
+    },
+    {
+      "name": "digitalfondue_lavagna"
+    },
+    {
+      "name": "digitalinnovationone_dio-springboot"
+    },
+    {
+      "name": "digitalinnovationone_ganhando_produtividade_com_Stream_API_Java"
+    },
+    {
+      "name": "digitalinnovationone_santander-dev-week-2023-api"
+    },
+    {
+      "name": "digitalinnovationone_trilha-java-basico"
+    },
+    {
+      "name": "digitalpetri_modbus"
+    },
+    {
+      "name": "discord-jda_JDA"
+    },
+    {
+      "name": "dji-sdk_Mobile-SDK-Android"
+    },
+    {
+      "name": "dlsc-software-consulting-gmbh_CalendarFX"
+    },
+    {
+      "name": "dlsc-software-consulting-gmbh_FormsFX"
+    },
+    {
+      "name": "dlsc-software-consulting-gmbh_GemsFX"
+    },
+    {
+      "name": "dlsc-software-consulting-gmbh_PreferencesFX"
+    },
+    {
+      "name": "dnsjava_dnsjava"
+    },
+    {
+      "name": "docker-java_docker-java"
+    },
+    {
+      "name": "dockersamples_atsea-sample-shop-app"
+    },
+    {
+      "name": "dom4j_dom4j"
+    },
+    {
+      "name": "doocs_advanced-java"
+    },
+    {
+      "name": "doocs_coding-interview"
+    },
+    {
+      "name": "doocs_jvm"
+    },
+    {
+      "name": "doocs_leetcode"
+    },
+    {
+      "name": "doocs_source-code-hunter"
+    },
+    {
+      "name": "dotCMS_core"
+    },
+    {
+      "name": "dotintent_react-native-ble-plx"
+    },
+    {
+      "name": "douban_rexxar-android"
+    },
+    {
+      "name": "doublechaintech_scm-biz-suite"
+    },
+    {
+      "name": "dragonite-network_dragonite-java"
+    },
+    {
+      "name": "dragonwell-project_dragonwell11"
+    },
+    {
+      "name": "dragonwell-project_dragonwell8"
+    },
+    {
+      "name": "droidparts_droidparts"
+    },
+    {
+      "name": "dromara_Jpom"
+    },
+    {
+      "name": "dromara_MaxKey"
+    },
+    {
+      "name": "dromara_RuoYi-Cloud-Plus"
+    },
+    {
+      "name": "dromara_RuoYi-Vue-Plus"
+    },
+    {
+      "name": "dromara_SMS4J"
+    },
+    {
+      "name": "dromara_Sa-Token"
+    },
+    {
+      "name": "dromara_TLog"
+    },
+    {
+      "name": "dromara_cubic"
+    },
+    {
+      "name": "dromara_dante-cloud"
+    },
+    {
+      "name": "dromara_dax-pay"
+    },
+    {
+      "name": "dromara_dynamic-tp"
+    },
+    {
+      "name": "dromara_easy-es"
+    },
+    {
+      "name": "dromara_easy-query"
+    },
+    {
+      "name": "dromara_fast-request"
+    },
+    {
+      "name": "dromara_forest"
+    },
+    {
+      "name": "dromara_gobrs-async"
+    },
+    {
+      "name": "dromara_hmily"
+    },
+    {
+      "name": "dromara_lamp-cloud"
+    },
+    {
+      "name": "dromara_liteflow"
+    },
+    {
+      "name": "dromara_mendmix-cloud"
+    },
+    {
+      "name": "dromara_myth"
+    },
+    {
+      "name": "dromara_neutrino-proxy"
+    },
+    {
+      "name": "dromara_orion-visor"
+    },
+    {
+      "name": "dromara_raincat"
+    },
+    {
+      "name": "dromara_sureness"
+    },
+    {
+      "name": "dromara_tianai-captcha"
+    },
+    {
+      "name": "dromara_x-file-storage"
+    },
+    {
+      "name": "dropbox_dropbox-sdk-java"
+    },
+    {
+      "name": "dropbox_hackpad"
+    },
+    {
+      "name": "dropwizard_dropwizard"
+    },
+    {
+      "name": "dropwizard_metrics"
+    },
+    {
+      "name": "dsbGenius_WhiteBoard"
+    },
+    {
+      "name": "dtinit_data-transfer-project"
+    },
+    {
+      "name": "dylibso_chicory"
+    },
+    {
+      "name": "dynjs_dynjs"
+    },
+    {
+      "name": "e-commerce-sample_ecommerce-order-service"
+    },
+    {
+      "name": "eBay_parallec"
+    },
+    {
+      "name": "eBay_restcommander"
+    },
+    {
+      "name": "easyandroidgroup_UpdatePlugin"
+    },
+    {
+      "name": "easymock_objenesis"
+    },
+    {
+      "name": "ebean-orm_ebean"
+    },
+    {
+      "name": "eclipse-archived_smarthome"
+    },
+    {
+      "name": "eclipse-buildship_buildship"
+    },
+    {
+      "name": "eclipse-californium_californium"
+    },
+    {
+      "name": "eclipse-color-theme_eclipse-color-theme"
+    },
+    {
+      "name": "eclipse-ditto_ditto"
+    },
+    {
+      "name": "eclipse-ee4j_jersey"
+    },
+    {
+      "name": "eclipse-jdtls_eclipse.jdt.ls"
+    },
+    {
+      "name": "eclipse-jifa_jifa"
+    },
+    {
+      "name": "eclipse-jkube_jkube"
+    },
+    {
+      "name": "eclipse-kura_kura"
+    },
+    {
+      "name": "eclipse-leshan_leshan"
+    },
+    {
+      "name": "eclipse-lsp4j_lsp4j"
+    },
+    {
+      "name": "eclipse-milo_milo"
+    },
+    {
+      "name": "eclipse-paho_paho.mqtt-spy"
+    },
+    {
+      "name": "eclipse-paho_paho.mqtt.android"
+    },
+    {
+      "name": "eclipse-paho_paho.mqtt.java"
+    },
+    {
+      "name": "eclipse-steady_steady"
+    },
+    {
+      "name": "eclipse-vertx_vert.x"
+    },
+    {
+      "name": "eclipse-vertx_vertx-sql-client"
+    },
+    {
+      "name": "eclipse_openvsx"
+    },
+    {
+      "name": "eclipsesource_J2V8"
+    },
+    {
+      "name": "ehcache_ehcache3"
+    },
+    {
+      "name": "elastic_apm-agent-java"
+    },
+    {
+      "name": "elastic_elasticsearch"
+    },
+    {
+      "name": "elastic_elasticsearch-hadoop"
+    },
+    {
+      "name": "elastic_elasticsearch-mapper-attachments"
+    },
+    {
+      "name": "elastic_logstash"
+    },
+    {
+      "name": "electronicarts_ea-async"
+    },
+    {
+      "name": "eleme_Amigo"
+    },
+    {
+      "name": "eleme_UETool"
+    },
+    {
+      "name": "eleme_lancet"
+    },
+    {
+      "name": "element-hq_riot-android"
+    },
+    {
+      "name": "elki-project_elki"
+    },
+    {
+      "name": "embulk_embulk"
+    },
+    {
+      "name": "enso-org_enso"
+    },
+    {
+      "name": "envoyproxy_envoy-mobile"
+    },
+    {
+      "name": "eoecn_android-app"
+    },
+    {
+      "name": "eowise_recyclerview-stickyheaders"
+    },
+    {
+      "name": "esig_dss"
+    },
+    {
+      "name": "esp8266_arduino-esp8266fs-plugin"
+    },
+    {
+      "name": "espertechinc_esper"
+    },
+    {
+      "name": "essentials_Essentials"
+    },
+    {
+      "name": "etcd-io_jetcd"
+    },
+    {
+      "name": "ether_pad"
+    },
+    {
+      "name": "ethereum_ethereumj"
+    },
+    {
+      "name": "etsy_AndroidStaggeredGrid"
+    },
+    {
+      "name": "etsy_oculus"
+    },
+    {
+      "name": "eucalyptus_eucalyptus"
+    },
+    {
+      "name": "eventeum_eventeum"
+    },
+    {
+      "name": "eventuate-local_eventuate-local"
+    },
+    {
+      "name": "eventuate-tram_eventuate-tram-core"
+    },
+    {
+      "name": "eventuate-tram_eventuate-tram-examples-customers-and-orders"
+    },
+    {
+      "name": "eventuate-tram_eventuate-tram-sagas"
+    },
+    {
+      "name": "eventuate-tram_eventuate-tram-sagas-examples-customers-and-orders"
+    },
+    {
+      "name": "everit-org_json-schema"
+    },
+    {
+      "name": "exadel-inc_CompreFace"
+    },
+    {
+      "name": "exchange-core_exchange-core"
+    },
+    {
+      "name": "exercism_java"
+    },
+    {
+      "name": "ezylang_EvalEx"
+    },
+    {
+      "name": "f-droid_fdroidclient"
+    },
+    {
+      "name": "f4b6a3_tsid-creator"
+    },
+    {
+      "name": "f4b6a3_uuid-creator"
+    },
+    {
+      "name": "fabric8io_docker-maven-plugin"
+    },
+    {
+      "name": "fabric8io_kubernetes-client"
+    },
+    {
+      "name": "fabric8io_spring-cloud-kubernetes"
+    },
+    {
+      "name": "facebook_SoLoader"
+    },
+    {
+      "name": "facebook_TextLayoutBuilder"
+    },
+    {
+      "name": "facebook_buck"
+    },
+    {
+      "name": "facebook_fresco"
+    },
+    {
+      "name": "facebook_screenshot-tests-for-android"
+    },
+    {
+      "name": "facebook_stetho"
+    },
+    {
+      "name": "facebookarchive_hadoop-20"
+    },
+    {
+      "name": "facebookarchive_ig-lazy-module-loader"
+    },
+    {
+      "name": "facebookarchive_jcommon"
+    },
+    {
+      "name": "facebookarchive_nailgun"
+    },
+    {
+      "name": "facebookarchive_network-connection-class"
+    },
+    {
+      "name": "facebookarchive_nifty"
+    },
+    {
+      "name": "facebookarchive_proguard"
+    },
+    {
+      "name": "facebookarchive_react-native-fbsdk"
+    },
+    {
+      "name": "facebookarchive_rebound"
+    },
+    {
+      "name": "facebookarchive_shimmer-android"
+    },
+    {
+      "name": "facebookarchive_swift"
+    },
+    {
+      "name": "facebookincubator_Battery-Metrics"
+    },
+    {
+      "name": "failsafe-lib_failsafe"
+    },
+    {
+      "name": "fair-acc_chart-fx"
+    },
+    {
+      "name": "fast-excel_fastexcel"
+    },
+    {
+      "name": "fast-pack_JavaFastPFOR"
+    },
+    {
+      "name": "fbsamples_360-video-player-for-android"
+    },
+    {
+      "name": "ferredoxin_QNotified"
+    },
+    {
+      "name": "ff4j_ff4j"
+    },
+    {
+      "name": "find-sec-bugs_find-sec-bugs"
+    },
+    {
+      "name": "findbugsproject_findbugs"
+    },
+    {
+      "name": "finmath_finmath-lib"
+    },
+    {
+      "name": "firebase_FirebaseUI-Android"
+    },
+    {
+      "name": "firebase_firebase-admin-java"
+    },
+    {
+      "name": "firebase_firebase-android-sdk"
+    },
+    {
+      "name": "firebase_geofire-java"
+    },
+    {
+      "name": "firebase_snippets-android"
+    },
+    {
+      "name": "fixteam_fixflow"
+    },
+    {
+      "name": "fizzed_rocker"
+    },
+    {
+      "name": "fizzgate_fizz-gateway-node"
+    },
+    {
+      "name": "flink-extended_dl-on-flink"
+    },
+    {
+      "name": "flipkart-incubator_proteus"
+    },
+    {
+      "name": "flipkart-incubator_zjsonpatch"
+    },
+    {
+      "name": "floodlight_floodlight"
+    },
+    {
+      "name": "flowable_flowable-engine"
+    },
+    {
+      "name": "flutter_flutter-intellij"
+    },
+    {
+      "name": "fluttercommunity_flutter_webview_plugin"
+    },
+    {
+      "name": "fluttify-project_amap_map_fluttify"
+    },
+    {
+      "name": "flyingsaucerproject_flyingsaucer"
+    },
+    {
+      "name": "flyway_flyway"
+    },
+    {
+      "name": "forcedotcom_dataloader"
+    },
+    {
+      "name": "forcedotcom_phoenix"
+    },
+    {
+      "name": "forge_roaster"
+    },
+    {
+      "name": "fossasia_eventyay"
+    },
+    {
+      "name": "fossasia_loklak_wok_android"
+    },
+    {
+      "name": "fossasia_neurolab-android"
+    },
+    {
+      "name": "fossasia_open-event-droidgen"
+    },
+    {
+      "name": "fossasia_open-event-organizer-android"
+    },
+    {
+      "name": "fossasia_phimpme-android"
+    },
+    {
+      "name": "fossasia_pslab-android"
+    },
+    {
+      "name": "fossasia_susi_server"
+    },
+    {
+      "name": "frakbot_JumpingBeans"
+    },
+    {
+      "name": "freechat-fun_freechat"
+    },
+    {
+      "name": "freeotp_freeotp-android"
+    },
+    {
+      "name": "freeplane_freeplane"
+    },
+    {
+      "name": "freerouting_freerouting"
+    },
+    {
+      "name": "friendlyrobotnyc_TinyDancer"
+    },
+    {
+      "name": "frostwire_frostwire"
+    },
+    {
+      "name": "fullstackreact_react-native-firestack"
+    },
+    {
+      "name": "fullstackreact_react-native-oauth"
+    },
+    {
+      "name": "functionaljava_functionaljava"
+    },
+    {
+      "name": "funtl_MyShopPlus"
+    },
+    {
+      "name": "funtl_spring-cloud-alibaba-my-shop"
+    },
+    {
+      "name": "fusesource_mqtt-client"
+    },
+    {
+      "name": "gaarason_database-all"
+    },
+    {
+      "name": "gaia-app_gaia"
+    },
+    {
+      "name": "galenframework_galen"
+    },
+    {
+      "name": "gast-lib_gast-lib"
+    },
+    {
+      "name": "gaucho-matrero_altoclef"
+    },
+    {
+      "name": "gaugesapp_gauges-android"
+    },
+    {
+      "name": "gchq_Gaffer"
+    },
+    {
+      "name": "geekidea_spring-boot-plus"
+    },
+    {
+      "name": "geogebra_geogebra"
+    },
+    {
+      "name": "gephi_gephi"
+    },
+    {
+      "name": "getmoneynote_moneynote-api"
+    },
+    {
+      "name": "getodk_collect"
+    },
+    {
+      "name": "git-commit-id_git-commit-id-maven-plugin"
+    },
+    {
+      "name": "gitblit-org_gitblit"
+    },
+    {
+      "name": "github_maven-plugins"
+    },
+    {
+      "name": "gitlab4j_gitlab4j-api"
+    },
+    {
+      "name": "gitskarios_Gitskarios"
+    },
+    {
+      "name": "glowroot_glowroot"
+    },
+    {
+      "name": "gluonhq_scenebuilder"
+    },
+    {
+      "name": "glyptodon_guacamole-client"
+    },
+    {
+      "name": "go-lang-plugin-org_go-lang-idea-plugin"
+    },
+    {
+      "name": "gocd_gocd"
+    },
+    {
+      "name": "goldmansachs_gs-collections"
+    },
+    {
+      "name": "google-ar_sceneform-android-sdk"
+    },
+    {
+      "name": "google-developer-training_android-advanced"
+    },
+    {
+      "name": "google-developer-training_android-fundamentals"
+    },
+    {
+      "name": "google-developer-training_android-fundamentals-apps-v2"
+    },
+    {
+      "name": "google_ExoPlayer"
+    },
+    {
+      "name": "google_agera"
+    },
+    {
+      "name": "google_android-arscblamer"
+    },
+    {
+      "name": "google_android-classyshark"
+    },
+    {
+      "name": "google_archive-patcher"
+    },
+    {
+      "name": "google_auto"
+    },
+    {
+      "name": "google_bindiff"
+    },
+    {
+      "name": "google_binnavi"
+    },
+    {
+      "name": "google_blockly-android"
+    },
+    {
+      "name": "google_bundletool"
+    },
+    {
+      "name": "google_caliper"
+    },
+    {
+      "name": "google_cameraview"
+    },
+    {
+      "name": "google_closure-compiler"
+    },
+    {
+      "name": "google_closure-templates"
+    },
+    {
+      "name": "google_compile-testing"
+    },
+    {
+      "name": "google_conscrypt"
+    },
+    {
+      "name": "google_copybara"
+    },
+    {
+      "name": "google_cronet-transport-for-okhttp"
+    },
+    {
+      "name": "google_error-prone"
+    },
+    {
+      "name": "google_exposure-notifications-android"
+    },
+    {
+      "name": "google_firing-range"
+    },
+    {
+      "name": "google_flogger"
+    },
+    {
+      "name": "google_gcm"
+    },
+    {
+      "name": "google_gitiles"
+    },
+    {
+      "name": "google_google-api-java-client-samples"
+    },
+    {
+      "name": "google_google-authenticator"
+    },
+    {
+      "name": "google_google-authenticator-android"
+    },
+    {
+      "name": "google_google-java-format"
+    },
+    {
+      "name": "google_gps-measurement-tools"
+    },
+    {
+      "name": "google_grafika"
+    },
+    {
+      "name": "google_graphicsfuzz"
+    },
+    {
+      "name": "google_gson"
+    },
+    {
+      "name": "google_guava"
+    },
+    {
+      "name": "google_guice"
+    },
+    {
+      "name": "google_hover"
+    },
+    {
+      "name": "google_j2objc"
+    },
+    {
+      "name": "google_jimfs"
+    },
+    {
+      "name": "google_live-transcribe-speech-engine"
+    },
+    {
+      "name": "google_mr4c"
+    },
+    {
+      "name": "google_nomulus"
+    },
+    {
+      "name": "google_open-location-code"
+    },
+    {
+      "name": "google_physical-web"
+    },
+    {
+      "name": "google_project-gameface"
+    },
+    {
+      "name": "google_re2j"
+    },
+    {
+      "name": "google_rejoiner"
+    },
+    {
+      "name": "google_ringdroid"
+    },
+    {
+      "name": "google_samba-documents-provider"
+    },
+    {
+      "name": "google_santa-tracker-android"
+    },
+    {
+      "name": "google_search-samples"
+    },
+    {
+      "name": "google_startup-os"
+    },
+    {
+      "name": "google_truth"
+    },
+    {
+      "name": "google_tsunami-security-scanner"
+    },
+    {
+      "name": "google_tsunami-security-scanner-plugins"
+    },
+    {
+      "name": "google_volley"
+    },
+    {
+      "name": "googleads_googleads-mobile-android-examples"
+    },
+    {
+      "name": "googleapis_google-api-java-client"
+    },
+    {
+      "name": "googleapis_google-http-java-client"
+    },
+    {
+      "name": "googleapis_google-oauth-java-client"
+    },
+    {
+      "name": "googlearchive_android-BluetoothChat"
+    },
+    {
+      "name": "googlearchive_android-BluetoothLeGatt"
+    },
+    {
+      "name": "googlearchive_android-Camera2Basic"
+    },
+    {
+      "name": "googlearchive_android-Camera2Video"
+    },
+    {
+      "name": "googlearchive_android-ConstraintLayoutExamples"
+    },
+    {
+      "name": "googlearchive_android-EmojiCompat"
+    },
+    {
+      "name": "googlearchive_android-FingerprintDialog"
+    },
+    {
+      "name": "googlearchive_android-JobScheduler"
+    },
+    {
+      "name": "googlearchive_android-PdfRendererBasic"
+    },
+    {
+      "name": "googlearchive_android-PictureInPicture"
+    },
+    {
+      "name": "googlearchive_android-RecyclerView"
+    },
+    {
+      "name": "googlearchive_android-RuntimePermissions"
+    },
+    {
+      "name": "googlearchive_android-ScreenCapture"
+    },
+    {
+      "name": "googlearchive_android-instant-apps"
+    },
+    {
+      "name": "googlearchive_android-ui-toolkit-demos"
+    },
+    {
+      "name": "googlearchive_androidtv-Leanback"
+    },
+    {
+      "name": "googlearchive_caja"
+    },
+    {
+      "name": "googlearchive_chromium-webview-samples"
+    },
+    {
+      "name": "googlearchive_firebase-jobdispatcher-android"
+    },
+    {
+      "name": "googlearchive_leanback-showcase"
+    },
+    {
+      "name": "googlearchive_tango-examples-java"
+    },
+    {
+      "name": "googlearchive_tiger"
+    },
+    {
+      "name": "googlemaps-samples_android-samples"
+    },
+    {
+      "name": "googlemaps_android-maps-utils"
+    },
+    {
+      "name": "googlemaps_google-maps-services-java"
+    },
+    {
+      "name": "googlesamples_android-testdpc"
+    },
+    {
+      "name": "googlesamples_android-testing-templates"
+    },
+    {
+      "name": "googlesamples_android-vision"
+    },
+    {
+      "name": "googlesamples_androidtv-sample-inputs"
+    },
+    {
+      "name": "googlesamples_easypermissions"
+    },
+    {
+      "name": "googlesamples_google-services"
+    },
+    {
+      "name": "googlesamples_mlkit"
+    },
+    {
+      "name": "googleworkspace_android-samples"
+    },
+    {
+      "name": "gothinkster_spring-boot-realworld-example-app"
+    },
+    {
+      "name": "graalvm_graalvm-demos"
+    },
+    {
+      "name": "graalvm_simplelanguage"
+    },
+    {
+      "name": "graalvm_sulong"
+    },
+    {
+      "name": "gradle_gradle-profiler"
+    },
+    {
+      "name": "graphhopper_graphhopper"
+    },
+    {
+      "name": "graphhopper_jsprit"
+    },
+    {
+      "name": "graphhopper_map-matching"
+    },
+    {
+      "name": "graphql-java_graphql-java"
+    },
+    {
+      "name": "graphql-java_java-dataloader"
+    },
+    {
+      "name": "greenmail-mail-test_greenmail"
+    },
+    {
+      "name": "groovy_groovy-core"
+    },
+    {
+      "name": "grpc-ecosystem_grpc-spring"
+    },
+    {
+      "name": "grpc_grpc-java"
+    },
+    {
+      "name": "guardianproject_ChatSecureAndroid"
+    },
+    {
+      "name": "guardianproject_NetCipher"
+    },
+    {
+      "name": "guardianproject_android-ffmpeg-java"
+    },
+    {
+      "name": "guardianproject_haven"
+    },
+    {
+      "name": "guardianproject_orbot-android"
+    },
+    {
+      "name": "gurkenlabs_litiengine"
+    },
+    {
+      "name": "gzu-liyujiang_AndroidPicker"
+    },
+    {
+      "name": "gzu-liyujiang_Android_CN_OAID"
+    },
+    {
+      "name": "h2database_h2database"
+    },
+    {
+      "name": "haiwen_seadroid"
+    },
+    {
+      "name": "halo-dev_halo"
+    },
+    {
+      "name": "hamcrest_JavaHamcrest"
+    },
+    {
+      "name": "hapifhir_hapi-fhir"
+    },
+    {
+      "name": "haveno-dex_haveno"
+    },
+    {
+      "name": "hawtio_hawtio"
+    },
+    {
+      "name": "hazelcast_hazelcast-code-samples"
+    },
+    {
+      "name": "hazelcast_hazelcast-jet"
+    },
+    {
+      "name": "helidon-io_helidon"
+    },
+    {
+      "name": "hellokoding_hellokoding-courses"
+    },
+    {
+      "name": "hencoder_PracticeDraw1"
+    },
+    {
+      "name": "hibernate_hibernate-orm"
+    },
+    {
+      "name": "hibernate_hibernate-search"
+    },
+    {
+      "name": "hibernate_hibernate-validator"
+    },
+    {
+      "name": "hivemq_hivemq-community-edition"
+    },
+    {
+      "name": "hivemq_hivemq-mqtt-client"
+    },
+    {
+      "name": "honeynet_apkinspector"
+    },
+    {
+      "name": "housepower_ClickHouse-Native-JDBC"
+    },
+    {
+      "name": "hprose_hprose-java"
+    },
+    {
+      "name": "hs-web_hsweb-framework"
+    },
+    {
+      "name": "http-kit_http-kit"
+    },
+    {
+      "name": "httptoolkit_httptoolkit-android"
+    },
+    {
+      "name": "huaban_jieba-analysis"
+    },
+    {
+      "name": "huaweicloud_spring-cloud-huawei"
+    },
+    {
+      "name": "hub4j_github-api"
+    },
+    {
+      "name": "hulab_debugkit"
+    },
+    {
+      "name": "hyperledger_besu"
+    },
+    {
+      "name": "hypertrack_hyperlog-android"
+    },
+    {
+      "name": "hypertrack_live-app-android"
+    },
+    {
+      "name": "i-net-software_JWebAssembly"
+    },
+    {
+      "name": "i2p_i2p.i2p"
+    },
+    {
+      "name": "iReaderAndroid_X2C"
+    },
+    {
+      "name": "iReaderAndroid_ZeusPlugin"
+    },
+    {
+      "name": "iSECPartners_Android-SSL-TrustKiller"
+    },
+    {
+      "name": "iTXTech_Daedalus"
+    },
+    {
+      "name": "iTXTech_mirai-console-loader"
+    },
+    {
+      "name": "ib-controller_ib-controller"
+    },
+    {
+      "name": "ical4j_ical4j"
+    },
+    {
+      "name": "ideacreation_react-native-barcodescanner"
+    },
+    {
+      "name": "idehub_react-native-billing"
+    },
+    {
+      "name": "idio_wiki2vec"
+    },
+    {
+      "name": "igniterealtime_Openfire"
+    },
+    {
+      "name": "igniterealtime_Smack"
+    },
+    {
+      "name": "igniterealtime_Spark"
+    },
+    {
+      "name": "igvteam_igv"
+    },
+    {
+      "name": "iiitv_algos"
+    },
+    {
+      "name": "imagej_ImageJ"
+    },
+    {
+      "name": "imagej_imagej2"
+    },
+    {
+      "name": "imageprocessor_cv4j"
+    },
+    {
+      "name": "imgly_pesdk-android-demo"
+    },
+    {
+      "name": "impossibl_pgjdbc-ng"
+    },
+    {
+      "name": "inception-project_inception"
+    },
+    {
+      "name": "inferred_FreeBuilder"
+    },
+    {
+      "name": "infinilabs_analysis-ik"
+    },
+    {
+      "name": "infinilabs_analysis-pinyin"
+    },
+    {
+      "name": "infinitest_infinitest"
+    },
+    {
+      "name": "infinum_Android-Goldfinger"
+    },
+    {
+      "name": "influxdata_influxdb-java"
+    },
+    {
+      "name": "inloop_AndroidViewModel"
+    },
+    {
+      "name": "inmite_android-selector-chapek"
+    },
+    {
+      "name": "inmite_android-validation-komensky"
+    },
+    {
+      "name": "innoveit_react-native-ble-manager"
+    },
+    {
+      "name": "inspectIT_inspectIT"
+    },
+    {
+      "name": "instagram4j_instagram4j"
+    },
+    {
+      "name": "instancio_instancio"
+    },
+    {
+      "name": "intel-cloud_cosbench"
+    },
+    {
+      "name": "internetarchive_heritrix3"
+    },
+    {
+      "name": "intoolswetrust_jd-cli"
+    },
+    {
+      "name": "intuit_wasabi"
+    },
+    {
+      "name": "ionic-team_capacitor-plugins"
+    },
+    {
+      "name": "iotaledger-archive_iri"
+    },
+    {
+      "name": "ipfs-shipyard_java-ipfs-http-client"
+    },
+    {
+      "name": "iqiyi_Andromeda"
+    },
+    {
+      "name": "iqiyi_Neptune"
+    },
+    {
+      "name": "iqiyi_Qigsaw"
+    },
+    {
+      "name": "iqq-team_iqq"
+    },
+    {
+      "name": "iriusrisk_bdd-security"
+    },
+    {
+      "name": "iterate-ch_cyberduck"
+    },
+    {
+      "name": "itext_itext-java"
+    },
+    {
+      "name": "itext_itextpdf"
+    },
+    {
+      "name": "itmuch_spring-cloud-docker-microservice-book-code"
+    },
+    {
+      "name": "j-easy_easy-batch"
+    },
+    {
+      "name": "j-easy_easy-flows"
+    },
+    {
+      "name": "j-easy_easy-random"
+    },
+    {
+      "name": "j-easy_easy-rules"
+    },
+    {
+      "name": "jMetal_jMetal"
+    },
+    {
+      "name": "jMonkeyEngine_jmonkeyengine"
+    },
+    {
+      "name": "jOOQ_jOOL"
+    },
+    {
+      "name": "jOOQ_jOOQ"
+    },
+    {
+      "name": "jOOQ_jOOR"
+    },
+    {
+      "name": "jacoco_jacoco"
+    },
+    {
+      "name": "jaeksoft_opensearchserver"
+    },
+    {
+      "name": "janino-compiler_janino"
+    },
+    {
+      "name": "jar-analyzer_jar-analyzer"
+    },
+    {
+      "name": "jar-analyzer_jar-analyzer-v1-gui"
+    },
+    {
+      "name": "java-decompiler_jd-core"
+    },
+    {
+      "name": "java-decompiler_jd-eclipse"
+    },
+    {
+      "name": "java-decompiler_jd-gui"
+    },
+    {
+      "name": "java-deobfuscator_deobfuscator"
+    },
+    {
+      "name": "java-diff-utils_java-diff-utils"
+    },
+    {
+      "name": "java-json-tools_json-patch"
+    },
+    {
+      "name": "java-json-tools_json-schema-validator"
+    },
+    {
+      "name": "java-native-access_jna"
+    },
+    {
+      "name": "java-up-up_damai"
+    },
+    {
+      "name": "java110_MicroCommunity"
+    },
+    {
+      "name": "javacc_javacc"
+    },
+    {
+      "name": "javaee-samples_javaee7-samples"
+    },
+    {
+      "name": "javaee_javamail"
+    },
+    {
+      "name": "javaee_jersey"
+    },
+    {
+      "name": "javafx-maven-plugin_javafx-maven-plugin"
+    },
+    {
+      "name": "javagrowing_JGrowing"
+    },
+    {
+      "name": "javalite_javalite"
+    },
+    {
+      "name": "javamelody_javamelody"
+    },
+    {
+      "name": "javapackager_JavaPackager"
+    },
+    {
+      "name": "javaparser_javaparser"
+    },
+    {
+      "name": "javapathfinder_jpf-core"
+    },
+    {
+      "name": "javers_javers"
+    },
+    {
+      "name": "jbake-org_jbake"
+    },
+    {
+      "name": "jbangdev_jbang"
+    },
+    {
+      "name": "jboss-developer_jboss-eap-quickstarts"
+    },
+    {
+      "name": "jboss-javassist_javassist"
+    },
+    {
+      "name": "jbox2d_jbox2d"
+    },
+    {
+      "name": "jcabi_jcabi-aspects"
+    },
+    {
+      "name": "jdbc-observations_datasource-proxy"
+    },
+    {
+      "name": "jdeferred_jdeferred"
+    },
+    {
+      "name": "jeecgboot_JeecgBoot"
+    },
+    {
+      "name": "jeecgboot_autopoi"
+    },
+    {
+      "name": "jeecgboot_jeecg"
+    },
+    {
+      "name": "jeecgboot_jeewx-boot"
+    },
+    {
+      "name": "jeecgboot_jimureport"
+    },
+    {
+      "name": "jenkinsci_blueocean-plugin"
+    },
+    {
+      "name": "jenkinsci_build-monitor-plugin"
+    },
+    {
+      "name": "jenkinsci_configuration-as-code-plugin"
+    },
+    {
+      "name": "jenkinsci_ghprb-plugin"
+    },
+    {
+      "name": "jenkinsci_git-plugin"
+    },
+    {
+      "name": "jenkinsci_gitlab-plugin"
+    },
+    {
+      "name": "jenkinsci_java-client-api"
+    },
+    {
+      "name": "jenkinsci_jenkinsfile-runner"
+    },
+    {
+      "name": "jenkinsci_kubernetes-plugin"
+    },
+    {
+      "name": "jenkinsci_slack-plugin"
+    },
+    {
+      "name": "jetlinks_jetlinks-community"
+    },
+    {
+      "name": "jetty_jetty.project"
+    },
+    {
+      "name": "jfaster_mango"
+    },
+    {
+      "name": "jflex-de_jflex"
+    },
+    {
+      "name": "jgraph_jgraphx"
+    },
+    {
+      "name": "jhipster_jhipster-lite"
+    },
+    {
+      "name": "jigsaw-projects_jigsaw-payment"
+    },
+    {
+      "name": "jitsi_jigasi"
+    },
+    {
+      "name": "jitsi_jitsi"
+    },
+    {
+      "name": "jitsi_libjitsi"
+    },
+    {
+      "name": "jline_jline2"
+    },
+    {
+      "name": "jline_jline3"
+    },
+    {
+      "name": "jmdns_jmdns"
+    },
+    {
+      "name": "jmix-framework_jmix"
+    },
+    {
+      "name": "jmxtrans_jmxtrans"
+    },
+    {
+      "name": "jnr_jnr-ffi"
+    },
+    {
+      "name": "jobrunr_jobrunr"
+    },
+    {
+      "name": "jodconverter_jodconverter"
+    },
+    {
+      "name": "jolie_jolie"
+    },
+    {
+      "name": "jolokia_jolokia"
+    },
+    {
+      "name": "joltup_react-native-threads"
+    },
+    {
+      "name": "jooby-project_jooby"
+    },
+    {
+      "name": "journeyapps_zxing-android-embedded"
+    },
+    {
+      "name": "jphp-group_jphp"
+    },
+    {
+      "name": "jplag_JPlag"
+    },
+    {
+      "name": "jpmml_jpmml-evaluator"
+    },
+    {
+      "name": "jpmml_jpmml-sklearn"
+    },
+    {
+      "name": "jpos_jPOS"
+    },
+    {
+      "name": "jpush_aurora-imui"
+    },
+    {
+      "name": "jpush_jpush-api-java-client"
+    },
+    {
+      "name": "jqwik-team_jqwik"
+    },
+    {
+      "name": "jreleaser_jreleaser"
+    },
+    {
+      "name": "json-iterator_java"
+    },
+    {
+      "name": "json-path_JsonPath"
+    },
+    {
+      "name": "jspecify_jspecify"
+    },
+    {
+      "name": "jtablesaw_tablesaw"
+    },
+    {
+      "name": "junit-team_junit5"
+    },
+    {
+      "name": "junit-team_junit5-samples"
+    },
+    {
+      "name": "justauth_JustAuth"
+    },
+    {
+      "name": "jvm-profiling-tools_honest-profiler"
+    },
+    {
+      "name": "jwtk_jjwt"
+    },
+    {
+      "name": "kafbat_kafka-ui"
+    },
+    {
+      "name": "kairosdb_kairosdb"
+    },
+    {
+      "name": "karatelabs_karate"
+    },
+    {
+      "name": "kekingcn_kkFileView"
+    },
+    {
+      "name": "kekingcn_spring-boot-klock-starter"
+    },
+    {
+      "name": "kestra-io_kestra"
+    },
+    {
+      "name": "keycloak_keycloak"
+    },
+    {
+      "name": "keycloak_keycloak-quickstarts"
+    },
+    {
+      "name": "kiegroup_jbpm"
+    },
+    {
+      "name": "killbill_killbill"
+    },
+    {
+      "name": "knime_knime-core"
+    },
+    {
+      "name": "knowitall_reverb"
+    },
+    {
+      "name": "knowm_XChange"
+    },
+    {
+      "name": "knowm_XChart"
+    },
+    {
+      "name": "knuddelsgmbh_jtokkit"
+    },
+    {
+      "name": "kohlschutter_boilerpipe"
+    },
+    {
+      "name": "komoot_photon"
+    },
+    {
+      "name": "kontalk_androidclient"
+    },
+    {
+      "name": "kordamp_bootstrapfx"
+    },
+    {
+      "name": "ksvc_KSYMediaPlayer_Android"
+    },
+    {
+      "name": "kubernetes-client_java"
+    },
+    {
+      "name": "la-team_light-admin"
+    },
+    {
+      "name": "labexp_osmtracker-android"
+    },
+    {
+      "name": "lacuna_bifurcan"
+    },
+    {
+      "name": "lakesoul-io_LakeSoul"
+    },
+    {
+      "name": "langchain4j_langchain4j"
+    },
+    {
+      "name": "langchain4j_langchain4j-examples"
+    },
+    {
+      "name": "languagetool-org_languagetool"
+    },
+    {
+      "name": "lbryio_lbry-android"
+    },
+    {
+      "name": "lcm-proj_lcm"
+    },
+    {
+      "name": "ldtteam_minecolonies"
+    },
+    {
+      "name": "lealone_Lealone"
+    },
+    {
+      "name": "leangen_graphql-spqr"
+    },
+    {
+      "name": "lenskit_lenskit"
+    },
+    {
+      "name": "lets-blade_blade"
+    },
+    {
+      "name": "lets-mica_mica"
+    },
+    {
+      "name": "libgdx_ashley"
+    },
+    {
+      "name": "libgdx_gdx-ai"
+    },
+    {
+      "name": "lightbend_config"
+    },
+    {
+      "name": "line_armeria"
+    },
+    {
+      "name": "line_centraldogma"
+    },
+    {
+      "name": "line_line-bot-sdk-java"
+    },
+    {
+      "name": "line_line-fido2-server"
+    },
+    {
+      "name": "lingochamp_FileDownloader"
+    },
+    {
+      "name": "lingochamp_MagicProgressWidget"
+    },
+    {
+      "name": "lingochamp_ShareLoginLib"
+    },
+    {
+      "name": "lingochamp_okdownload"
+    },
+    {
+      "name": "linkedin_FeatureFu"
+    },
+    {
+      "name": "linkedin_LiTr"
+    },
+    {
+      "name": "linkedin_PalDB"
+    },
+    {
+      "name": "linkedin_URL-Detector"
+    },
+    {
+      "name": "linkedin_ambry"
+    },
+    {
+      "name": "linkedin_brooklin"
+    },
+    {
+      "name": "linkedin_coral"
+    },
+    {
+      "name": "linkedin_cruise-control"
+    },
+    {
+      "name": "linkedin_databus"
+    },
+    {
+      "name": "linkedin_dexmaker"
+    },
+    {
+      "name": "linkedin_dr-elephant"
+    },
+    {
+      "name": "linkedin_kafka-monitor"
+    },
+    {
+      "name": "linkedin_parseq"
+    },
+    {
+      "name": "linkedin_pygradle"
+    },
+    {
+      "name": "linkedin_rest.li"
+    },
+    {
+      "name": "linkedin_test-butler"
+    },
+    {
+      "name": "linkedin_venice"
+    },
+    {
+      "name": "liquibase_liquibase"
+    },
+    {
+      "name": "livelessons-spring_building-microservices"
+    },
+    {
+      "name": "lmdbjava_lmdbjava"
+    },
+    {
+      "name": "locationtech_geowave"
+    },
+    {
+      "name": "locationtech_jts"
+    },
+    {
+      "name": "locationtech_spatial4j"
+    },
+    {
+      "name": "logfellow_logstash-logback-encoder"
+    },
+    {
+      "name": "logicalclocks_hopsworks"
+    },
+    {
+      "name": "logisim-evolution_logisim-evolution"
+    },
+    {
+      "name": "logpresso_CVE-2021-44228-Scanner"
+    },
+    {
+      "name": "loklak_loklak_jlib_api"
+    },
+    {
+      "name": "loklak_loklak_server"
+    },
+    {
+      "name": "loopeer_CardStackView"
+    },
+    {
+      "name": "loopeer_itemtouchhelper-extension"
+    },
+    {
+      "name": "ls1intum_Artemis"
+    },
+    {
+      "name": "ltsopensource_light-task-scheduler"
+    },
+    {
+      "name": "luaj_luaj"
+    },
+    {
+      "name": "lucee_Lucee"
+    },
+    {
+      "name": "lugg_react-native-config"
+    },
+    {
+      "name": "luojilab_DDComponentForAndroid"
+    },
+    {
+      "name": "lyft_scissors"
+    },
+    {
+      "name": "lyft_scoop"
+    },
+    {
+      "name": "lz4_lz4-java"
+    },
+    {
+      "name": "maddevsio_mad-location-manager"
+    },
+    {
+      "name": "mandiant_Ghidrathon"
+    },
+    {
+      "name": "manifold-systems_manifold"
+    },
+    {
+      "name": "mapbox_mapbox-android-demo"
+    },
+    {
+      "name": "mapstruct_mapstruct"
+    },
+    {
+      "name": "mapstruct_mapstruct-examples"
+    },
+    {
+      "name": "marytts_marytts"
+    },
+    {
+      "name": "mastodon_mastodon-android"
+    },
+    {
+      "name": "material-components_material-components-android"
+    },
+    {
+      "name": "material-foundation_material-remixer-android"
+    },
+    {
+      "name": "maxmind_GeoIP2-java"
+    },
+    {
+      "name": "mcMMO-Dev_mcMMO"
+    },
+    {
+      "name": "mdgspace_RotatingText"
+    },
+    {
+      "name": "mediathekview_MediathekView"
+    },
+    {
+      "name": "meili_Aceso"
+    },
+    {
+      "name": "meituan_WMRouter"
+    },
+    {
+      "name": "mergebase_log4j-detector"
+    },
+    {
+      "name": "metersphere_metersphere"
+    },
+    {
+      "name": "microcks_microcks"
+    },
+    {
+      "name": "microg_GmsCore"
+    },
+    {
+      "name": "microg_UnifiedNlp"
+    },
+    {
+      "name": "micrometer-metrics_micrometer"
+    },
+    {
+      "name": "micronaut-projects_micronaut-core"
+    },
+    {
+      "name": "microprofile_microprofile"
+    },
+    {
+      "name": "microservices-patterns_ftgo-application"
+    },
+    {
+      "name": "microsoft_HydraLab"
+    },
+    {
+      "name": "microsoft_gctoolkit"
+    },
+    {
+      "name": "microsoft_malmo"
+    },
+    {
+      "name": "microsoft_mcp-for-beginners"
+    },
+    {
+      "name": "microsoft_mssql-jdbc"
+    },
+    {
+      "name": "microsoft_playwright-java"
+    },
+    {
+      "name": "microsoft_typespec"
+    },
+    {
+      "name": "microsoftarchive_android-sliding-layer-lib"
+    },
+    {
+      "name": "microstream-one_microstream"
+    },
+    {
+      "name": "minbox-projects_api-boot"
+    },
+    {
+      "name": "minerllabs_minerl"
+    },
+    {
+      "name": "mini2Dx_mini2Dx"
+    },
+    {
+      "name": "minio_minio-java"
+    },
+    {
+      "name": "mit-cml_appinventor-sources"
+    },
+    {
+      "name": "mitre_HTTP-Proxy-Servlet"
+    },
+    {
+      "name": "mitreid-connect_OpenID-Connect-Java-Spring-Server"
+    },
+    {
+      "name": "mixi-inc_AndroidTraining"
+    },
+    {
+      "name": "mixpanel_mixpanel-android"
+    },
+    {
+      "name": "mock-server_mockserver"
+    },
+    {
+      "name": "mockito_mockito"
+    },
+    {
+      "name": "modelcontextprotocol_java-sdk"
+    },
+    {
+      "name": "modelmapper_modelmapper"
+    },
+    {
+      "name": "moditect_moditect"
+    },
+    {
+      "name": "moduliths_moduliths"
+    },
+    {
+      "name": "momosecurity_momo-code-sec-inspector-java"
+    },
+    {
+      "name": "momosecurity_rhizobia_J"
+    },
+    {
+      "name": "moneymanagerex_android-money-manager-ex"
+    },
+    {
+      "name": "mongodb_mongo-hadoop"
+    },
+    {
+      "name": "mongodb_mongo-spark"
+    },
+    {
+      "name": "moquette-io_moquette"
+    },
+    {
+      "name": "mozilla_MozStumbler"
+    },
+    {
+      "name": "mpusher_mpush"
+    },
+    {
+      "name": "mr-hashemi_mr-hashemi"
+    },
+    {
+      "name": "msgpack_msgpack-java"
+    },
+    {
+      "name": "mucommander_mucommander"
+    },
+    {
+      "name": "mvel_mvel"
+    },
+    {
+      "name": "mybatis-book_book"
+    },
+    {
+      "name": "mybatis-flex_mybatis-flex"
+    },
+    {
+      "name": "mybatis_generator"
+    },
+    {
+      "name": "mybatis_jpetstore-6"
+    },
+    {
+      "name": "mybatis_mybatis-3"
+    },
+    {
+      "name": "mybatis_mybatis-dynamic-sql"
+    },
+    {
+      "name": "mybatis_spring"
+    },
+    {
+      "name": "mybatis_spring-boot-starter"
+    },
+    {
+      "name": "mycelium-com_wallet-android"
+    },
+    {
+      "name": "mysql_mysql-connector-j"
+    },
+    {
+      "name": "nacos-group_nacos-examples"
+    },
+    {
+      "name": "nacos-group_nacos-spring-boot-project"
+    },
+    {
+      "name": "nacos-group_nacos-spring-project"
+    },
+    {
+      "name": "nageoffer_12306"
+    },
+    {
+      "name": "nageoffer_congomall"
+    },
+    {
+      "name": "nageoffer_shortlink"
+    },
+    {
+      "name": "nashtech-garage_yas"
+    },
+    {
+      "name": "nats-io_nats.java"
+    },
+    {
+      "name": "naver_fixture-monkey"
+    },
+    {
+      "name": "naver_ngrinder"
+    },
+    {
+      "name": "nbsp-team_MaterialFilePicker"
+    },
+    {
+      "name": "nccgroup_AutoRepeater"
+    },
+    {
+      "name": "nccgroup_BurpSuiteHTTPSmuggler"
+    },
+    {
+      "name": "nccgroup_LoggerPlusPlus"
+    },
+    {
+      "name": "nccgroup_freddy"
+    },
+    {
+      "name": "neo4j-contrib_neo4j-apoc-procedures"
+    },
+    {
+      "name": "neo4j-contrib_neo4j-graph-algorithms"
+    },
+    {
+      "name": "neo4j-examples_movies-java-spring-data-neo4j"
+    },
+    {
+      "name": "neo4j-labs_neosemantics"
+    },
+    {
+      "name": "neo4j_graph-data-science"
+    },
+    {
+      "name": "neoforged_NeoForge"
+    },
+    {
+      "name": "netease-im_camellia"
+    },
+    {
+      "name": "netease-kit_nim-uikit-android"
+    },
+    {
+      "name": "netgloo_spring-boot-samples"
+    },
+    {
+      "name": "networknt_json-schema-validator"
+    },
+    {
+      "name": "networknt_light-4j"
+    },
+    {
+      "name": "neuland_jade4j"
+    },
+    {
+      "name": "newbee-ltd_newbee-mall"
+    },
+    {
+      "name": "newbee-ltd_newbee-mall-api"
+    },
+    {
+      "name": "newbee-ltd_newbee-mall-plus"
+    },
+    {
+      "name": "nextcloud_android"
+    },
+    {
+      "name": "nextcloud_news-android"
+    },
+    {
+      "name": "nextcloud_notes-android"
+    },
+    {
+      "name": "nextgenhealthcare_connect"
+    },
+    {
+      "name": "nfcgate_nfcgate"
+    },
+    {
+      "name": "ngbdf_redis-manager"
+    },
+    {
+      "name": "nginx-clojure_nginx-clojure"
+    },
+    {
+      "name": "ngs-doo_dsl-json"
+    },
+    {
+      "name": "nic-delhi_AarogyaSetu_Android"
+    },
+    {
+      "name": "ninjaframework_ninja"
+    },
+    {
+      "name": "nispok_snackbar"
+    },
+    {
+      "name": "nitrite_nitrite-java"
+    },
+    {
+      "name": "nordic-institute_X-Road"
+    },
+    {
+      "name": "nordnet_cordova-hot-code-push"
+    },
+    {
+      "name": "novoda_merlin"
+    },
+    {
+      "name": "novoda_spikes"
+    },
+    {
+      "name": "nsacyber_GRASSMARLIN"
+    },
+    {
+      "name": "nutzam_nutz"
+    },
+    {
+      "name": "nutzam_nutzboot"
+    },
+    {
+      "name": "nuxeo_nuxeo"
+    },
+    {
+      "name": "nytimes_Store"
+    },
+    {
+      "name": "nzymedefense_nzyme"
+    },
+    {
+      "name": "o19s_elasticsearch-learning-to-rank"
+    },
+    {
+      "name": "oVirt_ovirt-engine"
+    },
+    {
+      "name": "objectbox_objectbox-java"
+    },
+    {
+      "name": "objectify_objectify"
+    },
+    {
+      "name": "objectionary_eo"
+    },
+    {
+      "name": "oblac_jodd"
+    },
+    {
+      "name": "obsidiandynamics_kafdrop"
+    },
+    {
+      "name": "oceanbase_odc"
+    },
+    {
+      "name": "ocpsoft_prettytime"
+    },
+    {
+      "name": "octo-technology_sonar-objective-c"
+    },
+    {
+      "name": "octopus-platform_joern"
+    },
+    {
+      "name": "odnoklassniki_one-nio"
+    },
+    {
+      "name": "odpi_egeria"
+    },
+    {
+      "name": "ofdrw_ofdrw"
+    },
+    {
+      "name": "oktadev_java-microservices-examples"
+    },
+    {
+      "name": "olacabs_jackhammer"
+    },
+    {
+      "name": "omadahealth_LolliPin"
+    },
+    {
+      "name": "omadahealth_SwipyRefreshLayout"
+    },
+    {
+      "name": "omnilaboratory_OBAndroid"
+    },
+    {
+      "name": "ongres_stackgres"
+    },
+    {
+      "name": "ontop_ontop"
+    },
+    {
+      "name": "opacapp_multiline-collapsingtoolbar"
+    },
+    {
+      "name": "open-job_openjob"
+    },
+    {
+      "name": "open-keychain_open-keychain"
+    },
+    {
+      "name": "open-pdf-sign_open-pdf-sign"
+    },
+    {
+      "name": "open-scratch_teaching-open"
+    },
+    {
+      "name": "open-telemetry_opentelemetry-java"
+    },
+    {
+      "name": "open-telemetry_opentelemetry-java-instrumentation"
+    },
+    {
+      "name": "openairplay_open-airplay"
+    },
+    {
+      "name": "openboard-team_openboard"
+    },
+    {
+      "name": "opencollab_jlatexmath"
+    },
+    {
+      "name": "opendatadiscovery_odd-platform"
+    },
+    {
+      "name": "opendistro-for-elasticsearch_sql"
+    },
+    {
+      "name": "opengoofy_hippo4j"
+    },
+    {
+      "name": "openhab_openhab-addons"
+    },
+    {
+      "name": "openhab_openhab-core"
+    },
+    {
+      "name": "openhab_openhab1-addons"
+    },
+    {
+      "name": "openid_AppAuth-Android"
+    },
+    {
+      "name": "openjdk_jmc"
+    },
+    {
+      "name": "openjdk_jmh"
+    },
+    {
+      "name": "openjdk_jol"
+    },
+    {
+      "name": "openjfx_samples"
+    },
+    {
+      "name": "openkm_document-management-system"
+    },
+    {
+      "name": "openkoda_openkoda"
+    },
+    {
+      "name": "openlookeng_hetu-core"
+    },
+    {
+      "name": "openmessaging_dledger"
+    },
+    {
+      "name": "openmessaging_openmessaging-java"
+    },
+    {
+      "name": "openmrs_openmrs-core"
+    },
+    {
+      "name": "opennetworkinglab_onos"
+    },
+    {
+      "name": "openremote_openremote"
+    },
+    {
+      "name": "openrewrite_rewrite"
+    },
+    {
+      "name": "openrocket_openrocket"
+    },
+    {
+      "name": "opensagres_xdocreport"
+    },
+    {
+      "name": "openscoring_openscoring"
+    },
+    {
+      "name": "opensolon_solon"
+    },
+    {
+      "name": "opensourceBIM_BIMserver"
+    },
+    {
+      "name": "openstreetmap_osmosis"
+    },
+    {
+      "name": "opentable_otj-pg-embedded"
+    },
+    {
+      "name": "opentracing_opentracing-java"
+    },
+    {
+      "name": "opentripplanner_OpenTripPlanner"
+    },
+    {
+      "name": "openzipkin_brave"
+    },
+    {
+      "name": "openzipkin_zipkin"
+    },
+    {
+      "name": "operator-framework_java-operator-sdk"
+    },
+    {
+      "name": "optimaize_language-detector"
+    },
+    {
+      "name": "oracle_opengrok"
+    },
+    {
+      "name": "oracle_tribuo"
+    },
+    {
+      "name": "oracle_visualvm"
+    },
+    {
+      "name": "oraxen_oraxen"
+    },
+    {
+      "name": "orientechnologies_orientdb"
+    },
+    {
+      "name": "oshi_oshi"
+    },
+    {
+      "name": "osmandapp_OsmAnd"
+    },
+    {
+      "name": "osmdroid_osmdroid"
+    },
+    {
+      "name": "osudroid_osu-droid"
+    },
+    {
+      "name": "oversecured_ovaa"
+    },
+    {
+      "name": "owlcs_owlapi"
+    },
+    {
+      "name": "oxoooo_mr-mantou-android"
+    },
+    {
+      "name": "oxoooo_pull-back-layout"
+    },
+    {
+      "name": "p6spy_p6spy"
+    },
+    {
+      "name": "pac4j_pac4j"
+    },
+    {
+      "name": "palantir_palantir-java-format"
+    },
+    {
+      "name": "paoding-code_paoding-rose"
+    },
+    {
+      "name": "parkingwang_vehicle-keyboard-android"
+    },
+    {
+      "name": "parse-community_Parse-SDK-Android"
+    },
+    {
+      "name": "parse-community_ParseUI-Android"
+    },
+    {
+      "name": "pascal-lab_Tai-e"
+    },
+    {
+      "name": "pascal-lab_Tai-e-assignments"
+    },
+    {
+      "name": "path_android-priority-jobqueue"
+    },
+    {
+      "name": "payatu_diva-android"
+    },
+    {
+      "name": "paypal_PayPal-Android-SDK"
+    },
+    {
+      "name": "pentaho_pentaho-kettle"
+    },
+    {
+      "name": "permissions-dispatcher_PermissionsDispatcher"
+    },
+    {
+      "name": "pf4j_pf4j"
+    },
+    {
+      "name": "pgjdbc_pgjdbc"
+    },
+    {
+      "name": "pgjdbc_r2dbc-postgresql"
+    },
+    {
+      "name": "phimpme_phimpme-android-v1"
+    },
+    {
+      "name": "phonegap_phonegap-plugin-push"
+    },
+    {
+      "name": "pig-mesh_deepseek4j"
+    },
+    {
+      "name": "pig-mesh_excel-spring-boot-starter"
+    },
+    {
+      "name": "pig-mesh_pig"
+    },
+    {
+      "name": "pigshell_pigshell"
+    },
+    {
+      "name": "pili-engineering_PLDroidMediaStreaming"
+    },
+    {
+      "name": "pili-engineering_PLDroidShortVideo"
+    },
+    {
+      "name": "pinpoint-apm_pinpoint"
+    },
+    {
+      "name": "pinterest_DoctorK"
+    },
+    {
+      "name": "pinterest_secor"
+    },
+    {
+      "name": "pinterest_teletraan"
+    },
+    {
+      "name": "pippo-java_pippo"
+    },
+    {
+      "name": "plan-player-analytics_Plan"
+    },
+    {
+      "name": "plantuml_plantuml-server"
+    },
+    {
+      "name": "plantuml_plantuml-stdlib"
+    },
+    {
+      "name": "playframework_play1"
+    },
+    {
+      "name": "playgameservices_android-basic-samples"
+    },
+    {
+      "name": "pmd_pmd"
+    },
+    {
+      "name": "pockethub_PocketHub"
+    },
+    {
+      "name": "portfolio-performance_portfolio"
+    },
+    {
+      "name": "powermock_powermock"
+    },
+    {
+      "name": "pravega_pravega"
+    },
+    {
+      "name": "prefuse_Prefuse"
+    },
+    {
+      "name": "prestodb_presto"
+    },
+    {
+      "name": "primefaces_primefaces"
+    },
+    {
+      "name": "processing_processing"
+    },
+    {
+      "name": "processing_processing-android"
+    },
+    {
+      "name": "project-travel-mate_Travel-Mate"
+    },
+    {
+      "name": "projectdiscovery_nuclei-burp-plugin"
+    },
+    {
+      "name": "projectnessie_nessie"
+    },
+    {
+      "name": "prolificinteractive_ParallaxPager"
+    },
+    {
+      "name": "prolificinteractive_material-calendarview"
+    },
+    {
+      "name": "prometheus_client_java"
+    },
+    {
+      "name": "prometheus_cloudwatch_exporter"
+    },
+    {
+      "name": "prometheus_jmx_exporter"
+    },
+    {
+      "name": "protegeproject_protege"
+    },
+    {
+      "name": "protegeproject_webprotege"
+    },
+    {
+      "name": "protostuff_protostuff"
+    },
+    {
+      "name": "proxyee-down-org_proxyee-down"
+    },
+    {
+      "name": "proyecto26_react-native-inappbrowser"
+    },
+    {
+      "name": "ps3mediaserver_ps3mediaserver"
+    },
+    {
+      "name": "psi-probe_psi-probe"
+    },
+    {
+      "name": "pulsarIO_realtime-analytics"
+    },
+    {
+      "name": "puniverse_capsule"
+    },
+    {
+      "name": "puniverse_comsat"
+    },
+    {
+      "name": "puniverse_quasar"
+    },
+    {
+      "name": "pushtorefresh_storio"
+    },
+    {
+      "name": "pwm-project_pwm"
+    },
+    {
+      "name": "py4j_py4j"
+    },
+    {
+      "name": "pytorch_android-demo-app"
+    },
+    {
+      "name": "pytorch_serve"
+    },
+    {
+      "name": "qa-guru_allure-notifications"
+    },
+    {
+      "name": "qiniu_android-sdk"
+    },
+    {
+      "name": "qpython-android_qpython"
+    },
+    {
+      "name": "quarkusio_quarkus"
+    },
+    {
+      "name": "quarkusio_quarkus-quickstarts"
+    },
+    {
+      "name": "quartz-scheduler_quartz"
+    },
+    {
+      "name": "querydsl_querydsl"
+    },
+    {
+      "name": "questdb_questdb"
+    },
+    {
+      "name": "quickfix-j_quickfixj"
+    },
+    {
+      "name": "quickmsg_smqtt"
+    },
+    {
+      "name": "qunarcorp_bistoury"
+    },
+    {
+      "name": "qunarcorp_qmq"
+    },
+    {
+      "name": "qupath_qupath"
+    },
+    {
+      "name": "qzind_tray"
+    },
+    {
+      "name": "rabbitmq_rabbitmq-java-client"
+    },
+    {
+      "name": "rabbitmq_rabbitmq-tutorials"
+    },
+    {
+      "name": "radian-software_TerrariaClone"
+    },
+    {
+      "name": "rakam-io_rakam-api"
+    },
+    {
+      "name": "rancher_cattle"
+    },
+    {
+      "name": "randoop_randoop"
+    },
+    {
+      "name": "rapidoid_rapidoid"
+    },
+    {
+      "name": "ratpack_ratpack"
+    },
+    {
+      "name": "rax-maas_blueflood"
+    },
+    {
+      "name": "react-native-camera_react-native-camera"
+    },
+    {
+      "name": "react-native-cameraroll_react-native-cameraroll"
+    },
+    {
+      "name": "react-native-community_react-native-template-typescript"
+    },
+    {
+      "name": "react-native-cookies_cookies"
+    },
+    {
+      "name": "react-native-dialogs_react-native-dialogs"
+    },
+    {
+      "name": "react-native-google-cast_react-native-google-cast"
+    },
+    {
+      "name": "react-native-image-picker_react-native-image-picker"
+    },
+    {
+      "name": "react-native-linear-gradient_react-native-linear-gradient"
+    },
+    {
+      "name": "react-native-share_react-native-share"
+    },
+    {
+      "name": "react-native-webrtc_react-native-callkeep"
+    },
+    {
+      "name": "react-native-webrtc_react-native-webrtc"
+    },
+    {
+      "name": "reactive-streams_reactive-streams-jvm"
+    },
+    {
+      "name": "reactiverse_es4x"
+    },
+    {
+      "name": "reactor_BlockHound"
+    },
+    {
+      "name": "reactor_lite-rx-api-hands-on"
+    },
+    {
+      "name": "reactor_reactor-core"
+    },
+    {
+      "name": "reactor_reactor-kafka"
+    },
+    {
+      "name": "reactor_reactor-netty"
+    },
+    {
+      "name": "realm_realm-java"
+    },
+    {
+      "name": "reark_reark"
+    },
+    {
+      "name": "recruit-lifestyle_FloatingView"
+    },
+    {
+      "name": "recruit-lifestyle_WaveSwipeRefreshLayout"
+    },
+    {
+      "name": "redhat-scholars_istio-tutorial"
+    },
+    {
+      "name": "redis_jedis"
+    },
+    {
+      "name": "redis_redis-om-spring"
+    },
+    {
+      "name": "redisson_redisson"
+    },
+    {
+      "name": "redpen-cc_redpen"
+    },
+    {
+      "name": "redsolution_xabber-android"
+    },
+    {
+      "name": "renrenio_renren-security"
+    },
+    {
+      "name": "repeats_Repeat"
+    },
+    {
+      "name": "republique-et-canton-de-geneve_chvote-1-0"
+    },
+    {
+      "name": "requery_requery"
+    },
+    {
+      "name": "requery_sqlite-android"
+    },
+    {
+      "name": "resilience4j_resilience4j"
+    },
+    {
+      "name": "rest-assured_rest-assured"
+    },
+    {
+      "name": "resteasy_resteasy"
+    },
+    {
+      "name": "restfb_restfb"
+    },
+    {
+      "name": "restlet_restlet-framework-java"
+    },
+    {
+      "name": "revtel_react-native-nfc-manager"
+    },
+    {
+      "name": "ribot_ribot-app-android"
+    },
+    {
+      "name": "risesoft-y9_Data-Labeling"
+    },
+    {
+      "name": "risesoft-y9_DataFlow-Engine"
+    },
+    {
+      "name": "risesoft-y9_Digital-Infrastructure"
+    },
+    {
+      "name": "risesoft-y9_WorkFlow-Engine"
+    },
+    {
+      "name": "robinhood_spark"
+    },
+    {
+      "name": "robinhood_ticker"
+    },
+    {
+      "name": "robo-code_robocode"
+    },
+    {
+      "name": "roboguice_roboguice"
+    },
+    {
+      "name": "robolectric_robolectric"
+    },
+    {
+      "name": "robotmedia_AndroidBillingLibrary"
+    },
+    {
+      "name": "robovm_robovm"
+    },
+    {
+      "name": "rometools_rome"
+    },
+    {
+      "name": "roncoo_roncoo-education"
+    },
+    {
+      "name": "roncoo_roncoo-pay"
+    },
+    {
+      "name": "roncoo_spring-boot-demo"
+    },
+    {
+      "name": "roomorama_Caldroid"
+    },
+    {
+      "name": "rsksmart_rskj"
+    },
+    {
+      "name": "rsocket_rsocket-java"
+    },
+    {
+      "name": "rstudio_rstudio"
+    },
+    {
+      "name": "rule-engine_rule-engine-open"
+    },
+    {
+      "name": "runelite_runelite"
+    },
+    {
+      "name": "runsidekick_sidekick"
+    },
+    {
+      "name": "rymcu_forest"
+    },
+    {
+      "name": "sagframe_sagacity-sqltoy"
+    },
+    {
+      "name": "sakaiproject_sakai"
+    },
+    {
+      "name": "salesforce_reactive-grpc"
+    },
+    {
+      "name": "scala-android_sbt-android"
+    },
+    {
+      "name": "scalar-labs_scalardb"
+    },
+    {
+      "name": "scalecube_scalecube-services"
+    },
+    {
+      "name": "schibsted_jslt"
+    },
+    {
+      "name": "scireum_s3ninja"
+    },
+    {
+      "name": "scouter-project_scouter"
+    },
+    {
+      "name": "scribejava_scribejava"
+    },
+    {
+      "name": "searchbox-io_Jest"
+    },
+    {
+      "name": "secure-software-engineering_FlowDroid"
+    },
+    {
+      "name": "selendroid_selendroid"
+    },
+    {
+      "name": "selenide_selenide"
+    },
+    {
+      "name": "sensorsdata_sa-sdk-android"
+    },
+    {
+      "name": "sepinf-inc_IPED"
+    },
+    {
+      "name": "sermant-io_Sermant"
+    },
+    {
+      "name": "shaiwz_data-platform-open"
+    },
+    {
+      "name": "siaorg_sia-gateway"
+    },
+    {
+      "name": "siaorg_sia-task"
+    },
+    {
+      "name": "siddhi-io_siddhi"
+    },
+    {
+      "name": "signalapp_BitHub"
+    },
+    {
+      "name": "signalapp_Signal-Server"
+    },
+    {
+      "name": "signalapp_libsignal-protocol-java"
+    },
+    {
+      "name": "signalapp_libsignal-service-java"
+    },
+    {
+      "name": "simple-android-framework_android_design_patterns_analysis"
+    },
+    {
+      "name": "simple-last-fm-scrobbler_sls"
+    },
+    {
+      "name": "simplenlg_simplenlg"
+    },
+    {
+      "name": "sitewhere_sitewhere"
+    },
+    {
+      "name": "skadistats_clarity"
+    },
+    {
+      "name": "skidfuscatordev_skidfuscator-java-obfuscator"
+    },
+    {
+      "name": "sky-map-team_stardroid"
+    },
+    {
+      "name": "skyscreamer_JSONassert"
+    },
+    {
+      "name": "sleekbyte_tailor"
+    },
+    {
+      "name": "sleuthkit_autopsy"
+    },
+    {
+      "name": "smallrye_smallrye-mutiny"
+    },
+    {
+      "name": "smart-cloud_smart-cloud"
+    },
+    {
+      "name": "smartboot_smart-socket"
+    },
+    {
+      "name": "smithy-lang_smithy"
+    },
+    {
+      "name": "smoothnlp_SmoothNLP"
+    },
+    {
+      "name": "snakerflow-starter_snakerflow-spring-boot-starter"
+    },
+    {
+      "name": "soabase_exhibitor"
+    },
+    {
+      "name": "socketio_socket.io-client-java"
+    },
+    {
+      "name": "sofastack_sofa-ark"
+    },
+    {
+      "name": "sofastack_sofa-bolt"
+    },
+    {
+      "name": "sofastack_sofa-boot"
+    },
+    {
+      "name": "sofastack_sofa-jarslink"
+    },
+    {
+      "name": "sofastack_sofa-jraft"
+    },
+    {
+      "name": "sofastack_sofa-registry"
+    },
+    {
+      "name": "sofastack_sofa-rpc"
+    },
+    {
+      "name": "sofastack_sofa-tracer"
+    },
+    {
+      "name": "software-mansion_react-native-svg"
+    },
+    {
+      "name": "soot-oss_SootUp"
+    },
+    {
+      "name": "soot-oss_soot"
+    },
+    {
+      "name": "soundcloud_lightcycle"
+    },
+    {
+      "name": "sourcey_materiallogindemo"
+    },
+    {
+      "name": "soywiz-archive_jtransc"
+    },
+    {
+      "name": "spacewalkproject_spacewalk"
+    },
+    {
+      "name": "sparrowwallet_sparrow"
+    },
+    {
+      "name": "speedment_speedment"
+    },
+    {
+      "name": "spinnaker_kayenta"
+    },
+    {
+      "name": "spinnaker_spinnaker"
+    },
+    {
+      "name": "spockframework_spock"
+    },
+    {
+      "name": "spotbugs_spotbugs"
+    },
+    {
+      "name": "spotify_apollo"
+    },
+    {
+      "name": "spotify_docker-client"
+    },
+    {
+      "name": "spotify_docker-maven-plugin"
+    },
+    {
+      "name": "spotify_dockerfile-maven"
+    },
+    {
+      "name": "spotify_helios"
+    },
+    {
+      "name": "spotify_heroic"
+    },
+    {
+      "name": "spotify_mobius"
+    },
+    {
+      "name": "spring-attic_greenhouse"
+    },
+    {
+      "name": "spring-attic_spring-android"
+    },
+    {
+      "name": "spring-attic_spring-android-samples"
+    },
+    {
+      "name": "spring-attic_spring-cloud-aws"
+    },
+    {
+      "name": "spring-attic_spring-cloud-dataflow"
+    },
+    {
+      "name": "spring-attic_spring-cloud-gcp"
+    },
+    {
+      "name": "spring-attic_spring-cloud-security"
+    },
+    {
+      "name": "spring-attic_spring-data-book"
+    },
+    {
+      "name": "spring-attic_spring-hadoop"
+    },
+    {
+      "name": "spring-attic_spring-mvc-showcase"
+    },
+    {
+      "name": "spring-attic_spring-native"
+    },
+    {
+      "name": "spring-attic_spring-roo"
+    },
+    {
+      "name": "spring-attic_spring-security-oauth"
+    },
+    {
+      "name": "spring-attic_spring-social"
+    },
+    {
+      "name": "spring-attic_spring-social-samples"
+    },
+    {
+      "name": "spring-cloud-samples_eureka"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-commons"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-config"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-consul"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-contract"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-function"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-gateway"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-kubernetes"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-netflix"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-openfeign"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-sleuth"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-stream"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-stream-samples"
+    },
+    {
+      "name": "spring-cloud_spring-cloud-zookeeper"
+    },
+    {
+      "name": "spring-gradle-plugins_dependency-management-plugin"
+    },
+    {
+      "name": "spring-guides_getting-started-guides"
+    },
+    {
+      "name": "spring-guides_gs-messaging-stomp-websocket"
+    },
+    {
+      "name": "spring-guides_gs-rest-service"
+    },
+    {
+      "name": "spring-guides_gs-spring-boot"
+    },
+    {
+      "name": "spring-guides_gs-spring-boot-docker"
+    },
+    {
+      "name": "spring-guides_tut-rest"
+    },
+    {
+      "name": "spring-guides_tut-spring-boot-oauth2"
+    },
+    {
+      "name": "spring-io_initializr"
+    },
+    {
+      "name": "spring-io_spring-javaformat"
+    },
+    {
+      "name": "spring-io_start.spring.io"
+    },
+    {
+      "name": "spring-petclinic_spring-petclinic-microservices"
+    },
+    {
+      "name": "spring-projects-experimental_spring-boot-thin-launcher"
+    },
+    {
+      "name": "spring-projects-experimental_spring-fu"
+    },
+    {
+      "name": "spring-projects_spring-ai"
+    },
+    {
+      "name": "spring-projects_spring-ai-examples"
+    },
+    {
+      "name": "spring-projects_spring-amqp"
+    },
+    {
+      "name": "spring-projects_spring-amqp-samples"
+    },
+    {
+      "name": "spring-projects_spring-authorization-server"
+    },
+    {
+      "name": "spring-projects_spring-batch"
+    },
+    {
+      "name": "spring-projects_spring-boot"
+    },
+    {
+      "name": "spring-projects_spring-data-commons"
+    },
+    {
+      "name": "spring-projects_spring-data-elasticsearch"
+    },
+    {
+      "name": "spring-projects_spring-data-examples"
+    },
+    {
+      "name": "spring-projects_spring-data-jpa"
+    },
+    {
+      "name": "spring-projects_spring-data-mongodb"
+    },
+    {
+      "name": "spring-projects_spring-data-neo4j"
+    },
+    {
+      "name": "spring-projects_spring-data-redis"
+    },
+    {
+      "name": "spring-projects_spring-data-relational"
+    },
+    {
+      "name": "spring-projects_spring-data-rest"
+    },
+    {
+      "name": "spring-projects_spring-framework"
+    },
+    {
+      "name": "spring-projects_spring-graphql"
+    },
+    {
+      "name": "spring-projects_spring-hateoas"
+    },
+    {
+      "name": "spring-projects_spring-integration"
+    },
+    {
+      "name": "spring-projects_spring-integration-samples"
+    },
+    {
+      "name": "spring-projects_spring-kafka"
+    },
+    {
+      "name": "spring-projects_spring-loaded"
+    },
+    {
+      "name": "spring-projects_spring-modulith"
+    },
+    {
+      "name": "spring-projects_spring-restdocs"
+    },
+    {
+      "name": "spring-projects_spring-retry"
+    },
+    {
+      "name": "spring-projects_spring-security"
+    },
+    {
+      "name": "spring-projects_spring-security-samples"
+    },
+    {
+      "name": "spring-projects_spring-session"
+    },
+    {
+      "name": "spring-projects_spring-shell"
+    },
+    {
+      "name": "spring-projects_spring-statemachine"
+    },
+    {
+      "name": "spring-projects_spring-tools"
+    },
+    {
+      "name": "spring2go_oauth2lab"
+    },
+    {
+      "name": "spring2go_staffjoy"
+    },
+    {
+      "name": "springaialibaba_spring-ai-alibaba-examples"
+    },
+    {
+      "name": "springdoc_springdoc-openapi"
+    },
+    {
+      "name": "springdoc_springdoc-openapi-demos"
+    },
+    {
+      "name": "springfox_springfox"
+    },
+    {
+      "name": "springfox_springfox-demos"
+    },
+    {
+      "name": "springside_springside4"
+    },
+    {
+      "name": "sqlancer_sqlancer"
+    },
+    {
+      "name": "sqlcipher_android-database-sqlcipher"
+    },
+    {
+      "name": "square_RxIdler"
+    },
+    {
+      "name": "square_android-times-square"
+    },
+    {
+      "name": "square_assertj-android"
+    },
+    {
+      "name": "square_coordinators"
+    },
+    {
+      "name": "square_dagger"
+    },
+    {
+      "name": "square_dagger-intellij-plugin"
+    },
+    {
+      "name": "square_flow"
+    },
+    {
+      "name": "square_gifencoder"
+    },
+    {
+      "name": "square_haha"
+    },
+    {
+      "name": "square_javapoet"
+    },
+    {
+      "name": "square_keywhiz"
+    },
+    {
+      "name": "square_mortar"
+    },
+    {
+      "name": "square_otto"
+    },
+    {
+      "name": "square_phrase"
+    },
+    {
+      "name": "square_pollexor"
+    },
+    {
+      "name": "square_seismic"
+    },
+    {
+      "name": "square_sqlbrite"
+    },
+    {
+      "name": "square_tape"
+    },
+    {
+      "name": "square_whorlwind"
+    },
+    {
+      "name": "ssssssss-team_magic-api"
+    },
+    {
+      "name": "ssssssss-team_spider-flow"
+    },
+    {
+      "name": "stagemonitor_stagemonitor"
+    },
+    {
+      "name": "stanford-futuredata_macrobase"
+    },
+    {
+      "name": "stateless4j_stateless4j"
+    },
+    {
+      "name": "steelkiwi_cropiwa"
+    },
+    {
+      "name": "stepstone-tech_android-material-stepper"
+    },
+    {
+      "name": "steve-community_steve"
+    },
+    {
+      "name": "stfalcon-studio_ChatKit"
+    },
+    {
+      "name": "stfalcon-studio_FrescoImageViewer"
+    },
+    {
+      "name": "stfalcon-studio_SmsVerifyCatcher"
+    },
+    {
+      "name": "strimzi_strimzi-kafka-operator"
+    },
+    {
+      "name": "stripe_stripe-java"
+    },
+    {
+      "name": "strongbox_strongbox"
+    },
+    {
+      "name": "structr_structr"
+    },
+    {
+      "name": "structurizr_cli"
+    },
+    {
+      "name": "structurizr_dsl"
+    },
+    {
+      "name": "structurizr_java"
+    },
+    {
+      "name": "super-csv_super-csv"
+    },
+    {
+      "name": "supertokens_supertokens-core"
+    },
+    {
+      "name": "support-project_knowledge"
+    },
+    {
+      "name": "susiai_susi_android_v1"
+    },
+    {
+      "name": "swagger-api_swagger-core"
+    },
+    {
+      "name": "swagger-api_swagger-parser"
+    },
+    {
+      "name": "sword-org_wechat4j"
+    },
+    {
+      "name": "synacktiv_HopLa"
+    },
+    {
+      "name": "syncany_syncany"
+    },
+    {
+      "name": "syncthing_syncthing-android"
+    },
+    {
+      "name": "syndesisio_syndesis"
+    },
+    {
+      "name": "synthetichealth_synthea"
+    },
+    {
+      "name": "ta4j_ta4j"
+    },
+    {
+      "name": "tabulapdf_tabula-java"
+    },
+    {
+      "name": "takari_polyglot-maven"
+    },
+    {
+      "name": "takimafr_androidkickstartr"
+    },
+    {
+      "name": "tal-tech_conan"
+    },
+    {
+      "name": "tapdata_tapdata"
+    },
+    {
+      "name": "team-supercharge_ShimmerLayout"
+    },
+    {
+      "name": "telegram-sms_telegram-sms"
+    },
+    {
+      "name": "telly_MrVector"
+    },
+    {
+      "name": "tencentmusic_supersonic"
+    },
+    {
+      "name": "tensorflow_java"
+    },
+    {
+      "name": "termux_termux-api"
+    },
+    {
+      "name": "termux_termux-app"
+    },
+    {
+      "name": "termux_termux-boot"
+    },
+    {
+      "name": "termux_termux-float"
+    },
+    {
+      "name": "termux_termux-tasker"
+    },
+    {
+      "name": "termux_termux-widget"
+    },
+    {
+      "name": "testcontainers_testcontainers-java"
+    },
+    {
+      "name": "testng-team_testng"
+    },
+    {
+      "name": "testsigmahq_testsigma"
+    },
+    {
+      "name": "the3deer_android-3D-model-viewer"
+    },
+    {
+      "name": "theonedev_onedev"
+    },
+    {
+      "name": "thingsboard_tbmq"
+    },
+    {
+      "name": "thingsboard_thingsboard"
+    },
+    {
+      "name": "thinkaurelius_titan"
+    },
+    {
+      "name": "thoughtbot_expandable-recycler-view"
+    },
+    {
+      "name": "threema-ch_threema-android"
+    },
+    {
+      "name": "threerings_getdown"
+    },
+    {
+      "name": "thubbo_jmeter-plugins-for-apache-dubbo"
+    },
+    {
+      "name": "thymeleaf_thymeleaf"
+    },
+    {
+      "name": "timehop_sticky-headers-recyclerview"
+    },
+    {
+      "name": "tinkerpop_blueprints"
+    },
+    {
+      "name": "tinkoff-mobile-tech_ScrollingPagerIndicator"
+    },
+    {
+      "name": "tinylog-org_tinylog"
+    },
+    {
+      "name": "titansgroup_k4l-video-trimmer"
+    },
+    {
+      "name": "tlaplus_tlaplus"
+    },
+    {
+      "name": "tls-attacker_TLS-Attacker"
+    },
+    {
+      "name": "tmobile_pacbot"
+    },
+    {
+      "name": "todoroo_astrid"
+    },
+    {
+      "name": "todotxt_todo.txt-android"
+    },
+    {
+      "name": "togglz_togglz"
+    },
+    {
+      "name": "tomahawk-player_tomahawk-android"
+    },
+    {
+      "name": "tomighty_tomighty"
+    },
+    {
+      "name": "tony-framework_TonY"
+    },
+    {
+      "name": "toolbox4minecraft_amidst"
+    },
+    {
+      "name": "topiam_eiam"
+    },
+    {
+      "name": "torodb_stampede"
+    },
+    {
+      "name": "tozny_java-aes-crypto"
+    },
+    {
+      "name": "traccar_traccar"
+    },
+    {
+      "name": "transistorsoft_react-native-background-fetch"
+    },
+    {
+      "name": "trigram-mrp_fractureiser"
+    },
+    {
+      "name": "triplea-game_triplea"
+    },
+    {
+      "name": "trojan-gfw_igniter"
+    },
+    {
+      "name": "tronprotocol_java-tron"
+    },
+    {
+      "name": "tronprotocol_wallet-cli"
+    },
+    {
+      "name": "tumblr_Backboard"
+    },
+    {
+      "name": "tumblr_Bookends"
+    },
+    {
+      "name": "tumblr_Graywater"
+    },
+    {
+      "name": "turms-im_turms"
+    },
+    {
+      "name": "tvbarthel_BlurDialogFragment"
+    },
+    {
+      "name": "tvbarthel_ChaseWhisplyProject"
+    },
+    {
+      "name": "twireapp_Twire"
+    },
+    {
+      "name": "twitter-archive_ambrose"
+    },
+    {
+      "name": "twitter-archive_commons"
+    },
+    {
+      "name": "twitter-archive_distributedlog"
+    },
+    {
+      "name": "twitter-archive_twitter-kit-android"
+    },
+    {
+      "name": "twitter_GraphJet"
+    },
+    {
+      "name": "twitter_Serial"
+    },
+    {
+      "name": "twitter_elephant-bird"
+    },
+    {
+      "name": "twitter_hbc"
+    },
+    {
+      "name": "twotoasters_JazzyListView"
+    },
+    {
+      "name": "twowaits_SDE-Interview-Questions"
+    },
+    {
+      "name": "twoyi_twoyi"
+    },
+    {
+      "name": "uPhyca_stetho-realm"
+    },
+    {
+      "name": "uavorg_uavstack"
+    },
+    {
+      "name": "uber-archive_AthenaX"
+    },
+    {
+      "name": "uber-archive_chaperone"
+    },
+    {
+      "name": "uber-common_jvm-profiler"
+    },
+    {
+      "name": "uber_AutoDispose"
+    },
+    {
+      "name": "uber_NullAway"
+    },
+    {
+      "name": "uber_RxDogTag"
+    },
+    {
+      "name": "uber_okbuck"
+    },
+    {
+      "name": "uber_uReplicator"
+    },
+    {
+      "name": "ucarGroup_DataLink"
+    },
+    {
+      "name": "udacity_Sunshine-Version-2"
+    },
+    {
+      "name": "udacity_ud839_Miwok"
+    },
+    {
+      "name": "udacity_ud851-Exercises"
+    },
+    {
+      "name": "udacity_ud851-Sunshine"
+    },
+    {
+      "name": "udacity_ud862-samples"
+    },
+    {
+      "name": "udacity_ud867"
+    },
+    {
+      "name": "umano_AndroidSlidingUpPanel"
+    },
+    {
+      "name": "uncle-novel_uncle-novel"
+    },
+    {
+      "name": "undertow-io_undertow"
+    },
+    {
+      "name": "uniVocity_univocity-parsers"
+    },
+    {
+      "name": "uniVocity_univocity-trader"
+    },
+    {
+      "name": "unicode-org_cldr"
+    },
+    {
+      "name": "unofficial-openjdk_openjdk"
+    },
+    {
+      "name": "update4j_update4j"
+    },
+    {
+      "name": "usc-isi-i2_Web-Karma"
+    },
+    {
+      "name": "ushahidi_SMSSync"
+    },
+    {
+      "name": "vaadin_flow"
+    },
+    {
+      "name": "vaadin_framework"
+    },
+    {
+      "name": "vaadin_hilla"
+    },
+    {
+      "name": "vaadin_platform"
+    },
+    {
+      "name": "validator_validator"
+    },
+    {
+      "name": "vanilla-music_vanilla"
+    },
+    {
+      "name": "vavr-io_vavr"
+    },
+    {
+      "name": "veracode-research_rogue-jndi"
+    },
+    {
+      "name": "vert-x3_vertx-examples"
+    },
+    {
+      "name": "vert-x3_vertx-guide-for-java-devs"
+    },
+    {
+      "name": "vert-x3_vertx-web"
+    },
+    {
+      "name": "ververica_flink-training-exercises"
+    },
+    {
+      "name": "ververica_sql-training"
+    },
+    {
+      "name": "vespa-engine_vespa"
+    },
+    {
+      "name": "vipshop_Saturn"
+    },
+    {
+      "name": "vipshop_vjtools"
+    },
+    {
+      "name": "virjarRatel_ratel-core"
+    },
+    {
+      "name": "viskell_viskell"
+    },
+    {
+      "name": "vivo_MoonBox"
+    },
+    {
+      "name": "vmware-archive_differential-datalog"
+    },
+    {
+      "name": "vogellacompany_codeexamples-android"
+    },
+    {
+      "name": "voicerepublic_pdf-viewer"
+    },
+    {
+      "name": "vrapper_vrapper"
+    },
+    {
+      "name": "w3c_epubcheck"
+    },
+    {
+      "name": "wakatime_jetbrains-wakatime"
+    },
+    {
+      "name": "wala_WALA"
+    },
+    {
+      "name": "wallabag_android-app"
+    },
+    {
+      "name": "wasmerio_wasmer-java"
+    },
+    {
+      "name": "watson-developer-cloud_java-sdk"
+    },
+    {
+      "name": "webauthn4j_webauthn4j"
+    },
+    {
+      "name": "webbit_webbit"
+    },
+    {
+      "name": "webbukkit_dynmap"
+    },
+    {
+      "name": "webx_citrus"
+    },
+    {
+      "name": "wechatpay-apiv3_wechatpay-apache-httpclient"
+    },
+    {
+      "name": "wechatpay-apiv3_wechatpay-java"
+    },
+    {
+      "name": "weexteam_hackernews-App-powered-by-Apache-Weex"
+    },
+    {
+      "name": "weiboad_fiery"
+    },
+    {
+      "name": "weibocom_motan"
+    },
+    {
+      "name": "wequick_Small"
+    },
+    {
+      "name": "wgpsec_YongYouNcTool"
+    },
+    {
+      "name": "wgpsec_fofa_viewer"
+    },
+    {
+      "name": "widdix_aws-cf-templates"
+    },
+    {
+      "name": "widdix_aws-ec2-ssh"
+    },
+    {
+      "name": "wiglenet_wigle-wifi-wardriving"
+    },
+    {
+      "name": "wildfirechat_android-chat"
+    },
+    {
+      "name": "wildfirechat_im-server"
+    },
+    {
+      "name": "wildfly_quickstart"
+    },
+    {
+      "name": "willowtreeapps_Hyperion-Android"
+    },
+    {
+      "name": "willowtreeapps_spruce-android"
+    },
+    {
+      "name": "wirecube_android_additive_animations"
+    },
+    {
+      "name": "wiremock_wiremock"
+    },
+    {
+      "name": "wix_react-native-notifications"
+    },
+    {
+      "name": "wiztools_rest-client"
+    },
+    {
+      "name": "wmixvideo_nfe"
+    },
+    {
+      "name": "woodpecker-framework_ysoserial-for-woodpecker"
+    },
+    {
+      "name": "worldline_FoldableLayout"
+    },
+    {
+      "name": "wrapp-archive_floatlabelededittext"
+    },
+    {
+      "name": "wso2_product-apim"
+    },
+    {
+      "name": "wso2_product-is"
+    },
+    {
+      "name": "wuba_Oceanus"
+    },
+    {
+      "name": "wxpusher_wxpusher-sdk-java"
+    },
+    {
+      "name": "wyh-spring-ecosystem-student_spring-boot-student"
+    },
+    {
+      "name": "wyvernlang_wyvern"
+    },
+    {
+      "name": "x-ream_sqli"
+    },
+    {
+      "name": "x-stream_xstream"
+    },
+    {
+      "name": "xaecbd_KCenter"
+    },
+    {
+      "name": "xamarin_XobotOS"
+    },
+    {
+      "name": "xamarin_docs-archive"
+    },
+    {
+      "name": "xbmc_Kore"
+    },
+    {
+      "name": "xiaolyuh_layering-cache"
+    },
+    {
+      "name": "xmolecules_jmolecules"
+    },
+    {
+      "name": "xpipe-io_xpipe"
+    },
+    {
+      "name": "xwiki_xwiki-platform"
+    },
+    {
+      "name": "yacy_yacy_grid_crawler"
+    },
+    {
+      "name": "yacy_yacy_grid_loader"
+    },
+    {
+      "name": "yacy_yacy_grid_mcp"
+    },
+    {
+      "name": "yacy_yacy_grid_parser"
+    },
+    {
+      "name": "yacy_yacy_search_androidclient"
+    },
+    {
+      "name": "yacy_yacy_search_server"
+    },
+    {
+      "name": "yago-naga_yago3"
+    },
+    {
+      "name": "yahoo_HaloDB"
+    },
+    {
+      "name": "yahoo_egads"
+    },
+    {
+      "name": "yahoo_elide"
+    },
+    {
+      "name": "yahoo_mysql_perf_analyzer"
+    },
+    {
+      "name": "yahoo_squidb"
+    },
+    {
+      "name": "yanagishima_yanagishima"
+    },
+    {
+      "name": "yint-tech_sekiro-open"
+    },
+    {
+      "name": "yixia_VitamioBundle"
+    },
+    {
+      "name": "yomorun_hashids-java"
+    },
+    {
+      "name": "youlaitech_youlai-mall"
+    },
+    {
+      "name": "young-datafan-ooooo1_data-integration"
+    },
+    {
+      "name": "youngmonkeys_ezyfox-server"
+    },
+    {
+      "name": "youtube_api-samples"
+    },
+    {
+      "name": "yudaocode_SpringBoot-Labs"
+    },
+    {
+      "name": "zalando_intellij-swagger"
+    },
+    {
+      "name": "zalando_logbook"
+    },
+    {
+      "name": "zalando_nakadi"
+    },
+    {
+      "name": "zalando_problem"
+    },
+    {
+      "name": "zalando_problem-spring-web"
+    },
+    {
+      "name": "zalando_zalenium"
+    },
+    {
+      "name": "zaproxy_zaproxy"
+    },
+    {
+      "name": "zebrunner_carina"
+    },
+    {
+      "name": "zendesk_maxwell"
+    },
+    {
+      "name": "zeromq_jeromq"
+    },
+    {
+      "name": "zeromq_jzmq"
+    },
+    {
+      "name": "zeroturnaround_zt-exec"
+    },
+    {
+      "name": "zeroturnaround_zt-zip"
+    },
+    {
+      "name": "zfile-dev_zfile"
+    },
+    {
+      "name": "zfoo-project_zfoo"
+    },
+    {
+      "name": "zhihu_Matisse"
+    },
+    {
+      "name": "zhihu_RxLifecycle"
+    },
+    {
+      "name": "zinggAI_zingg"
+    },
+    {
+      "name": "zmops_zeus-iot"
+    },
+    {
+      "name": "ztosec_secscan-authcheck"
+    },
+    {
+      "name": "zxing_zxing"
+    }
+  ]
+}

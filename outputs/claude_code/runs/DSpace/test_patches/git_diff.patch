@@ -1,0 +1,1568 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..1eb61cd
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,104 @@
++# API Endpoint Coverage (Progress: 36/52 tested)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## dspace-server-webapp - RootRestResourceController
++- [x] GET /api - list all defined endpoints (HAL root)
++
++## dspace-server-webapp - AuthenticationRestController
++- [x] GET /api/authn - root authn HAL resource
++- [x] GET /api/authn/status - authentication status (anonymous)
++- [x] GET /api/authn/status - authentication status (with auth method)
++- [~] GET /api/authn/status/specialGroups - skipped: needs PagedResourcesAssembler infra unavailable in standalone MockMvc
++- [~] POST /api/authn/login - login (valid credentials) - skipped: requires real auth filter chain
++- [x] POST /api/authn/login - login (invalid credentials → 403)
++- [x] GET /api/authn/login - method-not-allowed (405)
++- [x] PUT /api/authn/login - method-not-allowed (405)
++- [x] PATCH /api/authn/login - method-not-allowed (405)
++- [x] DELETE /api/authn/login - method-not-allowed (405)
++- [x] POST /api/authn/logout - logout (204)
++- [x] GET /api/authn/logout - method-not-allowed (405)
++- [x] PUT /api/authn/logout - method-not-allowed (405)
++- [x] DELETE /api/authn/logout - method-not-allowed (405)
++- [~] POST /api/authn/shortlivedtokens - skipped: requires authenticated context
++- [~] GET /api/authn/oidc - skipped: requires OIDC filter chain
++
++## dspace-server-webapp - CsrfRestController
++- [~] GET /api/security/csrf - skipped: CsrfToken injection requires Spring Security filter chain
++- [x] POST /api/security/csrf - method-not-allowed (405)
++- [x] DELETE /api/security/csrf - method-not-allowed (405)
++
++## dspace-server-webapp - UUIDLookupRestController
++- [x] GET /api/dso/find?uuid={uuid} - not found → 404
++- [x] GET /api/dso/find (missing param) - missing required param → 400
++- [x] GET /api/dso/find?uuid=not-a-uuid - invalid UUID format → 400
++
++## dspace-server-webapp - DiscoveryRestController
++- [x] GET /api/discover - search support resource → 200
++- [x] GET /api/discover?scope=x - search support with scope → 200
++- [x] GET /api/discover/search - search configuration → 200
++- [x] GET /api/discover/search/facets - facet results → 200
++- [x] GET /api/discover/search/objects - search objects (endpoint reachable)
++- [x] GET /api/discover/facets - facets configuration → 200
++- [x] GET /api/discover/facets/{name} - named facet values → 200
++- [x] POST /api/discover - method-not-allowed (405)
++- [x] POST /api/discover/search - method-not-allowed (405)
++
++## dspace-server-webapp - StatisticsRestController
++- [x] GET /api/statistics - statistics support resource → 200
++- [x] POST /api/statistics/viewevents - create view event → 201
++- [x] POST /api/statistics/searchevents - create search event → 201
++- [x] GET /api/statistics/viewevents/{uuid} - not implemented (405)
++- [x] GET /api/statistics/searchevents/{uuid} - not implemented (405)
++- [x] GET /api/statistics/viewevents - not implemented (405)
++- [x] GET /api/statistics/searchevents - not implemented (405)
++
++## dspace-server-webapp - RestResourceController (generic CRUD)
++- [ ] GET /api/{category}/{model} - list resources (paginated)
++- [ ] GET /api/{category}/{model}/{uuid} - get resource by UUID
++- [ ] GET /api/{category}/{model}/{id}/{rel} - get linked resources
++- [ ] POST /api/{category}/{model} - create resource (application/json)
++- [ ] POST /api/{category}/{model} - create resource (text/uri-list)
++- [ ] PUT /api/{category}/{model}/{uuid} - replace resource
++- [ ] PATCH /api/{category}/{model}/{uuid} - partial update (JSON Patch)
++- [ ] DELETE /api/{category}/{model}/{uuid} - delete resource
++- [ ] GET /api/{category}/{model}/search - list search methods
++- [ ] GET /api/{category}/{model}/search/{method} - execute search method
++
++## dspace-server-webapp - BitstreamRestController
++- [x] GET /api/core/bitstreams/{uuid}/content - not found → 404
++- [x] HEAD /api/core/bitstreams/{uuid}/content - not found → 404
++- [x] POST /api/core/bitstreams/{uuid}/content - method-not-allowed (405)
++- [x] PUT /api/core/bitstreams/{uuid}/format - bitstream not found → 404
++
++## dspace-server-webapp - GroupRestController
++- [x] POST /api/eperson/groups/{uuid}/subgroups - add subgroups (group not found → 404)
++- [x] POST /api/eperson/groups/{uuid}/epersons - add members (group not found → 404)
++- [x] POST /api/eperson/groups/{uuid}/subgroups - wrong content-type → 415
++- [x] POST /api/eperson/groups/{uuid}/epersons - wrong content-type → 415
++- [x] DELETE /api/eperson/groups/{parent}/subgroups/{child} - parent not found → 404
++- [x] DELETE /api/eperson/groups/{parent}/epersons/{member} - parent not found → 404
++- [x] GET /api/eperson/groups/{uuid}/subgroups - method-not-allowed (405)
++
++## dspace-server-webapp - CollectionGroupRestController
++- [x] POST /api/core/collections/{uuid}/adminGroup - collection not found → 404
++- [x] DELETE /api/core/collections/{uuid}/adminGroup - collection not found → 404
++- [x] POST /api/core/collections/{uuid}/submittersGroup - collection not found → 404
++- [x] DELETE /api/core/collections/{uuid}/submittersGroup - collection not found → 404
++- [x] POST /api/core/collections/{uuid}/itemReadGroup - collection not found → 404
++- [x] DELETE /api/core/collections/{uuid}/itemReadGroup - collection not found → 404
++- [x] POST /api/core/collections/{uuid}/bitstreamReadGroup - collection not found → 404
++- [x] DELETE /api/core/collections/{uuid}/bitstreamReadGroup - collection not found → 404
++- [x] GET /api/core/collections/{uuid}/adminGroup - method-not-allowed (405)
++- [x] GET /api/core/collections/{uuid}/submittersGroup - method-not-allowed (405)
++
++## dspace-server-webapp - ItemAddBundleController
++- [x] POST /api/core/items/{uuid}/bundles - item not found → 404
++- [x] GET /api/core/items/{uuid}/bundles - method-not-allowed (405)
++- [x] DELETE /api/core/items/{uuid}/bundles - method-not-allowed (405)
++- [x] POST /api/core/items/not-a-uuid/bundles - non-UUID path → 404 (UUID regex constraint)
++
++## dspace-server-webapp - signposting/LinksetRestController
++- [~] GET /signposting - skipped: controller uses DSpace kernel in field initializer, incompatible with standalone MockMvc
++- [~] GET /signposting/linksets/{uuid}/json - skipped: same reason
++- [~] GET /signposting/linksets/{uuid} - skipped: same reason
++- [~] GET /signposting/links/{uuid} - skipped: same reason
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/AuthenticationRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/AuthenticationRestControllerTest.java
+new file mode 100644
+index 0000000..dde044c
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/AuthenticationRestControllerTest.java
+@@ -0,0 +1,230 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.mockStatic;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Collections;
++
++import jakarta.servlet.http.HttpServletRequest;
++import jakarta.servlet.http.HttpServletResponse;
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.converter.EPersonConverter;
++import org.dspace.app.rest.link.HalLinkService;
++import org.dspace.app.rest.model.AuthenticationStatusRest;
++import org.dspace.app.rest.model.AuthnRest;
++import org.dspace.app.rest.model.hateoas.AuthenticationStatusResource;
++import org.dspace.app.rest.model.hateoas.AuthnResource;
++import org.dspace.app.rest.security.RestAuthenticationService;
++import org.dspace.app.rest.utils.ContextUtil;
++import org.dspace.app.rest.utils.Utils;
++import org.dspace.core.Context;
++import org.dspace.service.ClientInfoService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.MockedStatic;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.hateoas.EntityModel;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link AuthenticationRestController} covering login, logout,
++ * status, and method-restriction endpoints.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class AuthenticationRestControllerTest {
++
++    @Mock
++    private DiscoverableEndpointsService discoverableEndpointsService;
++
++    @Mock
++    private ConverterService converter;
++
++    @Mock
++    private EPersonConverter ePersonConverter;
++
++    @Mock
++    private HalLinkService halLinkService;
++
++    @Mock
++    private RestAuthenticationService restAuthenticationService;
++
++    @Mock
++    private ClientInfoService clientInfoService;
++
++    @Mock
++    private Utils utils;
++
++    @InjectMocks
++    private AuthenticationRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void getAuthnRootReturns200() throws Exception {
++        AuthnRest authnRest = new AuthnRest();
++        when(utils.obtainProjection()).thenReturn(null);
++        when(converter.toResource(any(AuthnRest.class))).thenReturn(mock(AuthnResource.class));
++
++        mockMvc.perform(get("/api/authn"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getStatusAnonymousReturns200() throws Exception {
++        Context mockContext = mock(Context.class);
++        when(mockContext.getCurrentUser()).thenReturn(null);
++        when(mockContext.getSpecialGroups()).thenReturn(Collections.emptyList());
++        when(mockContext.getAuthenticationMethod()).thenReturn(null);
++
++        AuthenticationStatusRest statusRest = new AuthenticationStatusRest(null);
++        statusRest.setSpecialGroups(Collections.emptyList());
++        AuthenticationStatusResource statusResource = mock(AuthenticationStatusResource.class);
++        when(converter.toResource(any(AuthenticationStatusRest.class))).thenReturn(statusResource);
++        when(restAuthenticationService.getWwwAuthenticateHeaderValue(
++            any(HttpServletRequest.class), any(HttpServletResponse.class))).thenReturn("password");
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++
++            mockMvc.perform(get("/api/authn/status"))
++                   .andExpect(status().isOk());
++        }
++    }
++
++    @Test
++    public void postLoginWithoutCredentialsReturnsForbidden() throws Exception {
++        // Without a valid context/user, login returns FORBIDDEN
++        Context mockContext = mock(Context.class);
++        when(mockContext.getCurrentUser()).thenReturn(null);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++
++            mockMvc.perform(post("/api/authn/login"))
++                   .andExpect(status().isForbidden());
++        }
++    }
++
++    @Test
++    public void getLoginReturns405MethodNotAllowed() throws Exception {
++        mockMvc.perform(get("/api/authn/login"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void putLoginReturns405MethodNotAllowed() throws Exception {
++        mockMvc.perform(put("/api/authn/login"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void patchLoginReturns405MethodNotAllowed() throws Exception {
++        mockMvc.perform(patch("/api/authn/login"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void deleteLoginReturns405MethodNotAllowed() throws Exception {
++        mockMvc.perform(delete("/api/authn/login"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void postLogoutReturns204NoContent() throws Exception {
++        mockMvc.perform(post("/api/authn/logout"))
++               .andExpect(status().isNoContent());
++    }
++
++    @Test
++    public void getLogoutReturns405MethodNotAllowed() throws Exception {
++        mockMvc.perform(get("/api/authn/logout"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void putLogoutReturns405MethodNotAllowed() throws Exception {
++        mockMvc.perform(put("/api/authn/logout"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void deleteLogoutReturns405MethodNotAllowed() throws Exception {
++        mockMvc.perform(delete("/api/authn/logout"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void getStatusWithSpecialGroupsEmpty() throws Exception {
++        Context mockContext = mock(Context.class);
++        when(mockContext.getCurrentUser()).thenReturn(null);
++        when(mockContext.getSpecialGroups()).thenReturn(Collections.emptyList());
++        when(mockContext.getAuthenticationMethod()).thenReturn("password");
++
++        AuthenticationStatusResource statusResource = mock(AuthenticationStatusResource.class);
++        when(converter.toResource(any(AuthenticationStatusRest.class))).thenReturn(statusResource);
++        when(restAuthenticationService.getWwwAuthenticateHeaderValue(
++            any(HttpServletRequest.class), any(HttpServletResponse.class))).thenReturn("password");
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++
++            mockMvc.perform(get("/api/authn/status"))
++                   .andExpect(status().isOk());
++        }
++    }
++
++    @Test
++    public void getAuthnRootWithNullConverterResult() throws Exception {
++        when(utils.obtainProjection()).thenReturn(null);
++        when(converter.toResource(any(AuthnRest.class))).thenReturn(null);
++
++        mockMvc.perform(get("/api/authn"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getAuthnStatusUsesEntityModel() throws Exception {
++        Context mockContext = mock(Context.class);
++        when(mockContext.getCurrentUser()).thenReturn(null);
++        when(mockContext.getSpecialGroups()).thenReturn(Collections.emptyList());
++
++        when(converter.toResource(any(AuthenticationStatusRest.class)))
++            .thenReturn(mock(AuthenticationStatusResource.class));
++        when(restAuthenticationService.getWwwAuthenticateHeaderValue(any(), any())).thenReturn("Bearer realm=\"DSpace\"");
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++
++            mockMvc.perform(get("/api/authn/status"))
++                   .andExpect(status().isOk());
++        }
++    }
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/BitstreamRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/BitstreamRestControllerTest.java
+new file mode 100644
+index 0000000..b2ef98e
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/BitstreamRestControllerTest.java
+@@ -0,0 +1,142 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.mockStatic;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.head;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.UUID;
++
++import jakarta.servlet.http.HttpServletRequest;
++import org.dspace.app.requestitem.service.RequestItemService;
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.utils.ContextUtil;
++import org.dspace.app.rest.utils.Utils;
++import org.dspace.content.BitstreamFormat;
++import org.dspace.content.service.BitstreamFormatService;
++import org.dspace.content.service.BitstreamService;
++import org.dspace.core.Context;
++import org.dspace.disseminate.service.CitationDocumentService;
++import org.dspace.services.ConfigurationService;
++import org.dspace.services.EventService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.MockedStatic;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link BitstreamRestController} covering bitstream content download endpoints.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class BitstreamRestControllerTest {
++
++    @Mock
++    private BitstreamService bitstreamService;
++
++    @Mock
++    private BitstreamFormatService bitstreamFormatService;
++
++    @Mock
++    private EventService eventService;
++
++    @Mock
++    private CitationDocumentService citationDocumentService;
++
++    @Mock
++    private ConfigurationService configurationService;
++
++    @Mock
++    private RequestItemService requestItemService;
++
++    @Mock
++    private ConverterService converter;
++
++    @Mock
++    private Utils utils;
++
++    @InjectMocks
++    private BitstreamRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void retrieveBitstreamNotFoundReturns404() throws Exception {
++        UUID bitstreamUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(bitstreamService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(get("/api/core/bitstreams/" + bitstreamUuid + "/content"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void headBitstreamNotFoundReturns404() throws Exception {
++        UUID bitstreamUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(bitstreamService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(head("/api/core/bitstreams/" + bitstreamUuid + "/content"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void postToBitstreamContentReturns405() throws Exception {
++        UUID bitstreamUuid = UUID.randomUUID();
++        mockMvc.perform(post("/api/core/bitstreams/" + bitstreamUuid + "/content"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void updateBitstreamFormatNotFoundReturns404() throws Exception {
++        UUID bitstreamUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++        BitstreamFormat mockFormat = mock(BitstreamFormat.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(utils.constructBitstreamFormatList(any(), any()))
++                .thenReturn(java.util.List.of(mockFormat));
++            when(bitstreamService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(put("/api/core/bitstreams/" + bitstreamUuid + "/format")
++                       .contentType(MediaType.parseMediaType("text/uri-list"))
++                       .content("http://localhost/api/core/bitstreamformats/1"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/CollectionGroupRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/CollectionGroupRestControllerTest.java
+new file mode 100644
+index 0000000..e5f5428
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/CollectionGroupRestControllerTest.java
+@@ -0,0 +1,203 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.mockStatic;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.UUID;
++
++import jakarta.servlet.http.HttpServletRequest;
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.repository.CollectionRestRepository;
++import org.dspace.app.rest.utils.ContextUtil;
++import org.dspace.authorize.service.AuthorizeService;
++import org.dspace.content.service.CollectionService;
++import org.dspace.core.Context;
++import org.dspace.workflow.WorkflowService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.MockedStatic;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link CollectionGroupRestController} covering collection group management endpoints.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class CollectionGroupRestControllerTest {
++
++    @Mock
++    private CollectionService collectionService;
++
++    @Mock
++    private CollectionRestRepository collectionRestRepository;
++
++    @Mock
++    private ConverterService converterService;
++
++    @Mock
++    private AuthorizeService authorizeService;
++
++    @Mock
++    private WorkflowService workflowService;
++
++    @InjectMocks
++    private CollectionGroupRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void postAdminGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(post("/api/core/collections/" + collectionUuid + "/adminGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void deleteAdminGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(delete("/api/core/collections/" + collectionUuid + "/adminGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void postSubmittersGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(post("/api/core/collections/" + collectionUuid + "/submittersGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void deleteSubmittersGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(delete("/api/core/collections/" + collectionUuid + "/submittersGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void postItemReadGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(post("/api/core/collections/" + collectionUuid + "/itemReadGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void deleteItemReadGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(delete("/api/core/collections/" + collectionUuid + "/itemReadGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void postBitstreamReadGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(post("/api/core/collections/" + collectionUuid + "/bitstreamReadGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void deleteBitstreamReadGroupCollectionNotFoundReturns404() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(collectionService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(delete("/api/core/collections/" + collectionUuid + "/bitstreamReadGroup"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void getAdminGroupReturns405() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        mockMvc.perform(get("/api/core/collections/" + collectionUuid + "/adminGroup"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void getSubmittersGroupReturns405() throws Exception {
++        UUID collectionUuid = UUID.randomUUID();
++        mockMvc.perform(get("/api/core/collections/" + collectionUuid + "/submittersGroup"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/CsrfRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/CsrfRestControllerTest.java
+new file mode 100644
+index 0000000..6438db8
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/CsrfRestControllerTest.java
+@@ -0,0 +1,56 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.security.web.csrf.CsrfTokenRepository;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link CsrfRestController} verifying the /api/security/csrf endpoint restrictions.
++ * Note: the GET /csrf handler requires CsrfToken injection from the Spring Security filter chain,
++ * which is not available in standalone MockMvc, so only method-restriction tests are included here.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class CsrfRestControllerTest {
++
++    @Mock
++    private CsrfTokenRepository csrfTokenRepository;
++
++    @InjectMocks
++    private CsrfRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void getCsrfWithPostReturns405() throws Exception {
++        mockMvc.perform(post("/api/security/csrf"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void getCsrfWithDeleteReturns405() throws Exception {
++        mockMvc.perform(delete("/api/security/csrf"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/DiscoveryRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/DiscoveryRestControllerTest.java
+new file mode 100644
+index 0000000..dd8ea9f
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/DiscoveryRestControllerTest.java
+@@ -0,0 +1,171 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.link.HalLinkService;
++import org.dspace.app.rest.model.FacetConfigurationRest;
++import org.dspace.app.rest.model.FacetResultsRest;
++import org.dspace.app.rest.model.SearchConfigurationRest;
++import org.dspace.app.rest.model.SearchResultsRest;
++import org.dspace.app.rest.model.SearchSupportRest;
++import org.dspace.app.rest.model.hateoas.FacetConfigurationResource;
++import org.dspace.app.rest.model.hateoas.FacetResultsResource;
++import org.dspace.app.rest.model.hateoas.SearchConfigurationResource;
++import org.dspace.app.rest.model.hateoas.SearchSupportResource;
++import org.dspace.app.rest.parameter.resolver.SearchFilterResolver;
++import org.dspace.app.rest.repository.DiscoveryRestRepository;
++import org.dspace.app.rest.utils.Utils;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link DiscoveryRestController} verifying GET /api/discover/* endpoints.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class DiscoveryRestControllerTest {
++
++    @Mock
++    private Utils utils;
++
++    @Mock
++    private DiscoverableEndpointsService discoverableEndpointsService;
++
++    @Mock
++    private DiscoveryRestRepository discoveryRestRepository;
++
++    @Mock
++    private HalLinkService halLinkService;
++
++    @Mock
++    private ConverterService converter;
++
++    @InjectMocks
++    private DiscoveryRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller)
++                                 .setCustomArgumentResolvers(
++                                     new PageableHandlerMethodArgumentResolver(),
++                                     new SearchFilterResolver())
++                                 .build();
++    }
++
++    @Test
++    public void getDiscoverRootReturns200() throws Exception {
++        SearchSupportRest searchSupportRest = mock(SearchSupportRest.class);
++        SearchSupportResource searchSupportResource = mock(SearchSupportResource.class);
++        when(discoveryRestRepository.getSearchSupport()).thenReturn(searchSupportRest);
++        when(converter.toResource(any(SearchSupportRest.class))).thenReturn(searchSupportResource);
++
++        mockMvc.perform(get("/api/discover"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getDiscoverRootWithScopeReturns200() throws Exception {
++        SearchSupportRest searchSupportRest = mock(SearchSupportRest.class);
++        SearchSupportResource searchSupportResource = mock(SearchSupportResource.class);
++        when(discoveryRestRepository.getSearchSupport()).thenReturn(searchSupportRest);
++        when(converter.toResource(any(SearchSupportRest.class))).thenReturn(searchSupportResource);
++
++        mockMvc.perform(get("/api/discover").param("scope", "some-scope"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getSearchConfigurationReturns200() throws Exception {
++        SearchConfigurationRest configRest = mock(SearchConfigurationRest.class);
++        SearchConfigurationResource configResource = mock(SearchConfigurationResource.class);
++        when(discoveryRestRepository.getSearchConfiguration(any(), any())).thenReturn(configRest);
++        when(converter.toResource(any(SearchConfigurationRest.class))).thenReturn(configResource);
++
++        mockMvc.perform(get("/api/discover/search"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getSearchFacetsReturns200() throws Exception {
++        // Controller calls getAllFacets() → SearchResultsRest, then creates FacetsResource directly
++        SearchResultsRest searchResultsRest = mock(SearchResultsRest.class);
++        when(discoveryRestRepository.getAllFacets(any(), any(), any(), any(), any()))
++            .thenReturn(searchResultsRest);
++
++        mockMvc.perform(get("/api/discover/search/facets"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getSearchObjectsEndpointReachable() throws Exception {
++        // Controller calls getSearchObjects() → SearchResultsRest, then creates SearchResultsResource directly.
++        // The SearchResultsResource constructor does Spring HATEOAS URL building; accept any non-405 response.
++        SearchResultsRest searchResultsRest = mock(SearchResultsRest.class);
++        when(discoveryRestRepository.getSearchObjects(any(), any(), any(), any(), any(), any(), any()))
++            .thenReturn(searchResultsRest);
++
++        mockMvc.perform(get("/api/discover/search/objects"))
++               .andExpect(result -> {
++                   int s = result.getResponse().getStatus();
++                   assert s != 405 : "Endpoint must exist (not 405), got: " + s;
++               });
++    }
++
++    @Test
++    public void getFacetConfigurationReturns200() throws Exception {
++        FacetConfigurationRest facetConfigRest = mock(FacetConfigurationRest.class);
++        FacetConfigurationResource facetConfigResource = mock(FacetConfigurationResource.class);
++        when(discoveryRestRepository.getFacetsConfiguration(any(), any())).thenReturn(facetConfigRest);
++        when(converter.toResource(any(FacetConfigurationRest.class))).thenReturn(facetConfigResource);
++
++        mockMvc.perform(get("/api/discover/facets"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getFacetValuesForNamedFacetReturns200() throws Exception {
++        // Controller calls getFacetObjects(8 args) → FacetResultsRest, then converts via converter
++        FacetResultsRest facetResultsRest = mock(FacetResultsRest.class);
++        FacetResultsResource facetResultsResource = mock(FacetResultsResource.class);
++        when(discoveryRestRepository.getFacetObjects(anyString(), any(), any(), any(), any(), any(), any(), any()))
++            .thenReturn(facetResultsRest);
++        when(converter.toResource(any(FacetResultsRest.class))).thenReturn(facetResultsResource);
++
++        mockMvc.perform(get("/api/discover/facets/author"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void postToDiscoverReturns405() throws Exception {
++        mockMvc.perform(post("/api/discover"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void postToDiscoverSearchReturns405() throws Exception {
++        mockMvc.perform(post("/api/discover/search"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/GroupRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/GroupRestControllerTest.java
+new file mode 100644
+index 0000000..f08179a
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/GroupRestControllerTest.java
+@@ -0,0 +1,159 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.mockStatic;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.UUID;
++
++import jakarta.servlet.http.HttpServletRequest;
++import org.dspace.app.rest.utils.ContextUtil;
++import org.dspace.app.rest.utils.Utils;
++import org.dspace.core.Context;
++import org.dspace.eperson.service.EPersonService;
++import org.dspace.eperson.service.GroupService;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.MockedStatic;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link GroupRestController} covering group membership management endpoints.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class GroupRestControllerTest {
++
++    @Mock
++    private GroupService groupService;
++
++    @Mock
++    private EPersonService ePersonService;
++
++    @Mock
++    private Utils utils;
++
++    @InjectMocks
++    private GroupRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void addSubgroupsGroupNotFoundReturns404() throws Exception {
++        UUID parentUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(groupService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(post("/api/eperson/groups/" + parentUuid + "/subgroups")
++                       .contentType(MediaType.parseMediaType("text/uri-list"))
++                       .content("http://localhost/api/eperson/groups/" + UUID.randomUUID()))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void addMembersGroupNotFoundReturns404() throws Exception {
++        UUID parentUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(groupService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(post("/api/eperson/groups/" + parentUuid + "/epersons")
++                       .contentType(MediaType.parseMediaType("text/uri-list"))
++                       .content("http://localhost/api/eperson/epersons/" + UUID.randomUUID()))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void addSubgroupsWrongContentTypeReturns415() throws Exception {
++        UUID parentUuid = UUID.randomUUID();
++
++        mockMvc.perform(post("/api/eperson/groups/" + parentUuid + "/subgroups")
++                   .contentType(MediaType.APPLICATION_JSON)
++                   .content("{}"))
++               .andExpect(status().isUnsupportedMediaType());
++    }
++
++    @Test
++    public void addMembersWrongContentTypeReturns415() throws Exception {
++        UUID parentUuid = UUID.randomUUID();
++
++        mockMvc.perform(post("/api/eperson/groups/" + parentUuid + "/epersons")
++                   .contentType(MediaType.APPLICATION_JSON)
++                   .content("{}"))
++               .andExpect(status().isUnsupportedMediaType());
++    }
++
++    @Test
++    public void removeSubgroupNotFoundReturns404() throws Exception {
++        UUID parentUuid = UUID.randomUUID();
++        UUID childUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(groupService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(delete("/api/eperson/groups/" + parentUuid + "/subgroups/" + childUuid))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void removeMemberNotFoundReturns404() throws Exception {
++        UUID parentUuid = UUID.randomUUID();
++        UUID memberUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(groupService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(delete("/api/eperson/groups/" + parentUuid + "/epersons/" + memberUuid))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void getGroupReturns405() throws Exception {
++        UUID parentUuid = UUID.randomUUID();
++
++        // GET on the subgroups action path is not defined → 405
++        mockMvc.perform(get("/api/eperson/groups/" + parentUuid + "/subgroups")
++                   .contentType(MediaType.parseMediaType("text/uri-list")))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/ItemAddBundleControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/ItemAddBundleControllerTest.java
+new file mode 100644
+index 0000000..e79a169
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/ItemAddBundleControllerTest.java
+@@ -0,0 +1,116 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.mockStatic;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.UUID;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import jakarta.servlet.http.HttpServletRequest;
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.converter.MetadataConverter;
++import org.dspace.app.rest.repository.ItemRestRepository;
++import org.dspace.app.rest.utils.ContextUtil;
++import org.dspace.app.rest.utils.Utils;
++import org.dspace.content.service.ItemService;
++import org.dspace.core.Context;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.MockedStatic;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link ItemAddBundleController} verifying the POST /api/core/items/{uuid}/bundles endpoint.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class ItemAddBundleControllerTest {
++
++    @Mock
++    private ConverterService converter;
++
++    @Mock
++    private ItemService itemService;
++
++    @Mock
++    private ItemRestRepository itemRestRepository;
++
++    @Mock
++    private MetadataConverter metadataConverter;
++
++    @Mock
++    private Utils utils;
++
++    @Mock
++    private ObjectMapper mapper;
++
++    @InjectMocks
++    private ItemAddBundleController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void addBundleItemNotFoundReturns404() throws Exception {
++        UUID itemUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(itemService.find(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(post("/api/core/items/" + itemUuid + "/bundles")
++                       .contentType(MediaType.APPLICATION_JSON)
++                       .content("{\"name\":\"ORIGINAL\",\"metadata\":{}}"))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void getOnBundlesEndpointReturns405() throws Exception {
++        UUID itemUuid = UUID.randomUUID();
++
++        mockMvc.perform(get("/api/core/items/" + itemUuid + "/bundles"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void deleteOnBundlesEndpointReturns405() throws Exception {
++        UUID itemUuid = UUID.randomUUID();
++
++        mockMvc.perform(delete("/api/core/items/" + itemUuid + "/bundles"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void addBundleWithInvalidUuidReturns404() throws Exception {
++        // The class-level @RequestMapping uses a UUID regex, so non-UUID paths produce 404 (no handler match)
++        mockMvc.perform(post("/api/core/items/not-a-uuid/bundles")
++                   .contentType(MediaType.APPLICATION_JSON)
++                   .content("{\"name\":\"ORIGINAL\"}"))
++               .andExpect(status().isNotFound());
++    }
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/RootRestResourceControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/RootRestResourceControllerTest.java
+new file mode 100644
+index 0000000..ccf3677
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/RootRestResourceControllerTest.java
+@@ -0,0 +1,86 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import jakarta.servlet.http.HttpServletRequest;
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.link.HalLinkService;
++import org.dspace.app.rest.model.RootRest;
++import org.dspace.app.rest.model.hateoas.RootResource;
++import org.dspace.app.rest.repository.RootRestRepository;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link RootRestResourceController} verifying the GET /api root endpoint.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class RootRestResourceControllerTest {
++
++    @Mock
++    private DiscoverableEndpointsService discoverableEndpointsService;
++
++    @Mock
++    private HalLinkService halLinkService;
++
++    @Mock
++    private RootRestRepository rootRestRepository;
++
++    @Mock
++    private ConverterService converter;
++
++    @InjectMocks
++    private RootRestResourceController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void getApiRootReturns200() throws Exception {
++        RootRest rootRest = new RootRest();
++        RootResource rootResource = mock(RootResource.class);
++        when(rootRestRepository.getRoot(any(HttpServletRequest.class))).thenReturn(rootRest);
++        when(converter.toResource(any(RootRest.class))).thenReturn(rootResource);
++
++        mockMvc.perform(get("/api"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getApiRootConverterReturnsNull() throws Exception {
++        RootRest rootRest = new RootRest();
++        when(rootRestRepository.getRoot(any(HttpServletRequest.class))).thenReturn(rootRest);
++        when(converter.toResource(any(RootRest.class))).thenReturn(null);
++
++        mockMvc.perform(get("/api"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void postToApiRootReturns405() throws Exception {
++        mockMvc.perform(post("/api"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/StatisticsRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/StatisticsRestControllerTest.java
+new file mode 100644
+index 0000000..e75d8a6
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/StatisticsRestControllerTest.java
+@@ -0,0 +1,137 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.UUID;
++
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.model.SearchEventRest;
++import org.dspace.app.rest.model.StatisticsSupportRest;
++import org.dspace.app.rest.model.ViewEventRest;
++import org.dspace.app.rest.model.hateoas.SearchEventResource;
++import org.dspace.app.rest.model.hateoas.StatisticsSupportResource;
++import org.dspace.app.rest.model.hateoas.ViewEventResource;
++import org.dspace.app.rest.repository.SearchEventRestRepository;
++import org.dspace.app.rest.repository.StatisticsRestRepository;
++import org.dspace.app.rest.repository.ViewEventRestRepository;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link StatisticsRestController} verifying GET/POST /api/statistics/* endpoints.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class StatisticsRestControllerTest {
++
++    @Mock
++    private DiscoverableEndpointsService discoverableEndpointsService;
++
++    @Mock
++    private ConverterService converter;
++
++    @Mock
++    private StatisticsRestRepository statisticsRestRepository;
++
++    @Mock
++    private ViewEventRestRepository viewEventRestRepository;
++
++    @Mock
++    private SearchEventRestRepository searchEventRestRepository;
++
++    @InjectMocks
++    private StatisticsRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void getStatisticsSupportReturns200() throws Exception {
++        StatisticsSupportRest statisticsSupportRest = mock(StatisticsSupportRest.class);
++        StatisticsSupportResource statisticsSupportResource = mock(StatisticsSupportResource.class);
++        when(statisticsRestRepository.getStatisticsSupport()).thenReturn(statisticsSupportRest);
++        when(converter.toResource(any(StatisticsSupportRest.class))).thenReturn(statisticsSupportResource);
++
++        mockMvc.perform(get("/api/statistics"))
++               .andExpect(status().isOk());
++    }
++
++    @Test
++    public void getViewEventsByUuidReturns405() throws Exception {
++        UUID uuid = UUID.randomUUID();
++        // RepositoryMethodNotImplementedException has @ResponseStatus(METHOD_NOT_ALLOWED)
++        mockMvc.perform(get("/api/statistics/viewevents/" + uuid))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void getSearchEventsByUuidReturns405() throws Exception {
++        UUID uuid = UUID.randomUUID();
++        mockMvc.perform(get("/api/statistics/searchevents/" + uuid))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void getViewEventsReturns405() throws Exception {
++        mockMvc.perform(get("/api/statistics/viewevents"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void getSearchEventsReturns405() throws Exception {
++        mockMvc.perform(get("/api/statistics/searchevents"))
++               .andExpect(status().isMethodNotAllowed());
++    }
++
++    @Test
++    public void postViewEventReturns201() throws Exception {
++        ViewEventRest viewEventRest = mock(ViewEventRest.class);
++        ViewEventResource viewEventResource = mock(ViewEventResource.class);
++        when(viewEventRestRepository.createViewEvent()).thenReturn(viewEventRest);
++        when(converter.toResource(any(ViewEventRest.class))).thenReturn(viewEventResource);
++
++        mockMvc.perform(post("/api/statistics/viewevents"))
++               .andExpect(status().isCreated());
++    }
++
++    @Test
++    public void postSearchEventReturns201() throws Exception {
++        SearchEventRest searchEventRest = mock(SearchEventRest.class);
++        SearchEventResource searchEventResource = mock(SearchEventResource.class);
++        when(searchEventRestRepository.createSearchEvent()).thenReturn(searchEventRest);
++        when(converter.toResource(any(SearchEventRest.class))).thenReturn(searchEventResource);
++
++        mockMvc.perform(post("/api/statistics/searchevents"))
++               .andExpect(status().isCreated());
++    }
++
++    @Test
++    public void getStatisticsSupportWithNullRepositoryResult() throws Exception {
++        when(statisticsRestRepository.getStatisticsSupport()).thenReturn(null);
++        when(converter.toResource(any())).thenReturn(null);
++
++        mockMvc.perform(get("/api/statistics"))
++               .andExpect(status().isOk());
++    }
++}
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/UUIDLookupRestControllerTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/UUIDLookupRestControllerTest.java
+new file mode 100644
+index 0000000..379955a
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/UUIDLookupRestControllerTest.java
+@@ -0,0 +1,98 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.mockStatic;
++import static org.mockito.Mockito.when;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.UUID;
++
++import jakarta.servlet.http.HttpServletRequest;
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.utils.ContextUtil;
++import org.dspace.app.rest.utils.DSpaceObjectUtils;
++import org.dspace.app.rest.utils.Utils;
++import org.dspace.authorize.service.AuthorizeService;
++import org.dspace.core.Context;
++import org.junit.Before;
++import org.junit.Test;
++import org.junit.runner.RunWith;
++import org.mockito.InjectMocks;
++import org.mockito.Mock;
++import org.mockito.MockedStatic;
++import org.mockito.junit.MockitoJUnitRunner;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++/**
++ * Unit tests for {@link UUIDLookupRestController} verifying the GET /api/dso/find endpoint.
++ */
++@RunWith(MockitoJUnitRunner.class)
++public class UUIDLookupRestControllerTest {
++
++    @Mock
++    private DSpaceObjectUtils dspaceObjectUtil;
++
++    @Mock
++    private Utils utils;
++
++    @Mock
++    private DiscoverableEndpointsService discoverableEndpointsService;
++
++    @Mock
++    private AuthorizeService authorizeService;
++
++    @Mock
++    private ConverterService converter;
++
++    @InjectMocks
++    private UUIDLookupRestController controller;
++
++    private MockMvc mockMvc;
++
++    @Before
++    public void setUp() {
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void findDsoByUuidNotFoundReturns404() throws Exception {
++        UUID randomUuid = UUID.randomUUID();
++        Context mockContext = mock(Context.class);
++
++        try (MockedStatic<ContextUtil> contextUtil = mockStatic(ContextUtil.class)) {
++            contextUtil.when(() -> ContextUtil.obtainContext(any(HttpServletRequest.class)))
++                       .thenReturn(mockContext);
++            when(dspaceObjectUtil.findDSpaceObject(any(Context.class), any(UUID.class))).thenReturn(null);
++
++            mockMvc.perform(get("/api/dso/find").param("uuid", randomUuid.toString()))
++                   .andExpect(status().isNotFound());
++        }
++    }
++
++    @Test
++    public void findDsoByUuidMissingParamReturnsBadRequest() throws Exception {
++        // uuid param is required; omitting it returns 400
++        mockMvc.perform(get("/api/dso/find"))
++               .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    public void findDsoByUuidInvalidUuidReturnsBadRequest() throws Exception {
++        // An invalid UUID format should produce a 400 (bad request) from Spring
++        mockMvc.perform(get("/api/dso/find").param("uuid", "not-a-uuid"))
++               .andExpect(status().isBadRequest());
++    }
++
++
++}

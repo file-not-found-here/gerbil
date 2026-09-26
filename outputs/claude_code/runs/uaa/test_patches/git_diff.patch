@@ -1,0 +1,2560 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..7b839f7
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,153 @@
++# API Endpoint Coverage (Progress: 55/68)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## server/health - HealthzEndpoint
++- [x] GET /healthz - returns ok/stopping/db-failed based on state
++- [x] GET /healthz/** - wildcard alias for health check
++
++## server/ratelimiting - RateLimitStatusController
++- [x] GET /RateLimitingStatus - returns JSON rate limiting status
++
++## server/oauth - TokenKeyEndpoint
++- [x] GET /token_key - returns active signing key (RSA/symmetric, auth-gated)
++- [x] GET /token_keys - returns all signing keys as JWK set
++
++## server/oauth - CheckTokenEndpoint
++- [x] POST /check_token - decodes token, validates scopes (deprecated)
++- [x] GET /check_token - query-string support when allowQueryString=true
++
++## server/oauth - IntrospectEndpoint
++- [x] POST /introspect - RFC-7662 token introspection; returns active flag
++- [x] GET /introspect - returns 405 Method Not Allowed
++
++## server/oauth - TokenRevocationEndpoint
++- [x] ALL /oauth/token/revoke/user/{userId} - revoke all tokens for user
++- [x] ALL /oauth/token/revoke/user/{userId}/client/{clientId} - revoke user+client tokens
++- [ ] ALL /oauth/token/revoke/client/{clientId} - revoke all tokens for client
++- [x] DELETE /oauth/token/revoke/{tokenId} - revoke single token by ID
++- [ ] GET /oauth/token/list - list tokens for current user+client
++- [ ] GET /oauth/token/list/user/{userId} - list tokens for user (admin/tokens.list)
++- [ ] GET /oauth/token/list/client/{clientId} - list tokens for client (admin/tokens.list)
++
++## server/account - OpenIdConnectEndpoints
++- [x] GET /.well-known/openid-configuration - OIDC discovery document
++- [x] GET /oauth/token/.well-known/openid-configuration - alternate OIDC discovery path
++
++## server/account - UserInfoEndpoint
++- [x] GET /userinfo - returns OIDC user claims for authenticated user
++
++## server/account - PasswordChangeEndpoint
++- [x] PUT /Users/{userId}/password - change password (admin or self with old password)
++
++## server/account - PasswordResetEndpoint
++- [x] POST /password_resets - initiate password reset by email
++- [x] POST /password_change - complete password reset with code
++
++## server/login - LoginInfoEndpoint
++- [ ] GET /login (JSON) - login info for API clients
++- [ ] GET /info (JSON) - alias for /login
++- [ ] GET /login (HTML) - login page
++- [ ] GET /invalid_request - invalid request page
++- [ ] GET /delete_saved_account - delete saved account cookie
++- [ ] POST /origin-chooser - select IDP origin
++- [ ] POST /login/idp_discovery - discover IDP by email
++- [ ] POST /autologin - generate autologin code (Basic auth)
++- [ ] GET /autologin - perform autologin
++- [ ] GET /login_implicit - implicit login page
++- [ ] GET /login/callback/{origin} - external OAuth callback
++
++## server/login - SessionController
++- [x] GET /session - session management iframe page
++- [x] GET /session_management - session management page
++
++## server/scim - ScimUserEndpoints
++- [x] GET /Users - list/search users with filter, sort, pagination
++- [x] GET /Users/{userId} - get user by ID
++- [x] POST /Users - create new user (201)
++- [ ] PUT /Users/{userId} - full update (requires If-Match)
++- [ ] PATCH /Users/{userId} - partial update (requires If-Match)
++- [x] DELETE /Users/{userId} - delete user
++- [ ] GET /Users/{userId}/verify-link - generate verification link
++- [ ] GET /Users/{userId}/verify - verify user account
++- [ ] PATCH /Users/{userId}/status - update account status (lock/unlock)
++
++## server/scim - ScimGroupEndpoints
++- [x] GET /Groups - list/search groups
++- [x] GET /Groups/{groupId} - get group by ID
++- [x] POST /Groups - create group (201)
++- [x] PUT /Groups/{groupId} - full update (requires If-Match)
++- [ ] PATCH /Groups/{groupId} - partial update
++- [x] DELETE /Groups/{groupId} - delete group
++- [ ] GET /Groups/External/list - list external group mappings (deprecated)
++- [ ] GET /Groups/External - list external groups
++- [ ] POST /Groups/External - map external group
++- [ ] DELETE /Groups/External/{displayName}/{externalGroup}/{origin} - unmap
++- [ ] GET /Groups/{groupId}/members - list group members
++- [ ] POST /Groups/{groupId}/members - add member to group
++- [ ] DELETE /Groups/{groupId}/members/{memberId} - remove member
++
++## server/scim - ChangeEmailEndpoints
++- [x] POST /email_verifications - generate email verification code
++- [x] POST /email_changes - change email with verification code
++
++## server/scim - UserIdConversionEndpoints
++- [ ] GET /ids/Users - convert user IDs by filter
++
++## server/client - ClientAdminEndpoints
++- [x] GET /oauth/clients - list OAuth clients
++- [x] GET /oauth/clients/{client} - get client by ID
++- [x] POST /oauth/clients - create client (201)
++- [ ] PUT /oauth/clients/{client} - update client
++- [x] DELETE /oauth/clients/{client} - delete client
++- [ ] GET /oauth/clients/restricted - get restricted scope definitions
++- [ ] POST /oauth/clients/restricted - create restricted client
++- [ ] POST /oauth/clients/tx - batch create clients
++- [ ] PUT /oauth/clients/tx - batch update clients
++- [ ] POST /oauth/clients/tx/delete - batch delete clients
++- [ ] POST /oauth/clients/tx/modify - batch modify (ADD/UPDATE/DELETE/SECRET)
++- [ ] POST /oauth/clients/tx/secret - batch change secrets
++- [ ] PUT /oauth/clients/{client_id}/secret - change single client secret
++- [ ] PUT /oauth/clients/{client_id}/clientjwt - manage client JWT config
++
++## server/client - ClientMetadataAdminEndpoints
++- [x] GET /oauth/clients/{client}/meta - get client metadata
++- [x] GET /oauth/clients/meta - get all client metadata
++- [x] PUT /oauth/clients/{client}/meta - update client metadata
++
++## server/client - ClientInfoEndpoint
++- [x] GET /clientinfo - get current client's own info (no secret)
++
++## server/zone - IdentityZoneEndpoints
++- [x] GET /identity-zones - list all identity zones
++- [x] GET /identity-zones/{id} - get zone by ID
++- [x] POST /identity-zones - create identity zone (201)
++- [x] PUT /identity-zones/{id} - update identity zone
++- [x] DELETE /identity-zones/{id} - delete identity zone
++- [ ] POST /identity-zones/{identityZoneId}/clients - create client in zone
++- [ ] DELETE /identity-zones/{identityZoneId}/clients/{clientId} - delete client in zone
++
++## server/provider - IdentityProviderEndpoints
++- [x] GET /identity-providers - list identity providers
++- [x] GET /identity-providers/{id} - get IDP by ID
++- [x] POST /identity-providers - create IDP (201)
++- [x] PUT /identity-providers/{id} - update IDP
++- [x] DELETE /identity-providers/{id} - delete IDP
++- [ ] PATCH /identity-providers/{id}/status - update IDP active status
++- [ ] POST /identity-providers/test - test IDP credentials
++
++## server/approval - ApprovalsAdminEndpoints
++- [x] GET /approvals - list approvals for current user
++- [x] PUT /approvals - update/replace approvals for current user
++- [ ] PUT /approvals/{clientId} - update approvals for user+client
++- [x] DELETE /approvals - revoke approvals for user+client
++
++## server/codestore - CodeStoreEndpoints
++- [x] POST /Codes - generate expiring code (201)
++- [x] GET /Codes/{code} - retrieve expiring code
++
++## server/authentication - RemoteAuthenticationEndpoint
++- [x] POST /authenticate - authenticate with username/password
++- [ ] POST /authenticate (source+origin) - authenticate with origin for login server
++
++## server/passcode - PasscodeEndpoint
++- [~] GET /passcode - skipped: UI controller returning model/view, no JSON API
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/account/OpenIdConnectEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/account/OpenIdConnectEndpointsTest.java
+new file mode 100644
+index 0000000..3ce87db
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/account/OpenIdConnectEndpointsTest.java
+@@ -0,0 +1,71 @@
++package org.cloudfoundry.identity.uaa.account;
++
++import org.cloudfoundry.identity.uaa.zone.IdentityZone;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class OpenIdConnectEndpointsTest {
++
++    @Mock
++    IdentityZoneManager identityZoneManager;
++
++    OpenIdConnectEndpoints endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZone()).thenReturn(IdentityZone.getUaa());
++        endpoint = new OpenIdConnectEndpoints("http://localhost:8080/uaa", identityZoneManager);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @Test
++    void getOpenIdConfiguration_returnsDiscoveryDocument() throws Exception {
++        mockMvc.perform(get("/.well-known/openid-configuration"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++                .andExpect(jsonPath("$.issuer").exists())
++                .andExpect(jsonPath("$.authorization_endpoint").exists())
++                .andExpect(jsonPath("$.token_endpoint").exists())
++                .andExpect(jsonPath("$.jwks_uri").exists());
++    }
++
++    @Test
++    void getOpenIdConfiguration_alternateOAuthPath_returnsDiscoveryDocument() throws Exception {
++        mockMvc.perform(get("/oauth/token/.well-known/openid-configuration"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++                .andExpect(jsonPath("$.issuer").exists());
++    }
++
++    @Test
++    void getOpenIdConfiguration_includesSubjectTypesSupported() throws Exception {
++        mockMvc.perform(get("/.well-known/openid-configuration"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.subject_types_supported").isArray());
++    }
++
++    @Test
++    void getOpenIdConfiguration_includesScopesSupported() throws Exception {
++        mockMvc.perform(get("/.well-known/openid-configuration"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.scopes_supported").isArray());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/account/PasswordChangeEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/account/PasswordChangeEndpointTest.java
+new file mode 100644
+index 0000000..97a10ca
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/account/PasswordChangeEndpointTest.java
+@@ -0,0 +1,96 @@
++package org.cloudfoundry.identity.uaa.account;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.resources.ActionResult;
++import org.cloudfoundry.identity.uaa.scim.ScimUserProvisioning;
++import org.cloudfoundry.identity.uaa.scim.validate.PasswordValidator;
++import org.cloudfoundry.identity.uaa.security.beans.SecurityContextAccessor;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class PasswordChangeEndpointTest {
++
++    @Mock
++    IdentityZoneManager identityZoneManager;
++    @Mock
++    PasswordValidator passwordValidator;
++    @Mock
++    ScimUserProvisioning scimUserProvisioning;
++    @Mock
++    SecurityContextAccessor securityContextAccessor;
++
++    PasswordChangeEndpoint endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        endpoint = new PasswordChangeEndpoint(identityZoneManager, passwordValidator, scimUserProvisioning, securityContextAccessor);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @Test
++    void changePassword_asAdmin_returnsOk() throws Exception {
++        String userId = "user-123";
++        when(securityContextAccessor.isClient()).thenReturn(false);
++        when(securityContextAccessor.isAdmin()).thenReturn(true);
++        when(securityContextAccessor.getUserId()).thenReturn(userId);
++        when(scimUserProvisioning.checkPasswordMatches(anyString(), anyString(), anyString())).thenReturn(false);
++
++        PasswordChangeRequest request = new PasswordChangeRequest();
++        request.setOldPassword("oldPass123!");
++        request.setPassword("newPass456!");
++
++        mockMvc.perform(put("/Users/{userId}/password", userId)
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(request)))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void changePassword_asClient_returnsOk() throws Exception {
++        String userId = "user-123";
++        when(securityContextAccessor.isClient()).thenReturn(true);
++        when(scimUserProvisioning.checkPasswordMatches(anyString(), anyString(), anyString())).thenReturn(false);
++
++        PasswordChangeRequest request = new PasswordChangeRequest();
++        request.setPassword("newPass456!");
++
++        mockMvc.perform(put("/Users/{userId}/password", userId)
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(request)))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void changePassword_whenNewPasswordSameAsOld_returns422() throws Exception {
++        String userId = "user-123";
++        when(securityContextAccessor.isClient()).thenReturn(true);
++        when(scimUserProvisioning.checkPasswordMatches(anyString(), anyString(), anyString())).thenReturn(true);
++
++        PasswordChangeRequest request = new PasswordChangeRequest();
++        request.setPassword("samePassword123!");
++
++        mockMvc.perform(put("/Users/{userId}/password", userId)
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(request)))
++                .andExpect(status().isUnprocessableEntity());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/account/PasswordResetEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/account/PasswordResetEndpointTest.java
+new file mode 100644
+index 0000000..7337b27
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/account/PasswordResetEndpointTest.java
+@@ -0,0 +1,148 @@
++package org.cloudfoundry.identity.uaa.account;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.codestore.ExpiringCode;
++import org.cloudfoundry.identity.uaa.codestore.ExpiringCodeStore;
++import org.cloudfoundry.identity.uaa.scim.ScimUser;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.StringHttpMessageConverter;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.sql.Timestamp;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.ArgumentMatchers.eq;
++import static org.mockito.ArgumentMatchers.isNull;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
++class PasswordResetEndpointTest {
++
++    @Mock ResetPasswordService resetPasswordService;
++    @Mock ExpiringCodeStore codeStore;
++    @Mock IdentityZoneManager identityZoneManager;
++
++    PasswordResetEndpoint endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        endpoint = new PasswordResetEndpoint(resetPasswordService, codeStore, identityZoneManager);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new StringHttpMessageConverter(), new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @AfterEach
++    void tearDown() {
++        SecurityContextHolder.clearContext();
++    }
++
++    @Test
++    void passwordResets_withValidEmail_returns201() throws Exception {
++        ExpiringCode code = new ExpiringCode("reset-code-123", new Timestamp(System.currentTimeMillis() + 300000), "{}", null);
++        ForgotPasswordInfo info = new ForgotPasswordInfo("user-1", "user@example.com", code);
++        when(resetPasswordService.forgotPassword(eq("user@example.com"), isNull(), isNull())).thenReturn(info);
++
++        mockMvc.perform(post("/password_resets")
++                        .contentType(MediaType.TEXT_PLAIN)
++                        .content("user@example.com"))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.user_id").value("user-1"))
++                .andExpect(jsonPath("$.code").value("reset-code-123"));
++    }
++
++    @Test
++    void passwordResets_userNotFound_returns404() throws Exception {
++        when(resetPasswordService.forgotPassword(anyString(), any(), any()))
++                .thenThrow(new NotFoundException());
++
++        mockMvc.perform(post("/password_resets")
++                        .contentType(MediaType.TEXT_PLAIN)
++                        .content("unknown@example.com"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void passwordResets_userConflict_returns409() throws Exception {
++        when(resetPasswordService.forgotPassword(anyString(), any(), any()))
++                .thenThrow(new ConflictException("user-conflict-id", "conflict@example.com"));
++
++        mockMvc.perform(post("/password_resets")
++                        .contentType(MediaType.TEXT_PLAIN)
++                        .content("conflict@example.com"))
++                .andExpect(status().isConflict())
++                .andExpect(jsonPath("$.user_id").value("user-conflict-id"));
++    }
++
++    @Test
++    void passwordChange_withoutChangeCode_returns400() throws Exception {
++        LostPasswordChangeRequest request = new LostPasswordChangeRequest();
++        request.setNewPassword("newPassword1");
++
++        mockMvc.perform(post("/password_change")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(request)))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void passwordChange_withValidCode_returns200() throws Exception {
++        ExpiringCode expiringCode = new ExpiringCode("valid-code", new Timestamp(System.currentTimeMillis() + 300000), "{\"user_id\":\"user-1\"}", null);
++        when(codeStore.retrieveCode(eq("valid-code"), anyString())).thenReturn(expiringCode);
++
++        ScimUser user = new ScimUser("user-1", "testuser", "Test", "User");
++        user.setPrimaryEmail("test@example.com");
++        ResetPasswordService.ResetPasswordResponse resetResponse = new ResetPasswordService.ResetPasswordResponse(user, "/redirect", "client-1");
++        when(resetPasswordService.resetPassword(eq(expiringCode), eq("newPassword1"))).thenReturn(resetResponse);
++
++        ExpiringCode loginCode = new ExpiringCode("login-code-abc", new Timestamp(System.currentTimeMillis() + 300000), "{}", null);
++        when(codeStore.generateCode(anyString(), any(Timestamp.class), anyString(), anyString())).thenReturn(loginCode);
++
++        LostPasswordChangeRequest request = new LostPasswordChangeRequest();
++        request.setChangeCode("valid-code");
++        request.setNewPassword("newPassword1");
++
++        mockMvc.perform(post("/password_change")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(request)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.user_id").value("user-1"))
++                .andExpect(jsonPath("$.username").value("testuser"))
++                .andExpect(jsonPath("$.email").value("test@example.com"))
++                .andExpect(jsonPath("$.code").value("login-code-abc"));
++    }
++
++    @Test
++    void passwordChange_withExpiredCode_returns422() throws Exception {
++        when(codeStore.retrieveCode(eq("expired-code"), anyString())).thenReturn(null);
++
++        LostPasswordChangeRequest request = new LostPasswordChangeRequest();
++        request.setChangeCode("expired-code");
++        request.setNewPassword("newPassword1");
++
++        mockMvc.perform(post("/password_change")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(request)))
++                .andExpect(status().isUnprocessableEntity());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/account/UserInfoEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/account/UserInfoEndpointTest.java
+new file mode 100644
+index 0000000..e05c2b0
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/account/UserInfoEndpointTest.java
+@@ -0,0 +1,89 @@
++package org.cloudfoundry.identity.uaa.account;
++
++import org.cloudfoundry.identity.uaa.authentication.UaaPrincipal;
++import org.cloudfoundry.identity.uaa.oauth.provider.OAuth2Authentication;
++import org.cloudfoundry.identity.uaa.oauth.provider.OAuth2Request;
++import org.cloudfoundry.identity.uaa.user.UaaUserDatabase;
++import org.cloudfoundry.identity.uaa.user.UaaUserPrototype;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
++import org.springframework.security.core.Authentication;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Collections;
++import java.util.Set;
++
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class UserInfoEndpointTest {
++
++    @Mock
++    UaaUserDatabase userDatabase;
++
++    UserInfoEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        endpoint = new UserInfoEndpoint(userDatabase);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @AfterEach
++    void tearDown() {
++        SecurityContextHolder.clearContext();
++    }
++
++    private OAuth2Authentication buildOAuth2Authentication(String userId, String username) {
++        UaaPrincipal principal = new UaaPrincipal(userId, username, username + "@example.com", "uaa", null, "uaa");
++        Authentication userAuth = new UsernamePasswordAuthenticationToken(principal, null, Collections.emptyList());
++        OAuth2Request oAuth2Request = new OAuth2Request(
++                Collections.emptyMap(), "test-client", Collections.emptyList(),
++                true, Set.of("openid"), Collections.emptySet(), null,
++                Collections.emptySet(), Collections.emptyMap());
++        return new OAuth2Authentication(oAuth2Request, userAuth);
++    }
++
++    @Test
++    void getUserInfo_returnsUserDetailsAsJson() throws Exception {
++        String userId = "user-123";
++        String username = "testuser";
++
++        OAuth2Authentication auth = buildOAuth2Authentication(userId, username);
++        SecurityContextHolder.getContext().setAuthentication(auth);
++
++        UaaUserPrototype prototype = new UaaUserPrototype()
++                .withId(userId)
++                .withUsername(username)
++                .withEmail(username + "@example.com")
++                .withGivenName("Test")
++                .withFamilyName("User")
++                .withVerified(true);
++        when(userDatabase.retrieveUserPrototypeById(userId)).thenReturn(prototype);
++        when(userDatabase.getUserInfo(userId)).thenReturn(null);
++
++        mockMvc.perform(get("/userinfo").principal(auth))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++                .andExpect(jsonPath("$.user_id").value(userId))
++                .andExpect(jsonPath("$.user_name").value(username))
++                .andExpect(jsonPath("$.email").value(username + "@example.com"));
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/approval/ApprovalsAdminEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/approval/ApprovalsAdminEndpointsTest.java
+new file mode 100644
+index 0000000..ed44f4d
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/approval/ApprovalsAdminEndpointsTest.java
+@@ -0,0 +1,117 @@
++package org.cloudfoundry.identity.uaa.approval;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.security.beans.SecurityContextAccessor;
++import org.cloudfoundry.identity.uaa.user.UaaUserDatabase;
++import org.cloudfoundry.identity.uaa.zone.MultitenantClientServices;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.security.access.AccessDeniedException;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Collections;
++import java.util.Date;
++import java.util.List;
++
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
++class ApprovalsAdminEndpointsTest {
++
++    @Mock SecurityContextAccessor securityContextAccessor;
++    @Mock ApprovalStore approvalStore;
++    @Mock UaaUserDatabase userDatabase;
++    @Mock MultitenantClientServices clientDetailsService;
++    @Mock IdentityZoneManager identityZoneManager;
++
++    ApprovalsAdminEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        endpoint = new ApprovalsAdminEndpoints(securityContextAccessor, approvalStore,
++                userDatabase, clientDetailsService, identityZoneManager);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    private Approval buildApproval(String userId, String clientId, String scope) {
++        return new Approval()
++                .setUserId(userId)
++                .setClientId(clientId)
++                .setScope(scope)
++                .setStatus(Approval.ApprovalStatus.APPROVED)
++                .setExpiresAt(new Date(System.currentTimeMillis() + 3600000));
++    }
++
++    @Test
++    void getApprovals_returnsUserApprovals() throws Exception {
++        when(securityContextAccessor.isUser()).thenReturn(true);
++        when(securityContextAccessor.getUserId()).thenReturn("user-1");
++        Approval approval = buildApproval("user-1", "my-client", "read");
++        when(approvalStore.getApprovalsForUser("user-1", "uaa")).thenReturn(List.of(approval));
++        org.cloudfoundry.identity.uaa.client.UaaClientDetails client =
++                new org.cloudfoundry.identity.uaa.client.UaaClientDetails("my-client", null, "read", "authorization_code", "uaa.resource");
++        when(clientDetailsService.loadClientByClientId("my-client", "uaa")).thenReturn(client);
++
++        mockMvc.perform(get("/approvals"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$").isArray());
++    }
++
++    @Test
++    void getApprovals_asClient_returnsError() throws Exception {
++        when(securityContextAccessor.isUser()).thenReturn(false);
++
++        // AccessDeniedException is caught by the controller's @ExceptionHandler which returns 500
++        mockMvc.perform(get("/approvals"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    @Test
++    void updateApprovals_replacesAllApprovals() throws Exception {
++        when(securityContextAccessor.isUser()).thenReturn(true);
++        when(securityContextAccessor.getUserId()).thenReturn("user-1");
++
++        Approval approval = buildApproval(null, "my-client", "read");
++        Approval[] approvals = {approval};
++
++        when(approvalStore.addApproval(org.mockito.ArgumentMatchers.any(Approval.class), anyString())).thenReturn(true);
++
++        mockMvc.perform(put("/approvals")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(approvals)))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void deleteApprovals_revokesUserClientApprovals() throws Exception {
++        when(securityContextAccessor.isUser()).thenReturn(true);
++        when(securityContextAccessor.getUserId()).thenReturn("user-1");
++        when(clientDetailsService.loadClientByClientId("my-client", "uaa"))
++                .thenReturn(org.mockito.Mockito.mock(org.cloudfoundry.identity.uaa.client.UaaClientDetails.class));
++
++        mockMvc.perform(delete("/approvals")
++                        .param("clientId", "my-client"))
++                .andExpect(status().isOk());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/authentication/RemoteAuthenticationEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/authentication/RemoteAuthenticationEndpointTest.java
+new file mode 100644
+index 0000000..c1d97df
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/authentication/RemoteAuthenticationEndpointTest.java
+@@ -0,0 +1,87 @@
++package org.cloudfoundry.identity.uaa.authentication;
++
++import org.cloudfoundry.identity.uaa.authentication.manager.LoginAuthenticationManager;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.security.authentication.AuthenticationManager;
++import org.springframework.security.authentication.BadCredentialsException;
++import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
++import org.springframework.security.core.Authentication;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Collections;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class RemoteAuthenticationEndpointTest {
++
++    @Mock AuthenticationManager authenticationManager;
++    @Mock LoginAuthenticationManager loginAuthenticationManager;
++    @Mock Authentication successfulAuth;
++
++    RemoteAuthenticationEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        endpoint = new RemoteAuthenticationEndpoint(authenticationManager, loginAuthenticationManager);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @AfterEach
++    void tearDown() {
++        SecurityContextHolder.clearContext();
++    }
++
++    @Test
++    void authenticate_withValidCredentials_returnsOkWithUsername() throws Exception {
++        UaaPrincipal principal = new UaaPrincipal("user-1", "testuser", "test@example.com", "uaa", null, "uaa");
++        when(successfulAuth.getName()).thenReturn("testuser");
++        when(successfulAuth.getPrincipal()).thenReturn(principal);
++        when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
++                .thenReturn(successfulAuth);
++
++        mockMvc.perform(post("/authenticate")
++                        .param("username", "testuser")
++                        .param("password", "correctpassword"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++                .andExpect(jsonPath("$.username").value("testuser"))
++                .andExpect(jsonPath("$.email").value("test@example.com"));
++    }
++
++    @Test
++    void authenticate_withInvalidCredentials_returns401() throws Exception {
++        when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
++                .thenThrow(new BadCredentialsException("Invalid credentials"));
++
++        mockMvc.perform(post("/authenticate")
++                        .param("username", "testuser")
++                        .param("password", "wrongpassword"))
++                .andExpect(status().isUnauthorized())
++                .andExpect(jsonPath("$.error").value("authentication failed"));
++    }
++
++    @Test
++    void authenticate_withoutPassword_returnsMissingParamError() throws Exception {
++        mockMvc.perform(post("/authenticate")
++                        .param("username", "testuser"))
++                .andExpect(status().isBadRequest());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientAdminEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientAdminEndpointsTest.java
+new file mode 100644
+index 0000000..601708c
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientAdminEndpointsTest.java
+@@ -0,0 +1,134 @@
++package org.cloudfoundry.identity.uaa.client;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.approval.ApprovalStore;
++import org.cloudfoundry.identity.uaa.oauth.provider.ClientDetails;
++import org.cloudfoundry.identity.uaa.resources.QueryableResourceManager;
++import org.cloudfoundry.identity.uaa.resources.ResourceMonitor;
++import org.cloudfoundry.identity.uaa.security.beans.SecurityContextAccessor;
++import org.cloudfoundry.identity.uaa.zone.MultitenantClientServices;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
++import org.springframework.context.ApplicationEventPublisher;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.security.authentication.AuthenticationManager;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Arrays;
++import java.util.Collections;
++import java.util.HashSet;
++import java.util.List;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
++class ClientAdminEndpointsTest {
++
++    @Mock SecurityContextAccessor securityContextAccessor;
++    @Mock IdentityZoneManager identityZoneManager;
++    @Mock ClientDetailsValidator clientDetailsValidator;
++    @Mock AuthenticationManager authenticationManager;
++    @Mock ResourceMonitor<ClientDetails> clientDetailsResourceMonitor;
++    @Mock ApprovalStore approvalStore;
++    @Mock MultitenantClientServices clientRegistrationService;
++    @Mock QueryableResourceManager<ClientDetails> clientDetailsService;
++    @Mock ApplicationEventPublisher publisher;
++
++    ClientAdminEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        endpoint = new ClientAdminEndpoints(securityContextAccessor, identityZoneManager,
++                clientDetailsValidator, authenticationManager, clientDetailsResourceMonitor,
++                approvalStore, clientRegistrationService, clientDetailsService, 500);
++        endpoint.setApplicationEventPublisher(publisher);
++
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    private UaaClientDetails buildClientDetails(String clientId) {
++        UaaClientDetails client = new UaaClientDetails(clientId, null, "read,write", "authorization_code,client_credentials", "uaa.resource");
++        client.setClientSecret("secret");
++        return client;
++    }
++
++    @Test
++    void getClientDetails_returnsClientById() throws Exception {
++        UaaClientDetails client = buildClientDetails("my-client");
++        when(clientDetailsService.retrieve("my-client", "uaa")).thenReturn(client);
++
++        mockMvc.perform(get("/oauth/clients/{client}", "my-client"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.client_id").value("my-client"));
++    }
++
++    @Test
++    void listClients_returnsPagedResults() throws Exception {
++        UaaClientDetails client = buildClientDetails("my-client");
++        when(clientDetailsService.retrieveAll("uaa")).thenReturn(List.of(client));
++
++        mockMvc.perform(get("/oauth/clients"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.resources").isArray());
++    }
++
++    @Test
++    void createClient_returns201() throws Exception {
++        UaaClientDetails input = buildClientDetails("new-client");
++        UaaClientDetails created = buildClientDetails("new-client");
++
++        when(securityContextAccessor.isAdmin()).thenReturn(true);
++        when(clientDetailsValidator.validate(any(ClientDetails.class), any(ClientDetailsValidator.Mode.class)))
++                .thenReturn(input);
++        when(clientRegistrationService.loadClientByClientId(anyString(), anyString())).thenReturn(created);
++        when(clientDetailsService.create(any(ClientDetails.class), anyString())).thenReturn(created);
++
++        mockMvc.perform(post("/oauth/clients")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isCreated());
++    }
++
++    @Test
++    void deleteClient_returnsDeletedClient() throws Exception {
++        UaaClientDetails client = buildClientDetails("my-client");
++        when(clientDetailsService.retrieve("my-client", "uaa")).thenReturn(client);
++        when(securityContextAccessor.isAdmin()).thenReturn(true);
++        when(clientDetailsValidator.validate(any(ClientDetails.class), any(ClientDetailsValidator.Mode.class)))
++                .thenReturn(client);
++
++        mockMvc.perform(delete("/oauth/clients/{client}", "my-client"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void getClientDetails_whenNotFound_returns404() throws Exception {
++        when(clientDetailsService.retrieve("missing", "uaa"))
++                .thenThrow(new org.cloudfoundry.identity.uaa.provider.NoSuchClientException("No such client: missing"));
++
++        mockMvc.perform(get("/oauth/clients/{client}", "missing"))
++                .andExpect(status().isNotFound());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientInfoEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientInfoEndpointTest.java
+new file mode 100644
+index 0000000..03f0ec9
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientInfoEndpointTest.java
+@@ -0,0 +1,54 @@
++package org.cloudfoundry.identity.uaa.client;
++
++import org.cloudfoundry.identity.uaa.zone.MultitenantClientServices;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Collections;
++
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class ClientInfoEndpointTest {
++
++    @Mock MultitenantClientServices clientDetailsService;
++    @Mock IdentityZoneManager identityZoneManager;
++
++    ClientInfoEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        endpoint = new ClientInfoEndpoint(clientDetailsService, identityZoneManager);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @Test
++    void clientinfo_returnsClientDetailsWithoutSecret() throws Exception {
++        UaaClientDetails client = new UaaClientDetails("my-client", null, "read", "client_credentials", "uaa.resource");
++        client.setClientSecret("my-secret");
++        when(clientDetailsService.loadClientByClientId("my-client", "uaa")).thenReturn(client);
++
++        mockMvc.perform(get("/clientinfo")
++                        .principal(new org.springframework.security.authentication.UsernamePasswordAuthenticationToken("my-client", null)))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++                .andExpect(jsonPath("$.client_id").value("my-client"))
++                .andExpect(jsonPath("$.client_secret").doesNotExist());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientMetadataAdminEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientMetadataAdminEndpointsTest.java
+new file mode 100644
+index 0000000..c5abb53
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/client/ClientMetadataAdminEndpointsTest.java
+@@ -0,0 +1,113 @@
++package org.cloudfoundry.identity.uaa.client;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.zone.IdentityZoneHolder;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.dao.EmptyResultDataAccessException;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.net.URI;
++import java.util.Arrays;
++import java.util.List;
++
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class ClientMetadataAdminEndpointsTest {
++
++    @Mock
++    ClientMetadataProvisioning clientMetadataProvisioning;
++
++    ClientMetadataAdminEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        IdentityZoneHolder.clear();
++        endpoint = new ClientMetadataAdminEndpoints(clientMetadataProvisioning);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @AfterEach
++    void tearDown() {
++        IdentityZoneHolder.clear();
++    }
++
++    @Test
++    void retrieveClientMetadata_returnsMetadataForClient() throws Exception {
++        ClientMetadata metadata = buildClientMetadata("test-client");
++        when(clientMetadataProvisioning.retrieve("test-client", "uaa")).thenReturn(metadata);
++
++        mockMvc.perform(get("/oauth/clients/{client}/meta", "test-client"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.clientId").value("test-client"));
++    }
++
++    @Test
++    void retrieveClientMetadata_whenNotFound_returns404() throws Exception {
++        when(clientMetadataProvisioning.retrieve("unknown", "uaa"))
++                .thenThrow(new EmptyResultDataAccessException(1));
++
++        mockMvc.perform(get("/oauth/clients/{client}/meta", "unknown"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void retrieveAllClientMetadata_returnsListOfMetadata() throws Exception {
++        List<ClientMetadata> metadataList = Arrays.asList(
++                buildClientMetadata("client-1"),
++                buildClientMetadata("client-2"));
++        when(clientMetadataProvisioning.retrieveAll("uaa")).thenReturn(metadataList);
++
++        mockMvc.perform(get("/oauth/clients/meta"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$").isArray())
++                .andExpect(jsonPath("$.length()").value(2));
++    }
++
++    @Test
++    void updateClientMetadata_returnsUpdatedMetadata() throws Exception {
++        ClientMetadata input = buildClientMetadata("test-client");
++        when(clientMetadataProvisioning.update(any(ClientMetadata.class), anyString())).thenReturn(input);
++
++        mockMvc.perform(put("/oauth/clients/{client}/meta", "test-client")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.clientId").value("test-client"));
++    }
++
++    @Test
++    void updateClientMetadata_withMismatchedClientId_returns400() throws Exception {
++        ClientMetadata input = buildClientMetadata("different-client");
++
++        mockMvc.perform(put("/oauth/clients/{client}/meta", "test-client")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isBadRequest());
++    }
++
++    private ClientMetadata buildClientMetadata(String clientId) {
++        ClientMetadata metadata = new ClientMetadata();
++        metadata.setClientId(clientId);
++        metadata.setShowOnHomePage(false);
++        return metadata;
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/codestore/CodeStoreEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/codestore/CodeStoreEndpointsTest.java
+new file mode 100644
+index 0000000..bfcf8d3
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/codestore/CodeStoreEndpointsTest.java
+@@ -0,0 +1,95 @@
++package org.cloudfoundry.identity.uaa.codestore;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.sql.Timestamp;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.ArgumentMatchers.isNull;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class CodeStoreEndpointsTest {
++
++    @Mock
++    ExpiringCodeStore codeStore;
++    @Mock
++    IdentityZoneManager identityZoneManager;
++
++    CodeStoreEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        endpoint = new CodeStoreEndpoints(codeStore,
++                new org.springframework.http.converter.HttpMessageConverter[]{new MappingJackson2HttpMessageConverter()},
++                identityZoneManager);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @Test
++    void generateCode_returnsCreatedWithExpiringCode() throws Exception {
++        Timestamp expiresAt = new Timestamp(System.currentTimeMillis() + 60000);
++        ExpiringCode input = new ExpiringCode(null, expiresAt, "{\"key\":\"value\"}", null);
++        ExpiringCode generated = new ExpiringCode("abc123", expiresAt, "{\"key\":\"value\"}", null);
++
++        when(codeStore.generateCode(anyString(), any(Timestamp.class), isNull(), anyString()))
++                .thenReturn(generated);
++
++        mockMvc.perform(post("/Codes")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.code").value("abc123"));
++    }
++
++    @Test
++    void retrieveCode_withValidCode_returnsExpiringCode() throws Exception {
++        Timestamp expiresAt = new Timestamp(System.currentTimeMillis() + 60000);
++        ExpiringCode code = new ExpiringCode("abc123", expiresAt, "{\"key\":\"value\"}", null);
++        when(codeStore.retrieveCode("abc123", "uaa")).thenReturn(code);
++
++        mockMvc.perform(get("/Codes/{code}", "abc123"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.code").value("abc123"));
++    }
++
++    @Test
++    void retrieveCode_withUnknownCode_returns404() throws Exception {
++        when(codeStore.retrieveCode("unknown", "uaa")).thenReturn(null);
++
++        mockMvc.perform(get("/Codes/{code}", "unknown"))
++                .andExpect(status().isNotFound());
++    }
++
++    @Test
++    void generateCode_withNullData_returns400() throws Exception {
++        ExpiringCode input = new ExpiringCode(null, null, null, null);
++        when(codeStore.generateCode(isNull(), isNull(), isNull(), anyString()))
++                .thenThrow(new NullPointerException("data is required"));
++
++        mockMvc.perform(post("/Codes")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isBadRequest());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/health/HealthzEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/health/HealthzEndpointTest.java
+new file mode 100644
+index 0000000..352f169
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/health/HealthzEndpointTest.java
+@@ -0,0 +1,81 @@
++package org.cloudfoundry.identity.uaa.health;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import javax.sql.DataSource;
++import java.sql.Connection;
++import java.sql.Statement;
++
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class HealthzEndpointTest {
++
++    @Mock
++    DataSource dataSource;
++    @Mock
++    Connection connection;
++    @Mock
++    Statement statement;
++
++    HealthzEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        // Use 0 sleep time so shutdown hook doesn't delay tests
++        endpoint = new HealthzEndpoint(0, Runtime.getRuntime(), dataSource);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint).build();
++    }
++
++    @Test
++    void getHealthz_whenDatabaseStatusUnknown_returns200WithUnknownMessage() throws Exception {
++        // wasLastConnectionSuccessful starts null, so status is "unknown"
++        mockMvc.perform(get("/healthz"))
++                .andExpect(status().isOk())
++                .andExpect(content().string("UAA running. Database status unknown.\n"));
++    }
++
++    @Test
++    void getHealthz_wildcardPath_returns200() throws Exception {
++        mockMvc.perform(get("/healthz/deep/path"))
++                .andExpect(status().isOk())
++                .andExpect(content().string("UAA running. Database status unknown.\n"));
++    }
++
++    @Test
++    void getHealthz_whenDatabaseConnectionSuccessful_returnsOk() throws Exception {
++        when(dataSource.getConnection()).thenReturn(connection);
++        when(connection.createStatement()).thenReturn(statement);
++        when(statement.execute(anyString())).thenReturn(true);
++
++        // Trigger the scheduled check manually
++        endpoint.isDataSourceConnectionAvailable();
++
++        mockMvc.perform(get("/healthz"))
++                .andExpect(status().isOk())
++                .andExpect(content().string("ok\n"));
++    }
++
++    @Test
++    void getHealthz_whenDatabaseConnectionFailed_returns503() throws Exception {
++        when(dataSource.getConnection()).thenThrow(new RuntimeException("DB unavailable"));
++
++        // Trigger the scheduled check manually
++        endpoint.isDataSourceConnectionAvailable();
++
++        mockMvc.perform(get("/healthz"))
++                .andExpect(status().isServiceUnavailable())
++                .andExpect(content().string("Database Connection failed.\n"));
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/login/SessionControllerTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/login/SessionControllerTest.java
+new file mode 100644
+index 0000000..b232577
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/login/SessionControllerTest.java
+@@ -0,0 +1,57 @@
++package org.cloudfoundry.identity.uaa.login;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.servlet.view.InternalResourceViewResolver;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
++
++class SessionControllerTest {
++
++    SessionController controller;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        controller = new SessionController();
++        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
++        viewResolver.setPrefix("/WEB-INF/views/");
++        viewResolver.setSuffix(".html");
++        mockMvc = MockMvcBuilders.standaloneSetup(controller)
++                .setViewResolvers(viewResolver)
++                .build();
++    }
++
++    @Test
++    void session_setsModelAttributesAndReturnsViewName() throws Exception {
++        mockMvc.perform(get("/session")
++                        .param("clientId", "my-client")
++                        .param("messageOrigin", "https://example.com"))
++                .andExpect(status().isOk())
++                .andExpect(view().name("session"))
++                .andExpect(model().attribute("clientId", "my-client"))
++                .andExpect(model().attribute("messageOrigin", "https://example.com"));
++    }
++
++    @Test
++    void sessionManagement_setsModelAttributesAndReturnsViewName() throws Exception {
++        mockMvc.perform(get("/session_management")
++                        .param("clientId", "my-client")
++                        .param("messageOrigin", "https://example.com"))
++                .andExpect(status().isOk())
++                .andExpect(view().name("session_management"))
++                .andExpect(model().attribute("clientId", "my-client"))
++                .andExpect(model().attribute("messageOrigin", "https://example.com"));
++    }
++
++    @Test
++    void session_withoutRequiredParams_returns400() throws Exception {
++        mockMvc.perform(get("/session"))
++                .andExpect(status().isBadRequest());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/CheckTokenEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/CheckTokenEndpointTest.java
+new file mode 100644
+index 0000000..606b2a9
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/CheckTokenEndpointTest.java
+@@ -0,0 +1,97 @@
++package org.cloudfoundry.identity.uaa.oauth;
++
++import org.cloudfoundry.identity.uaa.oauth.common.OAuth2AccessToken;
++import org.cloudfoundry.identity.uaa.oauth.common.exceptions.InvalidTokenException;
++import org.cloudfoundry.identity.uaa.oauth.provider.token.ResourceServerTokenServices;
++import org.cloudfoundry.identity.uaa.util.TimeService;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Date;
++
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class CheckTokenEndpointTest {
++
++    @Mock
++    ResourceServerTokenServices tokenServices;
++    @Mock
++    TimeService timeService;
++    @Mock
++    OAuth2AccessToken accessToken;
++
++    CheckTokenEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        endpoint = new CheckTokenEndpoint(tokenServices, timeService);
++        endpoint.setAllowQueryString(true);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @Test
++    void checkToken_withEmptyToken_returns400() throws Exception {
++        mockMvc.perform(post("/check_token")
++                        .param("token", ""))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void checkToken_withMissingToken_returns400() throws Exception {
++        mockMvc.perform(post("/check_token"))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void checkToken_withNullTokenReturnedByServices_returns400() throws Exception {
++        when(tokenServices.readAccessToken(anyString())).thenReturn(null);
++
++        mockMvc.perform(post("/check_token")
++                        .param("token", "some-invalid-token"))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void checkToken_withExpiredToken_returns400() throws Exception {
++        when(tokenServices.readAccessToken(anyString())).thenReturn(accessToken);
++        when(accessToken.getExpiration()).thenReturn(new Date(0)); // expired in 1970
++        when(timeService.getCurrentDate()).thenReturn(new Date());
++
++        mockMvc.perform(post("/check_token")
++                        .param("token", "expired-token"))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void checkToken_viaGetWithQueryString_delegatesWhenAllowed() throws Exception {
++        when(tokenServices.readAccessToken(anyString())).thenReturn(null);
++
++        mockMvc.perform(get("/check_token")
++                        .param("token", "some-token"))
++                .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    void checkToken_viaGetWithQueryString_returns405WhenNotAllowed() throws Exception {
++        endpoint.setAllowQueryString(false);
++
++        mockMvc.perform(get("/check_token")
++                        .param("token", "some-token"))
++                .andExpect(status().isMethodNotAllowed());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/IntrospectEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/IntrospectEndpointTest.java
+new file mode 100644
+index 0000000..e590f8e
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/IntrospectEndpointTest.java
+@@ -0,0 +1,72 @@
++package org.cloudfoundry.identity.uaa.oauth;
++
++import org.cloudfoundry.identity.uaa.oauth.common.OAuth2AccessToken;
++import org.cloudfoundry.identity.uaa.oauth.common.exceptions.InvalidTokenException;
++import org.cloudfoundry.identity.uaa.oauth.provider.token.ResourceServerTokenServices;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class IntrospectEndpointTest {
++
++    @Mock
++    ResourceServerTokenServices tokenServices;
++    @Mock
++    OAuth2AccessToken accessToken;
++
++    IntrospectEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        endpoint = new IntrospectEndpoint(tokenServices);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @Test
++    void introspect_withInvalidToken_returnsActiveEqualsFalse() throws Exception {
++        when(tokenServices.readAccessToken(anyString()))
++                .thenThrow(new InvalidTokenException("invalid"));
++
++        mockMvc.perform(post("/introspect")
++                        .param("token", "invalid-token"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++                .andExpect(jsonPath("$.active").value(false));
++    }
++
++    @Test
++    void introspect_withExpiredToken_returnsActiveEqualsFalse() throws Exception {
++        when(tokenServices.readAccessToken(anyString())).thenReturn(accessToken);
++        when(accessToken.isExpired()).thenReturn(true);
++
++        mockMvc.perform(post("/introspect")
++                        .param("token", "expired-token"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.active").value(false));
++    }
++
++    @Test
++    void introspect_withGetMethod_returns405() throws Exception {
++        mockMvc.perform(get("/introspect")
++                        .param("token", "some-token"))
++                .andExpect(status().isMethodNotAllowed());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/TokenKeyEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/TokenKeyEndpointTest.java
+new file mode 100644
+index 0000000..18e259a
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/TokenKeyEndpointTest.java
+@@ -0,0 +1,127 @@
++package org.cloudfoundry.identity.uaa.oauth;
++
++import org.cloudfoundry.identity.uaa.oauth.token.VerificationKeyResponse;
++import org.cloudfoundry.identity.uaa.oauth.token.VerificationKeysListResponse;
++import org.cloudfoundry.identity.uaa.zone.IdentityZone;
++import org.cloudfoundry.identity.uaa.zone.IdentityZoneHolder;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class TokenKeyEndpointTest {
++
++    @Mock
++    KeyInfoService keyInfoService;
++    @Mock
++    KeyInfo keyInfo;
++    @Mock
++    KeyInfo keyInfo2;
++
++    TokenKeyEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        IdentityZoneHolder.clear();
++        endpoint = new TokenKeyEndpoint(keyInfoService);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @AfterEach
++    void tearDown() {
++        IdentityZoneHolder.clear();
++    }
++
++    @Test
++    void getKey_returnsRsaKeyAsJson() throws Exception {
++        Map<String, Object> jwkMap = new HashMap<>();
++        jwkMap.put("kty", "RSA");
++        jwkMap.put("n", "test-modulus");
++        jwkMap.put("e", "AQAB");
++        jwkMap.put("use", "sig");
++        jwkMap.put("kid", "test-key-id");
++        when(keyInfoService.getActiveKey()).thenReturn(keyInfo);
++        when(keyInfo.type()).thenReturn("RSA");
++        when(keyInfo.getJwkMap()).thenReturn(jwkMap);
++
++        mockMvc.perform(get("/token_key"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
++    }
++
++    @Test
++    void getKeys_returnsKeySetAsJson() throws Exception {
++        Map<String, Object> jwkMap = new HashMap<>();
++        jwkMap.put("kty", "RSA");
++        jwkMap.put("n", "test-modulus");
++        jwkMap.put("e", "AQAB");
++        jwkMap.put("use", "sig");
++        jwkMap.put("kid", "test-key-id");
++
++        when(keyInfoService.getKeys()).thenReturn(Map.of("test-key-id", keyInfo));
++        when(keyInfo.type()).thenReturn("RSA");
++        when(keyInfo.getJwkMap()).thenReturn(jwkMap);
++
++        mockMvc.perform(get("/token_keys"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
++    }
++
++    @Test
++    void getKey_withMatchingEtag_returns304NotModified() throws Exception {
++        IdentityZone uaaZone = IdentityZone.getUaa();
++        IdentityZoneHolder.set(uaaZone);
++        String lastModified = String.valueOf(uaaZone.getLastModified().getTime());
++
++        mockMvc.perform(get("/token_key")
++                        .header("If-None-Match", lastModified))
++                .andExpect(status().isNotModified());
++    }
++
++    @Test
++    void getKeys_withMatchingEtag_returns304NotModified() throws Exception {
++        IdentityZone uaaZone = IdentityZone.getUaa();
++        IdentityZoneHolder.set(uaaZone);
++        String lastModified = String.valueOf(uaaZone.getLastModified().getTime());
++
++        mockMvc.perform(get("/token_keys")
++                        .header("If-None-Match", lastModified))
++                .andExpect(status().isNotModified());
++    }
++
++    @Test
++    void getKey_returnsEtagHeader() throws Exception {
++        Map<String, Object> jwkMap = new HashMap<>();
++        jwkMap.put("kty", "RSA");
++        jwkMap.put("n", "test-modulus");
++        jwkMap.put("e", "AQAB");
++        when(keyInfoService.getActiveKey()).thenReturn(keyInfo);
++        when(keyInfo.type()).thenReturn("RSA");
++        when(keyInfo.getJwkMap()).thenReturn(jwkMap);
++
++        mockMvc.perform(get("/token_key"))
++                .andExpect(status().isOk())
++                .andExpect(header().exists("ETag"));
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/TokenRevocationEndpointTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/TokenRevocationEndpointTest.java
+new file mode 100644
+index 0000000..c8ba38e
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/oauth/TokenRevocationEndpointTest.java
+@@ -0,0 +1,102 @@
++package org.cloudfoundry.identity.uaa.oauth;
++
++import org.cloudfoundry.identity.uaa.oauth.token.RevocableToken;
++import org.cloudfoundry.identity.uaa.oauth.token.RevocableTokenProvisioning;
++import org.cloudfoundry.identity.uaa.scim.ScimUser;
++import org.cloudfoundry.identity.uaa.scim.ScimUserProvisioning;
++import org.cloudfoundry.identity.uaa.zone.IdentityZoneHolder;
++import org.cloudfoundry.identity.uaa.zone.MultitenantJdbcClientDetailsService;
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.context.ApplicationEventPublisher;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Collections;
++import java.util.List;
++
++import static org.mockito.ArgumentMatchers.anyInt;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++import static org.springframework.http.HttpMethod.DELETE;
++
++@ExtendWith(MockitoExtension.class)
++class TokenRevocationEndpointTest {
++
++    @Mock MultitenantJdbcClientDetailsService clientDetailsService;
++    @Mock ScimUserProvisioning userProvisioning;
++    @Mock RevocableTokenProvisioning tokenProvisioning;
++    @Mock ApplicationEventPublisher publisher;
++
++    TokenRevocationEndpoint endpoint;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        IdentityZoneHolder.clear();
++        SecurityContextHolder.getContext().setAuthentication(
++                new UsernamePasswordAuthenticationToken("test-admin", "n/a", Collections.emptyList()));
++        endpoint = new TokenRevocationEndpoint(clientDetailsService, userProvisioning, tokenProvisioning);
++        endpoint.setApplicationEventPublisher(publisher);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @AfterEach
++    void tearDown() {
++        IdentityZoneHolder.clear();
++        SecurityContextHolder.clearContext();
++    }
++
++    @Test
++    void revokeTokensForUser_returnsOk() throws Exception {
++        ScimUser user = new ScimUser("user-1", "testuser", "Test", "User");
++        user.setSalt("original-salt");
++        when(userProvisioning.retrieve("user-1", "uaa")).thenReturn(user);
++        when(userProvisioning.update(anyString(), org.mockito.ArgumentMatchers.any(ScimUser.class), anyString()))
++                .thenReturn(user);
++
++        mockMvc.perform(request(DELETE, "/oauth/token/revoke/user/{userId}", "user-1"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void revokeTokensForUserAndClient_returnsOk() throws Exception {
++        when(tokenProvisioning.getUserTokens("user-1", "client-1", "uaa")).thenReturn(Collections.emptyList());
++
++        mockMvc.perform(delete("/oauth/token/revoke/user/{userId}/client/{clientId}", "user-1", "client-1"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void revokeTokenById_returnsOk() throws Exception {
++        RevocableToken token = new RevocableToken();
++        token.setTokenId("token-123");
++        token.setUserId("user-1");
++        token.setClientId("client-1");
++        when(tokenProvisioning.delete("token-123", -1, "uaa")).thenReturn(token);
++
++        mockMvc.perform(delete("/oauth/token/revoke/{tokenId}", "token-123"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void revokeTokensForUser_whenUserNotFound_returns404() throws Exception {
++        when(userProvisioning.retrieve("missing-user", "uaa"))
++                .thenThrow(new org.cloudfoundry.identity.uaa.scim.exception.ScimResourceNotFoundException("user not found"));
++
++        mockMvc.perform(delete("/oauth/token/revoke/user/{userId}", "missing-user"))
++                .andExpect(status().isNotFound());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/provider/IdentityProviderEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/provider/IdentityProviderEndpointsTest.java
+new file mode 100644
+index 0000000..7151686
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/provider/IdentityProviderEndpointsTest.java
+@@ -0,0 +1,153 @@
++package org.cloudfoundry.identity.uaa.provider;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.alias.EntityAliasFailedException;
++import org.cloudfoundry.identity.uaa.provider.saml.SamlIdentityProviderConfigurator;
++import org.cloudfoundry.identity.uaa.scim.ScimGroupExternalMembershipManager;
++import org.cloudfoundry.identity.uaa.scim.ScimGroupProvisioning;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.context.ApplicationEventPublisher;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.transaction.PlatformTransactionManager;
++import org.springframework.transaction.TransactionDefinition;
++import org.springframework.transaction.TransactionStatus;
++import org.springframework.transaction.support.TransactionCallback;
++
++import java.util.Collections;
++import java.util.List;
++
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.doReturn;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
++class IdentityProviderEndpointsTest {
++
++    @Mock IdentityProviderProvisioning identityProviderProvisioning;
++    @Mock ScimGroupExternalMembershipManager scimGroupExternalMembershipManager;
++    @Mock ScimGroupProvisioning scimGroupProvisioning;
++    @Mock SamlIdentityProviderConfigurator samlConfigurator;
++    @Mock IdentityProviderConfigValidator configValidator;
++    @Mock IdentityZoneManager identityZoneManager;
++    @Mock PlatformTransactionManager transactionManager;
++    @Mock IdentityProviderAliasHandler idpAliasHandler;
++    @Mock ApplicationEventPublisher publisher;
++    @Mock TransactionStatus transactionStatus;
++
++    IdentityProviderEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        when(transactionManager.getTransaction(any(TransactionDefinition.class))).thenReturn(transactionStatus);
++
++        endpoint = new IdentityProviderEndpoints(identityProviderProvisioning,
++                scimGroupExternalMembershipManager, scimGroupProvisioning,
++                samlConfigurator, configValidator, identityZoneManager,
++                transactionManager, idpAliasHandler, false);
++        endpoint.setApplicationEventPublisher(publisher);
++
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    private IdentityProvider<UaaIdentityProviderDefinition> buildUaaIdp() {
++        IdentityProvider<UaaIdentityProviderDefinition> idp = new IdentityProvider<>();
++        idp.setId("idp-1");
++        idp.setName("UAA");
++        idp.setOriginKey("uaa");
++        idp.setType("uaa");
++        idp.setIdentityZoneId("uaa");
++        idp.setConfig(new UaaIdentityProviderDefinition());
++        return idp;
++    }
++
++    @Test
++    void listIdentityProviders_returnsAllProviders() throws Exception {
++        IdentityProvider<UaaIdentityProviderDefinition> idp = buildUaaIdp();
++        when(identityProviderProvisioning.retrieveAll(false, "uaa")).thenReturn(List.of(idp));
++
++        mockMvc.perform(get("/identity-providers"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$").isArray())
++                .andExpect(jsonPath("$[0].originKey").value("uaa"));
++    }
++
++    @Test
++    void getIdentityProvider_returnsProviderById() throws Exception {
++        IdentityProvider<UaaIdentityProviderDefinition> idp = buildUaaIdp();
++        when(identityProviderProvisioning.retrieve("idp-1", "uaa")).thenReturn(idp);
++
++        mockMvc.perform(get("/identity-providers/{id}", "idp-1"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.id").value("idp-1"))
++                .andExpect(jsonPath("$.originKey").value("uaa"));
++    }
++
++    @Test
++    void createIdentityProvider_returnsCreated() throws Exception {
++        IdentityProvider<UaaIdentityProviderDefinition> input = buildUaaIdp();
++        input.setId(null);
++        IdentityProvider<UaaIdentityProviderDefinition> created = buildUaaIdp();
++
++        when(idpAliasHandler.aliasPropertiesAreValid(any(), any())).thenReturn(true);
++        when(transactionManager.getTransaction(any())).thenReturn(transactionStatus);
++        when(identityProviderProvisioning.create(any(IdentityProvider.class), anyString())).thenReturn(created);
++        doReturn(created).when(idpAliasHandler).ensureConsistencyOfAliasEntity(any(), any());
++
++        mockMvc.perform(post("/identity-providers")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isCreated());
++    }
++
++    @Test
++    void deleteIdentityProvider_returnsDeletedProvider() throws Exception {
++        IdentityProvider<UaaIdentityProviderDefinition> idp = buildUaaIdp();
++        when(identityProviderProvisioning.retrieve("idp-1", "uaa")).thenReturn(idp);
++
++        mockMvc.perform(delete("/identity-providers/{id}", "idp-1"))
++                .andExpect(status().isOk());
++    }
++
++    @Test
++    void updateIdentityProvider_returnsUpdatedProvider() throws Exception {
++        IdentityProvider<UaaIdentityProviderDefinition> input = buildUaaIdp();
++        IdentityProvider<UaaIdentityProviderDefinition> existing = buildUaaIdp();
++        IdentityProvider<UaaIdentityProviderDefinition> updated = buildUaaIdp();
++        updated.setName("Updated UAA");
++
++        when(identityProviderProvisioning.retrieve("idp-1", "uaa")).thenReturn(existing);
++        when(idpAliasHandler.aliasPropertiesAreValid(any(), any())).thenReturn(true);
++        when(transactionManager.getTransaction(any())).thenReturn(transactionStatus);
++        when(identityProviderProvisioning.update(any(IdentityProvider.class), anyString())).thenReturn(updated);
++        doReturn(updated).when(idpAliasHandler).ensureConsistencyOfAliasEntity(any(), any());
++
++        mockMvc.perform(put("/identity-providers/{id}", "idp-1")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isOk());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/ratelimiting/RateLimitStatusControllerTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/ratelimiting/RateLimitStatusControllerTest.java
+new file mode 100644
+index 0000000..7f93759
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/ratelimiting/RateLimitStatusControllerTest.java
+@@ -0,0 +1,37 @@
++package org.cloudfoundry.identity.uaa.ratelimiting;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.http.MediaType;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++class RateLimitStatusControllerTest {
++
++    RateLimitStatusController controller;
++    MockMvc mockMvc;
++
++    @BeforeEach
++    void setUp() {
++        controller = new RateLimitStatusController();
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    void getRateLimitingStatus_returnsJsonStatusDocument() throws Exception {
++        mockMvc.perform(get("/RateLimitingStatus"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
++    }
++
++    @Test
++    void getRateLimitingStatus_whenDisabled_includesDisabledStatus() throws Exception {
++        mockMvc.perform(get("/RateLimitingStatus"))
++                .andExpect(status().isOk())
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("DISABLED")));
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ChangeEmailEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ChangeEmailEndpointsTest.java
+new file mode 100644
+index 0000000..9b541b1
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ChangeEmailEndpointsTest.java
+@@ -0,0 +1,107 @@
++package org.cloudfoundry.identity.uaa.scim.endpoints;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.account.EmailChange;
++import org.cloudfoundry.identity.uaa.codestore.ExpiringCode;
++import org.cloudfoundry.identity.uaa.codestore.ExpiringCodeStore;
++import org.cloudfoundry.identity.uaa.oauth.provider.ClientDetails;
++import org.cloudfoundry.identity.uaa.resources.QueryableResourceManager;
++import org.cloudfoundry.identity.uaa.scim.ScimUser;
++import org.cloudfoundry.identity.uaa.scim.ScimUserProvisioning;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.springframework.context.ApplicationEventPublisher;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.sql.Timestamp;
++import java.util.Collections;
++import java.util.HashMap;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++class ChangeEmailEndpointsTest {
++
++    @Mock ScimUserProvisioning scimUserProvisioning;
++    @Mock ExpiringCodeStore expiringCodeStore;
++    @Mock QueryableResourceManager<ClientDetails> clientDetailsService;
++    @Mock IdentityZoneManager identityZoneManager;
++    @Mock ApplicationEventPublisher publisher;
++
++    ChangeEmailEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++        endpoint = new ChangeEmailEndpoints(scimUserProvisioning, expiringCodeStore,
++                clientDetailsService, identityZoneManager);
++        endpoint.setApplicationEventPublisher(publisher);
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    @Test
++    void generateEmailVerificationCode_returnsCreatedWithCode() throws Exception {
++        ScimUser user = new ScimUser("user-1", "user@old.com", "Test", "User");
++        user.addEmail("user@old.com");
++        when(scimUserProvisioning.retrieve("user-1", "uaa")).thenReturn(user);
++        when(scimUserProvisioning.retrieveByUsernameAndOriginAndZone(anyString(), anyString(), anyString()))
++                .thenReturn(Collections.emptyList());
++
++        ExpiringCode code = new ExpiringCode("verification-code-abc",
++                new Timestamp(System.currentTimeMillis() + 1800000), "{}", "EMAIL");
++        when(expiringCodeStore.generateCode(anyString(), any(Timestamp.class), anyString(), anyString()))
++                .thenReturn(code);
++
++        EmailChange emailChange = new EmailChange();
++        emailChange.setUserId("user-1");
++        emailChange.setEmail("user@new.com");
++
++        mockMvc.perform(post("/email_verifications")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(emailChange)))
++                .andExpect(status().isCreated());
++    }
++
++    @Test
++    void changeEmail_withInvalidCode_returns422() throws Exception {
++        when(expiringCodeStore.retrieveCode("bad-code", "uaa")).thenReturn(null);
++
++        mockMvc.perform(post("/email_changes")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content("\"bad-code\""))
++                .andExpect(status().isUnprocessableEntity());
++    }
++
++    @Test
++    void changeEmail_withValidCode_returns200() throws Exception {
++        String data = "{\"userId\":\"user-1\",\"email\":\"user@new.com\",\"origin\":\"uaa\"}";
++        ExpiringCode code = new ExpiringCode("valid-code",
++                new Timestamp(System.currentTimeMillis() + 1800000), data, "EMAIL");
++        when(expiringCodeStore.retrieveCode("valid-code", "uaa")).thenReturn(code);
++
++        ScimUser user = new ScimUser("user-1", "user@old.com", "Test", "User");
++        user.addEmail("user@old.com");
++        when(scimUserProvisioning.retrieve("user-1", "uaa")).thenReturn(user);
++        when(scimUserProvisioning.update(anyString(), any(ScimUser.class), anyString())).thenReturn(user);
++
++        mockMvc.perform(post("/email_changes")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content("\"valid-code\""))
++                .andExpect(status().isOk());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimGroupEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimGroupEndpointsTest.java
+new file mode 100644
+index 0000000..822fbef
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimGroupEndpointsTest.java
+@@ -0,0 +1,139 @@
++package org.cloudfoundry.identity.uaa.scim.endpoints;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.scim.ScimGroup;
++import org.cloudfoundry.identity.uaa.scim.ScimGroupMembershipManager;
++import org.cloudfoundry.identity.uaa.scim.ScimGroupProvisioning;
++import org.cloudfoundry.identity.uaa.scim.exception.ScimException;
++import org.cloudfoundry.identity.uaa.scim.jdbc.JdbcScimGroupExternalMembershipManager;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
++class ScimGroupEndpointsTest {
++
++    @Mock ScimGroupProvisioning scimGroupProvisioning;
++    @Mock ScimGroupMembershipManager membershipManager;
++    @Mock IdentityZoneManager identityZoneManager;
++    @Mock JdbcScimGroupExternalMembershipManager externalMembershipManager;
++
++    ScimGroupEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++
++        Map<Class<? extends Exception>, HttpStatus> statuses = new HashMap<>();
++        statuses.put(ScimException.class, HttpStatus.BAD_REQUEST);
++
++        endpoint = new ScimGroupEndpoints(scimGroupProvisioning, membershipManager,
++                identityZoneManager, 500, statuses, externalMembershipManager);
++
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    private ScimGroup buildGroup(String id, String displayName) {
++        ScimGroup group = new ScimGroup(id, displayName, "uaa");
++        group.setVersion(0);
++        return group;
++    }
++
++    @Test
++    void listGroups_returnsPagedResults() throws Exception {
++        when(scimGroupProvisioning.retrieveAll("uaa")).thenReturn(List.of(buildGroup("grp-1", "readers")));
++
++        mockMvc.perform(get("/Groups"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.resources").isArray());
++    }
++
++    @Test
++    void getGroup_returnsGroupById() throws Exception {
++        ScimGroup group = buildGroup("grp-1", "readers");
++        when(scimGroupProvisioning.retrieve("grp-1", "uaa")).thenReturn(group);
++        when(membershipManager.getMembers("grp-1", false, "uaa")).thenReturn(Collections.emptyList());
++
++        mockMvc.perform(get("/Groups/{groupId}", "grp-1"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.id").value("grp-1"))
++                .andExpect(jsonPath("$.displayName").value("readers"));
++    }
++
++    @Test
++    void createGroup_returns201() throws Exception {
++        ScimGroup input = buildGroup(null, "writers");
++        ScimGroup created = buildGroup("grp-2", "writers");
++
++        when(scimGroupProvisioning.create(any(ScimGroup.class), anyString())).thenReturn(created);
++        when(membershipManager.getMembers("grp-2", false, "uaa")).thenReturn(Collections.emptyList());
++
++        mockMvc.perform(post("/Groups")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.id").value("grp-2"))
++                .andExpect(jsonPath("$.displayName").value("writers"));
++    }
++
++    @Test
++    void updateGroup_returnsUpdatedGroup() throws Exception {
++        ScimGroup input = buildGroup("grp-1", "readers-updated");
++        ScimGroup updated = buildGroup("grp-1", "readers-updated");
++
++        ScimGroup existing = buildGroup("grp-1", "readers");
++        when(scimGroupProvisioning.retrieve("grp-1", "uaa")).thenReturn(existing);
++        when(membershipManager.getMembers("grp-1", false, "uaa")).thenReturn(Collections.emptyList());
++        when(scimGroupProvisioning.update(anyString(), any(ScimGroup.class), anyString())).thenReturn(updated);
++
++        mockMvc.perform(put("/Groups/{groupId}", "grp-1")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .header("If-Match", "0")
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.displayName").value("readers-updated"));
++    }
++
++    @Test
++    void deleteGroup_returnsDeletedGroup() throws Exception {
++        ScimGroup group = buildGroup("grp-1", "readers");
++        when(scimGroupProvisioning.retrieve("grp-1", "uaa")).thenReturn(group);
++        when(scimGroupProvisioning.delete("grp-1", 0, "uaa")).thenReturn(group);
++        when(membershipManager.getMembers("grp-1", false, "uaa")).thenReturn(Collections.emptyList());
++
++        mockMvc.perform(delete("/Groups/{groupId}", "grp-1")
++                        .header("If-Match", "0"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.id").value("grp-1"));
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimUserEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimUserEndpointsTest.java
+new file mode 100644
+index 0000000..a526acf
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/scim/endpoints/ScimUserEndpointsTest.java
+@@ -0,0 +1,152 @@
++package org.cloudfoundry.identity.uaa.scim.endpoints;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.approval.ApprovalStore;
++import org.cloudfoundry.identity.uaa.codestore.ExpiringCodeStore;
++import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
++import org.cloudfoundry.identity.uaa.resources.ResourceMonitor;
++import org.cloudfoundry.identity.uaa.scim.ScimGroup;
++import org.cloudfoundry.identity.uaa.scim.ScimGroupMembershipManager;
++import org.cloudfoundry.identity.uaa.scim.ScimUser;
++import org.cloudfoundry.identity.uaa.scim.ScimUserAliasHandler;
++import org.cloudfoundry.identity.uaa.scim.ScimUserProvisioning;
++import org.cloudfoundry.identity.uaa.scim.exception.ScimException;
++import org.cloudfoundry.identity.uaa.scim.services.ScimUserService;
++import org.cloudfoundry.identity.uaa.scim.validate.PasswordValidator;
++import org.cloudfoundry.identity.uaa.security.IsSelfCheck;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
++import org.springframework.http.HttpStatus;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.transaction.support.TransactionTemplate;
++
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.List;
++import java.util.Map;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
++class ScimUserEndpointsTest {
++
++    @Mock IdentityZoneManager identityZoneManager;
++    @Mock IsSelfCheck isSelfCheck;
++    @Mock ScimUserProvisioning scimUserProvisioning;
++    @Mock IdentityProviderProvisioning identityProviderProvisioning;
++    @Mock ResourceMonitor<ScimUser> scimUserResourceMonitor;
++    @Mock PasswordValidator passwordValidator;
++    @Mock ExpiringCodeStore codeStore;
++    @Mock ApprovalStore approvalStore;
++    @Mock ScimGroupMembershipManager membershipManager;
++    @Mock ScimUserService scimUserService;
++    @Mock ScimUserAliasHandler aliasHandler;
++    @Mock TransactionTemplate transactionTemplate;
++
++    ScimUserEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        when(identityZoneManager.getCurrentIdentityZoneId()).thenReturn("uaa");
++
++        Map<Class<? extends Exception>, HttpStatus> statuses = new HashMap<>();
++        statuses.put(ScimException.class, HttpStatus.BAD_REQUEST);
++
++        endpoint = new ScimUserEndpoints(
++                identityZoneManager, isSelfCheck, scimUserProvisioning,
++                identityProviderProvisioning, scimUserResourceMonitor, statuses,
++                passwordValidator, codeStore, approvalStore, membershipManager,
++                scimUserService, aliasHandler, transactionTemplate, false, 500);
++
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .build();
++    }
++
++    private ScimUser buildScimUser(String id, String username) {
++        ScimUser user = new ScimUser(id, username, "Test", "User");
++        user.addEmail(username + "@example.com");
++        user.setVersion(0);
++        return user;
++    }
++
++    @Test
++    void getUser_returnsUserById() throws Exception {
++        ScimUser user = buildScimUser("user-123", "testuser");
++        when(scimUserProvisioning.retrieve("user-123", "uaa")).thenReturn(user);
++        when(membershipManager.getGroupsWithMember(anyString(), any(Boolean.class), anyString()))
++                .thenReturn(Collections.emptySet());
++        when(approvalStore.getApprovalsForUser(anyString(), anyString()))
++                .thenReturn(Collections.emptyList());
++
++        mockMvc.perform(get("/Users/{userId}", "user-123"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.id").value("user-123"))
++                .andExpect(jsonPath("$.userName").value("testuser"));
++    }
++
++    @Test
++    void listUsers_returnsPagedResults() throws Exception {
++        ScimUser user = buildScimUser("user-123", "testuser");
++        when(scimUserProvisioning.retrieveAll("uaa")).thenReturn(List.of(user));
++
++        mockMvc.perform(get("/Users"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.resources").isArray());
++    }
++
++    @Test
++    void createUser_returnsCreatedUser() throws Exception {
++        ScimUser input = buildScimUser(null, "newuser");
++        input.setPassword("Secret123!");
++        ScimUser created = buildScimUser("new-user-id", "newuser");
++
++        when(identityProviderProvisioning.retrieveActive(anyString())).thenReturn(Collections.emptyList());
++        when(aliasHandler.aliasPropertiesAreValid(any(), any())).thenReturn(true);
++        when(scimUserProvisioning.createUser(any(ScimUser.class), anyString(), anyString())).thenReturn(created);
++        when(membershipManager.getGroupsWithMember(anyString(), any(Boolean.class), anyString()))
++                .thenReturn(Collections.emptySet());
++        when(approvalStore.getApprovalsForUser(anyString(), anyString()))
++                .thenReturn(Collections.emptyList());
++
++        mockMvc.perform(post("/Users")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.id").value("new-user-id"));
++    }
++
++    @Test
++    void deleteUser_returnsOk() throws Exception {
++        ScimUser user = buildScimUser("user-123", "testuser");
++        when(scimUserProvisioning.retrieve("user-123", "uaa")).thenReturn(user);
++        when(membershipManager.getGroupsWithMember(anyString(), any(Boolean.class), anyString()))
++                .thenReturn(Collections.emptySet());
++        when(approvalStore.getApprovalsForUser(anyString(), anyString()))
++                .thenReturn(Collections.emptyList());
++
++        mockMvc.perform(delete("/Users/{userId}", "user-123")
++                        .header("If-Match", "0"))
++                .andExpect(status().isOk());
++    }
++}
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/zone/IdentityZoneEndpointsTest.java b/server/src/test/java/org/cloudfoundry/identity/uaa/zone/IdentityZoneEndpointsTest.java
+new file mode 100644
+index 0000000..b4324d2
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/zone/IdentityZoneEndpointsTest.java
+@@ -0,0 +1,141 @@
++package org.cloudfoundry.identity.uaa.zone;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import org.cloudfoundry.identity.uaa.provider.IdentityProviderProvisioning;
++import org.cloudfoundry.identity.uaa.scim.ScimGroupProvisioning;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.extension.ExtendWith;
++import org.mockito.Mock;
++import org.mockito.junit.jupiter.MockitoExtension;
++import org.mockito.junit.jupiter.MockitoSettings;
++import org.mockito.quality.Strictness;
++import org.springframework.context.MessageSource;
++import org.springframework.context.support.StaticMessageSource;
++import org.springframework.http.MediaType;
++import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
++
++import java.util.Collections;
++import java.util.List;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@ExtendWith(MockitoExtension.class)
++@MockitoSettings(strictness = Strictness.LENIENT)
++class IdentityZoneEndpointsTest {
++
++    @Mock IdentityZoneProvisioning zoneDao;
++    @Mock IdentityProviderProvisioning idpDao;
++    @Mock IdentityZoneEndpointClientRegistrationService clientRegistrationService;
++    @Mock ScimGroupProvisioning groupProvisioning;
++    @Mock IdentityZoneValidator validator;
++
++    IdentityZoneEndpoints endpoint;
++    MockMvc mockMvc;
++    ObjectMapper objectMapper = new ObjectMapper();
++
++    @BeforeEach
++    void setUp() {
++        MessageSource messageSource = new StaticMessageSource();
++        endpoint = new IdentityZoneEndpoints(zoneDao, idpDao, clientRegistrationService,
++                groupProvisioning, validator, messageSource);
++        endpoint.setApplicationEventPublisher(event -> {});
++
++        LocalValidatorFactoryBean validatorBean = new LocalValidatorFactoryBean();
++        validatorBean.afterPropertiesSet();
++
++        mockMvc = MockMvcBuilders.standaloneSetup(endpoint)
++                .setMessageConverters(new MappingJackson2HttpMessageConverter())
++                .setValidator(validatorBean)
++                .build();
++    }
++
++    private IdentityZone buildZone(String id, String subdomain, String name) {
++        IdentityZone zone = new IdentityZone();
++        zone.setId(id);
++        zone.setSubdomain(subdomain);
++        zone.setName(name);
++        zone.setConfig(new IdentityZoneConfiguration());
++        return zone;
++    }
++
++    @Test
++    void listZones_returnsAllZones() throws Exception {
++        when(zoneDao.retrieveAll()).thenReturn(List.of(buildZone("zone-1", "zone1", "Zone 1")));
++
++        mockMvc.perform(get("/identity-zones"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$").isArray())
++                .andExpect(jsonPath("$[0].id").value("zone-1"));
++    }
++
++    @Test
++    void getZone_returnsZoneById() throws Exception {
++        IdentityZone zone = buildZone("zone-1", "zone1", "Zone 1");
++        when(zoneDao.retrieveIgnoreActiveFlag("zone-1")).thenReturn(zone);
++
++        mockMvc.perform(get("/identity-zones/{id}", "zone-1"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.id").value("zone-1"))
++                .andExpect(jsonPath("$.subdomain").value("zone1"));
++    }
++
++    @Test
++    void createZone_returns201WithNewZone() throws Exception {
++        IdentityZone input = buildZone("new-zone", "newzone", "New Zone");
++        IdentityZone created = buildZone("new-zone", "newzone", "New Zone");
++
++        when(validator.validate(any(IdentityZone.class), any(IdentityZoneValidator.Mode.class))).thenReturn(input);
++        when(zoneDao.create(any(IdentityZone.class))).thenReturn(created);
++        when(groupProvisioning.createOrGet(any(), anyString())).thenAnswer(inv -> {
++            org.cloudfoundry.identity.uaa.scim.ScimGroup g = inv.getArgument(0);
++            g.setId(java.util.UUID.randomUUID().toString());
++            return g;
++        });
++
++        mockMvc.perform(post("/identity-zones")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isCreated())
++                .andExpect(jsonPath("$.id").value("new-zone"));
++    }
++
++    @Test
++    void updateZone_returnsUpdatedZone() throws Exception {
++        IdentityZone existing = buildZone("zone-1", "zone1", "Zone 1");
++        IdentityZone input = buildZone("zone-1", "zone1", "Zone 1 Updated");
++
++        when(zoneDao.retrieveIgnoreActiveFlag("zone-1")).thenReturn(existing);
++        when(validator.validate(any(IdentityZone.class), any(IdentityZoneValidator.Mode.class))).thenReturn(input);
++        when(zoneDao.update(any(IdentityZone.class))).thenReturn(input);
++
++        mockMvc.perform(put("/identity-zones/{id}", "zone-1")
++                        .contentType(MediaType.APPLICATION_JSON)
++                        .content(objectMapper.writeValueAsString(input)))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.name").value("Zone 1 Updated"));
++    }
++
++    @Test
++    void deleteZone_returnsDeletedZone() throws Exception {
++        IdentityZone zone = buildZone("zone-1", "zone1", "Zone 1");
++        when(zoneDao.retrieveIgnoreActiveFlag("zone-1")).thenReturn(zone);
++        when(idpDao.retrieveAll(false, "zone-1")).thenReturn(Collections.emptyList());
++        when(groupProvisioning.retrieveAll("zone-1")).thenReturn(Collections.emptyList());
++
++        mockMvc.perform(delete("/identity-zones/{id}", "zone-1"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.id").value("zone-1"));
++    }
++}

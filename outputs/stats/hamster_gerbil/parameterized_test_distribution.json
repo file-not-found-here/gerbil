@@ -1,0 +1,166 @@
+{
+  "scope": "all_tests",
+  "api": {
+    "test_count": 34489,
+    "parameterized": {
+      "count": 502,
+      "total": 34489,
+      "proportion": 0.014555365478848328
+    },
+    "source_kinds": {
+      "scope": "parameterized_tests",
+      "test_count": 502,
+      "by_kind": {
+        "static_only": {
+          "count": 254,
+          "total": 502,
+          "proportion": 0.5059760956175299
+        },
+        "dynamic_only": {
+          "count": 246,
+          "total": 502,
+          "proportion": 0.4900398406374502
+        },
+        "mixed": {
+          "count": 0,
+          "total": 502,
+          "proportion": 0.0
+        },
+        "no_recognized_source": {
+          "count": 2,
+          "total": 502,
+          "proportion": 0.00398406374501992
+        }
+      }
+    },
+    "source_annotations": {
+      "total": 500,
+      "by_annotation": {
+        "@ArgumentsSource": {
+          "count": 7,
+          "total": 500,
+          "proportion": 0.014
+        },
+        "@CsvSource": {
+          "count": 16,
+          "total": 500,
+          "proportion": 0.032
+        },
+        "@DataProvider": {
+          "count": 153,
+          "total": 500,
+          "proportion": 0.306
+        },
+        "@EnumSource": {
+          "count": 84,
+          "total": 500,
+          "proportion": 0.168
+        },
+        "@MethodSource": {
+          "count": 86,
+          "total": 500,
+          "proportion": 0.172
+        },
+        "@ValueSource": {
+          "count": 154,
+          "total": 500,
+          "proportion": 0.308
+        }
+      }
+    }
+  },
+  "non_api": {
+    "test_count": 1617346,
+    "parameterized": {
+      "count": 38593,
+      "total": 1617346,
+      "proportion": 0.02386193183153141
+    },
+    "source_kinds": {
+      "scope": "parameterized_tests",
+      "test_count": 38593,
+      "by_kind": {
+        "static_only": {
+          "count": 10667,
+          "total": 38593,
+          "proportion": 0.2763972741170679
+        },
+        "dynamic_only": {
+          "count": 27817,
+          "total": 38593,
+          "proportion": 0.7207783794988728
+        },
+        "mixed": {
+          "count": 5,
+          "total": 38593,
+          "proportion": 0.00012955717358070117
+        },
+        "no_recognized_source": {
+          "count": 104,
+          "total": 38593,
+          "proportion": 0.002694789210478584
+        }
+      }
+    },
+    "source_annotations": {
+      "total": 38662,
+      "by_annotation": {
+        "@ArgumentsSource": {
+          "count": 1107,
+          "total": 38662,
+          "proportion": 0.028632766023485592
+        },
+        "@CsvFileSource": {
+          "count": 61,
+          "total": 38662,
+          "proportion": 0.00157777662821375
+        },
+        "@CsvSource": {
+          "count": 2135,
+          "total": 38662,
+          "proportion": 0.055222181987481245
+        },
+        "@DataProvider": {
+          "count": 8158,
+          "total": 38662,
+          "proportion": 0.2110082251306192
+        },
+        "@EmptySource": {
+          "count": 31,
+          "total": 38662,
+          "proportion": 0.0008018209094201024
+        },
+        "@EnumSource": {
+          "count": 2167,
+          "total": 38662,
+          "proportion": 0.05604986808752781
+        },
+        "@FieldSource": {
+          "count": 54,
+          "total": 38662,
+          "proportion": 0.0013967202938285656
+        },
+        "@MethodSource": {
+          "count": 18445,
+          "total": 38662,
+          "proportion": 0.4770834411049609
+        },
+        "@NullAndEmptySource": {
+          "count": 94,
+          "total": 38662,
+          "proportion": 0.0024313279188867623
+        },
+        "@NullSource": {
+          "count": 123,
+          "total": 38662,
+          "proportion": 0.0031814184470539547
+        },
+        "@ValueSource": {
+          "count": 6287,
+          "total": 38662,
+          "proportion": 0.16261445346852207
+        }
+      }
+    }
+  }
+}

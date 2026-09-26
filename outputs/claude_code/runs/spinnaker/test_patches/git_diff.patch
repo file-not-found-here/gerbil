@@ -1,0 +1,2340 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 00000000..14b51678
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,93 @@
++# API Endpoint Coverage (Progress: 70/71)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## front50/front50-web - ApplicationsController (v2)
++- [x] GET /v2/applications - list all apps; optional pageSize, restricted, filter params
++- [x] GET /v2/applications/{applicationName} - fetch single application by name
++- [x] GET /v2/applications/{applicationName}/history - fetch application history
++- [x] POST /v2/applications - create application; requires name in body
++- [x] PATCH /v2/applications/{applicationName} - partial update; name must match path
++- [x] PUT /v2/applications/{applicationName} - full replace; name must match path
++- [x] DELETE /v2/applications/{applicationName} - delete application
++- [x] POST /v2/applications/batch/applications - bulk import; admin only
++
++## front50/front50-web - ProjectsController (v2)
++- [x] GET /v2/projects - list all projects; optional pageSize, filter params
++- [x] GET /v2/projects/search?q={query} - search projects by name/application
++- [x] GET /v2/projects/{projectId} - fetch single project by id or name
++- [x] POST /v2/projects - create project; rejects duplicate names
++- [x] PUT /v2/projects/{projectId} - update project; rejects id mismatch
++- [x] DELETE /v2/projects/{projectId} - delete project (202)
++- [x] POST /v2/projects/batchUpdate - bulk import (202)
++
++## front50/front50-web - PipelineController
++- [x] GET /pipelines - list all pipelines; optional restricted, refresh, enabledPipelines, enabledTriggers, triggerTypes params
++- [x] GET /pipelines/triggeredBy/{id}/{status} - list pipelines triggered by another
++- [x] GET /pipelines/{application} - list pipelines for application; optional pipelineNameFilter, enabledPipelines
++- [x] GET /pipelines/{id}/history - pipeline version history; optional limit
++- [x] GET /pipelines/{id}/get - get pipeline by id
++- [x] GET /pipelines/{application}/name/{name} - get pipeline by app and name
++- [x] POST /pipelines - save pipeline; validates name/app, checks for duplicates
++- [x] POST /pipelines/batchUpdate - batch upsert pipelines
++- [x] PUT /pipelines/{id} - update pipeline; stale check optional
++- [x] DELETE /pipelines/{application}/{pipeline} - delete pipeline by name
++
++## front50/front50-web - StrategyController
++- [x] GET /strategies - list all strategies
++- [x] GET /strategies/{application} - list strategies for application
++- [x] GET /strategies/{id}/history - strategy version history
++- [x] POST /strategies - save strategy; validates name/app, checks for duplicates
++- [x] POST /strategies/batchUpdate - batch import; admin only
++- [x] PUT /strategies/{id} - update strategy
++- [x] DELETE /strategies/{application}/{strategy} - delete strategy
++
++## front50/front50-web - PermissionsController
++- [x] GET /permissions/applications - get all application permissions
++- [x] GET /permissions/applications/{appName} - get specific application permission
++- [x] POST /permissions/applications - create application permission
++- [x] PUT /permissions/applications/{appName} - update application permission
++- [x] DELETE /permissions/applications/{appName} - delete application permission
++
++## front50/front50-web - ServiceAccountsController
++- [x] GET /serviceAccounts - list all service accounts
++- [x] POST /serviceAccounts - create service account
++- [x] DELETE /serviceAccounts/{serviceAccountId} - delete service account
++
++## front50/front50-web - NotificationController
++- [x] GET /notifications - list all notifications
++- [x] GET /notifications/global - get global notification
++- [x] POST /notifications/global - save global notification
++- [x] GET /notifications/{type}/{name} - get notification by type and name
++- [x] POST /notifications/{type}/{name} - save notification for type/name
++- [x] POST /notifications/batchUpdate - batch update notifications
++- [x] DELETE /notifications/{type}/{name} - delete notification
++
++## front50/front50-web - PluginInfoController
++- [x] GET /pluginInfo - list all plugin infos; optional service filter
++- [x] GET /pluginInfo/{id} - get plugin info by id
++- [x] POST /pluginInfo - create/upsert plugin info
++- [x] DELETE /pluginInfo/{id} - delete plugin info; admin only
++- [x] POST /pluginInfo/{id}/releases - create new release for plugin
++- [x] PUT /pluginInfo/{id}/releases - upsert release; admin only
++- [x] PUT /pluginInfo/{id}/releases/{releaseVersion} - set preferred flag; admin only
++- [x] DELETE /pluginInfo/{id}/releases/{releaseVersion} - delete release; admin only
++
++## fiat/fiat-web - AuthorizeController
++- [x] GET /authorize - list all user permissions; disabled by default
++- [x] GET /authorize/{userId} - get user permission view
++- [x] GET /authorize/{userId}/accounts - get user accounts
++- [x] GET /authorize/{userId}/accounts/{accountName} - get specific account; 404 if missing
++- [x] GET /authorize/{userId}/applications - get user applications
++- [x] GET /authorize/{userId}/applications/{applicationName} - get specific application; 404 if missing
++- [x] GET /authorize/{userId}/serviceAccounts - get user service accounts; expand param
++- [ ] GET /authorize/{userId}/serviceAccounts/{serviceAccountName} - get specific service account
++- [x] GET /authorize/{userId}/roles - get user roles
++- [x] GET /authorize/{userId}/{resourceType}/{resourceName}/{authorization} - check authorization; 200 or 404
++- [x] POST /authorize/{userId}/{resourceType}/create - check create permission; 200 or 400
++
++## fiat/fiat-web - RolesController
++- [x] POST /roles/{userId} - sync and store user permissions from role provider
++- [x] PUT /roles/{userId} - store user permissions with external roles list
++- [x] DELETE /roles/{userId} - remove user permissions
++- [x] POST /roles/sync - sync all users (or specific roles); returns count
++- [x] POST /roles/sync/serviceAccount/{serviceAccountId} - sync service account with roles
+diff --git a/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/AuthorizeControllerSpec.groovy b/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/AuthorizeControllerSpec.groovy
+new file mode 100644
+index 00000000..4f56e995
+--- /dev/null
++++ b/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/AuthorizeControllerSpec.groovy
+@@ -0,0 +1,288 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.fiat.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spectator.api.Counter
++import com.netflix.spectator.api.Id
++import com.netflix.spectator.api.Registry
++import com.netflix.spinnaker.fiat.config.FiatServerConfigurationProperties
++import com.netflix.spinnaker.fiat.model.Authorization
++import com.netflix.spinnaker.fiat.model.UserPermission
++import com.netflix.spinnaker.fiat.model.resources.Account
++import com.netflix.spinnaker.fiat.model.resources.Application
++import com.netflix.spinnaker.fiat.model.resources.Permissions
++import com.netflix.spinnaker.fiat.model.resources.Role
++import com.netflix.spinnaker.fiat.model.resources.ServiceAccount
++import com.netflix.spinnaker.fiat.permissions.PermissionsRepository
++import com.netflix.spinnaker.fiat.permissions.PermissionsResolver
++import com.netflix.spinnaker.fiat.providers.ResourcePermissionProvider
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class AuthorizeControllerSpec extends Specification {
++
++  Registry registry = Mock()
++  Id metricId = Mock()
++  Counter counter = Mock()
++  PermissionsRepository permissionsRepository = Mock()
++  PermissionsResolver permissionsResolver = Mock()
++  FiatServerConfigurationProperties configProps = new FiatServerConfigurationProperties()
++  ResourcePermissionProvider<Application> applicationResourcePermissionProvider = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  AuthorizeController controller
++
++  void setup() {
++    registry.createId("fiat.getUserPermission") >> metricId
++    metricId.withTag(_, _) >> metricId
++    registry.counter(_) >> counter
++
++    controller = new AuthorizeController(
++      registry,
++      permissionsRepository,
++      permissionsResolver,
++      configProps,
++      applicationResourcePermissionProvider,
++      [new Application()],
++      objectMapper
++    )
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new FiatTestExceptionHandler())
++      .build()
++  }
++
++  def makeUserPermission(String userId) {
++    def perm = new UserPermission()
++    perm.id = userId
++    return perm
++  }
++
++  def makeUserPermissionWithAccount(String userId, String accountName) {
++    def account = new Account()
++    account.name = accountName
++    def perm = makeUserPermission(userId)
++    perm.accounts = [account] as Set
++    return perm
++  }
++
++  def makeUserPermissionWithApplication(String userId, String appName, Set<Authorization> auths = [Authorization.READ] as Set) {
++    def app = new Application()
++    app.name = appName
++    def perm = makeUserPermission(userId)
++    perm.applications = [app] as Set
++    return perm
++  }
++
++  def makeUserPermissionWithRole(String userId, String roleName) {
++    def role = new Role()
++    role.name = roleName
++    def perm = makeUserPermission(userId)
++    perm.roles = [role] as Set
++    return perm
++  }
++
++  def "GET /authorize returns 405 when getAllEnabled is false (default)"() {
++    expect:
++    mockMvc.perform(get("/authorize"))
++      .andExpect(status().isMethodNotAllowed())
++  }
++
++  def "GET /authorize returns all user permissions when getAllEnabled is true"() {
++    given:
++    configProps.getAllEnabled = true
++    def perm = makeUserPermission("testuser")
++    permissionsRepository.getAllById() >> ["testuser": perm]
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++  }
++
++  def "GET /authorize/{userId} returns user permission view"() {
++    given:
++    def perm = makeUserPermission("testuser")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("testuser"))
++  }
++
++  def "GET /authorize/{userId} returns 404 when user not found"() {
++    given:
++    permissionsRepository.get("noexist") >> Optional.empty()
++
++    expect:
++    mockMvc.perform(get("/authorize/noexist"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "GET /authorize/{userId}/accounts returns user accounts"() {
++    given:
++    def perm = makeUserPermissionWithAccount("testuser", "prod-account")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/accounts"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /authorize/{userId}/accounts/{accountName} returns specific account"() {
++    given:
++    def perm = makeUserPermissionWithAccount("testuser", "prod-account")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/accounts/prod-account"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("prod-account"))
++  }
++
++  def "GET /authorize/{userId}/accounts/{accountName} returns 404 for unknown account"() {
++    given:
++    def perm = makeUserPermissionWithAccount("testuser", "other-account")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/accounts/unknown-account"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "GET /authorize/{userId}/applications returns user applications"() {
++    given:
++    def perm = makeUserPermissionWithApplication("testuser", "myapp")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/applications"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /authorize/{userId}/applications/{appName} returns specific application"() {
++    given:
++    def perm = makeUserPermissionWithApplication("testuser", "myapp")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/applications/myapp"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("myapp"))
++  }
++
++  def "GET /authorize/{userId}/applications/{appName} returns 404 for unknown application"() {
++    given:
++    def perm = makeUserPermissionWithApplication("testuser", "otherapp")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/applications/unknownapp"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "GET /authorize/{userId}/roles returns user roles"() {
++    given:
++    def perm = makeUserPermissionWithRole("testuser", "developer")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/roles"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /authorize/{userId}/serviceAccounts returns user service accounts"() {
++    given:
++    def sa = new ServiceAccount()
++    sa.name = "my-service-account"
++    def perm = makeUserPermission("testuser")
++    perm.serviceAccounts = [sa] as Set
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/serviceAccounts"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /authorize/{userId}/{resourceType}/{resourceName}/{auth} returns 200 when authorized for account"() {
++    given:
++    def account = new Account()
++    account.name = "prod-account"
++    account.permissions = Permissions.factory([(Authorization.READ): ["developer"] as Set])
++    def role = new Role()
++    role.name = "developer"
++    def perm = makeUserPermission("testuser")
++    perm.accounts = [account] as Set
++    perm.roles = [role] as Set
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/account/prod-account/read"))
++      .andExpect(status().isOk())
++  }
++
++  def "GET /authorize/{userId}/{resourceType}/{resourceName}/{auth} returns 404 when not authorized"() {
++    given:
++    def perm = makeUserPermission("testuser")
++    perm.accounts = [] as Set
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(get("/authorize/testuser/account/prod-account/read"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "POST /authorize/{userId}/{resourceType}/create returns 200 when creation is not restricted"() {
++    given:
++    configProps.restrictApplicationCreation = false
++    def perm = makeUserPermission("testuser")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(
++      post("/authorize/testuser/application/create")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content('{"name":"newapp"}')
++    ).andExpect(status().isOk())
++  }
++
++  def "POST /authorize/{userId}/{resourceType}/create returns 400 for unsupported resource type"() {
++    given:
++    def perm = makeUserPermission("testuser")
++    permissionsRepository.get("testuser") >> Optional.of(perm)
++
++    expect:
++    mockMvc.perform(
++      post("/authorize/testuser/account/create")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content('{"name":"newaccount"}')
++    ).andExpect(status().isBadRequest())
++  }
++}
+diff --git a/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/FiatTestExceptionHandler.groovy b/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/FiatTestExceptionHandler.groovy
+new file mode 100644
+index 00000000..e8ffb779
+--- /dev/null
++++ b/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/FiatTestExceptionHandler.groovy
+@@ -0,0 +1,39 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.fiat.controllers
++
++import com.netflix.spinnaker.kork.web.exceptions.InvalidRequestException
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.http.HttpStatus
++import org.springframework.web.bind.annotation.ControllerAdvice
++import org.springframework.web.bind.annotation.ExceptionHandler
++import org.springframework.web.bind.annotation.ResponseStatus
++
++@ControllerAdvice
++class FiatTestExceptionHandler {
++
++  @ExceptionHandler(NotFoundException)
++  @ResponseStatus(HttpStatus.NOT_FOUND)
++  void handleNotFound(NotFoundException e) {}
++
++  @ExceptionHandler(InvalidRequestException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleBadRequest(InvalidRequestException e) {}
++
++  @ExceptionHandler(IllegalArgumentException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleIllegalArgument(IllegalArgumentException e) {}
++}
+diff --git a/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/RolesControllerSpec.groovy b/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/RolesControllerSpec.groovy
+new file mode 100644
+index 00000000..e4dbb7ad
+--- /dev/null
++++ b/fiat/fiat-web/src/test/groovy/com/netflix/spinnaker/fiat/controllers/RolesControllerSpec.groovy
+@@ -0,0 +1,182 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.fiat.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.fiat.model.UserPermission
++import com.netflix.spinnaker.fiat.model.resources.Role
++import com.netflix.spinnaker.fiat.permissions.PermissionsRepository
++import com.netflix.spinnaker.fiat.permissions.PermissionsResolver
++import com.netflix.spinnaker.fiat.roles.UserRolesSyncer
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class RolesControllerSpec extends Specification {
++
++  PermissionsResolver permissionsResolver = Mock()
++  PermissionsRepository permissionsRepository = Mock()
++  UserRolesSyncer syncer = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  RolesController controller
++
++  void setup() {
++    controller = new RolesController()
++    controller.permissionsResolver = permissionsResolver
++    controller.permissionsRepository = permissionsRepository
++    controller.syncer = syncer
++
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new FiatTestExceptionHandler())
++      .build()
++  }
++
++  def makeUserPermission(String userId) {
++    def perm = new UserPermission()
++    perm.id = userId
++    return perm
++  }
++
++  def "POST /roles/{userId} resolves and stores user permissions"() {
++    given:
++    def perm = makeUserPermission("testuser")
++    permissionsResolver.resolve("testuser") >> perm
++
++    when:
++    def result = mockMvc.perform(post("/roles/testuser"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * permissionsRepository.put(perm)
++  }
++
++  def "POST /roles/{userId} handles user with roles in permission"() {
++    given:
++    def role = new Role()
++    role.name = "developer"
++    def perm = makeUserPermission("testuser")
++    perm.roles = [role] as Set
++    permissionsResolver.resolve("testuser") >> perm
++
++    when:
++    def result = mockMvc.perform(post("/roles/testuser"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * permissionsRepository.put(perm)
++  }
++
++  def "PUT /roles/{userId} stores user permissions with provided external roles"() {
++    given:
++    def externalRoles = ["developer", "operator"]
++    def perm = makeUserPermission("testuser")
++    permissionsResolver.resolveAndMerge(_) >> perm
++
++    when:
++    def result = mockMvc.perform(
++      put("/roles/testuser")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(externalRoles))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * permissionsRepository.put(perm)
++  }
++
++  def "PUT /roles/{userId} with empty roles list removes all roles"() {
++    given:
++    def externalRoles = []
++    def perm = makeUserPermission("testuser")
++    permissionsResolver.resolveAndMerge(_) >> perm
++
++    when:
++    def result = mockMvc.perform(
++      put("/roles/testuser")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(externalRoles))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "DELETE /roles/{userId} removes user permissions"() {
++    when:
++    def result = mockMvc.perform(delete("/roles/testuser"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * permissionsRepository.remove("testuser")
++  }
++
++  def "POST /roles/sync syncs all users and returns count"() {
++    given:
++    syncer.syncAndReturn(null) >> 3
++
++    expect:
++    mockMvc.perform(
++      post("/roles/sync")
++    ).andExpect(status().isOk())
++      .andExpect(content().string("3"))
++  }
++
++  def "POST /roles/sync returns 503 when no users synced"() {
++    given:
++    syncer.syncAndReturn(null) >> 0
++
++    expect:
++    mockMvc.perform(
++      post("/roles/sync")
++    ).andExpect(status().isServiceUnavailable())
++  }
++
++  def "POST /roles/sync with specific roles syncs only those roles"() {
++    given:
++    def roles = ["developer", "operator"]
++    syncer.syncAndReturn(roles) >> 2
++
++    expect:
++    mockMvc.perform(
++      post("/roles/sync")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(roles))
++    ).andExpect(status().isOk())
++      .andExpect(content().string("2"))
++  }
++
++  def "POST /roles/sync/serviceAccount/{id} syncs a service account"() {
++    given:
++    def roles = ["developer"]
++    syncer.syncServiceAccount("my-svc-account", roles) >> 1
++
++    expect:
++    mockMvc.perform(
++      post("/roles/sync/serviceAccount/my-svc-account")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(roles))
++    ).andExpect(status().isOk())
++      .andExpect(content().string("1"))
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/NotificationControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/NotificationControllerSpec.groovy
+new file mode 100644
+index 00000000..4b64bd60
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/NotificationControllerSpec.groovy
+@@ -0,0 +1,165 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.front50.model.notification.HierarchicalLevel
++import com.netflix.spinnaker.front50.model.notification.Notification
++import com.netflix.spinnaker.front50.model.notification.NotificationDAO
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class NotificationControllerSpec extends Specification {
++
++  NotificationDAO notificationDAO = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  NotificationController controller
++
++  void setup() {
++    controller = new NotificationController(notificationDAO)
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makeNotification(String application = null) {
++    def n = new Notification()
++    if (application) {
++      n.put("application", application)
++    }
++    return n
++  }
++
++  def "GET /notifications lists all notifications"() {
++    given:
++    def notifications = [makeNotification("app1"), makeNotification("app2")]
++    notificationDAO.all() >> notifications
++
++    expect:
++    mockMvc.perform(get("/notifications"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /notifications returns empty list when no notifications"() {
++    given:
++    notificationDAO.all() >> []
++
++    expect:
++    mockMvc.perform(get("/notifications"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(0))
++  }
++
++  def "GET /notifications/global returns the global notification"() {
++    given:
++    def global = makeNotification()
++    global.put("type", "global")
++    notificationDAO.getGlobal() >> global
++
++    expect:
++    mockMvc.perform(get("/notifications/global"))
++      .andExpect(status().isOk())
++  }
++
++  def "POST /notifications/global saves the global notification"() {
++    given:
++    def notification = makeNotification()
++
++    when:
++    def result = mockMvc.perform(
++      post("/notifications/global")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(notification))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * notificationDAO.saveGlobal(_)
++  }
++
++  def "GET /notifications/{type}/{name} retrieves notification for application"() {
++    given:
++    def notification = makeNotification("myapp")
++    notificationDAO.getGlobal() >> makeNotification()
++    notificationDAO.get(HierarchicalLevel.APPLICATION, "myapp") >> notification
++
++    expect:
++    mockMvc.perform(get("/notifications/application/myapp"))
++      .andExpect(status().isOk())
++  }
++
++  def "GET /notifications/{type}/{name} returns 400 for unknown type"() {
++    expect:
++    mockMvc.perform(get("/notifications/unknowntype/myapp"))
++      .andExpect(status().isBadRequest())
++  }
++
++  def "POST /notifications/{type}/{name} saves a notification for an application"() {
++    given:
++    def notification = makeNotification("myapp")
++    notificationDAO.getGlobal() >> makeNotification()
++    notificationDAO.get(HierarchicalLevel.APPLICATION, "myapp") >> notification
++
++    when:
++    def result = mockMvc.perform(
++      post("/notifications/application/myapp")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(notification))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * notificationDAO.save(HierarchicalLevel.APPLICATION, "myapp", _)
++  }
++
++  def "POST /notifications/batchUpdate processes multiple notifications"() {
++    given:
++    def notifications = [makeNotification("app1"), makeNotification("app2")]
++    notifications.each { it.put("application", it.get("application")) }
++    notificationDAO.get(_, _) >> makeNotification()
++
++    when:
++    def result = mockMvc.perform(
++      post("/notifications/batchUpdate")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(notifications))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "DELETE /notifications/{type}/{name} deletes a notification"() {
++    when:
++    def result = mockMvc.perform(delete("/notifications/application/myapp"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * notificationDAO.delete(HierarchicalLevel.APPLICATION, "myapp")
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PermissionsControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PermissionsControllerSpec.groovy
+new file mode 100644
+index 00000000..5e0c2aff
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PermissionsControllerSpec.groovy
+@@ -0,0 +1,129 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.fiat.model.resources.Permissions
++import com.netflix.spinnaker.front50.ApplicationPermissionsService
++import com.netflix.spinnaker.front50.model.application.Application
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class PermissionsControllerSpec extends Specification {
++
++  ApplicationPermissionsService permissionsService = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  PermissionsController controller
++
++  void setup() {
++    controller = new PermissionsController(permissionsService)
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makePermission(String appName) {
++    def perm = new Application.Permission()
++    perm.name = appName
++    perm.permissions = Permissions.factory([:])
++    return perm
++  }
++
++  def "GET /permissions/applications returns all application permissions"() {
++    given:
++    def permissions = [makePermission("app1"), makePermission("app2")] as Set
++    permissionsService.getAllApplicationPermissions() >> permissions
++
++    expect:
++    mockMvc.perform(get("/permissions/applications"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /permissions/applications/{appName} returns permission for a specific app"() {
++    given:
++    def perm = makePermission("myapp")
++    permissionsService.getApplicationPermission("myapp") >> perm
++
++    expect:
++    mockMvc.perform(get("/permissions/applications/myapp"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("myapp"))
++  }
++
++  def "GET /permissions/applications/{appName} returns 404 when app not found"() {
++    given:
++    permissionsService.getApplicationPermission("noexist") >> { throw new NotFoundException("not found") }
++
++    expect:
++    mockMvc.perform(get("/permissions/applications/noexist"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "POST /permissions/applications creates a new application permission"() {
++    given:
++    def perm = makePermission("newapp")
++    permissionsService.createApplicationPermission(_) >> perm
++
++    when:
++    def result = mockMvc.perform(
++      post("/permissions/applications")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(perm))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("newapp"))
++  }
++
++  def "PUT /permissions/applications/{appName} updates an existing permission"() {
++    given:
++    def perm = makePermission("myapp")
++    permissionsService.updateApplicationPermission(_, _, _) >> perm
++
++    when:
++    def result = mockMvc.perform(
++      put("/permissions/applications/myapp")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(perm))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("myapp"))
++  }
++
++  def "DELETE /permissions/applications/{appName} deletes a permission"() {
++    when:
++    def result = mockMvc.perform(delete("/permissions/applications/myapp"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * permissionsService.deleteApplicationPermission("myapp")
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PipelineControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PipelineControllerSpec.groovy
+new file mode 100644
+index 00000000..9d7a1247
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PipelineControllerSpec.groovy
+@@ -0,0 +1,292 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.fiat.shared.FiatPermissionEvaluator
++import com.netflix.spinnaker.front50.ServiceAccountsService
++import com.netflix.spinnaker.front50.api.model.pipeline.Pipeline
++import com.netflix.spinnaker.front50.api.validator.PipelineValidator
++import com.netflix.spinnaker.front50.config.controllers.PipelineControllerConfig
++import com.netflix.spinnaker.front50.model.pipeline.PipelineDAO
++import com.netflix.spinnaker.front50.model.pipeline.PipelineTemplateDAO
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class PipelineControllerSpec extends Specification {
++
++  PipelineDAO pipelineDAO = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  ServiceAccountsService serviceAccountsService = Mock()
++  FiatPermissionEvaluator fiatPermissionEvaluator = Mock()
++  AuthorizationSupport authorizationSupport = Mock()
++  PipelineControllerConfig pipelineControllerConfig = new PipelineControllerConfig()
++  MockMvc mockMvc
++
++  @Subject
++  PipelineController controller
++
++  void setup() {
++    authorizationSupport.hasRunAsUserPermission(_) >> true
++
++    controller = new PipelineController(
++      pipelineDAO,
++      objectMapper,
++      Optional.of(serviceAccountsService),
++      [],
++      Optional.empty(),
++      pipelineControllerConfig,
++      fiatPermissionEvaluator,
++      authorizationSupport
++    )
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makePipeline(String application, String name, String id = null) {
++    def p = new Pipeline()
++    p.application = application
++    p.name = name
++    p.id = id ?: UUID.randomUUID().toString()
++    return p
++  }
++
++  def "GET /pipelines/{application} lists pipelines for an application"() {
++    given:
++    def pipelines = [makePipeline("myapp", "pipe-a"), makePipeline("myapp", "pipe-b")]
++    pipelineDAO.getPipelinesByApplication("myapp", null, true) >> pipelines
++
++    expect:
++    mockMvc.perform(get("/pipelines/myapp"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++      .andExpect(jsonPath('$[0].application').value("myapp"))
++  }
++
++  def "GET /pipelines/{application} returns empty list for unknown application"() {
++    given:
++    pipelineDAO.getPipelinesByApplication("unknown", null, true) >> []
++
++    expect:
++    mockMvc.perform(get("/pipelines/unknown"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(0))
++  }
++
++  def "GET /pipelines/{application}?pipelineNameFilter filters pipelines by name"() {
++    given:
++    def pipelines = [makePipeline("myapp", "matching-pipe")]
++    pipelineDAO.getPipelinesByApplication("myapp", "matching", true) >> pipelines
++
++    expect:
++    mockMvc.perform(get("/pipelines/myapp").param("pipelineNameFilter", "matching"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /pipelines/{id}/history returns version history"() {
++    given:
++    def history = [makePipeline("myapp", "pipe-a"), makePipeline("myapp", "pipe-a")]
++    pipelineDAO.history("pipe-id", 20) >> history
++
++    expect:
++    mockMvc.perform(get("/pipelines/pipe-id/history"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /pipelines/{id}/get returns pipeline by id"() {
++    given:
++    def pipeline = makePipeline("myapp", "my-pipeline", "pipe-id")
++    pipelineDAO.findById("pipe-id") >> pipeline
++
++    expect:
++    mockMvc.perform(get("/pipelines/pipe-id/get"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("my-pipeline"))
++  }
++
++  def "GET /pipelines/{id}/get returns 404 when pipeline not found"() {
++    given:
++    pipelineDAO.findById("nonexistent") >> { throw new NotFoundException("not found") }
++
++    expect:
++    mockMvc.perform(get("/pipelines/nonexistent/get"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "GET /pipelines/{application}/name/{name} returns pipeline by app and name"() {
++    given:
++    def pipeline = makePipeline("myapp", "my-pipeline")
++    pipelineDAO.getPipelineByName("myapp", "my-pipeline", true) >> pipeline
++
++    expect:
++    mockMvc.perform(get("/pipelines/myapp/name/my-pipeline"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("my-pipeline"))
++  }
++
++  def "GET /pipelines lists all pipelines"() {
++    given:
++    def pipelines = [makePipeline("app1", "p1"), makePipeline("app2", "p2")]
++    pipelineDAO.all(true) >> pipelines
++
++    expect:
++    mockMvc.perform(get("/pipelines").param("restricted", "false"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /pipelines filters by enabledPipelines=true returns only enabled pipelines"() {
++    given:
++    def enabled = makePipeline("myapp", "enabled-pipe")
++    enabled.disabled = false
++    def disabled = makePipeline("myapp", "disabled-pipe")
++    disabled.disabled = true
++
++    pipelineDAO.all(true) >> [enabled, disabled]
++
++    expect:
++    // With enabledTriggers filtering applied alongside enabledPipelines, only pipelines with triggers are returned
++    // Since these pipelines have no triggers, the result will be empty
++    mockMvc.perform(get("/pipelines").param("restricted", "false").param("enabledPipelines", "true"))
++      .andExpect(status().isOk())
++  }
++
++  def "POST /pipelines saves a new pipeline"() {
++    given:
++    def pipeline = makePipeline("myapp", "new-pipeline")
++    pipeline.id = null
++    pipelineDAO.getPipelinesByApplication("myapp", true) >> []
++    pipelineDAO.create(_, _) >> pipeline
++
++    when:
++    def result = mockMvc.perform(
++      post("/pipelines")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(pipeline))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "POST /pipelines returns 400 when pipeline is missing required fields"() {
++    given:
++    def invalidPipeline = new Pipeline()
++    // No application, no name
++
++    expect:
++    mockMvc.perform(
++      post("/pipelines")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(invalidPipeline))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "POST /pipelines returns 400 when duplicate pipeline exists"() {
++    given:
++    def existing = makePipeline("myapp", "existing-pipeline", "existing-id")
++    def newPipeline = makePipeline("myapp", "existing-pipeline")
++    newPipeline.id = null
++
++    pipelineDAO.getPipelinesByApplication("myapp", true) >> [existing]
++
++    expect:
++    mockMvc.perform(
++      post("/pipelines")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(newPipeline))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "PUT /pipelines/{id} updates an existing pipeline"() {
++    given:
++    def existing = makePipeline("myapp", "my-pipeline", "pipe-id")
++    def updated = makePipeline("myapp", "my-pipeline", "pipe-id")
++    updated.email = "updated@example.com"
++
++    pipelineDAO.findById("pipe-id") >> existing
++    pipelineDAO.getPipelinesByApplication("myapp", true) >> [existing]
++
++    when:
++    def result = mockMvc.perform(
++      put("/pipelines/pipe-id")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(updated))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * pipelineDAO.update("pipe-id", _)
++  }
++
++  def "PUT /pipelines/{id} returns 400 when pipeline ids mismatch"() {
++    given:
++    def existing = makePipeline("myapp", "my-pipeline", "original-id")
++    def updated = makePipeline("myapp", "my-pipeline", "different-id")
++
++    pipelineDAO.findById("original-id") >> existing
++
++    expect:
++    mockMvc.perform(
++      put("/pipelines/original-id")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(updated))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "DELETE /pipelines/{application}/{pipeline} deletes a pipeline"() {
++    given:
++    pipelineDAO.getPipelineId("myapp", "my-pipeline") >> "pipe-id"
++
++    when:
++    def result = mockMvc.perform(delete("/pipelines/myapp/my-pipeline"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * pipelineDAO.delete("pipe-id")
++  }
++
++  def "POST /pipelines/batchUpdate returns statistics about successful and failed pipelines"() {
++    given:
++    def p1 = [application: "app1", name: "pipeline1", id: UUID.randomUUID().toString()]
++    def p2 = [application: "app2", name: "pipeline2", id: UUID.randomUUID().toString()]
++
++    pipelineDAO.all(false) >> []
++
++    when:
++    def result = mockMvc.perform(
++      post("/pipelines/batchUpdate")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString([p1, p2]))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.successful_pipelines_count').exists())
++      .andExpect(jsonPath('$.failed_pipelines_count').exists())
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PluginInfoControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PluginInfoControllerSpec.groovy
+new file mode 100644
+index 00000000..e178cb18
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/PluginInfoControllerSpec.groovy
+@@ -0,0 +1,193 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.front50.model.plugins.PluginInfo
++import com.netflix.spinnaker.front50.model.plugins.PluginInfoService
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class PluginInfoControllerSpec extends Specification {
++
++  PluginInfoService pluginInfoService = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  PluginInfoController controller
++
++  void setup() {
++    controller = new PluginInfoController(pluginInfoService)
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makePluginInfo(String id, String service = "orca") {
++    def info = new PluginInfo()
++    info.id = id
++    info.description = "test plugin"
++    info.provider = "test-provider"
++    info.releases = []
++    return info
++  }
++
++  def makeRelease(String version) {
++    def release = new PluginInfo.Release()
++    release.version = version
++    release.date = "2024-01-01"
++    release.requires = "orca>=1.0.0"
++    release.preferred = false
++    return release
++  }
++
++  def "GET /pluginInfo returns all plugin infos"() {
++    given:
++    def plugins = [makePluginInfo("com.example.plugin1"), makePluginInfo("com.example.plugin2")]
++    pluginInfoService.findAll() >> plugins
++
++    expect:
++    mockMvc.perform(get("/pluginInfo"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /pluginInfo?service=orca filters by service"() {
++    given:
++    def plugins = [makePluginInfo("com.example.plugin1")]
++    pluginInfoService.findAllByService("orca") >> plugins
++
++    expect:
++    mockMvc.perform(get("/pluginInfo").param("service", "orca"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /pluginInfo/{id} returns plugin info by id"() {
++    given:
++    def plugin = makePluginInfo("com.example.myplugin")
++    pluginInfoService.findById("com.example.myplugin") >> plugin
++
++    expect:
++    mockMvc.perform(get("/pluginInfo/com.example.myplugin"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.id').value("com.example.myplugin"))
++  }
++
++  def "GET /pluginInfo/{id} returns 404 when plugin not found"() {
++    given:
++    pluginInfoService.findById("unknown") >> { throw new NotFoundException("not found") }
++
++    expect:
++    mockMvc.perform(get("/pluginInfo/unknown"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "POST /pluginInfo creates or upserts a plugin info"() {
++    given:
++    def plugin = makePluginInfo("com.example.newplugin")
++    pluginInfoService.upsert(plugin) >> plugin
++
++    when:
++    def result = mockMvc.perform(
++      post("/pluginInfo")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(plugin))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.id').value("com.example.newplugin"))
++  }
++
++  def "DELETE /pluginInfo/{id} deletes a plugin info and returns 204"() {
++    when:
++    def result = mockMvc.perform(delete("/pluginInfo/com.example.myplugin"))
++
++    then:
++    result.andExpect(status().isNoContent())
++    1 * pluginInfoService.delete("com.example.myplugin")
++  }
++
++  def "POST /pluginInfo/{id}/releases adds a release to a plugin"() {
++    given:
++    def plugin = makePluginInfo("com.example.myplugin")
++    def release = makeRelease("1.0.0")
++    plugin.releases = [release]
++    pluginInfoService.createRelease("com.example.myplugin", _) >> plugin
++
++    when:
++    def result = mockMvc.perform(
++      post("/pluginInfo/com.example.myplugin/releases")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(release))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "PUT /pluginInfo/{id}/releases upserts a release (admin only)"() {
++    given:
++    def plugin = makePluginInfo("com.example.myplugin")
++    def release = makeRelease("1.0.0")
++    plugin.releases = [release]
++    pluginInfoService.upsertRelease("com.example.myplugin", _) >> plugin
++
++    when:
++    def result = mockMvc.perform(
++      put("/pluginInfo/com.example.myplugin/releases")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(release))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "PUT /pluginInfo/{id}/releases/{version}?preferred=true sets preferred flag"() {
++    given:
++    def release = makeRelease("1.0.0")
++    release.preferred = true
++    pluginInfoService.preferReleaseVersion("com.example.myplugin", "1.0.0", true) >> release
++
++    expect:
++    mockMvc.perform(
++      put("/pluginInfo/com.example.myplugin/releases/1.0.0")
++        .param("preferred", "true")
++    ).andExpect(status().isOk())
++  }
++
++  def "DELETE /pluginInfo/{id}/releases/{version} deletes a specific release"() {
++    given:
++    def plugin = makePluginInfo("com.example.myplugin")
++    pluginInfoService.deleteRelease("com.example.myplugin", "1.0.0") >> plugin
++
++    expect:
++    mockMvc.perform(
++      delete("/pluginInfo/com.example.myplugin/releases/1.0.0")
++    ).andExpect(status().isNoContent())
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/ServiceAccountsControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/ServiceAccountsControllerSpec.groovy
+new file mode 100644
+index 00000000..bd42dab9
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/ServiceAccountsControllerSpec.groovy
+@@ -0,0 +1,118 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.front50.ServiceAccountsService
++import com.netflix.spinnaker.front50.model.serviceaccount.ServiceAccount
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class ServiceAccountsControllerSpec extends Specification {
++
++  ServiceAccountsService serviceAccountsService = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  ServiceAccountsController controller
++
++  void setup() {
++    controller = new ServiceAccountsController(serviceAccountsService)
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makeServiceAccount(String name) {
++    def sa = new ServiceAccount()
++    sa.name = name
++    sa.memberOf = ["role1"]
++    return sa
++  }
++
++  def "GET /serviceAccounts returns all service accounts"() {
++    given:
++    def accounts = [makeServiceAccount("svc-a"), makeServiceAccount("svc-b")]
++    serviceAccountsService.getAllServiceAccounts() >> accounts
++
++    expect:
++    mockMvc.perform(get("/serviceAccounts"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /serviceAccounts returns empty set when no accounts exist"() {
++    given:
++    serviceAccountsService.getAllServiceAccounts() >> []
++
++    expect:
++    mockMvc.perform(get("/serviceAccounts"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(0))
++  }
++
++  def "POST /serviceAccounts creates a new service account"() {
++    given:
++    def account = makeServiceAccount("new-svc")
++    serviceAccountsService.createServiceAccount(_) >> account
++
++    when:
++    def result = mockMvc.perform(
++      post("/serviceAccounts")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(account))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("new-svc"))
++  }
++
++  def "POST /serviceAccounts with memberOf list creates account with roles"() {
++    given:
++    def account = makeServiceAccount("svc-with-roles")
++    account.memberOf = ["role-a", "role-b"]
++    serviceAccountsService.createServiceAccount(_) >> account
++
++    when:
++    def result = mockMvc.perform(
++      post("/serviceAccounts")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(account))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.memberOf.length()').value(2))
++  }
++
++  def "DELETE /serviceAccounts/{id} deletes a service account"() {
++    when:
++    def result = mockMvc.perform(delete("/serviceAccounts/svc-a"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * serviceAccountsService.deleteServiceAccount("svc-a")
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/StrategyControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/StrategyControllerSpec.groovy
+new file mode 100644
+index 00000000..363e649a
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/StrategyControllerSpec.groovy
+@@ -0,0 +1,189 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.front50.api.model.pipeline.Pipeline
++import com.netflix.spinnaker.front50.model.pipeline.PipelineStrategyDAO
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class StrategyControllerSpec extends Specification {
++
++  PipelineStrategyDAO pipelineStrategyDAO = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  StrategyController controller
++
++  void setup() {
++    controller = new StrategyController(pipelineStrategyDAO)
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makeStrategy(String application, String name, String id = null) {
++    def p = new Pipeline()
++    p.application = application
++    p.name = name
++    p.id = id ?: UUID.randomUUID().toString()
++    return p
++  }
++
++  def "GET /strategies lists all strategies"() {
++    given:
++    def strategies = [makeStrategy("app1", "strat-a"), makeStrategy("app2", "strat-b")]
++    pipelineStrategyDAO.all() >> strategies
++
++    expect:
++    mockMvc.perform(get("/strategies"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /strategies/{application} lists strategies for the given application"() {
++    given:
++    def strategies = [makeStrategy("myapp", "strat-1"), makeStrategy("myapp", "strat-2")]
++    pipelineStrategyDAO.getPipelinesByApplication("myapp") >> strategies
++
++    expect:
++    mockMvc.perform(get("/strategies/myapp"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(2))
++      .andExpect(jsonPath('$[0].application').value("myapp"))
++  }
++
++  def "GET /strategies/{application} returns empty list for unknown application"() {
++    given:
++    pipelineStrategyDAO.getPipelinesByApplication("unknown") >> []
++
++    expect:
++    mockMvc.perform(get("/strategies/unknown"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(0))
++  }
++
++  def "GET /strategies/{id}/history returns version history"() {
++    given:
++    def strategies = [makeStrategy("app1", "strat-a"), makeStrategy("app1", "strat-a")]
++    pipelineStrategyDAO.history("strat-id", 20) >> strategies
++
++    expect:
++    mockMvc.perform(get("/strategies/strat-id/history"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /strategies/{id}/history respects limit parameter"() {
++    when:
++    mockMvc.perform(get("/strategies/strat-id/history").param("limit", "5"))
++      .andExpect(status().isOk())
++
++    then:
++    1 * pipelineStrategyDAO.history("strat-id", 5) >> [makeStrategy("app1", "strat-a")]
++  }
++
++  def "POST /strategies saves a new strategy"() {
++    given:
++    def strategy = makeStrategy("myapp", "new-strategy")
++    pipelineStrategyDAO.getPipelinesByApplication("myapp") >> []
++    pipelineStrategyDAO.create(_, _) >> strategy
++
++    when:
++    def result = mockMvc.perform(
++      post("/strategies")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(strategy))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "POST /strategies rejects duplicate strategy name"() {
++    given:
++    def existing = makeStrategy("myapp", "existing-strategy", "existing-id")
++    def newStrategy = makeStrategy("myapp", "existing-strategy")
++    newStrategy.id = null  // new strategy has no id
++
++    pipelineStrategyDAO.getPipelinesByApplication("myapp") >> [existing]
++
++    expect:
++    mockMvc.perform(
++      post("/strategies")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(newStrategy))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "POST /strategies/batchUpdate performs batch import"() {
++    given:
++    def strategies = [makeStrategy("app1", "strat-a"), makeStrategy("app1", "strat-b")]
++
++    when:
++    def result = mockMvc.perform(
++      post("/strategies/batchUpdate")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(strategies))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * pipelineStrategyDAO.bulkImport(_)
++  }
++
++  def "PUT /strategies/{id} updates an existing strategy"() {
++    given:
++    def existing = makeStrategy("myapp", "my-strategy", "strat-id")
++    def updated = makeStrategy("myapp", "my-strategy", "strat-id")
++    updated.email = "updated@example.com"
++
++    pipelineStrategyDAO.findById("strat-id") >> existing
++    pipelineStrategyDAO.getPipelinesByApplication("myapp") >> []
++
++    when:
++    def result = mockMvc.perform(
++      put("/strategies/strat-id")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(updated))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * pipelineStrategyDAO.update("strat-id", _)
++  }
++
++  def "DELETE /strategies/{application}/{strategy} deletes a strategy"() {
++    given:
++    pipelineStrategyDAO.getPipelineId("myapp", "my-strategy") >> "strat-id"
++
++    when:
++    def result = mockMvc.perform(delete("/strategies/myapp/my-strategy"))
++
++    then:
++    result.andExpect(status().isOk())
++    1 * pipelineStrategyDAO.delete("strat-id")
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/TestExceptionHandler.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/TestExceptionHandler.groovy
+new file mode 100644
+index 00000000..b98a51ec
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/TestExceptionHandler.groovy
+@@ -0,0 +1,59 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers
++
++import com.netflix.spinnaker.front50.exception.BadRequestException
++import com.netflix.spinnaker.front50.exceptions.DuplicateEntityException
++import com.netflix.spinnaker.front50.exceptions.InvalidEntityException
++import com.netflix.spinnaker.front50.exceptions.InvalidRequestException
++import com.netflix.spinnaker.kork.web.exceptions.InvalidRequestException as KorkInvalidRequestException
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.http.HttpStatus
++import org.springframework.web.bind.annotation.ControllerAdvice
++import org.springframework.web.bind.annotation.ExceptionHandler
++import org.springframework.web.bind.annotation.ResponseStatus
++
++@ControllerAdvice
++class TestExceptionHandler {
++
++  @ExceptionHandler(NotFoundException)
++  @ResponseStatus(HttpStatus.NOT_FOUND)
++  void handleNotFound(NotFoundException e) {}
++
++  @ExceptionHandler(BadRequestException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleBadRequest(BadRequestException e) {}
++
++  @ExceptionHandler(InvalidRequestException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleFront50InvalidRequest(InvalidRequestException e) {}
++
++  @ExceptionHandler(KorkInvalidRequestException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleKorkInvalidRequest(KorkInvalidRequestException e) {}
++
++  @ExceptionHandler(DuplicateEntityException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleDuplicateEntity(DuplicateEntityException e) {}
++
++  @ExceptionHandler(InvalidEntityException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleInvalidEntity(InvalidEntityException e) {}
++
++  @ExceptionHandler(IllegalArgumentException)
++  @ResponseStatus(HttpStatus.BAD_REQUEST)
++  void handleIllegalArgument(IllegalArgumentException e) {}
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/v2/ApplicationsControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/v2/ApplicationsControllerSpec.groovy
+new file mode 100644
+index 00000000..6a1ad7ad
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/v2/ApplicationsControllerSpec.groovy
+@@ -0,0 +1,272 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers.v2
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.fiat.shared.FiatService
++import com.netflix.spinnaker.fiat.shared.FiatStatus
++import com.netflix.spinnaker.front50.config.FiatConfigurationProperties
++import com.netflix.spinnaker.front50.controllers.TestExceptionHandler
++import com.netflix.spinnaker.front50.exception.ApplicationAlreadyExistsException
++import com.netflix.spinnaker.front50.model.application.Application
++import com.netflix.spinnaker.front50.model.application.ApplicationDAO
++import com.netflix.spinnaker.front50.model.application.ApplicationPermissionDAO
++import com.netflix.spinnaker.front50.model.application.ApplicationService
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.context.MessageSource
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class ApplicationsControllerSpec extends Specification {
++
++  MessageSource messageSource = Mock()
++  ApplicationDAO applicationDAO = Mock()
++  ApplicationPermissionDAO applicationPermissionDAO = Mock()
++  FiatService fiatService = Mock()
++  FiatConfigurationProperties fiatConfigurationProperties = Mock()
++  FiatStatus fiatStatus = Mock()
++  ApplicationService applicationService = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  ApplicationsController controller
++
++  void setup() {
++    fiatStatus.isEnabled() >> false
++
++    controller = new ApplicationsController(
++      messageSource,
++      applicationDAO,
++      Optional.of(applicationPermissionDAO),
++      Optional.of(fiatService),
++      fiatConfigurationProperties,
++      fiatStatus,
++      applicationService
++    )
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makeApp(String name) {
++    def app = new Application()
++    app.name = name
++    app.email = "${name}@example.com"
++    return app
++  }
++
++  def "GET /v2/applications returns all applications sorted by name"() {
++    given:
++    def apps = [makeApp("BRAVO"), makeApp("ALPHA")]
++    applicationDAO.all() >> apps
++    applicationPermissionDAO.all() >> []
++
++    expect:
++    mockMvc.perform(get("/v2/applications").param("restricted", "false"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++      .andExpect(jsonPath('$[0].name').value("ALPHA"))
++      .andExpect(jsonPath('$[1].name').value("BRAVO"))
++  }
++
++  def "GET /v2/applications?pageSize=1 limits results"() {
++    given:
++    def apps = [makeApp("ALPHA"), makeApp("BRAVO"), makeApp("CHARLIE")]
++    applicationDAO.all() >> apps
++    applicationPermissionDAO.all() >> []
++
++    expect:
++    mockMvc.perform(get("/v2/applications").param("restricted", "false").param("pageSize", "1"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /v2/applications?name=myapp searches by attribute"() {
++    given:
++    def apps = [makeApp("MYAPP")]
++    applicationDAO.search(["name": "myapp"]) >> apps
++    applicationPermissionDAO.all() >> []
++
++    expect:
++    mockMvc.perform(get("/v2/applications").param("restricted", "false").param("name", "myapp"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /v2/applications/{name} returns a specific application"() {
++    given:
++    def app = makeApp("MYAPP")
++    applicationDAO.findByName("MYAPP") >> app
++    applicationPermissionDAO.findById("MYAPP") >> { throw new NotFoundException("not found") }
++
++    expect:
++    mockMvc.perform(get("/v2/applications/MYAPP"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("MYAPP"))
++  }
++
++  def "GET /v2/applications/{name} returns 404 when not found"() {
++    given:
++    applicationDAO.findByName("NOEXIST") >> { throw new NotFoundException("not found") }
++
++    expect:
++    mockMvc.perform(get("/v2/applications/NOEXIST"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "GET /v2/applications/{name}/history returns application history"() {
++    given:
++    def history = [makeApp("MYAPP"), makeApp("MYAPP")]
++    applicationDAO.history("myapp", 20) >> history
++
++    expect:
++    mockMvc.perform(get("/v2/applications/myapp/history"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /v2/applications/{name}/history respects limit parameter"() {
++    when:
++    mockMvc.perform(get("/v2/applications/myapp/history").param("limit", "5"))
++      .andExpect(status().isOk())
++
++    then:
++    1 * applicationDAO.history("myapp", 5) >> [makeApp("MYAPP")]
++  }
++
++  def "POST /v2/applications creates a new application"() {
++    given:
++    def app = makeApp("NEWAPP")
++    applicationService.findByName("NEWAPP") >> null
++    applicationService.save(_) >> app
++
++    when:
++    def result = mockMvc.perform(
++      post("/v2/applications")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(app))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("NEWAPP"))
++  }
++
++  def "POST /v2/applications returns 400 when application already exists"() {
++    given:
++    def app = makeApp("EXISTING")
++    applicationService.findByName("EXISTING") >> app
++    // The controller throws ApplicationAlreadyExistsException
++    applicationService.save(_) >> { throw new ApplicationAlreadyExistsException() }
++
++    expect:
++    mockMvc.perform(
++      post("/v2/applications")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(app))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "PATCH /v2/applications/{name} updates an existing application"() {
++    given:
++    def app = makeApp("MYAPP")
++    app.email = "updated@example.com"
++    applicationService.save(app) >> app
++
++    when:
++    def result = mockMvc.perform(
++      patch("/v2/applications/MYAPP")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(app))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "PATCH /v2/applications/{name} returns 400 when name in body does not match path"() {
++    given:
++    def app = makeApp("DIFFERENTAPP")
++
++    expect:
++    mockMvc.perform(
++      patch("/v2/applications/MYAPP")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(app))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "PUT /v2/applications/{name} replaces an existing application"() {
++    given:
++    def app = makeApp("MYAPP")
++    applicationService.replace(app) >> app
++
++    when:
++    def result = mockMvc.perform(
++      put("/v2/applications/MYAPP")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(app))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++  }
++
++  def "PUT /v2/applications/{name} returns 400 when name mismatch"() {
++    given:
++    def app = makeApp("DIFFERENTAPP")
++
++    expect:
++    mockMvc.perform(
++      put("/v2/applications/MYAPP")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(app))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "DELETE /v2/applications/{name} deletes an application and returns 204"() {
++    when:
++    def result = mockMvc.perform(delete("/v2/applications/MYAPP"))
++
++    then:
++    result.andExpect(status().isNoContent())
++    1 * applicationService.delete("MYAPP")
++  }
++
++  def "POST /v2/applications/batch/applications bulk imports applications"() {
++    given:
++    def apps = [makeApp("APP1"), makeApp("APP2")]
++
++    when:
++    def result = mockMvc.perform(
++      post("/v2/applications/batch/applications")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(apps))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * applicationDAO.bulkImport(_)
++  }
++}
+diff --git a/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/v2/ProjectsControllerSpec.groovy b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/v2/ProjectsControllerSpec.groovy
+new file mode 100644
+index 00000000..247e3694
+--- /dev/null
++++ b/front50/front50-web/src/test/groovy/com/netflix/spinnaker/front50/controllers/v2/ProjectsControllerSpec.groovy
+@@ -0,0 +1,243 @@
++/*
++ * Copyright 2024 Netflix, Inc.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package com.netflix.spinnaker.front50.controllers.v2
++
++import com.fasterxml.jackson.databind.ObjectMapper
++import com.netflix.spinnaker.front50.controllers.TestExceptionHandler
++import com.netflix.spinnaker.front50.model.project.Project
++import com.netflix.spinnaker.front50.model.project.ProjectDAO
++import com.netflix.spinnaker.kork.web.exceptions.NotFoundException
++import org.springframework.http.MediaType
++import org.springframework.test.web.servlet.MockMvc
++import org.springframework.test.web.servlet.setup.MockMvcBuilders
++import spock.lang.Specification
++import spock.lang.Subject
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*
++
++class ProjectsControllerSpec extends Specification {
++
++  ProjectDAO projectDAO = Mock()
++  ObjectMapper objectMapper = new ObjectMapper()
++  MockMvc mockMvc
++
++  @Subject
++  ProjectsController controller
++
++  void setup() {
++    controller = new ProjectsController(projectDAO)
++    mockMvc = MockMvcBuilders.standaloneSetup(controller)
++      .setControllerAdvice(new TestExceptionHandler())
++      .build()
++  }
++
++  def makeProject(String name, String id = null) {
++    def p = new Project()
++    p.name = name
++    p.id = id ?: UUID.randomUUID().toString()
++    def config = new Project.ProjectConfig()
++    config.applications = []
++    config.clusters = []
++    p.config = config
++    p.createTs = System.currentTimeMillis()
++    p.updateTs = System.currentTimeMillis()
++    return p
++  }
++
++  def "GET /v2/projects returns all projects"() {
++    given:
++    def projects = [makeProject("proj-a"), makeProject("proj-b")]
++    projectDAO.all() >> projects
++
++    expect:
++    mockMvc.perform(get("/v2/projects"))
++      .andExpect(status().isOk())
++      .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++      .andExpect(jsonPath('$.length()').value(2))
++  }
++
++  def "GET /v2/projects returns empty list when no projects exist"() {
++    given:
++    projectDAO.all() >> []
++
++    expect:
++    mockMvc.perform(get("/v2/projects"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(0))
++  }
++
++  def "GET /v2/projects?pageSize=1 limits results"() {
++    given:
++    def projects = [makeProject("proj-a"), makeProject("proj-b"), makeProject("proj-c")]
++    projectDAO.all() >> projects
++
++    expect:
++    mockMvc.perform(get("/v2/projects").param("pageSize", "1"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++  }
++
++  def "GET /v2/projects/search returns matching projects by name"() {
++    given:
++    def p1 = makeProject("myProject")
++    def p2 = makeProject("otherProject")
++    projectDAO.all() >> [p1, p2]
++
++    expect:
++    mockMvc.perform(get("/v2/projects/search").param("q", "myProject"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(1))
++      .andExpect(jsonPath('$[0].name').value("myProject"))
++  }
++
++  def "GET /v2/projects/search returns empty when no match"() {
++    given:
++    projectDAO.all() >> [makeProject("unrelated")]
++
++    expect:
++    mockMvc.perform(get("/v2/projects/search").param("q", "nomatch"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.length()').value(0))
++  }
++
++  def "GET /v2/projects/{id} returns project by name first"() {
++    given:
++    def project = makeProject("myProject", "abc-123")
++    projectDAO.findByName("myProject") >> project
++
++    expect:
++    mockMvc.perform(get("/v2/projects/myProject"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("myProject"))
++  }
++
++  def "GET /v2/projects/{id} falls back to findById when name lookup fails"() {
++    given:
++    def project = makeProject("myProject", "abc-123")
++    projectDAO.findByName("abc-123") >> { throw new NotFoundException("not found") }
++    projectDAO.findById("abc-123") >> project
++
++    expect:
++    mockMvc.perform(get("/v2/projects/abc-123"))
++      .andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("myProject"))
++  }
++
++  def "GET /v2/projects/{id} returns 404 when project not found at all"() {
++    given:
++    projectDAO.findByName("noexist") >> { throw new NotFoundException("not found") }
++    projectDAO.findById("noexist") >> { throw new NotFoundException("not found") }
++
++    expect:
++    mockMvc.perform(get("/v2/projects/noexist"))
++      .andExpect(status().isNotFound())
++  }
++
++  def "POST /v2/projects creates a new project"() {
++    given:
++    def project = makeProject("newProject", "new-id")
++    projectDAO.findByName("newProject") >> { throw new NotFoundException("not found") }
++    projectDAO.create("new-id", _) >> project
++
++    when:
++    def result = mockMvc.perform(
++      post("/v2/projects")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(project))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++      .andExpect(jsonPath('$.name').value("newProject"))
++  }
++
++  def "POST /v2/projects returns 400 when project name already exists"() {
++    given:
++    def existing = makeProject("existingProject", "existing-id")
++    def newProject = makeProject("existingProject", "new-id")
++    projectDAO.findByName("existingProject") >> existing
++
++    expect:
++    mockMvc.perform(
++      post("/v2/projects")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(newProject))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "PUT /v2/projects/{id} updates an existing project"() {
++    given:
++    def existing = makeProject("existingProject", "project-id")
++    def updated = makeProject("existingProject", "project-id")
++    updated.email = "updated@example.com"
++
++    projectDAO.findById("project-id") >> existing
++    projectDAO.findByName("existingProject") >> existing
++
++    when:
++    def result = mockMvc.perform(
++      put("/v2/projects/project-id")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(updated))
++    )
++
++    then:
++    result.andExpect(status().isOk())
++    1 * projectDAO.update("project-id", _)
++  }
++
++  def "PUT /v2/projects/{id} returns 400 when renamed project name conflicts"() {
++    given:
++    def existing = makeProject("originalName", "project-id")
++    def conflicting = makeProject("conflictName", "other-id")
++    def updated = makeProject("conflictName", "project-id")
++
++    projectDAO.findById("project-id") >> existing
++    projectDAO.findByName("conflictName") >> conflicting
++
++    expect:
++    mockMvc.perform(
++      put("/v2/projects/project-id")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(updated))
++    ).andExpect(status().isBadRequest())
++  }
++
++  def "DELETE /v2/projects/{id} deletes a project and returns 202"() {
++    when:
++    mockMvc.perform(delete("/v2/projects/project-id"))
++      .andExpect(status().isAccepted())
++
++    then:
++    1 * projectDAO.delete("project-id")
++  }
++
++  def "POST /v2/projects/batchUpdate bulk imports projects and returns 202"() {
++    given:
++    def projects = [makeProject("p1"), makeProject("p2")]
++
++    when:
++    mockMvc.perform(
++      post("/v2/projects/batchUpdate")
++        .contentType(MediaType.APPLICATION_JSON)
++        .content(objectMapper.writeValueAsString(projects))
++    ).andExpect(status().isAccepted())
++
++    then:
++    1 * projectDAO.bulkImport(_)
++  }
++}

@@ -1,0 +1,692 @@
+{
+  "scope": "endpoints_and_api_tests",
+  "api_test_count": 3998,
+  "resource_count": 308,
+  "tested": {
+    "count": 223,
+    "total": 308,
+    "proportion": 0.724025974025974
+  },
+  "lifecycle_label_distribution": {
+    "scope": "test_resource_pairs",
+    "pair_count": 8978,
+    "labels": {
+      "read-only": {
+        "count": 2001,
+        "pct": 22.28781465805302
+      },
+      "create-and-trust": {
+        "count": 4617,
+        "pct": 51.425707284473155
+      },
+      "create-verify": {
+        "count": 1152,
+        "pct": 12.83136556025841
+      },
+      "create-update-verify": {
+        "count": 3,
+        "pct": 0.033415014479839605
+      },
+      "create-verify-cleanup": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "delete-verify": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "full-crud": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "write-only": {
+        "count": 612,
+        "pct": 6.81666295388728
+      },
+      "other": {
+        "count": 593,
+        "pct": 6.605034528848296
+      }
+    }
+  },
+  "per_test": {
+    "scope": "api_tests_with_resource_sequences",
+    "test_count": 3991,
+    "labels": {
+      "read-only": {
+        "test_count": 1615,
+        "pct_of_tests": 40.466048609371086
+      },
+      "create-and-trust": {
+        "test_count": 2745,
+        "pct_of_tests": 68.77975444750689
+      },
+      "create-verify": {
+        "test_count": 784,
+        "pct_of_tests": 19.64419944875971
+      },
+      "create-update-verify": {
+        "test_count": 3,
+        "pct_of_tests": 0.07516913054372337
+      },
+      "create-verify-cleanup": {
+        "test_count": 0,
+        "pct_of_tests": 0.0
+      },
+      "delete-verify": {
+        "test_count": 0,
+        "pct_of_tests": 0.0
+      },
+      "full-crud": {
+        "test_count": 0,
+        "pct_of_tests": 0.0
+      },
+      "write-only": {
+        "test_count": 537,
+        "pct_of_tests": 13.455274367326485
+      },
+      "other": {
+        "test_count": 486,
+        "pct_of_tests": 12.177399148083188
+      }
+    },
+    "multiple_distinct_label_tests": {
+      "count": 1722,
+      "total": 3991,
+      "proportion": 0.4314708093209722
+    },
+    "has_read_after_write": {
+      "count": 788,
+      "total": 3991,
+      "proportion": 0.1974442495615134
+    },
+    "has_cleanup_delete": {
+      "count": 8,
+      "total": 3991,
+      "proportion": 0.0020045101478326235
+    }
+  },
+  "resource_count_per_test": {
+    "scope": "api_tests",
+    "distribution": {
+      "count": 3998,
+      "min": 0.0,
+      "max": 10.0,
+      "mean": 2.2456228114057026,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 2.0,
+      "p90": 6.0
+    },
+    "tests_with_multiple_resources": {
+      "count": 2245,
+      "total": 3998,
+      "proportion": 0.5615307653826913
+    }
+  },
+  "http_method_distribution": {
+    "scope": "http_dispatch_events",
+    "request_count": 11242,
+    "methods": {
+      "GET": {
+        "count": 3760,
+        "pct": 33.44600604874577
+      },
+      "HEAD": {
+        "count": 3,
+        "pct": 0.02668564312399929
+      },
+      "POST": {
+        "count": 6778,
+        "pct": 60.29176303148906
+      },
+      "PUT": {
+        "count": 425,
+        "pct": 3.7804661092332323
+      },
+      "PATCH": {
+        "count": 25,
+        "pct": 0.22238035936666073
+      },
+      "DELETE": {
+        "count": 238,
+        "pct": 2.1170610211706102
+      },
+      "OPTIONS": {
+        "count": 13,
+        "pct": 0.11563778687066359
+      },
+      "TRACE": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "CONNECT": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "UNKNOWN": {
+        "count": 0,
+        "pct": 0.0
+      }
+    }
+  },
+  "crud_operation_distribution": {
+    "scope": "crud_mapped_http_dispatch_events",
+    "request_count": 11229,
+    "operations": {
+      "create": {
+        "count": 6778,
+        "pct": 60.36156380799715
+      },
+      "read": {
+        "count": 3763,
+        "pct": 33.511443583578234
+      },
+      "update": {
+        "count": 450,
+        "pct": 4.007480630510286
+      },
+      "delete": {
+        "count": 238,
+        "pct": 2.1195119779143288
+      }
+    }
+  },
+  "exercised_completeness": {
+    "among_tested": {
+      "count": 222,
+      "min": 0.5,
+      "max": 1.0,
+      "mean": 0.972972972972973,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "p90": 1.0
+    }
+  },
+  "availability_profile_distribution": {
+    "scope": "production_resources",
+    "resource_count": 308,
+    "crud_capable_resource_count": 305,
+    "no_crud_operation_resource_count": 3,
+    "combinations": {
+      "create-only": {
+        "operations": [
+          "create"
+        ],
+        "count": 39,
+        "pct": 12.78688524590164
+      },
+      "read-only": {
+        "operations": [
+          "read"
+        ],
+        "count": 60,
+        "pct": 19.672131147540984
+      },
+      "update-only": {
+        "operations": [
+          "update"
+        ],
+        "count": 4,
+        "pct": 1.3114754098360655
+      },
+      "delete-only": {
+        "operations": [
+          "delete"
+        ],
+        "count": 2,
+        "pct": 0.6557377049180327
+      },
+      "create-read": {
+        "operations": [
+          "create",
+          "read"
+        ],
+        "count": 168,
+        "pct": 55.08196721311475
+      },
+      "create-update": {
+        "operations": [
+          "create",
+          "update"
+        ],
+        "count": 3,
+        "pct": 0.9836065573770492
+      },
+      "create-delete": {
+        "operations": [
+          "create",
+          "delete"
+        ],
+        "count": 2,
+        "pct": 0.6557377049180327
+      },
+      "read-update": {
+        "operations": [
+          "read",
+          "update"
+        ],
+        "count": 2,
+        "pct": 0.6557377049180327
+      },
+      "read-delete": {
+        "operations": [
+          "read",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "update-delete": {
+        "operations": [
+          "update",
+          "delete"
+        ],
+        "count": 2,
+        "pct": 0.6557377049180327
+      },
+      "create-read-update": {
+        "operations": [
+          "create",
+          "read",
+          "update"
+        ],
+        "count": 1,
+        "pct": 0.32786885245901637
+      },
+      "create-read-delete": {
+        "operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "count": 6,
+        "pct": 1.9672131147540983
+      },
+      "create-update-delete": {
+        "operations": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update-delete": {
+        "operations": [
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 1,
+        "pct": 0.32786885245901637
+      },
+      "create-read-update-delete": {
+        "operations": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 15,
+        "pct": 4.918032786885246
+      }
+    }
+  },
+  "fully_exercised": {
+    "crud_capable_resource_count": 305,
+    "tested_resource_count": 222,
+    "fully_exercised_count": 209,
+    "not_fully_exercised_count": 96,
+    "pct_fully_exercised_of_capable": 68.52459016393442,
+    "pct_not_fully_exercised_of_capable": 31.475409836065573,
+    "pct_fully_exercised_of_tested": 94.14414414414415
+  },
+  "exercise_by_availability_breadth": {
+    "single_operation_available": {
+      "resource_count": 105,
+      "exercised_count": 74,
+      "exercised_rate": 0.7047619047619048,
+      "fully_exercised_count": 74,
+      "pct_fully_exercised_of_exercised": 100.0
+    },
+    "multi_operation_available": {
+      "resource_count": 200,
+      "exercised_count": 148,
+      "exercised_rate": 0.74,
+      "fully_exercised_count": 135,
+      "pct_fully_exercised_of_exercised": 91.21621621621621
+    },
+    "tested_composition": {
+      "tested_resource_count": 223,
+      "single_operation_available_count": 74,
+      "multi_operation_available_count": 148,
+      "no_crud_operation_available_count": 1,
+      "pct_single_operation_available": 33.18385650224215,
+      "pct_multi_operation_available": 66.3677130044843
+    }
+  },
+  "exercised_combination_when_full_crud_capable": {
+    "scope": "full_crud_capable_production_resources",
+    "capable_resource_count": 15,
+    "none_exercised_count": 8,
+    "none_exercised_pct": 53.333333333333336,
+    "tested_resource_count": 7,
+    "fully_exercised_count": 5,
+    "pct_fully_exercised_of_tested": 71.42857142857143,
+    "combinations": {
+      "create-only": {
+        "operations": [
+          "create"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-only": {
+        "operations": [
+          "read"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "update-only": {
+        "operations": [
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "delete-only": {
+        "operations": [
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read": {
+        "operations": [
+          "create",
+          "read"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-update": {
+        "operations": [
+          "create",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-delete": {
+        "operations": [
+          "create",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update": {
+        "operations": [
+          "read",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-delete": {
+        "operations": [
+          "read",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "update-delete": {
+        "operations": [
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update": {
+        "operations": [
+          "create",
+          "read",
+          "update"
+        ],
+        "count": 1,
+        "pct": 6.666666666666667
+      },
+      "create-read-delete": {
+        "operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "count": 1,
+        "pct": 6.666666666666667
+      },
+      "create-update-delete": {
+        "operations": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update-delete": {
+        "operations": [
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update-delete": {
+        "operations": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 5,
+        "pct": 33.333333333333336
+      }
+    }
+  },
+  "per_operation_exercise": {
+    "create": {
+      "available_resource_count": 234,
+      "exercised_resource_count": 173,
+      "rate": 0.7393162393162394
+    },
+    "read": {
+      "available_resource_count": 253,
+      "exercised_resource_count": 174,
+      "rate": 0.6877470355731226
+    },
+    "update": {
+      "available_resource_count": 28,
+      "exercised_resource_count": 15,
+      "rate": 0.5357142857142857
+    },
+    "delete": {
+      "available_resource_count": 28,
+      "exercised_resource_count": 11,
+      "rate": 0.39285714285714285
+    }
+  },
+  "read_only_when_writable": {
+    "writable_resource_count": 245,
+    "writable_tested_resource_count": 183,
+    "read_only_tested_count": 3,
+    "proportion_of_writable_tested": 0.01639344262295082
+  },
+  "full_crud_tested": {
+    "full_crud_capable_resource_count": 15,
+    "full_crud_tested_count": 0,
+    "proportion_of_capable": 0.0
+  },
+  "verb_resource_exercise": {
+    "scope": "production_resources_http_verb_view",
+    "availability_profile": {
+      "scope": "production_resources",
+      "resource_count": 308,
+      "verb_capable_resource_count": 305,
+      "no_verb_resource_count": 3,
+      "single_verb": {
+        "GET": {
+          "count": 60,
+          "pct": 19.672131147540984
+        },
+        "HEAD": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "POST": {
+          "count": 39,
+          "pct": 12.78688524590164
+        },
+        "PUT": {
+          "count": 4,
+          "pct": 1.3114754098360655
+        },
+        "PATCH": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "DELETE": {
+          "count": 2,
+          "pct": 0.6557377049180327
+        }
+      },
+      "expose_multiple_verbs": {
+        "count": 200,
+        "pct": 65.57377049180327
+      },
+      "multi_verb_profiles": {
+        "GET-POST": {
+          "verbs": [
+            "GET",
+            "POST"
+          ],
+          "count": 168,
+          "pct": 55.08196721311475
+        },
+        "GET-POST-PUT-DELETE": {
+          "verbs": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+          ],
+          "count": 15,
+          "pct": 4.918032786885246
+        },
+        "GET-POST-DELETE": {
+          "verbs": [
+            "GET",
+            "POST",
+            "DELETE"
+          ],
+          "count": 6,
+          "pct": 1.9672131147540983
+        },
+        "POST-PUT": {
+          "verbs": [
+            "POST",
+            "PUT"
+          ],
+          "count": 3,
+          "pct": 0.9836065573770492
+        },
+        "GET-PUT": {
+          "verbs": [
+            "GET",
+            "PUT"
+          ],
+          "count": 2,
+          "pct": 0.6557377049180327
+        },
+        "POST-DELETE": {
+          "verbs": [
+            "POST",
+            "DELETE"
+          ],
+          "count": 2,
+          "pct": 0.6557377049180327
+        },
+        "PUT-DELETE": {
+          "verbs": [
+            "PUT",
+            "DELETE"
+          ],
+          "count": 2,
+          "pct": 0.6557377049180327
+        },
+        "GET-POST-PUT": {
+          "verbs": [
+            "GET",
+            "POST",
+            "PUT"
+          ],
+          "count": 1,
+          "pct": 0.32786885245901637
+        },
+        "GET-PUT-DELETE": {
+          "verbs": [
+            "GET",
+            "PUT",
+            "DELETE"
+          ],
+          "count": 1,
+          "pct": 0.32786885245901637
+        }
+      }
+    },
+    "fully_exercised": {
+      "verb_capable_resource_count": 305,
+      "tested_resource_count": 222,
+      "fully_exercised_count": 209,
+      "not_fully_exercised_count": 96,
+      "pct_fully_exercised_of_capable": 68.52459016393442,
+      "pct_not_fully_exercised_of_capable": 31.475409836065573,
+      "pct_fully_exercised_of_tested": 94.14414414414415
+    },
+    "exercise_by_availability_breadth": {
+      "single_verb_available": {
+        "resource_count": 105,
+        "exercised_count": 74,
+        "exercised_rate": 0.7047619047619048,
+        "fully_exercised_count": 74,
+        "pct_fully_exercised_of_exercised": 100.0
+      },
+      "multi_verb_available": {
+        "resource_count": 200,
+        "exercised_count": 148,
+        "exercised_rate": 0.74,
+        "fully_exercised_count": 135,
+        "pct_fully_exercised_of_exercised": 91.21621621621621
+      }
+    },
+    "full_traversal_within_single_sequence": {
+      "scope": "multi_verb_resources_with_exercising_sequence",
+      "resource_count": 148,
+      "fully_traversed_count": 115,
+      "pct_fully_traversed_in_single_sequence": 77.70270270270271
+    },
+    "exercise_when_full_crud_capable": {
+      "scope": "full_crud_capable_production_resources",
+      "capable_resource_count": 15,
+      "tested_resource_count": 7,
+      "fully_exercised_count": 5,
+      "pct_fully_exercised_of_tested": 71.42857142857143
+    }
+  }
+}

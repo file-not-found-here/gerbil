@@ -1,0 +1,64 @@
+{
+  "scope": "resolved_test_resource_sequences",
+  "api_test_count": 89,
+  "resolved_sequence_count": 118,
+  "unresolved_sequence_count": 1,
+  "total_sequence_count": 119,
+  "single_verb_sequence_count": 118,
+  "combinations": {
+    "GET-only": {
+      "verbs": [
+        "GET"
+      ],
+      "count": 77,
+      "pct": 65.2542372881356
+    },
+    "HEAD-only": {
+      "verbs": [
+        "HEAD"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "POST-only": {
+      "verbs": [
+        "POST"
+      ],
+      "count": 32,
+      "pct": 27.11864406779661
+    },
+    "PUT-only": {
+      "verbs": [
+        "PUT"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "PATCH-only": {
+      "verbs": [
+        "PATCH"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "DELETE-only": {
+      "verbs": [
+        "DELETE"
+      ],
+      "count": 9,
+      "pct": 7.627118644067797
+    }
+  },
+  "multi_verb_combinations": {
+    "scope": "resolved_multi_verb_test_resource_sequences",
+    "multi_verb_sequence_count": 0,
+    "pct_of_resolved_sequences": 0.0,
+    "combinations": {},
+    "post_delete_pairing": {
+      "scope": "resolved_multi_verb_sequences_with_post",
+      "post_sequence_count": 0,
+      "paired_with_delete_count": 0,
+      "pct_paired_with_delete": null
+    }
+  }
+}

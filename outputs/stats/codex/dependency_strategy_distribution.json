@@ -1,0 +1,33 @@
+{
+  "scope": "api_tests",
+  "test_count": 89,
+  "strategy_split": {
+    "mocked": {
+      "test_count": 69,
+      "pct_of_tests": 77.52808988764045
+    },
+    "virtualized": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    },
+    "containerized": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    }
+  },
+  "multiple_strategy_tests": {
+    "count": 0,
+    "total": 89,
+    "proportion": 0.0
+  },
+  "strategy_label_count_per_test": {
+    "count": 89,
+    "min": 0.0,
+    "max": 1.0,
+    "mean": 0.7752808988764045,
+    "p25": 1.0,
+    "p50": 1.0,
+    "p75": 1.0,
+    "p90": 1.0
+  }
+}

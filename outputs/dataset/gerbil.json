@@ -1,0 +1,1407 @@
+{
+  "mode": "gerbil",
+  "gerbil": true,
+  "project_count": 350,
+  "projects": [
+    {
+      "name": "Apicurio_apicurio-registry",
+      "api_test_count": 95
+    },
+    {
+      "name": "ArcadeData_arcadedb",
+      "api_test_count": 3
+    },
+    {
+      "name": "AxonFramework_AxonFramework",
+      "api_test_count": 2
+    },
+    {
+      "name": "AzBuilder_terrakube",
+      "api_test_count": 90
+    },
+    {
+      "name": "Baeldung_spring-security-oauth",
+      "api_test_count": 44
+    },
+    {
+      "name": "Baeldung_spring-security-registration",
+      "api_test_count": 12
+    },
+    {
+      "name": "BaseXdb_basex",
+      "api_test_count": 91
+    },
+    {
+      "name": "Blazebit_blaze-persistence",
+      "api_test_count": 39
+    },
+    {
+      "name": "CodingDocs_springboot-guide",
+      "api_test_count": 6
+    },
+    {
+      "name": "Consensys_teku",
+      "api_test_count": 76
+    },
+    {
+      "name": "DSpace_DSpace",
+      "api_test_count": 3134
+    },
+    {
+      "name": "GIScience_openrouteservice",
+      "api_test_count": 331
+    },
+    {
+      "name": "GerritCodeReview_gerrit",
+      "api_test_count": 2
+    },
+    {
+      "name": "GoogleCloudPlatform_java-docs-samples",
+      "api_test_count": 36
+    },
+    {
+      "name": "GrailStack_Moss",
+      "api_test_count": 14
+    },
+    {
+      "name": "HotswapProjects_HotswapAgent",
+      "api_test_count": 3
+    },
+    {
+      "name": "IQSS_dataverse",
+      "api_test_count": 51
+    },
+    {
+      "name": "JanssenProject_jans",
+      "api_test_count": 295
+    },
+    {
+      "name": "JanusGraph_janusgraph",
+      "api_test_count": 24
+    },
+    {
+      "name": "Keyfactor_ejbca-ce",
+      "api_test_count": 181
+    },
+    {
+      "name": "LogNet_grpc-spring-boot-starter",
+      "api_test_count": 4
+    },
+    {
+      "name": "LuckPerms_LuckPerms",
+      "api_test_count": 1
+    },
+    {
+      "name": "MarquezProject_marquez",
+      "api_test_count": 25
+    },
+    {
+      "name": "Meituan-Dianping_octo-rpc",
+      "api_test_count": 1
+    },
+    {
+      "name": "NanoHttpd_nanohttpd",
+      "api_test_count": 55
+    },
+    {
+      "name": "NationalSecurityAgency_datawave",
+      "api_test_count": 36
+    },
+    {
+      "name": "Netflix_genie",
+      "api_test_count": 70
+    },
+    {
+      "name": "Netflix_suro",
+      "api_test_count": 3
+    },
+    {
+      "name": "Netflix_zuul",
+      "api_test_count": 12
+    },
+    {
+      "name": "OWASP_wrongsecrets",
+      "api_test_count": 63
+    },
+    {
+      "name": "OpenAPITools_openapi-generator",
+      "api_test_count": 11
+    },
+    {
+      "name": "OpenBAS-Platform_openbas",
+      "api_test_count": 407
+    },
+    {
+      "name": "OpenFeign_feign",
+      "api_test_count": 4
+    },
+    {
+      "name": "OpenLiberty_open-liberty",
+      "api_test_count": 3
+    },
+    {
+      "name": "PaladinCloud_CE",
+      "api_test_count": 111
+    },
+    {
+      "name": "PebbleTemplates_pebble",
+      "api_test_count": 14
+    },
+    {
+      "name": "PlaytikaOSS_testcontainers-spring-boot",
+      "api_test_count": 15
+    },
+    {
+      "name": "Project-Books_book-project",
+      "api_test_count": 14
+    },
+    {
+      "name": "QuickLyric_QuickLyric",
+      "api_test_count": 1
+    },
+    {
+      "name": "SmartBear_soapui",
+      "api_test_count": 1
+    },
+    {
+      "name": "SoftInstigate_restheart",
+      "api_test_count": 55
+    },
+    {
+      "name": "SpringCloud_spring-cloud-code",
+      "api_test_count": 1
+    },
+    {
+      "name": "SpringCloud_spring-cloud-gray",
+      "api_test_count": 1
+    },
+    {
+      "name": "StarRocks_starrocks",
+      "api_test_count": 71
+    },
+    {
+      "name": "Stirling-Tools_Stirling-PDF",
+      "api_test_count": 2
+    },
+    {
+      "name": "TaleLin_lin-cms-spring-boot",
+      "api_test_count": 36
+    },
+    {
+      "name": "TencentBlueKing_bk-job",
+      "api_test_count": 65
+    },
+    {
+      "name": "Tencent_spring-cloud-tencent",
+      "api_test_count": 3
+    },
+    {
+      "name": "Teradata_kylo",
+      "api_test_count": 24
+    },
+    {
+      "name": "TimefoldAI_timefold-solver",
+      "api_test_count": 15
+    },
+    {
+      "name": "TuGraph-family_tugraph-analytics",
+      "api_test_count": 2
+    },
+    {
+      "name": "WeBankBlockchain_WeEvent",
+      "api_test_count": 149
+    },
+    {
+      "name": "WeBankFinTech_DataSphereStudio",
+      "api_test_count": 3
+    },
+    {
+      "name": "XiaoMi_mone",
+      "api_test_count": 1
+    },
+    {
+      "name": "airsonic_airsonic",
+      "api_test_count": 10
+    },
+    {
+      "name": "aklivity_zilla",
+      "api_test_count": 1
+    },
+    {
+      "name": "alfio-event_alf.io",
+      "api_test_count": 2
+    },
+    {
+      "name": "alibaba_AGEIPort",
+      "api_test_count": 8
+    },
+    {
+      "name": "alibaba_COLA",
+      "api_test_count": 6
+    },
+    {
+      "name": "alibaba_SREWorks",
+      "api_test_count": 13
+    },
+    {
+      "name": "alibaba_Sentinel",
+      "api_test_count": 46
+    },
+    {
+      "name": "alibaba_arthas",
+      "api_test_count": 2
+    },
+    {
+      "name": "alibaba_fastjson",
+      "api_test_count": 69
+    },
+    {
+      "name": "alibaba_fastjson2",
+      "api_test_count": 12
+    },
+    {
+      "name": "alibaba_nacos",
+      "api_test_count": 152
+    },
+    {
+      "name": "alibaba_spring-ai-alibaba",
+      "api_test_count": 13
+    },
+    {
+      "name": "alibaba_spring-cloud-alibaba",
+      "api_test_count": 16
+    },
+    {
+      "name": "aliyun_aliyun-oss-java-sdk",
+      "api_test_count": 2
+    },
+    {
+      "name": "androidx_media",
+      "api_test_count": 28
+    },
+    {
+      "name": "ant-media_Ant-Media-Server",
+      "api_test_count": 62
+    },
+    {
+      "name": "aol_micro-server",
+      "api_test_count": 85
+    },
+    {
+      "name": "apache_activemq-artemis",
+      "api_test_count": 14
+    },
+    {
+      "name": "apache_bifromq",
+      "api_test_count": 1
+    },
+    {
+      "name": "apache_cloudstack",
+      "api_test_count": 1
+    },
+    {
+      "name": "apache_cxf",
+      "api_test_count": 216
+    },
+    {
+      "name": "apache_dolphinscheduler",
+      "api_test_count": 204
+    },
+    {
+      "name": "apache_doris",
+      "api_test_count": 17
+    },
+    {
+      "name": "apache_drill",
+      "api_test_count": 21
+    },
+    {
+      "name": "apache_druid",
+      "api_test_count": 2
+    },
+    {
+      "name": "apache_dubbo",
+      "api_test_count": 4
+    },
+    {
+      "name": "apache_dubbo-admin",
+      "api_test_count": 36
+    },
+    {
+      "name": "apache_dubbo-samples",
+      "api_test_count": 73
+    },
+    {
+      "name": "apache_dubbo-spring-boot-project",
+      "api_test_count": 2
+    },
+    {
+      "name": "apache_gobblin",
+      "api_test_count": 2
+    },
+    {
+      "name": "apache_gravitino",
+      "api_test_count": 547
+    },
+    {
+      "name": "apache_hertzbeat",
+      "api_test_count": 184
+    },
+    {
+      "name": "apache_incubator-hugegraph",
+      "api_test_count": 7
+    },
+    {
+      "name": "apache_incubator-kie-drools",
+      "api_test_count": 7
+    },
+    {
+      "name": "apache_incubator-kie-kogito-runtimes",
+      "api_test_count": 334
+    },
+    {
+      "name": "apache_incubator-kie-optaplanner",
+      "api_test_count": 9
+    },
+    {
+      "name": "apache_inlong",
+      "api_test_count": 35
+    },
+    {
+      "name": "apache_james-project",
+      "api_test_count": 1590
+    },
+    {
+      "name": "apache_jena",
+      "api_test_count": 6
+    },
+    {
+      "name": "apache_kylin",
+      "api_test_count": 567
+    },
+    {
+      "name": "apache_linkis",
+      "api_test_count": 25
+    },
+    {
+      "name": "apache_logging-flume",
+      "api_test_count": 12
+    },
+    {
+      "name": "apache_metron",
+      "api_test_count": 55
+    },
+    {
+      "name": "apache_nifi",
+      "api_test_count": 3
+    },
+    {
+      "name": "apache_paimon",
+      "api_test_count": 1
+    },
+    {
+      "name": "apache_parquet-java",
+      "api_test_count": 6
+    },
+    {
+      "name": "apache_pinot",
+      "api_test_count": 13
+    },
+    {
+      "name": "apache_pulsar",
+      "api_test_count": 23
+    },
+    {
+      "name": "apache_rocketmq-dashboard",
+      "api_test_count": 68
+    },
+    {
+      "name": "apache_seatunnel",
+      "api_test_count": 50
+    },
+    {
+      "name": "apache_seatunnel-web",
+      "api_test_count": 1
+    },
+    {
+      "name": "apache_servicecomb-pack",
+      "api_test_count": 25
+    },
+    {
+      "name": "apache_servicecomb-samples",
+      "api_test_count": 45
+    },
+    {
+      "name": "apache_shardingsphere-elasticjob",
+      "api_test_count": 1
+    },
+    {
+      "name": "apache_shenyu",
+      "api_test_count": 152
+    },
+    {
+      "name": "apache_skywalking",
+      "api_test_count": 2
+    },
+    {
+      "name": "apache_struts",
+      "api_test_count": 4
+    },
+    {
+      "name": "apache_systemds",
+      "api_test_count": 9
+    },
+    {
+      "name": "apache_usergrid",
+      "api_test_count": 4
+    },
+    {
+      "name": "apache_zeppelin",
+      "api_test_count": 201
+    },
+    {
+      "name": "apolloconfig_apollo",
+      "api_test_count": 106
+    },
+    {
+      "name": "artipie_artipie",
+      "api_test_count": 5
+    },
+    {
+      "name": "asciidoctor_asciidoctorj",
+      "api_test_count": 1
+    },
+    {
+      "name": "ballcat-projects_ballcat",
+      "api_test_count": 15
+    },
+    {
+      "name": "baomidou_dynamic-datasource",
+      "api_test_count": 2
+    },
+    {
+      "name": "batfish_batfish",
+      "api_test_count": 4
+    },
+    {
+      "name": "battcn_spring-boot2-learning",
+      "api_test_count": 4
+    },
+    {
+      "name": "cBioPortal_cbioportal",
+      "api_test_count": 218
+    },
+    {
+      "name": "camelinaction_camelinaction2",
+      "api_test_count": 3
+    },
+    {
+      "name": "camunda-consulting_camunda-7-code-examples",
+      "api_test_count": 1
+    },
+    {
+      "name": "camunda_camunda-bpm-examples",
+      "api_test_count": 3
+    },
+    {
+      "name": "camunda_camunda-bpm-platform",
+      "api_test_count": 3399
+    },
+    {
+      "name": "cdapio_cdap",
+      "api_test_count": 4
+    },
+    {
+      "name": "census-instrumentation_opencensus-java",
+      "api_test_count": 1
+    },
+    {
+      "name": "citerus_dddsample-core",
+      "api_test_count": 6
+    },
+    {
+      "name": "cloudfoundry_uaa",
+      "api_test_count": 1389
+    },
+    {
+      "name": "codecentric_chaos-monkey-spring-boot",
+      "api_test_count": 35
+    },
+    {
+      "name": "codecentric_spring-boot-admin",
+      "api_test_count": 30
+    },
+    {
+      "name": "codelibs_fess",
+      "api_test_count": 58
+    },
+    {
+      "name": "corona-warn-app_cwa-server",
+      "api_test_count": 23
+    },
+    {
+      "name": "ctripcorp_x-pipe",
+      "api_test_count": 51
+    },
+    {
+      "name": "database-rider_database-rider",
+      "api_test_count": 14
+    },
+    {
+      "name": "datahub-project_datahub",
+      "api_test_count": 38
+    },
+    {
+      "name": "datatheorem_TrustKit-Android",
+      "api_test_count": 2
+    },
+    {
+      "name": "ddd-by-examples_all-things-cqrs",
+      "api_test_count": 3
+    },
+    {
+      "name": "ddd-by-examples_library",
+      "api_test_count": 12
+    },
+    {
+      "name": "debezium_debezium",
+      "api_test_count": 1
+    },
+    {
+      "name": "digitalfondue_lavagna",
+      "api_test_count": 2
+    },
+    {
+      "name": "dromara_Jpom",
+      "api_test_count": 1
+    },
+    {
+      "name": "dromara_Sa-Token",
+      "api_test_count": 14
+    },
+    {
+      "name": "dropwizard_metrics",
+      "api_test_count": 11
+    },
+    {
+      "name": "e-commerce-sample_ecommerce-order-service",
+      "api_test_count": 7
+    },
+    {
+      "name": "eclipse-ee4j_jersey",
+      "api_test_count": 26
+    },
+    {
+      "name": "eclipse-jifa_jifa",
+      "api_test_count": 12
+    },
+    {
+      "name": "eclipse-steady_steady",
+      "api_test_count": 61
+    },
+    {
+      "name": "eclipse_openvsx",
+      "api_test_count": 226
+    },
+    {
+      "name": "elastic_apm-agent-java",
+      "api_test_count": 108
+    },
+    {
+      "name": "espertechinc_esper",
+      "api_test_count": 1
+    },
+    {
+      "name": "etcd-io_jetcd",
+      "api_test_count": 1
+    },
+    {
+      "name": "eventeum_eventeum",
+      "api_test_count": 14
+    },
+    {
+      "name": "eventuate-tram_eventuate-tram-examples-customers-and-orders",
+      "api_test_count": 14
+    },
+    {
+      "name": "eventuate-tram_eventuate-tram-sagas-examples-customers-and-orders",
+      "api_test_count": 15
+    },
+    {
+      "name": "exadel-inc_CompreFace",
+      "api_test_count": 65
+    },
+    {
+      "name": "fabric8io_docker-maven-plugin",
+      "api_test_count": 1
+    },
+    {
+      "name": "facebook_stetho",
+      "api_test_count": 2
+    },
+    {
+      "name": "facebookarchive_hadoop-20",
+      "api_test_count": 4
+    },
+    {
+      "name": "fizzgate_fizz-gateway-node",
+      "api_test_count": 2
+    },
+    {
+      "name": "flowable_flowable-engine",
+      "api_test_count": 95
+    },
+    {
+      "name": "forcedotcom_dataloader",
+      "api_test_count": 1
+    },
+    {
+      "name": "freechat-fun_freechat",
+      "api_test_count": 28
+    },
+    {
+      "name": "funtl_MyShopPlus",
+      "api_test_count": 2
+    },
+    {
+      "name": "gaia-app_gaia",
+      "api_test_count": 70
+    },
+    {
+      "name": "gchq_Gaffer",
+      "api_test_count": 42
+    },
+    {
+      "name": "gitblit-org_gitblit",
+      "api_test_count": 10
+    },
+    {
+      "name": "glowroot_glowroot",
+      "api_test_count": 55
+    },
+    {
+      "name": "google_ExoPlayer",
+      "api_test_count": 28
+    },
+    {
+      "name": "google_cronet-transport-for-okhttp",
+      "api_test_count": 4
+    },
+    {
+      "name": "gothinkster_spring-boot-realworld-example-app",
+      "api_test_count": 35
+    },
+    {
+      "name": "graalvm_graalvm-demos",
+      "api_test_count": 4
+    },
+    {
+      "name": "halo-dev_halo",
+      "api_test_count": 100
+    },
+    {
+      "name": "hapifhir_hapi-fhir",
+      "api_test_count": 81
+    },
+    {
+      "name": "hawtio_hawtio",
+      "api_test_count": 12
+    },
+    {
+      "name": "hazelcast_hazelcast-code-samples",
+      "api_test_count": 6
+    },
+    {
+      "name": "helidon-io_helidon",
+      "api_test_count": 48
+    },
+    {
+      "name": "hellokoding_hellokoding-courses",
+      "api_test_count": 16
+    },
+    {
+      "name": "hibernate_hibernate-validator",
+      "api_test_count": 2
+    },
+    {
+      "name": "hs-web_hsweb-framework",
+      "api_test_count": 2
+    },
+    {
+      "name": "huaweicloud_spring-cloud-huawei",
+      "api_test_count": 96
+    },
+    {
+      "name": "hyperledger_besu",
+      "api_test_count": 193
+    },
+    {
+      "name": "inception-project_inception",
+      "api_test_count": 23
+    },
+    {
+      "name": "iotaledger-archive_iri",
+      "api_test_count": 13
+    },
+    {
+      "name": "javaee_jersey",
+      "api_test_count": 21
+    },
+    {
+      "name": "javamelody_javamelody",
+      "api_test_count": 1
+    },
+    {
+      "name": "jboss-developer_jboss-eap-quickstarts",
+      "api_test_count": 13
+    },
+    {
+      "name": "jeecgboot_JeecgBoot",
+      "api_test_count": 6
+    },
+    {
+      "name": "jeecgboot_jeecg",
+      "api_test_count": 10
+    },
+    {
+      "name": "jenkinsci_blueocean-plugin",
+      "api_test_count": 13
+    },
+    {
+      "name": "jenkinsci_gitlab-plugin",
+      "api_test_count": 3
+    },
+    {
+      "name": "jenkinsci_slack-plugin",
+      "api_test_count": 1
+    },
+    {
+      "name": "jhipster_jhipster-lite",
+      "api_test_count": 23
+    },
+    {
+      "name": "jmix-framework_jmix",
+      "api_test_count": 38
+    },
+    {
+      "name": "jolokia_jolokia",
+      "api_test_count": 10
+    },
+    {
+      "name": "jooby-project_jooby",
+      "api_test_count": 4
+    },
+    {
+      "name": "kafbat_kafka-ui",
+      "api_test_count": 59
+    },
+    {
+      "name": "kairosdb_kairosdb",
+      "api_test_count": 42
+    },
+    {
+      "name": "karatelabs_karate",
+      "api_test_count": 3
+    },
+    {
+      "name": "kestra-io_kestra",
+      "api_test_count": 152
+    },
+    {
+      "name": "keycloak_keycloak",
+      "api_test_count": 121
+    },
+    {
+      "name": "keycloak_keycloak-quickstarts",
+      "api_test_count": 3
+    },
+    {
+      "name": "langchain4j_langchain4j",
+      "api_test_count": 3
+    },
+    {
+      "name": "languagetool-org_languagetool",
+      "api_test_count": 1
+    },
+    {
+      "name": "line_line-bot-sdk-java",
+      "api_test_count": 4
+    },
+    {
+      "name": "line_line-fido2-server",
+      "api_test_count": 17
+    },
+    {
+      "name": "linkedin_rest.li",
+      "api_test_count": 7
+    },
+    {
+      "name": "livelessons-spring_building-microservices",
+      "api_test_count": 14
+    },
+    {
+      "name": "locationtech_geowave",
+      "api_test_count": 24
+    },
+    {
+      "name": "ls1intum_Artemis",
+      "api_test_count": 12
+    },
+    {
+      "name": "mapstruct_mapstruct-examples",
+      "api_test_count": 1
+    },
+    {
+      "name": "metersphere_metersphere",
+      "api_test_count": 138
+    },
+    {
+      "name": "microcks_microcks",
+      "api_test_count": 35
+    },
+    {
+      "name": "microservices-patterns_ftgo-application",
+      "api_test_count": 11
+    },
+    {
+      "name": "microstream-one_microstream",
+      "api_test_count": 1
+    },
+    {
+      "name": "mitre_HTTP-Proxy-Servlet",
+      "api_test_count": 3
+    },
+    {
+      "name": "mock-server_mockserver",
+      "api_test_count": 38
+    },
+    {
+      "name": "mybatis_spring-boot-starter",
+      "api_test_count": 4
+    },
+    {
+      "name": "nashtech-garage_yas",
+      "api_test_count": 323
+    },
+    {
+      "name": "networknt_light-4j",
+      "api_test_count": 2
+    },
+    {
+      "name": "nginx-clojure_nginx-clojure",
+      "api_test_count": 1
+    },
+    {
+      "name": "nordic-institute_X-Road",
+      "api_test_count": 71
+    },
+    {
+      "name": "nuxeo_nuxeo",
+      "api_test_count": 35
+    },
+    {
+      "name": "obsidiandynamics_kafdrop",
+      "api_test_count": 2
+    },
+    {
+      "name": "oceanbase_odc",
+      "api_test_count": 1
+    },
+    {
+      "name": "oktadev_java-microservices-examples",
+      "api_test_count": 140
+    },
+    {
+      "name": "ongres_stackgres",
+      "api_test_count": 66
+    },
+    {
+      "name": "opendatadiscovery_odd-platform",
+      "api_test_count": 9
+    },
+    {
+      "name": "openlookeng_hetu-core",
+      "api_test_count": 16
+    },
+    {
+      "name": "openmrs_openmrs-core",
+      "api_test_count": 2
+    },
+    {
+      "name": "openzipkin_brave",
+      "api_test_count": 9
+    },
+    {
+      "name": "openzipkin_zipkin",
+      "api_test_count": 65
+    },
+    {
+      "name": "operator-framework_java-operator-sdk",
+      "api_test_count": 1
+    },
+    {
+      "name": "orientechnologies_orientdb",
+      "api_test_count": 44
+    },
+    {
+      "name": "pig-mesh_excel-spring-boot-starter",
+      "api_test_count": 3
+    },
+    {
+      "name": "pinpoint-apm_pinpoint",
+      "api_test_count": 31
+    },
+    {
+      "name": "pravega_pravega",
+      "api_test_count": 3
+    },
+    {
+      "name": "prestodb_presto",
+      "api_test_count": 1
+    },
+    {
+      "name": "prometheus_client_java",
+      "api_test_count": 2
+    },
+    {
+      "name": "puniverse_comsat",
+      "api_test_count": 27
+    },
+    {
+      "name": "quarkusio_quarkus",
+      "api_test_count": 4870
+    },
+    {
+      "name": "quarkusio_quarkus-quickstarts",
+      "api_test_count": 203
+    },
+    {
+      "name": "ratpack_ratpack",
+      "api_test_count": 9
+    },
+    {
+      "name": "rax-maas_blueflood",
+      "api_test_count": 38
+    },
+    {
+      "name": "redhat-scholars_istio-tutorial",
+      "api_test_count": 3
+    },
+    {
+      "name": "redis_jedis",
+      "api_test_count": 5
+    },
+    {
+      "name": "redis_redis-om-spring",
+      "api_test_count": 33
+    },
+    {
+      "name": "redisson_redisson",
+      "api_test_count": 4
+    },
+    {
+      "name": "requery_requery",
+      "api_test_count": 3
+    },
+    {
+      "name": "resilience4j_resilience4j",
+      "api_test_count": 64
+    },
+    {
+      "name": "rest-assured_rest-assured",
+      "api_test_count": 848
+    },
+    {
+      "name": "resteasy_resteasy",
+      "api_test_count": 374
+    },
+    {
+      "name": "risesoft-y9_Digital-Infrastructure",
+      "api_test_count": 5
+    },
+    {
+      "name": "robolectric_robolectric",
+      "api_test_count": 8
+    },
+    {
+      "name": "roncoo_roncoo-education",
+      "api_test_count": 3
+    },
+    {
+      "name": "roncoo_spring-boot-demo",
+      "api_test_count": 1
+    },
+    {
+      "name": "runelite_runelite",
+      "api_test_count": 1
+    },
+    {
+      "name": "scribejava_scribejava",
+      "api_test_count": 5
+    },
+    {
+      "name": "sermant-io_Sermant",
+      "api_test_count": 159
+    },
+    {
+      "name": "signalapp_Signal-Server",
+      "api_test_count": 2
+    },
+    {
+      "name": "smart-cloud_smart-cloud",
+      "api_test_count": 10
+    },
+    {
+      "name": "sofastack_sofa-boot",
+      "api_test_count": 12
+    },
+    {
+      "name": "sofastack_sofa-rpc",
+      "api_test_count": 8
+    },
+    {
+      "name": "sofastack_sofa-tracer",
+      "api_test_count": 11
+    },
+    {
+      "name": "spinnaker_kayenta",
+      "api_test_count": 19
+    },
+    {
+      "name": "spinnaker_spinnaker",
+      "api_test_count": 239
+    },
+    {
+      "name": "spotify_helios",
+      "api_test_count": 133
+    },
+    {
+      "name": "spring-attic_spring-android",
+      "api_test_count": 25
+    },
+    {
+      "name": "spring-attic_spring-cloud-aws",
+      "api_test_count": 7
+    },
+    {
+      "name": "spring-attic_spring-cloud-dataflow",
+      "api_test_count": 385
+    },
+    {
+      "name": "spring-attic_spring-cloud-gcp",
+      "api_test_count": 27
+    },
+    {
+      "name": "spring-attic_spring-cloud-security",
+      "api_test_count": 1
+    },
+    {
+      "name": "spring-attic_spring-hadoop",
+      "api_test_count": 18
+    },
+    {
+      "name": "spring-attic_spring-mvc-showcase",
+      "api_test_count": 80
+    },
+    {
+      "name": "spring-attic_spring-native",
+      "api_test_count": 62
+    },
+    {
+      "name": "spring-attic_spring-security-oauth",
+      "api_test_count": 18
+    },
+    {
+      "name": "spring-attic_spring-social",
+      "api_test_count": 37
+    },
+    {
+      "name": "spring-cloud-samples_eureka",
+      "api_test_count": 2
+    },
+    {
+      "name": "spring-cloud_spring-cloud-commons",
+      "api_test_count": 12
+    },
+    {
+      "name": "spring-cloud_spring-cloud-config",
+      "api_test_count": 50
+    },
+    {
+      "name": "spring-cloud_spring-cloud-consul",
+      "api_test_count": 1
+    },
+    {
+      "name": "spring-cloud_spring-cloud-contract",
+      "api_test_count": 74
+    },
+    {
+      "name": "spring-cloud_spring-cloud-function",
+      "api_test_count": 210
+    },
+    {
+      "name": "spring-cloud_spring-cloud-gateway",
+      "api_test_count": 318
+    },
+    {
+      "name": "spring-cloud_spring-cloud-kubernetes",
+      "api_test_count": 137
+    },
+    {
+      "name": "spring-cloud_spring-cloud-netflix",
+      "api_test_count": 2
+    },
+    {
+      "name": "spring-cloud_spring-cloud-openfeign",
+      "api_test_count": 51
+    },
+    {
+      "name": "spring-cloud_spring-cloud-sleuth",
+      "api_test_count": 59
+    },
+    {
+      "name": "spring-cloud_spring-cloud-stream",
+      "api_test_count": 20
+    },
+    {
+      "name": "spring-cloud_spring-cloud-stream-samples",
+      "api_test_count": 2
+    },
+    {
+      "name": "spring-cloud_spring-cloud-zookeeper",
+      "api_test_count": 8
+    },
+    {
+      "name": "spring-guides_getting-started-guides",
+      "api_test_count": 4
+    },
+    {
+      "name": "spring-guides_gs-rest-service",
+      "api_test_count": 2
+    },
+    {
+      "name": "spring-guides_gs-spring-boot",
+      "api_test_count": 2
+    },
+    {
+      "name": "spring-guides_gs-spring-boot-docker",
+      "api_test_count": 1
+    },
+    {
+      "name": "spring-io_initializr",
+      "api_test_count": 83
+    },
+    {
+      "name": "spring-io_start.spring.io",
+      "api_test_count": 2
+    },
+    {
+      "name": "spring-petclinic_spring-petclinic-microservices",
+      "api_test_count": 5
+    },
+    {
+      "name": "spring-projects-experimental_spring-boot-thin-launcher",
+      "api_test_count": 24
+    },
+    {
+      "name": "spring-projects-experimental_spring-fu",
+      "api_test_count": 3
+    },
+    {
+      "name": "spring-projects_spring-ai",
+      "api_test_count": 11
+    },
+    {
+      "name": "spring-projects_spring-ai-examples",
+      "api_test_count": 2
+    },
+    {
+      "name": "spring-projects_spring-data-commons",
+      "api_test_count": 3
+    },
+    {
+      "name": "spring-projects_spring-data-examples",
+      "api_test_count": 9
+    },
+    {
+      "name": "spring-projects_spring-data-rest",
+      "api_test_count": 64
+    },
+    {
+      "name": "spring-projects_spring-hateoas",
+      "api_test_count": 56
+    },
+    {
+      "name": "spring2go_staffjoy",
+      "api_test_count": 67
+    },
+    {
+      "name": "springdoc_springdoc-openapi",
+      "api_test_count": 236
+    },
+    {
+      "name": "springdoc_springdoc-openapi-demos",
+      "api_test_count": 1
+    },
+    {
+      "name": "springfox_springfox-demos",
+      "api_test_count": 2
+    },
+    {
+      "name": "springside_springside4",
+      "api_test_count": 4
+    },
+    {
+      "name": "square_keywhiz",
+      "api_test_count": 133
+    },
+    {
+      "name": "steve-community_steve",
+      "api_test_count": 32
+    },
+    {
+      "name": "strimzi_strimzi-kafka-operator",
+      "api_test_count": 10
+    },
+    {
+      "name": "strongbox_strongbox",
+      "api_test_count": 245
+    },
+    {
+      "name": "structr_structr",
+      "api_test_count": 396
+    },
+    {
+      "name": "swagger-api_swagger-core",
+      "api_test_count": 7
+    },
+    {
+      "name": "syndesisio_syndesis",
+      "api_test_count": 11
+    },
+    {
+      "name": "tapdata_tapdata",
+      "api_test_count": 1
+    },
+    {
+      "name": "thingsboard_tbmq",
+      "api_test_count": 26
+    },
+    {
+      "name": "thingsboard_thingsboard",
+      "api_test_count": 1517
+    },
+    {
+      "name": "tmobile_pacbot",
+      "api_test_count": 121
+    },
+    {
+      "name": "togglz_togglz",
+      "api_test_count": 5
+    },
+    {
+      "name": "tony-framework_TonY",
+      "api_test_count": 1
+    },
+    {
+      "name": "tronprotocol_java-tron",
+      "api_test_count": 6
+    },
+    {
+      "name": "uber_uReplicator",
+      "api_test_count": 1
+    },
+    {
+      "name": "undertow-io_undertow",
+      "api_test_count": 68
+    },
+    {
+      "name": "vaadin_flow",
+      "api_test_count": 6
+    },
+    {
+      "name": "vaadin_hilla",
+      "api_test_count": 104
+    },
+    {
+      "name": "vespa-engine_vespa",
+      "api_test_count": 2
+    },
+    {
+      "name": "vipshop_Saturn",
+      "api_test_count": 121
+    },
+    {
+      "name": "webbit_webbit",
+      "api_test_count": 1
+    },
+    {
+      "name": "wechatpay-apiv3_wechatpay-apache-httpclient",
+      "api_test_count": 6
+    },
+    {
+      "name": "wechatpay-apiv3_wechatpay-java",
+      "api_test_count": 4
+    },
+    {
+      "name": "wildfly_quickstart",
+      "api_test_count": 61
+    },
+    {
+      "name": "wiremock_wiremock",
+      "api_test_count": 63
+    },
+    {
+      "name": "wso2_product-apim",
+      "api_test_count": 92
+    },
+    {
+      "name": "wso2_product-is",
+      "api_test_count": 1538
+    },
+    {
+      "name": "wyh-spring-ecosystem-student_spring-boot-student",
+      "api_test_count": 56
+    },
+    {
+      "name": "yahoo_elide",
+      "api_test_count": 622
+    },
+    {
+      "name": "yanagishima_yanagishima",
+      "api_test_count": 4
+    },
+    {
+      "name": "youlaitech_youlai-mall",
+      "api_test_count": 5
+    },
+    {
+      "name": "young-datafan-ooooo1_data-integration",
+      "api_test_count": 1
+    },
+    {
+      "name": "yudaocode_SpringBoot-Labs",
+      "api_test_count": 16
+    },
+    {
+      "name": "zalando_logbook",
+      "api_test_count": 89
+    },
+    {
+      "name": "zalando_nakadi",
+      "api_test_count": 180
+    },
+    {
+      "name": "zalando_problem-spring-web",
+      "api_test_count": 94
+    },
+    {
+      "name": "zendesk_maxwell",
+      "api_test_count": 1
+    },
+    {
+      "name": "zfoo-project_zfoo",
+      "api_test_count": 1
+    }
+  ]
+}

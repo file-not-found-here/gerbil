@@ -1,0 +1,2378 @@
+{
+  "scope": "projects_with_min_api_tests_and_endpoints",
+  "scope_description": "Projects with at least 10 API tests and at least 1 identified application endpoint.",
+  "min_api_test_count": 10,
+  "min_endpoint_count": 1,
+  "analyzed_project_count": 2527,
+  "project_count": 154,
+  "method": {
+    "statistic": "spearman_rank_correlation",
+    "x": "api_test_count",
+    "y": "per-project measure value",
+    "alternative": "two-sided",
+    "implementation": "scipy.stats.spearmanr",
+    "undefined_values": "A project whose measure is undefined is omitted from that measure's correlation; project_count is the n for each measure."
+  },
+  "correlations": {
+    "header_check_rate": {
+      "description": "Share of API tests asserting on at least one response header.",
+      "project_count": 154,
+      "rho": 0.330680267497081,
+      "p_value": 2.8061326787887635e-05
+    },
+    "body_verification_rate": {
+      "description": "Share of API tests asserting on the response body.",
+      "project_count": 154,
+      "rho": 0.030585149288895393,
+      "p_value": 0.7065099120805247
+    },
+    "multi_request_rate": {
+      "description": "Share of API tests dispatching at least two HTTP request events.",
+      "project_count": 154,
+      "rho": 0.07379726200617127,
+      "p_value": 0.3630442558294082
+    },
+    "error_status_assertion_rate": {
+      "description": "Share of API tests asserting at least one 4xx or 5xx status.",
+      "project_count": 154,
+      "rho": 0.1054848428834314,
+      "p_value": 0.192915374650938
+    },
+    "state_verification_rate": {
+      "description": "Share of API tests that write a resource through the API and then read the same resource back.",
+      "project_count": 154,
+      "rho": 0.23689220084848586,
+      "p_value": 0.0030961525879006427
+    },
+    "http_verb_repetition_rate": {
+      "description": "Share of consecutive HTTP test-sequence pairs (within a test) that repeat the same HTTP verb; undefined for projects without such pairs.",
+      "project_count": 119,
+      "rho": -0.036835541495320395,
+      "p_value": 0.6908351767629634
+    },
+    "endpoint_coverage": {
+      "description": "Share of application endpoints covered by at least one test.",
+      "project_count": 154,
+      "rho": 0.20551900104178,
+      "p_value": 0.010557906748440147
+    },
+    "simple_1_way_optional_coverage": {
+      "description": "Mean simple 1-way optional-parameter coverage over covered endpoints; undefined for projects without a covered endpoint declaring an optional parameter.",
+      "project_count": 66,
+      "rho": 0.15421550505162265,
+      "p_value": 0.21633723861425297
+    }
+  },
+  "projects": [
+    {
+      "dataset_name": "quarkusio_quarkus",
+      "api_test_count": 4870,
+      "endpoint_count": 2270,
+      "measures": {
+        "header_check_rate": 0.2427104722792608,
+        "body_verification_rate": 0.6882956878850103,
+        "multi_request_rate": 0.2944558521560575,
+        "error_status_assertion_rate": 0.1679671457905544,
+        "state_verification_rate": 0.014168377823408624,
+        "http_verb_repetition_rate": 0.8318621269440941,
+        "endpoint_coverage": 0.6920704845814978,
+        "simple_1_way_optional_coverage": 0.8
+      }
+    },
+    {
+      "dataset_name": "camunda_camunda-bpm-platform",
+      "api_test_count": 3399,
+      "endpoint_count": 995,
+      "measures": {
+        "header_check_rate": 0.005001471020888497,
+        "body_verification_rate": 0.007649308620182407,
+        "multi_request_rate": 0.015592821418064137,
+        "error_status_assertion_rate": 0.00264783759929391,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.7523809523809524,
+        "endpoint_coverage": 0.2633165829145729,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "DSpace_DSpace",
+      "api_test_count": 3134,
+      "endpoint_count": 178,
+      "measures": {
+        "header_check_rate": 0.031269942565411615,
+        "body_verification_rate": 0.2626037013401404,
+        "multi_request_rate": 0.9945756222080409,
+        "error_status_assertion_rate": 0.41863433312061266,
+        "state_verification_rate": 0.1624122527121889,
+        "http_verb_repetition_rate": 0.4231139646869984,
+        "endpoint_coverage": 0.3146067415730337,
+        "simple_1_way_optional_coverage": 0.5625
+      }
+    },
+    {
+      "dataset_name": "thingsboard_thingsboard",
+      "api_test_count": 1517,
+      "endpoint_count": 495,
+      "measures": {
+        "header_check_rate": 0.8147659854976929,
+        "body_verification_rate": 0.007251153592617007,
+        "multi_request_rate": 0.982860909690178,
+        "error_status_assertion_rate": 0.18391562294001318,
+        "state_verification_rate": 0.02043506921555702,
+        "http_verb_repetition_rate": 0.8113766541576141,
+        "endpoint_coverage": 0.1191919191919192,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "cloudfoundry_uaa",
+      "api_test_count": 1389,
+      "endpoint_count": 167,
+      "measures": {
+        "header_check_rate": 0.11735061195104392,
+        "body_verification_rate": 0.2865370770338373,
+        "multi_request_rate": 0.67170626349892,
+        "error_status_assertion_rate": 0.2498200143988481,
+        "state_verification_rate": 0.11087113030957524,
+        "http_verb_repetition_rate": 0.5830125120307988,
+        "endpoint_coverage": 0.7784431137724551,
+        "simple_1_way_optional_coverage": 0.7674603174603175
+      }
+    },
+    {
+      "dataset_name": "rest-assured_rest-assured",
+      "api_test_count": 848,
+      "endpoint_count": 22,
+      "measures": {
+        "header_check_rate": 0.08254716981132075,
+        "body_verification_rate": 0.5884433962264151,
+        "multi_request_rate": 0.009433962264150943,
+        "error_status_assertion_rate": 0.015330188679245283,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.75,
+        "endpoint_coverage": 0.2727272727272727,
+        "simple_1_way_optional_coverage": 0.3333333333333333
+      }
+    },
+    {
+      "dataset_name": "yahoo_elide",
+      "api_test_count": 622,
+      "endpoint_count": 24,
+      "measures": {
+        "header_check_rate": 0.03697749196141479,
+        "body_verification_rate": 0.545016077170418,
+        "multi_request_rate": 0.5112540192926045,
+        "error_status_assertion_rate": 0.2057877813504823,
+        "state_verification_rate": 0.2909967845659164,
+        "http_verb_repetition_rate": 0.731088335773548,
+        "endpoint_coverage": 0.5,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_kylin",
+      "api_test_count": 567,
+      "endpoint_count": 553,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.042328042328042326,
+        "multi_request_rate": 0.12345679012345678,
+        "error_status_assertion_rate": 0.2239858906525573,
+        "state_verification_rate": 0.001763668430335097,
+        "http_verb_repetition_rate": 0.9461077844311377,
+        "endpoint_coverage": 0.6781193490054249,
+        "simple_1_way_optional_coverage": 0.25328681734931735
+      }
+    },
+    {
+      "dataset_name": "apache_gravitino",
+      "api_test_count": 547,
+      "endpoint_count": 111,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.9981718464351006,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "OpenBAS-Platform_openbas",
+      "api_test_count": 407,
+      "endpoint_count": 516,
+      "measures": {
+        "header_check_rate": 0.002457002457002457,
+        "body_verification_rate": 0.20147420147420148,
+        "multi_request_rate": 0.07862407862407862,
+        "error_status_assertion_rate": 0.12285012285012285,
+        "state_verification_rate": 0.009828009828009828,
+        "http_verb_repetition_rate": 0.6595744680851063,
+        "endpoint_coverage": 0.09496124031007752,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "spring-attic_spring-cloud-dataflow",
+      "api_test_count": 385,
+      "endpoint_count": 121,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.07272727272727272,
+        "multi_request_rate": 0.44675324675324674,
+        "error_status_assertion_rate": 0.15584415584415584,
+        "state_verification_rate": 0.04415584415584416,
+        "http_verb_repetition_rate": 0.6712538226299695,
+        "endpoint_coverage": 0.9256198347107438,
+        "simple_1_way_optional_coverage": 0.6324786324786325
+      }
+    },
+    {
+      "dataset_name": "resteasy_resteasy",
+      "api_test_count": 374,
+      "endpoint_count": 9,
+      "measures": {
+        "header_check_rate": 0.0213903743315508,
+        "body_verification_rate": 0.18983957219251338,
+        "multi_request_rate": 0.25935828877005346,
+        "error_status_assertion_rate": 0.026737967914438502,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.6697247706422018,
+        "endpoint_coverage": 0.4444444444444444,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "apache_incubator-kie-kogito-runtimes",
+      "api_test_count": 334,
+      "endpoint_count": 72,
+      "measures": {
+        "header_check_rate": 0.11676646706586827,
+        "body_verification_rate": 0.7245508982035929,
+        "multi_request_rate": 0.4281437125748503,
+        "error_status_assertion_rate": 0.218562874251497,
+        "state_verification_rate": 0.18562874251497005,
+        "http_verb_repetition_rate": 0.3075117370892019,
+        "endpoint_coverage": 0.7638888888888888,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "GIScience_openrouteservice",
+      "api_test_count": 331,
+      "endpoint_count": 32,
+      "measures": {
+        "header_check_rate": 0.006042296072507553,
+        "body_verification_rate": 0.8942598187311178,
+        "multi_request_rate": 0.1903323262839879,
+        "error_status_assertion_rate": 0.2990936555891239,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "nashtech-garage_yas",
+      "api_test_count": 323,
+      "endpoint_count": 194,
+      "measures": {
+        "header_check_rate": 0.0030959752321981426,
+        "body_verification_rate": 0.38699690402476783,
+        "multi_request_rate": 0.42105263157894735,
+        "error_status_assertion_rate": 0.29721362229102166,
+        "state_verification_rate": 0.009287925696594427,
+        "http_verb_repetition_rate": 0.2733333333333333,
+        "endpoint_coverage": 0.6237113402061856,
+        "simple_1_way_optional_coverage": 0.02898550724637681
+      }
+    },
+    {
+      "dataset_name": "spring-cloud_spring-cloud-gateway",
+      "api_test_count": 318,
+      "endpoint_count": 25,
+      "measures": {
+        "header_check_rate": 0.24842767295597484,
+        "body_verification_rate": 0.48427672955974843,
+        "multi_request_rate": 0.1289308176100629,
+        "error_status_assertion_rate": 0.12578616352201258,
+        "state_verification_rate": 0.018867924528301886,
+        "http_verb_repetition_rate": 0.8088235294117647,
+        "endpoint_coverage": 0.08,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "JanssenProject_jans",
+      "api_test_count": 295,
+      "endpoint_count": 378,
+      "measures": {
+        "header_check_rate": 0.1694915254237288,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.003389830508474576,
+        "error_status_assertion_rate": 0.1288135593220339,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "strongbox_strongbox",
+      "api_test_count": 245,
+      "endpoint_count": 137,
+      "measures": {
+        "header_check_rate": 0.09387755102040816,
+        "body_verification_rate": 0.563265306122449,
+        "multi_request_rate": 0.32653061224489793,
+        "error_status_assertion_rate": 0.3346938775510204,
+        "state_verification_rate": 0.036734693877551024,
+        "http_verb_repetition_rate": 0.43023255813953487,
+        "endpoint_coverage": 0.16058394160583941,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "spinnaker_spinnaker",
+      "api_test_count": 239,
+      "endpoint_count": 558,
+      "measures": {
+        "header_check_rate": 0.26778242677824265,
+        "body_verification_rate": 0.34309623430962344,
+        "multi_request_rate": 0.36401673640167365,
+        "error_status_assertion_rate": 0.12133891213389121,
+        "state_verification_rate": 0.0502092050209205,
+        "http_verb_repetition_rate": 0.41346153846153844,
+        "endpoint_coverage": 0.05555555555555555,
+        "simple_1_way_optional_coverage": 0.15
+      }
+    },
+    {
+      "dataset_name": "springdoc_springdoc-openapi",
+      "api_test_count": 236,
+      "endpoint_count": 52,
+      "measures": {
+        "header_check_rate": 0.05508474576271186,
+        "body_verification_rate": 0.4364406779661017,
+        "multi_request_rate": 0.13135593220338984,
+        "error_status_assertion_rate": 0.05508474576271186,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.46153846153846156,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "eclipse_openvsx",
+      "api_test_count": 226,
+      "endpoint_count": 67,
+      "measures": {
+        "header_check_rate": 0.03982300884955752,
+        "body_verification_rate": 0.7522123893805309,
+        "multi_request_rate": 0.004424778761061947,
+        "error_status_assertion_rate": 0.43805309734513276,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.8064516129032258,
+        "endpoint_coverage": 0.582089552238806,
+        "simple_1_way_optional_coverage": 0.47083333333333327
+      }
+    },
+    {
+      "dataset_name": "cBioPortal_cbioportal",
+      "api_test_count": 218,
+      "endpoint_count": 217,
+      "measures": {
+        "header_check_rate": 0.1559633027522936,
+        "body_verification_rate": 0.6926605504587156,
+        "multi_request_rate": 0.06880733944954129,
+        "error_status_assertion_rate": 0.14220183486238533,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.7142857142857143,
+        "endpoint_coverage": 0.5852534562211982,
+        "simple_1_way_optional_coverage": 0.13844367015098719
+      }
+    },
+    {
+      "dataset_name": "apache_cxf",
+      "api_test_count": 216,
+      "endpoint_count": 173,
+      "measures": {
+        "header_check_rate": 0.25,
+        "body_verification_rate": 0.004629629629629629,
+        "multi_request_rate": 0.2037037037037037,
+        "error_status_assertion_rate": 0.06481481481481481,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.9285714285714286,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-cloud_spring-cloud-function",
+      "api_test_count": 210,
+      "endpoint_count": 12,
+      "measures": {
+        "header_check_rate": 0.06666666666666667,
+        "body_verification_rate": 0.7761904761904762,
+        "multi_request_rate": 0.05714285714285714,
+        "error_status_assertion_rate": 0.03333333333333333,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_dolphinscheduler",
+      "api_test_count": 204,
+      "endpoint_count": 298,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.9264705882352942,
+        "multi_request_rate": 0.28921568627450983,
+        "error_status_assertion_rate": 0.004901960784313725,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.5,
+        "endpoint_coverage": 0.49328859060402686,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "quarkusio_quarkus-quickstarts",
+      "api_test_count": 203,
+      "endpoint_count": 303,
+      "measures": {
+        "header_check_rate": 0.034482758620689655,
+        "body_verification_rate": 0.6551724137931034,
+        "multi_request_rate": 0.27586206896551724,
+        "error_status_assertion_rate": 0.10837438423645321,
+        "state_verification_rate": 0.08866995073891626,
+        "http_verb_repetition_rate": 0.4782608695652174,
+        "endpoint_coverage": 0.7095709570957096,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_zeppelin",
+      "api_test_count": 201,
+      "endpoint_count": 85,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 1.0,
+        "error_status_assertion_rate": 0.009950248756218905,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_hertzbeat",
+      "api_test_count": 184,
+      "endpoint_count": 179,
+      "measures": {
+        "header_check_rate": 0.005434782608695652,
+        "body_verification_rate": 0.9239130434782609,
+        "multi_request_rate": 0.07065217391304347,
+        "error_status_assertion_rate": 0.005434782608695652,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.6703910614525139,
+        "simple_1_way_optional_coverage": 0.04
+      }
+    },
+    {
+      "dataset_name": "Keyfactor_ejbca-ce",
+      "api_test_count": 181,
+      "endpoint_count": 22,
+      "measures": {
+        "header_check_rate": 0.0055248618784530384,
+        "body_verification_rate": 0.011049723756906077,
+        "multi_request_rate": 0.24861878453038674,
+        "error_status_assertion_rate": 0.03314917127071823,
+        "state_verification_rate": 0.027624309392265192,
+        "http_verb_repetition_rate": 0.6213592233009708,
+        "endpoint_coverage": 0.5454545454545454,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "zalando_nakadi",
+      "api_test_count": 180,
+      "endpoint_count": 53,
+      "measures": {
+        "header_check_rate": 0.027777777777777776,
+        "body_verification_rate": 0.38333333333333336,
+        "multi_request_rate": 0.35,
+        "error_status_assertion_rate": 0.35555555555555557,
+        "state_verification_rate": 0.07777777777777778,
+        "http_verb_repetition_rate": 0.547945205479452,
+        "endpoint_coverage": 0.7547169811320755,
+        "simple_1_way_optional_coverage": 0.4714285714285714
+      }
+    },
+    {
+      "dataset_name": "sermant-io_Sermant",
+      "api_test_count": 159,
+      "endpoint_count": 349,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.1509433962264151,
+        "multi_request_rate": 0.7672955974842768,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.4914877868245744,
+        "endpoint_coverage": 0.03151862464183381,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "alibaba_nacos",
+      "api_test_count": 152,
+      "endpoint_count": 317,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.07236842105263158,
+        "multi_request_rate": 0.05921052631578947,
+        "error_status_assertion_rate": 0.07236842105263158,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.2902208201892745,
+        "simple_1_way_optional_coverage": 0.2125448028673835
+      }
+    },
+    {
+      "dataset_name": "apache_shenyu",
+      "api_test_count": 152,
+      "endpoint_count": 155,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.09210526315789473,
+        "multi_request_rate": 0.125,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.22580645161290322,
+        "simple_1_way_optional_coverage": 1.0
+      }
+    },
+    {
+      "dataset_name": "kestra-io_kestra",
+      "api_test_count": 152,
+      "endpoint_count": 189,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.05921052631578947,
+        "multi_request_rate": 0.3618421052631579,
+        "error_status_assertion_rate": 0.16447368421052633,
+        "state_verification_rate": 0.019736842105263157,
+        "http_verb_repetition_rate": 0.75,
+        "endpoint_coverage": 0.4497354497354497,
+        "simple_1_way_optional_coverage": 0.08151260504201681
+      }
+    },
+    {
+      "dataset_name": "WeBankBlockchain_WeEvent",
+      "api_test_count": 149,
+      "endpoint_count": 82,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.31543624161073824,
+        "multi_request_rate": 0.5436241610738255,
+        "error_status_assertion_rate": 0.026845637583892617,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.8607594936708861,
+        "endpoint_coverage": 0.5487804878048781,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "oktadev_java-microservices-examples",
+      "api_test_count": 140,
+      "endpoint_count": 55,
+      "measures": {
+        "header_check_rate": 0.4357142857142857,
+        "body_verification_rate": 0.37142857142857144,
+        "multi_request_rate": 0.02142857142857143,
+        "error_status_assertion_rate": 0.4785714285714286,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.7818181818181819,
+        "simple_1_way_optional_coverage": 0.6666666666666666
+      }
+    },
+    {
+      "dataset_name": "metersphere_metersphere",
+      "api_test_count": 138,
+      "endpoint_count": 622,
+      "measures": {
+        "header_check_rate": 0.021739130434782608,
+        "body_verification_rate": 0.9420289855072463,
+        "multi_request_rate": 0.35507246376811596,
+        "error_status_assertion_rate": 0.18840579710144928,
+        "state_verification_rate": 0.007246376811594203,
+        "http_verb_repetition_rate": 0.9675324675324676,
+        "endpoint_coverage": 0.04340836012861737,
+        "simple_1_way_optional_coverage": 1.0
+      }
+    },
+    {
+      "dataset_name": "spring-cloud_spring-cloud-kubernetes",
+      "api_test_count": 137,
+      "endpoint_count": 15,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8978102189781022,
+        "multi_request_rate": 0.3284671532846715,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.5333333333333333,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spotify_helios",
+      "api_test_count": 133,
+      "endpoint_count": 27,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.007518796992481203,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "square_keywhiz",
+      "api_test_count": 133,
+      "endpoint_count": 96,
+      "measures": {
+        "header_check_rate": 0.015037593984962405,
+        "body_verification_rate": 0.03007518796992481,
+        "multi_request_rate": 0.45112781954887216,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "keycloak_keycloak",
+      "api_test_count": 121,
+      "endpoint_count": 1103,
+      "measures": {
+        "header_check_rate": 0.14049586776859505,
+        "body_verification_rate": 0.14049586776859505,
+        "multi_request_rate": 0.32231404958677684,
+        "error_status_assertion_rate": 0.2809917355371901,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.9444444444444444,
+        "endpoint_coverage": 0.004533091568449683,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "tmobile_pacbot",
+      "api_test_count": 121,
+      "endpoint_count": 209,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.2727272727272727,
+        "multi_request_rate": 0.008264462809917356,
+        "error_status_assertion_rate": 0.4214876033057851,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.21052631578947367,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "vipshop_Saturn",
+      "api_test_count": 121,
+      "endpoint_count": 3,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.8264462809917356,
+        "error_status_assertion_rate": 0.10743801652892562,
+        "state_verification_rate": 0.008264462809917356,
+        "http_verb_repetition_rate": 0.875,
+        "endpoint_coverage": 0.3333333333333333,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "PaladinCloud_CE",
+      "api_test_count": 111,
+      "endpoint_count": 238,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.2702702702702703,
+        "multi_request_rate": 0.009009009009009009,
+        "error_status_assertion_rate": 0.4144144144144144,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.18067226890756302,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "elastic_apm-agent-java",
+      "api_test_count": 108,
+      "endpoint_count": 21,
+      "measures": {
+        "header_check_rate": 0.027777777777777776,
+        "body_verification_rate": 0.5,
+        "multi_request_rate": 0.2037037037037037,
+        "error_status_assertion_rate": 0.037037037037037035,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.047619047619047616,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apolloconfig_apollo",
+      "api_test_count": 106,
+      "endpoint_count": 241,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.12264150943396226,
+        "multi_request_rate": 0.22641509433962265,
+        "error_status_assertion_rate": 0.10377358490566038,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.5,
+        "endpoint_coverage": 0.11618257261410789,
+        "simple_1_way_optional_coverage": 0.0606060606060606
+      }
+    },
+    {
+      "dataset_name": "huaweicloud_spring-cloud-huawei",
+      "api_test_count": 96,
+      "endpoint_count": 115,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.08333333333333333,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.9090909090909091,
+        "endpoint_coverage": 0.5130434782608696,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "Apicurio_apicurio-registry",
+      "api_test_count": 95,
+      "endpoint_count": 300,
+      "measures": {
+        "header_check_rate": 0.18947368421052632,
+        "body_verification_rate": 0.7894736842105263,
+        "multi_request_rate": 0.7368421052631579,
+        "error_status_assertion_rate": 0.3684210526315789,
+        "state_verification_rate": 0.2631578947368421,
+        "http_verb_repetition_rate": 0.49609375,
+        "endpoint_coverage": 0.37333333333333335,
+        "simple_1_way_optional_coverage": 0.5
+      }
+    },
+    {
+      "dataset_name": "flowable_flowable-engine",
+      "api_test_count": 95,
+      "endpoint_count": 431,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.031578947368421054,
+        "multi_request_rate": 0.2631578947368421,
+        "error_status_assertion_rate": 0.47368421052631576,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "wso2_product-apim",
+      "api_test_count": 92,
+      "endpoint_count": 46,
+      "measures": {
+        "header_check_rate": 0.20652173913043478,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.2717391304347826,
+        "error_status_assertion_rate": 0.18478260869565216,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "AzBuilder_terrakube",
+      "api_test_count": 90,
+      "endpoint_count": 73,
+      "measures": {
+        "header_check_rate": 0.011111111111111112,
+        "body_verification_rate": 0.3888888888888889,
+        "multi_request_rate": 0.2777777777777778,
+        "error_status_assertion_rate": 0.37777777777777777,
+        "state_verification_rate": 0.044444444444444446,
+        "http_verb_repetition_rate": 0.35714285714285715,
+        "endpoint_coverage": 0.3150684931506849,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "aol_micro-server",
+      "api_test_count": 85,
+      "endpoint_count": 60,
+      "measures": {
+        "header_check_rate": 0.011764705882352941,
+        "body_verification_rate": 0.023529411764705882,
+        "multi_request_rate": 0.35294117647058826,
+        "error_status_assertion_rate": 0.03529411764705882,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.9609375,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-io_initializr",
+      "api_test_count": 83,
+      "endpoint_count": 28,
+      "measures": {
+        "header_check_rate": 0.0963855421686747,
+        "body_verification_rate": 0.03614457831325301,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.1566265060240964,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.32142857142857145,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "hapifhir_hapi-fhir",
+      "api_test_count": 81,
+      "endpoint_count": 39,
+      "measures": {
+        "header_check_rate": 0.18518518518518517,
+        "body_verification_rate": 0.12345679012345678,
+        "multi_request_rate": 0.1111111111111111,
+        "error_status_assertion_rate": 0.1111111111111111,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.05128205128205128,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-attic_spring-mvc-showcase",
+      "api_test_count": 80,
+      "endpoint_count": 84,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.975,
+        "multi_request_rate": 0.075,
+        "error_status_assertion_rate": 0.0125,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.6309523809523809,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "spring-cloud_spring-cloud-contract",
+      "api_test_count": 74,
+      "endpoint_count": 8,
+      "measures": {
+        "header_check_rate": 0.04054054054054054,
+        "body_verification_rate": 0.22972972972972974,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.125,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_dubbo-samples",
+      "api_test_count": 73,
+      "endpoint_count": 231,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.7808219178082192,
+        "multi_request_rate": 0.0273972602739726,
+        "error_status_assertion_rate": 0.0273972602739726,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.0,
+        "endpoint_coverage": 0.5670995670995671,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "nordic-institute_X-Road",
+      "api_test_count": 71,
+      "endpoint_count": 14,
+      "measures": {
+        "header_check_rate": 0.14084507042253522,
+        "body_verification_rate": 0.1267605633802817,
+        "multi_request_rate": 0.14084507042253522,
+        "error_status_assertion_rate": 0.323943661971831,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.9230769230769231,
+        "endpoint_coverage": 0.5,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "Netflix_genie",
+      "api_test_count": 70,
+      "endpoint_count": 102,
+      "measures": {
+        "header_check_rate": 0.8142857142857143,
+        "body_verification_rate": 0.6571428571428571,
+        "multi_request_rate": 0.6,
+        "error_status_assertion_rate": 0.2714285714285714,
+        "state_verification_rate": 0.17142857142857143,
+        "http_verb_repetition_rate": 0.6648648648648648,
+        "endpoint_coverage": 0.4117647058823529,
+        "simple_1_way_optional_coverage": 0.3
+      }
+    },
+    {
+      "dataset_name": "gaia-app_gaia",
+      "api_test_count": 70,
+      "endpoint_count": 37,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.1,
+        "multi_request_rate": 0.02857142857142857,
+        "error_status_assertion_rate": 0.2571428571428571,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.3333333333333333,
+        "endpoint_coverage": 0.8378378378378378,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_rocketmq-dashboard",
+      "api_test_count": 68,
+      "endpoint_count": 69,
+      "measures": {
+        "header_check_rate": 0.014705882352941176,
+        "body_verification_rate": 0.014705882352941176,
+        "multi_request_rate": 0.4117647058823529,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring2go_staffjoy",
+      "api_test_count": 67,
+      "endpoint_count": 77,
+      "measures": {
+        "header_check_rate": 0.014925373134328358,
+        "body_verification_rate": 0.208955223880597,
+        "multi_request_rate": 0.5522388059701493,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.6434782608695652,
+        "endpoint_coverage": 0.7012987012987013,
+        "simple_1_way_optional_coverage": 0.5729166666666667
+      }
+    },
+    {
+      "dataset_name": "ongres_stackgres",
+      "api_test_count": 66,
+      "endpoint_count": 145,
+      "measures": {
+        "header_check_rate": 0.030303030303030304,
+        "body_verification_rate": 0.5606060606060606,
+        "multi_request_rate": 0.030303030303030304,
+        "error_status_assertion_rate": 0.07575757575757576,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.0,
+        "endpoint_coverage": 0.20689655172413793,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "TencentBlueKing_bk-job",
+      "api_test_count": 65,
+      "endpoint_count": 997,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5230769230769231,
+        "multi_request_rate": 0.8,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.943089430894309,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "exadel-inc_CompreFace",
+      "api_test_count": 65,
+      "endpoint_count": 62,
+      "measures": {
+        "header_check_rate": 0.1076923076923077,
+        "body_verification_rate": 0.47692307692307695,
+        "multi_request_rate": 0.13846153846153847,
+        "error_status_assertion_rate": 0.3384615384615385,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.5,
+        "endpoint_coverage": 0.43548387096774194,
+        "simple_1_way_optional_coverage": 0.10606060606060605
+      }
+    },
+    {
+      "dataset_name": "spring-projects_spring-data-rest",
+      "api_test_count": 64,
+      "endpoint_count": 36,
+      "measures": {
+        "header_check_rate": 0.15625,
+        "body_verification_rate": 0.078125,
+        "multi_request_rate": 0.25,
+        "error_status_assertion_rate": 0.3125,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.5555555555555556,
+        "endpoint_coverage": 0.4444444444444444,
+        "simple_1_way_optional_coverage": 0.5
+      }
+    },
+    {
+      "dataset_name": "OWASP_wrongsecrets",
+      "api_test_count": 63,
+      "endpoint_count": 15,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8095238095238095,
+        "multi_request_rate": 0.07936507936507936,
+        "error_status_assertion_rate": 0.06349206349206349,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.8,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "ant-media_Ant-Media-Server",
+      "api_test_count": 62,
+      "endpoint_count": 142,
+      "measures": {
+        "header_check_rate": 0.016129032258064516,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.9354838709677419,
+        "error_status_assertion_rate": 0.03225806451612903,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.3667262969588551,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-attic_spring-native",
+      "api_test_count": 62,
+      "endpoint_count": 69,
+      "measures": {
+        "header_check_rate": 0.016129032258064516,
+        "body_verification_rate": 0.532258064516129,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.14516129032258066,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.6521739130434783,
+        "simple_1_way_optional_coverage": 1.0
+      }
+    },
+    {
+      "dataset_name": "eclipse-steady_steady",
+      "api_test_count": 61,
+      "endpoint_count": 112,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.7540983606557377,
+        "multi_request_rate": 0.5245901639344263,
+        "error_status_assertion_rate": 0.29508196721311475,
+        "state_verification_rate": 0.04918032786885246,
+        "http_verb_repetition_rate": 0.7346938775510204,
+        "endpoint_coverage": 0.23214285714285715,
+        "simple_1_way_optional_coverage": 0.011904761904761904
+      }
+    },
+    {
+      "dataset_name": "wildfly_quickstart",
+      "api_test_count": 61,
+      "endpoint_count": 99,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.09836065573770492,
+        "multi_request_rate": 0.11475409836065574,
+        "error_status_assertion_rate": 0.06557377049180328,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.04040404040404041,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "kafbat_kafka-ui",
+      "api_test_count": 59,
+      "endpoint_count": 87,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.6440677966101694,
+        "multi_request_rate": 0.6271186440677966,
+        "error_status_assertion_rate": 0.3728813559322034,
+        "state_verification_rate": 0.23728813559322035,
+        "http_verb_repetition_rate": 0.21333333333333335,
+        "endpoint_coverage": 0.3793103448275862,
+        "simple_1_way_optional_coverage": 0.1708333333333333
+      }
+    },
+    {
+      "dataset_name": "spring-cloud_spring-cloud-sleuth",
+      "api_test_count": 59,
+      "endpoint_count": 48,
+      "measures": {
+        "header_check_rate": 0.01694915254237288,
+        "body_verification_rate": 0.1016949152542373,
+        "multi_request_rate": 0.06779661016949153,
+        "error_status_assertion_rate": 0.01694915254237288,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.375,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "spring-projects_spring-hateoas",
+      "api_test_count": 56,
+      "endpoint_count": 7,
+      "measures": {
+        "header_check_rate": 0.44642857142857145,
+        "body_verification_rate": 0.32142857142857145,
+        "multi_request_rate": 0.14285714285714285,
+        "error_status_assertion_rate": 0.125,
+        "state_verification_rate": 0.125,
+        "http_verb_repetition_rate": 0.2222222222222222,
+        "endpoint_coverage": 0.42857142857142855,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "wyh-spring-ecosystem-student_spring-boot-student",
+      "api_test_count": 56,
+      "endpoint_count": 99,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8214285714285714,
+        "multi_request_rate": 0.32142857142857145,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0707070707070707,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_metron",
+      "api_test_count": 55,
+      "endpoint_count": 97,
+      "measures": {
+        "header_check_rate": 0.03636363636363636,
+        "body_verification_rate": 0.5818181818181818,
+        "multi_request_rate": 0.7272727272727273,
+        "error_status_assertion_rate": 0.6181818181818182,
+        "state_verification_rate": 0.12727272727272726,
+        "http_verb_repetition_rate": 0.6267942583732058,
+        "endpoint_coverage": 0.3402061855670103,
+        "simple_1_way_optional_coverage": 1.0
+      }
+    },
+    {
+      "dataset_name": "IQSS_dataverse",
+      "api_test_count": 51,
+      "endpoint_count": 532,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.17647058823529413,
+        "multi_request_rate": 0.7450980392156863,
+        "error_status_assertion_rate": 0.23529411764705882,
+        "state_verification_rate": 0.0196078431372549,
+        "http_verb_repetition_rate": 0.44642857142857145,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "ctripcorp_x-pipe",
+      "api_test_count": 51,
+      "endpoint_count": 490,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.27450980392156865,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.6590909090909091,
+        "endpoint_coverage": 0.08979591836734693,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "spring-cloud_spring-cloud-config",
+      "api_test_count": 50,
+      "endpoint_count": 26,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.3,
+        "multi_request_rate": 0.04,
+        "error_status_assertion_rate": 0.14,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.75,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "helidon-io_helidon",
+      "api_test_count": 48,
+      "endpoint_count": 207,
+      "measures": {
+        "header_check_rate": 0.20833333333333334,
+        "body_verification_rate": 0.4166666666666667,
+        "multi_request_rate": 0.3333333333333333,
+        "error_status_assertion_rate": 0.14583333333333334,
+        "state_verification_rate": 0.08333333333333333,
+        "http_verb_repetition_rate": 0.10344827586206896,
+        "endpoint_coverage": 0.04830917874396135,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "alibaba_Sentinel",
+      "api_test_count": 46,
+      "endpoint_count": 91,
+      "measures": {
+        "header_check_rate": 0.021739130434782608,
+        "body_verification_rate": 0.43478260869565216,
+        "multi_request_rate": 0.34782608695652173,
+        "error_status_assertion_rate": 0.10869565217391304,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.9142857142857143,
+        "endpoint_coverage": 0.06593406593406594,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_servicecomb-samples",
+      "api_test_count": 45,
+      "endpoint_count": 141,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.6,
+        "multi_request_rate": 0.13333333333333333,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.8333333333333334,
+        "endpoint_coverage": 0.0425531914893617,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "Baeldung_spring-security-oauth",
+      "api_test_count": 44,
+      "endpoint_count": 39,
+      "measures": {
+        "header_check_rate": 0.022727272727272728,
+        "body_verification_rate": 0.29545454545454547,
+        "multi_request_rate": 0.75,
+        "error_status_assertion_rate": 0.3181818181818182,
+        "state_verification_rate": 0.022727272727272728,
+        "http_verb_repetition_rate": 0.43037974683544306,
+        "endpoint_coverage": 0.15384615384615385,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "gchq_Gaffer",
+      "api_test_count": 42,
+      "endpoint_count": 175,
+      "measures": {
+        "header_check_rate": 0.023809523809523808,
+        "body_verification_rate": 0.5476190476190477,
+        "multi_request_rate": 0.09523809523809523,
+        "error_status_assertion_rate": 0.11904761904761904,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.875,
+        "endpoint_coverage": 0.02857142857142857,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "kairosdb_kairosdb",
+      "api_test_count": 42,
+      "endpoint_count": 39,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.11904761904761904,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "Blazebit_blaze-persistence",
+      "api_test_count": 39,
+      "endpoint_count": 38,
+      "measures": {
+        "header_check_rate": 0.20512820512820512,
+        "body_verification_rate": 0.28205128205128205,
+        "multi_request_rate": 0.4358974358974359,
+        "error_status_assertion_rate": 0.02564102564102564,
+        "state_verification_rate": 0.05128205128205128,
+        "http_verb_repetition_rate": 0.6875,
+        "endpoint_coverage": 0.3684210526315789,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "datahub-project_datahub",
+      "api_test_count": 38,
+      "endpoint_count": 92,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.7105263157894737,
+        "multi_request_rate": 0.10526315789473684,
+        "error_status_assertion_rate": 0.13157894736842105,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.8333333333333334,
+        "endpoint_coverage": 0.21739130434782608,
+        "simple_1_way_optional_coverage": 0.19803921568627447
+      }
+    },
+    {
+      "dataset_name": "jmix-framework_jmix",
+      "api_test_count": 38,
+      "endpoint_count": 60,
+      "measures": {
+        "header_check_rate": 0.02631578947368421,
+        "body_verification_rate": 0.02631578947368421,
+        "multi_request_rate": 0.05263157894736842,
+        "error_status_assertion_rate": 0.5,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "mock-server_mockserver",
+      "api_test_count": 38,
+      "endpoint_count": 2,
+      "measures": {
+        "header_check_rate": 0.02631578947368421,
+        "body_verification_rate": 0.10526315789473684,
+        "multi_request_rate": 0.18421052631578946,
+        "error_status_assertion_rate": 0.05263157894736842,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 1.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-attic_spring-social",
+      "api_test_count": 37,
+      "endpoint_count": 13,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.35135135135135137,
+        "multi_request_rate": 0.05405405405405406,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 1.0,
+        "simple_1_way_optional_coverage": 1.0
+      }
+    },
+    {
+      "dataset_name": "GoogleCloudPlatform_java-docs-samples",
+      "api_test_count": 36,
+      "endpoint_count": 29,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.4166666666666667,
+        "multi_request_rate": 0.08333333333333333,
+        "error_status_assertion_rate": 0.4722222222222222,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.5555555555555556,
+        "endpoint_coverage": 0.8275862068965517,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "NationalSecurityAgency_datawave",
+      "api_test_count": 36,
+      "endpoint_count": 298,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.16666666666666666,
+        "multi_request_rate": 0.5277777777777778,
+        "error_status_assertion_rate": 0.4166666666666667,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "TaleLin_lin-cms-spring-boot",
+      "api_test_count": 36,
+      "endpoint_count": 33,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 1.0,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.027777777777777776,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.9090909090909091,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "apache_dubbo-admin",
+      "api_test_count": 36,
+      "endpoint_count": 68,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.3611111111111111,
+        "multi_request_rate": 0.3611111111111111,
+        "error_status_assertion_rate": 0.08333333333333333,
+        "state_verification_rate": 0.027777777777777776,
+        "http_verb_repetition_rate": 0.8636363636363636,
+        "endpoint_coverage": 0.4117647058823529,
+        "simple_1_way_optional_coverage": 0.3333333333333333
+      }
+    },
+    {
+      "dataset_name": "apache_inlong",
+      "api_test_count": 35,
+      "endpoint_count": 329,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.02857142857142857,
+        "multi_request_rate": 0.6285714285714286,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.8260869565217391,
+        "endpoint_coverage": 0.0547112462006079,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "codecentric_chaos-monkey-spring-boot",
+      "api_test_count": 35,
+      "endpoint_count": 27,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5142857142857142,
+        "multi_request_rate": 0.02857142857142857,
+        "error_status_assertion_rate": 0.2857142857142857,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.5925925925925926,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "gothinkster_spring-boot-realworld-example-app",
+      "api_test_count": 35,
+      "endpoint_count": 19,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5428571428571428,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.4857142857142857,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.9473684210526315,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "microcks_microcks",
+      "api_test_count": 35,
+      "endpoint_count": 94,
+      "measures": {
+        "header_check_rate": 0.05714285714285714,
+        "body_verification_rate": 0.42857142857142855,
+        "multi_request_rate": 0.8571428571428571,
+        "error_status_assertion_rate": 0.2,
+        "state_verification_rate": 0.08571428571428572,
+        "http_verb_repetition_rate": 0.8493150684931506,
+        "endpoint_coverage": 0.10638297872340426,
+        "simple_1_way_optional_coverage": 0.25
+      }
+    },
+    {
+      "dataset_name": "nuxeo_nuxeo",
+      "api_test_count": 35,
+      "endpoint_count": 88,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.34285714285714286,
+        "error_status_assertion_rate": 0.05714285714285714,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "redis_redis-om-spring",
+      "api_test_count": 33,
+      "endpoint_count": 60,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.9393939393939394,
+        "multi_request_rate": 0.09090909090909091,
+        "error_status_assertion_rate": 0.42424242424242425,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.3333333333333333,
+        "endpoint_coverage": 0.23333333333333334,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "steve-community_steve",
+      "api_test_count": 32,
+      "endpoint_count": 116,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.21875,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.53125,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.05172413793103448,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "pinpoint-apm_pinpoint",
+      "api_test_count": 31,
+      "endpoint_count": 460,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5161290322580645,
+        "multi_request_rate": 0.2903225806451613,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.16129032258064516,
+        "http_verb_repetition_rate": 0.2,
+        "endpoint_coverage": 0.04782608695652174,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "codecentric_spring-boot-admin",
+      "api_test_count": 30,
+      "endpoint_count": 48,
+      "measures": {
+        "header_check_rate": 0.4,
+        "body_verification_rate": 0.6,
+        "multi_request_rate": 0.23333333333333334,
+        "error_status_assertion_rate": 0.4,
+        "state_verification_rate": 0.13333333333333333,
+        "http_verb_repetition_rate": 0.36363636363636365,
+        "endpoint_coverage": 0.6041666666666666,
+        "simple_1_way_optional_coverage": 0.6666666666666666
+      }
+    },
+    {
+      "dataset_name": "freechat-fun_freechat",
+      "api_test_count": 28,
+      "endpoint_count": 227,
+      "measures": {
+        "header_check_rate": 0.8214285714285714,
+        "body_verification_rate": 0.8571428571428571,
+        "multi_request_rate": 0.39285714285714285,
+        "error_status_assertion_rate": 0.25,
+        "state_verification_rate": 0.14285714285714285,
+        "http_verb_repetition_rate": 0.625,
+        "endpoint_coverage": 0.23788546255506607,
+        "simple_1_way_optional_coverage": 0.16666666666666666
+      }
+    },
+    {
+      "dataset_name": "puniverse_comsat",
+      "api_test_count": 27,
+      "endpoint_count": 30,
+      "measures": {
+        "header_check_rate": 0.14814814814814814,
+        "body_verification_rate": 0.037037037037037035,
+        "multi_request_rate": 0.037037037037037035,
+        "error_status_assertion_rate": 0.14814814814814814,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.03333333333333333,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-attic_spring-cloud-gcp",
+      "api_test_count": 27,
+      "endpoint_count": 26,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.2962962962962963,
+        "multi_request_rate": 0.37037037037037035,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.037037037037037035,
+        "http_verb_repetition_rate": 0.8,
+        "endpoint_coverage": 0.6153846153846154,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "eclipse-ee4j_jersey",
+      "api_test_count": 26,
+      "endpoint_count": 713,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5,
+        "multi_request_rate": 0.038461538461538464,
+        "error_status_assertion_rate": 0.15384615384615385,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "thingsboard_tbmq",
+      "api_test_count": 26,
+      "endpoint_count": 100,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.15384615384615385,
+        "error_status_assertion_rate": 0.46153846153846156,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "MarquezProject_marquez",
+      "api_test_count": 25,
+      "endpoint_count": 48,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.28,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.041666666666666664,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "apache_linkis",
+      "api_test_count": 25,
+      "endpoint_count": 328,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.6,
+        "multi_request_rate": 0.92,
+        "error_status_assertion_rate": 0.4,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.042682926829268296,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "apache_servicecomb-pack",
+      "api_test_count": 25,
+      "endpoint_count": 45,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.44,
+        "multi_request_rate": 0.12,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.2222222222222222,
+        "simple_1_way_optional_coverage": 1.0
+      }
+    },
+    {
+      "dataset_name": "Teradata_kylo",
+      "api_test_count": 24,
+      "endpoint_count": 433,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 1.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 1.0,
+        "http_verb_repetition_rate": 0.34962406015037595,
+        "endpoint_coverage": 0.10623556581986143,
+        "simple_1_way_optional_coverage": 0.1
+      }
+    },
+    {
+      "dataset_name": "locationtech_geowave",
+      "api_test_count": 24,
+      "endpoint_count": 93,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 1.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-projects-experimental_spring-boot-thin-launcher",
+      "api_test_count": 24,
+      "endpoint_count": 19,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.9166666666666666,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.8947368421052632,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_pulsar",
+      "api_test_count": 23,
+      "endpoint_count": 801,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.43478260869565216,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0012484394506866417,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "corona-warn-app_cwa-server",
+      "api_test_count": 23,
+      "endpoint_count": 4,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.08695652173913043,
+        "error_status_assertion_rate": 0.43478260869565216,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.5,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "inception-project_inception",
+      "api_test_count": 23,
+      "endpoint_count": 40,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.08695652173913043,
+        "multi_request_rate": 0.6086956521739131,
+        "error_status_assertion_rate": 0.2608695652173913,
+        "state_verification_rate": 0.30434782608695654,
+        "http_verb_repetition_rate": 0.40425531914893614,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "jhipster_jhipster-lite",
+      "api_test_count": 23,
+      "endpoint_count": 17,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8260869565217391,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.8695652173913043,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.4117647058823529,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_drill",
+      "api_test_count": 21,
+      "endpoint_count": 89,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.2857142857142857,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "javaee_jersey",
+      "api_test_count": 21,
+      "endpoint_count": 708,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.6190476190476191,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spring-cloud_spring-cloud-stream",
+      "api_test_count": 20,
+      "endpoint_count": 7,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.05,
+        "multi_request_rate": 0.65,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.16666666666666666,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "spinnaker_kayenta",
+      "api_test_count": 19,
+      "endpoint_count": 48,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8421052631578947,
+        "multi_request_rate": 0.5263157894736842,
+        "error_status_assertion_rate": 0.21052631578947367,
+        "state_verification_rate": 0.5263157894736842,
+        "http_verb_repetition_rate": 0.3333333333333333,
+        "endpoint_coverage": 0.10416666666666667,
+        "simple_1_way_optional_coverage": 0.26
+      }
+    },
+    {
+      "dataset_name": "spring-attic_spring-security-oauth",
+      "api_test_count": 18,
+      "endpoint_count": 22,
+      "measures": {
+        "header_check_rate": 0.16666666666666666,
+        "body_verification_rate": 0.1111111111111111,
+        "multi_request_rate": 0.2222222222222222,
+        "error_status_assertion_rate": 0.5555555555555556,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.25,
+        "endpoint_coverage": 0.22727272727272727,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "apache_doris",
+      "api_test_count": 17,
+      "endpoint_count": 186,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8823529411764706,
+        "multi_request_rate": 0.23529411764705882,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "line_line-fido2-server",
+      "api_test_count": 17,
+      "endpoint_count": 19,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.4117647058823529,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.47058823529411764,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.3157894736842105,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "alibaba_spring-cloud-alibaba",
+      "api_test_count": 16,
+      "endpoint_count": 57,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.125,
+        "multi_request_rate": 0.5625,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.05263157894736842,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "hellokoding_hellokoding-courses",
+      "api_test_count": 16,
+      "endpoint_count": 102,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.125,
+        "multi_request_rate": 0.0625,
+        "error_status_assertion_rate": 0.125,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.06862745098039216,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "openlookeng_hetu-core",
+      "api_test_count": 16,
+      "endpoint_count": 92,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.375,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "yudaocode_SpringBoot-Labs",
+      "api_test_count": 16,
+      "endpoint_count": 267,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.13108614232209737,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "TimefoldAI_timefold-solver",
+      "api_test_count": 15,
+      "endpoint_count": 7,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.4,
+        "multi_request_rate": 0.13333333333333333,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.8571428571428571,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "eventuate-tram_eventuate-tram-sagas-examples-customers-and-orders",
+      "api_test_count": 15,
+      "endpoint_count": 8,
+      "measures": {
+        "header_check_rate": 0.13333333333333333,
+        "body_verification_rate": 0.13333333333333333,
+        "multi_request_rate": 0.2,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.25,
+        "endpoint_coverage": 0.5,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "GrailStack_Moss",
+      "api_test_count": 14,
+      "endpoint_count": 94,
+      "measures": {
+        "header_check_rate": 0.35714285714285715,
+        "body_verification_rate": 0.5714285714285714,
+        "multi_request_rate": 0.5714285714285714,
+        "error_status_assertion_rate": 0.5714285714285714,
+        "state_verification_rate": 0.2857142857142857,
+        "http_verb_repetition_rate": 0.45161290322580644,
+        "endpoint_coverage": 0.23404255319148937,
+        "simple_1_way_optional_coverage": 0.6666666666666666
+      }
+    },
+    {
+      "dataset_name": "Project-Books_book-project",
+      "api_test_count": 14,
+      "endpoint_count": 27,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.42857142857142855,
+        "error_status_assertion_rate": 0.5,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.6666666666666666,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "database-rider_database-rider",
+      "api_test_count": 14,
+      "endpoint_count": 15,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.35714285714285715,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.26666666666666666,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "dromara_Sa-Token",
+      "api_test_count": 14,
+      "endpoint_count": 153,
+      "measures": {
+        "header_check_rate": 0.14285714285714285,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.6428571428571429,
+        "error_status_assertion_rate": 0.07142857142857142,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.032679738562091505,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "eventeum_eventeum",
+      "api_test_count": 14,
+      "endpoint_count": 5,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.21428571428571427,
+        "error_status_assertion_rate": 0.14285714285714285,
+        "state_verification_rate": 0.07142857142857142,
+        "http_verb_repetition_rate": 0.0,
+        "endpoint_coverage": 1.0,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "eventuate-tram_eventuate-tram-examples-customers-and-orders",
+      "api_test_count": 14,
+      "endpoint_count": 14,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.21428571428571427,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.25,
+        "endpoint_coverage": 0.5714285714285714,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "livelessons-spring_building-microservices",
+      "api_test_count": 14,
+      "endpoint_count": 32,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8571428571428571,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.14285714285714285,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.25,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "alibaba_SREWorks",
+      "api_test_count": 13,
+      "endpoint_count": 1109,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.15384615384615385,
+        "multi_request_rate": 0.07692307692307693,
+        "error_status_assertion_rate": 0.07692307692307693,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.004508566275924256,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "alibaba_spring-ai-alibaba",
+      "api_test_count": 13,
+      "endpoint_count": 38,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.46153846153846156,
+        "multi_request_rate": 1.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "apache_pinot",
+      "api_test_count": 13,
+      "endpoint_count": 343,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "jboss-developer_jboss-eap-quickstarts",
+      "api_test_count": 13,
+      "endpoint_count": 15,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.23076923076923078,
+        "multi_request_rate": 0.38461538461538464,
+        "error_status_assertion_rate": 0.15384615384615385,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.06666666666666667,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "Baeldung_spring-security-registration",
+      "api_test_count": 12,
+      "endpoint_count": 25,
+      "measures": {
+        "header_check_rate": 0.3333333333333333,
+        "body_verification_rate": 0.4166666666666667,
+        "multi_request_rate": 0.16666666666666666,
+        "error_status_assertion_rate": 0.08333333333333333,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.16,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "alibaba_fastjson2",
+      "api_test_count": 12,
+      "endpoint_count": 6,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.08333333333333333,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.0,
+        "endpoint_coverage": 0.3333333333333333,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "ddd-by-examples_library",
+      "api_test_count": 12,
+      "endpoint_count": 7,
+      "measures": {
+        "header_check_rate": 0.4166666666666667,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.4166666666666667,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.14285714285714285,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "eclipse-jifa_jifa",
+      "api_test_count": 12,
+      "endpoint_count": 13,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.6666666666666666,
+        "multi_request_rate": 0.16666666666666666,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.6153846153846154,
+        "simple_1_way_optional_coverage": 0.0
+      }
+    },
+    {
+      "dataset_name": "hawtio_hawtio",
+      "api_test_count": 12,
+      "endpoint_count": 2,
+      "measures": {
+        "header_check_rate": 0.16666666666666666,
+        "body_verification_rate": 0.3333333333333333,
+        "multi_request_rate": 0.25,
+        "error_status_assertion_rate": 0.5,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.5,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "ls1intum_Artemis",
+      "api_test_count": 12,
+      "endpoint_count": 897,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.0,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.08333333333333333,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "sofastack_sofa-boot",
+      "api_test_count": 12,
+      "endpoint_count": 8,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5,
+        "multi_request_rate": 0.16666666666666666,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.125,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "OpenAPITools_openapi-generator",
+      "api_test_count": 11,
+      "endpoint_count": 1,
+      "measures": {
+        "header_check_rate": 0.2727272727272727,
+        "body_verification_rate": 0.7272727272727273,
+        "multi_request_rate": 0.36363636363636365,
+        "error_status_assertion_rate": 0.2727272727272727,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.0,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "microservices-patterns_ftgo-application",
+      "api_test_count": 11,
+      "endpoint_count": 16,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.5454545454545454,
+        "multi_request_rate": 0.18181818181818182,
+        "error_status_assertion_rate": 0.09090909090909091,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.30434782608695654,
+        "endpoint_coverage": 0.1875,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "syndesisio_syndesis",
+      "api_test_count": 11,
+      "endpoint_count": 105,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.2727272727272727,
+        "multi_request_rate": 0.0,
+        "error_status_assertion_rate": 0.2727272727272727,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": null,
+        "endpoint_coverage": 0.05714285714285714,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "airsonic_airsonic",
+      "api_test_count": 10,
+      "endpoint_count": 157,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.8,
+        "multi_request_rate": 0.7,
+        "error_status_assertion_rate": 0.1,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 1.0,
+        "endpoint_coverage": 0.044585987261146494,
+        "simple_1_way_optional_coverage": null
+      }
+    },
+    {
+      "dataset_name": "jeecgboot_jeecg",
+      "api_test_count": 10,
+      "endpoint_count": 1048,
+      "measures": {
+        "header_check_rate": 0.0,
+        "body_verification_rate": 0.9,
+        "multi_request_rate": 0.9,
+        "error_status_assertion_rate": 0.0,
+        "state_verification_rate": 0.0,
+        "http_verb_repetition_rate": 0.5555555555555556,
+        "endpoint_coverage": 0.0,
+        "simple_1_way_optional_coverage": null
+      }
+    }
+  ]
+}

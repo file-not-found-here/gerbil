@@ -1,0 +1,151 @@
+{
+  "scope": "all_tests",
+  "test_counts": {
+    "total": 159,
+    "api": 89,
+    "non_api": 70,
+    "controller_unit_test": 0
+  },
+  "comparisons": {
+    "expanded_ncloc": {
+      "api": {
+        "count": 89,
+        "min": 3.0,
+        "max": 279.0,
+        "mean": 28.921348314606742,
+        "p25": 12.0,
+        "p50": 21.0,
+        "p75": 38.0,
+        "p90": 45.0
+      },
+      "non_api": {
+        "count": 70,
+        "min": 4.0,
+        "max": 116.0,
+        "mean": 25.2,
+        "p25": 6.0,
+        "p50": 13.5,
+        "p75": 35.0,
+        "p90": 56.0
+      },
+      "controller_unit_test": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      }
+    },
+    "expanded_cyclomatic_complexity": {
+      "api": {
+        "count": 89,
+        "min": 1.0,
+        "max": 73.0,
+        "mean": 3.797752808988764,
+        "p25": 2.0,
+        "p50": 2.0,
+        "p75": 2.0,
+        "p90": 4.0
+      },
+      "non_api": {
+        "count": 70,
+        "min": 1.0,
+        "max": 29.0,
+        "mean": 5.6,
+        "p25": 1.0,
+        "p50": 2.0,
+        "p75": 8.75,
+        "p90": 13.100000000000001
+      },
+      "controller_unit_test": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      }
+    },
+    "expanded_helper_method_count": {
+      "api": {
+        "count": 89,
+        "min": 0.0,
+        "max": 68.0,
+        "mean": 1.2808988764044944,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "non_api": {
+        "count": 70,
+        "min": 0.0,
+        "max": 9.0,
+        "mean": 1.2142857142857142,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 2.0,
+        "p90": 4.0
+      },
+      "controller_unit_test": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      }
+    },
+    "expanded_objects_created": {
+      "api": {
+        "count": 89,
+        "min": 0.0,
+        "max": 80.0,
+        "mean": 5.966292134831461,
+        "p25": 1.0,
+        "p50": 3.0,
+        "p75": 8.0,
+        "p90": 14.0
+      },
+      "non_api": {
+        "count": 70,
+        "min": 0.0,
+        "max": 7.0,
+        "mean": 1.2428571428571429,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 2.0,
+        "p90": 4.0
+      },
+      "controller_unit_test": {
+        "count": 0,
+        "min": null,
+        "max": null,
+        "mean": null,
+        "p25": null,
+        "p50": null,
+        "p75": null,
+        "p90": null
+      }
+    },
+    "expanded_assertion_count": {
+      "api": {
+        "count": 89,
+        "min": 1.0,
+        "max": 16.0,
+        "mean": 2.707865168539326,
+        "p25": 2.0,
+        "p50": 2.0,
+        "p75": 3.0,
+        "p90": 4.200000000000003
+      }
+    }
+  }
+}

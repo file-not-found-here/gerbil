@@ -1,0 +1,165 @@
+{
+  "scope": "resolved_test_resource_sequences",
+  "api_test_count": 1243,
+  "resolved_sequence_count": 1325,
+  "unresolved_sequence_count": 0,
+  "total_sequence_count": 1325,
+  "single_verb_sequence_count": 1292,
+  "combinations": {
+    "GET-only": {
+      "verbs": [
+        "GET"
+      ],
+      "count": 760,
+      "pct": 57.35849056603774
+    },
+    "HEAD-only": {
+      "verbs": [
+        "HEAD"
+      ],
+      "count": 1,
+      "pct": 0.07547169811320754
+    },
+    "POST-only": {
+      "verbs": [
+        "POST"
+      ],
+      "count": 349,
+      "pct": 26.339622641509433
+    },
+    "PUT-only": {
+      "verbs": [
+        "PUT"
+      ],
+      "count": 86,
+      "pct": 6.490566037735849
+    },
+    "PATCH-only": {
+      "verbs": [
+        "PATCH"
+      ],
+      "count": 9,
+      "pct": 0.6792452830188679
+    },
+    "DELETE-only": {
+      "verbs": [
+        "DELETE"
+      ],
+      "count": 87,
+      "pct": 6.566037735849057
+    },
+    "GET-POST": {
+      "verbs": [
+        "GET",
+        "POST"
+      ],
+      "count": 15,
+      "pct": 1.1320754716981132
+    },
+    "POST-PUT": {
+      "verbs": [
+        "POST",
+        "PUT"
+      ],
+      "count": 8,
+      "pct": 0.6037735849056604
+    },
+    "GET-POST-PUT": {
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "count": 4,
+      "pct": 0.3018867924528302
+    },
+    "GET-POST-DELETE": {
+      "verbs": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "count": 4,
+      "pct": 0.3018867924528302
+    },
+    "GET-PUT": {
+      "verbs": [
+        "GET",
+        "PUT"
+      ],
+      "count": 1,
+      "pct": 0.07547169811320754
+    },
+    "GET-DELETE": {
+      "verbs": [
+        "GET",
+        "DELETE"
+      ],
+      "count": 1,
+      "pct": 0.07547169811320754
+    }
+  },
+  "multi_verb_combinations": {
+    "scope": "resolved_multi_verb_test_resource_sequences",
+    "multi_verb_sequence_count": 33,
+    "pct_of_resolved_sequences": 2.490566037735849,
+    "combinations": {
+      "GET-POST": {
+        "verbs": [
+          "GET",
+          "POST"
+        ],
+        "count": 15,
+        "pct": 45.45454545454545
+      },
+      "POST-PUT": {
+        "verbs": [
+          "POST",
+          "PUT"
+        ],
+        "count": 8,
+        "pct": 24.242424242424242
+      },
+      "GET-POST-PUT": {
+        "verbs": [
+          "GET",
+          "POST",
+          "PUT"
+        ],
+        "count": 4,
+        "pct": 12.121212121212121
+      },
+      "GET-POST-DELETE": {
+        "verbs": [
+          "GET",
+          "POST",
+          "DELETE"
+        ],
+        "count": 4,
+        "pct": 12.121212121212121
+      },
+      "GET-PUT": {
+        "verbs": [
+          "GET",
+          "PUT"
+        ],
+        "count": 1,
+        "pct": 3.0303030303030303
+      },
+      "GET-DELETE": {
+        "verbs": [
+          "GET",
+          "DELETE"
+        ],
+        "count": 1,
+        "pct": 3.0303030303030303
+      }
+    },
+    "post_delete_pairing": {
+      "scope": "resolved_multi_verb_sequences_with_post",
+      "post_sequence_count": 31,
+      "paired_with_delete_count": 4,
+      "pct_paired_with_delete": 12.903225806451612
+    }
+  }
+}

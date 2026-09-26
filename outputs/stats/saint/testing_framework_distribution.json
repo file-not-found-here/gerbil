@@ -1,0 +1,132 @@
+{
+  "scope": "test_classes",
+  "test_class_count": 114,
+  "framework_split": {
+    "junit3": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "junit4": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "junit5": {
+      "class_count": 114,
+      "pct_of_classes": 100.0
+    },
+    "testng": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "assertj": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "hamcrest": {
+      "class_count": 114,
+      "pct_of_classes": 100.0
+    },
+    "google-truth": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "mockito": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "easymock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "powermock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "jmockit": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "jmock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "spring-test": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "rest-assured": {
+      "class_count": 114,
+      "pct_of_classes": 100.0
+    },
+    "karate": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "pact": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "citrus": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    }
+  },
+  "category_split": {
+    "test-runner": {
+      "frameworks": [
+        "junit3",
+        "junit4",
+        "junit5",
+        "testng"
+      ],
+      "class_count": 114,
+      "pct_of_classes": 100.0
+    },
+    "assertion-library": {
+      "frameworks": [
+        "assertj",
+        "hamcrest",
+        "google-truth"
+      ],
+      "class_count": 114,
+      "pct_of_classes": 100.0
+    },
+    "mocking-library": {
+      "frameworks": [
+        "mockito",
+        "easymock",
+        "powermock",
+        "jmockit",
+        "jmock"
+      ],
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "api-test-framework": {
+      "frameworks": [
+        "spring-test",
+        "rest-assured",
+        "karate",
+        "pact",
+        "citrus"
+      ],
+      "class_count": 114,
+      "pct_of_classes": 100.0
+    }
+  },
+  "classes_without_frameworks": {
+    "count": 0,
+    "total": 114,
+    "proportion": 0.0
+  },
+  "framework_count_per_class": {
+    "count": 114,
+    "min": 3.0,
+    "max": 3.0,
+    "mean": 3.0,
+    "p25": 3.0,
+    "p50": 3.0,
+    "p75": 3.0,
+    "p90": 3.0
+  }
+}

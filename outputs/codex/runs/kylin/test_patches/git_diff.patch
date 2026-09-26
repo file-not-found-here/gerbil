@@ -1,0 +1,887 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..7a020e3
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,709 @@
++# API Endpoint Coverage (Progress: 12/551)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - BroadcastController
++- [~] POST /api/broadcast/ - skipped: needs application service/cluster fixtures
++- [~] PUT /api/broadcast/capacity/refresh_all - skipped: needs application service/cluster fixtures
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - DashboardController
++- [~] GET /api/dashboard/chart/{category}/{metric}/{dimension} - skipped: needs application service/cluster fixtures
++- [~] GET /api/dashboard/metric/job - skipped: needs application service/cluster fixtures
++- [~] GET /api/dashboard/metric/model - skipped: needs application service/cluster fixtures
++- [~] GET /api/dashboard/metric/query - skipped: needs application service/cluster fixtures
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - ErrorController
++- [x] ANY /api/error/ - stored exception becomes HTTP 500
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - HealthController
++- [x] POST /api/kg/health/instance_info - empty token rejected in envelope (HTTP 200, code 999)
++- [x] POST /api/kg/health/instance_service/{state} - oversized token rejected in envelope (HTTP 200, code 999)
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - LightningController
++- [~] GET /api/lightning/system_profile - skipped: needs application service/cluster fixtures
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - NAdminController
++- [x] GET /api/admin/instance_info - success envelope returns configured timezone
++- [~] GET /api/admin/public_config - skipped: needs application service/cluster fixtures
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - NConfigController
++- [x] GET /api/config/all - success envelope with properties map
++- [x] GET /api/config/is_cloud - success envelope with boolean data
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - NEpochController
++- [~] POST /api/epoch/ - skipped: needs application service/cluster fixtures
++- [~] POST /api/epoch/all - skipped: needs application service/cluster fixtures
++- [~] GET /api/epoch/maintenance_mode - skipped: needs application service/cluster fixtures
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - NMonitorController
++- [x] POST /api/monitor/alert - valid payload forwarded to monitor service
++- [x] GET /api/monitor/memory_info - deprecated endpoint returns empty list
++- [x] GET /api/monitor/status - success service envelope
++- [x] GET /api/monitor/status/statistics - start/end required; valid range succeeds, reversed range fails
++- [x] GET /api/monitor/thread_info - deprecated endpoint returns empty list
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - NSystemController
++- [~] POST /api/system/broadcast_metadata_backup - skipped: needs application service/cluster fixtures
++- [~] DELETE /api/system/clean_sparder_event_log - skipped: needs application service/cluster fixtures
++- [~] POST /api/system/do_cleanup_garbage - skipped: needs application service/cluster fixtures
++- [~] GET /api/system/host - skipped: needs application service/cluster fixtures
++- [~] POST /api/system/metadata/reload - skipped: needs application service/cluster fixtures
++- [~] POST /api/system/metadata_backup_tmp_file - skipped: needs application service/cluster fixtures
++- [~] PUT /api/system/roll_event_log - skipped: needs application service/cluster fixtures
++- [~] POST /api/system/transaction/simulation - skipped: needs application service/cluster fixtures
++- [~] POST /api/system/transaction/simulation/insert_meta - skipped: needs application service/cluster fixtures
++
++## common-server/src/main/java/org/apache/kylin/rest/controller - ResourceGroupController
++- [~] PUT /api/resource_groups/ - skipped: needs application service/cluster fixtures
++
++## common-server/src/main/java/org/apache/kylin/rest/controller/fixture - FixtureController
++- [x] GET /api/handleErrors - success envelope with null data (HTTP 200)
++
++## data-loading-server/src/main/java/org/apache/kylin/rest/controller - JobController
++- [~] DELETE /api/jobs/ - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/ - skipped: needs job/streaming backend and metadata fixtures
++- [~] POST /api/jobs/destroy_job_process - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/jobs/error - skipped: needs job/streaming backend and metadata fixtures
++- [~] POST /api/jobs/gluten_cache - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/profile/dump_appid - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/profile/dump_project - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/profile/start_appid - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/profile/start_project - skipped: needs job/streaming backend and metadata fixtures
++- [~] POST /api/jobs/replace_metadata - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/jobs/spark - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/jobs/stage/status - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/statistics - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/statistics/count - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/statistics/duration_per_byte - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/jobs/status - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/jobs/wait_and_run_time - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/waiting_jobs - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/waiting_jobs/models - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/{job_id:.+}/detail - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/{job_id:.+}/steps/{step_id:.+}/log - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/{job_id:.+}/steps/{step_id:.+}/output - skipped: needs job/streaming backend and metadata fixtures
++
++## data-loading-server/src/main/java/org/apache/kylin/rest/controller - JobResourceController
++- [~] PUT /api/resource/job/adjust - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/resource/job/queueNames - skipped: needs job/streaming backend and metadata fixtures
++
++## data-loading-server/src/main/java/org/apache/kylin/rest/controller - StreamingJobController
++- [~] GET /api/streaming_jobs/ - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/streaming_jobs/dataflow/layout - skipped: needs job/streaming backend and metadata fixtures
++- [~] POST /api/streaming_jobs/dataflow/segment - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/streaming_jobs/dataflow/segment - skipped: needs job/streaming backend and metadata fixtures
++- [~] POST /api/streaming_jobs/dataflow/segment/deletion - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/streaming_jobs/model_name - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/streaming_jobs/params - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/streaming_jobs/records - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/streaming_jobs/spark - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/streaming_jobs/stats - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/streaming_jobs/stats/{jobId:.+} - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/streaming_jobs/status - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/streaming_jobs/{job_id:.+}/download_log - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/streaming_jobs/{job_id:.+}/simple_log - skipped: needs job/streaming backend and metadata fixtures
++
++## data-loading-server/src/main/java/org/apache/kylin/rest/controller/open - OpenStreamingJobController
++- [~] GET /api/streaming_jobs/ - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/streaming_jobs/records - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/streaming_jobs/stats/{jobId:.+} - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/streaming_jobs/status - skipped: needs job/streaming backend and metadata fixtures
++
++## data-loading-server/src/main/java/org/apache/kylin/rest/controller/v2 - JobControllerV2
++- [~] GET /api/jobs/ - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/{jobId} - skipped: needs job/streaming backend and metadata fixtures
++- [~] PUT /api/jobs/{jobId}/resume - skipped: needs job/streaming backend and metadata fixtures
++- [~] GET /api/jobs/{job_id:.+}/steps/{step_id:.+}/output - skipped: needs job/streaming backend and metadata fixtures
++
++## data-loading-server/src/main/java/org/apache/kylin/rest/delegate - JobMetadataDelegateController
++- [~] POST /api/job_delegate/discard_job - skipped: needs job/streaming backend and metadata fixtures
++
++## data-loading-service/src/main/java/org/apache/kylin/rest/controller - JobDriverUIController
++- [~] ANY /{project}/{job_step}/** - skipped: needs initialized job/cluster runtime
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - AclTCRController
++- [~] GET /api/acl/sid/{sid_type:.+}/{sid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/acl/sid/{sid_type:.+}/{sid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/acl/updatable - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/acl/{sid_type:.+}/{sid:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - CustomFileController
++- [~] DELETE /api/custom/jar - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/custom/jar - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - InternalTableController
++- [~] GET /api/internal_tables/ - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/internal_tables/partitions - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/internal_tables/truncate_internal_table - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/internal_tables/{project:.+}/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - KafkaController
++- [~] POST /api/kafka/convert - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/kafka/messages - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/kafka/parser - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/kafka/parsers - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/kafka/topics - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NAccessController
++- [~] GET /api/access/available/{entity_type:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/available/{sid_type:.+}/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/access/batch/{entity_type:.+}/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/access/extension/{type:.+}/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/access/global/batch/permission/{permissionType:.+} - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/access/global/permission/project/{permissionType:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/access/global/permission/project/{permissionType:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/global/permission/user_acls - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/access/global/permission/{permissionType:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/global/permission/{permissionType:.+}/{sid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/permission/project_ext_permission - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/permission/project_permission - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/access/{entity_type:.+}/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/access/{entity_type:.+}/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/access/{entity_type:.+}/{uuid:.+}/deletion - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/{type:.+}/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/access/{type:.+}/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/{uuid:.+}/all - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NIndexPlanController
++- [~] PUT /api/index_plans/agg_index_count - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/index_plans/base_index - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/index_plans/base_index - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/index_plans/index - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/index_plans/index - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/index_plans/index/{layout_id:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/index_plans/index_graph - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/index_plans/index_stat - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/index_plans/opt_index - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/index_plans/rule - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/index_plans/rule - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/index_plans/rule_based_index_diff - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/index_plans/table_index - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/index_plans/table_index - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/index_plans/table_index - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/index_plans/table_index/{id:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NMetaStoreController
++- [~] POST /api/metastore/backup/models - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/metastore/cleanup - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/metastore/cleanup_storage - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/metastore/cleanup_storage/tenant_node - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/metastore/models - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/metastore/previews/models - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/metastore/validation/models - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NModelController
++- [~] GET /api/models/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/affected_models - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/batch_save_models - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/check_partition_desc - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/computed_columns/check - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/computed_columns/usage - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/disable_all_models - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/enable_all_models - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/invalid_indexes - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/model_save/check - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/name/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/name/scd2 - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/name/validation - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/optimize_layout_data_template - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/semantic - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/validate_export - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/validate_model - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/models/{model:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/agg_indices - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/agg_indices/shard_columns - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/agg_indices/shard_columns - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/clone - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/data_check - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/data_range/latest_data - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/data_range/latest_data - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/export - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/json - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/management_type - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/multi_partition/mapping - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/models/{model:.+}/multi_partition/sub_partition_values - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/multi_partition/sub_partition_values - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/multi_partition/sub_partition_values - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/name - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/optimize_layout_data - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/owner - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/partition - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/purge_effect - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/sql - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/status - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/storage_type - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/table_indices - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{project}/{model}/{layoutId}/layout_detail - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NProjectController
++- [~] GET /api/projects/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/projects/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/projects/config/deletion - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/projects/default_configs - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/projects/{project:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/auto_semi_config - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/projects/{project:.+}/backup - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/computed_column_config - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/projects/{project:.+}/config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/default_database - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/exclusion_enabled - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/garbage_cleanup_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/internal_table_enabled - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/jdbc_source_info_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/job_notification_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/multi_partition_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/optimize_index - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/owner - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/projects/{project:.+}/project_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/project_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/project_general_info - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/project_kerberos_info - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/push_down_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/push_down_project_config - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/projects/{project:.+}/query_accelerate_threshold - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/query_accelerate_threshold - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/scd2_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/segment_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/shard_num_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/snapshot_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/source_type - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/storage - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/storage_quota - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/projects/{project:.+}/storage_volume_info - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project:.+}/yarn_queue - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/projects/{project}/jdbc_config - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NTableController
++- [~] GET /api/tables/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/affected_data_range - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/auto_merge_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/tables/auto_merge_config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/tables/catalog_cache - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/compatibility/aws - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/databases - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/excluded_table - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/excluded_tables - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/tables/excluded_tables - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/tables/ext/prop/aws - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/import_ssb - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/loaded_databases - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/model_tables - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/names - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/partition_key - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/prepare_reload - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/project_table_names - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/project_tables - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/pushdown_mode - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/tables/pushdown_mode - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/reload - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/reload_hive_table_name - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/simple_table - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/ssb - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/top - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/{database:.+}/{table:.+}/prepare_unload - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NUserController
++- [~] GET /api/user/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user/ - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/user/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user/authentication - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user/authentication - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user/batch - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user/batch - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/user/password - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user/super_admin - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user/unassigned_users - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user/update_user - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - NUserGroupController
++- [~] POST /api/user_group/ - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user_group/batch - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user_group/batch - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user_group/group_members/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user_group/groups - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/user_group/users - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user_group/users_and_groups - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user_group/users_with_group - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user_group/{uuid:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - SampleController
++- [~] GET /api/tables/partition_column_format - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/sampling_check_result - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/sampling_jobs - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - SegmentController
++- [~] POST /api/models/index_planner_indices - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/models/model_segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/models/{dataflow:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{dataflow:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/indices - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/model_segments - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/model_segments/all_indexes - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/model_segments/indexes - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/model_segments/indexes/deletion - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/model_segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/model_segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/model_segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model:.+}/segment/validation - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/segment/validation - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/segment_holes - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/segments/merge_check - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - SnapshotController
++- [~] DELETE /api/snapshots/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/snapshots/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/snapshots/ - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/snapshots/ - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/snapshots/auto_refresh - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/snapshots/check_before_delete - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/snapshots/config - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/snapshots/config - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/snapshots/partitions - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/snapshots/reload_partition_col - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/snapshots/tables - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/snapshots/tables/more - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - SparkDDLController
++- [~] POST /api/spark_source/ddl - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/spark_source/ddl/description - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/spark_source/ddl/sync - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/spark_source/ddl/view_list - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller - StreamingTableController
++- [~] POST /api/streaming_tables/table - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/streaming_tables/table - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenAccessController
++- [~] GET /api/access/acls - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/access/project - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/project - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/access/project - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/access/project - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenAclTCRController
++- [~] PUT /api/acl/batch/{sid_type:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/acl/sid/{sid_type:.+}/{sid:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/acl/{sid_type:.+}/{sid:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenIndexPlanController
++- [~] PUT /api/index_plans/agg_groups - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/index_plans/index - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenInternalTableController
++- [~] GET /api/internal_tables/ - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/internal_tables/partitions - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/internal_tables/truncate_internal_table - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/internal_tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/internal_tables/{project:.+}/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenLogicalViewController
++- [~] POST /api/logical_view/ddl - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenMetaStoreController
++- [~] POST /api/metastore/backup/models - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/metastore/import/models - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/metastore/previews/models - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/metastore/validation/models - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenModelController
++- [~] GET /api/models/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/bi_export - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/comments_synchronization - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/models/config - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/config - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/config - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/modification - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/models/{model_name:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model_name:.+}/clone - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model_name:.+}/export - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model_name:.+}/indexes - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model_name:.+}/multi_partition/mapping - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model_name:.+}/partition - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model_name:.+}/segments/multi_partition/sub_partition_values - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model_name}/name - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model_name}/status - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{project}/{model}/model_desc - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{project}/{model}/partition_desc - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenSampleController
++- [~] GET /api/tables/column_format - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/sampling_jobs - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenSegmentController
++- [~] DELETE /api/models/segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model:.+}/segments/check - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model_name:.+}/indexes - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/models/{model_name:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model_name:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model_name:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model_name:.+}/segments - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{model_name:.+}/segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model_name:.+}/segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/models/{model_name:.+}/segments/multi_partition - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/models/{model_name}/segments/completion - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenSystemController
++- [~] GET /api/config - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenTableController
++- [~] GET /api/tables/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/compatibility/aws - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/tables/ext/prop/aws - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/pre_reload - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/reload - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/tables/reload/compatibility/aws - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/tables/{database:.+}/{table:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/tables/{database:.+}/{table:.+}/prepare_unload - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenUserController
++- [~] DELETE /api/user/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user/ - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/user/ - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user/batch - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user/batch - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/user/password - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/user/refresh - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user/{username:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/open - OpenUserGroupController
++- [~] DELETE /api/user_group/ - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user_group/ - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user_group/batch - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user_group/batch - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user_group/group_members/{group_name:.+} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/user_group/groups - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/user_group/users - skipped: needs metadata catalog and project fixtures
++- [~] DELETE /api/user_group/{group_name:.+} - skipped: needs metadata catalog and project fixtures
++- [~] POST /api/user_group/{group_name:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NAccessControllerV2
++- [~] GET /api/access/all/groups - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/all/users - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/{type}/{project} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/access/{userName:.+} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NCubeDescControllerV2
++- [~] GET /api/cube_desc/{projectName}/{cubeName} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NModelControllerV2
++- [~] GET /api/models/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/models/{projectName}/{modelName} - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NProjectControllerKylin
++- [~] GET / - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NProjectControllerV2
++- [~] GET / - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NTableControllerV2
++- [~] GET /api/tables/ - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NUserControllerV2
++- [~] GET /kap/user/users - skipped: needs metadata catalog and project fixtures
++- [~] GET /user/authentication - skipped: needs metadata catalog and project fixtures
++- [~] POST /user/authentication - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - NUserGroupControllerV2
++- [~] GET /api/user_group/usersWithGroup - skipped: needs metadata catalog and project fixtures
++
++## metadata-server/src/main/java/org/apache/kylin/rest/controller/v2 - SegmentControllerV2
++- [~] GET /api/cubes/ - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/cubes/{cubeName} - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/cubes/{cubeName}/file_segments - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/cubes/{cubeName}/holes - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/cubes/{cubeName}/rebuild - skipped: needs metadata catalog and project fixtures
++- [~] PUT /api/cubes/{cubeName}/segments - skipped: needs metadata catalog and project fixtures
++- [~] GET /api/cubes/{cubeName}/sql - skipped: needs metadata catalog and project fixtures
++
++## ops-server/src/main/java/org/apache/kylin/rest/controller - OpsController
++- [~] POST /api/system/cancel_metadata_backup - skipped: needs operational services and cluster state
++- [~] POST /api/system/cleanup_garbage - skipped: needs operational services and cluster state
++- [~] POST /api/system/delete_metadata_backup - skipped: needs operational services and cluster state
++- [~] DELETE /api/system/diag - skipped: needs operational services and cluster state
++- [~] GET /api/system/diag - skipped: needs operational services and cluster state
++- [~] POST /api/system/diag - skipped: needs operational services and cluster state
++- [~] PUT /api/system/diag/progress - skipped: needs operational services and cluster state
++- [~] POST /api/system/diag/query - skipped: needs operational services and cluster state
++- [~] GET /api/system/diag/status - skipped: needs operational services and cluster state
++- [~] POST /api/system/do_metadata_backup - skipped: needs operational services and cluster state
++- [~] POST /api/system/do_restore_metadata - skipped: needs operational services and cluster state
++- [~] GET /api/system/get_metadata_backup_list - skipped: needs operational services and cluster state
++- [~] GET /api/system/has_metadata_restore_in_progress - skipped: needs operational services and cluster state
++- [~] DELETE /api/system/maintenance_mode - skipped: needs operational services and cluster state
++- [~] GET /api/system/maintenance_mode - skipped: needs operational services and cluster state
++- [~] POST /api/system/maintenance_mode - skipped: needs operational services and cluster state
++- [~] GET /api/system/metadata/dump - skipped: needs operational services and cluster state
++- [~] GET /api/system/metadata_backup_store_dir - skipped: needs operational services and cluster state
++- [~] GET /api/system/metadata_restore_task_status - skipped: needs operational services and cluster state
++- [~] GET /api/system/servers - skipped: needs operational services and cluster state
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - GlutenCacheController
++- [~] POST /api/cache/gluten_cache - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/cache/gluten_cache_async - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/index/gluten_cache - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/internal_table/gluten_cache - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - NAsyncQueryController
++- [~] DELETE /api/async_query - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/async_query - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/async_query/stop/{query_id:.+} - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/async_query/tenant_node - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/async_query/{query_id:.+} - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/file_status - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/metadata - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/result_download - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/result_path - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/status - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - NAsyncQueryControllerV2
++- [~] POST /api/async_query - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/filestatus - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/metadata - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/result_download - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/async_query/{query_id:.+}/status - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - NQueryController
++- [~] POST /api/query/ - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/query/cache - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query/cache/recovery - skipped: needs Spark/query runtime and model fixtures
++- [~] PUT /api/query/catalog_cache - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/download_query_histories - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/download_query_histories_sql - skipped: needs Spark/query runtime and model fixtures
++- [~] PUT /api/query/format - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query/format/{format:.+} - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/history_queries - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/history_queries/table_names - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query/if_big_query - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query/prestate - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/profile/dump - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/profile/start - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/query_histories - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/query_history/tired_storage_metrics - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/query_history_models - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/query_history_submitters - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/saved_queries - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query/saved_queries - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/query/saved_queries/{id:.+} - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/servers - skipped: needs Spark/query runtime and model fixtures
++- [~] PUT /api/query/single_catalog_cache - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/statistics - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/statistics/count - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/statistics/duration - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query/sync_file_segments - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query/tables_and_columns - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/query/{id:.+} - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - QueryResourceController
++- [~] PUT /api/resource/query/adjust - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/resource/query/queueNames - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - QuerySQLBlacklistController
++- [~] POST /api/query_sql_blacklist/add_item/{project} - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/query_sql_blacklist/clear/{project} - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/query_sql_blacklist/delete_item/{project}/{id} - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query_sql_blacklist/overwrite - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query_sql_blacklist/update_item/{project} - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/query_sql_blacklist/{project} - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - SnapshotSourceTableStatsController
++- [~] POST /api/snapshots/source_table_stats - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/snapshots/view_mapping - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - SparderUIController
++- [~] ANY /** - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /SQL/execution - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - SparkHistoryUIController
++- [~] ANY /** - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - SparkMetricsController
++- [~] GET /api/monitor/spark/prometheus - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller - SparkSourceController
++- [~] GET /api/spark_source/databases - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/spark_source/execute - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/spark_source/export_table_structure - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/load_samples - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/{database}/exists - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/{database}/tables - skipped: needs Spark/query runtime and model fixtures
++- [~] DELETE /api/spark_source/{database}/tables/{table} - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/{database}/{table}/columns - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/{database}/{table}/desc - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/{database}/{table}/exists - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/{database}/{table}/has_partition - skipped: needs Spark/query runtime and model fixtures
++- [~] GET /api/spark_source/{database}/{table}/msck - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller/v2 - NQueryControllerV2
++- [~] POST /api/query/ - skipped: needs Spark/query runtime and model fixtures
++- [~] POST /api/query/prestate - skipped: needs Spark/query runtime and model fixtures
++
++## query-server/src/main/java/org/apache/kylin/rest/controller/v2 - NQueryMetaController
++- [~] GET /api/tables_and_columns - skipped: needs Spark/query runtime and model fixtures
++
++## rec-server/src/main/java/org/apache/kylin/rest/controller - FavoriteQueryController
++- [~] POST /api/query/favorite_queries/sql_files - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/query/favorite_queries/sql_validation - skipped: needs recommendation services and model fixtures
++
++## rec-server/src/main/java/org/apache/kylin/rest/controller - ModelRecController
++- [~] POST /api/models/can_answered_by_existed_model - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/model_recommendation - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/recommendations - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/suggest_model - skipped: needs recommendation services and model fixtures
++- [~] GET /api/models/{model_id:.+}/auto_index_plan_rule - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/{model_id:.+}/auto_index_plan_rule - skipped: needs recommendation services and model fixtures
++- [~] GET /api/models/{model_id:.+}/index_planner_rule - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/models/{model_id:.+}/index_planner_rule - skipped: needs recommendation services and model fixtures
++- [~] DELETE /api/models/{model_id:.+}/index_white_list - skipped: needs recommendation services and model fixtures
++- [~] GET /api/models/{model_id:.+}/index_white_list - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/{model_id:.+}/index_white_list - skipped: needs recommendation services and model fixtures
++
++## rec-server/src/main/java/org/apache/kylin/rest/controller - ProjectRecController
++- [~] GET /api/projects/acceleration - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/projects/acceleration - skipped: needs recommendation services and model fixtures
++- [~] POST /api/projects/acceleration_tag - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/projects/index_planner_rule - skipped: needs recommendation services and model fixtures
++- [~] GET /api/projects/statistics - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/projects/{project:.+}/auto_index_plan_rule - skipped: needs recommendation services and model fixtures
++- [~] GET /api/projects/{project:.+}/favorite_rules - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/projects/{project:.+}/favorite_rules - skipped: needs recommendation services and model fixtures
++
++## rec-server/src/main/java/org/apache/kylin/rest/controller - RecommendationController
++- [~] PUT /api/recommendations/acceleration - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/recommendations/count - skipped: needs recommendation services and model fixtures
++- [~] DELETE /api/recommendations/{model:.+} - skipped: needs recommendation services and model fixtures
++- [~] GET /api/recommendations/{model:.+} - skipped: needs recommendation services and model fixtures
++- [~] POST /api/recommendations/{model:.+} - skipped: needs recommendation services and model fixtures
++- [~] DELETE /api/recommendations/{model:.+}/all - skipped: needs recommendation services and model fixtures
++- [~] POST /api/recommendations/{model:.+}/validation - skipped: needs recommendation services and model fixtures
++- [~] GET /api/recommendations/{model:.+}/{item_id:.+} - skipped: needs recommendation services and model fixtures
++
++## rec-server/src/main/java/org/apache/kylin/rest/controller/open - OpenModelRecController
++- [~] POST /api/models/accelerate_sqls - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/model_optimization - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/model_suggestion - skipped: needs recommendation services and model fixtures
++- [~] PUT /api/models/recommendations/batch - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/sql_acceleration - skipped: needs recommendation services and model fixtures
++
++## rec-server/src/main/java/org/apache/kylin/rest/controller/open - OpenModelSmartController
++- [~] POST /api/models/model_validation - skipped: needs recommendation services and model fixtures
++- [~] POST /api/models/validation - skipped: needs recommendation services and model fixtures
++- [~] GET /api/models/{model_name:.+}/recommendations - skipped: needs recommendation services and model fixtures
+diff --git a/src/common-server/src/test/java/org/apache/kylin/rest/controller/ApiEndpointHttpTest.java b/src/common-server/src/test/java/org/apache/kylin/rest/controller/ApiEndpointHttpTest.java
+new file mode 100644
+index 0000000..ed96df8
+--- /dev/null
++++ b/src/common-server/src/test/java/org/apache/kylin/rest/controller/ApiEndpointHttpTest.java
+@@ -0,0 +1,166 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *     http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.apache.kylin.rest.controller;
++
++import static org.hamcrest.Matchers.containsString;
++import static org.hamcrest.Matchers.hasSize;
++import static org.hamcrest.Matchers.is;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.verify;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.io.File;
++
++import org.apache.kylin.common.KylinConfig;
++import org.apache.kylin.rest.controller.fixture.FixtureController;
++import org.apache.kylin.rest.request.AlertMessageRequest;
++import org.apache.kylin.rest.service.MonitorService;
++import org.junit.After;
++import org.junit.Before;
++import org.junit.Test;
++import org.springframework.http.MediaType;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++public class ApiEndpointHttpTest {
++
++    private MockMvc fixtureMvc;
++
++    private MockMvc healthMvc;
++
++    private MockMvc errorMvc;
++
++    private MockMvc configMvc;
++
++    private MockMvc monitorMvc;
++
++    private MockMvc adminMvc;
++
++    private MonitorService monitorService;
++
++    private String previousKylinConf;
++
++    @Before
++    public void setUp() throws Exception {
++        previousKylinConf = System.getProperty(KylinConfig.KYLIN_CONF);
++        System.setProperty(KylinConfig.KYLIN_CONF, new File("../../build/conf").getCanonicalPath());
++        fixtureMvc = MockMvcBuilders.standaloneSetup(new FixtureController()).build();
++        healthMvc = MockMvcBuilders.standaloneSetup(new HealthController()).build();
++        errorMvc = MockMvcBuilders.standaloneSetup(new ErrorController()).build();
++        configMvc = MockMvcBuilders.standaloneSetup(new NConfigController()).build();
++        NMonitorController monitorController = new NMonitorController();
++        monitorService = mock(MonitorService.class);
++        ReflectionTestUtils.setField(monitorController, "monitorService", monitorService);
++        monitorMvc = MockMvcBuilders.standaloneSetup(monitorController).build();
++        adminMvc = MockMvcBuilders.standaloneSetup(new NAdminController()).build();
++    }
++
++    @After
++    public void restoreKylinConf() {
++        if (previousKylinConf == null) {
++            System.clearProperty(KylinConfig.KYLIN_CONF);
++        } else {
++            System.setProperty(KylinConfig.KYLIN_CONF, previousKylinConf);
++        }
++    }
++
++    @Test
++    public void fixtureEndpointReturnsSuccessEnvelope() throws Exception {
++        fixtureMvc.perform(get("/api/handleErrors"))
++                .andExpect(status().isOk()).andExpect(content().string(containsString("000")));
++    }
++
++    @Test
++    public void errorEndpointPropagatesTheStoredFailureAsServerError() throws Exception {
++        errorMvc.perform(get("/api/error/").requestAttr("error", new IllegalStateException("sentinel")))
++                .andExpect(status().isInternalServerError());
++    }
++
++    @Test
++    public void healthInstanceInfoRejectsMissingTokenInEnvelope() throws Exception {
++        healthMvc.perform(post("/api/kg/health/instance_info"))
++                .andExpect(status().isOk()).andExpect(jsonPath("$.code", is("999")))
++                .andExpect(jsonPath("$.msg").value("Check permission failed!"));
++    }
++
++    @Test
++    public void healthStateChangeRejectsMalformedOversizedTokenInEnvelope() throws Exception {
++        byte[] oversizedToken = new byte[65];
++        healthMvc.perform(post("/api/kg/health/instance_service/query_downgrade").content(oversizedToken))
++                .andExpect(status().isOk()).andExpect(jsonPath("$.code", is("999")))
++                .andExpect(jsonPath("$.msg").value("Check permission failed!"));
++    }
++
++    @Test
++    public void configurationEndpointsReturnSuccessfulEnvelopes() throws Exception {
++        configMvc.perform(get("/api/config/is_cloud")).andExpect(status().isOk())
++                .andExpect(jsonPath("$.code", is("000"))).andExpect(jsonPath("$.data").isBoolean());
++
++        configMvc.perform(get("/api/config/all")).andExpect(status().isOk())
++                .andExpect(jsonPath("$.code", is("000"))).andExpect(jsonPath("$.data").isMap());
++    }
++
++    @Test
++    public void deprecatedMonitorMetricsReturnEmptyLists() throws Exception {
++        monitorMvc.perform(get("/api/monitor/memory_info")).andExpect(status().isOk())
++                .andExpect(jsonPath("$.code", is("000"))).andExpect(jsonPath("$.data", hasSize(0)));
++
++        monitorMvc.perform(get("/api/monitor/thread_info")).andExpect(status().isOk())
++                .andExpect(jsonPath("$.code", is("000"))).andExpect(jsonPath("$.data", hasSize(0)));
++    }
++
++    @Test
++    public void adminInstanceInfoReturnsConfiguredTimezone() throws Exception {
++        adminMvc.perform(get("/api/admin/instance_info")).andExpect(status().isOk())
++                .andExpect(jsonPath("$.code", is("000")))
++                .andExpect(jsonPath("$.data['instance.timezone']").isString());
++    }
++
++    @Test
++    public void monitorStatusAndStatisticsReturnSuccessfulEnvelopes() throws Exception {
++        monitorMvc.perform(get("/api/monitor/status")).andExpect(status().isOk())
++                .andExpect(jsonPath("$.code", is("000")));
++
++        monitorMvc.perform(get("/api/monitor/status/statistics").param("start", "1").param("end", "2"))
++                .andExpect(status().isOk()).andExpect(jsonPath("$.code", is("000")));
++    }
++
++    @Test
++    public void monitorStatisticsRejectsMissingAndReversedTimeRanges() throws Exception {
++        monitorMvc.perform(get("/api/monitor/status/statistics").param("start", "1"))
++                .andExpect(status().isBadRequest());
++
++        monitorMvc.perform(get("/api/monitor/status/statistics").param("start", "2").param("end", "1"))
++                .andExpect(status().isInternalServerError());
++    }
++
++    @Test
++    public void validAlertPayloadIsPassedToMonitorService() throws Exception {
++        monitorMvc.perform(post("/api/monitor/alert").contentType(MediaType.APPLICATION_JSON)
++                .content("{\"alerts\":[{\"labels\":{}}]}"))
++                .andExpect(status().isOk());
++
++        verify(monitorService).handleAlertMessage(any(AlertMessageRequest.class));
++    }
++}

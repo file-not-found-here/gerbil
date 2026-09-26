@@ -1,0 +1,553 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..96a0b5e
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,364 @@
++# API Endpoint Coverage (Progress: 4/218)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## src/main/java/org/cbioportal/application - ExternalPageController
++- [~] GET /api/getexternalpage.json - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/application - LegacyProxyController
++- [~] * /api/proxy/{path} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/proxy/bitly - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/application - ProxyController
++- [~] * /proxy/dev/oncokb/** - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] * /proxy/A8F74CD7851BDEE8DCD2E86AB4E2A711/** - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /proxy/checkDarwinAccess - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/application - ColumnStoreSampleController
++- [~] GET /api/column-store/samples - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/samples/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/column-store/studies/{studyId}/samples - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/column-store/studies/{studyId}/samples/{sampleId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/column-store/studies/{studyId}/patients/{patientId}/samples - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/application - ColumnStoreStudyController
++- [~] GET /api/column-store/studies - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/application - ColumnarStoreAlterationEnrichmentController
++- [~] POST /api/column-store/alteration-enrichments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/application - ColumnarStoreStudyViewController
++- [~] POST /api/column-store/filtered-samples/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/mutated-genes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/molecular-profile-sample-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/cna-genes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/structuralvariant-genes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/clinical-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/sample-lists-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/clinical-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/clinical-data-density-plot/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/clinical-data-violin-plots/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/genomic-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/generic-assay-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/mutation-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/clinical-event-type-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/treatments/patient-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/treatments/sample-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/custom-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/custom-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/genomic-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/column-store/generic-assay-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - URLShortenerController
++- [~] GET /api/url-shortener - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - AlterationDriverAnnotationController
++- [~] POST /api/custom-driver-annotation-report/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - AlterationEnrichmentController
++- [~] POST /api/alteration-enrichments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - CacheController
++- [~] DELETE /api/cache - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] DELETE /cache/{studyId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - CacheStatsController
++- [~] GET /api/{cache}/keysInCache - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/{cache}/keyCountsPerClass - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/cacheStatistics - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - CancerTypeController
++- [~] GET /api/cancer-types - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/cancer-types/{cancerTypeId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ClinicalAttributeController
++- [~] GET /api/clinical-attributes - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/clinical-attributes - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/clinical-attributes/{clinicalAttributeId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-attributes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ClinicalAttributeCountController
++- [~] POST /api/clinical-attributes/counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ClinicalDataController
++- [~] GET /api/studies/{studyId}/samples/{sampleId}/clinical-data - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/patients/{patientId}/clinical-data - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/clinical-data - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/studies/{studyId}/clinical-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ClinicalDataEnrichmentController
++- [~] POST /api/clinical-data-enrichments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ClinicalEventController
++- [~] GET /api/studies/{studyId}/patients/{patientId}/clinical-events - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/clinical-events - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-events-meta/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - CoExpressionController
++- [~] POST /api/molecular-profiles/co-expressions/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - CopyNumberSegmentController
++- [~] GET /api/studies/{studyId}/samples/{sampleId}/copy-number-segments - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/copy-number-segments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - CosmicCountController
++- [~] POST /api/cosmic-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - DataAccessTokenController
++- [~] GET /api/data-access-token - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/data-access-token/oauth2 - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/data-access-tokens - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/data-access-tokens - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/data-access-tokens/{token} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] DELETE /api/data-access-tokens - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] DELETE /api/data-access-tokens/{token} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - DiscreteCopyNumberController
++- [~] GET /api/molecular-profiles/{molecularProfileId}/discrete-copy-number - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/molecular-profiles/{molecularProfileId}/discrete-copy-number/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - DiscreteCopyNumberCountController
++- [~] POST /api/molecular-profiles/{molecularProfileId}/discrete-copy-number-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ExpressionEnrichmentController
++- [~] POST /api/expression-enrichments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/generic-assay-enrichments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GeneController
++- [~] GET /api/genes - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/genes/{geneId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/genes/{geneId}/aliases - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/genes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenePanelController
++- [~] GET /api/gene-panels/ - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/gene-panels - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/gene-panels/{genePanelId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/gene-panels/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenePanelDataController
++- [~] POST /api/molecular-profiles/{molecularProfileId}/gene-panel-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/gene-panel-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenericAssayController
++- [~] POST /api/generic_assay_meta/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/generic-assay-meta/{molecularProfileId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/generic-assay-meta/generic-assay/{genericAssayStableId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenericAssayDataController
++- [~] GET /api/generic-assay-data/{molecularProfileId}/generic-assay/{genericAssayStableId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/generic_assay_data/{molecularProfileId}/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/generic_assay_data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenericAssayEnrichmentController
++- [~] POST /api/generic-assay-categorical-enrichments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/generic-assay-binary-enrichments/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenesetController
++- [~] GET /api/genesets - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/genesets/{genesetId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/genesets/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/genesets/version - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenesetCorrelationController
++- [~] POST /api/genesets/{genesetId}/expression-correlation/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenesetDataController
++- [~] POST /api/genetic-profiles/{geneticProfileId}/geneset-genetic-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - GenesetHierarchyController
++- [~] POST /api/geneset-hierarchy/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - IndexPageController
++- [~] * / - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] * /index - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] * /index.html - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] * /study/summary - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] * /results - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /config_service - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - InfoController
++- [x] GET /api/info - public JSON metadata; verified required version and git fields
++
++## src/main/java/org/cbioportal/legacy - LegacyApiController
++- [~] GET /api/v2/api-docs - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - LoginPageController
++- [~] POST /login - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /login - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MatchMinerController
++- [~] * /api/matchminer/api/** - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] * /api/matchminer/application/json - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MolecularDataController
++- [~] GET /api/molecular-profiles/{molecularProfileId}/molecular-data - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/molecular-profiles/{molecularProfileId}/molecular-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/molecular-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MolecularProfileController
++- [~] GET /api/molecular-profiles - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/molecular-profiles/{molecularProfileId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/molecular-profiles - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/molecular-profiles/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MrnaPercentileController
++- [~] POST /api/molecular-profiles/{molecularProfileId}/mrna-percentile/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MskEntityTranslationController
++- [~] GET /api-legacy/epic/sample/{sampleID} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api-legacy/cis/{sampleID} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api-legacy/darwin/{sampleID} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api-legacy/crdb/{sampleID} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api-legacy/cis/{sampleID}/exists - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api-legacy/darwin/{sampleID}/exists - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api-legacy/crdb/{sampleID}/exists - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api-legacy/epic/{sampleID}/exists - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MutationController
++- [~] GET /api/molecular-profiles/{molecularProfileId}/mutations - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/molecular-profiles/{molecularProfileId}/mutations/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/mutations/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MutationCountController
++- [~] POST /api/mutation-counts-by-position/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - MutationSpectrumController
++- [~] POST /api/molecular-profiles/{molecularProfileId}/mutation-spectrums/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - NamespaceAttributeController
++- [~] POST /api/namespace-attributes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - NamespaceAttributeCountController
++- [~] POST /api/namespace-attributes/counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - NamespaceDataController
++- [~] POST /api/namespace-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - OAuth2DataAccessTokenController
++- [~] GET /api/data-access-token - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/data-access-token/oauth2 - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/data-access-tokens - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/data-access-tokens - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/data-access-tokens/{token} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] DELETE /api/data-access-tokens - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] DELETE /api/data-access-tokens/{token} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - PatientController
++- [~] GET /api/patients - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/patients - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/patients/{patientId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/patients/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - PublicVirtualStudiesController
++- [~] GET /api/public_virtual_studies - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/public_virtual_studies/{id} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] DELETE /api/public_virtual_studies/{id} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ReferenceGenomeGeneController
++- [~] GET /api/reference-genome-genes/{genomeName} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/reference-genome-genes/{genomeName}/{geneId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/reference-genome-genes/{genomeName}/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ResourceDataController
++- [~] GET /api/studies/{studyId}/samples/{sampleId}/resource-data - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/patients/{patientId}/resource-data - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/resource-data - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/resource-data-all - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ResourceDefinitionController
++- [~] GET /api/studies/{studyId}/resource-definitions - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/resource-definitions/{resourceId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/resource-definitions/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - SamlAndBasicLoginController
++- [~] GET /restful_login - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - SampleController
++- [~] GET /api/samples - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/samples - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/samples/{sampleId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/patients/{patientId}/samples - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/samples/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - SampleListController
++- [~] GET /api/sample-lists - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/sample-lists/{sampleListId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/sample-lists - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/sample-lists/{sampleListId}/sample-ids - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/sample-lists/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - ServerStatusController
++- [x] GET /api/health - public JSON status; verified UP response from status service
++
++## src/main/java/org/cbioportal/legacy - SessionServiceController
++- [~] GET /api/session/{type}/{id} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/session/virtual_study - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/session/{type} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/session/virtual_study/save - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/session/{type:virtual_study|group|custom_data|custom_gene_list}/{operation}/{id} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/session/groups/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/session/settings - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/session/settings/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/session/custom_data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/session/custom_gene_list/save - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/session/custom_gene_list - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - SignificantCopyNumberRegionController
++- [~] GET /api/studies/{studyId}/significant-copy-number-regions - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - SignificantlyMutatedGenesController
++- [~] GET /api/studies/{studyId}/significantly-mutated-genes - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - StaticDataTimestampController
++- [x] GET /api/timestamps - internal JSON resource timestamps; verified service-provided timestamp
++
++## src/main/java/org/cbioportal/legacy - StructuralVariantController
++- [~] POST /api/structural-variant/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - StudyController
++- [~] GET /api/studies - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId} - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/studies/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] GET /api/studies/{studyId}/tags - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/studies/tags/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - StudyViewController
++- [~] POST /api/clinical-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/custom-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/mutated-genes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/structuralvariant-genes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/structuralvariant-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/cna-genes/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/filtered-samples/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/molecular-profile-sample-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-data-density-plot/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-data-violin-plots/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/sample-lists-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/genomic-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/genomic-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/generic-assay-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/generic-assay-data-bin-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-data-table/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/clinical-event-type-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/mutation-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/namespace-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - SurvivalController
++- [~] POST /api/survival-data/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - TestController
++- [x] GET /api/hello - greeting text; verified GET success and POST returns 405
++
++## src/main/java/org/cbioportal/legacy - TreatmentController
++- [~] POST /api/treatments/patient - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/treatments/sample - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/treatments/display-patient - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++- [~] POST /api/treatments/display-sample - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - VariantCountController
++- [~] POST /api/molecular-profiles/{molecularProfileId}/variant-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
++
++## src/main/java/org/cbioportal/legacy - CustomDataController
++- [~] POST /api/custom-data-counts/fetch - intentionally skipped: requires integrated database, identity, cache, or external-service fixtures not present in the repository
+diff --git a/src/test/java/org/cbioportal/legacy/web/InfoControllerApiTest.java b/src/test/java/org/cbioportal/legacy/web/InfoControllerApiTest.java
+new file mode 100644
+index 0000000..0a1e49b
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/InfoControllerApiTest.java
+@@ -0,0 +1,46 @@
++package org.cbioportal.legacy.web;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++class InfoControllerApiTest {
++
++  private MockMvc mockMvc;
++
++  @BeforeEach
++  void setUp() {
++    InfoController controller = new InfoController();
++    ReflectionTestUtils.setField(controller, "portalVersion", "test-portal");
++    ReflectionTestUtils.setField(controller, "dbVersion", "test-db");
++    ReflectionTestUtils.setField(controller, "derivedTableVersion", "test-derived");
++    ReflectionTestUtils.setField(controller, "gitBranch", "test-branch");
++    ReflectionTestUtils.setField(controller, "gitCommitId", "test-commit");
++    ReflectionTestUtils.setField(controller, "gitCommitIdAbbrev", "test-abbrev");
++    ReflectionTestUtils.setField(controller, "gitCommitIdDescribe", "test-describe");
++    ReflectionTestUtils.setField(controller, "gitCommitIdDescribeShort", "test-short");
++    ReflectionTestUtils.setField(controller, "gitCommitMessageFull", "test-full-message");
++    ReflectionTestUtils.setField(controller, "gitCommitMessageShort", "test-message");
++    ReflectionTestUtils.setField(controller, "gitCommitMessageUserEmail", "test@example.org");
++    ReflectionTestUtils.setField(controller, "gitCommitMessageUserName", "Test User");
++    ReflectionTestUtils.setField(controller, "gitDirty", "false");
++    mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++  }
++
++  @Test
++  void infoEndpointReturnsInstanceMetadataAsJson() throws Exception {
++    mockMvc
++        .perform(get("/api/info"))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.portalVersion").value("test-portal"))
++        .andExpect(jsonPath("$.dbVersion").value("test-db"))
++        .andExpect(jsonPath("$.gitCommitId").value("test-commit"))
++        .andExpect(jsonPath("$.gitDirty").value(false));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/ServerStatusControllerApiTest.java b/src/test/java/org/cbioportal/legacy/web/ServerStatusControllerApiTest.java
+new file mode 100644
+index 0000000..bed5f7b
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/ServerStatusControllerApiTest.java
+@@ -0,0 +1,40 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.cbioportal.legacy.service.ServerStatusService;
++import org.cbioportal.legacy.service.impl.ServerStatusServiceImpl;
++import org.cbioportal.legacy.service.impl.ServerStatusServiceImpl.ServerStatusMessage;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++class ServerStatusControllerApiTest {
++
++  private MockMvc mockMvc;
++
++  @BeforeEach
++  void setUp() {
++    ServerStatusMessage message = mock(ServerStatusMessage.class);
++    when(message.getStatus()).thenReturn(ServerStatusServiceImpl.MESSAGE_RUNNING);
++    ServerStatusService service = mock(ServerStatusService.class);
++    when(service.getServerStatus()).thenReturn(message);
++    ServerStatusController controller = new ServerStatusController();
++    ReflectionTestUtils.setField(controller, "serverStatusService", service);
++    mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++  }
++
++  @Test
++  void healthEndpointReportsRunningStatus() throws Exception {
++    mockMvc
++        .perform(get("/api/health"))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.status").value("UP"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/StaticDataTimestampControllerApiTest.java b/src/test/java/org/cbioportal/legacy/web/StaticDataTimestampControllerApiTest.java
+new file mode 100644
+index 0000000..41244ba
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/StaticDataTimestampControllerApiTest.java
+@@ -0,0 +1,38 @@
++package org.cbioportal.legacy.web;
++
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import java.util.Map;
++import org.cbioportal.legacy.service.StaticDataTimestampService;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++class StaticDataTimestampControllerApiTest {
++
++  private MockMvc mockMvc;
++
++  @BeforeEach
++  void setUp() {
++    StaticDataTimestampService service = mock(StaticDataTimestampService.class);
++    when(service.getTimestamps(StaticDataTimestampController.TIMESTAMP_TABLES))
++        .thenReturn(Map.of("gene", "2026-01-02T03:04:05Z"));
++    StaticDataTimestampController controller = new StaticDataTimestampController();
++    ReflectionTestUtils.setField(controller, "service", service);
++    mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++  }
++
++  @Test
++  void timestampEndpointReturnsKnownResourceTimestamps() throws Exception {
++    mockMvc
++        .perform(get("/api/timestamps"))
++        .andExpect(status().isOk())
++        .andExpect(jsonPath("$.gene").value("2026-01-02T03:04:05Z"));
++  }
++}
+diff --git a/src/test/java/org/cbioportal/legacy/web/TestControllerApiTest.java b/src/test/java/org/cbioportal/legacy/web/TestControllerApiTest.java
+new file mode 100644
+index 0000000..58c8bf2
+--- /dev/null
++++ b/src/test/java/org/cbioportal/legacy/web/TestControllerApiTest.java
+@@ -0,0 +1,35 @@
++package org.cbioportal.legacy.web;
++
++import static org.hamcrest.Matchers.containsString;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++
++class TestControllerApiTest {
++
++  private MockMvc mockMvc;
++
++  @BeforeEach
++  void setUp() {
++    mockMvc = MockMvcBuilders.standaloneSetup(new TestController()).build();
++  }
++
++  @Test
++  void helloEndpointReturnsGreeting() throws Exception {
++    mockMvc
++        .perform(get("/api/hello"))
++        .andExpect(status().isOk())
++        .andExpect(content().string(containsString("Greetings from Spring Boot!")));
++  }
++
++  @Test
++  void helloEndpointOnlyAcceptsGet() throws Exception {
++    mockMvc.perform(post("/api/hello")).andExpect(status().isMethodNotAllowed());
++  }
++}

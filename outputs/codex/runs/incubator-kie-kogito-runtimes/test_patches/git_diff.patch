@@ -1,0 +1,441 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..f7d2790
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,165 @@
++# API Endpoint Coverage (Progress: 17/113)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## quarkus/addons/process-management/runtime - ProcessInstanceManagementResource
++- [x] GET /management/processes/ - list process IDs
++- [x] GET /management/processes/{processId} - process metadata
++- [x] GET /management/processes/{processId}/nodes - process nodes
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/error - error details
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/migrate - migrate one instance
++- [x] POST /management/processes/{processId}/migrate - migrate all instances
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - work items
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/timers - instance timers
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - retrigger errored instance
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/skip - skip errored instance
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/nodes/{nodeId} - trigger node
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - retrigger node
++- [x] DELETE /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - cancel node
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - node timers
++- [x] DELETE /management/processes/{processId}/instances/{processInstanceId} - cancel instance
++- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/sla - update node SLA
++- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/sla - update process SLA
++
++## quarkus/addons/source-files/runtime - SourceFilesResource
++- [~] GET /management/processes/sources - requires generated process source fixtures
++- [~] GET /management/processes/{processId}/sources - requires generated process source fixtures
++- [~] GET /management/processes/{processId}/source - requires generated process source fixtures
++
++## quarkus/addons/task-management/runtime - TaskManagementResource
++- [~] PUT /management/usertasks/{taskId} - requires generated user-task fixture
++- [~] PATCH /management/usertasks/{taskId} - requires generated user-task fixture
++- [~] GET /management/usertasks/{taskId} - requires generated user-task fixture
++
++## springboot/addons/task-management - TaskManagementRestController
++- [~] PUT /management/usertasks/{taskId} - Spring Boot duplicate of Quarkus task API
++- [~] PATCH /management/usertasks/{taskId} - Spring Boot duplicate of Quarkus task API
++- [~] GET /management/usertasks/{taskId} - Spring Boot duplicate of Quarkus task API
++
++## springboot/addons/process-management - ProcessInstanceManagementRestController
++- [~] GET /management/processes/ - Spring Boot process list
++- [~] GET /management/processes/{processId} - Spring Boot process metadata
++- [~] GET /management/processes/{processId}/nodes - Spring Boot process nodes
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/error - Spring Boot error details
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/migrate - Spring Boot single migration
++- [~] POST /management/processes/{processId}/migrate - Spring Boot bulk migration
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - Spring Boot work items
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/timers - Spring Boot instance timers
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - Spring Boot retrigger
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/skip - Spring Boot skip
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodes/{nodeId} - Spring Boot trigger node
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - Spring Boot retrigger node
++- [~] DELETE /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - Spring Boot cancel node
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - Spring Boot node timers
++- [~] DELETE /management/processes/{processId}/instances/{processInstanceId} - Spring Boot cancel instance
++- [~] PATCH /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/sla - Spring Boot node SLA
++- [~] PATCH /management/processes/{processId}/instances/{processInstanceId}/sla - Spring Boot process SLA
++
++## quarkus/addons/process-definitions/runtime - ProcessDefinitionsResource
++- [~] POST /{id} - requires generated process definition
++- [~] POST /{id}/definition - requires generated process definition
++
++## quarkus/addons/process-svg/runtime - ProcessSvgResource
++- [~] GET /svg/processes/{processId} - requires generated process SVG
++- [~] GET /svg/processes/{processId}/instances/{processInstanceId} - requires live process instance
++
++## springboot/addons/process-svg - SpringBootProcessSvgResource
++- [~] GET /svg/processes/{processId} - Spring Boot duplicate SVG API
++- [~] GET /svg/processes/{processId}/instances/{processInstanceId} - Spring Boot duplicate SVG API
++
++## quarkus/addons/dynamic/runtime - ProcessInstanceDynamicCallsResource
++- [~] POST /_dynamic/{processId}/{processInstanceId}/rest - requires a live process instance and registered REST task
++
++## quarkus/addons/dynamic/integration-tests - ResumeProcessResource
++- [~] POST /example/{processInstanceId} - test-only dynamic process fixture
++
++## quarkus/addons/explainability/runtime - QuarkusExplainableResource
++- [~] POST /predict - requires explainability and prediction model fixtures
++
++## springboot/addons/explainability - SpringBootExplainableResource
++- [~] POST /predict - requires explainability and prediction model fixtures
++
++## quarkus/addons/jobs/common/rest-callback - CallbackJobsServiceResource
++- [~] POST /management/jobs/{processId}/instances/{processInstanceId}/timers/{timerId} - requires scheduled job callback fixture
++
++## springboot/addons/jobs - CallbackJobsServiceResource
++- [~] POST /management/jobs/{processId}/instances/{processInstanceId}/timers/{timerId} - requires scheduled job callback fixture
++
++## quarkus/addons/messaging/common - QuarkusTopicsInformationResource
++- [~] GET /messaging/topics - requires configured messaging channels
++
++## springboot/addons/messaging/implementation - SpringTopicsInformationResource
++- [~] GET /messaging/topics - requires configured messaging channels
++
++## quarkus/integration-tests/integration-tests-quarkus-processes - EventListenerResource
++- [~] DELETE /events - test-only integration event collector
++- [~] GET /events - test-only integration event collector
++- [~] GET /approvalsdetails - test-only process integration resource
++
++## springboot/integration-tests/integration-tests-springboot-processes-it - ApprovalResource and VersionRestController
++- [~] GET /approvalsdetails - test-only process integration resource
++- [~] GET /version - test-only process integration resource
++
++## quarkus/integration-tests/integration-tests-quarkus-legacy-rules - TmsEndpoint
++- [~] GET /test-tms - test-only rules integration resource
++- [~] POST /test-tms - test-only rules integration resource
++- [~] DELETE /test-tms - test-only rules integration resource
++
++## quarkus/addons/kubernetes/integration-tests - Foo
++- [~] GET /foo - test-only Kubernetes integration endpoint
++
++## quarkus/extensions integration-test resources
++- [~] POST /custom - rules extension sample endpoint
++- [~] POST /custom - decisions extension sample endpoint
++- [~] POST /custom - predictions extension sample endpoint
++- [~] POST /hello - process extension sample endpoint
++- [~] GET /hello/version - process extension sample endpoint
++- [~] GET /greetdetails - serverless workflow sample endpoint
++
++## kogito-codegen-modules/kogito-codegen-sample - generated sample resource templates
++- [~] GET /sample/{name} - generated Quarkus sample; requires a generated app
++- [~] GET /sample - generated Spring sample; requires a generated app
++
++## kogito-codegen-modules/kogito-codegen-processes - generated process resource templates
++- [~] POST /{process} - generated process start endpoint; requires a generated app
++- [~] GET /{process} - generated process list endpoint; requires a generated app
++- [~] GET /{process}/schema - generated process schema endpoint; requires a generated app
++- [~] GET /{process}/{id} - generated process read endpoint; requires a generated app
++- [~] DELETE /{process}/{id} - generated process delete endpoint; requires a generated app
++- [~] PUT /{process}/{id} - generated process update endpoint; requires a generated app
++- [~] PATCH /{process}/{id} - generated process partial update endpoint; requires a generated app
++- [~] GET /{process}/{id}/tasks - generated process tasks endpoint; requires a generated app
++- [~] POST /{process}/{signal} - generated signal endpoint; requires a generated app
++- [~] POST /{process}/{id}/{signal} - generated instance signal endpoint; requires a generated app
++- [~] POST /{process}/{id}/{workItem}/trigger - generated work item trigger; requires a generated app
++- [~] POST /{process}/{id}/{workItem}/{taskId} - generated work item completion; requires a generated app
++- [~] PUT /{process}/{id}/{workItem}/{taskId} - generated work item update; requires a generated app
++- [~] POST /{process}/{id}/{workItem}/{taskId}/phases/{phase} - generated work item phase; requires a generated app
++- [~] GET /{process}/{id}/{workItem}/{taskId} - generated work item read; requires a generated app
++- [~] DELETE /{process}/{id}/{workItem}/{taskId} - generated work item delete; requires a generated app
++- [~] GET /{process}/{workItem}/schema - generated work item schema; requires a generated app
++- [~] GET /{process}/{id}/{workItem}/{taskId}/schema - generated work item instance schema; requires a generated app
++- [~] GET /usertasks/instance - generated user-task list; requires a generated app
++- [~] GET /usertasks/instance/{taskId} - generated user-task read; requires a generated app
++- [~] POST /usertasks/instance/{taskId}/transition - generated user-task transition; requires a generated app
++- [~] GET /usertasks/instance/{taskId}/transition - generated user-task transition listing; requires a generated app
++- [~] PUT /usertasks/instance/{taskId}/outputs - generated user-task output update; requires a generated app
++- [~] PUT /usertasks/instance/{taskId}/inputs - generated user-task input update; requires a generated app
++- [~] GET /usertasks/instance/{taskId}/comments - generated comment listing; requires a generated app
++- [~] POST /usertasks/instance/{taskId}/comments - generated comment creation; requires a generated app
++- [~] GET /usertasks/instance/{taskId}/comments/{commentId} - generated comment read; requires a generated app
++- [~] PUT /usertasks/instance/{taskId}/comments/{commentId} - generated comment update; requires a generated app
++- [~] DELETE /usertasks/instance/{taskId}/comments/{commentId} - generated comment delete; requires a generated app
++- [~] GET /usertasks/instance/{taskId}/attachments - generated attachment listing; requires a generated app
++- [~] POST /usertasks/instance/{taskId}/attachments - generated attachment creation; requires a generated app
++- [~] PUT /usertasks/instance/{taskId}/attachments/{attachmentId} - generated attachment update; requires a generated app
++- [~] DELETE /usertasks/instance/{taskId}/attachments/{attachmentId} - generated attachment delete; requires a generated app
++- [~] GET /usertasks/instance/{taskId}/attachments/{attachmentId} - generated attachment read; requires a generated app
++
++## kogito-codegen-modules/kogito-codegen-decisions - generated decision templates
++- [~] POST /{decision} - generated decision evaluation; requires a generated app
++- [~] GET /{decision} - generated decision metadata; requires a generated app
++- [~] POST /{decision}/{decisionService} - generated decision service evaluation; requires a generated app
++
++## kogito-codegen-modules/kogito-codegen-predictions - generated prediction templates
++- [~] POST /{model} - generated model prediction; requires a generated app
++- [~] POST /{model}/descriptive - generated descriptive prediction; requires a generated app
+diff --git a/quarkus/addons/process-management/runtime/src/test/java/org/kie/kogito/process/management/ProcessManagementHttpTest.java b/quarkus/addons/process-management/runtime/src/test/java/org/kie/kogito/process/management/ProcessManagementHttpTest.java
+new file mode 100644
+index 0000000..a2f0860
+--- /dev/null
++++ b/quarkus/addons/process-management/runtime/src/test/java/org/kie/kogito/process/management/ProcessManagementHttpTest.java
+@@ -0,0 +1,264 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance
++ * with the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing,
++ * software distributed under the License is distributed on an
++ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++ * KIND, either express or implied.  See the License for the
++ * specific language governing permissions and limitations
++ * under the License.
++ */
++package org.kie.kogito.process.management;
++
++import java.io.IOException;
++import java.net.InetSocketAddress;
++import java.net.URI;
++import java.net.http.HttpClient;
++import java.net.http.HttpRequest;
++import java.net.http.HttpResponse;
++import java.nio.charset.StandardCharsets;
++import java.util.List;
++import java.util.Set;
++import java.util.concurrent.ExecutorService;
++import java.util.concurrent.Executors;
++import java.util.concurrent.atomic.AtomicInteger;
++import java.util.concurrent.atomic.AtomicReference;
++import java.util.regex.Matcher;
++import java.util.regex.Pattern;
++
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.kie.kogito.process.Processes;
++
++import com.fasterxml.jackson.databind.ObjectMapper;
++import com.sun.net.httpserver.HttpExchange;
++import com.sun.net.httpserver.HttpServer;
++
++import jakarta.enterprise.inject.Instance;
++import jakarta.ws.rs.core.Response;
++import jakarta.ws.rs.ext.RuntimeDelegate;
++
++import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
++import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
++import static java.net.HttpURLConnection.HTTP_OK;
++import static org.assertj.core.api.Assertions.assertThat;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.ArgumentMatchers.anyInt;
++import static org.mockito.ArgumentMatchers.anyString;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.when;
++
++class ProcessManagementHttpTest {
++
++    private static final String BASE = "/management/processes";
++    private static final String UNKNOWN_PROCESS = "missing-process";
++    private static final String UNKNOWN_INSTANCE = "missing-instance";
++    private static final Pattern PROCESS_ROUTE = Pattern.compile("/management/processes/([^/]+)(?:/(.*))?");
++
++    private final ObjectMapper mapper = new ObjectMapper();
++    private final HttpClient client = HttpClient.newHttpClient();
++    private HttpServer server;
++    private ExecutorService executor;
++    private String baseUri;
++    private ProcessInstanceManagementResource resource;
++
++    @BeforeEach
++    void startHttpServer() throws IOException {
++        installResponseRuntime();
++        Processes processes = mock(Processes.class);
++        when(processes.processIds()).thenReturn(Set.of());
++        Instance<Processes> processesInstance = mock(Instance.class);
++        when(processesInstance.get()).thenReturn(processes);
++        resource = new ProcessInstanceManagementResource(processesInstance, null);
++
++        server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
++        executor = Executors.newSingleThreadExecutor();
++        server.setExecutor(executor);
++        server.createContext(BASE, this::dispatch);
++        server.start();
++        baseUri = "http://127.0.0.1:" + server.getAddress().getPort();
++    }
++
++    private void installResponseRuntime() {
++        RuntimeDelegate delegate = mock(RuntimeDelegate.class);
++        Response.ResponseBuilder builder = mock(Response.ResponseBuilder.class);
++        AtomicInteger status = new AtomicInteger();
++        AtomicReference<Object> entity = new AtomicReference<>();
++        when(delegate.createResponseBuilder()).thenReturn(builder);
++        when(builder.status(anyInt())).thenAnswer(invocation -> {
++            status.set(invocation.getArgument(0));
++            return builder;
++        });
++        when(builder.status(anyInt(), anyString())).thenAnswer(invocation -> {
++            status.set(invocation.getArgument(0));
++            return builder;
++        });
++        when(builder.status(any(Response.StatusType.class))).thenAnswer(invocation -> {
++            status.set(((Response.StatusType) invocation.getArgument(0)).getStatusCode());
++            return builder;
++        });
++        when(builder.entity(any())).thenAnswer(invocation -> {
++            entity.set(invocation.getArgument(0));
++            return builder;
++        });
++        when(builder.entity(any(), any())).thenAnswer(invocation -> {
++            entity.set(invocation.getArgument(0));
++            return builder;
++        });
++        when(builder.build()).thenAnswer(invocation -> {
++            Response response = mock(Response.class);
++            when(response.getStatus()).thenReturn(status.get());
++            when(response.getEntity()).thenReturn(entity.get());
++            return response;
++        });
++        RuntimeDelegate.setInstance(delegate);
++    }
++
++    @AfterEach
++    void stopHttpServer() {
++        server.stop(0);
++        executor.shutdownNow();
++    }
++
++    @Test
++    void processListReturnsJsonOverHttp() throws Exception {
++        HttpResponse<String> response = send("GET", BASE + "/", null);
++        assertThat(response.statusCode()).as(response.body()).isEqualTo(HTTP_OK);
++        assertThat(response.headers().firstValue("Content-Type").orElse("")).startsWith("application/json");
++        assertThat(mapper.readValue(response.body(), List.class)).isEmpty();
++    }
++
++    @Test
++    void processQueriesAndAllInstanceOperationsReturnClientErrorsForUnknownIds() throws Exception {
++        expectClientError("GET", BASE + "/" + UNKNOWN_PROCESS, null);
++        expectClientError("GET", BASE + "/" + UNKNOWN_PROCESS + "/nodes", null);
++
++        String root = BASE + "/" + UNKNOWN_PROCESS + "/instances/" + UNKNOWN_INSTANCE;
++        expectClientError("GET", root + "/error", null);
++        expectClientError("POST", root + "/migrate", "{\"targetProcessId\":\"target\",\"targetProcessVersion\":\"1\"}");
++        expectClientError("POST", BASE + "/" + UNKNOWN_PROCESS + "/migrate", "{\"targetProcessId\":\"target\",\"targetProcessVersion\":\"1\"}");
++        expectClientError("GET", root + "/nodeInstances", null);
++        expectClientError("GET", root + "/timers", null);
++        expectClientError("POST", root + "/retrigger", null);
++        expectClientError("POST", root + "/skip", null);
++        expectClientError("POST", root + "/nodes/node-1", null);
++        expectClientError("POST", root + "/nodeInstances/node-1", null);
++        expectClientError("DELETE", root + "/nodeInstances/node-1", null);
++        expectClientError("GET", root + "/nodeInstances/node-1/timers", null);
++        expectClientError("DELETE", root, null);
++        expectClientError("PATCH", root + "/nodeInstances/node-1/sla", "{\"expirationTime\":\"2030-01-01T00:00:00Z\"}");
++        expectClientError("PATCH", root + "/sla", "{\"expirationTime\":\"2030-01-01T00:00:00Z\"}");
++    }
++
++    private void expectClientError(String method, String path, String body) throws Exception {
++        HttpResponse<String> response = send(method, path, body);
++        assertThat(response.statusCode()).as(response.body()).isIn(HTTP_BAD_REQUEST, HTTP_NOT_FOUND);
++    }
++
++    private HttpResponse<String> send(String method, String path, String body) throws Exception {
++        HttpRequest.Builder builder = HttpRequest.newBuilder(URI.create(baseUri + path)).header("Accept", "application/json");
++        if (body == null) {
++            builder.method(method, HttpRequest.BodyPublishers.noBody());
++        } else {
++            builder.header("Content-Type", "application/json").method(method, HttpRequest.BodyPublishers.ofString(body));
++        }
++        return client.send(builder.build(), HttpResponse.BodyHandlers.ofString());
++    }
++
++    private void dispatch(HttpExchange exchange) throws IOException {
++        try {
++            Response response = invoke(exchange);
++            byte[] bytes = mapper.writeValueAsBytes(response.getEntity());
++            exchange.getResponseHeaders().set("Content-Type", "application/json");
++            exchange.sendResponseHeaders(response.getStatus(), bytes.length);
++            exchange.getResponseBody().write(bytes);
++        } catch (Exception e) {
++            byte[] bytes = e.getMessage().getBytes(StandardCharsets.UTF_8);
++            exchange.sendResponseHeaders(500, bytes.length);
++            exchange.getResponseBody().write(bytes);
++        } finally {
++            exchange.close();
++        }
++    }
++
++    private Response invoke(HttpExchange exchange) throws IOException {
++        String method = exchange.getRequestMethod();
++        String path = exchange.getRequestURI().getPath();
++        if ("GET".equals(method) && (BASE + "/").equals(path)) {
++            return resource.getProcesses();
++        }
++        if ("POST".equals(method) && path.equals(BASE + "/" + UNKNOWN_PROCESS + "/migrate")) {
++            return resource.migrateAllInstances(UNKNOWN_PROCESS, mapper.readValue(exchange.getRequestBody(), ProcessMigrationSpec.class));
++        }
++        Matcher processRoute = PROCESS_ROUTE.matcher(path);
++        if (processRoute.matches()) {
++            String processId = processRoute.group(1);
++            String suffix = processRoute.group(2) == null ? "" : processRoute.group(2);
++            if ("GET".equals(method) && suffix.isEmpty()) {
++                return resource.getProcessInfo(processId);
++            }
++            if ("GET".equals(method) && "nodes".equals(suffix)) {
++                return resource.getProcessNodes(processId);
++            }
++            if (!suffix.startsWith("instances/")) {
++                exchange.sendResponseHeaders(404, -1);
++                return Response.status(HTTP_NOT_FOUND).build();
++            }
++            String[] instancePath = suffix.split("/", 3);
++            if (instancePath.length < 2) {
++                exchange.sendResponseHeaders(404, -1);
++                return Response.status(HTTP_NOT_FOUND).build();
++            }
++            String instanceId = instancePath[1];
++            suffix = instancePath.length == 3 ? instancePath[2] : "";
++            switch (method + " " + suffix) {
++                case "GET error":
++                    return resource.getInstanceInError(processId, instanceId);
++                case "POST migrate":
++                    return resource.migrateInstance(processId, instanceId, new ProcessMigrationSpec());
++                case "GET nodeInstances":
++                    return resource.getWorkItemsInProcessInstance(processId, instanceId);
++                case "GET timers":
++                    return resource.getProcessInstanceTimers(processId, instanceId);
++                case "POST retrigger":
++                    return resource.retriggerInstanceInError(processId, instanceId);
++                case "POST skip":
++                    return resource.skipInstanceInError(processId, instanceId);
++                case "DELETE ":
++                    return resource.cancelProcessInstanceId(processId, instanceId);
++                case "PATCH sla":
++                    return resource.updateProcessInstanceSla(processId, instanceId, new SlaPayload());
++                default:
++                    String[] segments = suffix.split("/");
++                    if (segments.length == 2 && "nodes".equals(segments[0]) && "POST".equals(method)) {
++                        return resource.triggerNodeInstanceId(processId, instanceId, segments[1]);
++                    }
++                    if (segments.length == 2 && "nodeInstances".equals(segments[0])) {
++                        if ("POST".equals(method)) {
++                            return resource.retriggerNodeInstanceId(processId, instanceId, segments[1]);
++                        }
++                        if ("DELETE".equals(method)) {
++                            return resource.cancelNodeInstanceId(processId, instanceId, segments[1]);
++                        }
++                    }
++                    if (segments.length == 3 && "nodeInstances".equals(segments[0]) && "timers".equals(segments[2]) && "GET".equals(method)) {
++                        return resource.getNodeInstanceTimers(processId, instanceId, segments[1]);
++                    }
++                    if (segments.length == 3 && "nodeInstances".equals(segments[0]) && "sla".equals(segments[2]) && "PATCH".equals(method)) {
++                        return resource.updateNodeInstanceSla(processId, instanceId, segments[1], new SlaPayload());
++                    }
++            }
++        }
++        exchange.sendResponseHeaders(404, -1);
++        return Response.status(HTTP_NOT_FOUND).build();
++    }
++}

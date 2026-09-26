@@ -1,0 +1,420 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..15a95a2
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,251 @@
++# API Endpoint Coverage (Progress: 5/147)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## dspace-server-webapp - RootRestResourceController
++- [x] GET /api - discover API links
++
++## dspace-server-webapp - RestResourceController (generic repository routes)
++- [~] GET /api/{category}/{model}/{numeric-id} - fetch resource by numeric id (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/{handle-or-version-id} - fetch resource by string id (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/{uuid} - fetch resource by UUID (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/{numeric-id}/{rel} - follow numeric resource relation (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/{handle-or-version-id}/{rel} - follow string-id relation (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/{uuid}/{rel} - follow UUID relation (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/{handle-or-version-id}/{rel}/{rel-id} - fetch related resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/{numeric-id}/{rel}/{rel-id} - fetch numeric related resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/{category}/{model} - create JSON resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/{category}/{model} (text/uri-list) - create resource from URI list (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/{category}/{model}/{numeric-id} (action) - invoke numeric resource action (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/{category}/{model}/{numeric-id}/{rel} (action) - invoke numeric relation action (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/{category}/{model}/{uuid} (action) - invoke UUID resource action (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/{category}/{model}/{handle-or-version-id} (action) - invoke string-id action (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/{category}/{model} (multipart/form-data) - upload resource content (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PATCH /api/{category}/{model}/{numeric-id} - patch numeric-id resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PATCH /api/{category}/{model}/{uuid} - patch UUID resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PATCH /api/{category}/{model}/{handle-or-version-id} - patch string-id resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model} - list and paginate resources (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/search - list search methods (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/{category}/{model}/search/{search-method} - execute repository search (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/{category}/{model}/{numeric-id} - delete numeric-id resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/{category}/{model}/{uuid} - delete UUID resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/{category}/{model}/{handle-or-version-id} - delete string-id resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/{category}/{model}/{uuid} - replace UUID resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/{category}/{model}/{numeric-id} (JSON) - replace numeric resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/{category}/{model}/{numeric-id} (multipart/form-data) - replace uploaded content (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/{category}/{model}/{hex-id} - replace handle resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - AuthenticationRestController
++- [~] GET /api/authn - discover auth endpoints (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/authn/status - current authentication status (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/authn/status/specialGroups - current special groups (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/authn/login - authenticate credentials (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/authn/shortlivedtokens - issue short-lived token (authenticated) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET|PUT|PATCH|DELETE /api/authn/login - unsupported login methods rejected (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] HEAD|POST /api/authn/logout - logout (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET|PUT|PATCH|DELETE /api/authn/logout - unsupported logout methods rejected (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - OidcRestController
++- [x] GET /api/authn/oidc - discover OIDC providers
++
++## dspace-server-webapp - CsrfRestController
++- [x] GET /api/security/csrf - issue CSRF token and no-content response
++
++## dspace-server-webapp - AltchaCaptchaRestController
++- [x] GET /api/captcha/challenge - issue proof-of-work challenge or missing-key error
++
++## dspace-server-webapp - RelationshipRestController
++- [~] PUT /api/core/relationships/{id}/leftItem - replace left item (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/core/relationships/{id}/rightItem - replace right item (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - BundleUploadBitstreamController
++- [~] POST /api/core/bundles/{uuid}/bitstreams - upload multipart bitstream (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - CollectionItemTemplateController
++- [~] POST /api/core/collections/{uuid}/itemtemplate - create item template (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/core/collections/{uuid}/itemtemplate - retrieve item template (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - ItemTemplateRestController
++- [~] GET /api/core/itemtemplates/{uuid} - retrieve template item (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PATCH /api/core/itemtemplates/{uuid} - update template item (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/itemtemplates/{uuid} - delete template item (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - CollectionLogoController
++- [~] POST /api/core/collections/{uuid}/logo - upload collection logo (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - CommunityLogoController
++- [~] POST /api/core/communities/{uuid}/logo - upload community logo (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - CollectionGroupRestController
++- [~] POST /api/core/collections/{uuid}/adminGroup - set admin group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/collections/{uuid}/adminGroup - remove admin group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/core/collections/{uuid}/submittersGroup - set submitters group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/collections/{uuid}/submittersGroup - remove submitters group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/core/collections/{uuid}/itemReadGroup - set item read group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/collections/{uuid}/itemReadGroup - remove item read group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/core/collections/{uuid}/bitstreamReadGroup - set bitstream read group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/collections/{uuid}/bitstreamReadGroup - remove bitstream read group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/core/collections/{uuid}/workflowGroups/{role} - get workflow group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/core/collections/{uuid}/workflowGroups/{role} - set workflow group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/collections/{uuid}/workflowGroups/{role} - remove workflow group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - CommunityAdminGroupRestController
++- [~] POST /api/core/communities/{uuid}/adminGroup - set admin group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/communities/{uuid}/adminGroup - remove admin group (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - GroupRestController
++- [~] POST /api/eperson/groups/{uuid}/subgroups - add subgroup (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/eperson/groups/{uuid}/epersons - add member (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/eperson/groups/{parentUUID}/subgroups/{childUUID} - remove subgroup (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/eperson/groups/{parentUUID}/epersons/{memberUUID} - remove member (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - ResourcePolicyGroupReplaceRestController
++- [~] PUT /api/authz/resourcepolicies/{id}/group - replace group (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - ResourcePolicyEPersonReplaceRestController
++- [~] PUT /api/authz/resourcepolicies/{id}/eperson - replace eperson (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - BitstreamRestController
++- [~] GET|HEAD /api/core/bitstreams/{uuid}/content - retrieve content or metadata (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/core/bitstreams/{uuid}/format - update format (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - BitstreamBundleController
++- [~] PUT /api/core/bitstreams/{uuid}/bundle - move bitstream to bundle (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - BitstreamCategoryRestController
++- [~] PATCH /api/core/bitstreams - set bitstream category (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - PrimaryBitstreamController
++- [~] POST /api/core/bundles/{uuid}/primaryBitstream - set primary bitstream (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/core/bundles/{uuid}/primaryBitstream - update primary bitstream (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/bundles/{uuid}/primaryBitstream - remove primary bitstream (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - ItemAddBundleController
++- [~] POST /api/core/items/{uuid}/bundles - add bundle to item (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - ItemOwningCollectionUpdateRestController
++- [~] PUT /api/core/items/{uuid}/owningCollection - move item (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - MappedCollectionRestController
++- [~] POST /api/core/items/{uuid}/mappedCollections - add mapped collection (URI list) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/core/items/{uuid}/mappedCollections/{collectionUuid} - remove mapped collection (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - CollectionHarvestSettingsController
++- [~] GET /api/core/collections/{uuid}/harvester - read harvest settings (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] PUT /api/core/collections/{uuid}/harvester - update harvest settings (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - EntityTypeLabelRestController
++- [~] GET /api/core/entitytypes/label/{entity-type-label} - resolve entity type by label (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - EPersonRegistrationRestController
++- [~] POST /api/eperson/epersons/{uuid} - register eperson (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - DiscoveryRestController
++- [~] GET /api/discover - discovery API metadata (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/discover/search - search (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/discover/search/facets - search facets (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/discover/search/objects - search objects (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/discover/facets - available facets (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/discover/facets/{name} - retrieve facet (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - ContentReportRestController
++- [~] GET /api/contentreport - content report (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/contentreport/filteredcollections - filtered collections (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/contentreport/filtereditems - filtered items (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - StatisticsRestController
++- [~] GET /api/statistics - statistics overview (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/statistics/viewevents/{uuid} - item view events (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/statistics/searchevents/{uuid} - item search events (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/statistics/viewevents - view events (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/statistics/searchevents - search events (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/statistics/viewevents - record view event (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/statistics/searchevents - record search event (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - HarvesterMetadataController
++- [~] GET /api/config/harvestermetadata - harvest metadata configuration (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - ExternalSourcesRestController
++- [~] GET /api/integration/externalsources/{source}/entries - list external entries (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/integration/externalsources/{source}/entryValues/{entryId} - retrieve entry values (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - UUIDLookupRestController
++- [~] GET /api/dso/find?uuid={uuid} - resolve object and redirect to canonical URI (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - IdentifierRestRepository
++- [~] GET /api/pid/find?id={identifier} - find identifier resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - NotifyRequestStatusRestController
++- [~] GET /api/ldn/notifyrequests/{uuid} - authenticated request status JSON (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - QAEventRelatedRestController
++- [~] POST /api/integration/qualityassuranceevents/{id}/related - add related item (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] DELETE /api/integration/qualityassuranceevents/{id}/related - remove related item (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - LDNMessageRestController
++- [~] POST /api/ldn/messages - submit LDN message (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - LDNInboxController
++- [~] POST /ldn/inbox (application/ld+json) - receive LDN notification (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [x] OPTIONS /ldn/inbox - advertise inbox methods
++
++## dspace-server-webapp - ScriptProcessesController
++- [~] POST /api/system/scripts/{name}/processes (multipart) - run script with file inputs (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /api/system/scripts/{name}/processes (non-multipart) - run script (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - SitemapRestController
++- [~] GET /sitemaps/{name} - retrieve sitemap (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - OpenSearchController
++- [~] GET /opensearch/search - OpenSearch query (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /opensearch/service - OpenSearch description (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - LinksetRestController
++- [~] GET /signposting - root linkset discovery (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /signposting (linkset media type) - retrieve linkset (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /signposting (JSON linkset media type) - retrieve JSON linkset (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /signposting/links/{uuid} - links for resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /signposting/describedby/{uuid} - resource description links (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - HdlResolverRestController
++- [~] GET /{hdlresolver|resolve|listhandles|listprefixes}/... - resolve Handle or list Handle records (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - OAI - DSpaceOAIDataProvider
++- [~] GET /oai - redirect to trailing slash (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /oai/ - list OAI contexts (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /oai/{context}?verb=... - OAI-PMH protocol request (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-iiif - IIIFController
++- [~] GET /iiif/{id}/manifest - IIIF manifest JSON (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /iiif/{id}/manifest/search?q=... - search manifest annotations (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /iiif/{id}/manifest/seeAlso - manifest semantic links (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /iiif/{id}/canvas/{cid} - retrieve canvas (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-rdf - DataProviderServlet
++- [~] GET /rdf/handle/* - serialize Handle resource (feature enabled) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-rdf - LocalURIRedirectionServlet
++- [~] GET /rdf/resource/* - redirect local resource URI (feature enabled) (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-sword - SWORDWebConfig servlets
++- [~] GET /sword/servicedocument/* - SWORD v1 service document (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /sword/deposit/* - SWORD v1 deposit (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /sword/media-link/* - SWORD v1 media link (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-swordv2 - SWORDv2WebConfig servlets
++- [~] GET /swordv2/servicedocument/* - SWORD v2 service document (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /swordv2/collection/* - SWORD v2 collection service (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET|PUT /swordv2/edit-media/* - SWORD v2 media resource (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET|POST|PUT|DELETE /swordv2/edit/* - SWORD v2 container operations (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /swordv2/statement/* - SWORD v2 statement (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-server-webapp - WebSecurityConfiguration and Actuator
++- [~] GET /actuator/health - public operational health status (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /actuator/info - admin-only application information (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/authn/shibboleth - complete Shibboleth login callback (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/authn/orcid - complete ORCID login callback (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /api/authn/saml - complete SAML login callback (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++
++## dspace-saml2 - SamlWebSecurityConfiguration
++- [~] GET /saml2/service-provider-metadata/{registrationId} - relying party metadata (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] GET /saml2/authenticate/{registrationId} - initiate SAML login (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
++- [~] POST /saml2/assertion-consumer/{registrationId} - process IdP assertion (not run: requires DSpace persistence/service fixtures or an enabled protocol runtime).
+diff --git a/dspace-server-webapp/src/test/java/org/dspace/app/rest/PublicApiHttpTest.java b/dspace-server-webapp/src/test/java/org/dspace/app/rest/PublicApiHttpTest.java
+new file mode 100644
+index 0000000..d4c3be4
+--- /dev/null
++++ b/dspace-server-webapp/src/test/java/org/dspace/app/rest/PublicApiHttpTest.java
+@@ -0,0 +1,157 @@
++/**
++ * The contents of this file are subject to the license and copyright
++ * detailed in the LICENSE and NOTICE files at the root of the source
++ * tree and available online at
++ *
++ * http://www.dspace.org/license/
++ */
++package org.dspace.app.rest;
++
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.mock;
++import static org.mockito.Mockito.verify;
++import static org.mockito.Mockito.when;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.options;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++import org.dspace.app.rest.converter.ConverterService;
++import org.dspace.app.rest.model.RootRest;
++import org.dspace.app.rest.model.hateoas.RootResource;
++import org.dspace.app.rest.repository.RootRestRepository;
++import org.dspace.services.ConfigurationService;
++import org.junit.Before;
++import org.junit.Test;
++import org.springframework.core.MethodParameter;
++import org.springframework.security.web.csrf.CsrfToken;
++import org.springframework.security.web.csrf.CsrfTokenRepository;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.web.bind.support.WebDataBinderFactory;
++import org.springframework.web.context.request.NativeWebRequest;
++import org.springframework.web.method.support.HandlerMethodArgumentResolver;
++import org.springframework.web.method.support.ModelAndViewContainer;
++
++public class PublicApiHttpTest {
++
++    private MockMvc mockMvc;
++    private RootRestRepository rootRepository;
++    private ConverterService converter;
++
++    @Before
++    public void setUp() {
++        RootRestResourceController controller = new RootRestResourceController();
++        rootRepository = mock(RootRestRepository.class);
++        converter = mock(ConverterService.class);
++        controller.rootRestRepository = rootRepository;
++        controller.converter = converter;
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++    }
++
++    @Test
++    public void apiRootReturnsDiscoverableResourceAsJson() throws Exception {
++        RootRest root = new RootRest();
++        RootResource resource = new RootResource(root);
++        when(rootRepository.getRoot(any())).thenReturn(root);
++        when(converter.toResource(root)).thenReturn(resource);
++
++        mockMvc.perform(get("/api"))
++            .andExpect(status().isOk())
++            .andExpect(content().contentTypeCompatibleWith("application/json"));
++
++        verify(rootRepository).getRoot(any());
++        verify(converter).toResource(root);
++    }
++
++    @Test
++    public void captchaChallengeWithoutConfiguredHmacKeyReturnsBadRequest() throws Exception {
++        AltchaCaptchaRestController controller = new AltchaCaptchaRestController();
++        ConfigurationService configuration = mock(ConfigurationService.class);
++        controller.configurationService = configuration;
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++
++        mockMvc.perform(get("/api/captcha/challenge"))
++            .andExpect(status().isBadRequest());
++    }
++
++    @Test
++    public void captchaChallengeReturnsSignedJsonWhenConfigured() throws Exception {
++        AltchaCaptchaRestController controller = new AltchaCaptchaRestController();
++        ConfigurationService configuration = mock(ConfigurationService.class);
++        controller.configurationService = configuration;
++        when(configuration.getProperty("altcha.algorithm", "SHA-256")).thenReturn("SHA-256");
++        when(configuration.getProperty("altcha.hmac.key")).thenReturn("test-secret");
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++
++        mockMvc.perform(get("/api/captcha/challenge"))
++            .andExpect(status().isOk())
++            .andExpect(content().contentTypeCompatibleWith("application/json"))
++            .andExpect(header().string("Cache-Control", "private,no-cache"))
++            .andExpect(jsonPath("$.algorithm").value("SHA-256"))
++            .andExpect(jsonPath("$.salt").value(org.hamcrest.Matchers.matchesPattern("[0-9a-f]{10}")))
++            .andExpect(jsonPath("$.challenge").value(org.hamcrest.Matchers.matchesPattern("[0-9a-f]{64}")))
++            .andExpect(jsonPath("$.signature").value(org.hamcrest.Matchers.matchesPattern("[0-9a-f]{64}")));
++    }
++
++    @Test
++    public void csrfEndpointReturnsNoContentAndPersistsToken() throws Exception {
++        CsrfRestController controller = new CsrfRestController();
++        CsrfTokenRepository tokenRepository = mock(CsrfTokenRepository.class);
++        CsrfToken token = mock(CsrfToken.class);
++        controller.csrfTokenRepository = tokenRepository;
++        mockMvc = MockMvcBuilders.standaloneSetup(controller)
++            .setCustomArgumentResolvers(new HandlerMethodArgumentResolver() {
++                @Override
++                public boolean supportsParameter(MethodParameter parameter) {
++                    return CsrfToken.class.isAssignableFrom(parameter.getParameterType());
++                }
++
++                @Override
++                public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
++                                              NativeWebRequest webRequest, WebDataBinderFactory binderFactory) {
++                    return token;
++                }
++            }).build();
++
++        mockMvc.perform(get("/api/security/csrf"))
++            .andExpect(status().isNoContent())
++            .andExpect(content().string(""));
++
++        verify(tokenRepository).saveToken(org.mockito.ArgumentMatchers.eq(token), any(), any());
++    }
++
++    @Test
++    public void ldnInboxOptionsAdvertisesSupportedMethodsAndContentType() throws Exception {
++        LDNInboxController controller = new LDNInboxController();
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++
++        mockMvc.perform(options("/ldn/inbox"))
++            .andExpect(status().isOk())
++            .andExpect(header().string("Accept-Post", "application/ld+json"))
++            .andExpect(header().string("Allow", "OPTIONS,POST"));
++    }
++
++    @Test
++    public void oidcRedirectAllowsConfiguredHostAndRejectsUntrustedHost() throws Exception {
++        OidcRestController controller = new OidcRestController();
++        ConfigurationService configuration = mock(ConfigurationService.class);
++        ReflectionTestUtils.setField(controller, "configurationService", configuration);
++        when(configuration.getProperty("dspace.ui.url")).thenReturn("https://ui.example.org/");
++        when(configuration.getProperty("dspace.server.url")).thenReturn("https://api.example.org/");
++        when(configuration.getArrayProperty("rest.cors.allowed-origins"))
++            .thenReturn(new String[] { "https://ui.example.org" });
++        mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
++
++        mockMvc.perform(get("/api/authn/oidc"))
++            .andExpect(status().isFound())
++            .andExpect(redirectedUrl("https://ui.example.org/"));
++
++        mockMvc.perform(get("/api/authn/oidc").param("redirectUrl", "https://attacker.example.net/"))
++            .andExpect(status().isBadRequest());
++    }
++}

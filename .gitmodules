@@ -1,0 +1,66 @@
+[submodule "tests/resources/marquez"]
+	path = tests/resources/marquez
+	url = https://github.com/MarquezProject/marquez.git
+[submodule "tests/resources/spring-data-rest"]
+	path = tests/resources/spring-data-rest
+	url = https://github.com/spring-projects/spring-data-rest.git
+[submodule "tests/resources/spring-boot-admin"]
+	path = tests/resources/spring-boot-admin
+	url = https://github.com/codecentric/spring-boot-admin.git
+[submodule "tests/resources/problem-spring-web"]
+	path = tests/resources/problem-spring-web
+	url = https://github.com/zalando/problem-spring-web.git
+[submodule "tests/resources/spring-restdocs"]
+	path = tests/resources/spring-restdocs
+	url = https://github.com/spring-projects/spring-restdocs.git
+[submodule "resources/sample.daytrader8"]
+	path = resources/sample.daytrader8
+	url = https://github.com/OpenLiberty/sample.daytrader8.git
+[submodule "resources/spring-petclinic"]
+	path = resources/spring-petclinic
+	url = https://github.com/spring-projects/spring-petclinic.git
+[submodule "resources/jpetstore-6"]
+	path = resources/jpetstore-6
+	url = https://github.com/mybatis/jpetstore-6.git
+[submodule "resources/restcountries"]
+	path = resources/restcountries
+	url = https://github.com/apilayer/restcountries.git
+[submodule "resources/features-service"]
+	path = resources/features-service
+	url = https://github.com/JavierMF/features-service.git
+[submodule "resources/genome-nexus"]
+	path = resources/genome-nexus
+	url = https://github.com/genome-nexus/genome-nexus.git
+[submodule "resources/languagetool"]
+	path = resources/languagetool
+	url = https://github.com/languagetool-org/languagetool.git
+[submodule "resources/kylin"]
+	path = resources/kylin
+	url = https://github.com/apache/kylin.git
+[submodule "resources/uaa"]
+	path = resources/uaa
+	url = https://github.com/cloudfoundry/uaa.git
+[submodule "resources/spring-cloud-dataflow"]
+	path = resources/spring-cloud-dataflow
+	url = https://github.com/spring-attic/spring-cloud-dataflow.git
+[submodule "resources/DSpace"]
+	path = resources/DSpace
+	url = https://github.com/DSpace/DSpace.git
+[submodule "resources/incubator-kie-kogito-runtimes"]
+	path = resources/incubator-kie-kogito-runtimes
+	url = https://github.com/apache/incubator-kie-kogito-runtimes.git
+[submodule "resources/spinnaker"]
+	path = resources/spinnaker
+	url = https://github.com/spinnaker/spinnaker.git
+[submodule "resources/openvsx"]
+	path = resources/openvsx
+	url = https://github.com/eclipse/openvsx.git
+[submodule "resources/cbioportal"]
+	path = resources/cbioportal
+	url = https://github.com/cBioPortal/cbioportal.git
+[submodule "resources/dolphinscheduler"]
+	path = resources/dolphinscheduler
+	url = https://github.com/apache/dolphinscheduler.git
+[submodule "resources/hertzbeat"]
+	path = resources/hertzbeat
+	url = https://github.com/apache/hertzbeat.git

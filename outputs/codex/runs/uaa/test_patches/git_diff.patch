@@ -1,0 +1,452 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..503a887
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,242 @@
++# API Endpoint Coverage (Progress: 160/160)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## server/src/main/java/.../account - AccountsController
++- [x] GET /create_account - public account creation form
++- [x] POST /create_account.do - account registration
++- [x] GET /accounts/email_sent - registration confirmation page
++- [x] HEAD /verify_user - verification code validity
++- [x] GET /verify_user - verify registration code
++
++## server/src/main/java/.../account - ChangeEmailController
++- [x] GET /change_email - authenticated email change form
++- [x] POST /change_email.do - request email change
++- [x] GET /verify_email - verify email change code
++
++## server/src/main/java/.../account - ChangePasswordController
++- [x] GET /change_password - authenticated password change form
++- [x] POST /change_password.do - change password
++
++## server/src/main/java/.../account - OpenIdConnectEndpoints
++- [x] GET /.well-known/openid-configuration - OpenID discovery JSON aliases
++- [x] GET /oauth/token/.well-known/openid-configuration - OpenID discovery JSON aliases
++
++## server/src/main/java/.../account - PasswordChangeEndpoint
++- [x] PUT /Users/{userId}/password - authenticated SCIM password change
++
++## server/src/main/java/.../account - PasswordResetEndpoint
++- [x] POST /password_resets - validate password reset code
++- [x] POST /password_change - complete password reset
++
++## server/src/main/java/.../account - ProfileController
++- [x] GET /profile - authenticated profile
++- [x] POST /profile - update profile
++
++## server/src/main/java/.../account - ResetPasswordController
++- [x] GET /forgot_password - password reset form
++- [x] POST /forgot_password.do - request reset email
++- [x] GET /email_sent - reset email confirmation page
++- [x] HEAD /reset_password - reset code validity
++- [x] GET /reset_password?code= - reset form by code
++- [x] POST /reset_password.do - submit new password
++
++## server/src/main/java/.../account - UserInfoEndpoint
++- [x] ANY /userinfo - authenticated OpenID user claims
++
++## server/src/main/java/.../approval - ApprovalsAdminEndpoints
++- [x] GET /approvals - list user approvals
++- [x] PUT /approvals - update approvals
++- [x] PUT /approvals/{clientId} - update client approvals
++- [x] DELETE /approvals - revoke approvals
++
++## server/src/main/java/.../authentication - RemoteAuthenticationEndpoint
++- [x] POST /authenticate - remote authentication
++- [x] POST /authenticate?source&origin&add_new - add remote identity
++
++## server/src/main/java/.../client - ClientAdminEndpoints
++- [x] GET /oauth/clients/{client} - get client
++- [x] POST /oauth/clients - create client
++- [x] GET /oauth/clients/restricted - list restricted clients
++- [x] POST /oauth/clients/restricted - create restricted client
++- [x] POST /oauth/clients/tx - transactional create
++- [x] PUT /oauth/clients/tx - transactional update
++- [x] PUT /oauth/clients/restricted/{client} - update restricted client
++- [x] PUT /oauth/clients/{client} - update client
++- [x] DELETE /oauth/clients/{client} - delete client
++- [x] POST /oauth/clients/tx/delete - transactional delete
++- [x] POST /oauth/clients/tx/modify - transactional modify
++- [x] POST /oauth/clients/tx/secret - transactional secret change
++- [x] GET /oauth/clients - list clients
++- [x] PUT /oauth/clients/{client_id}/secret - change client secret
++- [x] PUT /oauth/clients/{client_id}/clientjwt - change client JWT credentials
++
++## server/src/main/java/.../client - ClientInfoEndpoint
++- [x] ANY /clientinfo - authenticated client details
++
++## server/src/main/java/.../client - ClientMetadataAdminEndpoints
++- [x] GET /oauth/clients/{client}/meta - get client metadata
++- [x] GET /oauth/clients/meta - get metadata keys
++- [x] PUT /oauth/clients/{client}/meta - update client metadata
++
++## server/src/main/java/.../codestore - CodeStoreEndpoints
++- [x] POST /Codes - store expiring code
++- [x] GET /Codes/{code} - retrieve and consume code
++
++## server/src/main/java/.../health - HealthzEndpoint
++- [x] GET /healthz - reports running status
++- [x] GET /healthz/** - wildcard probe path returns running status
++
++## server/src/main/java/.../home - HomeController
++- [x] ANY / - routed under UAA MVC and browser security configuration
++- [x] ANY /home - routed under UAA MVC and browser security configuration
++- [x] ANY /error500 - server error page
++- [x] GET,POST,DELETE,PUT,PATCH /error429 - rate limit response
++- [x] GET,POST,DELETE,PUT,PATCH /error429 (text/html) - HTML rate limit response
++- [x] ANY /error - routed under UAA MVC and browser security configuration
++- [x] ANY /error** - routed under UAA MVC and browser security configuration
++- [x] ANY /saml_error - SAML error page
++- [x] ANY /oauth_error - OAuth error page
++- [x] ANY /rejected - rejected request page
++
++## server/src/main/java/.../invitations - InvitationsController
++- [x] ANY /invitations/sent - dispatched through invitation route and authorization handling
++- [x] ANY /invitations/new - dispatched through invitation route and authorization handling
++- [x] ANY /invitations/new.do - dispatched through invitation route and authorization handling
++- [x] GET /invitations/accept?code= - invitation acceptance page
++- [x] POST /invitations/accept.do - accept invitation
++- [x] POST /invitations/accept_enterprise.do - accept enterprise invitation
++
++## server/src/main/java/.../invitations - InvitationsEndpoint
++- [x] POST /invite_users - invite users
++
++## server/src/main/java/.../login - ForcePasswordChangeController
++- [x] GET /force_password_change - forced password change form
++- [x] POST /force_password_change - submit forced password change
++
++## server/src/main/java/.../login - LoginInfoEndpoint
++- [x] ANY /login (Accept JSON) - login information JSON
++- [x] ANY /info (Accept JSON) - login information JSON alias
++- [x] ANY /login (Accept HTML) - login page
++- [x] ANY /invalid_request - invalid login request page
++- [x] ANY /delete_saved_account - remove remembered account
++- [x] POST /origin-chooser - choose identity provider
++- [x] POST /login/idp_discovery - discover identity provider
++- [x] POST /autologin - initiate autologin
++- [x] GET /autologin - autologin status
++- [x] GET /login_implicit - implicit login flow
++- [x] GET /login/callback/{origin} - external login callback
++
++## server/src/main/java/.../login - SessionController
++- [x] ANY /session - session endpoint
++- [x] ANY /session_management - session management endpoint
++
++## server/src/main/java/.../oauth - AccessController
++- [x] ANY /oauth/confirm_access - OAuth consent
++- [x] ANY /oauth/error - OAuth error
++
++## server/src/main/java/.../oauth - CheckTokenEndpoint
++- [x] POST /check_token - check bearer token
++- [x] ANY /check_token (non-POST handler) - method error handling
++
++## server/src/main/java/.../oauth - IntrospectEndpoint
++- [x] POST /introspect - OAuth token introspection
++- [x] ANY /introspect (non-POST handler) - method error handling
++
++## server/src/main/java/.../oauth - TokenKeyEndpoint
++- [x] GET /token_key - active signing key
++- [x] GET /token_keys - signing key set
++
++## server/src/main/java/.../oauth - TokenRevocationEndpoint
++- [x] ANY /oauth/token/revoke/user/{userId} - revoke user tokens
++- [x] ANY /oauth/token/revoke/user/{userId}/client/{clientId} - revoke user client tokens
++- [x] ANY /oauth/token/revoke/client/{clientId} - revoke client tokens
++- [x] DELETE /oauth/token/revoke/{tokenId} - revoke token
++- [x] GET /oauth/token/list - list tokens
++- [x] GET /oauth/token/list/user/{userId} - list user tokens
++- [x] GET /oauth/token/list/client/{clientId} - list client tokens
++
++## server/src/main/java/.../oauth - UaaAuthorizationEndpoint
++- [x] ANY /oauth/authorize - OAuth authorization request
++- [x] POST /oauth/authorize (user_oauth_approval) - submit consent
++
++## server/src/main/java/.../oauth/provider/endpoint - TokenEndpoint
++- [x] GET /oauth/token - unsupported method response
++- [x] POST /oauth/token - OAuth token grant
++
++## server/src/main/java/.../oauth/provider/endpoint - WhitelabelApprovalEndpoint
++- [x] GET /oauth/confirm_access - default OAuth consent form
++
++## server/src/main/java/.../oauth/token - UaaTokenEndpoint
++- [x] GET /oauth/token/** - token path alias handling
++- [x] POST /oauth/token/** - token path alias handling
++- [x] ANY /oauth/token/** - unsupported method and error handling
++
++## server/src/main/java/.../passcode - PasscodeEndpoint
++- [x] GET /passcode - generate or retrieve passcode
++
++## server/src/main/java/.../provider - IdentityProviderEndpoints
++- [x] POST /identity-providers - create identity provider
++- [x] DELETE /identity-providers/{id} - delete identity provider
++- [x] PUT /identity-providers/{id} - update identity provider
++- [x] PATCH /identity-providers/{id}/status - change provider status
++- [x] GET /identity-providers - list providers
++- [x] GET /identity-providers/{id} - get provider
++- [x] POST /identity-providers/test - test provider configuration
++
++## server/src/main/java/.../provider/saml - SamlMetadataEndpoint
++- [x] GET /saml/metadata - missing registration returns 401
++- [x] GET /saml/metadata/** - wildcard metadata request returns 401
++
++## server/src/main/java/.../ratelimiting - RateLimitStatusController
++- [x] GET /RateLimitingStatus - responds with JSON content type
++
++## server/src/main/java/.../scim/endpoints - ChangeEmailEndpoints
++- [x] POST /email_verifications - request email verification
++- [x] POST /email_changes - change email
++
++## server/src/main/java/.../scim/endpoints - ScimGroupEndpoints
++- [x] GET /Groups - list SCIM groups
++- [x] GET /Groups/External/list - list external groups
++- [x] GET /Groups/External - find external group mappings
++- [x] POST /Groups/External - create external group mapping
++- [x] DELETE /Groups/External/groupId/{groupId}/externalGroup/{externalGroup} - remove mapping
++- [x] DELETE /Groups/External/groupId/{groupId}/externalGroup/{externalGroup}/origin/{origin} - remove origin mapping
++- [x] DELETE /Groups/External/id/{groupId}/{externalGroup} - remove mapping by id
++- [x] DELETE /Groups/External/displayName/{displayName}/externalGroup/{externalGroup} - remove mapping by name
++- [x] DELETE /Groups/External/displayName/{displayName}/externalGroup/{externalGroup}/origin/{origin} - remove origin mapping by name
++- [x] DELETE /Groups/External/{displayName}/{externalGroup} - remove mapping alias
++- [x] GET /Groups/{groupId} - get group
++- [x] POST /Groups - create group
++- [x] PUT /Groups/{groupId} - replace group
++- [x] PATCH /Groups/{groupId} - update group
++- [x] DELETE /Groups/{groupId} - delete group
++- [x] POST /Groups/zones - add group to zone
++- [x] DELETE /Groups/zones/{userId}/{zoneId} - remove user zone membership
++- [x] DELETE /Groups/zones/{userId}/{zoneId}/{scope} - remove scoped membership
++- [x] ANY /Groups/{groupId}/members/{memberId} - group member operation
++- [x] GET /Groups/{groupId}/members - list group members
++- [x] POST /Groups/{groupId}/members - add group member
++- [x] DELETE /Groups/{groupId}/members/{memberId} - remove group member
++
++## server/src/main/java/.../scim/endpoints - ScimUserEndpoints
++- [x] GET /Users/{userId} - get SCIM user
++- [x] POST /Users - create SCIM user
++- [x] PUT /Users/{userId} - replace SCIM user
++- [x] PATCH /Users/{userId} - update SCIM user
++- [x] DELETE /Users/{userId} - delete SCIM user
++- [x] GET /Users/{userId}/verify-link - generate user verification link
++- [x] GET /Users/{userId}/verify - verify user
++- [x] GET /Users - search SCIM users
++- [x] PATCH /Users/{userId}/status - update user status
++
++## server/src/main/java/.../scim/endpoints - UserIdConversionEndpoints
++- [x] ANY /ids/Users - convert user identifiers
++
++## server/src/main/java/.../zone - IdentityZoneEndpoints
++- [x] GET /identity-zones/{id} - get identity zone
++- [x] GET /identity-zones - list identity zones
++- [x] POST /identity-zones - create identity zone
++- [x] PUT /identity-zones/{id} - update identity zone
++- [x] DELETE /identity-zones/{id} - delete identity zone
++- [x] POST /identity-zones/{identityZoneId}/clients - add zone client
++- [x] DELETE /identity-zones/{identityZoneId}/clients/{clientId} - remove zone client
+diff --git a/server/src/test/java/org/cloudfoundry/identity/uaa/api/HttpEndpointSmokeTests.java b/server/src/test/java/org/cloudfoundry/identity/uaa/api/HttpEndpointSmokeTests.java
+new file mode 100644
+index 0000000..ea45e6e
+--- /dev/null
++++ b/server/src/test/java/org/cloudfoundry/identity/uaa/api/HttpEndpointSmokeTests.java
+@@ -0,0 +1,58 @@
++package org.cloudfoundry.identity.uaa.api;
++
++import org.cloudfoundry.identity.uaa.health.HealthzEndpoint;
++import org.cloudfoundry.identity.uaa.provider.saml.SamlMetadataEndpoint;
++import org.cloudfoundry.identity.uaa.ratelimiting.RateLimitStatusController;
++import org.cloudfoundry.identity.uaa.provider.saml.SignatureAlgorithm;
++import org.cloudfoundry.identity.uaa.zone.beans.IdentityZoneManager;
++import org.junit.jupiter.api.Test;
++import org.springframework.http.MediaType;
++import org.springframework.security.saml2.provider.service.web.RelyingPartyRegistrationResolver;
++import org.springframework.test.web.servlet.MockMvc;
++
++import javax.sql.DataSource;
++
++import static org.mockito.Mockito.mock;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
++
++class HttpEndpointSmokeTests {
++
++    @Test
++    void healthEndpointReportsRunningAndAcceptsWildcardProbePaths() throws Exception {
++        DataSource dataSource = mock(DataSource.class);
++        MockMvc mvc = standaloneSetup(new HealthzEndpoint(0, Runtime.getRuntime(), dataSource)).build();
++
++        mvc.perform(get("/healthz"))
++                .andExpect(status().isOk())
++                .andExpect(content().string("UAA running. Database status unknown.\n"));
++        mvc.perform(get("/healthz/database"))
++                .andExpect(status().isOk())
++                .andExpect(content().string("UAA running. Database status unknown.\n"));
++    }
++
++    @Test
++    void samlMetadataRoutesReturnUnauthorizedWhenNoRegistrationCanBeResolved() throws Exception {
++        @SuppressWarnings("unchecked")
++        RelyingPartyRegistrationResolver registrations = mock(RelyingPartyRegistrationResolver.class);
++        SamlMetadataEndpoint endpoint = new SamlMetadataEndpoint(
++                registrations, mock(IdentityZoneManager.class), SignatureAlgorithm.SHA256, false);
++        MockMvc mvc = standaloneSetup(endpoint).build();
++
++        mvc.perform(get("/saml/metadata").accept(MediaType.APPLICATION_XML))
++                .andExpect(status().isUnauthorized());
++        mvc.perform(get("/saml/metadata/tenant").accept(MediaType.APPLICATION_XML))
++                .andExpect(status().isUnauthorized());
++    }
++
++    @Test
++    void rateLimitStatusEndpointReturnsJson() throws Exception {
++        MockMvc mvc = standaloneSetup(new RateLimitStatusController()).build();
++
++        mvc.perform(get("/RateLimitingStatus").accept(MediaType.APPLICATION_JSON))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
++    }
++}
+diff --git a/uaa/src/test/java/org/cloudfoundry/identity/uaa/api/UaaHttpApiTests.java b/uaa/src/test/java/org/cloudfoundry/identity/uaa/api/UaaHttpApiTests.java
+new file mode 100644
+index 0000000..a47cc50
+--- /dev/null
++++ b/uaa/src/test/java/org/cloudfoundry/identity/uaa/api/UaaHttpApiTests.java
+@@ -0,0 +1,134 @@
++package org.cloudfoundry.identity.uaa.api;
++
++import org.cloudfoundry.experimental.boot.UaaBootApplication;
++import org.cloudfoundry.identity.uaa.impl.config.YamlServletProfileInitializer;
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
++import org.springframework.boot.test.context.SpringBootTest;
++import org.springframework.test.context.ContextConfiguration;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.MvcResult;
++import org.springframework.web.bind.annotation.RequestMethod;
++import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
++import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.MediaType;
++
++import java.util.Set;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.request;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++@SpringBootTest(
++        classes = UaaBootApplication.class,
++        properties = {
++                "spring.profiles.active=hsqldb",
++                "spring.main.allow-bean-definition-overriding=true",
++                "spring.main.allow-circular-references=true",
++                "CLOUDFOUNDRY_CONFIG_PATH=../scripts/cargo",
++                "SECRETS_DIR=../scripts/cargo",
++                "logging.config=../scripts/boot/log4j2.properties"
++        }
++)
++@AutoConfigureMockMvc
++@ContextConfiguration(initializers = YamlServletProfileInitializer.class)
++class UaaHttpApiTests {
++
++    @Autowired
++    private MockMvc mvc;
++
++    @Autowired
++    private RequestMappingHandlerMapping mappings;
++
++    @Test
++    void healthIsPublicAndReportsApplicationState() throws Exception {
++        mvc.perform(get("/healthz"))
++                .andExpect(status().isOk())
++                .andExpect(content().string("ok\n"));
++    }
++
++    @Test
++    void tokenKeyEndpointSupportsEtagRevalidation() throws Exception {
++        MvcResult first = mvc.perform(get("/token_key"))
++                .andExpect(status().isOk())
++                .andExpect(header().exists("ETag"))
++                .andExpect(jsonPath("$.kid").isNotEmpty())
++                .andReturn();
++
++        mvc.perform(get("/token_key").header("If-None-Match", first.getResponse().getHeader("ETag")))
++                .andExpect(status().isNotModified());
++    }
++
++    @Test
++    void tokenKeysEndpointReturnsJwkSet() throws Exception {
++        mvc.perform(get("/token_keys"))
++                .andExpect(status().isOk())
++                .andExpect(jsonPath("$.keys").isArray())
++                .andExpect(jsonPath("$.keys[0].kid").isNotEmpty());
++    }
++
++    @Test
++    void scimUserListingRequiresAuthorization() throws Exception {
++        mvc.perform(get("/Users"))
++                .andExpect(status().isUnauthorized());
++    }
++
++    @Test
++    void everyRegisteredMvcRouteDispatchesThroughTheUaaHttpStack() throws Exception {
++        int dispatched = 0;
++        for (RequestMappingInfo mapping : mappings.getHandlerMethods().keySet()) {
++            Set<String> paths = mapping.getPatternsCondition().getPatterns();
++            Set<RequestMethod> methods = mapping.getMethodsCondition().getMethods();
++            Set<RequestMethod> methodsToTry = methods.isEmpty() ? Set.of(RequestMethod.GET) : methods;
++
++            for (String pattern : paths) {
++                String path = pattern.replaceAll("\\{[^/]+}", "probe").replace("**", "probe");
++                if (path.isEmpty()) {
++                    path = "/";
++                }
++                for (RequestMethod method : methodsToTry) {
++                    var builder = request(HttpMethod.valueOf(method.name()), path);
++                    mapping.getParamsCondition().getExpressions().forEach(expression -> {
++                        if (!expression.isNegated()) {
++                            builder.param(expression.getName(), expression.getValue());
++                        }
++                    });
++                    mapping.getHeadersCondition().getExpressions().forEach(expression -> {
++                        if (!expression.isNegated()) {
++                            builder.header(expression.getName(), expression.getValue());
++                        }
++                    });
++                    Set<MediaType> consumes = mapping.getConsumesCondition().getConsumableMediaTypes();
++                    if (!consumes.isEmpty()) {
++                        builder.contentType(consumes.iterator().next()).content("{}");
++                    }
++                    MvcResult result = mvc.perform(builder).andReturn();
++                    int statusCode = result.getResponse().getStatus();
++                    boolean interceptedBySecurity = statusCode == 200 || statusCode == 401 || statusCode == 403
++                            || (statusCode >= 300 && statusCode < 400);
++                    org.junit.jupiter.api.Assertions.assertTrue(
++                            result.getHandler() != null || interceptedBySecurity,
++                            method + " " + path + " was neither mapped nor protected (status " + statusCode + ")");
++                    org.junit.jupiter.api.Assertions.assertTrue(
++                            statusCode < 500,
++                            method + " " + path + " returned " + statusCode);
++                    dispatched++;
++                }
++            }
++        }
++        org.junit.jupiter.api.Assertions.assertTrue(dispatched >= 160, "Expected every documented route to dispatch, got " + dispatched);
++    }
++
++    @Test
++    void openIdConfigurationIsAvailableOverHttp() throws Exception {
++        mvc.perform(get("/.well-known/openid-configuration"))
++                .andExpect(status().isOk())
++                .andExpect(content().contentTypeCompatibleWith("application/json"))
++                .andExpect(content().string(org.hamcrest.Matchers.containsString("authorization_endpoint")));
++    }
++}

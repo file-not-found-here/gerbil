@@ -1,0 +1,359 @@
+diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
+new file mode 100644
+index 0000000..24f9059
+--- /dev/null
++++ b/API_ENDPOINT_COVERAGE.md
+@@ -0,0 +1,81 @@
++# API Endpoint Coverage (Progress: 67/67)
++Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
++
++## server/src/main/java/org/eclipse/openvsx - RegistryAPI
++- [x] GET /api/{namespace} - namespace metadata
++- [x] GET /api/{namespace}/verify-pat - validate publish token
++- [x] GET /api/{namespace}/details - namespace details
++- [x] GET /api/{namespace}/logo/{fileName} - namespace logo file
++- [x] GET /api/{namespace}/{extension} - latest extension metadata
++- [x] GET /api/{namespace}/{extension}/{targetPlatform} - latest target platform metadata
++- [x] GET /api/{namespace}/{extension}/{version} - version metadata
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/{version} - target platform version metadata
++- [x] GET /api/{namespace}/{extension}/versions - version map
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/versions - target platform version map
++- [x] GET /api/{namespace}/{extension}/version-references - version references
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/version-references - target platform version references
++- [x] GET /api/{namespace}/{extension}/{version}/file/** - packaged file
++- [x] GET /api/{namespace}/{extension}/{targetPlatform}/{version}/file/** - target platform packaged file
++- [x] GET /api/{namespace}/{extension}/reviews - reviews
++- [x] GET /api/-/search - extension search
++- [x] GET /api/v2/-/query - v2 extension query
++- [x] GET /api/-/query - v1 extension query
++- [x] POST /api/-/query - v1 extension query JSON
++- [x] POST /api/-/namespace/create - create namespace with PAT
++- [x] POST /api/user/namespace/create - create namespace as logged in user
++- [x] POST /api/-/publish - publish with PAT
++- [x] POST /api/user/publish - publish as logged in user
++- [x] POST /api/{namespace}/{extension}/review - create/update extension review
++- [x] POST /api/{namespace}/{extension}/review/delete - delete extension review
++- [x] GET /api/-/public-key/{publicId} - public signing key
++- [x] GET /api/version - registry version
++
++## server/src/main/java/org/eclipse/openvsx - UserAPI
++- [x] GET /login-providers - configured login providers
++- [x] GET /user/auth-error - last login error
++- [x] GET /user - current user or logged-out JSON
++- [x] GET /user/csrf - CSRF token
++- [x] GET /user/tokens - current user's tokens (auth required)
++- [x] POST /user/token/create - create token (auth required)
++- [x] POST /user/token/delete/{id} - delete token (auth required)
++- [x] GET /user/extensions - current user's extensions (auth required)
++- [x] GET /user/namespaces - current user's namespaces (auth required)
++- [x] POST /user/namespace/{namespace}/details - update namespace details (auth required)
++- [x] POST /user/namespace/{namespace}/details/logo - upload namespace logo (auth required)
++- [x] GET /user/namespace/{name}/members - list namespace members (auth required)
++- [x] POST /user/namespace/{namespace}/role - change namespace member role (auth required)
++- [x] GET /user/search/{name} - search users (auth required)
++- [x] POST /user/publisher-agreement - sign publisher agreement (auth required)
++
++## server/src/main/java/org/eclipse/openvsx/admin - AdminAPI
++- [x] GET /admin/report (application/json) - admin report (admin token)
++- [x] GET /admin/report (text/csv) - CSV admin report (admin token)
++- [x] GET /admin/stats - registry counts (admin required)
++- [x] GET /admin/log - persisted log, optional period (admin required)
++- [x] POST /admin/update-search-index - rebuild search index (admin required)
++- [x] GET /admin/extension/{namespaceName}/{extensionName} - inspect extension (admin required)
++- [x] POST /admin/api/extension/{namespaceName}/{extensionName}/delete - delete extension API (admin required)
++- [x] POST /admin/extension/{namespaceName}/{extensionName}/delete - delete extension (admin required)
++- [x] GET /admin/namespace/{namespaceName} - inspect namespace (admin required)
++- [x] POST /admin/create-namespace - create namespace (admin required)
++- [x] POST /admin/change-namespace - rename namespace (admin required)
++- [x] GET /admin/api/namespace/{namespaceName}/members - list members API (admin required)
++- [x] GET /admin/namespace/{namespaceName}/members - list members (admin required)
++- [x] POST /admin/api/namespace/{namespaceName}/change-member - edit member API (admin required)
++- [x] POST /admin/namespace/{namespaceName}/change-member - edit member (admin required)
++- [x] GET /admin/publisher/{provider}/{loginName} - publisher details (admin required)
++- [x] POST /admin/publisher/{provider}/{loginName}/revoke - revoke publisher (admin required)
++
++## server/src/main/java/org/eclipse/openvsx/adapter - VSCodeAPI
++- [x] POST /vscode/gallery/extensionquery - VS Code gallery extension query
++- [x] GET /vscode/asset/{namespaceName}/{extensionName}/{version}/{assetType}/** - extension asset
++- [x] GET /vscode/item - resolve extension item
++- [x] GET /vscode/gallery/publishers/{namespaceName}/vsextensions/{extensionName}/{version}/vspackage - VSIX package redirect
++- [x] GET /vscode/unpkg/{namespaceName}/{extensionName}/{version}/** - browse package contents
++- [x] GET /vscode/gallery/{namespaceName}/{extensionName}/latest - VS Code gallery metadata
++
++## server/src/main/java/org/eclipse/openvsx/web - SitemapController
++- [x] GET /sitemap.xml - sitemap XML
++
++## server/src/main/java/org/eclipse/openvsx/web - ServerErrorController
++- [x] GET /server-error - redirect to UI error route
+diff --git a/server/src/test/java/org/eclipse/openvsx/ApiEndpointHttpTest.java b/server/src/test/java/org/eclipse/openvsx/ApiEndpointHttpTest.java
+new file mode 100644
+index 0000000..02010db
+--- /dev/null
++++ b/server/src/test/java/org/eclipse/openvsx/ApiEndpointHttpTest.java
+@@ -0,0 +1,266 @@
++package org.eclipse.openvsx;
++
++import org.eclipse.openvsx.adapter.*;
++import org.eclipse.openvsx.admin.*;
++import org.eclipse.openvsx.search.SearchUtilService;
++import org.eclipse.openvsx.search.ISearchService;
++import org.eclipse.openvsx.repositories.RepositoryService;
++import org.eclipse.openvsx.eclipse.EclipseService;
++import org.eclipse.openvsx.storage.StorageUtilService;
++import org.eclipse.openvsx.web.*;
++import org.eclipse.openvsx.json.*;
++import org.eclipse.openvsx.util.ErrorResultException;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++import org.junit.jupiter.api.TestFactory;
++import org.junit.jupiter.api.DynamicTest;
++import org.springframework.http.HttpMethod;
++import org.springframework.http.MediaType;
++import org.springframework.mock.web.MockMultipartFile;
++import org.springframework.test.web.servlet.MockMvc;
++import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
++import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
++import org.springframework.test.web.servlet.setup.MockMvcBuilders;
++import org.springframework.test.util.ReflectionTestUtils;
++import org.springframework.web.bind.annotation.ControllerAdvice;
++import org.springframework.web.bind.annotation.ExceptionHandler;
++import org.springframework.http.ResponseEntity;
++
++import java.nio.charset.StandardCharsets;
++import java.util.List;
++import java.util.stream.Stream;
++
++import static org.mockito.Mockito.*;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
++
++/** HTTP-level route coverage for the Spring MVC API controllers. */
++class ApiEndpointHttpTest {
++
++    private MockMvc mvc;
++    private LocalRegistryService localRegistry;
++    private UpstreamRegistryService upstreamRegistry;
++    private UserService users;
++    private AdminService admins;
++
++    @BeforeEach
++    void setUp() throws Exception {
++        localRegistry = mock(LocalRegistryService.class);
++        upstreamRegistry = mock(UpstreamRegistryService.class);
++        users = mock(UserService.class);
++        admins = mock(AdminService.class);
++        when(upstreamRegistry.isValid()).thenReturn(false);
++        when(users.getLoginProviders()).thenReturn(java.util.Map.of());
++        when(users.canLogin()).thenReturn(false);
++        when(users.findLoggedInUser()).thenReturn(null);
++        var emptySearch = new SearchResultJson();
++        emptySearch.setExtensions(List.of());
++        when(localRegistry.search(any(ISearchService.Options.class))).thenReturn(emptySearch);
++        var emptyQuery = new QueryResultJson();
++        emptyQuery.setExtensions(List.of());
++        when(localRegistry.query(any(QueryRequest.class))).thenReturn(emptyQuery);
++        when(localRegistry.queryV2(any(QueryRequestV2.class))).thenReturn(emptyQuery);
++        when(localRegistry.postReview(any(ReviewJson.class), anyString(), anyString())).thenReturn(ResultJson.success("Review accepted."));
++        when(localRegistry.deleteReview(anyString(), anyString())).thenReturn(ResultJson.success("Review deleted."));
++        doThrow(new ErrorResultException("Admin role required", org.springframework.http.HttpStatus.FORBIDDEN))
++                .when(admins).checkAdminUser();
++        doThrow(new ErrorResultException("Admin role required", org.springframework.http.HttpStatus.FORBIDDEN))
++                .when(admins).checkAdminUser(anyString());
++
++        var registryApi = new RegistryAPI(localRegistry, upstreamRegistry, users);
++        var userApi = new UserAPI(mock(RepositoryService.class), users, mock(EclipseService.class), mock(StorageUtilService.class));
++        var adminApi = new AdminAPI(mock(RepositoryService.class), admins, localRegistry, mock(SearchUtilService.class));
++        var queryHandler = mock(IExtensionQueryRequestHandler.class);
++        when(queryHandler.getResult(any(ExtensionQueryParam.class), anyInt(), anyInt()))
++                .thenReturn(new ExtensionQueryResult(List.of()));
++        var vscodeApi = new VSCodeAPI(mock(LocalVSCodeService.class), mock(UpstreamVSCodeService.class), queryHandler);
++        var sitemapService = mock(SitemapService.class);
++        doReturn("<?xml version=\"1.0\"?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\"/>")
++                .when(sitemapService).generateSitemap();
++        var serverErrorController = new ServerErrorController();
++        ReflectionTestUtils.setField(serverErrorController, "webuiUrl", "https://ui.example.test/");
++        mvc = MockMvcBuilders.standaloneSetup(registryApi, userApi, adminApi, vscodeApi,
++                new SitemapController(sitemapService), serverErrorController)
++                .setControllerAdvice(new CatchAllAdvice())
++                .build();
++    }
++
++    /**
++     * One HTTP dispatch per discovered API mapping. These requests use an empty registry and
++     * logged-out user; route resolution is asserted separately from the endpoint's data result.
++     */
++    @TestFactory
++    Stream<DynamicTest> everyInventoryRouteDispatchesToItsController() {
++        List<Route> routes = List.of(
++                // RegistryAPI
++                routeGet("/api/acme", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/verify-pat?token=bad", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/details", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/logo/logo.png", "image/png", "", RegistryAPI.class),
++                routeGet("/api/acme/tool", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/linux-x64", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/1.0.0", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/linux-x64/1.0.0", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/versions", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/linux-x64/versions", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/version-references", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/linux-x64/version-references", "application/json", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/1.0.0/file/readme.md", "*/*", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/linux-x64/1.0.0/file/readme.md", "*/*", "", RegistryAPI.class),
++                routeGet("/api/acme/tool/reviews", "application/json", "", RegistryAPI.class),
++                routeGet("/api/-/search?query=tool", "application/json", "", RegistryAPI.class),
++                routeGet("/api/v2/-/query?query=tool", "application/json", "", RegistryAPI.class),
++                routeGet("/api/-/query?query=tool", "application/json", "", RegistryAPI.class),
++                routePost("/api/-/query", "application/json", "{}", RegistryAPI.class),
++                routePost("/api/-/namespace/create", "application/json", "{}", RegistryAPI.class),
++                routePost("/api/user/namespace/create", "application/json", "{}", RegistryAPI.class),
++                routePost("/api/-/publish", "application/octet-stream", "", RegistryAPI.class),
++                routePost("/api/user/publish", "application/octet-stream", "", RegistryAPI.class),
++                routePost("/api/acme/tool/review", "application/json", "{}", RegistryAPI.class),
++                routePost("/api/acme/tool/review/delete", "application/json", "", RegistryAPI.class),
++                routeGet("/api/-/public-key/abc", "text/plain", "", RegistryAPI.class),
++                routeGet("/api/version", "application/json", "", RegistryAPI.class),
++                // UserAPI
++                routeGet("/login-providers", "*/*", "", UserAPI.class),
++                routeGet("/user/auth-error", "application/json", "", UserAPI.class),
++                routeGet("/user", "application/json", "", UserAPI.class),
++                routeGet("/user/csrf", "application/json", "", UserAPI.class),
++                routeGet("/user/tokens", "application/json", "", UserAPI.class),
++                routePost("/user/token/create", "application/json", "", UserAPI.class),
++                routePost("/user/token/delete/1", "application/json", "", UserAPI.class),
++                routeGet("/user/extensions", "application/json", "", UserAPI.class),
++                routeGet("/user/namespaces", "application/json", "", UserAPI.class),
++                routePost("/user/namespace/acme/details", "application/json", "{}", UserAPI.class),
++                routeMultipart("/user/namespace/acme/details/logo", UserAPI.class),
++                routeGet("/user/namespace/acme/members", "application/json", "", UserAPI.class),
++                routePost("/user/namespace/acme/role?user=bob&role=contributor", "application/json", "", UserAPI.class),
++                routeGet("/user/search/bob", "application/json", "", UserAPI.class),
++                routePost("/user/publisher-agreement", "application/json", "", UserAPI.class),
++                // AdminAPI (the mock admin service rejects requests before data access)
++                routeGet("/admin/report?token=bad&year=2025&month=1", "application/json", "", AdminAPI.class),
++                routeGet("/admin/report?token=bad&year=2025&month=1", "text/csv", "", AdminAPI.class),
++                routeGet("/admin/stats", "application/json", "", AdminAPI.class),
++                routeGet("/admin/log", "text/plain", "", AdminAPI.class),
++                routePost("/admin/update-search-index", "application/json", "", AdminAPI.class),
++                routeGet("/admin/extension/acme/tool", "application/json", "", AdminAPI.class),
++                routePost("/admin/api/extension/acme/tool/delete?token=bad", "application/json", "", AdminAPI.class),
++                routePost("/admin/extension/acme/tool/delete", "application/json", "", AdminAPI.class),
++                routeGet("/admin/namespace/acme", "application/json", "", AdminAPI.class),
++                routePost("/admin/create-namespace", "application/json", "{}", AdminAPI.class),
++                routePost("/admin/change-namespace", "application/json", "{}", AdminAPI.class),
++                routeGet("/admin/api/namespace/acme/members?token=bad", "application/json", "", AdminAPI.class),
++                routeGet("/admin/namespace/acme/members", "application/json", "", AdminAPI.class),
++                routePost("/admin/api/namespace/acme/change-member?user=bob&role=owner&token=bad", "application/json", "", AdminAPI.class),
++                routePost("/admin/namespace/acme/change-member?user=bob&role=owner", "application/json", "", AdminAPI.class),
++                routeGet("/admin/publisher/github/bob", "application/json", "", AdminAPI.class),
++                routePost("/admin/publisher/github/bob/revoke", "application/json", "", AdminAPI.class),
++                // VSCodeAPI
++                routePost("/vscode/gallery/extensionquery", "application/json", "{\"filters\":[],\"flags\":0}", VSCodeAPI.class),
++                routeGet("/vscode/asset/acme/tool/1.0.0/icon/icon.png", "*/*", "", VSCodeAPI.class),
++                routeGet("/vscode/item?itemName=acme.tool", "*/*", "", VSCodeAPI.class),
++                routeGet("/vscode/gallery/publishers/acme/vsextensions/tool/1.0.0/vspackage", "*/*", "", VSCodeAPI.class),
++                routeGet("/vscode/unpkg/acme/tool/1.0.0/README.md", "*/*", "", VSCodeAPI.class),
++                routeGet("/vscode/gallery/acme/tool/latest", "application/json", "", VSCodeAPI.class),
++                // web controllers
++                routeGet("/sitemap.xml", "application/xml", "", SitemapController.class),
++                routeGet("/server-error", "*/*", "", ServerErrorController.class)
++        );
++        return routes.stream().map(route -> DynamicTest.dynamicTest(route.method + " " + route.path, () -> {
++            var request = request(route);
++            mvc.perform(request)
++                    .andExpect(handler().handlerType(route.controller))
++                    .andExpect(result -> assertTrue(result.getResponse().getStatus() < 500,
++                            "unexpected server error for " + route.method + " " + route.path));
++        }));
++    }
++
++    @Test
++    void loggedOutUserEndpointsReturnExpectedSafeResponses() throws Exception {
++        mvc.perform(get("/user")).andExpect(status().isOk())
++                .andExpect(jsonPath("$.error").exists());
++        mvc.perform(get("/user/tokens")).andExpect(status().isForbidden());
++        mvc.perform(post("/user/token/create")).andExpect(status().isForbidden());
++        mvc.perform(get("/user/extensions")).andExpect(status().isForbidden());
++        mvc.perform(get("/user/namespaces")).andExpect(status().isForbidden());
++        mvc.perform(get("/user/auth-error")).andExpect(status().isNotFound());
++    }
++
++    @Test
++    void tokenDescriptionValidationRunsBeforeAuthenticationCheck() throws Exception {
++        var tooLong = "x".repeat(256);
++        mvc.perform(post("/user/token/create").param("description", tooLong))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The description must not be longer than 255 characters."));
++    }
++
++    @Test
++    void invalidAdminCredentialsAreRejectedWithForbiddenStatus() throws Exception {
++        mvc.perform(get("/admin/stats")).andExpect(status().isForbidden());
++        mvc.perform(get("/admin/report").param("token", "invalid").param("year", "2025").param("month", "1")
++                .accept(MediaType.APPLICATION_JSON)).andExpect(status().isForbidden());
++        mvc.perform(get("/admin/report").param("token", "invalid").param("year", "2025").param("month", "1")
++                .accept("text/csv")).andExpect(status().isForbidden());
++    }
++
++    @Test
++    void registryQueryAndSearchRejectNegativePagination() throws Exception {
++        mvc.perform(get("/api/-/search").param("size", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++        mvc.perform(get("/api/-/search").param("offset", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'offset' must not be negative."));
++        mvc.perform(get("/api/-/query").param("size", "-1"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The parameter 'size' must not be negative."));
++        mvc.perform(get("/api/v2/-/query").param("includeAllVersions", "sometimes"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("Invalid includeAllVersions value: sometimes."));
++    }
++
++    @Test
++    void reviewAndVscodeItemValidationReturnClientErrors() throws Exception {
++        mvc.perform(post("/api/acme/tool/review").contentType(MediaType.APPLICATION_JSON)
++                        .content("{\"rating\":6}"))
++                .andExpect(status().isBadRequest())
++                .andExpect(jsonPath("$.error").value("The rating must be an integer number between 0 and 5."));
++        mvc.perform(get("/vscode/item").param("itemName", "malformed"))
++                .andExpect(status().isBadRequest());
++    }
++
++    private static Route routeGet(String path, String accept, String body, Class<?> controller) {
++        return new Route("GET", path, accept, "", body, controller, false);
++    }
++
++    private static Route routePost(String path, String contentType, String body, Class<?> controller) {
++        return new Route("POST", path, "*/*", contentType, body, controller, false);
++    }
++
++    private static Route routeMultipart(String path, Class<?> controller) {
++        return new Route("POST", path, "application/json", "multipart/form-data", "", controller, true);
++    }
++
++    private MockHttpServletRequestBuilder request(Route route) {
++        MockHttpServletRequestBuilder builder;
++        if (route.multipart) {
++            builder = MockMvcRequestBuilders.multipart(route.path).file(new MockMultipartFile("file", "logo.png", "image/png", new byte[]{1}));
++        } else {
++            builder = MockMvcRequestBuilders.request(HttpMethod.valueOf(route.method), route.path);
++            if (!route.contentType.isEmpty()) builder.contentType(route.contentType);
++            if (!route.body.isEmpty()) builder.content(route.body.getBytes(StandardCharsets.UTF_8));
++        }
++        return builder.accept(route.accept);
++    }
++
++    private record Route(String method, String path, String accept, String contentType, String body,
++                         Class<?> controller, boolean multipart) { }
++
++    @ControllerAdvice
++    static class CatchAllAdvice {
++        @ExceptionHandler(NullPointerException.class)
++        ResponseEntity<String> handleUnexpectedFixtureException(NullPointerException exception) {
++            return ResponseEntity.internalServerError().body(exception.getClass().getSimpleName());
++        }
++    }
++}

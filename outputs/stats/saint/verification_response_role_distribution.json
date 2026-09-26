@@ -1,0 +1,68 @@
+{
+  "scope": "api_tests",
+  "api_test_count": 269,
+  "verification_roles": {
+    "scope": "http_verifications",
+    "verification_count": 433,
+    "by_role": {
+      "inspector": {
+        "count": 0,
+        "total": 433,
+        "proportion": 0.0
+      },
+      "matcher": {
+        "count": 0,
+        "total": 433,
+        "proportion": 0.0
+      },
+      "extractor": {
+        "count": 0,
+        "total": 433,
+        "proportion": 0.0
+      },
+      "body-assertion": {
+        "count": 108,
+        "total": 433,
+        "proportion": 0.24942263279445728
+      },
+      "header-assertion": {
+        "count": 6,
+        "total": 433,
+        "proportion": 0.013856812933025405
+      },
+      "status-assertion": {
+        "count": 319,
+        "total": 433,
+        "proportion": 0.7367205542725174
+      },
+      "none": {
+        "count": 0,
+        "total": 433,
+        "proportion": 0.0
+      }
+    }
+  },
+  "response_extraction": {
+    "tests_with_extraction": {
+      "count": 35,
+      "total": 269,
+      "proportion": 0.13011152416356878
+    },
+    "extraction_count_per_test": {
+      "count": 269,
+      "min": 0.0,
+      "max": 12.0,
+      "mean": 0.4944237918215613,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 2.0
+    },
+    "multi_request_tests_with_extraction": {
+      "scope": "api_tests_with_multiple_request_events",
+      "count": 24,
+      "total": 25,
+      "proportion": 0.96
+    }
+  }
+}

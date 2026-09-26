@@ -1,0 +1,496 @@
+{
+  "scope": "endpoints_api_tests_and_resolved_endpoint_events",
+  "endpoint_count": 455,
+  "coverage": {
+    "count": 360,
+    "total": 455,
+    "proportion": 0.7912087912087912
+  },
+  "among_covered": {
+    "endpoint_count": 360,
+    "holistic": {
+      "exercise_rate": {
+        "count": 164,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.8871951219512195,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "optional_exercise_rate": {
+        "count": 24,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.34722222222222215,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "required_exercise_rate": {
+        "count": 153,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.9629629629629628,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "simple_1_way_optional_coverage": {
+        "count": 24,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.34722222222222215,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 1.0,
+        "p90": 1.0
+      },
+      "simple_2_way_optional_coverage": {
+        "count": 17,
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.058823529411764705,
+        "p25": 0.0,
+        "p50": 0.0,
+        "p75": 0.0,
+        "p90": 0.0
+      },
+      "total_2_way_optional_coverage": {
+        "count": 17,
+        "min": 0.25,
+        "max": 1.0,
+        "mean": 0.3627450980392157,
+        "p25": 0.25,
+        "p50": 0.25,
+        "p75": 0.4166666666666667,
+        "p90": 0.5500000000000002
+      }
+    },
+    "by_source": {
+      "exercise_rate": {
+        "path": {
+          "count": 118,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "query": {
+          "count": 23,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.23188405797101447,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.3333333333333333,
+          "p90": 1.0
+        },
+        "header": {
+          "count": 5,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "body": {
+          "count": 53,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "form": {
+          "count": 4,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "optional_exercise_rate": {
+        "query": {
+          "count": 19,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.17543859649122806,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.3333333333333333,
+          "p90": 0.4666666666666662
+        },
+        "header": {
+          "count": 5,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "simple_1_way_optional_coverage": {
+        "query": {
+          "count": 19,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.17543859649122806,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.3333333333333333,
+          "p90": 0.4666666666666662
+        },
+        "header": {
+          "count": 5,
+          "min": 1.0,
+          "max": 1.0,
+          "mean": 1.0,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "simple_2_way_optional_coverage": {
+        "query": {
+          "count": 16,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "total_2_way_optional_coverage": {
+        "query": {
+          "count": 16,
+          "min": 0.25,
+          "max": 0.75,
+          "mean": 0.32291666666666663,
+          "p25": 0.25,
+          "p50": 0.25,
+          "p75": 0.4166666666666667,
+          "p90": 0.4166666666666667
+        }
+      }
+    },
+    "pooled_optional_exercise_by_source": {
+      "query": {
+        "exercised_parameter_count": 8,
+        "total_parameter_count": 60,
+        "exercise_rate": 0.13333333333333333
+      },
+      "header": {
+        "exercised_parameter_count": 5,
+        "total_parameter_count": 5,
+        "exercise_rate": 1.0
+      }
+    },
+    "optional_exercise_extremes": {
+      "holistic": {
+        "fully_exercised": {
+          "count": 7,
+          "total": 24,
+          "proportion": 0.2916666666666667
+        },
+        "none_exercised": {
+          "count": 13,
+          "total": 24,
+          "proportion": 0.5416666666666666
+        }
+      },
+      "by_source": {
+        "query": {
+          "fully_exercised": {
+            "count": 2,
+            "total": 19,
+            "proportion": 0.10526315789473684
+          },
+          "none_exercised": {
+            "count": 13,
+            "total": 19,
+            "proportion": 0.6842105263157895
+          }
+        },
+        "header": {
+          "fully_exercised": {
+            "count": 5,
+            "total": 5,
+            "proportion": 1.0
+          },
+          "none_exercised": {
+            "count": 0,
+            "total": 5,
+            "proportion": 0.0
+          }
+        }
+      }
+    }
+  },
+  "all_universe": {
+    "scope": "all_projects",
+    "endpoint_count": 455,
+    "coverage": {
+      "count": 360,
+      "total": 455,
+      "proportion": 0.7912087912087912
+    },
+    "among_covered": {
+      "endpoint_count": 360,
+      "holistic": {
+        "exercise_rate": {
+          "count": 164,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.8871951219512195,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "optional_exercise_rate": {
+          "count": 24,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.34722222222222215,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "required_exercise_rate": {
+          "count": 153,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.9629629629629628,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "simple_1_way_optional_coverage": {
+          "count": 24,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.34722222222222215,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "simple_2_way_optional_coverage": {
+          "count": 17,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.058823529411764705,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "total_2_way_optional_coverage": {
+          "count": 17,
+          "min": 0.25,
+          "max": 1.0,
+          "mean": 0.3627450980392157,
+          "p25": 0.25,
+          "p50": 0.25,
+          "p75": 0.4166666666666667,
+          "p90": 0.5500000000000002
+        }
+      },
+      "by_source": {
+        "exercise_rate": {
+          "path": {
+            "count": 118,
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0,
+            "p25": 1.0,
+            "p50": 1.0,
+            "p75": 1.0,
+            "p90": 1.0
+          },
+          "query": {
+            "count": 23,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.23188405797101447,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.3333333333333333,
+            "p90": 1.0
+          },
+          "header": {
+            "count": 5,
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0,
+            "p25": 1.0,
+            "p50": 1.0,
+            "p75": 1.0,
+            "p90": 1.0
+          },
+          "body": {
+            "count": 53,
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0,
+            "p25": 1.0,
+            "p50": 1.0,
+            "p75": 1.0,
+            "p90": 1.0
+          },
+          "form": {
+            "count": 4,
+            "min": 0.0,
+            "max": 0.0,
+            "mean": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p90": 0.0
+          }
+        },
+        "optional_exercise_rate": {
+          "query": {
+            "count": 19,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.17543859649122806,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.3333333333333333,
+            "p90": 0.4666666666666662
+          },
+          "header": {
+            "count": 5,
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0,
+            "p25": 1.0,
+            "p50": 1.0,
+            "p75": 1.0,
+            "p90": 1.0
+          }
+        },
+        "simple_1_way_optional_coverage": {
+          "query": {
+            "count": 19,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.17543859649122806,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.3333333333333333,
+            "p90": 0.4666666666666662
+          },
+          "header": {
+            "count": 5,
+            "min": 1.0,
+            "max": 1.0,
+            "mean": 1.0,
+            "p25": 1.0,
+            "p50": 1.0,
+            "p75": 1.0,
+            "p90": 1.0
+          }
+        },
+        "simple_2_way_optional_coverage": {
+          "query": {
+            "count": 16,
+            "min": 0.0,
+            "max": 0.0,
+            "mean": 0.0,
+            "p25": 0.0,
+            "p50": 0.0,
+            "p75": 0.0,
+            "p90": 0.0
+          }
+        },
+        "total_2_way_optional_coverage": {
+          "query": {
+            "count": 16,
+            "min": 0.25,
+            "max": 0.75,
+            "mean": 0.32291666666666663,
+            "p25": 0.25,
+            "p50": 0.25,
+            "p75": 0.4166666666666667,
+            "p90": 0.4166666666666667
+          }
+        }
+      },
+      "pooled_optional_exercise_by_source": {
+        "query": {
+          "exercised_parameter_count": 8,
+          "total_parameter_count": 60,
+          "exercise_rate": 0.13333333333333333
+        },
+        "header": {
+          "exercised_parameter_count": 5,
+          "total_parameter_count": 5,
+          "exercise_rate": 1.0
+        }
+      },
+      "optional_exercise_extremes": {
+        "holistic": {
+          "fully_exercised": {
+            "count": 7,
+            "total": 24,
+            "proportion": 0.2916666666666667
+          },
+          "none_exercised": {
+            "count": 13,
+            "total": 24,
+            "proportion": 0.5416666666666666
+          }
+        },
+        "by_source": {
+          "query": {
+            "fully_exercised": {
+              "count": 2,
+              "total": 19,
+              "proportion": 0.10526315789473684
+            },
+            "none_exercised": {
+              "count": 13,
+              "total": 19,
+              "proportion": 0.6842105263157895
+            }
+          },
+          "header": {
+            "fully_exercised": {
+              "count": 5,
+              "total": 5,
+              "proportion": 1.0
+            },
+            "none_exercised": {
+              "count": 0,
+              "total": 5,
+              "proportion": 0.0
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "scope": "test_classes",
+  "test_class_count": 28,
+  "framework_split": {
+    "junit3": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "junit4": {
+      "class_count": 2,
+      "pct_of_classes": 7.142857142857143
+    },
+    "junit5": {
+      "class_count": 26,
+      "pct_of_classes": 92.85714285714286
+    },
+    "testng": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "assertj": {
+      "class_count": 3,
+      "pct_of_classes": 10.714285714285714
+    },
+    "hamcrest": {
+      "class_count": 11,
+      "pct_of_classes": 39.285714285714285
+    },
+    "google-truth": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "mockito": {
+      "class_count": 19,
+      "pct_of_classes": 67.85714285714286
+    },
+    "easymock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "powermock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "jmockit": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "jmock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "spring-test": {
+      "class_count": 24,
+      "pct_of_classes": 85.71428571428571
+    },
+    "rest-assured": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "karate": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "pact": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "citrus": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    }
+  },
+  "category_split": {
+    "test-runner": {
+      "frameworks": [
+        "junit3",
+        "junit4",
+        "junit5",
+        "testng"
+      ],
+      "class_count": 28,
+      "pct_of_classes": 100.0
+    },
+    "assertion-library": {
+      "frameworks": [
+        "assertj",
+        "hamcrest",
+        "google-truth"
+      ],
+      "class_count": 14,
+      "pct_of_classes": 50.0
+    },
+    "mocking-library": {
+      "frameworks": [
+        "mockito",
+        "easymock",
+        "powermock",
+        "jmockit",
+        "jmock"
+      ],
+      "class_count": 19,
+      "pct_of_classes": 67.85714285714286
+    },
+    "api-test-framework": {
+      "frameworks": [
+        "spring-test",
+        "rest-assured",
+        "karate",
+        "pact",
+        "citrus"
+      ],
+      "class_count": 24,
+      "pct_of_classes": 85.71428571428571
+    }
+  },
+  "classes_without_frameworks": {
+    "count": 0,
+    "total": 28,
+    "proportion": 0.0
+  },
+  "framework_count_per_class": {
+    "count": 28,
+    "min": 1.0,
+    "max": 4.0,
+    "mean": 3.0357142857142856,
+    "p25": 3.0,
+    "p50": 3.0,
+    "p75": 3.25,
+    "p90": 4.0
+  }
+}

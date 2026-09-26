@@ -1,0 +1,30 @@
+{
+  "scope": "api_tests",
+  "test_count": 269,
+  "label_split": {
+    "bypassed": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    },
+    "mocked": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    },
+    "test-token": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    },
+    "real-flow": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    },
+    "unknown": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    },
+    "none": {
+      "test_count": 269,
+      "pct_of_tests": 100.0
+    }
+  }
+}
