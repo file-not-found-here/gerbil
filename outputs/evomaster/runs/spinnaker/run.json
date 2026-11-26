@@ -1,0 +1,67 @@
+{
+  "target": "clouddriver",
+  "project": "spinnaker",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "243d98d5b18e85779816de2105e81504ed0bcb39",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 3.7,
+      "error": null,
+      "gerbil_commit": "929209daf82001a5fcf96cf414485ffc03e471a8"
+    },
+    {
+      "stage": "build",
+      "seconds": 94.7,
+      "error": null,
+      "gerbil_commit": "929209daf82001a5fcf96cf414485ffc03e471a8"
+    },
+    {
+      "stage": "schema",
+      "seconds": 49.0,
+      "error": null,
+      "gerbil_commit": "929209daf82001a5fcf96cf414485ffc03e471a8"
+    },
+    {
+      "stage": "generate",
+      "seconds": 3661.5,
+      "error": null,
+      "gerbil_commit": "929209daf82001a5fcf96cf414485ffc03e471a8"
+    },
+    {
+      "stage": "verify",
+      "seconds": 156.7,
+      "error": null,
+      "gerbil_commit": "929209daf82001a5fcf96cf414485ffc03e471a8"
+    }
+  ],
+  "schema_operations": 99,
+  "scoped_operations": 91,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 946,
+    "endpoints": 91,
+    "endpoints_2xx": 45,
+    "potential_faults": 99,
+    "covered_targets": 6584,
+    "covered_lines": 1379,
+    "total_lines": 5065,
+    "covered_branches": 396,
+    "total_branches": 6970,
+    "sql_heuristics_evaluations": 0,
+    "sql_parsing_failures": 0
+  },
+  "repaired_classes": [],
+  "verification": {
+    "tests": 946,
+    "passed": 895,
+    "failed": 51,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 0
+  },
+  "finished": true
+}

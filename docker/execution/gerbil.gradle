@@ -1,0 +1,50 @@
+// Gradle init script: lists the projects of the build and its included builds, and
+// exports each Java project's test and production runtime classpaths, with sibling
+// project jars replaced by their output directories so JaCoCo and PIT see project
+// class directories.
+
+rootProject {
+    tasks.register('gerbilProjects') {
+        dependsOn gradle.includedBuilds.collect { it.task(':gerbilProjects') }
+        doLast {
+            def projects = rootProject.allprojects.collect {
+                "project\t${it.path}\t${it.projectDir.absolutePath}"
+            }
+            def builds = gradle.includedBuilds.collect {
+                "build\t${it.name}\t${it.projectDir.absolutePath}"
+            }
+            def listing = rootProject.file('build/gerbil-projects.tsv')
+            listing.parentFile.mkdirs()
+            listing.text = (projects + builds).join('\n')
+        }
+    }
+}
+
+allprojects { project ->
+    project.plugins.withType(JavaPlugin) {
+        project.tasks.register('gerbilClasspath') {
+            def classpaths = [
+                'gerbil-classpath.txt': project.sourceSets.test.runtimeClasspath,
+                'gerbil-production-classpath.txt': project.sourceSets.main.runtimeClasspath,
+            ]
+            dependsOn classpaths.values()
+            doLast {
+                def outputsByJar = [:]
+                project.rootProject.allprojects.each { other ->
+                    other.plugins.withType(JavaPlugin) {
+                        outputsByJar[other.tasks.jar.archiveFile.get().asFile] =
+                                other.sourceSets.main.output.files
+                    }
+                }
+                classpaths.each { name, classpath ->
+                    def entries = classpath.files.collectMany { file ->
+                        outputsByJar.containsKey(file) ? outputsByJar[file] : [file]
+                    }
+                    def listing = project.file("build/${name}")
+                    listing.parentFile.mkdirs()
+                    listing.text = entries.collect { it.absolutePath }.unique().join('\n')
+                }
+            }
+        }
+    }
+}

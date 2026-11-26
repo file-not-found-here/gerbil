@@ -1,0 +1,28 @@
+diff --git a/src/server/pom.xml b/src/server/pom.xml
+--- a/src/server/pom.xml
++++ b/src/server/pom.xml
+@@ -357,6 +357,24 @@
+             <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+         </dependency>
+ 
++        <!-- EvoMaster's embedded driver and the client its generated tests call. -->
++        <dependency>
++            <groupId>org.evomaster</groupId>
++            <artifactId>evomaster-client-java-controller</artifactId>
++            <version>6.2.0</version>
++            <scope>test</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.evomaster</groupId>
++            <artifactId>evomaster-test-utils-java</artifactId>
++            <version>6.2.0</version>
++            <scope>test</scope>
++        </dependency>
++        <dependency>
++            <groupId>io.rest-assured</groupId>
++            <artifactId>rest-assured</artifactId>
++            <scope>test</scope>
++        </dependency>
+     </dependencies>
+ 
+     <build>

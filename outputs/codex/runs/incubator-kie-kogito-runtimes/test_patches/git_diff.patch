@@ -1,188 +1,465 @@
 diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
 new file mode 100644
-index 0000000..f7d2790
+index 0000000..554d42d
 --- /dev/null
 +++ b/API_ENDPOINT_COVERAGE.md
-@@ -0,0 +1,165 @@
-+# API Endpoint Coverage (Progress: 17/113)
+@@ -0,0 +1,356 @@
++# API Endpoint Coverage (Progress: 155/250)
 +Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
 +
-+## quarkus/addons/process-management/runtime - ProcessInstanceManagementResource
-+- [x] GET /management/processes/ - list process IDs
-+- [x] GET /management/processes/{processId} - process metadata
-+- [x] GET /management/processes/{processId}/nodes - process nodes
-+- [x] GET /management/processes/{processId}/instances/{processInstanceId}/error - error details
++Routes below are the HTTP method/path declarations found in production sources and integration-app sources. `$...$` paths come from generated-resource templates. Generated family paths stand for the route pattern emitted for each matching model; the Spring Boot processes integration app is the runnable target for this change.
++
++## kogito-codegen-modules/kogito-codegen-decisions - DecisionRestResourceSpringTemplate
++- [x] POST /{decisionId}/{decisionService} - JSON decision evaluation
++- [x] GET /{decisionId} - XML decision service metadata
++
++## kogito-codegen-modules/kogito-codegen-decisions - DecisionRestResourceQuarkusTemplate
++- [~] POST /{decisionId}/{decisionService} - JSON decision evaluation; reason: requires its owning Quarkus runtime application
++- [~] GET /{decisionId} - XML decision service metadata; reason: requires its owning Quarkus runtime application
++
++## kogito-codegen-modules/kogito-codegen-predictions - PMMLRestResourceSpringTemplate
++- [x] POST /{model} - JSON prediction
++- [x] POST /{model}/descriptive - descriptive prediction output
++
++## kogito-codegen-modules/kogito-codegen-predictions - PMMLRestResourceQuarkusTemplate
++- [~] POST /{model} - JSON prediction; reason: requires its owning Quarkus runtime application
++- [~] POST /{model}/descriptive - descriptive prediction output; reason: requires its owning Quarkus runtime application
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceSpringTemplate
++- [x] POST /{processId} - create instance; optional JSON variables
++- [x] GET /{processId} - list instances
++- [x] GET /{processId}/schema - process variable schema
++- [x] GET /{processId}/{id} - get instance
++- [x] DELETE /{processId}/{id} - delete instance
++- [x] PUT /{processId}/{id} - replace variables
++- [x] PATCH /{processId}/{id} - partially update variables
++- [x] GET /{processId}/{id}/tasks - list instance work items
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceQuarkusTemplate
++- [~] POST /{processId} - create instance; optional JSON variables; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId} - list instances; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/schema - process variable schema; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/{id} - get instance; reason: requires its owning Quarkus runtime application
++- [~] DELETE /{processId}/{id} - delete instance; reason: requires its owning Quarkus runtime application
++- [~] PUT /{processId}/{id} - replace variables; reason: requires its owning Quarkus runtime application
++- [~] PATCH /{processId}/{id} - partially update variables; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/{id}/tasks - list instance work items; reason: requires its owning Quarkus runtime application
++
++## kogito-codegen-modules/kogito-codegen-processes - ReactiveRestResourceQuarkusTemplate
++- [~] POST /{processId} - create instance; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId} - list instances; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/{id} - get instance; reason: requires its owning Quarkus runtime application
++- [~] DELETE /{processId}/{id} - delete instance; reason: requires its owning Quarkus runtime application
++- [~] PUT /{processId}/{id} - replace variables; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/{id}/tasks - list instance work items; reason: requires its owning Quarkus runtime application
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceSignalSpringTemplate
++- [x] POST /{processId}/{signal} - start process by signal
++- [x] POST /{processId}/{id}/{signal} - signal existing instance
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceSignalQuarkusTemplate
++- [~] POST /{processId}/{signal} - start process by signal; reason: requires its owning Quarkus runtime application
++- [~] POST /{processId}/{id}/{signal} - signal existing instance; reason: requires its owning Quarkus runtime application
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceWorkItemSpringTemplate
++- [x] POST /{processId}/{id}/{task}/trigger - trigger a user task; user and group parameters
++- [x] POST /{processId}/{id}/{task}/{taskId}/phases/{phase} - transition task phase
++- [x] PUT /{processId}/{id}/{task}/{taskId} - save task output
++- [x] POST /{processId}/{id}/{task}/{taskId} - transition task
++- [x] GET /{processId}/{id}/{task}/{taskId} - read task
++- [x] DELETE /{processId}/{id}/{task}/{taskId} - abort task
++- [x] GET /{processId}/{task}/schema - task schema
++- [x] GET /{processId}/{id}/{task}/{taskId}/schema - task schema and phases
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceWorkItemQuarkusTemplate
++- [~] POST /{processId}/{id}/{task}/trigger - trigger a user task; user and group parameters; reason: requires its owning Quarkus runtime application
++- [~] POST /{processId}/{id}/{task}/{taskId}/phases/{phase} - transition task phase; reason: requires its owning Quarkus runtime application
++- [~] PUT /{processId}/{id}/{task}/{taskId} - save task output; reason: requires its owning Quarkus runtime application
++- [~] POST /{processId}/{id}/{task}/{taskId} - transition task; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/{id}/{task}/{taskId} - read task; reason: requires its owning Quarkus runtime application
++- [~] DELETE /{processId}/{id}/{task}/{taskId} - abort task; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/{task}/schema - task schema; reason: requires its owning Quarkus runtime application
++- [~] GET /{processId}/{id}/{task}/{taskId}/schema - task schema and phases; reason: requires its owning Quarkus runtime application
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceUserTaskSpringTemplate
++- [x] GET /usertasks/instance - list user tasks; query filters
++- [x] GET /usertasks/instance/{taskId} - read task
++- [x] POST /usertasks/instance/{taskId}/transition - transition task
++- [x] GET /usertasks/instance/{taskId}/transition - list available transitions
++- [x] PUT /usertasks/instance/{taskId}/outputs - set task outputs
++- [x] PUT /usertasks/instance/{taskId}/inputs - set task inputs
++- [x] GET /usertasks/instance/{taskId}/comments - list comments
++- [x] POST /usertasks/instance/{taskId}/comments - create comment
++- [x] GET /usertasks/instance/{taskId}/comments/{commentId} - read comment
++- [x] PUT /usertasks/instance/{taskId}/comments/{commentId} - update comment
++- [x] DELETE /usertasks/instance/{taskId}/comments/{commentId} - delete comment
++- [x] GET /usertasks/instance/{taskId}/attachments - list attachments
++- [x] POST /usertasks/instance/{taskId}/attachments - create attachment
++- [x] PUT /usertasks/instance/{taskId}/attachments/{attachmentId} - update attachment
++- [x] DELETE /usertasks/instance/{taskId}/attachments/{attachmentId} - delete attachment
++- [x] GET /usertasks/instance/{taskId}/attachments/{attachmentId} - read attachment
++
++## kogito-codegen-modules/kogito-codegen-processes - RestResourceUserTaskQuarkusTemplate
++- [~] GET /usertasks/instance - list user tasks; query filters; reason: requires its owning Quarkus runtime application
++- [~] GET /usertasks/instance/{taskId} - read task; reason: requires its owning Quarkus runtime application
++- [~] POST /usertasks/instance/{taskId}/transition - transition task; reason: requires its owning Quarkus runtime application
++- [~] GET /usertasks/instance/{taskId}/transition - list available transitions; reason: requires its owning Quarkus runtime application
++- [~] PUT /usertasks/instance/{taskId}/outputs - set task outputs; reason: requires its owning Quarkus runtime application
++- [~] PUT /usertasks/instance/{taskId}/inputs - set task inputs; reason: requires its owning Quarkus runtime application
++- [~] GET /usertasks/instance/{taskId}/comments - list comments; reason: requires its owning Quarkus runtime application
++- [~] POST /usertasks/instance/{taskId}/comments - create comment; reason: requires its owning Quarkus runtime application
++- [~] GET /usertasks/instance/{taskId}/comments/{commentId} - read comment; reason: requires its owning Quarkus runtime application
++- [~] PUT /usertasks/instance/{taskId}/comments/{commentId} - update comment; reason: requires its owning Quarkus runtime application
++- [~] DELETE /usertasks/instance/{taskId}/comments/{commentId} - delete comment; reason: requires its owning Quarkus runtime application
++- [~] GET /usertasks/instance/{taskId}/attachments - list attachments; reason: requires its owning Quarkus runtime application
++- [~] POST /usertasks/instance/{taskId}/attachments - create attachment; reason: requires its owning Quarkus runtime application
++- [~] PUT /usertasks/instance/{taskId}/attachments/{attachmentId} - update attachment; reason: requires its owning Quarkus runtime application
++- [~] DELETE /usertasks/instance/{taskId}/attachments/{attachmentId} - delete attachment; reason: requires its owning Quarkus runtime application
++- [~] GET /usertasks/instance/{taskId}/attachments/{attachmentId} - read attachment; reason: requires its owning Quarkus runtime application
++
++## kogito-codegen-modules/kogito-codegen-sample - SampleRestResourceSpringTemplate
++- [~] GET /sample/{name} - sample JSON response; reason: target application has no matching model to generate this route
++
++## kogito-codegen-modules/kogito-codegen-sample - SampleRestResourceQuarkusTemplate
++- [~] GET /sample/{name} - sample JSON response; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/dynamic - ProcessInstanceDynamicCallsResource
++- [~] POST /_dynamic/{processId}/{processInstanceId}/rest - invoke a process instance REST operation; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/dynamic/integration-tests - ResumeProcessResource
++- [~] POST /example/{processInstanceId} - resume example process instance; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/explainability - QuarkusExplainableResource
++- [~] POST /predict - explain prediction from JSON input; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/jobs/common/rest-callback - CallbackJobsServiceResource
++- [~] POST /management/jobs/{processId}/instances/{processInstanceId}/timers/{timerId} - trigger timer callback; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/kubernetes/integration-tests - Foo
++- [~] GET /foo - integration fixture response; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/messaging/common - QuarkusTopicsInformationResource
++- [~] GET /messaging/topics - list configured messaging topics; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/process-definitions - ProcessDefinitionsResource
++- [~] POST /{id} - execute workflow with JSON input; reason: requires its owning Quarkus runtime application
++- [~] POST /{id}/definition - upload workflow definition as text; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/process-management - ProcessInstanceManagementResource
++- [~] GET /management/processes - list process definitions; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId} - process definition metadata; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId}/nodes - list process nodes; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/error - get instance error; reason: requires its owning Quarkus runtime application
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/migrate - migrate one instance; reason: requires its owning Quarkus runtime application
++- [~] POST /management/processes/{processId}/migrate - migrate process instances; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - list active node instances; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/timers - list instance timers; reason: requires its owning Quarkus runtime application
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - retry instance; reason: requires its owning Quarkus runtime application
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/skip - skip failed node; reason: requires its owning Quarkus runtime application
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodes/{nodeId} - trigger node; reason: requires its owning Quarkus runtime application
++- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - retrigger node; reason: requires its owning Quarkus runtime application
++- [~] DELETE /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - cancel node; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - list node timers; reason: requires its owning Quarkus runtime application
++- [~] DELETE /management/processes/{processId}/instances/{processInstanceId} - cancel process instance; reason: requires its owning Quarkus runtime application
++- [~] PATCH /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/sla - update node SLA; reason: requires its owning Quarkus runtime application
++- [~] PATCH /management/processes/{processId}/instances/{processInstanceId}/sla - update process SLA; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/process-svg - ProcessSvgResource
++- [~] GET /svg/processes/{processId} - render process SVG; reason: requires its owning Quarkus runtime application
++- [~] GET /svg/processes/{processId}/instances/{processInstanceId} - render instance execution SVG; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/source-files - SourceFilesResource
++- [~] GET /management/processes/sources - list process source files; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId}/sources - list one process's source files; reason: requires its owning Quarkus runtime application
++- [~] GET /management/processes/{processId}/source - fetch process source; reason: requires its owning Quarkus runtime application
++
++## quarkus/addons/task-management - TaskManagementResource
++- [~] PUT /management/usertasks/{taskId} - replace user task; reason: requires its owning Quarkus runtime application
++- [~] PATCH /management/usertasks/{taskId} - partially update user task; reason: requires its owning Quarkus runtime application
++- [~] GET /management/usertasks/{taskId} - read user task; reason: requires its owning Quarkus runtime application
++
++## quarkus/extensions/kogito-quarkus-decisions-extension integration-test - CustomEndpoint
++- [~] POST /custom - invoke custom decision endpoint; reason: requires its owning Quarkus runtime application
++
++## quarkus/extensions/kogito-quarkus-predictions-extension integration-test - CustomEndpoint
++- [~] POST /custom - invoke custom prediction endpoint; reason: requires its owning Quarkus runtime application
++
++## quarkus/extensions/kogito-quarkus-processes-extension integration-test - GreetingResource
++- [~] POST /hello - evaluate straight-through process; reason: requires its owning Quarkus runtime application
++- [~] GET /hello/version - process version; reason: requires its owning Quarkus runtime application
++
++## quarkus/extensions/kogito-quarkus-rules-extension integration-test - CustomEndpoint
++- [~] POST /custom - invoke custom rules endpoint; reason: requires its owning Quarkus runtime application
++
++## quarkus/extensions/kogito-quarkus-serverless-workflow-extension integration-test - GreetResource
++- [~] GET /greetdetails - get greeting details; reason: requires its owning Quarkus runtime application
++
++## quarkus/integration-tests/integration-tests-quarkus-legacy-rules - TmsEndpoint
++- [~] GET /test-tms - read TMS rule result; reason: requires its owning Quarkus runtime application
++- [~] POST /test-tms - create TMS rule fact; reason: requires its owning Quarkus runtime application
++- [~] DELETE /test-tms - clear TMS rule facts; reason: requires its owning Quarkus runtime application
++
++## quarkus/integration-tests/integration-tests-quarkus-processes - ApprovalResource
++- [~] GET /approvalsdetails - process type metadata; reason: requires its owning Quarkus runtime application
++
++## quarkus/integration-tests/integration-tests-quarkus-processes - EventListenerResource
++- [~] GET /events - event listener counters; reason: requires its owning Quarkus runtime application
++- [~] DELETE /events - reset event listener counters; reason: requires its owning Quarkus runtime application
++
++## springboot/addons/explainability - SpringBootExplainableResource
++- [~] POST /predict - explain prediction from JSON input; reason: addon is not included in the target processes application
++
++## springboot/addons/jobs - CallbackJobsServiceResource
++- [~] POST /management/jobs/{processId}/instances/{processInstanceId}/timers/{timerId} - trigger timer callback; reason: addon is not included in the target processes application
++
++## springboot/addons/messaging/implementation - SpringTopicsInformationResource
++- [~] GET /messaging/topics - list configured messaging topics; reason: addon is not included in the target processes application
++
++## springboot/addons/process-management - ProcessInstanceManagementRestController
++- [x] GET /management/processes - list process definitions
++- [x] GET /management/processes/{processId} - process definition metadata
++- [x] GET /management/processes/{processId}/nodes - list process nodes
 +- [x] POST /management/processes/{processId}/instances/{processInstanceId}/migrate - migrate one instance
-+- [x] POST /management/processes/{processId}/migrate - migrate all instances
-+- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - work items
-+- [x] GET /management/processes/{processId}/instances/{processInstanceId}/timers - instance timers
-+- [x] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - retrigger errored instance
-+- [x] POST /management/processes/{processId}/instances/{processInstanceId}/skip - skip errored instance
++- [x] POST /management/processes/{processId}/migrate - migrate process instances
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/error - get instance error
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - list active node instances
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/timers - list instance timers
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - retry instance
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/skip - skip failed node
 +- [x] POST /management/processes/{processId}/instances/{processInstanceId}/nodes/{nodeId} - trigger node
 +- [x] POST /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - retrigger node
 +- [x] DELETE /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - cancel node
-+- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - node timers
-+- [x] DELETE /management/processes/{processId}/instances/{processInstanceId} - cancel instance
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - list node timers
++- [x] DELETE /management/processes/{processId}/instances/{processInstanceId} - cancel process instance
 +- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/sla - update node SLA
 +- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/sla - update process SLA
 +
-+## quarkus/addons/source-files/runtime - SourceFilesResource
-+- [~] GET /management/processes/sources - requires generated process source fixtures
-+- [~] GET /management/processes/{processId}/sources - requires generated process source fixtures
-+- [~] GET /management/processes/{processId}/source - requires generated process source fixtures
-+
-+## quarkus/addons/task-management/runtime - TaskManagementResource
-+- [~] PUT /management/usertasks/{taskId} - requires generated user-task fixture
-+- [~] PATCH /management/usertasks/{taskId} - requires generated user-task fixture
-+- [~] GET /management/usertasks/{taskId} - requires generated user-task fixture
++## springboot/addons/process-svg - SpringBootProcessSvgResource
++- [x] GET /svg/processes/{processId} - render process SVG
++- [~] GET /svg/processes/{processId}/instances/{processInstanceId} - render instance execution SVG; reason: requires Data Index, which is not configured in the target app
 +
 +## springboot/addons/task-management - TaskManagementRestController
-+- [~] PUT /management/usertasks/{taskId} - Spring Boot duplicate of Quarkus task API
-+- [~] PATCH /management/usertasks/{taskId} - Spring Boot duplicate of Quarkus task API
-+- [~] GET /management/usertasks/{taskId} - Spring Boot duplicate of Quarkus task API
++- [x] PUT /management/usertasks/{taskId} - replace user task
++- [x] PATCH /management/usertasks/{taskId} - partially update user task
++- [x] GET /management/usertasks/{taskId} - read user task
 +
-+## springboot/addons/process-management - ProcessInstanceManagementRestController
-+- [~] GET /management/processes/ - Spring Boot process list
-+- [~] GET /management/processes/{processId} - Spring Boot process metadata
-+- [~] GET /management/processes/{processId}/nodes - Spring Boot process nodes
-+- [~] GET /management/processes/{processId}/instances/{processInstanceId}/error - Spring Boot error details
-+- [~] POST /management/processes/{processId}/instances/{processInstanceId}/migrate - Spring Boot single migration
-+- [~] POST /management/processes/{processId}/migrate - Spring Boot bulk migration
-+- [~] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - Spring Boot work items
-+- [~] GET /management/processes/{processId}/instances/{processInstanceId}/timers - Spring Boot instance timers
-+- [~] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - Spring Boot retrigger
-+- [~] POST /management/processes/{processId}/instances/{processInstanceId}/skip - Spring Boot skip
-+- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodes/{nodeId} - Spring Boot trigger node
-+- [~] POST /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - Spring Boot retrigger node
-+- [~] DELETE /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - Spring Boot cancel node
-+- [~] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - Spring Boot node timers
-+- [~] DELETE /management/processes/{processId}/instances/{processInstanceId} - Spring Boot cancel instance
-+- [~] PATCH /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/sla - Spring Boot node SLA
-+- [~] PATCH /management/processes/{processId}/instances/{processInstanceId}/sla - Spring Boot process SLA
++## springboot/integration-tests/integration-tests-springboot-processes-it - ApprovalResource
++- [x] GET /approvalsdetails - process type metadata
 +
-+## quarkus/addons/process-definitions/runtime - ProcessDefinitionsResource
-+- [~] POST /{id} - requires generated process definition
-+- [~] POST /{id}/definition - requires generated process definition
++## springboot/integration-tests/integration-tests-springboot-processes-it - VersionRestController
++- [x] GET /version - process version metadata
 +
-+## quarkus/addons/process-svg/runtime - ProcessSvgResource
-+- [~] GET /svg/processes/{processId} - requires generated process SVG
-+- [~] GET /svg/processes/{processId}/instances/{processInstanceId} - requires live process instance
++## springboot/integration-tests/integration-tests-springboot-processes-it - generated process resources
++- [x] POST /approvals - create approval process instance
++- [x] GET /approvals - list approval process instances
++- [x] GET /approvals/schema - approval process schema
++- [x] GET /approvals/{id} - retrieve approval instance
++- [x] DELETE /approvals/{id} - delete approval instance
++- [x] PUT /approvals/{id} - replace approval variables
++- [x] PATCH /approvals/{id} - partially update approval variables
++- [x] GET /approvals/{id}/tasks - list approval instance tasks
 +
-+## springboot/addons/process-svg - SpringBootProcessSvgResource
-+- [~] GET /svg/processes/{processId} - Spring Boot duplicate SVG API
-+- [~] GET /svg/processes/{processId}/instances/{processInstanceId} - Spring Boot duplicate SVG API
++## springboot/integration-tests/integration-tests-springboot-processes-it - generated process-management and task-management resources
++- [x] GET /management/processes - list process definitions
++- [x] GET /management/processes/{processId} - process definition metadata
++- [x] GET /management/processes/{processId}/nodes - list process nodes
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/migrate - migrate one instance
++- [x] POST /management/processes/{processId}/migrate - migrate process instances
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/error - get instance error
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances - list active node instances
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/timers - list instance timers
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/retrigger - retry instance
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/skip - skip failed node
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/nodes/{nodeId} - trigger node
++- [x] POST /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - retrigger node
++- [x] DELETE /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId} - cancel node
++- [x] GET /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/timers - list node timers
++- [x] DELETE /management/processes/{processId}/instances/{processInstanceId} - cancel process instance
++- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/nodeInstances/{nodeInstanceId}/sla - update node SLA
++- [x] PATCH /management/processes/{processId}/instances/{processInstanceId}/sla - update process SLA
++- [x] PUT /management/usertasks/{taskId} - replace user task
++- [x] PATCH /management/usertasks/{taskId} - partially update user task
++- [x] GET /management/usertasks/{taskId} - read user task
 +
-+## quarkus/addons/dynamic/runtime - ProcessInstanceDynamicCallsResource
-+- [~] POST /_dynamic/{processId}/{processInstanceId}/rest - requires a live process instance and registered REST task
++## springboot/integration-tests/integration-tests-springboot-processes-it - generated UserTasksResource
++- [x] GET /usertasks/instance - list user tasks; user and group query parameters
++- [x] GET /usertasks/instance/{taskId} - read task; user and group query parameters
++- [x] POST /usertasks/instance/{taskId}/transition - transition task
++- [x] GET /usertasks/instance/{taskId}/transition - list available transitions
++- [x] PUT /usertasks/instance/{taskId}/outputs - set task outputs
++- [x] PUT /usertasks/instance/{taskId}/inputs - set task inputs
++- [x] GET /usertasks/instance/{taskId}/comments - list comments
++- [x] POST /usertasks/instance/{taskId}/comments - create comment
++- [x] GET /usertasks/instance/{taskId}/comments/{commentId} - read comment
++- [x] PUT /usertasks/instance/{taskId}/comments/{commentId} - update comment
++- [x] DELETE /usertasks/instance/{taskId}/comments/{commentId} - delete comment
++- [x] GET /usertasks/instance/{taskId}/attachments - list attachments
++- [x] POST /usertasks/instance/{taskId}/attachments - create attachment
++- [x] PUT /usertasks/instance/{taskId}/attachments/{attachmentId} - update attachment
++- [x] DELETE /usertasks/instance/{taskId}/attachments/{attachmentId} - delete attachment
++- [x] GET /usertasks/instance/{taskId}/attachments/{attachmentId} - read attachment
 +
-+## quarkus/addons/dynamic/integration-tests - ResumeProcessResource
-+- [~] POST /example/{processInstanceId} - test-only dynamic process fixture
++## springboot/integration-tests/integration-tests-springboot-processes-it - generated signal resources
++- [x] POST /greetings/{id}/signalwithoutdata - signal greetings instance without payload
++- [x] POST /greetings/{id}/signalwithdata - signal greetings instance with payload
++- [x] POST /signalStart/start - start signalStart process by signal payload
++- [x] POST /signalStart/{id}/start - signal an existing signalStart process instance
 +
-+## quarkus/addons/explainability/runtime - QuarkusExplainableResource
-+- [~] POST /predict - requires explainability and prediction model fixtures
++## springboot/integration-tests/integration-tests-springboot-processes-it - generated task resources
++- [x] POST /approvals/{id}/firstLineApproval/{taskId}/phases/{phase} - transition first approval task
++- [x] PUT /approvals/{id}/firstLineApproval/{taskId} - save first approval task output
++- [x] POST /approvals/{id}/firstLineApproval/{taskId} - transition first approval task
++- [x] GET /approvals/{id}/firstLineApproval/{taskId} - read first approval task
++- [x] DELETE /approvals/{id}/firstLineApproval/{taskId} - abort first approval task
++- [x] GET /approvals/firstLineApproval/schema - first approval task schema
++- [x] GET /approvals/{id}/firstLineApproval/{taskId}/schema - first approval task schema and phases
++- [x] POST /approvals/{id}/secondLineApproval/{taskId}/phases/{phase} - transition second approval task
++- [x] PUT /approvals/{id}/secondLineApproval/{taskId} - save second approval task output
++- [x] POST /approvals/{id}/secondLineApproval/{taskId} - transition second approval task
++- [x] GET /approvals/{id}/secondLineApproval/{taskId} - read second approval task
++- [x] DELETE /approvals/{id}/secondLineApproval/{taskId} - abort second approval task
++- [x] GET /approvals/secondLineApproval/schema - second approval task schema
++- [x] GET /approvals/{id}/secondLineApproval/{taskId}/schema - second approval task schema and phases
++- [x] POST /AdHocFragments/{id}/Service_Task/trigger - trigger service task; user and group parameters
++- [x] POST /AdHocFragments/{id}/AdHocTask1/trigger - trigger ad hoc task; user and group parameters
 +
-+## springboot/addons/explainability - SpringBootExplainableResource
-+- [~] POST /predict - requires explainability and prediction model fixtures
++## springboot/integration-tests/integration-tests-springboot-processes-it - generated process resource variants
++- [x] GET /BPMN2GatewayFEEL - list BPMN2GatewayFEEL instances
++- [x] GET /BPMN2GatewayFEEL/schema - BPMN2GatewayFEEL input schema
++- [x] GET /SimpleLinkTest - list SimpleLinkTest instances
++- [x] GET /SimpleLinkTest/schema - SimpleLinkTest input schema
++- [x] GET /AdHocProcess - list AdHocProcess instances
++- [x] GET /AdHocProcess/schema - AdHocProcess input schema
++- [x] GET /AdHocFragments - list AdHocFragments instances
++- [x] GET /AdHocFragments/schema - AdHocFragments input schema
++- [x] GET /cinema - list cinema instances
++- [x] GET /cinema/schema - cinema input schema
++- [x] GET /monitoring - list monitoring instances
++- [x] GET /monitoring/schema - monitoring input schema
++- [x] GET /timers - list timers instances
++- [x] GET /timers/schema - timers input schema
++- [x] GET /multiinstancetaskprocess - list multiinstancetaskprocess instances
++- [x] GET /multiinstancetaskprocess/schema - multiinstancetaskprocess input schema
++- [x] GET /parent - list parent instances
++- [x] GET /parent/schema - parent input schema
++- [x] GET /subprocess - list subprocess instances
++- [x] GET /subprocess/schema - subprocess input schema
++- [x] GET /greetings - list greetings instances
++- [x] GET /greetings/schema - greetings input schema
++- [x] GET /signalStart - list signalStart instances
++- [x] GET /signalStart/schema - signalStart input schema
 +
-+## quarkus/addons/jobs/common/rest-callback - CallbackJobsServiceResource
-+- [~] POST /management/jobs/{processId}/instances/{processInstanceId}/timers/{timerId} - requires scheduled job callback fixture
++## springboot/integration-tests/integration-tests-springboot-processes-it - springdoc
++- [x] GET /v3/api-docs - OpenAPI document for generated and custom controllers
 +
-+## springboot/addons/jobs - CallbackJobsServiceResource
-+- [~] POST /management/jobs/{processId}/instances/{processInstanceId}/timers/{timerId} - requires scheduled job callback fixture
++## springboot/integration-tests/integration-tests-springboot-decisions-it - generated decision resource
++- [x] POST /basicAdd - evaluate all basicAdd decisions
++- [x] GET /basicAdd - retrieve basicAdd decision metadata as XML
++- [x] POST /basicAdd/ds1 - evaluate the ds1 decision service
 +
-+## quarkus/addons/messaging/common - QuarkusTopicsInformationResource
-+- [~] GET /messaging/topics - requires configured messaging channels
-+
-+## springboot/addons/messaging/implementation - SpringTopicsInformationResource
-+- [~] GET /messaging/topics - requires configured messaging channels
-+
-+## quarkus/integration-tests/integration-tests-quarkus-processes - EventListenerResource
-+- [~] DELETE /events - test-only integration event collector
-+- [~] GET /events - test-only integration event collector
-+- [~] GET /approvalsdetails - test-only process integration resource
-+
-+## springboot/integration-tests/integration-tests-springboot-processes-it - ApprovalResource and VersionRestController
-+- [~] GET /approvalsdetails - test-only process integration resource
-+- [~] GET /version - test-only process integration resource
-+
-+## quarkus/integration-tests/integration-tests-quarkus-legacy-rules - TmsEndpoint
-+- [~] GET /test-tms - test-only rules integration resource
-+- [~] POST /test-tms - test-only rules integration resource
-+- [~] DELETE /test-tms - test-only rules integration resource
-+
-+## quarkus/addons/kubernetes/integration-tests - Foo
-+- [~] GET /foo - test-only Kubernetes integration endpoint
-+
-+## quarkus/extensions integration-test resources
-+- [~] POST /custom - rules extension sample endpoint
-+- [~] POST /custom - decisions extension sample endpoint
-+- [~] POST /custom - predictions extension sample endpoint
-+- [~] POST /hello - process extension sample endpoint
-+- [~] GET /hello/version - process extension sample endpoint
-+- [~] GET /greetdetails - serverless workflow sample endpoint
-+
-+## kogito-codegen-modules/kogito-codegen-sample - generated sample resource templates
-+- [~] GET /sample/{name} - generated Quarkus sample; requires a generated app
-+- [~] GET /sample - generated Spring sample; requires a generated app
-+
-+## kogito-codegen-modules/kogito-codegen-processes - generated process resource templates
-+- [~] POST /{process} - generated process start endpoint; requires a generated app
-+- [~] GET /{process} - generated process list endpoint; requires a generated app
-+- [~] GET /{process}/schema - generated process schema endpoint; requires a generated app
-+- [~] GET /{process}/{id} - generated process read endpoint; requires a generated app
-+- [~] DELETE /{process}/{id} - generated process delete endpoint; requires a generated app
-+- [~] PUT /{process}/{id} - generated process update endpoint; requires a generated app
-+- [~] PATCH /{process}/{id} - generated process partial update endpoint; requires a generated app
-+- [~] GET /{process}/{id}/tasks - generated process tasks endpoint; requires a generated app
-+- [~] POST /{process}/{signal} - generated signal endpoint; requires a generated app
-+- [~] POST /{process}/{id}/{signal} - generated instance signal endpoint; requires a generated app
-+- [~] POST /{process}/{id}/{workItem}/trigger - generated work item trigger; requires a generated app
-+- [~] POST /{process}/{id}/{workItem}/{taskId} - generated work item completion; requires a generated app
-+- [~] PUT /{process}/{id}/{workItem}/{taskId} - generated work item update; requires a generated app
-+- [~] POST /{process}/{id}/{workItem}/{taskId}/phases/{phase} - generated work item phase; requires a generated app
-+- [~] GET /{process}/{id}/{workItem}/{taskId} - generated work item read; requires a generated app
-+- [~] DELETE /{process}/{id}/{workItem}/{taskId} - generated work item delete; requires a generated app
-+- [~] GET /{process}/{workItem}/schema - generated work item schema; requires a generated app
-+- [~] GET /{process}/{id}/{workItem}/{taskId}/schema - generated work item instance schema; requires a generated app
-+- [~] GET /usertasks/instance - generated user-task list; requires a generated app
-+- [~] GET /usertasks/instance/{taskId} - generated user-task read; requires a generated app
-+- [~] POST /usertasks/instance/{taskId}/transition - generated user-task transition; requires a generated app
-+- [~] GET /usertasks/instance/{taskId}/transition - generated user-task transition listing; requires a generated app
-+- [~] PUT /usertasks/instance/{taskId}/outputs - generated user-task output update; requires a generated app
-+- [~] PUT /usertasks/instance/{taskId}/inputs - generated user-task input update; requires a generated app
-+- [~] GET /usertasks/instance/{taskId}/comments - generated comment listing; requires a generated app
-+- [~] POST /usertasks/instance/{taskId}/comments - generated comment creation; requires a generated app
-+- [~] GET /usertasks/instance/{taskId}/comments/{commentId} - generated comment read; requires a generated app
-+- [~] PUT /usertasks/instance/{taskId}/comments/{commentId} - generated comment update; requires a generated app
-+- [~] DELETE /usertasks/instance/{taskId}/comments/{commentId} - generated comment delete; requires a generated app
-+- [~] GET /usertasks/instance/{taskId}/attachments - generated attachment listing; requires a generated app
-+- [~] POST /usertasks/instance/{taskId}/attachments - generated attachment creation; requires a generated app
-+- [~] PUT /usertasks/instance/{taskId}/attachments/{attachmentId} - generated attachment update; requires a generated app
-+- [~] DELETE /usertasks/instance/{taskId}/attachments/{attachmentId} - generated attachment delete; requires a generated app
-+- [~] GET /usertasks/instance/{taskId}/attachments/{attachmentId} - generated attachment read; requires a generated app
-+
-+## kogito-codegen-modules/kogito-codegen-decisions - generated decision templates
-+- [~] POST /{decision} - generated decision evaluation; requires a generated app
-+- [~] GET /{decision} - generated decision metadata; requires a generated app
-+- [~] POST /{decision}/{decisionService} - generated decision service evaluation; requires a generated app
-+
-+## kogito-codegen-modules/kogito-codegen-predictions - generated prediction templates
-+- [~] POST /{model} - generated model prediction; requires a generated app
-+- [~] POST /{model}/descriptive - generated descriptive prediction; requires a generated app
-diff --git a/quarkus/addons/process-management/runtime/src/test/java/org/kie/kogito/process/management/ProcessManagementHttpTest.java b/quarkus/addons/process-management/runtime/src/test/java/org/kie/kogito/process/management/ProcessManagementHttpTest.java
++## springboot/integration-tests/integration-tests-springboot-decisions-it - generated PMML resource
++- [x] POST /PMMLTree/SampleMine - evaluate PMML tree prediction
++- [x] POST /PMMLTree/SampleMine/descriptive - return descriptive PMML result
+diff --git a/springboot/integration-tests/integration-tests-springboot-decisions-it/src/test/java/org/kie/kogito/integrationtests/springboot/DecisionApiHttpTest.java b/springboot/integration-tests/integration-tests-springboot-decisions-it/src/test/java/org/kie/kogito/integrationtests/springboot/DecisionApiHttpTest.java
 new file mode 100644
-index 0000000..a2f0860
+index 0000000..cb2c351
 --- /dev/null
-+++ b/quarkus/addons/process-management/runtime/src/test/java/org/kie/kogito/process/management/ProcessManagementHttpTest.java
-@@ -0,0 +1,264 @@
++++ b/springboot/integration-tests/integration-tests-springboot-decisions-it/src/test/java/org/kie/kogito/integrationtests/springboot/DecisionApiHttpTest.java
+@@ -0,0 +1,80 @@
 +/*
 + * Licensed to the Apache Software Foundation (ASF) under one
 + * or more contributor license agreements.  See the NOTICE file
 + * distributed with this work for additional information
 + * regarding copyright ownership.  The ASF licenses this file
 + * to you under the Apache License, Version 2.0 (the
-+ * "License"); you may not use this file except in compliance
-+ * with the License.  You may obtain a copy of the License at
++ * "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
++ *
++ *   http://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++package org.kie.kogito.integrationtests.springboot;
++
++import java.util.Map;
++
++import org.junit.jupiter.api.Test;
++import org.springframework.beans.factory.annotation.Value;
++import org.springframework.boot.test.context.SpringBootTest;
++
++import io.restassured.response.Response;
++import io.restassured.specification.RequestSpecification;
++
++import static io.restassured.RestAssured.given;
++import static org.junit.jupiter.api.Assertions.assertFalse;
++import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
++
++@SpringBootTest(classes = KogitoSpringbootApplication.class, webEnvironment = RANDOM_PORT)
++class DecisionApiHttpTest {
++
++    @Value("${local.server.port}")
++    private int port;
++
++    private RequestSpecification jsonRequest() {
++        return given().port(port).contentType("application/json").accept("application/json");
++    }
++
++    @Test
++    void decisionResourceEvaluatesDmnAndServesXmlMetadata() {
++        Response allDecisions = jsonRequest().body(Map.of("a", "2", "b", "3"))
++                .when().post("/basicAdd").then()
++                .statusCode(200).contentType("application/json").extract().response();
++        assertFalse(allDecisions.asString().isBlank(), "Decision evaluation should return a JSON result");
++
++        Response decisionService = jsonRequest().body(Map.of("a", "2", "b", "3"))
++                .when().post("/basicAdd/ds1").then()
++                .statusCode(200).contentType("application/json").extract().response();
++        assertFalse(decisionService.asString().isBlank(), "Decision service evaluation should return a JSON result");
++
++        Response metadata = given().port(port).accept("application/xml").when().get("/basicAdd").then()
++                .statusCode(200).contentType("application/xml").extract().response();
++        assertFalse(metadata.asString().isBlank(), "Decision metadata should return XML");
++    }
++
++    @Test
++    void pmmlRoutesReturnPredictionAndDescriptiveResults() {
++        Map<String, Object> variables = Map.of("temperature", 30, "humidity", 10);
++        Response prediction = jsonRequest().body(variables)
++                .when().post("/PMMLTree/SampleMine").then()
++                .statusCode(200).contentType("application/json").extract().response();
++        assertFalse(prediction.asString().isBlank(), "PMML evaluation should return a JSON prediction");
++
++        Response descriptive = jsonRequest().body(variables)
++                .when().post("/PMMLTree/SampleMine/descriptive").then()
++                .statusCode(200).contentType("application/json").extract().response();
++        assertFalse(descriptive.asString().isBlank(), "Descriptive PMML evaluation should return JSON");
++    }
++
++    @Test
++    void pmmlRoutesRequireJsonRequestBodies() {
++        given().port(port).contentType("text/plain").body("temperature=30&humidity=10")
++                .when().post("/PMMLTree/SampleMine")
++                .then().statusCode(415);
++    }
++}
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ProcessApiHttpTest.java b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ProcessApiHttpTest.java
+new file mode 100644
+index 0000000..2f88b8a
+--- /dev/null
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/src/test/java/org/kie/kogito/integrationtests/springboot/ProcessApiHttpTest.java
+@@ -0,0 +1,344 @@
++/*
++ * Licensed to the Apache Software Foundation (ASF) under one
++ * or more contributor license agreements.  See the NOTICE file
++ * distributed with this work for additional information
++ * regarding copyright ownership.  The ASF licenses this file
++ * to you under the Apache License, Version 2.0 (the
++ * "License"); you may not use this file except in compliance with
++ * the License.  You may obtain a copy of the License at
 + *
 + *   http://www.apache.org/licenses/LICENSE-2.0
 + *
@@ -193,249 +470,329 @@ index 0000000..a2f0860
 + * specific language governing permissions and limitations
 + * under the License.
 + */
-+package org.kie.kogito.process.management;
++package org.kie.kogito.integrationtests.springboot;
 +
-+import java.io.IOException;
-+import java.net.InetSocketAddress;
 +import java.net.URI;
-+import java.net.http.HttpClient;
-+import java.net.http.HttpRequest;
-+import java.net.http.HttpResponse;
-+import java.nio.charset.StandardCharsets;
++import java.util.HashMap;
 +import java.util.List;
-+import java.util.Set;
-+import java.util.concurrent.ExecutorService;
-+import java.util.concurrent.Executors;
-+import java.util.concurrent.atomic.AtomicInteger;
-+import java.util.concurrent.atomic.AtomicReference;
-+import java.util.regex.Matcher;
-+import java.util.regex.Pattern;
++import java.util.Map;
++import java.util.stream.Stream;
 +
-+import org.junit.jupiter.api.AfterEach;
-+import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
-+import org.kie.kogito.process.Processes;
++import org.junit.jupiter.params.ParameterizedTest;
++import org.junit.jupiter.params.provider.Arguments;
++import org.junit.jupiter.params.provider.MethodSource;
++import org.springframework.beans.factory.annotation.Value;
++import org.springframework.boot.test.context.SpringBootTest;
 +
-+import com.fasterxml.jackson.databind.ObjectMapper;
-+import com.sun.net.httpserver.HttpExchange;
-+import com.sun.net.httpserver.HttpServer;
++import io.restassured.response.Response;
++import io.restassured.specification.RequestSpecification;
 +
-+import jakarta.enterprise.inject.Instance;
-+import jakarta.ws.rs.core.Response;
-+import jakarta.ws.rs.ext.RuntimeDelegate;
++import static io.restassured.RestAssured.given;
++import static org.hamcrest.Matchers.blankOrNullString;
++import static org.hamcrest.Matchers.containsString;
++import static org.hamcrest.Matchers.empty;
++import static org.hamcrest.Matchers.equalTo;
++import static org.hamcrest.Matchers.not;
++import static org.hamcrest.Matchers.notNullValue;
++import static org.junit.jupiter.api.Assertions.assertFalse;
++import static org.junit.jupiter.api.Assertions.assertNotNull;
++import static org.junit.jupiter.api.Assertions.assertTrue;
++import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 +
-+import static java.net.HttpURLConnection.HTTP_BAD_REQUEST;
-+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
-+import static java.net.HttpURLConnection.HTTP_OK;
-+import static org.assertj.core.api.Assertions.assertThat;
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.ArgumentMatchers.anyInt;
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.Mockito.mock;
-+import static org.mockito.Mockito.when;
++@SpringBootTest(classes = KogitoSpringbootApplication.class, webEnvironment = RANDOM_PORT)
++class ProcessApiHttpTest {
 +
-+class ProcessManagementHttpTest {
-+
-+    private static final String BASE = "/management/processes";
-+    private static final String UNKNOWN_PROCESS = "missing-process";
-+    private static final String UNKNOWN_INSTANCE = "missing-instance";
-+    private static final Pattern PROCESS_ROUTE = Pattern.compile("/management/processes/([^/]+)(?:/(.*))?");
-+
-+    private final ObjectMapper mapper = new ObjectMapper();
-+    private final HttpClient client = HttpClient.newHttpClient();
-+    private HttpServer server;
-+    private ExecutorService executor;
-+    private String baseUri;
-+    private ProcessInstanceManagementResource resource;
-+
-+    @BeforeEach
-+    void startHttpServer() throws IOException {
-+        installResponseRuntime();
-+        Processes processes = mock(Processes.class);
-+        when(processes.processIds()).thenReturn(Set.of());
-+        Instance<Processes> processesInstance = mock(Instance.class);
-+        when(processesInstance.get()).thenReturn(processes);
-+        resource = new ProcessInstanceManagementResource(processesInstance, null);
-+
-+        server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
-+        executor = Executors.newSingleThreadExecutor();
-+        server.setExecutor(executor);
-+        server.createContext(BASE, this::dispatch);
-+        server.start();
-+        baseUri = "http://127.0.0.1:" + server.getAddress().getPort();
++    private static Stream<Arguments> generatedProcessResources() {
++        return Stream.of("/BPMN2GatewayFEEL", "/SimpleLinkTest", "/AdHocProcess", "/AdHocFragments", "/cinema",
++                "/monitoring", "/timers", "/multiinstancetaskprocess", "/parent", "/subprocess", "/greetings",
++                "/signalStart").map(Arguments::of);
 +    }
 +
-+    private void installResponseRuntime() {
-+        RuntimeDelegate delegate = mock(RuntimeDelegate.class);
-+        Response.ResponseBuilder builder = mock(Response.ResponseBuilder.class);
-+        AtomicInteger status = new AtomicInteger();
-+        AtomicReference<Object> entity = new AtomicReference<>();
-+        when(delegate.createResponseBuilder()).thenReturn(builder);
-+        when(builder.status(anyInt())).thenAnswer(invocation -> {
-+            status.set(invocation.getArgument(0));
-+            return builder;
-+        });
-+        when(builder.status(anyInt(), anyString())).thenAnswer(invocation -> {
-+            status.set(invocation.getArgument(0));
-+            return builder;
-+        });
-+        when(builder.status(any(Response.StatusType.class))).thenAnswer(invocation -> {
-+            status.set(((Response.StatusType) invocation.getArgument(0)).getStatusCode());
-+            return builder;
-+        });
-+        when(builder.entity(any())).thenAnswer(invocation -> {
-+            entity.set(invocation.getArgument(0));
-+            return builder;
-+        });
-+        when(builder.entity(any(), any())).thenAnswer(invocation -> {
-+            entity.set(invocation.getArgument(0));
-+            return builder;
-+        });
-+        when(builder.build()).thenAnswer(invocation -> {
-+            Response response = mock(Response.class);
-+            when(response.getStatus()).thenReturn(status.get());
-+            when(response.getEntity()).thenReturn(entity.get());
-+            return response;
-+        });
-+        RuntimeDelegate.setInstance(delegate);
-+    }
++    @Value("${local.server.port}")
++    private int port;
 +
-+    @AfterEach
-+    void stopHttpServer() {
-+        server.stop(0);
-+        executor.shutdownNow();
++    private RequestSpecification jsonRequest() {
++        return given().port(port).contentType("application/json").accept("application/json");
 +    }
 +
 +    @Test
-+    void processListReturnsJsonOverHttp() throws Exception {
-+        HttpResponse<String> response = send("GET", BASE + "/", null);
-+        assertThat(response.statusCode()).as(response.body()).isEqualTo(HTTP_OK);
-+        assertThat(response.headers().firstValue("Content-Type").orElse("")).startsWith("application/json");
-+        assertThat(mapper.readValue(response.body(), List.class)).isEmpty();
++    void exposesProcessMetadataDefinitionsSchemasAndSvgOverHttp() {
++        jsonRequest().when().get("/approvalsdetails")
++                .then().statusCode(200).contentType("application/json").body("type", equalTo("BPMN"));
++
++        jsonRequest().when().get("/version")
++                .then().statusCode(200).contentType("application/json").body("version", not(blankOrNullString()));
++
++        jsonRequest().when().get("/management/processes/")
++                .then().statusCode(200).contentType("application/json").body("", not(empty()));
++
++        jsonRequest().when().get("/management/processes/approvals")
++                .then().statusCode(200).body("id", equalTo("approvals"));
++
++        jsonRequest().when().get("/management/processes/approvals/nodes")
++                .then().statusCode(200).body("", not(empty()));
++
++        jsonRequest().when().get("/approvals/schema")
++                .then().statusCode(200).contentType("application/json").body("", not(empty()));
++
++        given().port(port).accept("image/svg+xml").when().get("/svg/processes/approvals")
++                .then().statusCode(200).contentType(containsString("image/svg+xml")).body(containsString("<svg"));
++
++        given().port(port).accept("image/svg+xml").when().get("/svg/processes/not-a-process")
++                .then().statusCode(404).body(containsString("not found"));
++
++        Map<String, Object> openApi = jsonRequest().when().get("/v3/api-docs")
++                .then().statusCode(200).contentType("application/json").extract().jsonPath().getMap("$");
++        Map<?, ?> paths = (Map<?, ?>) openApi.get("paths");
++        assertTrue(paths.containsKey("/approvals"));
++        assertTrue(paths.containsKey("/management/processes/"));
++
 +    }
 +
-+    @Test
-+    void processQueriesAndAllInstanceOperationsReturnClientErrorsForUnknownIds() throws Exception {
-+        expectClientError("GET", BASE + "/" + UNKNOWN_PROCESS, null);
-+        expectClientError("GET", BASE + "/" + UNKNOWN_PROCESS + "/nodes", null);
++    @ParameterizedTest
++    @MethodSource("generatedProcessResources")
++    void everyGeneratedProcessResourceServesItsListSchemaAndMissingInstanceResponse(String processPath) {
++        Response instances = jsonRequest().when().get(processPath);
++        instances.then().statusCode(200).contentType("application/json");
++        assertNotNull(instances.jsonPath().getList("$"));
 +
-+        String root = BASE + "/" + UNKNOWN_PROCESS + "/instances/" + UNKNOWN_INSTANCE;
-+        expectClientError("GET", root + "/error", null);
-+        expectClientError("POST", root + "/migrate", "{\"targetProcessId\":\"target\",\"targetProcessVersion\":\"1\"}");
-+        expectClientError("POST", BASE + "/" + UNKNOWN_PROCESS + "/migrate", "{\"targetProcessId\":\"target\",\"targetProcessVersion\":\"1\"}");
-+        expectClientError("GET", root + "/nodeInstances", null);
-+        expectClientError("GET", root + "/timers", null);
-+        expectClientError("POST", root + "/retrigger", null);
-+        expectClientError("POST", root + "/skip", null);
-+        expectClientError("POST", root + "/nodes/node-1", null);
-+        expectClientError("POST", root + "/nodeInstances/node-1", null);
-+        expectClientError("DELETE", root + "/nodeInstances/node-1", null);
-+        expectClientError("GET", root + "/nodeInstances/node-1/timers", null);
-+        expectClientError("DELETE", root, null);
-+        expectClientError("PATCH", root + "/nodeInstances/node-1/sla", "{\"expirationTime\":\"2030-01-01T00:00:00Z\"}");
-+        expectClientError("PATCH", root + "/sla", "{\"expirationTime\":\"2030-01-01T00:00:00Z\"}");
-+    }
-+
-+    private void expectClientError(String method, String path, String body) throws Exception {
-+        HttpResponse<String> response = send(method, path, body);
-+        assertThat(response.statusCode()).as(response.body()).isIn(HTTP_BAD_REQUEST, HTTP_NOT_FOUND);
-+    }
-+
-+    private HttpResponse<String> send(String method, String path, String body) throws Exception {
-+        HttpRequest.Builder builder = HttpRequest.newBuilder(URI.create(baseUri + path)).header("Accept", "application/json");
-+        if (body == null) {
-+            builder.method(method, HttpRequest.BodyPublishers.noBody());
++        Response schema = jsonRequest().when().get(processPath + "/schema");
++        if ("/AdHocFragments".equals(processPath)) {
++            schema.then().statusCode(400);
 +        } else {
-+            builder.header("Content-Type", "application/json").method(method, HttpRequest.BodyPublishers.ofString(body));
++            schema.then().statusCode(200).contentType("application/json");
++            assertNotNull(schema.jsonPath().getMap("$"));
 +        }
-+        return client.send(builder.build(), HttpResponse.BodyHandlers.ofString());
++
++        jsonRequest().when().get(processPath + "/missing-instance")
++                .then().statusCode(404);
 +    }
 +
-+    private void dispatch(HttpExchange exchange) throws IOException {
-+        try {
-+            Response response = invoke(exchange);
-+            byte[] bytes = mapper.writeValueAsBytes(response.getEntity());
-+            exchange.getResponseHeaders().set("Content-Type", "application/json");
-+            exchange.sendResponseHeaders(response.getStatus(), bytes.length);
-+            exchange.getResponseBody().write(bytes);
-+        } catch (Exception e) {
-+            byte[] bytes = e.getMessage().getBytes(StandardCharsets.UTF_8);
-+            exchange.sendResponseHeaders(500, bytes.length);
-+            exchange.getResponseBody().write(bytes);
-+        } finally {
-+            exchange.close();
-+        }
++    @Test
++    void approvalInstanceSupportsCreateReadListUpdateTasksAndDelete() {
++        String instanceId = createApprovalInstance();
++
++        jsonRequest().when().get("/approvals/" + instanceId)
++                .then().statusCode(200).contentType("application/json").body("traveller.firstName", equalTo("Avery"));
++
++        jsonRequest().when().get("/approvals")
++                .then().statusCode(200).contentType("application/json").body("", not(empty()));
++
++        jsonRequest().when().get("/approvals/" + instanceId + "/tasks")
++                .then().statusCode(200).contentType("application/json").body("", empty());
++
++        jsonRequest().body(Map.of("traveller", Map.of("firstName", "Updated", "lastName", "Traveler")))
++                .when().put("/approvals/" + instanceId)
++                .then().statusCode(200).contentType("application/json");
++
++        jsonRequest().body(Map.of("traveller", Map.of("email", "updated@example.test")))
++                .when().patch("/approvals/" + instanceId)
++                .then().statusCode(200).contentType("application/json");
++
++        jsonRequest().when().delete("/approvals/" + instanceId)
++                .then().statusCode(200);
++
++        jsonRequest().when().get("/approvals/" + instanceId)
++                .then().statusCode(404);
 +    }
 +
-+    private Response invoke(HttpExchange exchange) throws IOException {
-+        String method = exchange.getRequestMethod();
-+        String path = exchange.getRequestURI().getPath();
-+        if ("GET".equals(method) && (BASE + "/").equals(path)) {
-+            return resource.getProcesses();
++    @Test
++    void processManagementMethodsReturnDocumentedNotFoundAndBadRequestStatuses() {
++        jsonRequest().when().get("/management/processes/missing-process")
++                .then().statusCode(404).body(containsString("not found"));
++        jsonRequest().when().get("/management/processes/missing-process/nodes")
++                .then().statusCode(404);
++
++        jsonRequest().when().get("/management/processes/approvals/instances/missing-instance/error")
++                .then().statusCode(404);
++        jsonRequest().when().get("/management/processes/approvals/instances/missing-instance/nodeInstances")
++                .then().statusCode(404);
++        jsonRequest().when().get("/management/processes/approvals/instances/missing-instance/timers")
++                .then().statusCode(404);
++        jsonRequest().when().get("/management/processes/approvals/instances/missing-instance/nodeInstances/missing-node/timers")
++                .then().statusCode(404);
++
++        jsonRequest().body(Map.of("targetProcessId", "approvals", "targetProcessVersion", "1.0"))
++                .when().post("/management/processes/missing-process/migrate")
++                .then().statusCode(400);
++        jsonRequest().body(Map.of("targetProcessId", "approvals", "targetProcessVersion", "1.0"))
++                .when().post("/management/processes/missing-process/instances/missing-instance/migrate")
++                .then().statusCode(400);
++
++        jsonRequest().when().post("/management/processes/approvals/instances/missing-instance/retrigger")
++                .then().statusCode(404);
++        jsonRequest().when().post("/management/processes/approvals/instances/missing-instance/skip")
++                .then().statusCode(404);
++        jsonRequest().when().post("/management/processes/approvals/instances/missing-instance/nodes/missing-node")
++                .then().statusCode(404);
++        jsonRequest().when().post("/management/processes/approvals/instances/missing-instance/nodeInstances/missing-node")
++                .then().statusCode(404);
++        jsonRequest().when().delete("/management/processes/approvals/instances/missing-instance/nodeInstances/missing-node")
++                .then().statusCode(404);
++        jsonRequest().when().delete("/management/processes/approvals/instances/missing-instance")
++                .then().statusCode(404);
++
++        jsonRequest().body(Map.of("expirationTime", "2026-12-01T00:00:00Z"))
++                .when().patch("/management/processes/missing-process/instances/missing-instance/sla")
++                .then().statusCode(404);
++        jsonRequest().body(Map.of("expirationTime", "2026-12-01T00:00:00Z"))
++                .when().patch("/management/processes/missing-process/instances/missing-instance/nodeInstances/missing-node/sla")
++                .then().statusCode(404);
++    }
++
++    @Test
++    void generatedUserTaskEndpointsExposeTaskAndCommentAttachmentInteractions() {
++        createApprovalInstance();
++        List<Map<String, Object>> tasks = jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                .when().get("/usertasks/instance")
++                .then().statusCode(200).extract().jsonPath().getList("$");
++        assertFalse(tasks.isEmpty(), "The started approval process should expose its active user task");
++        String taskId = String.valueOf(tasks.get(0).get("id"));
++
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().get("/usertasks/instance")
++                .then().statusCode(200).contentType("application/json");
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().get("/usertasks/instance/" + taskId)
++                .then().statusCode(200).contentType("application/json");
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().get("/usertasks/instance/" + taskId + "/transition")
++                .then().statusCode(200);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().get("/usertasks/instance/" + taskId + "/comments")
++                .then().statusCode(200);
++
++        Response createdComment = jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .body(Map.of("comment", "HTTP API test comment"))
++                .when().post("/usertasks/instance/" + taskId + "/comments");
++        createdComment.then().statusCode(200).body("content", equalTo("HTTP API test comment"));
++        String commentId = createdComment.jsonPath().getString("id");
++
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().get("/usertasks/instance/" + taskId + "/comments/" + commentId)
++                .then().statusCode(200).body("content", equalTo("HTTP API test comment"));
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .body(Map.of("comment", "Updated HTTP API test comment"))
++                .when().put("/usertasks/instance/" + taskId + "/comments/" + commentId)
++                .then().statusCode(200).body("content", equalTo("Updated HTTP API test comment"));
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().delete("/usertasks/instance/" + taskId + "/comments/" + commentId)
++                .then().statusCode(200);
++
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().get("/usertasks/instance/" + taskId + "/attachments")
++                .then().statusCode(200);
++        Response createdAttachment = jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .body(Map.of("name", "supporting-file", "uri", "https://example.test/file"))
++                .when().post("/usertasks/instance/" + taskId + "/attachments");
++        createdAttachment.then().statusCode(200);
++        String attachmentId = createdAttachment.jsonPath().getString("id");
++
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().get("/usertasks/instance/" + taskId + "/attachments/" + attachmentId)
++                .then().statusCode(200);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .body(Map.of("name", "updated-file", "uri", "https://example.test/updated-file"))
++                .when().put("/usertasks/instance/" + taskId + "/attachments/" + attachmentId)
++                .then().statusCode(200);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .when().delete("/usertasks/instance/" + taskId + "/attachments/" + attachmentId)
++                .then().statusCode(200);
++
++        Map<String, Object> taskInfo = jsonRequest().when().get("/management/usertasks/" + taskId)
++                .then().statusCode(200).contentType("application/json").extract().jsonPath().getMap("$");
++        Map<String, Object> replacement = new HashMap<>(taskInfo);
++        replacement.put("description", "Updated task through HTTP");
++        jsonRequest().body(replacement).when().put("/management/usertasks/" + taskId)
++                .then().statusCode(200);
++        jsonRequest().body(Map.of("description", "Partially updated task through HTTP"))
++                .when().patch("/management/usertasks/" + taskId)
++                .then().statusCode(200).body("description", equalTo("Partially updated task through HTTP"));
++        jsonRequest().when().get("/management/usertasks/" + taskId)
++                .then().statusCode(200).body("description", equalTo("Partially updated task through HTTP"));
++
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .body(Map.of("transitionId", "not-a-transition", "data", Map.of()))
++                .when().post("/usertasks/instance/does-not-exist/transition")
++                .then().statusCode(404);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers").body(Map.of())
++                .when().put("/usertasks/instance/does-not-exist/inputs")
++                .then().statusCode(404);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers").body(Map.of())
++                .when().put("/usertasks/instance/does-not-exist/outputs")
++                .then().statusCode(404);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .body(Map.of("comment", "missing task"))
++                .when().post("/usertasks/instance/does-not-exist/comments")
++                .then().statusCode(404);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "managers")
++                .body(Map.of("name", "missing", "uri", "https://example.test/none"))
++                .when().post("/usertasks/instance/does-not-exist/attachments")
++                .then().statusCode(404);
++    }
++
++    @Test
++    void signalRoutesAcceptStartSignalsAndReportUnknownInstances() {
++        jsonRequest().body("\"signal payload\"").when().post("/signalStart/start")
++                .then().statusCode(202);
++
++        jsonRequest().body("\"signal payload\"").when().post("/signalStart/missing-instance/start")
++                .then().statusCode(404);
++        jsonRequest().body("\"signal payload\"").when().post("/greetings/missing-instance/signalwithdata")
++                .then().statusCode(404);
++        jsonRequest().when().post("/greetings/missing-instance/signalwithoutdata")
++                .then().statusCode(404);
++    }
++
++    @Test
++    void generatedWorkItemRoutesExposeSchemasAndHandleUnknownTasks() {
++        String instanceId = createApprovalInstance();
++        for (String taskName : List.of("firstLineApproval", "secondLineApproval")) {
++            jsonRequest().when().get("/approvals/" + taskName + "/schema")
++                    .then().statusCode(200).contentType("application/json");
++            jsonRequest().when().get("/approvals/" + instanceId + "/" + taskName + "/missing-task")
++                    .then().statusCode(403);
++            jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                    .when().get("/approvals/" + instanceId + "/" + taskName + "/missing-task")
++                    .then().statusCode(404);
++            jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                    .body(Map.of("approved", false, "actorId", "manager"))
++                    .when().put("/approvals/" + instanceId + "/" + taskName + "/missing-task")
++                    .then().statusCode(404);
++            jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                    .body(Map.of("approved", false, "actorId", "manager"))
++                    .when().post("/approvals/" + instanceId + "/" + taskName + "/missing-task")
++                    .then().statusCode(404);
++            jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                    .body(Map.of("approved", false, "actorId", "manager"))
++                    .when().post("/approvals/" + instanceId + "/" + taskName + "/missing-task/phases/complete")
++                    .then().statusCode(404);
++            jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                    .when().delete("/approvals/" + instanceId + "/" + taskName + "/missing-task")
++                    .then().statusCode(404);
++            jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                    .when().get("/approvals/" + instanceId + "/" + taskName + "/missing-task/schema")
++                    .then().statusCode(404);
 +        }
-+        if ("POST".equals(method) && path.equals(BASE + "/" + UNKNOWN_PROCESS + "/migrate")) {
-+            return resource.migrateAllInstances(UNKNOWN_PROCESS, mapper.readValue(exchange.getRequestBody(), ProcessMigrationSpec.class));
-+        }
-+        Matcher processRoute = PROCESS_ROUTE.matcher(path);
-+        if (processRoute.matches()) {
-+            String processId = processRoute.group(1);
-+            String suffix = processRoute.group(2) == null ? "" : processRoute.group(2);
-+            if ("GET".equals(method) && suffix.isEmpty()) {
-+                return resource.getProcessInfo(processId);
-+            }
-+            if ("GET".equals(method) && "nodes".equals(suffix)) {
-+                return resource.getProcessNodes(processId);
-+            }
-+            if (!suffix.startsWith("instances/")) {
-+                exchange.sendResponseHeaders(404, -1);
-+                return Response.status(HTTP_NOT_FOUND).build();
-+            }
-+            String[] instancePath = suffix.split("/", 3);
-+            if (instancePath.length < 2) {
-+                exchange.sendResponseHeaders(404, -1);
-+                return Response.status(HTTP_NOT_FOUND).build();
-+            }
-+            String instanceId = instancePath[1];
-+            suffix = instancePath.length == 3 ? instancePath[2] : "";
-+            switch (method + " " + suffix) {
-+                case "GET error":
-+                    return resource.getInstanceInError(processId, instanceId);
-+                case "POST migrate":
-+                    return resource.migrateInstance(processId, instanceId, new ProcessMigrationSpec());
-+                case "GET nodeInstances":
-+                    return resource.getWorkItemsInProcessInstance(processId, instanceId);
-+                case "GET timers":
-+                    return resource.getProcessInstanceTimers(processId, instanceId);
-+                case "POST retrigger":
-+                    return resource.retriggerInstanceInError(processId, instanceId);
-+                case "POST skip":
-+                    return resource.skipInstanceInError(processId, instanceId);
-+                case "DELETE ":
-+                    return resource.cancelProcessInstanceId(processId, instanceId);
-+                case "PATCH sla":
-+                    return resource.updateProcessInstanceSla(processId, instanceId, new SlaPayload());
-+                default:
-+                    String[] segments = suffix.split("/");
-+                    if (segments.length == 2 && "nodes".equals(segments[0]) && "POST".equals(method)) {
-+                        return resource.triggerNodeInstanceId(processId, instanceId, segments[1]);
-+                    }
-+                    if (segments.length == 2 && "nodeInstances".equals(segments[0])) {
-+                        if ("POST".equals(method)) {
-+                            return resource.retriggerNodeInstanceId(processId, instanceId, segments[1]);
-+                        }
-+                        if ("DELETE".equals(method)) {
-+                            return resource.cancelNodeInstanceId(processId, instanceId, segments[1]);
-+                        }
-+                    }
-+                    if (segments.length == 3 && "nodeInstances".equals(segments[0]) && "timers".equals(segments[2]) && "GET".equals(method)) {
-+                        return resource.getNodeInstanceTimers(processId, instanceId, segments[1]);
-+                    }
-+                    if (segments.length == 3 && "nodeInstances".equals(segments[0]) && "sla".equals(segments[2]) && "PATCH".equals(method)) {
-+                        return resource.updateNodeInstanceSla(processId, instanceId, segments[1], new SlaPayload());
-+                    }
-+            }
-+        }
-+        exchange.sendResponseHeaders(404, -1);
-+        return Response.status(HTTP_NOT_FOUND).build();
++
++        jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                .body(Map.of())
++                .when().post("/AdHocFragments/missing-instance/Service_Task/trigger")
++                .then().statusCode(404);
++        jsonRequest().queryParam("user", "manager").queryParam("group", "manager")
++                .body(Map.of())
++                .when().post("/AdHocFragments/missing-instance/AdHocTask1/trigger")
++                .then().statusCode(404);
++    }
++
++    private String createApprovalInstance() {
++        Response response = jsonRequest()
++                .body(Map.of("traveller", Map.of("firstName", "Avery", "lastName", "Example",
++                        "email", "avery@example.test", "nationality", "NZ")))
++                .when().post("/approvals");
++        response.then().statusCode(201).contentType("application/json").header("Location", notNullValue());
++        String path = URI.create(response.getHeader("Location")).getPath();
++        return path.substring(path.lastIndexOf('/') + 1);
 +    }
 +}

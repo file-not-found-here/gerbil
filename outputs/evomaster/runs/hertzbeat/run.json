@@ -1,0 +1,67 @@
+{
+  "target": "hertzbeat",
+  "project": "hertzbeat",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "4892ef101fb74020082b5348773f760977a68a15",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 1.8,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "build",
+      "seconds": 13.4,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 38.6,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 4233.7,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 646.6,
+      "error": null,
+      "gerbil_commit": "929209daf82001a5fcf96cf414485ffc03e471a8"
+    }
+  ],
+  "schema_operations": 130,
+  "scoped_operations": 127,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 1844,
+    "endpoints": 127,
+    "endpoints_2xx": 113,
+    "potential_faults": 362,
+    "covered_targets": 17726,
+    "covered_lines": 3987,
+    "total_lines": 19853,
+    "covered_branches": 960,
+    "total_branches": 29476,
+    "sql_heuristics_evaluations": 49244,
+    "sql_parsing_failures": 0
+  },
+  "repaired_classes": [],
+  "verification": {
+    "tests": 1844,
+    "passed": 1471,
+    "failed": 373,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 0
+  },
+  "finished": true
+}

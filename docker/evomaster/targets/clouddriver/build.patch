@@ -1,0 +1,14 @@
+diff --git a/clouddriver/clouddriver-web/clouddriver-web.gradle b/clouddriver/clouddriver-web/clouddriver-web.gradle
+--- a/clouddriver/clouddriver-web/clouddriver-web.gradle
++++ b/clouddriver/clouddriver-web/clouddriver-web.gradle
+@@ -46,6 +46,10 @@
+   }
+ 
+   testImplementation "io.spinnaker.kork:kork-test"
++  // EvoMaster's embedded driver and the client its generated tests call.
++  testImplementation "org.evomaster:evomaster-client-java-controller:6.2.0"
++  testImplementation "org.evomaster:evomaster-test-utils-java:6.2.0"
++  testImplementation "io.rest-assured:rest-assured"
+   testImplementation "org.springframework.boot:spring-boot-starter-test"
+   testImplementation "org.spockframework:spock-core"
+   testImplementation "io.kubernetes:client-java-api-fluent:13.0.2"

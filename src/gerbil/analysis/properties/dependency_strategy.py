@@ -33,6 +33,7 @@ from gerbil.analysis.schema import (
     DependencyStrategyDecision,
 )
 from gerbil.analysis.runtime import TestRuntimeView
+from gerbil.analysis.runtime.call_sites import call_site_argument_exprs
 
 
 def _matching_annotation(
@@ -237,7 +238,7 @@ def classify_dependency_strategy(
         if collect_exprs:
             if call_site.receiver_expr:
                 all_exprs.add(str(call_site.receiver_expr))
-            all_exprs.update(str(item) for item in call_site.argument_expr)
+            all_exprs.update(call_site_argument_exprs(call_site))
 
         # Mocked call-site: receiver matches MOCKED hints + method in MOCKED_CALL_NAMES
         if method_name in MOCKED_CALL_NAMES and _has_mocked_call_context(

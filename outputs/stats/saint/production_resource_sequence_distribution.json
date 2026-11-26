@@ -1,0 +1,324 @@
+{
+  "scope": "production_resource_sequences",
+  "purpose": "SAINT comparison only: resource sequences regrouped by production resource key so an instance write and its collection read-back count as one resource, crediting cross-endpoint verify-after-mutate the observed-path grouping splits apart.",
+  "context_path_prefixes_included_when_present": [
+    "/web-1.1.49-SNAPSHOT",
+    "/restcountries-2.0.6-SNAPSHOT/rest",
+    "/daytrader"
+  ],
+  "observed_grouping": {
+    "scope": "observed_path_grouped_test_resource_sequences",
+    "resolved_sequence_count": 305,
+    "unresolved_sequence_count": 0,
+    "total_sequence_count": 305,
+    "multi_verb_sequence_count": 9,
+    "verify_after_mutate": {
+      "among_all_resolved": {
+        "count": 2,
+        "total": 305,
+        "proportion": 0.006557377049180328
+      },
+      "among_multi_verb_resolved": {
+        "count": 2,
+        "total": 9,
+        "proportion": 0.2222222222222222
+      }
+    },
+    "cleanup_delete": {
+      "among_all_resolved": {
+        "count": 0,
+        "total": 305,
+        "proportion": 0.0
+      },
+      "among_multi_verb_resolved": {
+        "count": 0,
+        "total": 9,
+        "proportion": 0.0
+      }
+    },
+    "combinations": {
+      "create-only": {
+        "operations": [
+          "create"
+        ],
+        "count": 92,
+        "pct": 30.16393442622951
+      },
+      "read-only": {
+        "operations": [
+          "read"
+        ],
+        "count": 167,
+        "pct": 54.75409836065574
+      },
+      "update-only": {
+        "operations": [
+          "update"
+        ],
+        "count": 6,
+        "pct": 1.9672131147540983
+      },
+      "delete-only": {
+        "operations": [
+          "delete"
+        ],
+        "count": 31,
+        "pct": 10.163934426229508
+      },
+      "create-read": {
+        "operations": [
+          "create",
+          "read"
+        ],
+        "count": 9,
+        "pct": 2.9508196721311477
+      },
+      "create-update": {
+        "operations": [
+          "create",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-delete": {
+        "operations": [
+          "create",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update": {
+        "operations": [
+          "read",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-delete": {
+        "operations": [
+          "read",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "update-delete": {
+        "operations": [
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update": {
+        "operations": [
+          "create",
+          "read",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-delete": {
+        "operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-update-delete": {
+        "operations": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update-delete": {
+        "operations": [
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update-delete": {
+        "operations": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      }
+    }
+  },
+  "production_grouping": {
+    "scope": "production_resource_key_grouped_test_resource_sequences",
+    "resolved_sequence_count": 290,
+    "unresolved_sequence_count": 0,
+    "total_sequence_count": 290,
+    "multi_verb_sequence_count": 21,
+    "verify_after_mutate": {
+      "among_all_resolved": {
+        "count": 14,
+        "total": 290,
+        "proportion": 0.04827586206896552
+      },
+      "among_multi_verb_resolved": {
+        "count": 14,
+        "total": 21,
+        "proportion": 0.6666666666666666
+      }
+    },
+    "cleanup_delete": {
+      "among_all_resolved": {
+        "count": 1,
+        "total": 290,
+        "proportion": 0.0034482758620689655
+      },
+      "among_multi_verb_resolved": {
+        "count": 1,
+        "total": 21,
+        "proportion": 0.047619047619047616
+      }
+    },
+    "combinations": {
+      "create-only": {
+        "operations": [
+          "create"
+        ],
+        "count": 84,
+        "pct": 28.96551724137931
+      },
+      "read-only": {
+        "operations": [
+          "read"
+        ],
+        "count": 154,
+        "pct": 53.10344827586207
+      },
+      "update-only": {
+        "operations": [
+          "update"
+        ],
+        "count": 5,
+        "pct": 1.7241379310344827
+      },
+      "delete-only": {
+        "operations": [
+          "delete"
+        ],
+        "count": 26,
+        "pct": 8.96551724137931
+      },
+      "create-read": {
+        "operations": [
+          "create",
+          "read"
+        ],
+        "count": 15,
+        "pct": 5.172413793103448
+      },
+      "create-update": {
+        "operations": [
+          "create",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-delete": {
+        "operations": [
+          "create",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update": {
+        "operations": [
+          "read",
+          "update"
+        ],
+        "count": 1,
+        "pct": 0.3448275862068966
+      },
+      "read-delete": {
+        "operations": [
+          "read",
+          "delete"
+        ],
+        "count": 4,
+        "pct": 1.3793103448275863
+      },
+      "update-delete": {
+        "operations": [
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update": {
+        "operations": [
+          "create",
+          "read",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-delete": {
+        "operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "count": 1,
+        "pct": 0.3448275862068966
+      },
+      "create-update-delete": {
+        "operations": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update-delete": {
+        "operations": [
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update-delete": {
+        "operations": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      }
+    },
+    "resolved_to_production": {
+      "count": 230,
+      "total": 290,
+      "proportion": 0.7931034482758621
+    }
+  }
+}

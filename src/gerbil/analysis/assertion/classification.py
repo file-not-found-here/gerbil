@@ -17,6 +17,7 @@ from gerbil.analysis.runtime.call_sites import (
     CallSiteGrouping,
     CallSiteNode,
     MethodRef,
+    call_site_argument_exprs,
 )
 from gerbil.analysis.runtime import TestRuntimeView
 from gerbil.analysis.shared.constants import (
@@ -550,11 +551,6 @@ def _extract_status_code_from_arguments(
     return None
 
 
-def _to_arg_exprs(call_site: JCallSite) -> list[str]:
-    """Convert a call site's argument expressions to a list of strings."""
-    return [str(a) for a in (call_site.argument_expr or [])]
-
-
 def _to_arg_types(call_site: JCallSite) -> list[str]:
     """Convert a call site's resolved argument types to a list of strings."""
     return [str(t) for t in (call_site.argument_types or [])]
@@ -1051,7 +1047,7 @@ def _status_evidence_is_only_getstatus_subject(
         and (
             _is_confident_status_category(
                 category.node.call_site.method_name or "",
-                _to_arg_exprs(category.node.call_site),
+                call_site_argument_exprs(category.node.call_site),
             )
             or _has_known_status_receiver(
                 category.node,
@@ -1095,7 +1091,7 @@ def _role_from_argument_scan(
         and (
             _is_confident_status_category(
                 category.node.call_site.method_name or "",
-                _to_arg_exprs(category.node.call_site),
+                call_site_argument_exprs(category.node.call_site),
             )
             or _has_known_status_receiver(
                 category.node,
@@ -1248,7 +1244,7 @@ def _argument_matcher_classification(
     if role == AssertionRole.STATUS:
         return _status_classification_from_value_matcher(
             method_name,
-            _to_arg_exprs(node.call_site),
+            call_site_argument_exprs(node.call_site),
             _to_arg_types(node.call_site),
             node_kind=AssertionNodeKind.VERIFIER,
         )
@@ -1303,7 +1299,7 @@ def _status_chain_verifier_classification(
     method_name = node.call_site.method_name or ""
     category = _classify_by_category(
         method_name,
-        _to_arg_exprs(node.call_site),
+        call_site_argument_exprs(node.call_site),
         _to_arg_types(node.call_site),
         node_kind=AssertionNodeKind.VERIFIER,
     )
@@ -1313,7 +1309,7 @@ def _status_chain_verifier_classification(
     if method_name in _STATUS_VALUE_MATCHER_METHODS:
         return _status_classification_from_value_matcher(
             method_name,
-            _to_arg_exprs(node.call_site),
+            call_site_argument_exprs(node.call_site),
             _to_arg_types(node.call_site),
             node_kind=AssertionNodeKind.VERIFIER,
         )
@@ -1439,7 +1435,7 @@ def _classify_assertions_on_grouping(
             method_name = node.call_site.method_name or ""
             resolved = _classify_by_category(
                 method_name,
-                _to_arg_exprs(node.call_site),
+                call_site_argument_exprs(node.call_site),
                 _to_arg_types(node.call_site),
             )
             if resolved is not None and resolved.role == AssertionRole.STATUS:
@@ -1448,7 +1444,7 @@ def _classify_assertions_on_grouping(
                 node.assertion_classification = (
                     _status_classification_from_value_matcher(
                         method_name,
-                        _to_arg_exprs(node.call_site),
+                        call_site_argument_exprs(node.call_site),
                         _to_arg_types(node.call_site),
                         node_kind=AssertionNodeKind.VERIFIER,
                     )
@@ -1459,7 +1455,7 @@ def _classify_assertions_on_grouping(
                 # straight from the arguments even for framework-specific methods
                 # absent from the category maps (e.g. Citrus ``response(...)``).
                 node.assertion_classification = _status_classification_from_arguments(
-                    _to_arg_exprs(node.call_site),
+                    call_site_argument_exprs(node.call_site),
                     _to_arg_types(node.call_site),
                     node_kind=AssertionNodeKind.VERIFIER,
                 )
@@ -1561,7 +1557,7 @@ def _classify_tier2_assertions(
                     receiver_context=receiver_context,
                     argument_types=argument_types,
                 )
-                argument_exprs = _to_arg_exprs(node.call_site)
+                argument_exprs = call_site_argument_exprs(node.call_site)
                 if method_name in _ASSERTION_WRAPPER_METHODS:
                     node.assertion_classification = _assertion_root_classification(
                         role,
@@ -1601,7 +1597,7 @@ def _classify_tier2_assertions(
             if assertion_root is not None:
                 category = _classify_by_category(
                     method_name,
-                    _to_arg_exprs(node.call_site),
+                    call_site_argument_exprs(node.call_site),
                     _to_arg_types(node.call_site),
                 )
                 inherited = (
@@ -1623,7 +1619,7 @@ def _classify_tier2_assertions(
                 if category is not None and _category_has_required_context(
                     category,
                     method_name,
-                    _to_arg_exprs(node.call_site),
+                    call_site_argument_exprs(node.call_site),
                     inherited,
                     has_status_receiver_context=has_status_receiver_context,
                 ):
@@ -1637,7 +1633,7 @@ def _classify_tier2_assertions(
                         node.assertion_classification = (
                             _status_classification_from_value_matcher(
                                 method_name,
-                                _to_arg_exprs(node.call_site),
+                                call_site_argument_exprs(node.call_site),
                                 _to_arg_types(node.call_site),
                                 node_kind=node_kind,
                             )
@@ -1741,7 +1737,7 @@ def _scan_and_classify_argument_children(
         else:
             category = _classify_by_category(
                 method_name,
-                _to_arg_exprs(child.call_site),
+                call_site_argument_exprs(child.call_site),
                 _to_arg_types(child.call_site),
                 node_kind=AssertionNodeKind.SUBJECT,
             )

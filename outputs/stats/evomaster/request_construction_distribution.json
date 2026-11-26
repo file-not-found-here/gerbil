@@ -1,254 +1,265 @@
 {
   "scope": "api_tests",
-  "api_test_count": 3998,
-  "request_event_count": 11242,
+  "api_test_count": 22814,
+  "request_event_count": 58734,
   "event_surfaces": {
     "body_payload": {
       "events": {
-        "count": 3330,
-        "total": 11242,
-        "proportion": 0.2962106386763921
+        "count": 14686,
+        "total": 58734,
+        "proportion": 0.25004256478360065
       },
       "tests_with_any": {
-        "count": 2598,
-        "total": 3998,
-        "proportion": 0.6498249124562281
+        "count": 10174,
+        "total": 22814,
+        "proportion": 0.44595423862540545
       }
     },
     "headers": {
       "events": {
-        "count": 11242,
-        "total": 11242,
+        "count": 58734,
+        "total": 58734,
         "proportion": 1.0
       },
       "tests_with_any": {
-        "count": 3998,
-        "total": 3998,
+        "count": 22814,
+        "total": 22814,
         "proportion": 1.0
       }
     },
     "query_params": {
       "events": {
-        "count": 883,
-        "total": 11242,
-        "proportion": 0.07854474292830457
+        "count": 9570,
+        "total": 58734,
+        "proportion": 0.1629379916232506
       },
       "tests_with_any": {
-        "count": 790,
-        "total": 3998,
-        "proportion": 0.19759879939969985
+        "count": 5971,
+        "total": 22814,
+        "proportion": 0.2617252564214956
       }
     },
     "path_params": {
       "events": {
         "count": 0,
-        "total": 11242,
+        "total": 58734,
         "proportion": 0.0
       },
       "tests_with_any": {
         "count": 0,
-        "total": 3998,
+        "total": 22814,
         "proportion": 0.0
       }
     },
     "form_params": {
       "events": {
         "count": 0,
-        "total": 11242,
+        "total": 58734,
         "proportion": 0.0
       },
       "tests_with_any": {
         "count": 0,
-        "total": 3998,
+        "total": 22814,
         "proportion": 0.0
       }
     }
   },
   "per_event": {
     "query_param_names_per_event": {
-      "count": 11242,
+      "count": 58734,
       "min": 0.0,
-      "max": 4.0,
-      "mean": 0.07934531222202455,
+      "max": 20.0,
+      "mean": 0.39002962508938605,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 0.0,
-      "p90": 0.0
+      "p90": 1.0
     },
     "header_names_per_event": {
-      "count": 11242,
+      "count": 58734,
       "min": 1.0,
-      "max": 9.0,
-      "mean": 2.0648461127913182,
+      "max": 12.0,
+      "mean": 2.7322164334116525,
       "p25": 2.0,
       "p50": 2.0,
-      "p75": 2.0,
-      "p90": 3.0
+      "p75": 3.0,
+      "p90": 5.0
     }
   },
   "builder_usage": {
     "events_with_builder_correlation": {
-      "count": 11242,
-      "total": 11242,
+      "count": 58734,
+      "total": 58734,
       "proportion": 1.0
     },
     "tests_with_builder_correlation": {
-      "count": 3998,
-      "total": 3998,
+      "count": 22814,
+      "total": 22814,
       "proportion": 1.0
     },
-    "builder_group_count": 11242,
-    "builder_count_total": 26543,
+    "builder_group_count": 58734,
+    "builder_count_total": 175160,
     "contributed_properties": {
-      "total": 37844,
+      "total": 238810,
       "by_property": {
         "http_method": {
           "count": 0,
-          "total": 37844,
+          "total": 238810,
           "proportion": 0.0
         },
         "path": {
           "count": 0,
-          "total": 37844,
+          "total": 238810,
           "proportion": 0.0
         },
         "headers": {
-          "count": 10260,
-          "total": 37844,
-          "proportion": 0.27111299017017226
+          "count": 55583,
+          "total": 238810,
+          "proportion": 0.23274988484569323
         },
         "header_names": {
-          "count": 23213,
-          "total": 37844,
-          "proportion": 0.6133865341930028
+          "count": 160474,
+          "total": 238810,
+          "proportion": 0.6719735354465893
         },
         "query_param_names": {
           "count": 0,
-          "total": 37844,
+          "total": 238810,
           "proportion": 0.0
         },
         "path_param_names": {
           "count": 0,
-          "total": 37844,
+          "total": 238810,
           "proportion": 0.0
         },
         "form_param_names": {
           "count": 0,
-          "total": 37844,
+          "total": 238810,
           "proportion": 0.0
         },
         "has_body_payload": {
-          "count": 3330,
-          "total": 37844,
-          "proportion": 0.087992812599091
+          "count": 14686,
+          "total": 238810,
+          "proportion": 0.06149658724509024
         },
         "auth_hints": {
-          "count": 1041,
-          "total": 37844,
-          "proportion": 0.027507663037733856
+          "count": 8067,
+          "total": 238810,
+          "proportion": 0.033779992462627195
         }
       }
     }
   },
   "header_vocabulary": {
-    "distinct_header_name_count": 14,
+    "distinct_header_name_count": 25,
     "tests_with_any_header": {
-      "count": 3998,
-      "total": 3998,
+      "count": 22814,
+      "total": 22814,
       "proportion": 1.0
     },
     "distinct_header_names_per_test": {
-      "count": 3998,
+      "count": 22814,
       "min": 1.0,
-      "max": 9.0,
-      "mean": 2.9007003501750876,
-      "p25": 3.0,
-      "p50": 3.0,
-      "p75": 3.0,
-      "p90": 3.0
+      "max": 13.0,
+      "mean": 3.6250986236521436,
+      "p25": 2.0,
+      "p50": 2.0,
+      "p75": 4.0,
+      "p90": 8.0
     },
     "header_name_occurrences": {
-      "total": 46455,
+      "total": 320983,
       "content_negotiation": {
-        "count": 25176,
-        "total": 46455,
-        "proportion": 0.5419438165967065
+        "count": 129807,
+        "total": 320983,
+        "proportion": 0.404404594635853
       }
     },
     "header_name_test_frequency": {
-      "accept": 3998,
-      "x-emextraheader123": 3989,
-      "content-type": 2629,
-      "authorization": 674,
-      "x-requested-with": 56,
-      "x-organizations": 44,
-      "x-b3-traceid": 41,
-      "x-b3-flags": 40,
-      "b3": 35,
-      "cwa-fake": 35,
-      "x-b3-sampled": 26,
-      "x-cwa-teletan-type": 24,
-      "x-forwarded-for": 5,
-      "x-b3-spanid": 1
+      "accept": 22814,
+      "x-emextraheader123": 20416,
+      "content-type": 10249,
+      "authorization": 5358,
+      "x-forwarded-for": 3626,
+      "language": 2673,
+      "x-real-ip": 2543,
+      "sessionid": 2526,
+      "token": 2455,
+      "x-b3-flags": 1032,
+      "b3": 1025,
+      "x-b3-sampled": 1005,
+      "x-b3-traceid": 1003,
+      "x-identity-zone-subdomain": 983,
+      "x-identity-zone-id": 967,
+      "cookie": 956,
+      "x-xsrf-token": 956,
+      "x-evomaster-token-in-body": 845,
+      "x-csrf-token": 529,
+      "x-evomaster-login": 529,
+      "if-match": 156,
+      "if-none-match": 36,
+      "x-b3-spanid": 11,
+      "user-agent": 9,
+      "x-requested-with": 1
     }
   },
   "builder_types_given_body": {
     "scope": "per_dispatch_builder_groups_with_body_payload",
-    "builder_group_count": 11242,
-    "body_builder_group_count": 3330,
+    "builder_group_count": 58734,
+    "body_builder_group_count": 14686,
     "share_of_builder_groups_with_body_payload": {
-      "count": 3330,
-      "total": 11242,
-      "proportion": 0.2962106386763921
+      "count": 14686,
+      "total": 58734,
+      "proportion": 0.25004256478360065
     },
-    "builder_count": 9791,
+    "builder_count": 53848,
     "builder_types": {
-      "total": 9791,
+      "total": 53848,
       "by_type": {
         "http_method": {
           "count": 0,
-          "total": 9791,
+          "total": 53848,
           "proportion": 0.0
         },
         "path": {
           "count": 0,
-          "total": 9791,
+          "total": 53848,
           "proportion": 0.0
         },
         "headers": {
-          "count": 1643,
-          "total": 9791,
-          "proportion": 0.16780716984986213
+          "count": 8930,
+          "total": 53848,
+          "proportion": 0.1658371712969841
         },
         "header_names": {
-          "count": 6461,
-          "total": 9791,
-          "proportion": 0.6598917373097742
+          "count": 39162,
+          "total": 53848,
+          "proportion": 0.7272693507651167
         },
         "query_param_names": {
           "count": 0,
-          "total": 9791,
+          "total": 53848,
           "proportion": 0.0
         },
         "path_param_names": {
           "count": 0,
-          "total": 9791,
+          "total": 53848,
           "proportion": 0.0
         },
         "form_param_names": {
           "count": 0,
-          "total": 9791,
+          "total": 53848,
           "proportion": 0.0
         },
         "has_body_payload": {
-          "count": 3330,
-          "total": 9791,
-          "proportion": 0.3401082626902257
+          "count": 14686,
+          "total": 53848,
+          "proportion": 0.2727306492348834
         },
         "auth_hints": {
-          "count": 327,
-          "total": 9791,
-          "proportion": 0.03339801858849964
+          "count": 2802,
+          "total": 53848,
+          "proportion": 0.05203535878769871
         }
       }
     }

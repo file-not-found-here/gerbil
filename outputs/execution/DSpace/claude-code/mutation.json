@@ -1,0 +1,205 @@
+{
+  "target_classes": 11,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 1,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "13b102d116e0396630652026524b2429d4d594395ad09cec6f990f5641c6c11a",
+  "runs": [
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 5.7,
+      "peak_memory_bytes": 689938432
+    },
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 6.2,
+      "peak_memory_bytes": 513036288
+    },
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 9.2,
+      "peak_memory_bytes": 528740352
+    },
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 5.3,
+      "peak_memory_bytes": 536731648
+    },
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 5.7,
+      "peak_memory_bytes": 519950336
+    },
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 5.7,
+      "peak_memory_bytes": 519639040
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "org.dspace.app.rest.AuthenticationRestController|getLoginResponse|(Ljakarta/servlet/http/HttpServletRequest;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|13",
+      "mutated_class": "org.dspace.app.rest.AuthenticationRestController",
+      "mutated_method": "getLoginResponse",
+      "line": 267,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.dspace.app.rest.AuthenticationRestControllerTest#postLoginWithoutCredentialsReturnsForbidden"
+      ]
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.CollectionGroupRestController|deleteBitstreamReadGroup|(Ljava/util/UUID;Ljakarta/servlet/http/HttpServletResponse;Ljakarta/servlet/http/HttpServletRequest;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|69",
+      "mutated_class": "org.dspace.app.rest.CollectionGroupRestController",
+      "mutated_method": "deleteBitstreamReadGroup",
+      "line": 361,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.CollectionGroupRestController|getWorkflowGroupForRole|(Ljava/util/UUID;Ljakarta/servlet/http/HttpServletResponse;Ljakarta/servlet/http/HttpServletRequest;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|69",
+      "mutated_class": "org.dspace.app.rest.CollectionGroupRestController",
+      "mutated_method": "getWorkflowGroupForRole",
+      "line": 402,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.UUIDLookupRestController|afterPropertiesSet|()V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|37",
+      "mutated_class": "org.dspace.app.rest.UUIDLookupRestController",
+      "mutated_method": "afterPropertiesSet",
+      "line": 79,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.converter.ConverterService|requireProjection|(Ljava/lang/String;)Lorg/dspace/app/rest/projection/Projection;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|7",
+      "mutated_class": "org.dspace.app.rest.converter.ConverterService",
+      "mutated_method": "requireProjection",
+      "line": 368,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.converter.ConverterService|toRestPage|(Ljava/util/List;Lorg/springframework/data/domain/Pageable;Lorg/dspace/app/rest/projection/Projection;)Lorg/springframework/data/domain/Page;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|4",
+      "mutated_class": "org.dspace.app.rest.converter.ConverterService",
+      "mutated_method": "toRestPage",
+      "line": 205,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.model.AuthenticationStatusRest|getController|()Ljava/lang/Class;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|4",
+      "mutated_class": "org.dspace.app.rest.model.AuthenticationStatusRest",
+      "mutated_method": "getController",
+      "line": 48,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.model.BaseObjectRest|getErrors|()Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|5",
+      "mutated_class": "org.dspace.app.rest.model.BaseObjectRest",
+      "mutated_method": "getErrors",
+      "line": 39,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.parameter.resolver.SearchFilterResolver|resolveArgument|(Lorg/springframework/core/MethodParameter;Lorg/springframework/web/method/support/ModelAndViewContainer;Lorg/springframework/web/context/request/NativeWebRequest;Lorg/springframework/web/bind/support/WebDataBinderFactory;)Ljava/lang/Object;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|116",
+      "mutated_class": "org.dspace.app.rest.parameter.resolver.SearchFilterResolver",
+      "mutated_method": "resolveArgument",
+      "line": 62,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.repository.CollectionRestRepository|deleteAdminGroup|(Lorg/dspace/core/Context;Lorg/dspace/content/Collection;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|12",
+      "mutated_class": "org.dspace.app.rest.repository.CollectionRestRepository",
+      "mutated_method": "deleteAdminGroup",
+      "line": 494,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.repository.ItemRestRepository|findAll|(Lorg/dspace/core/Context;Lorg/springframework/data/domain/Pageable;)Lorg/springframework/data/domain/Page;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|38",
+      "mutated_class": "org.dspace.app.rest.repository.ItemRestRepository",
+      "mutated_method": "findAll",
+      "line": 132,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.utils.Utils|getBaseObjectRestFromTypeAndUUID|(Lorg/dspace/core/Context;Ljava/lang/String;Ljava/lang/String;)Lorg/dspace/app/rest/model/BaseObjectRest;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|5",
+      "mutated_class": "org.dspace.app.rest.utils.Utils",
+      "mutated_method": "getBaseObjectRestFromTypeAndUUID",
+      "line": 1045,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.content.MetadataFieldName|<init>|(Ljava/lang/String;Ljava/lang/String;)V|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|22",
+      "mutated_class": "org.dspace.content.MetadataFieldName",
+      "mutated_method": "<init>",
+      "line": 59,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    }
+  ]
+}

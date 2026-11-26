@@ -1,6 +1,6 @@
 {
   "scope": "http_dispatch_events",
-  "event_count": 11242,
+  "event_count": 58734,
   "framework_split": {
     "mockmvc": {
       "event_count": 0,
@@ -27,7 +27,7 @@
       "pct_of_events": 0.0
     },
     "rest-assured": {
-      "event_count": 11242,
+      "event_count": 58734,
       "pct_of_events": 100.0
     },
     "okhttp": {

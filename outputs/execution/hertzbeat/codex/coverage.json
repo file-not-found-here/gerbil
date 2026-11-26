@@ -1,0 +1,64 @@
+{
+  "heap": "-Xmx16g",
+  "measured_tests": [
+    "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest#createDashboardConvertsServiceFailureToFailureMessage",
+    "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest#createDashboardReturnsSuccessWhenGrafanaAcceptsIt",
+    "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest#deleteDashboardReturnsJsonMessageEnvelope",
+    "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest#getDashboardReturnsJsonMessageEnvelope",
+    "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest#i18nEndpointNormalizesLocaleAndReturnsLocalizedJson",
+    "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest#publicComponentByIdEndpointReturnsJsonEnvelope",
+    "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest#publicComponentCollectionEndpointReturnsJsonEnvelope",
+    "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest#publicIncidentCollectionEndpointReturnsJsonEnvelope",
+    "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest#publicOrganizationEndpointReportsMissingOrganizationInJsonEnvelope",
+    "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest#summaryEndpointReturnsJsonEnvelope",
+    "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest#failedPushWrapperReturnsBadRequestWithJobAndInstance",
+    "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest#successfulPushWrapperReturnsJobAndInstance",
+    "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest#unmatchedPushRequestReturnsBadRequest"
+  ],
+  "report": {
+    "counters": {
+      "INSTRUCTION": {
+        "covered": 307,
+        "missed": 155814,
+        "ratio": 0.0019664234792244476
+      },
+      "BRANCH": {
+        "covered": 12,
+        "missed": 17220,
+        "ratio": 0.0006963788300835655
+      },
+      "LINE": {
+        "covered": 74,
+        "missed": 22419,
+        "ratio": 0.0032899124171964613
+      },
+      "COMPLEXITY": {
+        "covered": 36,
+        "missed": 17360,
+        "ratio": 0.002069441250862267
+      },
+      "METHOD": {
+        "covered": 34,
+        "missed": 8681,
+        "ratio": 0.0039013195639701665
+      },
+      "CLASS": {
+        "covered": 10,
+        "missed": 926,
+        "ratio": 0.010683760683760684
+      }
+    },
+    "covered_classes": [
+      "org.apache.hertzbeat.common.entity.dto.Message",
+      "org.apache.hertzbeat.grafana.controller.DashboardController",
+      "org.apache.hertzbeat.grafana.service.DashboardService",
+      "org.apache.hertzbeat.manager.controller.I18nController",
+      "org.apache.hertzbeat.manager.controller.StatusPagePublicController",
+      "org.apache.hertzbeat.manager.controller.SummaryController",
+      "org.apache.hertzbeat.manager.pojo.dto.Dashboard",
+      "org.apache.hertzbeat.push.config.PushErrorRequestWrapper",
+      "org.apache.hertzbeat.push.config.PushSuccessRequestWrapper",
+      "org.apache.hertzbeat.push.controller.PushPrometheusController"
+    ]
+  }
+}

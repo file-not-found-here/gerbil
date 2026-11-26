@@ -794,12 +794,36 @@ _ENDPOINT_PARAMETER_SOURCE_ORDER: tuple[EndpointParameterSource, ...] = tuple(
 )
 
 
+def _template_without_query(path_template: str) -> str:
+    """Drop a query or fragment tail, leaving regex constraints in ``{...}`` intact."""
+    template = path_template or ""
+    depth = 0
+    for index, character in enumerate(template):
+        if character == "{":
+            depth += 1
+        elif character == "}":
+            depth = max(depth - 1, 0)
+        elif character in "?#" and depth == 0:
+            return template[:index]
+    return template
+
+
 def _endpoint_route_depth(path_template: str) -> int:
-    path_without_suffix = (path_template or "").split("?", 1)[0].split("#", 1)[0]
-    segments = [
-        segment for segment in path_without_suffix.strip("/").split("/") if segment
-    ]
-    return len(segments)
+    depth = 0
+    route_depth = 0
+    in_segment = False
+    for character in _template_without_query(path_template):
+        if character == "/" and depth == 0:
+            in_segment = False
+            continue
+        if character == "{":
+            depth += 1
+        elif character == "}":
+            depth = max(depth - 1, 0)
+        if not in_segment:
+            in_segment = True
+            route_depth += 1
+    return route_depth
 
 
 def _template_path_variable_names(path_template: str) -> list[str]:
@@ -810,7 +834,7 @@ def _template_path_variable_names(path_template: str) -> list[str]:
     as a single ``id`` variable, and a Spring ``${...}``/``#{...}`` configuration
     placeholder — which is not a path variable — is skipped.
     """
-    template = (path_template or "").split("?", 1)[0].split("#", 1)[0]
+    template = _template_without_query(path_template)
     names: list[str] = []
     seen: set[str] = set()
     index = 0

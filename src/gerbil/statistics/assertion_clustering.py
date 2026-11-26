@@ -67,20 +67,29 @@ def _check_concentration(bearing_counts: Sequence[int]) -> dict[str, Any]:
     }
 
 
+def bearing_sequence_check_counts(
+    api_tests: Sequence[TestRecord], target: str
+) -> list[int]:
+    """Per-sequence check counts of a target role over the sequences carrying it."""
+    return [
+        count
+        for test in api_tests
+        for count in _target_sequence_counts(test, target)
+        if count > 0
+    ]
+
+
 def _per_sequence_distribution(api_tests: Sequence[TestRecord]) -> dict[str, Any]:
     # Per-sequence count of each role's checks, pooled over every API test's
     # sequences. The headline is checks_per_bearing_sequence: given a sequence
     # carries the role at all, how many of that role it carries.
-    pooled: dict[str, list[int]] = {target: [] for target in _TARGETS}
-    for test in api_tests:
-        for target in _TARGETS:
-            pooled[target].extend(_target_sequence_counts(test, target))
-    sequence_count = len(pooled[_TARGETS[0]])
+    sequence_count = sum(
+        len(_target_sequence_counts(test, _TARGETS[0])) for test in api_tests
+    )
 
     by_target: dict[str, Any] = {}
     for target in _TARGETS:
-        counts = pooled[target]
-        bearing = [count for count in counts if count > 0]
+        bearing = bearing_sequence_check_counts(api_tests, target)
         bearing_count = len(bearing)
         by_target[target] = {
             "sequences_with_assertion": count_share(

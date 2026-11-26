@@ -1,9 +1,9 @@
 {
   "scope": "api_tests",
-  "api_test_count": 1243,
+  "api_test_count": 1298,
   "preconditions": {
     "entry_count_per_test": {
-      "count": 1243,
+      "count": 1298,
       "min": 0.0,
       "max": 0.0,
       "mean": 0.0,
@@ -14,7 +14,7 @@
     },
     "entry_count_per_label_per_test": {
       "db-seeding": {
-        "count": 1243,
+        "count": 1298,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -24,7 +24,7 @@
         "p90": 0.0
       },
       "container-bootstrap": {
-        "count": 1243,
+        "count": 1298,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -34,7 +34,7 @@
         "p90": 0.0
       },
       "mq-seeding": {
-        "count": 1243,
+        "count": 1298,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -44,7 +44,7 @@
         "p90": 0.0
       },
       "fs-seeding": {
-        "count": 1243,
+        "count": 1298,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -82,10 +82,10 @@
   },
   "postconditions": {
     "entry_count_per_test": {
-      "count": 1243,
+      "count": 1298,
       "min": 0.0,
-      "max": 1.0,
-      "mean": 0.008045052292839904,
+      "max": 0.0,
+      "mean": 0.0,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 0.0,
@@ -93,7 +93,7 @@
     },
     "entry_count_per_label_per_test": {
       "db": {
-        "count": 1243,
+        "count": 1298,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -103,7 +103,7 @@
         "p90": 0.0
       },
       "mq": {
-        "count": 1243,
+        "count": 1298,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -113,10 +113,10 @@
         "p90": 0.0
       },
       "fs": {
-        "count": 1243,
+        "count": 1298,
         "min": 0.0,
-        "max": 1.0,
-        "mean": 0.008045052292839904,
+        "max": 0.0,
+        "mean": 0.0,
         "p25": 0.0,
         "p50": 0.0,
         "p75": 0.0,
@@ -124,22 +124,22 @@
       }
     },
     "type_share": {
-      "total": 10,
+      "total": 0,
       "by_type": {
         "db": {
           "count": 0,
-          "total": 10,
-          "proportion": 0.0
+          "total": 0,
+          "proportion": null
         },
         "mq": {
           "count": 0,
-          "total": 10,
-          "proportion": 0.0
+          "total": 0,
+          "proportion": null
         },
         "fs": {
-          "count": 10,
-          "total": 10,
-          "proportion": 1.0
+          "count": 0,
+          "total": 0,
+          "proportion": null
         }
       }
     }
@@ -150,7 +150,7 @@
       "postcondition_type": "db",
       "tests_with_precondition_and_postcondition": {
         "count": 0,
-        "total": 1243,
+        "total": 1298,
         "proportion": 0.0
       }
     },
@@ -159,7 +159,7 @@
       "postcondition_type": "mq",
       "tests_with_precondition_and_postcondition": {
         "count": 0,
-        "total": 1243,
+        "total": 1298,
         "proportion": 0.0
       }
     },
@@ -168,7 +168,7 @@
       "postcondition_type": "fs",
       "tests_with_precondition_and_postcondition": {
         "count": 0,
-        "total": 1243,
+        "total": 1298,
         "proportion": 0.0
       }
     }

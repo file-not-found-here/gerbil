@@ -1,0 +1,146 @@
+{
+  "scope": "all_tests",
+  "api": {
+    "test_count": 6980,
+    "parameterized": {
+      "count": 81,
+      "total": 6980,
+      "proportion": 0.011604584527220631
+    },
+    "source_kinds": {
+      "scope": "parameterized_tests",
+      "test_count": 81,
+      "by_kind": {
+        "static_only": {
+          "count": 59,
+          "total": 81,
+          "proportion": 0.7283950617283951
+        },
+        "dynamic_only": {
+          "count": 22,
+          "total": 81,
+          "proportion": 0.2716049382716049
+        },
+        "mixed": {
+          "count": 0,
+          "total": 81,
+          "proportion": 0.0
+        },
+        "no_recognized_source": {
+          "count": 0,
+          "total": 81,
+          "proportion": 0.0
+        }
+      }
+    },
+    "source_annotations": {
+      "total": 81,
+      "by_annotation": {
+        "@ArgumentsSource": {
+          "count": 3,
+          "total": 81,
+          "proportion": 0.037037037037037035
+        },
+        "@CsvSource": {
+          "count": 2,
+          "total": 81,
+          "proportion": 0.024691358024691357
+        },
+        "@EnumSource": {
+          "count": 41,
+          "total": 81,
+          "proportion": 0.5061728395061729
+        },
+        "@MethodSource": {
+          "count": 19,
+          "total": 81,
+          "proportion": 0.2345679012345679
+        },
+        "@ValueSource": {
+          "count": 16,
+          "total": 81,
+          "proportion": 0.19753086419753085
+        }
+      }
+    }
+  },
+  "non_api": {
+    "test_count": 20274,
+    "parameterized": {
+      "count": 585,
+      "total": 20274,
+      "proportion": 0.02885469073690441
+    },
+    "source_kinds": {
+      "scope": "parameterized_tests",
+      "test_count": 585,
+      "by_kind": {
+        "static_only": {
+          "count": 217,
+          "total": 585,
+          "proportion": 0.37094017094017095
+        },
+        "dynamic_only": {
+          "count": 367,
+          "total": 585,
+          "proportion": 0.6273504273504273
+        },
+        "mixed": {
+          "count": 1,
+          "total": 585,
+          "proportion": 0.0017094017094017094
+        },
+        "no_recognized_source": {
+          "count": 0,
+          "total": 585,
+          "proportion": 0.0
+        }
+      }
+    },
+    "source_annotations": {
+      "total": 589,
+      "by_annotation": {
+        "@ArgumentsSource": {
+          "count": 12,
+          "total": 589,
+          "proportion": 0.02037351443123939
+        },
+        "@CsvSource": {
+          "count": 33,
+          "total": 589,
+          "proportion": 0.05602716468590832
+        },
+        "@EmptySource": {
+          "count": 1,
+          "total": 589,
+          "proportion": 0.001697792869269949
+        },
+        "@EnumSource": {
+          "count": 24,
+          "total": 589,
+          "proportion": 0.04074702886247878
+        },
+        "@MethodSource": {
+          "count": 356,
+          "total": 589,
+          "proportion": 0.6044142614601019
+        },
+        "@NullAndEmptySource": {
+          "count": 3,
+          "total": 589,
+          "proportion": 0.0050933786078098476
+        },
+        "@NullSource": {
+          "count": 3,
+          "total": 589,
+          "proportion": 0.0050933786078098476
+        },
+        "@ValueSource": {
+          "count": 157,
+          "total": 589,
+          "proportion": 0.266553480475382
+        }
+      }
+    }
+  }
+}

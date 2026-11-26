@@ -1,0 +1,19 @@
+diff --git a/uaa/build.gradle b/uaa/build.gradle
+--- a/uaa/build.gradle
++++ b/uaa/build.gradle
+@@ -65,6 +65,15 @@
+     providedCompile(libraries.tomcatEmbed)
+     implementation(libraries.bouncyCastleFipsProv)
+ 
++    // EvoMaster's embedded driver, the client its generated tests call, and the schema it reads.
++    testImplementation("org.evomaster:evomaster-client-java-controller:6.2.0")
++    testImplementation("org.evomaster:evomaster-test-utils-java:6.2.0")
++    // REST Assured 5 runs on the Groovy 4 that the Thymeleaf layout dialect brings in.
++    testImplementation("io.rest-assured:rest-assured:5.5.0")
++    testImplementation("io.rest-assured:json-path:5.5.0")
++    testImplementation("io.rest-assured:xml-path:5.5.0")
++    testImplementation("io.rest-assured:rest-assured-common:5.5.0")
++    testImplementation("org.springdoc:springdoc-openapi-webmvc-core:1.8.0")
+     testImplementation(identityServer.sourceSets.test.output)
+ 
+     testImplementation(project(":cloudfoundry-identity-model"))

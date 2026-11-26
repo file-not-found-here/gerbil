@@ -3904,6 +3904,12 @@ def test_jaxrs_path_param_default_value_sibling_is_required() -> None:
 # ---------------------------------------------------------------------------
 
 
+def test_template_path_variable_names_reads_past_a_question_mark_in_a_constraint() -> (
+    None
+):
+    assert _template_path_variable_names("/{a:(?:x)}/{b}?c={d}") == ["a", "b"]
+
+
 def test_template_path_variable_names_basic() -> None:
     assert _template_path_variable_names("/users/{id}") == ["id"]
     assert _template_path_variable_names(

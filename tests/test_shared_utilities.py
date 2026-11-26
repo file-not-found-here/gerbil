@@ -226,6 +226,22 @@ def test_extract_annotation_paths_expands_rfc6570_optional_slash_variables() -> 
     ]
 
 
+@pytest.mark.parametrize(
+    ("path", "expected"),
+    [
+        ("/api/{version:(?:[0-9]+)|latest}", "/api/{version:(?:[0-9]+)|latest}"),
+        ("/{id:(?:a)}/file?download=true", "/{id:(?:a)}/file"),
+        ("/{lang:[a-z]{2,3}(-[A-Z]+)?}/x", "/{lang:[a-z]{2,3}(-[A-Z]+)?}/x"),
+        ("/{id:a#b}/x#top", "/{id:a#b}/x"),
+        ("/open/{id?q=1", "/open/{id"),
+    ],
+)
+def test_normalize_path_keeps_delimiters_inside_template_groups_only(
+    path: str, expected: str
+) -> None:
+    assert http_mapping_annotations.normalize_path(path) == expected
+
+
 def test_normalize_path_strips_rfc6570_query_and_fragment_templates() -> None:
     assert http_mapping_annotations.normalize_path("/list{?max,offset}") == "/list"
     assert http_mapping_annotations.normalize_path("/x{#anchor}") == "/x"

@@ -1,0 +1,251 @@
+{
+  "project": "uaa",
+  "suites": {
+    "developer": {
+      "api_tests": 1389,
+      "status_counts": {
+        "passed": 1109,
+        "out-of-scope": 34,
+        "failed": 207,
+        "not-in-build": 7,
+        "not-run": 32
+      },
+      "measured_tests": 1109,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 90400,
+          "missed": 47266,
+          "ratio": 0.6566617756018189
+        },
+        "BRANCH": {
+          "covered": 5638,
+          "missed": 6401,
+          "ratio": 0.46831132153833377
+        },
+        "LINE": {
+          "covered": 20366,
+          "missed": 10419,
+          "ratio": 0.6615559525743057
+        },
+        "COMPLEXITY": {
+          "covered": 6573,
+          "missed": 6485,
+          "ratio": 0.503369581865523
+        },
+        "METHOD": {
+          "covered": 4859,
+          "missed": 2132,
+          "ratio": 0.6950364754684595
+        },
+        "CLASS": {
+          "covered": 857,
+          "missed": 278,
+          "ratio": 0.7550660792951542
+        }
+      },
+      "covered_classes": 857,
+      "mutation": {
+        "killed": 280,
+        "covered": 402,
+        "unreached": 0,
+        "line_covered": 406,
+        "untested_line_covered": 4,
+        "mutation_score": 0.4666666666666667,
+        "test_strength": 0.6965174129353234,
+        "status_counts": {
+          "KILLED": 280,
+          "SURVIVED": 122,
+          "NO_COVERAGE": 198
+        }
+      },
+      "errors": {}
+    },
+    "claude-code": {
+      "api_tests": 85,
+      "status_counts": {
+        "passed": 85
+      },
+      "measured_tests": 85,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 9335,
+          "missed": 128331,
+          "ratio": 0.06780904508012145
+        },
+        "BRANCH": {
+          "covered": 414,
+          "missed": 11625,
+          "ratio": 0.03438823822576626
+        },
+        "LINE": {
+          "covered": 2235,
+          "missed": 28550,
+          "ratio": 0.07260029235017054
+        },
+        "COMPLEXITY": {
+          "covered": 768,
+          "missed": 12290,
+          "ratio": 0.05881451983458416
+        },
+        "METHOD": {
+          "covered": 702,
+          "missed": 6289,
+          "ratio": 0.10041481905306823
+        },
+        "CLASS": {
+          "covered": 151,
+          "missed": 984,
+          "ratio": 0.13303964757709252
+        }
+      },
+      "covered_classes": 151,
+      "mutation": {
+        "killed": 11,
+        "covered": 40,
+        "unreached": 0,
+        "line_covered": 40,
+        "untested_line_covered": 0,
+        "mutation_score": 0.018333333333333333,
+        "test_strength": 0.275,
+        "status_counts": {
+          "SURVIVED": 29,
+          "KILLED": 11,
+          "NO_COVERAGE": 560
+        }
+      },
+      "errors": {}
+    },
+    "codex": {
+      "api_tests": 9,
+      "status_counts": {
+        "passed": 9
+      },
+      "measured_tests": 9,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 36958,
+          "missed": 100708,
+          "ratio": 0.2684613484811064
+        },
+        "BRANCH": {
+          "covered": 1192,
+          "missed": 10847,
+          "ratio": 0.09901154580945261
+        },
+        "LINE": {
+          "covered": 8590,
+          "missed": 22195,
+          "ratio": 0.27903199610199775
+        },
+        "COMPLEXITY": {
+          "covered": 2583,
+          "missed": 10475,
+          "ratio": 0.19780977178741002
+        },
+        "METHOD": {
+          "covered": 2381,
+          "missed": 4610,
+          "ratio": 0.3405807466742955
+        },
+        "CLASS": {
+          "covered": 587,
+          "missed": 548,
+          "ratio": 0.5171806167400881
+        }
+      },
+      "covered_classes": 587,
+      "mutation": {
+        "killed": 8,
+        "covered": 132,
+        "unreached": 0,
+        "line_covered": 137,
+        "untested_line_covered": 5,
+        "mutation_score": 0.013333333333333334,
+        "test_strength": 0.06060606060606061,
+        "status_counts": {
+          "SURVIVED": 124,
+          "NO_COVERAGE": 468,
+          "KILLED": 8
+        }
+      },
+      "errors": {}
+    },
+    "evomaster": {
+      "api_tests": 1751,
+      "status_counts": {
+        "passed": 1479,
+        "failed": 272
+      },
+      "measured_tests": 1479,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 52517,
+          "missed": 85149,
+          "ratio": 0.38148126625310536
+        },
+        "BRANCH": {
+          "covered": 2431,
+          "missed": 9608,
+          "ratio": 0.20192707035468063
+        },
+        "LINE": {
+          "covered": 12221,
+          "missed": 18564,
+          "ratio": 0.39697904823777813
+        },
+        "COMPLEXITY": {
+          "covered": 3840,
+          "missed": 9218,
+          "ratio": 0.29407259917292083
+        },
+        "METHOD": {
+          "covered": 3251,
+          "missed": 3740,
+          "ratio": 0.4650264625947647
+        },
+        "CLASS": {
+          "covered": 710,
+          "missed": 425,
+          "ratio": 0.6255506607929515
+        }
+      },
+      "covered_classes": 710,
+      "mutation": {
+        "killed": 65,
+        "covered": 209,
+        "unreached": 0,
+        "line_covered": 213,
+        "untested_line_covered": 4,
+        "mutation_score": 0.10833333333333334,
+        "test_strength": 0.31100478468899523,
+        "status_counts": {
+          "SURVIVED": 144,
+          "NO_COVERAGE": 391,
+          "KILLED": 65
+        }
+      },
+      "errors": {}
+    }
+  },
+  "mutation_suites": [
+    "developer",
+    "claude-code",
+    "codex",
+    "evomaster"
+  ],
+  "service_mutants": 14568,
+  "sample_seed": "gerbil",
+  "mutants": 600,
+  "non_viable_mutants": 0,
+  "kills_by_suites": {
+    "developer": 216,
+    "none": 315,
+    "evomaster": 4,
+    "developer+evomaster": 47,
+    "developer+claude-code+evomaster": 6,
+    "claude-code": 1,
+    "developer+codex+evomaster": 7,
+    "developer+claude-code": 3,
+    "developer+claude-code+codex+evomaster": 1
+  }
+}

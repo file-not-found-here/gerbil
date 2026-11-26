@@ -1,0 +1,35 @@
+Inspect the provided repository and generate HTTP-based API tests (dispatched either in-process or over a real network connection) that thoroughly exercise the available endpoints.
+
+Identify the API surface exposed by the repository, including routes, request methods, expected inputs, response formats, status codes, validation behavior, authentication or authorization requirements when applicable, and important interactions between endpoints. Use the repository's existing test framework and build system.
+
+Before writing any tests, perform a complete discovery pass: scan every module of the repository for controllers and route handlers, and enumerate EVERY endpoint into a tracking file at the repository root named `API_ENDPOINT_COVERAGE.md`. This file is your durable working memory and must remain accurate for the whole run. If your context is ever summarized, compacted, or truncated, re-read this file FIRST to recover the full endpoint list before doing anything else. Use a terse, greppable checklist, one line per endpoint, grouped by module and controller:
+
+```
+# API Endpoint Coverage (Progress: <tested>/<total>)
+Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
+
+## <module path> - <ControllerClass>
+- [ ] GET /api/... - <short note: auth, key behavior>
+```
+
+Keep entries terse (method + route + one-line note); do not record full request/response schemas here — gather that detail when you write each endpoint's test. Then work through the inventory endpoint by endpoint. Prefer breadth first: get at least one passing test for every controller across all modules before deepening coverage on any single endpoint. After an endpoint's test compiles and passes, mark it `[x]`; if you deliberately skip one, mark it `[~]` with a brief reason, and keep the `Progress` count current. The task is NOT complete while any endpoint remains `[ ]`: continue until every discovered endpoint is either `[x]` or `[~]`. Do not stop after a single module or declare completion while untested endpoints remain.
+{%- if rest_assured %}
+You MUST use REST Assured for the HTTP API tests; it is already available as a test dependency.
+{%- else %}
+Generate the tests using the testing frameworks and HTTP request/dispatch facilities already available in the project dependencies. Prioritize MockMvc and REST Assured when they are present, but use whatever frameworks the project provides to achieve sufficient API coverage, including combining multiple frameworks when beneficial.
+{%- endif %}
+{% if service_base_url %}
+A live instance of this service is already running and reachable at {{ service_base_url }}. Exercise the running API directly over HTTP. The service has already been built and started for you; do not build, start, stop, or reconfigure it.
+{%- else %}
+No service instance has been set up or started for you. You may perform whatever setup is necessary to run your API tests.
+{%- endif %}
+{%- if test_module %}
+This is a multi-module build: add your generated tests to the {{ test_module }} module, where REST Assured is configured.
+{% endif %}
+Prioritize correctness, broad coverage of meaningful behavior, and successful integration with the build system. Generate as many meaningful, non-redundant tests as possible while preserving correctness and maintainability. Cover happy paths, edge cases, exceptional behavior, and important endpoint interactions. Validate responses to whatever extent you judge appropriate, based on the behavior the repository exposes.
+
+Do NOT modify production code under any circumstances. Only add or modify test files, with the single exception of the `API_ENDPOINT_COVERAGE.md` tracking file described above (keep it in place; do not delete it).
+
+Do NOT leave behind non-compiling, failing, incomplete, or placeholder tests. After writing tests, run the most relevant validation commands available, such as targeted API tests, the full test suite, or build checks. If failures occur, iteratively diagnose and repair the tests. If a test cannot be made to compile and pass reliably, remove it rather than completing the task with a broken test.
+
+In the final response, concisely summarize the endpoints and behaviors tested, the test files added or modified, the validation commands run, and any assumptions or limitations.

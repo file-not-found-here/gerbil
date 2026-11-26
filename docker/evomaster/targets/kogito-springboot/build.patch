@@ -1,0 +1,23 @@
+diff --git a/springboot/integration-tests/integration-tests-springboot-processes-it/pom.xml b/springboot/integration-tests/integration-tests-springboot-processes-it/pom.xml
+--- a/springboot/integration-tests/integration-tests-springboot-processes-it/pom.xml
++++ b/springboot/integration-tests/integration-tests-springboot-processes-it/pom.xml
+@@ -133,6 +133,19 @@
+       </exclusions>
+     </dependency>
+ 
++      <!-- EvoMaster's embedded driver and the client its generated tests call. -->
++      <dependency>
++          <groupId>org.evomaster</groupId>
++          <artifactId>evomaster-client-java-controller</artifactId>
++          <version>6.2.0</version>
++          <scope>test</scope>
++      </dependency>
++      <dependency>
++          <groupId>org.evomaster</groupId>
++          <artifactId>evomaster-test-utils-java</artifactId>
++          <version>6.2.0</version>
++          <scope>test</scope>
++      </dependency>
+   </dependencies>
+ 
+   <build>

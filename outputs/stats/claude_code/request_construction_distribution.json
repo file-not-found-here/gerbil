@@ -1,245 +1,244 @@
 {
   "scope": "api_tests",
-  "api_test_count": 1243,
-  "request_event_count": 1394,
+  "api_test_count": 1298,
+  "request_event_count": 1589,
   "event_surfaces": {
     "body_payload": {
       "events": {
-        "count": 317,
-        "total": 1394,
-        "proportion": 0.22740315638450503
+        "count": 308,
+        "total": 1589,
+        "proportion": 0.19383259911894274
       },
       "tests_with_any": {
-        "count": 279,
-        "total": 1243,
-        "proportion": 0.2244569589702333
+        "count": 287,
+        "total": 1298,
+        "proportion": 0.22110939907550076
       }
     },
     "headers": {
       "events": {
-        "count": 428,
-        "total": 1394,
-        "proportion": 0.30703012912482064
+        "count": 735,
+        "total": 1589,
+        "proportion": 0.46255506607929514
       },
       "tests_with_any": {
-        "count": 354,
-        "total": 1243,
-        "proportion": 0.2847948511665326
+        "count": 509,
+        "total": 1298,
+        "proportion": 0.3921417565485362
       }
     },
     "query_params": {
       "events": {
-        "count": 421,
-        "total": 1394,
-        "proportion": 0.3020086083213773
+        "count": 545,
+        "total": 1589,
+        "proportion": 0.34298300818124605
       },
       "tests_with_any": {
-        "count": 391,
-        "total": 1243,
-        "proportion": 0.3145615446500402
+        "count": 449,
+        "total": 1298,
+        "proportion": 0.3459167950693374
       }
     },
     "path_params": {
       "events": {
-        "count": 187,
-        "total": 1394,
-        "proportion": 0.13414634146341464
+        "count": 295,
+        "total": 1589,
+        "proportion": 0.1856513530522341
       },
       "tests_with_any": {
-        "count": 187,
-        "total": 1243,
-        "proportion": 0.1504424778761062
+        "count": 248,
+        "total": 1298,
+        "proportion": 0.19106317411402157
       }
     },
     "form_params": {
       "events": {
         "count": 0,
-        "total": 1394,
+        "total": 1589,
         "proportion": 0.0
       },
       "tests_with_any": {
         "count": 0,
-        "total": 1243,
+        "total": 1298,
         "proportion": 0.0
       }
     }
   },
   "per_event": {
     "query_param_names_per_event": {
-      "count": 1394,
+      "count": 1589,
       "min": 0.0,
       "max": 15.0,
-      "mean": 0.5229555236728838,
+      "mean": 0.5468848332284456,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 1.0,
       "p90": 2.0
     },
     "header_names_per_event": {
-      "count": 1394,
+      "count": 1589,
       "min": 0.0,
       "max": 3.0,
-      "mean": 0.351506456241033,
+      "mean": 0.5632473253618628,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 1.0,
-      "p90": 1.0
+      "p90": 2.0
     }
   },
   "builder_usage": {
     "events_with_builder_correlation": {
-      "count": 1043,
-      "total": 1394,
-      "proportion": 0.7482065997130559
+      "count": 1326,
+      "total": 1589,
+      "proportion": 0.8344870988042794
     },
     "tests_with_builder_correlation": {
-      "count": 967,
-      "total": 1243,
-      "proportion": 0.7779565567176187
+      "count": 1091,
+      "total": 1298,
+      "proportion": 0.8405238828967643
     },
-    "builder_group_count": 1043,
-    "builder_count_total": 2209,
+    "builder_group_count": 1326,
+    "builder_count_total": 2987,
     "contributed_properties": {
-      "total": 3271,
+      "total": 4289,
       "by_property": {
         "http_method": {
-          "count": 873,
-          "total": 3271,
-          "proportion": 0.26689085906450627
+          "count": 1115,
+          "total": 4289,
+          "proportion": 0.25996735835859175
         },
         "path": {
-          "count": 873,
-          "total": 3271,
-          "proportion": 0.26689085906450627
+          "count": 1115,
+          "total": 4289,
+          "proportion": 0.25996735835859175
         },
         "headers": {
-          "count": 1,
-          "total": 3271,
-          "proportion": 0.0003057169061449098
+          "count": 0,
+          "total": 4289,
+          "proportion": 0.0
         },
         "header_names": {
-          "count": 490,
-          "total": 3271,
-          "proportion": 0.14980128401100581
+          "count": 895,
+          "total": 4289,
+          "proportion": 0.20867335043133597
         },
         "query_param_names": {
-          "count": 621,
-          "total": 3271,
-          "proportion": 0.189850198715989
+          "count": 761,
+          "total": 4289,
+          "proportion": 0.17743063651200747
         },
         "path_param_names": {
           "count": 187,
-          "total": 3271,
-          "proportion": 0.057169061449098134
+          "total": 4289,
+          "proportion": 0.0435999067381674
         },
         "form_param_names": {
           "count": 0,
-          "total": 3271,
+          "total": 4289,
           "proportion": 0.0
         },
         "has_body_payload": {
-          "count": 225,
-          "total": 3271,
-          "proportion": 0.0687863038826047
+          "count": 216,
+          "total": 4289,
+          "proportion": 0.050361389601305664
         },
         "auth_hints": {
-          "count": 1,
-          "total": 3271,
-          "proportion": 0.0003057169061449098
+          "count": 0,
+          "total": 4289,
+          "proportion": 0.0
         }
       }
     }
   },
   "header_vocabulary": {
-    "distinct_header_name_count": 6,
+    "distinct_header_name_count": 5,
     "tests_with_any_header": {
-      "count": 352,
-      "total": 1243,
-      "proportion": 0.2831858407079646
+      "count": 507,
+      "total": 1298,
+      "proportion": 0.39060092449922956
     },
     "distinct_header_names_per_test": {
-      "count": 1243,
+      "count": 1298,
       "min": 0.0,
       "max": 3.0,
-      "mean": 0.36202735317779566,
+      "mean": 0.5030816640986132,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 1.0,
-      "p90": 1.0
+      "p90": 2.0
     },
     "header_name_occurrences": {
-      "total": 980,
+      "total": 1790,
       "content_negotiation": {
-        "count": 966,
-        "total": 980,
-        "proportion": 0.9857142857142858
+        "count": 1778,
+        "total": 1790,
+        "proportion": 0.9932960893854749
       }
     },
     "header_name_test_frequency": {
-      "accept": 237,
-      "content-type": 206,
+      "accept": 415,
+      "content-type": 232,
       "if-match": 3,
       "if-none-match": 2,
-      "authorization": 1,
       "user-agent": 1
     }
   },
   "builder_types_given_body": {
     "scope": "per_dispatch_builder_groups_with_body_payload",
-    "builder_group_count": 1043,
-    "body_builder_group_count": 225,
+    "builder_group_count": 1326,
+    "body_builder_group_count": 216,
     "share_of_builder_groups_with_body_payload": {
-      "count": 225,
-      "total": 1043,
-      "proportion": 0.21572387344199426
+      "count": 216,
+      "total": 1326,
+      "proportion": 0.16289592760180996
     },
-    "builder_count": 691,
+    "builder_count": 738,
     "builder_types": {
-      "total": 691,
+      "total": 738,
       "by_type": {
         "http_method": {
-          "count": 130,
-          "total": 691,
-          "proportion": 0.18813314037626627
+          "count": 147,
+          "total": 738,
+          "proportion": 0.1991869918699187
         },
         "path": {
-          "count": 130,
-          "total": 691,
-          "proportion": 0.18813314037626627
+          "count": 147,
+          "total": 738,
+          "proportion": 0.1991869918699187
         },
         "headers": {
           "count": 0,
-          "total": 691,
+          "total": 738,
           "proportion": 0.0
         },
         "header_names": {
-          "count": 288,
-          "total": 691,
-          "proportion": 0.41678726483357453
+          "count": 353,
+          "total": 738,
+          "proportion": 0.47831978319783197
         },
         "query_param_names": {
-          "count": 48,
-          "total": 691,
-          "proportion": 0.0694645441389291
+          "count": 22,
+          "total": 738,
+          "proportion": 0.02981029810298103
         },
         "path_param_names": {
           "count": 36,
-          "total": 691,
-          "proportion": 0.05209840810419682
+          "total": 738,
+          "proportion": 0.04878048780487805
         },
         "form_param_names": {
           "count": 0,
-          "total": 691,
+          "total": 738,
           "proportion": 0.0
         },
         "has_body_payload": {
-          "count": 225,
-          "total": 691,
-          "proportion": 0.3256150506512301
+          "count": 216,
+          "total": 738,
+          "proportion": 0.2926829268292683
         },
         "auth_hints": {
           "count": 0,
-          "total": 691,
+          "total": 738,
           "proportion": 0.0
         }
       }

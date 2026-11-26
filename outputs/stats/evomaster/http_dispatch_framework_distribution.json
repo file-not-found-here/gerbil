@@ -1,6 +1,6 @@
 {
   "scope": "http_call_sites",
-  "call_site_count": 54342,
+  "call_site_count": 304131,
   "framework_split": {
     "mockmvc": {
       "call_site_count": 0,
@@ -27,7 +27,7 @@
       "pct_of_call_sites": 0.0
     },
     "rest-assured": {
-      "call_site_count": 54342,
+      "call_site_count": 304131,
       "pct_of_call_sites": 100.0
     },
     "okhttp": {

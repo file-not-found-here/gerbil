@@ -1,0 +1,2045 @@
+{
+  "commit": "c2360663177c574d6cf83c062bd22788a0cdc040",
+  "tests": [
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryAllProjectListForDependent()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryAuthorizedUser()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryProjectWithAuthorizedLevel()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryUnauthorizedProject()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryAuthorizedProject()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryProjectListPaging()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryProjectCreatedAndAuthorizedByUser()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryAllProjectList()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testDeleteProject()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryProjectWithAuthorizedLevelListPaging()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testCreateProject()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testUpdateProject()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ProjectAPITest",
+      "method_signature": "testQueryProjectByCode()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowInstanceAPITest",
+      "method_signature": "testQueryWorkflowInstanceById()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowInstanceAPITest",
+      "method_signature": "testQueryWorkflowInstanceList()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowInstanceAPITest",
+      "method_signature": "testDeleteWorkflowInstanceById()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowInstanceAPITest",
+      "method_signature": "testQueryWorkflowInstancesByWorkflowInstanceId()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowInstanceAPITest",
+      "method_signature": "testQueryTaskListByWorkflowInstanceId()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.ExecutorAPITest",
+      "method_signature": "testStartWorkflowInstance()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.SchedulerAPITest",
+      "method_signature": "testDeleteScheduleById()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.SchedulerAPITest",
+      "method_signature": "testQueryScheduleList()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.SchedulerAPITest",
+      "method_signature": "testOfflineSchedule()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.SchedulerAPITest",
+      "method_signature": "testCreateSchedule()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.SchedulerAPITest",
+      "method_signature": "testUpdateSchedule()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.SchedulerAPITest",
+      "method_signature": "testPublishScheduleOnline()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkerGroupAPITest",
+      "method_signature": "testQueryAllWorkerGroupsPaging()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkerGroupAPITest",
+      "method_signature": "testDeleteWorkerGroupById()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkerGroupAPITest",
+      "method_signature": "queryWorkerAddressList()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkerGroupAPITest",
+      "method_signature": "testQueryAllWorkerGroups()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkerGroupAPITest",
+      "method_signature": "testSaveWorkerGroup()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.TenantAPITest",
+      "method_signature": "testDeleteTenant()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.TenantAPITest",
+      "method_signature": "testDuplicateCreateTenant()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.TenantAPITest",
+      "method_signature": "testGetTenantListPaging()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.TenantAPITest",
+      "method_signature": "testCreateTenant()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testDeleteWorkflowDefinitionByCode()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testImportWorkflowDefinition()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testQueryAllWorkflowDefinitionByProjectCode()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testQueryWorkflowDefinitionList()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testGetWorkflowListByProjectCode()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testReleaseWorkflowDefinition()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testQueryWorkflowDefinitionByName()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.WorkflowDefinitionAPITest",
+      "method_signature": "testQueryWorkflowDefinitionByCode()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.LdapLoginAPITest",
+      "method_signature": "testAdminUserFilterLoginSuccess()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.LdapLoginAPITest",
+      "method_signature": "testAdminUserLoginSuccess()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.LdapLoginAPITest",
+      "method_signature": "testGeneralUserLoginFailed()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.test.cases.LdapLoginAPITest",
+      "method_signature": "testGeneralUserLoginSuccess()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UiPluginControllerTest",
+      "method_signature": "testQueryUiPluginDetailById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UiPluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UiPluginControllerTest",
+      "method_signature": "testQueryProductInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UiPluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UiPluginControllerTest",
+      "method_signature": "testQueryUiPluginsByType()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UiPluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testVerifyUserName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testRegisterUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testUpdateUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testRevokeProject()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testGrantProjectByCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testDelUserById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testGetUserInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testCreateUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testUnauthorizedUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testQueryList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testAuthorizedUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testGrantProject()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testListAll()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testBatchActivateUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testGrantDataSource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "method_signature": "testActivateUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.UsersControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "method_signature": "testUpdateQueue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "method_signature": "testDeleteQueueById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "method_signature": "testVerifyQueue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "method_signature": "testQueryQueueListPagingEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "method_signature": "testCreateQueue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "method_signature": "testQueryList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "method_signature": "deleteNamespaceById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "method_signature": "createNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "method_signature": "testQueryAuthorizedNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "method_signature": "testQueryUnauthorizedNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "method_signature": "verifyNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "method_signature": "queryProjectListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.K8sNamespaceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testDeleteScheduleById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testQueryScheduleList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testOffline()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testCreateSchedule()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testUpdateSchedule()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testPreviewSchedule()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testOnline()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "method_signature": "testQueryScheduleListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenV2ControllerTest",
+      "method_signature": "testCreateToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenV2ControllerTest",
+      "method_signature": "testCreateTokenIfAbsent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenV2ControllerTest",
+      "method_signature": "testExceptionHandler()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "method_signature": "testUpdateQueue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "method_signature": "testVerifyQueue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "method_signature": "testQueryQueueListPagingEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "method_signature": "testCreateQueue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "method_signature": "testQueryList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.QueueV2ControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowTaskRelationControllerTest",
+      "method_signature": "testQueryUpstreamRelation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowTaskRelationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowTaskRelationControllerTest",
+      "method_signature": "testQueryDownstreamRelation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowTaskRelationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AuditLogControllerTest",
+      "method_signature": "testQueryAuditLogListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AuditLogControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testQueryParentInstanceBySubId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testQueryWorkflowInstanceById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testUpdateWorkflowInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testViewVariables()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testBatchDeleteWorkflowInstanceByIds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testQuerySubWorkflowInstanceByTaskId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testQueryWorkflowInstanceList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testDeleteWorkflowInstanceById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "queryWorkflowInstancesByTriggerCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "method_signature": "testQueryTaskListByWorkflowInstanceId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "method_signature": "testDownloadResource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "method_signature": "testCreateResourceFile()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "method_signature": "testViewResource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "method_signature": "testUpdateResourceContent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "method_signature": "testDeleteResource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "method_signature": "testQueryResourceListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupQueueControllerTest",
+      "method_signature": "queryTasksByGroupId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupQueueControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "method_signature": "testQueryByStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "method_signature": "testCloseAndStartTaskGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "method_signature": "testQueryListAll()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "method_signature": "testUpdateTaskGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "method_signature": "testCreateTaskGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "method_signature": "testQueryByName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "method_signature": "testQueryAllWorkerGroupsPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "method_signature": "testDeleteById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "method_signature": "queryWorkerAddressList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "method_signature": "testQueryAllWorkerGroups()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "method_signature": "testSaveWorkerGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "method_signature": "testGetOauth2Provider()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "method_signature": "testSignOutWithExpireSession()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "method_signature": "testLogin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "method_signature": "testClearCookie()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "method_signature": "testSignOut()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.LoginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "method_signature": "testStartWorkflowInstanceWithoutTimeout()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "method_signature": "testStartWorkflowInstanceWithFullParams()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "method_signature": "testStartWorkflowInstanceWithoutStartParams()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "method_signature": "testStartWorkflowInstanceWithRequiredParams()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "method_signature": "testExecuteWithSuccessStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceExecuteFunctionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testConnectDataSource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testUpdateDataSource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testConnectionTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testVerifyDataSourceName(java.lang.String, java.lang.String)",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testUnauthDatasource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testQueryDataSourceListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testQueryDataSource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testAuthedDatasource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testGetKerberosStartupState()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testDelete()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testQueryDataSourceList(java.lang.String, java.lang.String)",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testCreateDataSource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "method_signature": "testVerifyEnvironment()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "method_signature": "testQueryEnvironmentByCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "method_signature": "testUpdateEnvironment()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "method_signature": "testQueryEnvironmentListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "method_signature": "testQueryAllEnvironmentList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.EnvironmentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TaskInstanceControllerTest",
+      "method_signature": "testForceTaskSuccess()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TaskInstanceControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test080DelAlertGroupById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test090DelAlertGroupById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test030ListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test040QueryAlertGroupById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test020List()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test010CreateAlertGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test050UpdateAlertGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test060VerifyGroupName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "method_signature": "test070VerifyGroupNameNotExit()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "method_signature": "testListWorker()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "method_signature": "testListMaster()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "method_signature": "testListAlert()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "method_signature": "testQueryDatabaseState()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testSendAlertPluginInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testListPagingResultFalse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testDeleteAlertPluginInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testGetAlertPluginInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testVerifyGroupNamePluginInstanceNameExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testUpdateAlertPluginInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testVerifyGroupName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testCreateAlertPluginInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "method_signature": "testGetAlertPluginInstanceList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "method_signature": "testGetWorkflowInstanceStateCount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "method_signature": "testCountCommandState()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "method_signature": "testListCommand()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "method_signature": "testGetTaskInstanceStateCount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "method_signature": "testCountQueueState()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "method_signature": "testCountDefinitionByUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "method_signature": "testListErrorCommand()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.DataAnalysisControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "method_signature": "testQueryAllClusterList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "method_signature": "testUpdateCluster()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "method_signature": "testQueryClusterByCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "method_signature": "testVerifyCluster()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "method_signature": "testQueryClusterListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ClusterControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testQueryAccessTokenByUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testUpdateToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testGenerateToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testCreateToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testCreateTokenIfAbsent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testQueryAccessTokenList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testExceptionHandler()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testDelAccessTokenById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "method_signature": "testUpdateTokenIfAbsent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.LoggerControllerTest",
+      "method_signature": "testQueryLog()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.LoggerControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.LoggerControllerTest",
+      "method_signature": "testDownloadTaskLog()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.LoggerControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "method_signature": "testDeleteTenantById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "method_signature": "testQueryTenantList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "method_signature": "testUpdateTenant()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "method_signature": "testVerifyTenantCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "method_signature": "testCreateTenant()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "method_signature": "testQueryTenantListPaging()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.TenantControllerTest",
+      "status": "passed"
+    }
+  ]
+}

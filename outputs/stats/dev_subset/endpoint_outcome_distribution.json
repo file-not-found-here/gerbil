@@ -1,0 +1,361 @@
+{
+  "scope": "endpoints_api_tests_and_resolved_endpoint_events",
+  "endpoint_count": 2397,
+  "request_attributed": {
+    "count": 1186,
+    "total": 2397,
+    "proportion": 0.4947851481017939
+  },
+  "status_asserted": {
+    "count": 1171,
+    "total": 2397,
+    "proportion": 0.4885273258239466
+  },
+  "outcome_mix": {
+    "scope": "status_asserted_endpoints",
+    "endpoint_count": 1171,
+    "by_mix": {
+      "success_only": {
+        "count": 765,
+        "total": 1171,
+        "proportion": 0.6532877882152007
+      },
+      "error_without_success": {
+        "count": 36,
+        "total": 1171,
+        "proportion": 0.030742954739538857
+      },
+      "success_and_error": {
+        "count": 364,
+        "total": 1171,
+        "proportion": 0.3108454312553373
+      },
+      "neither_success_nor_error": {
+        "count": 6,
+        "total": 1171,
+        "proportion": 0.005123825789923143
+      }
+    },
+    "has_auth_denial_assertion": {
+      "count": 136,
+      "total": 1171,
+      "proportion": 0.1161400512382579
+    }
+  },
+  "asserted_status_ranges": {
+    "attributed_assertion_counts": {
+      "1xx": {
+        "count": 0,
+        "total": 47054,
+        "proportion": 0.0
+      },
+      "2xx": {
+        "count": 36374,
+        "total": 47054,
+        "proportion": 0.7730267352403621
+      },
+      "3xx": {
+        "count": 1171,
+        "total": 47054,
+        "proportion": 0.0248863008458367
+      },
+      "4xx": {
+        "count": 8697,
+        "total": 47054,
+        "proportion": 0.18483019509499723
+      },
+      "5xx": {
+        "count": 346,
+        "total": 47054,
+        "proportion": 0.0073532537085051215
+      },
+      "unknown": {
+        "count": 466,
+        "total": 47054,
+        "proportion": 0.009903515110298806
+      }
+    },
+    "endpoints_with_range": {
+      "1xx": {
+        "count": 0,
+        "total": 1171,
+        "proportion": 0.0
+      },
+      "2xx": {
+        "count": 1129,
+        "total": 1171,
+        "proportion": 0.964133219470538
+      },
+      "3xx": {
+        "count": 45,
+        "total": 1171,
+        "proportion": 0.03842869342442357
+      },
+      "4xx": {
+        "count": 300,
+        "total": 1171,
+        "proportion": 0.2561912894961571
+      },
+      "5xx": {
+        "count": 147,
+        "total": 1171,
+        "proportion": 0.125533731853117
+      },
+      "unknown": {
+        "count": 55,
+        "total": 1171,
+        "proportion": 0.04696840307429547
+      }
+    },
+    "endpoints_with_range_among_all_endpoints": {
+      "1xx": {
+        "count": 0,
+        "total": 2397,
+        "proportion": 0.0
+      },
+      "2xx": {
+        "count": 1129,
+        "total": 2397,
+        "proportion": 0.4710054234459741
+      },
+      "3xx": {
+        "count": 45,
+        "total": 2397,
+        "proportion": 0.01877346683354193
+      },
+      "4xx": {
+        "count": 300,
+        "total": 2397,
+        "proportion": 0.1251564455569462
+      },
+      "5xx": {
+        "count": 147,
+        "total": 2397,
+        "proportion": 0.06132665832290363
+      },
+      "unknown": {
+        "count": 55,
+        "total": 2397,
+        "proportion": 0.0229453483521068
+      }
+    }
+  },
+  "asserted_status_codes": {
+    "attributed_assertion_counts": {
+      "200": {
+        "count": 26167,
+        "total": 43859,
+        "proportion": 0.5966164299231629
+      },
+      "201": {
+        "count": 7039,
+        "total": 43859,
+        "proportion": 0.16049157527531407
+      },
+      "202": {
+        "count": 163,
+        "total": 43859,
+        "proportion": 0.0037164550035340524
+      },
+      "204": {
+        "count": 1359,
+        "total": 43859,
+        "proportion": 0.0309856585877471
+      },
+      "206": {
+        "count": 14,
+        "total": 43859,
+        "proportion": 0.0003192047242299186
+      },
+      "301": {
+        "count": 5,
+        "total": 43859,
+        "proportion": 0.00011400168722497094
+      },
+      "302": {
+        "count": 221,
+        "total": 43859,
+        "proportion": 0.005038874575343715
+      },
+      "304": {
+        "count": 2,
+        "total": 43859,
+        "proportion": 4.5600674889988374e-05
+      },
+      "400": {
+        "count": 1133,
+        "total": 43859,
+        "proportion": 0.025832782325178414
+      },
+      "401": {
+        "count": 1823,
+        "total": 43859,
+        "proportion": 0.041565015162224404
+      },
+      "403": {
+        "count": 2172,
+        "total": 43859,
+        "proportion": 0.04952233293052737
+      },
+      "404": {
+        "count": 2353,
+        "total": 43859,
+        "proportion": 0.05364919400807132
+      },
+      "405": {
+        "count": 166,
+        "total": 43859,
+        "proportion": 0.003784856015869035
+      },
+      "406": {
+        "count": 10,
+        "total": 43859,
+        "proportion": 0.00022800337444994187
+      },
+      "409": {
+        "count": 21,
+        "total": 43859,
+        "proportion": 0.0004788070863448779
+      },
+      "422": {
+        "count": 971,
+        "total": 43859,
+        "proportion": 0.022139127659089354
+      },
+      "500": {
+        "count": 230,
+        "total": 43859,
+        "proportion": 0.005244077612348663
+      },
+      "503": {
+        "count": 10,
+        "total": 43859,
+        "proportion": 0.00022800337444994187
+      }
+    },
+    "endpoints_with_code": {
+      "200": {
+        "count": 1050,
+        "total": 1171,
+        "proportion": 0.89666951323655
+      },
+      "201": {
+        "count": 80,
+        "total": 1171,
+        "proportion": 0.06831767719897523
+      },
+      "202": {
+        "count": 14,
+        "total": 1171,
+        "proportion": 0.011955593509820665
+      },
+      "204": {
+        "count": 35,
+        "total": 1171,
+        "proportion": 0.029888983774551667
+      },
+      "206": {
+        "count": 7,
+        "total": 1171,
+        "proportion": 0.005977796754910333
+      },
+      "301": {
+        "count": 1,
+        "total": 1171,
+        "proportion": 0.0008539709649871904
+      },
+      "302": {
+        "count": 34,
+        "total": 1171,
+        "proportion": 0.029035012809564473
+      },
+      "304": {
+        "count": 2,
+        "total": 1171,
+        "proportion": 0.0017079419299743809
+      },
+      "400": {
+        "count": 122,
+        "total": 1171,
+        "proportion": 0.10418445772843724
+      },
+      "401": {
+        "count": 80,
+        "total": 1171,
+        "proportion": 0.06831767719897523
+      },
+      "403": {
+        "count": 114,
+        "total": 1171,
+        "proportion": 0.09735269000853972
+      },
+      "404": {
+        "count": 140,
+        "total": 1171,
+        "proportion": 0.11955593509820667
+      },
+      "405": {
+        "count": 28,
+        "total": 1171,
+        "proportion": 0.02391118701964133
+      },
+      "406": {
+        "count": 10,
+        "total": 1171,
+        "proportion": 0.008539709649871904
+      },
+      "409": {
+        "count": 14,
+        "total": 1171,
+        "proportion": 0.011955593509820665
+      },
+      "422": {
+        "count": 59,
+        "total": 1171,
+        "proportion": 0.05038428693424424
+      },
+      "500": {
+        "count": 96,
+        "total": 1171,
+        "proportion": 0.08198121263877028
+      },
+      "503": {
+        "count": 10,
+        "total": 1171,
+        "proportion": 0.008539709649871904
+      }
+    }
+  },
+  "per_endpoint": {
+    "attributed_request_count_among_attributed": {
+      "count": 1186,
+      "min": 1.0,
+      "max": 11682.0,
+      "mean": 102.2504215851602,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 4.0,
+      "p90": 15.0
+    },
+    "status_asserted_request_count_among_asserted": {
+      "count": 1171,
+      "min": 1.0,
+      "max": 3970.0,
+      "mean": 39.49274124679761,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 4.0,
+      "p90": 14.0
+    },
+    "asserting_test_count_among_asserted": {
+      "count": 1171,
+      "min": 1.0,
+      "max": 1297.0,
+      "mean": 22.99060631938514,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 4.0,
+      "p90": 12.0
+    }
+  }
+}

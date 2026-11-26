@@ -1,0 +1,71 @@
+{
+  "target_classes": 2,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 0,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "13b102d116e0396630652026524b2429d4d594395ad09cec6f990f5641c6c11a",
+  "runs": [
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 3.8,
+      "peak_memory_bytes": 461324288
+    },
+    {
+      "module": "dspace-server-webapp",
+      "threads": 1,
+      "seconds": 4.1,
+      "peak_memory_bytes": 471199744
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "org.dspace.app.rest.converter.ConverterService|requireProjection|(Ljava/lang/String;)Lorg/dspace/app/rest/projection/Projection;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|7",
+      "mutated_class": "org.dspace.app.rest.converter.ConverterService",
+      "mutated_method": "requireProjection",
+      "line": 368,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.app.rest.converter.ConverterService|toRestPage|(Ljava/util/List;Lorg/springframework/data/domain/Pageable;Lorg/dspace/app/rest/projection/Projection;)Lorg/springframework/data/domain/Page;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|4",
+      "mutated_class": "org.dspace.app.rest.converter.ConverterService",
+      "mutated_method": "toRestPage",
+      "line": 205,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.core.Utils|parseDuration|(Ljava/lang/String;)J|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|60",
+      "mutated_class": "org.dspace.core.Utils",
+      "mutated_method": "parseDuration",
+      "line": 295,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.dspace.core.Utils|toHex|([B)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|4",
+      "mutated_class": "org.dspace.core.Utils",
+      "mutated_method": "toHex",
+      "line": 153,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    }
+  ]
+}

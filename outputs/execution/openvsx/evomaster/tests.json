@@ -1,0 +1,6075 @@
+{
+  "commit": "45863019ec2134678b86aa4fb6b49de0f70edfbf",
+  "tests": [
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_0_getOnSitemap_xmlReturnsContent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_1_getOnSitemap_xmlReturnsContent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_2_getOnUserReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_3_getOnUserReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_4_getOnUserReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_5_getOnSitemap_xmlReturnsContent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_6_getOnLogin_providersWithQueryParamsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_7_getOnLogin_providersReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_8_getOnSitemap_xmlReturnsContent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_9_getOnLogin_providersReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_10_getOnUserReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_11_getOnLogShowsFaults_100_203()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_12_getOnAdminStatsWithQueryParamReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_13_getOnExtensionsReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_14_getOnCsrfReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_15_getOnCsrfReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_16_getOnUserTokensWithQueryParamReturns1Element()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_17_getOnUserTokensWithQueryParamsReturns1Element()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_18_getOnNamespacesReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_19_getOnAdminLogWithQueryParamsReturnsEmpty()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_20_getOnAdminLogWithQueryParamReturnsEmpty()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_21_getOnTokensReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_22_getOnUserNamespacesReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_23_getOnExtensionsReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_24_getOnUserCsrfWithQueryParamsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_25_getOnUserExtensionsWithQueryParamsReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_26_getOnAdminStatsWithQueryParamsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_27_getOnNamespacesReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_28_postOnAdminUpdate_search_indexReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_29_postOnAdminUpdate_search_indexWithQueryParamsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_30_optionsOnPublisher_agreementReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_31_optionsOnUpdate_search_indexReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_32_postOnCreate_namespaceReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_33_postOnAdminCreate_namespaceReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_34_postOnCreate_namespaceReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_35_postOnCreate_namespaceReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_36_postOnCreate_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_37_getOnLogReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_38_postOnCreate_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_39_postOnCreate_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_40_postOnCreate_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_41_postOnChange_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_42_postOnChange_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_43_postOnChange_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_44_postOnPublisher_agreementReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_45_postOnChange_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_46_postOnPublisher_agreementReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_47_postOnChange_namespaceReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_48_getOnReport403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_49_getOnReport403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_50_getOnReport403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_51_getOnExtensions403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_52_getOnTokens403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_53_getOnNamespaces403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_54_getOnCsrf403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_55_getOnAdminStatsWithQueryParam403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_56_getOnAdminStats403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_57_getOnReport403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_58_getOnLog403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_59_getOnLog403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_60_getOnReport403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_61_getOnReport403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_62_postOnCreate_namespace403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_63_postOnChange_namespace403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_64_postOnChange_namespace403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_65_postOnPublisher_agreement403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_66_postOnAdminUpdate_search_indexWithQueryParam403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_67_postOnAdminUpdate_search_index403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_68_postOnCreate_namespace403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_69_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_70_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_71_getOnUserAuth_errorReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_72_getOnApiVersionWithQueryParamReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_73_getOnApiVersionWithQueryParamsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_74_getOnUserAuth_errorWithQueryParamsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_75_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_76_getOnQueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_77_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_78_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_79_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_80_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_81_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_82_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_83_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_84_getOnQueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_85_getOnSearchCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_86_postOnExtensionqueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_87_postOnExtensionqueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_88_postOnExtensionqueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_89_postOnExtensionqueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_90_postOnExtensionqueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_91_postOnExtensionqueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_92_postOnExtensionqueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_93_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_94_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_95_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_96_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_97_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_98_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_99_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_100_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_101_getOnUserSearchWithQueryParamReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_102_getOnUserSearchWithQueryParamsReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_103_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_104_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_105_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_106_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_107_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_108_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_109_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_110_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_111_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_112_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_113_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_114_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_115_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_116_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_117_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_118_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_119_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_120_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_121_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_122_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_123_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_124_getOnUserSearchReturnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_125_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_126_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_127_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_128_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_129_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_130_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_131_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_132_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_133_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_134_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_135_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_136_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_137_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_138_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_139_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_140_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_141_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_142_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_143_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_144_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_145_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_146_getOnSearchReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_147_getOnUserPublishHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_148_getOn_PublishHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_149_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_150_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_151_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_152_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_153_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_154_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_155_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_156_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_157_postOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_158_optionsOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_159_optionsOnTokenCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_160_optionsOnUserPublishInvalidAllow()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_161_optionsOnUserPublishReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_162_optionsOnQueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_163_optionsOn_PublishInvalidAllow()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_164_optionsOn_PublishReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_165_postOnCreateVulnerableToXSS()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_166_postOnCreateReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_167_postOnTokenCreateWithQueryParamReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_168_postOnCreateReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_169_postOnQueryReturns301()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_170_postOnQueryReturns301()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_171_postOnQueryReturns301()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_172_postOn_QueryReturns301()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_173_postOn_QueryWithQueryParamsReturns301()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_174_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_175_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_176_getOnVerify_patReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_177_getOnVerify_patReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_178_getOnApiVerify_patWithQueryParamsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_179_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_180_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_181_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_182_getOnApiReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_183_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_184_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_185_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_186_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_187_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_188_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_189_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_190_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_191_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_192_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_193_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_194_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_195_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_196_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_197_getOnDetailsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_198_getOnSearchReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_199_getOnNamespacReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_200_postOnUserPublishWithQueryParamReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_201_postOnUserPublishReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_202_postOnPublishReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_203_postOnUserPublishWithQueryParamsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_204_postOnPublishReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_205_postOnPublishReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_206_getOnNamespac403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_207_getOnSearch403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_208_getOnNamespac403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_209_getOnNamespacShowsFaults_203_304()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_210_postOnTokenCreateWithQueryParam403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_211_postOnPublish403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_212_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_213_getOnNamespacReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_214_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_215_getOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_216_getOnApiDetailsWithQueryParamsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_217_getOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_218_getOnNamespacReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_219_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_220_getOnQueryCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_221_getOnVersionsCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_222_getOnVersion_referencesCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_223_getOnVersionsCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_224_postOnRoleCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_225_postOnRoleCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_226_postOnRoleCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_227_postOnRoleCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_228_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_229_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_230_getOnWithQueryParamsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_231_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_232_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_233_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_234_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_235_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_236_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_237_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_238_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_239_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_240_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_241_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_242_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_243_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_244_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_245_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_246_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_247_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_248_getOnApiVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_249_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_250_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_251_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_252_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_253_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_254_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_255_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_256_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_257_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_258_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_259_getOnWithQueryParamReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_260_getOnMembersReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_261_getOnMembersReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_262_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_263_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_264_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_265_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_266_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_267_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_268_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_269_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_270_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_271_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_272_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_273_getOnQueryReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_274_postOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_275_postOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_276_postOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_277_postOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_278_postOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_279_postOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_280_postOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_281_optionsOnDeletReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_282_optionsOnRoleReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_283_optionsOnDetailsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_284_optionsOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_285_optionsOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_286_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_287_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_288_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_289_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_290_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_291_getOnVersion_referencesReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_292_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_293_getOnVersionsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_294_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_295_getOnVersion_referencesReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_296_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_297_getOnWithQueryParamReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_298_getOnMembersReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_299_getOnVersion_referencesReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_300_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_301_getOnQueryReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_302_getOnPublishReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_303_getOnLogoReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_304_getOnLogoReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_305_getOnPublic_keiReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_306_getOnVersionsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_307_getOnMembersReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_308_getOnApiReviewsWithQueryParamReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_309_getOnApiReviewsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_310_getOnVersionsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_311_postOnCreateReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_312_postOnCreateReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_313_postOnChange_memberReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_314_postOnChange_memberReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_315_postOnChange_memberReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_316_postOnChange_memberReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_317_postOnRoleReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_318_postOnChange_memberReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_319_postOnDetailsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_320_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_321_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_322_getOnPublish403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_323_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_324_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_325_getOnWithQueryParam403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_326_getOnExtens403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_327_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_328_getOnPublish403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_329_getOnPublishShowsFaults_203_304()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_330_getOnExtensShowsFaults_203_304()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_331_postOnDelet403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_332_postOnNamespaceCreateWithQueryParam403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_333_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_334_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_335_postOnRole403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_336_postOnDetails403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_337_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_338_getOnExtensReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_339_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_340_getOnReviewsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_341_getOnPublic_keiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_342_getOnPublic_keiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_343_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_344_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_345_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_346_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_347_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_348_getOnPublishReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_349_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_350_getOnApiReviewsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_351_getOnReviewsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_352_getOnLogoReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_353_getOnLogoReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_354_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_355_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_356_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_357_getOn_Public_keiWithQueryParamsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_358_getOnExtensReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_359_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_360_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_361_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_362_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_363_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_364_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_365_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_366_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_367_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_368_getOnReviewsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_369_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_370_getOnPublic_keiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_371_getOnPublic_keiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_372_getOnPublic_keiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_373_getOnLogoReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_374_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_375_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_376_postOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_377_postOnTokenDeletWithQueryParamReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_378_postOnTokenDeletWithQueryParamsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_379_postOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_380_postOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_381_postOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_382_postOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_383_postOnDetailsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_384_getOnApiReturns405()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_385_postOnCreate415WhenNoPayload()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_386_getOnVersionsCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_387_getOnVersion_referencesCauses500_internalServerError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_388_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_389_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_390_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_391_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_392_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_393_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_394_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_395_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_396_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_397_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_398_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_399_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_400_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_401_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_402_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_403_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_404_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_405_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_406_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_407_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_408_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_409_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_410_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_411_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_412_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_413_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_414_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_415_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_416_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_417_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_418_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_419_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_420_getOnVersion_referencesReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_421_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_422_getOnVersionsReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_423_postOnDeleteReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_424_postOnRevokeReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_425_postOnRevokeReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_426_postOnExtensDeleteWithQueryParamReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_427_postOnDeleteReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_428_optionsOnLogoReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_429_optionsOnRevokeReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_430_getOnVersionsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_431_getOnVersion_referencesReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_432_getOnVersion_referencesReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_433_getOnLatestReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_434_getOnVersion_referencesReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_435_getOnVersion_referencesReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_436_getOnApiReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_437_postOnDetailsLogoWithQueryParamsReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_438_postOnDetailsLogoReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_439_postOnDeleteReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_440_postOnChange_memberReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_441_postOnRevokeReturns400()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_442_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_443_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_444_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_445_getOnMembers403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_446_postOnPublishRevokeWithQueryParams403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_447_postOnPublishRevoke403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_448_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_449_postOnExtensDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_450_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_451_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_452_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_453_postOnDetailsLogoWithQueryParams403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_454_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_455_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_456_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_457_postOnDetailsLogo403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_458_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_459_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_460_postOnChange_member403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_461_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_462_getOnLatestReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_463_getOnLatestReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_464_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_465_getOnLatestReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_466_getOnLatestReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_467_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_468_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_469_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_470_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_471_getOnVersionsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_472_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_473_getOnVersion_referencesReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_474_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_475_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_476_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_477_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_478_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_479_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_480_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_481_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_482_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_483_getOnLatestReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_484_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_485_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_486_getOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_487_postOnDeleteReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_488_postOnDeleteReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_489_postOnDeleteReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_490_postOnPublishRevokeWithQueryParamReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_491_postOnPublishRevokeWithQueryParamsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_492_postOnExtensDeleteWithQueryParamsReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_493_postOnLogo415WhenNoPayload()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_494_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_495_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_496_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_497_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_498_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "method_signature": "test_499_postOnDelete403WhenNo401()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_0_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_0_getOnRootReturnsObject()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_1_optionsOnUserReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_2_optionsOnSitemap_xmlReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_3_optionsOnLogin_providersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_4_optionsOnUserReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_5_optionsOnSitemap_xmlReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_6_optionsOnLogin_providersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_7_optionsOnCreate_namespaceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_8_optionsOnChange_namespaceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_9_optionsOnTokensReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_10_optionsOnNamespacesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_11_optionsOnExtensionsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_12_optionsOnCsrfReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_13_optionsOnAuth_errorReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_14_optionsOnApiReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_15_optionsOnVersionReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_16_optionsOnStatsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_17_optionsOnReportReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_18_optionsOnLogReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_19_optionsOnPublisher_agreementReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_20_optionsOnUpdate_search_indexReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_21_optionsOnCreate_namespaceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_22_optionsOnChange_namespaceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_23_optionsOnTokensReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_24_optionsOnNamespacesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_25_optionsOnExtensionsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_26_optionsOnCsrfReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_27_optionsOnAuth_errorReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_28_optionsOnApiReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_29_optionsOnVersionReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_30_optionsOnStatsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_31_optionsOnReportReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_32_optionsOnLogReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_33_optionsOnSearchReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_34_optionsOnApiReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_35_optionsOnVerify_patReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_36_optionsOnDetailsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_37_optionsOnSearchReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_38_optionsOnNamespacReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_39_optionsOnExtensionqueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_40_optionsOnTokenCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_41_optionsOnQueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_42_optionsOnSearchReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_43_optionsOnApiReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_44_optionsOnVerify_patReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_45_optionsOnDetailsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_46_optionsOnSearchReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_47_optionsOnNamespacReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_48_optionsOnChange_memberReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_49_optionsOnMembersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_50_optionsOnApiReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_51_optionsOnVersionsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_52_optionsOnVersionsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_53_optionsOnVersion_referencesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_54_optionsOnReviewsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_55_optionsOnLogoReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_56_optionsOnQueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_57_optionsOnPublic_keiReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_58_optionsOnPublishReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_59_optionsOnMembersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_60_optionsOnExtensReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_61_optionsOnDeletReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_62_optionsOnRoleReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_63_optionsOnNamespacDetailsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_64_optionsOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_65_optionsOnCreateReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_66_optionsOnChange_memberReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_67_optionsOnMembersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_68_optionsOnVersion_referencesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_69_optionsOnReviewsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_70_optionsOnLogoReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_71_optionsOnQueryReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_72_optionsOnPublic_keiReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_73_optionsOnPublishReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_74_optionsOnMembersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_75_optionsOnExtensReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_76_traceOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_77_postOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_78_putOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_79_deleteOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_80_optionsOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_81_optionsOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_82_optionsOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_83_patchOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_84_optionsOnDeleteReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_85_optionsOnChange_memberReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_86_optionsOnLatestReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_87_optionsOnVersionsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_88_optionsOnVersion_referencesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_89_optionsOnMembersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_90_optionsOnMembersReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_91_optionsOnDetailsLogoReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_92_optionsOnRevokeReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_93_optionsOnDeleteReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_94_optionsOnChange_memberReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_95_optionsOnLatestReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_96_optionsOnVersionsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_97_optionsOnVersion_referencesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_98_traceOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_99_postOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_100_putOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_101_deleteOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_102_optionsOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_103_optionsOnApiReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_104_patchOnApiHiddenAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_105_optionsOnDeleteReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    },
+    {
+      "class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "method_signature": "test_106_optionsOnDeleteReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "em.generated.EvoMaster_openvsx_1_Test",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,1026 @@
+{
+  "seed": "23",
+  "size": 100,
+  "per_project_cap": 2,
+  "excluded_datasets": [],
+  "universe": {
+    "project_count": 350,
+    "api_test_count": 34489,
+    "by_step_count": {
+      "single_step": 20785,
+      "multi_step": 13704
+    }
+  },
+  "sample": {
+    "digest": "cde0cb5614052d06df99e753cb4b55f72d153361d29621ad8d99be15f461f940",
+    "test_count": 100,
+    "project_count": 77,
+    "by_step_count": {
+      "single_step": 69,
+      "multi_step": 31
+    },
+    "with_helper_or_fixture_http": 38
+  },
+  "tests": [
+    {
+      "test_id": "camunda_camunda-bpm-platform::org.camunda.bpm.engine.rest.history.HistoricActivityStatisticsRestServiceQueryTest::testAdditionalStartedAfterOption()",
+      "dataset_name": "camunda_camunda-bpm-platform",
+      "checkout": "camunda_camunda-bpm-platform",
+      "qualified_class_name": "org.camunda.bpm.engine.rest.history.HistoricActivityStatisticsRestServiceQueryTest",
+      "method_signature": "testAdditionalStartedAfterOption()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "quarkusio_quarkus::io.quarkus.it.cache.CaffeineTestCase::test()",
+      "dataset_name": "quarkusio_quarkus",
+      "checkout": "quarkusio_quarkus",
+      "qualified_class_name": "io.quarkus.it.cache.CaffeineTestCase",
+      "method_signature": "test()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "camunda_camunda-bpm-platform::org.camunda.bpm.engine.rest.ProcessInstanceRestServiceInteractionTest::testActivateProcessInstanceByProcessDefinitionIdThrowsAuthorizationException()",
+      "dataset_name": "camunda_camunda-bpm-platform",
+      "checkout": "camunda_camunda-bpm-platform",
+      "qualified_class_name": "org.camunda.bpm.engine.rest.ProcessInstanceRestServiceInteractionTest",
+      "method_signature": "testActivateProcessInstanceByProcessDefinitionIdThrowsAuthorizationException()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_james-project::org.apache.james.webadmin.routes.DomainMappingsRoutesTest.NormalBehaviour::getDomainMappingsShouldFilterNonDomainMappings()",
+      "dataset_name": "apache_james-project",
+      "checkout": "apache_james-project",
+      "qualified_class_name": "org.apache.james.webadmin.routes.DomainMappingsRoutesTest.NormalBehaviour",
+      "method_signature": "getDomainMappingsShouldFilterNonDomainMappings()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "quarkusio_quarkus::io.quarkus.it.openapi.jaxrs.IntegerTest::testJustIntegerInJaxRsOpenAPIResponse()",
+      "dataset_name": "quarkusio_quarkus",
+      "checkout": "quarkusio_quarkus",
+      "qualified_class_name": "io.quarkus.it.openapi.jaxrs.IntegerTest",
+      "method_signature": "testJustIntegerInJaxRsOpenAPIResponse()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "apache_cxf::org.apache.cxf.systest.jaxrs.cors.CrossOriginSimpleTest::testNonSimpleActualRequest()",
+      "dataset_name": "apache_cxf",
+      "checkout": "apache_cxf",
+      "qualified_class_name": "org.apache.cxf.systest.jaxrs.cors.CrossOriginSimpleTest",
+      "method_signature": "testNonSimpleActualRequest()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spotify_helios::com.spotify.helios.system.AgentReportingTest::verifyAgentReportsDockerVersion()",
+      "dataset_name": "spotify_helios",
+      "checkout": "spotify_helios",
+      "qualified_class_name": "com.spotify.helios.system.AgentReportingTest",
+      "method_signature": "verifyAgentReportsDockerVersion()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "DSpace_DSpace::org.dspace.app.rest.signposting.controller.LinksetRestControllerIT::findTypedLinkForBitstreamOfWorkspaceItem()",
+      "dataset_name": "DSpace_DSpace",
+      "checkout": "DSpace_DSpace",
+      "qualified_class_name": "org.dspace.app.rest.signposting.controller.LinksetRestControllerIT",
+      "method_signature": "findTypedLinkForBitstreamOfWorkspaceItem()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "OpenBAS-Platform_openbas::io.openbas.rest.inject.InjectTargetSearchTest.WithTeamsSearch.WhenGettingOptionsForInjectTargets::whenTeamsAreTargets_returnAllPossibleTargets()",
+      "dataset_name": "OpenBAS-Platform_openbas",
+      "checkout": "OpenBAS-Platform_openbas",
+      "qualified_class_name": "io.openbas.rest.inject.InjectTargetSearchTest.WithTeamsSearch.WhenGettingOptionsForInjectTargets",
+      "method_signature": "whenTeamsAreTargets_returnAllPossibleTargets()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_james-project::org.apache.james.webadmin.routes.UserRoutesTest.WithVirtualHosting::putShouldFailWhenConflictWithGroup(org.apache.james.rrt.api.RecipientRewriteTable)",
+      "dataset_name": "apache_james-project",
+      "checkout": "apache_james-project",
+      "qualified_class_name": "org.apache.james.webadmin.routes.UserRoutesTest.WithVirtualHosting",
+      "method_signature": "putShouldFailWhenConflictWithGroup(org.apache.james.rrt.api.RecipientRewriteTable)",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "alibaba_fastjson::com.alibaba.json.bvt.support.spring.mock.testcase.FastJsonHttpMessageConverterTest::test4()",
+      "dataset_name": "alibaba_fastjson",
+      "checkout": "alibaba_fastjson",
+      "qualified_class_name": "com.alibaba.json.bvt.support.spring.mock.testcase.FastJsonHttpMessageConverterTest",
+      "method_signature": "test4()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_linkis::org.apache.linkis.udf.api.UDFRestfulApiTest::allUdfUsersTest()",
+      "dataset_name": "apache_linkis",
+      "checkout": "apache_linkis",
+      "qualified_class_name": "org.apache.linkis.udf.api.UDFRestfulApiTest",
+      "method_signature": "allUdfUsersTest()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_gravitino::org.apache.gravitino.cli.integration.test.TableFormatOutputIT::testMetalakeListCommand()",
+      "dataset_name": "apache_gravitino",
+      "checkout": "apache_gravitino",
+      "qualified_class_name": "org.apache.gravitino.cli.integration.test.TableFormatOutputIT",
+      "method_signature": "testMetalakeListCommand()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "apache_kylin::org.apache.kylin.rest.controller.QuerySQLBlacklistControllerTest::testAddItem()",
+      "dataset_name": "apache_kylin",
+      "checkout": "apache_kylin",
+      "qualified_class_name": "org.apache.kylin.rest.controller.QuerySQLBlacklistControllerTest",
+      "method_signature": "testAddItem()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "DSpace_DSpace::org.dspace.app.rest.GroupRestRepositoryIT::collectionAdminAddChildGroupToCollectionAdminGroupPropertySetToFalse()",
+      "dataset_name": "DSpace_DSpace",
+      "checkout": "DSpace_DSpace",
+      "qualified_class_name": "org.dspace.app.rest.GroupRestRepositoryIT",
+      "method_signature": "collectionAdminAddChildGroupToCollectionAdminGroupPropertySetToFalse()",
+      "occurrence": 0,
+      "step_count": 8,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "apache_incubator-kie-kogito-runtimes::org.kie.kogito.integrationtests.quarkus.SignalProcessIT::testSignalStartProcess()",
+      "dataset_name": "apache_incubator-kie-kogito-runtimes",
+      "checkout": "apache_incubator-kie-kogito-runtimes",
+      "qualified_class_name": "org.kie.kogito.integrationtests.quarkus.SignalProcessIT",
+      "method_signature": "testSignalStartProcess()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_hertzbeat::org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest::testGetAlertSilenceNotExists()",
+      "dataset_name": "apache_hertzbeat",
+      "checkout": "apache_hertzbeat",
+      "qualified_class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "method_signature": "testGetAlertSilenceNotExists()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spinnaker_spinnaker::com.netflix.kayenta.tests.ManagementTest::healthIsUp()",
+      "dataset_name": "spinnaker_spinnaker",
+      "checkout": "spinnaker_spinnaker",
+      "qualified_class_name": "com.netflix.kayenta.tests.ManagementTest",
+      "method_signature": "healthIsUp()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "flowable_flowable-engine::org.flowable.external.job.rest.service.api.query.ExternalWorkerJobCollectionResourceTest::testQueryByElementName()",
+      "dataset_name": "flowable_flowable-engine",
+      "checkout": "flowable_flowable-engine",
+      "qualified_class_name": "org.flowable.external.job.rest.service.api.query.ExternalWorkerJobCollectionResourceTest",
+      "method_signature": "testQueryByElementName()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "zalando_nakadi::org.zalando.nakadi.controller.PartitionsControllerTest::whenGetPartitionWithConsumedOffsetThenOk()",
+      "dataset_name": "zalando_nakadi",
+      "checkout": "zalando_nakadi",
+      "qualified_class_name": "org.zalando.nakadi.controller.PartitionsControllerTest",
+      "method_signature": "whenGetPartitionWithConsumedOffsetThenOk()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "steve-community_steve::de.rwth.idsg.steve.web.api.OcppTagsRestControllerTest::test10()",
+      "dataset_name": "steve-community_steve",
+      "checkout": "steve-community_steve",
+      "qualified_class_name": "de.rwth.idsg.steve.web.api.OcppTagsRestControllerTest",
+      "method_signature": "test10()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "facebook_stetho::com.facebook.stetho.okhttp3.StethoInterceptorTest::testWithRequestCompression()",
+      "dataset_name": "facebook_stetho",
+      "checkout": "facebook_stetho",
+      "qualified_class_name": "com.facebook.stetho.okhttp3.StethoInterceptorTest",
+      "method_signature": "testWithRequestCompression()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spring-cloud_spring-cloud-gateway::org.springframework.cloud.gateway.webflux.ProductionConfigurationTests::resource()",
+      "dataset_name": "spring-cloud_spring-cloud-gateway",
+      "checkout": "spring-cloud_spring-cloud-gateway",
+      "qualified_class_name": "org.springframework.cloud.gateway.webflux.ProductionConfigurationTests",
+      "method_signature": "resource()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "WeBankBlockchain_WeEvent::com.webank.weevent.processor.ServiceTest::deleteRule()",
+      "dataset_name": "WeBankBlockchain_WeEvent",
+      "checkout": "WeBankBlockchain_WeEvent",
+      "qualified_class_name": "com.webank.weevent.processor.ServiceTest",
+      "method_signature": "deleteRule()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "hyperledger_besu::org.hyperledger.besu.RunnerTest::fullSyncFromGenesisUsingPeerTaskSystem()",
+      "dataset_name": "hyperledger_besu",
+      "checkout": "hyperledger_besu",
+      "qualified_class_name": "org.hyperledger.besu.RunnerTest",
+      "method_signature": "fullSyncFromGenesisUsingPeerTaskSystem()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "nashtech-garage_yas::com.yas.search.controller.ProductControllerTest::testProductSearchAutoComplete_whenProductNameList_thenReturnProductNameListVm()",
+      "dataset_name": "nashtech-garage_yas",
+      "checkout": "nashtech-garage_yas",
+      "qualified_class_name": "com.yas.search.controller.ProductControllerTest",
+      "method_signature": "testProductSearchAutoComplete_whenProductNameList_thenReturnProductNameListVm()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_hertzbeat::org.apache.hertzbeat.manager.controller.StatusPageControllerTest::testDeleteStatusPageComponent()",
+      "dataset_name": "apache_hertzbeat",
+      "checkout": "apache_hertzbeat",
+      "qualified_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testDeleteStatusPageComponent()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "cloudfoundry_uaa::org.cloudfoundry.identity.uaa.mock.token.TokenMvcMockTests::authorization_code_missing_required_scopes()",
+      "dataset_name": "cloudfoundry_uaa",
+      "checkout": "cloudfoundry_uaa",
+      "qualified_class_name": "org.cloudfoundry.identity.uaa.mock.token.TokenMvcMockTests",
+      "method_signature": "authorization_code_missing_required_scopes()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "cloudfoundry_uaa::org.cloudfoundry.identity.uaa.mock.audit.AuditCheckMockMvcTests::invalidPasswordLoginAuthenticateEndpointTest()",
+      "dataset_name": "cloudfoundry_uaa",
+      "checkout": "cloudfoundry_uaa",
+      "qualified_class_name": "org.cloudfoundry.identity.uaa.mock.audit.AuditCheckMockMvcTests",
+      "method_signature": "invalidPasswordLoginAuthenticateEndpointTest()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "jboss-developer_jboss-eap-quickstarts::org.jboss.as.quickstarts.servlet_security.RemoteSecureIT::testConnectOk()",
+      "dataset_name": "jboss-developer_jboss-eap-quickstarts",
+      "checkout": "jboss-developer_jboss-eap-quickstarts",
+      "qualified_class_name": "org.jboss.as.quickstarts.servlet_security.RemoteSecureIT",
+      "method_signature": "testConnectOk()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_incubator-kie-kogito-runtimes::org.kie.kogito.integrationtests.springboot.MessageSenderReceiverTest::testMessageSignalBetweenProcessInstances()",
+      "dataset_name": "apache_incubator-kie-kogito-runtimes",
+      "checkout": "apache_incubator-kie-kogito-runtimes",
+      "qualified_class_name": "org.kie.kogito.integrationtests.springboot.MessageSenderReceiverTest",
+      "method_signature": "testMessageSignalBetweenProcessInstances()",
+      "occurrence": 0,
+      "step_count": 7,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "apache_pulsar::org.apache.pulsar.jetty.tls.JettySslContextFactoryWithKeyStoreTest::testJettyTlsServerInvalidTlsProtocol()",
+      "dataset_name": "apache_pulsar",
+      "checkout": "apache_pulsar",
+      "qualified_class_name": "org.apache.pulsar.jetty.tls.JettySslContextFactoryWithKeyStoreTest",
+      "method_signature": "testJettyTlsServerInvalidTlsProtocol()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "thingsboard_thingsboard::org.thingsboard.server.msa.ui.tests.deviceProfileSmoke.CreateDeviceProfileTest::createDeviceProfileWithoutName()",
+      "dataset_name": "thingsboard_thingsboard",
+      "checkout": "thingsboard_thingsboard",
+      "qualified_class_name": "org.thingsboard.server.msa.ui.tests.deviceProfileSmoke.CreateDeviceProfileTest",
+      "method_signature": "createDeviceProfileWithoutName()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "quarkusio_quarkus-quickstarts::org.acme.microprofile.faulttolerance.BaseTest::testAvailability()",
+      "dataset_name": "quarkusio_quarkus-quickstarts",
+      "checkout": "quarkusio_quarkus-quickstarts",
+      "qualified_class_name": "org.acme.microprofile.faulttolerance.BaseTest",
+      "method_signature": "testAvailability()",
+      "occurrence": 0,
+      "step_count": 5,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "resteasy_resteasy::org.jboss.resteasy.test.rx.rxjava2.Rx2FlowableServerAsyncTest::testPut()",
+      "dataset_name": "resteasy_resteasy",
+      "checkout": "resteasy_resteasy",
+      "qualified_class_name": "org.jboss.resteasy.test.rx.rxjava2.Rx2FlowableServerAsyncTest",
+      "method_signature": "testPut()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_kylin::org.apache.kylin.event.ModelSemanticTest::testChange_WithReadySegment()",
+      "dataset_name": "apache_kylin",
+      "checkout": "apache_kylin",
+      "qualified_class_name": "org.apache.kylin.event.ModelSemanticTest",
+      "method_signature": "testChange_WithReadySegment()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "wso2_product-is::org.wso2.identity.integration.test.oauth2.OAuth2AuthorizationCodeGrantJWTTokenTestCase::testSendLoginPost()",
+      "dataset_name": "wso2_product-is",
+      "checkout": "wso2_product-is",
+      "qualified_class_name": "org.wso2.identity.integration.test.oauth2.OAuth2AuthorizationCodeGrantJWTTokenTestCase",
+      "method_signature": "testSendLoginPost()",
+      "occurrence": 0,
+      "step_count": 8,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "Project-Books_book-project::com.karankumar.bookproject.integration.UserControllerIntegrationTest::shouldNotLoginIfWrongCredentials()",
+      "dataset_name": "Project-Books_book-project",
+      "checkout": "Project-Books_book-project",
+      "qualified_class_name": "com.karankumar.bookproject.integration.UserControllerIntegrationTest",
+      "method_signature": "shouldNotLoginIfWrongCredentials()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "GIScience_openrouteservice::org.heigit.ors.apitests.routing.ResultTest::testCustomProfileAvoidByMaxSpeed()",
+      "dataset_name": "GIScience_openrouteservice",
+      "checkout": "GIScience_openrouteservice",
+      "qualified_class_name": "org.heigit.ors.apitests.routing.ResultTest",
+      "method_signature": "testCustomProfileAvoidByMaxSpeed()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "exadel-inc_CompreFace::com.exadel.frs.core.trainservice.controller.EmbeddingControllerTest::testListEmbeddings()",
+      "dataset_name": "exadel-inc_CompreFace",
+      "checkout": "exadel-inc_CompreFace",
+      "qualified_class_name": "com.exadel.frs.core.trainservice.controller.EmbeddingControllerTest",
+      "method_signature": "testListEmbeddings()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "OpenBAS-Platform_openbas::io.openbas.rest.inject.InjectExportTest.WithAdminAuthorisation.WithEmbeddedTeamsExportOption::returnedTeamsAreCorrect()",
+      "dataset_name": "OpenBAS-Platform_openbas",
+      "checkout": "OpenBAS-Platform_openbas",
+      "qualified_class_name": "io.openbas.rest.inject.InjectExportTest.WithAdminAuthorisation.WithEmbeddedTeamsExportOption",
+      "method_signature": "returnedTeamsAreCorrect()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "spring-cloud_spring-cloud-stream::org.springframework.cloud.stream.schema.registry.server.SchemaRegistryServerAvroTests::schemaDeletionBySubjectNotAllowed()",
+      "dataset_name": "spring-cloud_spring-cloud-stream",
+      "checkout": "spring-cloud_spring-cloud-stream",
+      "qualified_class_name": "org.springframework.cloud.stream.schema.registry.server.SchemaRegistryServerAvroTests",
+      "method_signature": "schemaDeletionBySubjectNotAllowed()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "thingsboard_thingsboard::org.thingsboard.server.transport.mqtt.mqttv3.telemetry.timeseries.AbstractMqttTimeseriesIntegrationTest::testGatewayConnect()",
+      "dataset_name": "thingsboard_thingsboard",
+      "checkout": "thingsboard_thingsboard",
+      "qualified_class_name": "org.thingsboard.server.transport.mqtt.mqttv3.telemetry.timeseries.AbstractMqttTimeseriesIntegrationTest",
+      "method_signature": "testGatewayConnect()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "glowroot_glowroot::org.glowroot.tests.GaugeConfigIT::shouldDeleteGauge()",
+      "dataset_name": "glowroot_glowroot",
+      "checkout": "glowroot_glowroot",
+      "qualified_class_name": "org.glowroot.tests.GaugeConfigIT",
+      "method_signature": "shouldDeleteGauge()",
+      "occurrence": 0,
+      "step_count": 24,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "cBioPortal_cbioportal::org.cbioportal.legacy.web.GenesetControllerTest::getAllGenesets()",
+      "dataset_name": "cBioPortal_cbioportal",
+      "checkout": "cBioPortal_cbioportal",
+      "qualified_class_name": "org.cbioportal.legacy.web.GenesetControllerTest",
+      "method_signature": "getAllGenesets()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "nordic-institute_X-Road::org.niis.xroad.proxy.core.RestProxyTest::shouldGetLargeBinaryMessage()",
+      "dataset_name": "nordic-institute_X-Road",
+      "checkout": "nordic-institute_X-Road",
+      "qualified_class_name": "org.niis.xroad.proxy.core.RestProxyTest",
+      "method_signature": "shouldGetLargeBinaryMessage()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "springdoc_springdoc-openapi::test.org.springdoc.api.v30.app68.SpringDocApp68Test::testApp4()",
+      "dataset_name": "springdoc_springdoc-openapi",
+      "checkout": "springdoc_springdoc-openapi",
+      "qualified_class_name": "test.org.springdoc.api.v30.app68.SpringDocApp68Test",
+      "method_signature": "testApp4()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spring-attic_spring-cloud-dataflow::org.springframework.cloud.dataflow.server.controller.TaskControllerTests::launch()",
+      "dataset_name": "spring-attic_spring-cloud-dataflow",
+      "checkout": "spring-attic_spring-cloud-dataflow",
+      "qualified_class_name": "org.springframework.cloud.dataflow.server.controller.TaskControllerTests",
+      "method_signature": "launch()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "apache_activemq-artemis::org.apache.activemq.artemis.tests.smoke.console.ConsoleMutualSSLTest::testLoginWithInvalidCertificate()",
+      "dataset_name": "apache_activemq-artemis",
+      "checkout": "apache_activemq-artemis",
+      "qualified_class_name": "org.apache.activemq.artemis.tests.smoke.console.ConsoleMutualSSLTest",
+      "method_signature": "testLoginWithInvalidCertificate()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spring-attic_spring-security-oauth::org.springframework.security.oauth2.config.annotation.ResourceServerConfigurationTests::testDefaults()",
+      "dataset_name": "spring-attic_spring-security-oauth",
+      "checkout": "spring-attic_spring-security-oauth",
+      "qualified_class_name": "org.springframework.security.oauth2.config.annotation.ResourceServerConfigurationTests",
+      "method_signature": "testDefaults()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "IQSS_dataverse::edu.harvard.iq.dataverse.api.SignpostingIT::testSignposting()",
+      "dataset_name": "IQSS_dataverse",
+      "checkout": "IQSS_dataverse",
+      "qualified_class_name": "edu.harvard.iq.dataverse.api.SignpostingIT",
+      "method_signature": "testSignposting()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "zalando_logbook::org.zalando.logbook.spring.webflux.LogbookExchangeFilterFunctionTest::shouldNotLogRequestIfInactive()",
+      "dataset_name": "zalando_logbook",
+      "checkout": "zalando_logbook",
+      "qualified_class_name": "org.zalando.logbook.spring.webflux.LogbookExchangeFilterFunctionTest",
+      "method_signature": "shouldNotLogRequestIfInactive()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "hapifhir_hapi-fhir::ca.uhn.hapi.fhir.cdshooks.controller.CdsHooksControllerTest::testExampleFeedback()",
+      "dataset_name": "hapifhir_hapi-fhir",
+      "checkout": "hapifhir_hapi-fhir",
+      "qualified_class_name": "ca.uhn.hapi.fhir.cdshooks.controller.CdsHooksControllerTest",
+      "method_signature": "testExampleFeedback()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "redis_redis-om-spring::com.foogaro.modeling.controller.TestTextDataController::testFindByWrongScore()",
+      "dataset_name": "redis_redis-om-spring",
+      "checkout": "redis_redis-om-spring",
+      "qualified_class_name": "com.foogaro.modeling.controller.TestTextDataController",
+      "method_signature": "testFindByWrongScore()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "wso2_product-is::org.wso2.identity.integration.test.rest.api.server.action.management.v1.preupdateprofile.PreUpdateProfileActionSuccessTest::testActivateAction()",
+      "dataset_name": "wso2_product-is",
+      "checkout": "wso2_product-is",
+      "qualified_class_name": "org.wso2.identity.integration.test.rest.api.server.action.management.v1.preupdateprofile.PreUpdateProfileActionSuccessTest",
+      "method_signature": "testActivateAction()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "apolloconfig_apollo::com.ctrip.framework.apollo.configservice.integration.NotificationControllerV2IntegrationTest::testPollNotificationWithDefaultNamespaceWithNotificationIdOutDated()",
+      "dataset_name": "apolloconfig_apollo",
+      "checkout": "apolloconfig_apollo",
+      "qualified_class_name": "com.ctrip.framework.apollo.configservice.integration.NotificationControllerV2IntegrationTest",
+      "method_signature": "testPollNotificationWithDefaultNamespaceWithNotificationIdOutDated()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "ddd-by-examples_all-things-cqrs::io.dddbyexamples.cqrs.EventsPublishingTest::shouldEventuallySendAnEventAboutCardWithdrawal()",
+      "dataset_name": "ddd-by-examples_all-things-cqrs",
+      "checkout": "ddd-by-examples_all-things-cqrs",
+      "qualified_class_name": "io.dddbyexamples.cqrs.EventsPublishingTest",
+      "method_signature": "shouldEventuallySendAnEventAboutCardWithdrawal()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "JanssenProject_jans::io.jans.as.server.ws.rs.ResponseTypesRestrictionEmbeddedTest::responseTypesTokenIdTokenStep2(java.lang.String)",
+      "dataset_name": "JanssenProject_jans",
+      "checkout": "JanssenProject_jans",
+      "qualified_class_name": "io.jans.as.server.ws.rs.ResponseTypesRestrictionEmbeddedTest",
+      "method_signature": "responseTypesTokenIdTokenStep2(java.lang.String)",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "openzipkin_zipkin::zipkin2.server.internal.ITZipkinGrpcCollector::report_emptyIsOk()",
+      "dataset_name": "openzipkin_zipkin",
+      "checkout": "openzipkin_zipkin",
+      "qualified_class_name": "zipkin2.server.internal.ITZipkinGrpcCollector",
+      "method_signature": "report_emptyIsOk()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "Consensys_teku::tech.pegasys.teku.beaconrestapi.tekuv1.beacon.GetDepositSnapshotIntegrationTest::shouldReturnDepositTreeSnapshotJson()",
+      "dataset_name": "Consensys_teku",
+      "checkout": "Consensys_teku",
+      "qualified_class_name": "tech.pegasys.teku.beaconrestapi.tekuv1.beacon.GetDepositSnapshotIntegrationTest",
+      "method_signature": "shouldReturnDepositTreeSnapshotJson()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "spring-cloud_spring-cloud-kubernetes::org.springframework.cloud.kubernetes.fabric8.config.actuator.EnabledHealthTests::healthEndpointShouldContainKubernetes()",
+      "dataset_name": "spring-cloud_spring-cloud-kubernetes",
+      "checkout": "spring-cloud_spring-cloud-kubernetes",
+      "qualified_class_name": "org.springframework.cloud.kubernetes.fabric8.config.actuator.EnabledHealthTests",
+      "method_signature": "healthEndpointShouldContainKubernetes()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "yahoo_elide::com.yahoo.elide.tests.ResourceIT::testPatchRelRemoveColl()",
+      "dataset_name": "yahoo_elide",
+      "checkout": "yahoo_elide",
+      "qualified_class_name": "com.yahoo.elide.tests.ResourceIT",
+      "method_signature": "testPatchRelRemoveColl()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_shenyu::org.apache.shenyu.admin.controller.DataPermissionControllerTest::saveRule()",
+      "dataset_name": "apache_shenyu",
+      "checkout": "apache_shenyu",
+      "qualified_class_name": "org.apache.shenyu.admin.controller.DataPermissionControllerTest",
+      "method_signature": "saveRule()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spring-cloud_spring-cloud-function::org.springframework.cloud.function.web.mvc.HttpGetIntegrationTests::staticResource()",
+      "dataset_name": "spring-cloud_spring-cloud-function",
+      "checkout": "spring-cloud_spring-cloud-function",
+      "qualified_class_name": "org.springframework.cloud.function.web.mvc.HttpGetIntegrationTests",
+      "method_signature": "staticResource()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "structr_structr::org.structr.test.rest.test.property.RelatedNodePropertyTest::test09CreateWithRelatedNodeOfWrongType()",
+      "dataset_name": "structr_structr",
+      "checkout": "structr_structr",
+      "qualified_class_name": "org.structr.test.rest.test.property.RelatedNodePropertyTest",
+      "method_signature": "test09CreateWithRelatedNodeOfWrongType()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "line_line-fido2-server::com.linecorp.line.auth.fido.fido2.demo.controller.ResponseControllerTest::sendAuthResponse_success()",
+      "dataset_name": "line_line-fido2-server",
+      "checkout": "line_line-fido2-server",
+      "qualified_class_name": "com.linecorp.line.auth.fido.fido2.demo.controller.ResponseControllerTest",
+      "method_signature": "sendAuthResponse_success()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "structr_structr::org.structr.test.rest.test.AdvancedSearchTest::testEmptyAndNonEmptyOnRemoteProperties()",
+      "dataset_name": "structr_structr",
+      "checkout": "structr_structr",
+      "qualified_class_name": "org.structr.test.rest.test.AdvancedSearchTest",
+      "method_signature": "testEmptyAndNonEmptyOnRemoteProperties()",
+      "occurrence": 0,
+      "step_count": 24,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "zalando_nakadi::org.zalando.nakadi.webservice.hila.HilaAT::whenResetCursorsThenStreamFromResetCursorOffset()",
+      "dataset_name": "zalando_nakadi",
+      "checkout": "zalando_nakadi",
+      "qualified_class_name": "org.zalando.nakadi.webservice.hila.HilaAT",
+      "method_signature": "whenResetCursorsThenStreamFromResetCursorOffset()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "rest-assured_rest-assured::io.restassured.itest.java.RootPathITest::supportsAppendingArgumentsDefinedInRootAtALaterStage()",
+      "dataset_name": "rest-assured_rest-assured",
+      "checkout": "rest-assured_rest-assured",
+      "qualified_class_name": "io.restassured.itest.java.RootPathITest",
+      "method_signature": "supportsAppendingArgumentsDefinedInRootAtALaterStage()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "mock-server_mockserver::org.mockserver.testing.integration.proxy.AbstractProxyIntegrationTest::shouldForwardRequestsWithComplexCookies()",
+      "dataset_name": "mock-server_mockserver",
+      "checkout": "mock-server_mockserver",
+      "qualified_class_name": "org.mockserver.testing.integration.proxy.AbstractProxyIntegrationTest",
+      "method_signature": "shouldForwardRequestsWithComplexCookies()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "MarquezProject_marquez::marquez.OpenLineageIntegrationTest::testSendAndDeleteParentRunRelationshipFacet()",
+      "dataset_name": "MarquezProject_marquez",
+      "checkout": "MarquezProject_marquez",
+      "qualified_class_name": "marquez.OpenLineageIntegrationTest",
+      "method_signature": "testSendAndDeleteParentRunRelationshipFacet()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "sermant-io_Sermant::io.sermant.database.prohibition.integration.mongodb.MongoDbProhibitionTest::testCreateIndex()",
+      "dataset_name": "sermant-io_Sermant",
+      "checkout": "sermant-io_Sermant",
+      "qualified_class_name": "io.sermant.database.prohibition.integration.mongodb.MongoDbProhibitionTest",
+      "method_signature": "testCreateIndex()",
+      "occurrence": 0,
+      "step_count": 11,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "halo-dev_halo::run.halo.app.core.endpoint.theme.MenuQueryEndpointTest::getMenuByName()",
+      "dataset_name": "halo-dev_halo",
+      "checkout": "halo-dev_halo",
+      "qualified_class_name": "run.halo.app.core.endpoint.theme.MenuQueryEndpointTest",
+      "method_signature": "getMenuByName()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "NationalSecurityAgency_datawave::datawave.microservice.authorization.AuthorizeHttpTest::testAuthorizeAllowedCallerTrustedHeader()",
+      "dataset_name": "NationalSecurityAgency_datawave",
+      "checkout": "NationalSecurityAgency_datawave",
+      "qualified_class_name": "datawave.microservice.authorization.AuthorizeHttpTest",
+      "method_signature": "testAuthorizeAllowedCallerTrustedHeader()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "resteasy_resteasy::org.jboss.resteasy.test.client.RxInvokerTest::testRxClientGetClass()",
+      "dataset_name": "resteasy_resteasy",
+      "checkout": "resteasy_resteasy",
+      "qualified_class_name": "org.jboss.resteasy.test.client.RxInvokerTest",
+      "method_signature": "testRxClientGetClass()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "rest-assured_rest-assured::io.restassured.module.mockmvc.BasePathTest::base_path_is_prepended_to_path()",
+      "dataset_name": "rest-assured_rest-assured",
+      "checkout": "rest-assured_rest-assured",
+      "qualified_class_name": "io.restassured.module.mockmvc.BasePathTest",
+      "method_signature": "base_path_is_prepended_to_path()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spring-attic_spring-cloud-dataflow::org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTests::unregisterApplicationUsedInStreamNotDeployed()",
+      "dataset_name": "spring-attic_spring-cloud-dataflow",
+      "checkout": "spring-attic_spring-cloud-dataflow",
+      "qualified_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTests",
+      "method_signature": "unregisterApplicationUsedInStreamNotDeployed()",
+      "occurrence": 0,
+      "step_count": 12,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "eclipse_openvsx::org.eclipse.openvsx.RegistryAPITest::testGetQueryV2ExtensionId()",
+      "dataset_name": "eclipse_openvsx",
+      "checkout": "eclipse_openvsx",
+      "qualified_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2ExtensionId()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "strongbox_strongbox::org.carlspring.strongbox.controllers.layout.maven.MavenArtifactControllerTest::testDynamicPrivilegeAssignmentForRepository(org.carlspring.strongbox.storage.repository.Repository, java.nio.file.Path)",
+      "dataset_name": "strongbox_strongbox",
+      "checkout": "strongbox_strongbox",
+      "qualified_class_name": "org.carlspring.strongbox.controllers.layout.maven.MavenArtifactControllerTest",
+      "method_signature": "testDynamicPrivilegeAssignmentForRepository(org.carlspring.strongbox.storage.repository.Repository, java.nio.file.Path)",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spring-cloud_spring-cloud-gateway::org.springframework.cloud.gateway.filter.factory.SpringCloudCircuitBreakerResilience4JFilterFactoryTests::r4jFilterExceptionFallback()",
+      "dataset_name": "spring-cloud_spring-cloud-gateway",
+      "checkout": "spring-cloud_spring-cloud-gateway",
+      "qualified_class_name": "org.springframework.cloud.gateway.filter.factory.SpringCloudCircuitBreakerResilience4JFilterFactoryTests",
+      "method_signature": "r4jFilterExceptionFallback()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "jboss-developer_jboss-eap-quickstarts::org.jboss.as.quickstarts.mdb.AbstractMDBServletIT::testSendToQueue()",
+      "dataset_name": "jboss-developer_jboss-eap-quickstarts",
+      "checkout": "jboss-developer_jboss-eap-quickstarts",
+      "qualified_class_name": "org.jboss.as.quickstarts.mdb.AbstractMDBServletIT",
+      "method_signature": "testSendToQueue()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_dolphinscheduler::org.apache.dolphinscheduler.api.controller.DataSourceControllerTest::testDelete()",
+      "dataset_name": "apache_dolphinscheduler",
+      "checkout": "apache_dolphinscheduler",
+      "qualified_class_name": "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest",
+      "method_signature": "testDelete()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apolloconfig_apollo::com.ctrip.framework.apollo.audit.controller.ApolloAuditControllerTest::testFindAllAuditLogsByOpNameAndTime()",
+      "dataset_name": "apolloconfig_apollo",
+      "checkout": "apolloconfig_apollo",
+      "qualified_class_name": "com.ctrip.framework.apollo.audit.controller.ApolloAuditControllerTest",
+      "method_signature": "testFindAllAuditLogsByOpNameAndTime()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_metron::org.apache.metron.rest.controller.PcapControllerIntegrationTest::testKillJob()",
+      "dataset_name": "apache_metron",
+      "checkout": "apache_metron",
+      "qualified_class_name": "org.apache.metron.rest.controller.PcapControllerIntegrationTest",
+      "method_signature": "testKillJob()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "PaladinCloud_CE::com.tmobile.pacman.api.admin.controller.TargetTypesControllerTest::addTargetTypeDetailsTest()",
+      "dataset_name": "PaladinCloud_CE",
+      "checkout": "PaladinCloud_CE",
+      "qualified_class_name": "com.tmobile.pacman.api.admin.controller.TargetTypesControllerTest",
+      "method_signature": "addTargetTypeDetailsTest()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "spinnaker_spinnaker::com.netflix.spinnaker.clouddriver.controllers.KubernetesCustomPropertyBindingRefreshTest::testRefreshScopeRefreshedEvent()",
+      "dataset_name": "spinnaker_spinnaker",
+      "checkout": "spinnaker_spinnaker",
+      "qualified_class_name": "com.netflix.spinnaker.clouddriver.controllers.KubernetesCustomPropertyBindingRefreshTest",
+      "method_signature": "testRefreshScopeRefreshedEvent()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "ddd-by-examples_library::io.pillopl.library.lending.patronprofile.web.PatronProfileControllerIT::shouldCreateLinksForCheckouts()",
+      "dataset_name": "ddd-by-examples_library",
+      "checkout": "ddd-by-examples_library",
+      "qualified_class_name": "io.pillopl.library.lending.patronprofile.web.PatronProfileControllerIT",
+      "method_signature": "shouldCreateLinksForCheckouts()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "gchq_Gaffer::uk.gov.gchq.gaffer.rest.integration.controller.PropertiesControllerIT::shouldIncludePropertiesSetBySystemProperty()",
+      "dataset_name": "gchq_Gaffer",
+      "checkout": "gchq_Gaffer",
+      "qualified_class_name": "uk.gov.gchq.gaffer.rest.integration.controller.PropertiesControllerIT",
+      "method_signature": "shouldIncludePropertiesSetBySystemProperty()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "Blazebit_blaze-persistence::com.blazebit.persistence.examples.spring.data.graphql.repository.SampleTest::testInheritance()",
+      "dataset_name": "Blazebit_blaze-persistence",
+      "checkout": "Blazebit_blaze-persistence",
+      "qualified_class_name": "com.blazebit.persistence.examples.spring.data.graphql.repository.SampleTest",
+      "method_signature": "testInheritance()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "eclipse-jifa_jifa::org.eclipse.jifa.server.controller.TestFileController::testGetTransferProgress()",
+      "dataset_name": "eclipse-jifa_jifa",
+      "checkout": "eclipse-jifa_jifa",
+      "qualified_class_name": "org.eclipse.jifa.server.controller.TestFileController",
+      "method_signature": "testGetTransferProgress()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "livelessons-spring_building-microservices::com.example.X509ApplicationTests::testUnauthenticatedHello()",
+      "dataset_name": "livelessons-spring_building-microservices",
+      "checkout": "livelessons-spring_building-microservices",
+      "qualified_class_name": "com.example.X509ApplicationTests",
+      "method_signature": "testUnauthenticatedHello()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "undertow-io_undertow::io.undertow.servlet.test.response.writer.ResponseWriterTestCase::testRespondBeforeRead()",
+      "dataset_name": "undertow-io_undertow",
+      "checkout": "undertow-io_undertow",
+      "qualified_class_name": "io.undertow.servlet.test.response.writer.ResponseWriterTestCase",
+      "method_signature": "testRespondBeforeRead()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "GoogleCloudPlatform_java-docs-samples::com.example.cloudrun.PubSubControllerTests::errorsWithInvalidMimetype()",
+      "dataset_name": "GoogleCloudPlatform_java-docs-samples",
+      "checkout": "GoogleCloudPlatform_java-docs-samples",
+      "qualified_class_name": "com.example.cloudrun.PubSubControllerTests",
+      "method_signature": "errorsWithInvalidMimetype()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "square_keywhiz::keywhiz.service.resources.automation.v2.GroupResourceTest::deleteGroup_success()",
+      "dataset_name": "square_keywhiz",
+      "checkout": "square_keywhiz",
+      "qualified_class_name": "keywhiz.service.resources.automation.v2.GroupResourceTest",
+      "method_signature": "deleteGroup_success()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "TencentBlueKing_bk-job::com.tencent.bk.job.api.v3.testcase.FileSourceResourceAPITest.FileSourceGetTest::testGetFileSourceDetail()",
+      "dataset_name": "TencentBlueKing_bk-job",
+      "checkout": "TencentBlueKing_bk-job",
+      "qualified_class_name": "com.tencent.bk.job.api.v3.testcase.FileSourceResourceAPITest.FileSourceGetTest",
+      "method_signature": "testGetFileSourceDetail()",
+      "occurrence": 0,
+      "step_count": 2,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "JanssenProject_jans::io.jans.as.server.ws.rs.AuthorizeRestWebServiceEmbeddedTest::requestAuthorizationTokenFail2(java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
+      "dataset_name": "JanssenProject_jans",
+      "checkout": "JanssenProject_jans",
+      "qualified_class_name": "io.jans.as.server.ws.rs.AuthorizeRestWebServiceEmbeddedTest",
+      "method_signature": "requestAuthorizationTokenFail2(java.lang.String, java.lang.String, java.lang.String, java.lang.String)",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "apache_gravitino::org.apache.gravitino.trino.connector.integration.test.TrinoConnectorIT::testHiveTableCreatedByGravitino()",
+      "dataset_name": "apache_gravitino",
+      "checkout": "apache_gravitino",
+      "qualified_class_name": "org.apache.gravitino.trino.connector.integration.test.TrinoConnectorIT",
+      "method_signature": "testHiveTableCreatedByGravitino()",
+      "occurrence": 0,
+      "step_count": 3,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "spring-cloud_spring-cloud-contract::org.springframework.cloud.contract.wiremock.AutoConfigureWireMockHttpsPortApplicationTests::contextLoads()",
+      "dataset_name": "spring-cloud_spring-cloud-contract",
+      "checkout": "spring-cloud_spring-cloud-contract",
+      "qualified_class_name": "org.springframework.cloud.contract.wiremock.AutoConfigureWireMockHttpsPortApplicationTests",
+      "method_signature": "contextLoads()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    },
+    {
+      "test_id": "GIScience_openrouteservice::org.heigit.ors.apitests.routing.ResultTest::testCustomProfileBlockTunnels()",
+      "dataset_name": "GIScience_openrouteservice",
+      "checkout": "GIScience_openrouteservice",
+      "qualified_class_name": "org.heigit.ors.apitests.routing.ResultTest",
+      "method_signature": "testCustomProfileBlockTunnels()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": false
+    },
+    {
+      "test_id": "metersphere_metersphere::io.metersphere.project.controller.GlobalParamsControllerTests::testUpdateSuccess()",
+      "dataset_name": "metersphere_metersphere",
+      "checkout": "metersphere_metersphere",
+      "qualified_class_name": "io.metersphere.project.controller.GlobalParamsControllerTests",
+      "method_signature": "testUpdateSuccess()",
+      "occurrence": 0,
+      "step_count": 1,
+      "has_helper_or_fixture_http": true
+    }
+  ]
+}

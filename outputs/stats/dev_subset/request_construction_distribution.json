@@ -1,0 +1,277 @@
+{
+  "scope": "api_tests",
+  "api_test_count": 6980,
+  "request_event_count": 36465,
+  "event_surfaces": {
+    "body_payload": {
+      "events": {
+        "count": 8444,
+        "total": 36465,
+        "proportion": 0.23156451391745508
+      },
+      "tests_with_any": {
+        "count": 2977,
+        "total": 6980,
+        "proportion": 0.42650429799426937
+      }
+    },
+    "headers": {
+      "events": {
+        "count": 17894,
+        "total": 36465,
+        "proportion": 0.4907171260112437
+      },
+      "tests_with_any": {
+        "count": 4612,
+        "total": 6980,
+        "proportion": 0.6607449856733524
+      }
+    },
+    "query_params": {
+      "events": {
+        "count": 11905,
+        "total": 36465,
+        "proportion": 0.32647744412450297
+      },
+      "tests_with_any": {
+        "count": 4581,
+        "total": 6980,
+        "proportion": 0.6563037249283667
+      }
+    },
+    "path_params": {
+      "events": {
+        "count": 2021,
+        "total": 36465,
+        "proportion": 0.05542300836418484
+      },
+      "tests_with_any": {
+        "count": 979,
+        "total": 6980,
+        "proportion": 0.14025787965616046
+      }
+    },
+    "form_params": {
+      "events": {
+        "count": 8,
+        "total": 36465,
+        "proportion": 0.00021938845468257232
+      },
+      "tests_with_any": {
+        "count": 8,
+        "total": 6980,
+        "proportion": 0.001146131805157593
+      }
+    }
+  },
+  "per_event": {
+    "query_param_names_per_event": {
+      "count": 36465,
+      "min": 0.0,
+      "max": 11.0,
+      "mean": 0.7029206088029617,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "p90": 3.0
+    },
+    "header_names_per_event": {
+      "count": 36465,
+      "min": 0.0,
+      "max": 7.0,
+      "mean": 0.6710544357603181,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 1.0,
+      "p90": 2.0
+    }
+  },
+  "builder_usage": {
+    "events_with_builder_correlation": {
+      "count": 32715,
+      "total": 36465,
+      "proportion": 0.8971616618675442
+    },
+    "tests_with_builder_correlation": {
+      "count": 6473,
+      "total": 6980,
+      "proportion": 0.9273638968481376
+    },
+    "builder_group_count": 32715,
+    "builder_count_total": 92420,
+    "contributed_properties": {
+      "total": 142446,
+      "by_property": {
+        "http_method": {
+          "count": 31833,
+          "total": 142446,
+          "proportion": 0.22347415862853293
+        },
+        "path": {
+          "count": 31526,
+          "total": 142446,
+          "proportion": 0.22131895595523918
+        },
+        "headers": {
+          "count": 14910,
+          "total": 142446,
+          "proportion": 0.10467124383977086
+        },
+        "header_names": {
+          "count": 24454,
+          "total": 142446,
+          "proportion": 0.17167207222386027
+        },
+        "query_param_names": {
+          "count": 25076,
+          "total": 142446,
+          "proportion": 0.17603863920362803
+        },
+        "path_param_names": {
+          "count": 937,
+          "total": 142446,
+          "proportion": 0.006577931286241804
+        },
+        "form_param_names": {
+          "count": 8,
+          "total": 142446,
+          "proportion": 5.6161633180292885e-05
+        },
+        "has_body_payload": {
+          "count": 6611,
+          "total": 142446,
+          "proportion": 0.04641056961936453
+        },
+        "auth_hints": {
+          "count": 7091,
+          "total": 142446,
+          "proportion": 0.0497802676101821
+        }
+      }
+    }
+  },
+  "header_vocabulary": {
+    "distinct_header_name_count": 35,
+    "tests_with_any_header": {
+      "count": 3707,
+      "total": 6980,
+      "proportion": 0.5310888252148998
+    },
+    "distinct_header_names_per_test": {
+      "count": 6980,
+      "min": 0.0,
+      "max": 7.0,
+      "mean": 0.9926934097421204,
+      "p25": 0.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "p90": 3.0
+    },
+    "header_name_occurrences": {
+      "total": 49604,
+      "content_negotiation": {
+        "count": 27298,
+        "total": 49604,
+        "proportion": 0.5503185226997823
+      }
+    },
+    "header_name_test_frequency": {
+      "content-type": 3044,
+      "accept": 2016,
+      "authorization": 923,
+      "host": 296,
+      "x-identity-zone-id": 241,
+      "if-match": 207,
+      "sessionid": 58,
+      "x-on-behalf-of": 27,
+      "origin": 13,
+      "referer": 12,
+      "user-agent": 10,
+      "access-control-request-headers": 8,
+      "access-control-request-method": 8,
+      "x-correlation-id": 8,
+      "x-referrer": 8,
+      "if-none-match": 7,
+      "accept-language": 5,
+      "x-api-key": 4,
+      "x-forwarded-for": 4,
+      "ce-id": 3,
+      "ce-source": 3,
+      "ce-specversion": 3,
+      "ce-type": 3,
+      "cookie": 3,
+      "x-captcha-payload": 3,
+      "pepe": 2,
+      "x-kogito-referenceid": 2,
+      "ce-kogitoprocrefid": 1,
+      "range": 1,
+      "shib-mail": 1,
+      "x-forwarded-host": 1,
+      "x-identity-zone-subdomain": 1,
+      "x-ratelimit-header": 1,
+      "x-spinnaker-accounts": 1,
+      "x-spinnaker-user": 1
+    }
+  },
+  "builder_types_given_body": {
+    "scope": "per_dispatch_builder_groups_with_body_payload",
+    "builder_group_count": 32715,
+    "body_builder_group_count": 6611,
+    "share_of_builder_groups_with_body_payload": {
+      "count": 6611,
+      "total": 32715,
+      "proportion": 0.20207855723674156
+    },
+    "builder_count": 29613,
+    "builder_types": {
+      "total": 29613,
+      "by_type": {
+        "http_method": {
+          "count": 6127,
+          "total": 29613,
+          "proportion": 0.2069023739573836
+        },
+        "path": {
+          "count": 5981,
+          "total": 29613,
+          "proportion": 0.20197210684496675
+        },
+        "headers": {
+          "count": 6181,
+          "total": 29613,
+          "proportion": 0.2087258974099213
+        },
+        "header_names": {
+          "count": 14273,
+          "total": 29613,
+          "proportion": 0.48198426366798364
+        },
+        "query_param_names": {
+          "count": 686,
+          "total": 29613,
+          "proportion": 0.02316550163779421
+        },
+        "path_param_names": {
+          "count": 219,
+          "total": 29613,
+          "proportion": 0.007395400668625266
+        },
+        "form_param_names": {
+          "count": 0,
+          "total": 29613,
+          "proportion": 0.0
+        },
+        "has_body_payload": {
+          "count": 6611,
+          "total": 29613,
+          "proportion": 0.22324654712457367
+        },
+        "auth_hints": {
+          "count": 2287,
+          "total": 29613,
+          "proportion": 0.07722959511025564
+        }
+      }
+    }
+  }
+}

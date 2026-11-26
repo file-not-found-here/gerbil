@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gerbil validation</title>
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --ink: #1d1f23; --muted: #6a6f78; --line: #dedbd2;
+  --code-bg: #fbfaf7; --accent: #2f5fd0; --ok: #1f7a4a; --warn: #a65c00; --bad: #b3261e;
+  --builder: #2f5fd0; --builder-bg: #dfe8fb;
+  --dispatch: #7a3fb5; --dispatch-bg: #ecdffa;
+  --check: #1f7a4a; --check-bg: #d9f0e2;
+  --added: #b3541e; --added-bg: #fbe6d8;
+  --sel: #fff3bf; --flash: #ffd84d;
+  --kw: #8a3a6b; --str: #2c6e49; --com: #8b8f97; --num: #a65c00; --ann: #7a5c00;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a; --panel: #1d2024; --ink: #e6e4df; --muted: #9a9fa8; --line: #32363c;
+    --code-bg: #191b1f; --accent: #8fb0ff; --ok: #6fd09a; --warn: #f0b060; --bad: #ff8a80;
+    --builder: #8fb0ff; --builder-bg: #26344f;
+    --dispatch: #c9a0f5; --dispatch-bg: #3a2a52;
+    --check: #6fd09a; --check-bg: #1f3d2c;
+    --added: #f0a070; --added-bg: #4a2c1c;
+    --sel: #4a431f; --flash: #8a7420;
+    --kw: #e39ac4; --str: #8fd3a8; --com: #7a7f88; --num: #f0b060; --ann: #d8c070;
+  }
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; display: flex; flex-direction: column; }
+code, pre, .mono { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+button, select, input, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; }
+
+.top { display: flex; align-items: center; gap: 12px; padding: 8px 16px; background: var(--panel); border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.top h1 { font-size: 15px; margin: 0; font-weight: 650; letter-spacing: .01em; }
+.top .grow { flex: 1; }
+.top select { max-width: 340px; }
+.btn { border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 4px 10px; }
+.btn:hover { border-color: var(--accent); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn.primary { color: #111; } }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+input[type=text], select, textarea { border: 1px solid var(--line); background: var(--panel); border-radius: 6px; padding: 4px 8px; }
+.progress { color: var(--muted); font-variant-numeric: tabular-nums; }
+.legend { display: flex; gap: 10px; align-items: center; color: var(--muted); font-size: 12px; }
+.chip { display: inline-block; font-size: 11px; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; padding: 1px 6px; border-radius: 4px; }
+.chip.builder { color: var(--builder); background: var(--builder-bg); }
+.chip.dispatch { color: var(--dispatch); background: var(--dispatch-bg); }
+.chip.check { color: var(--check); background: var(--check-bg); }
+.chip.added { color: var(--added); background: var(--added-bg); }
+
+.main { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(360px, 1fr); }
+.col { min-height: 0; overflow-y: auto; padding: 14px 16px 80px; }
+.col.code { border-right: 1px solid var(--line); }
+@media (max-width: 900px) { .main { display: block; overflow-y: auto; } .col { overflow: visible; } .col.code { border-right: 0; } }
+
+.testhead { margin: 0 0 12px; }
+.testhead .name { font-size: 15px; font-weight: 650; overflow-wrap: anywhere; }
+.testhead .sub { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+
+.unit { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 12px; overflow: hidden; }
+.unit > summary { list-style: none; cursor: pointer; padding: 6px 10px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+.unit > summary::-webkit-details-marker { display: none; }
+.unit:not([open]) > summary { border-bottom: 0; }
+.unit .role { font-size: 11px; font-weight: 650; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.unit .role.test { color: var(--accent); }
+.unit .sig { font-size: 12.5px; overflow-wrap: anywhere; }
+.unit .file { color: var(--muted); font-size: 11.5px; overflow-wrap: anywhere; }
+.codebox { background: var(--code-bg); overflow-x: auto; padding: 4px 0; font: 12.5px/1.55 ui-monospace, "SF Mono", Menlo, Consolas, monospace; }
+.ln { display: flex; white-space: pre; }
+.ln .no { flex: none; width: 52px; text-align: right; padding-right: 10px; color: var(--muted); user-select: none; cursor: pointer; }
+.ln .no:hover { color: var(--accent); }
+.ln .src { flex: 1; padding-right: 12px; tab-size: 4; }
+.ln.sel { background: var(--sel); }
+.ln.hasadded .no { color: var(--added); font-weight: 700; }
+.ln.hasadded { box-shadow: inset 3px 0 0 var(--added); }
+.tok { border-radius: 3px; padding: 0 2px; cursor: pointer; font-weight: 650; }
+.tok.builder { color: var(--builder); background: var(--builder-bg); }
+.tok.dispatch { color: var(--dispatch); background: var(--dispatch-bg); }
+.tok.check { color: var(--check); background: var(--check-bg); }
+.tok sup { font-size: 9px; margin-left: 1px; font-weight: 700; }
+.tok.hover, .card.hover { outline: 2px solid var(--accent); outline-offset: 1px; }
+.flash { animation: flash 1.1s ease-out; }
+@keyframes flash { from { background-color: var(--flash); } }
+.kw { color: var(--kw); } .str { color: var(--str); } .com { color: var(--com); font-style: italic; } .num { color: var(--num); } .ann { color: var(--ann); }
+.selbar { position: sticky; bottom: -80px; margin-top: 8px; display: flex; gap: 8px; align-items: center; background: var(--panel); border: 1px solid var(--accent); border-radius: 8px; padding: 8px 10px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+.hint { color: var(--muted); font-size: 12px; }
+
+.block { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; }
+.block h3 { margin: 0 0 6px; font-size: 13px; }
+.q { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.q + .q { margin-top: 6px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; flex: none; }
+.seg button { border: 0; background: transparent; padding: 2px 9px; font-size: 12.5px; border-right: 1px solid var(--line); }
+.seg button:last-child { border-right: 0; }
+.seg button:hover { background: var(--bg); }
+.seg button.on { background: var(--accent); color: #fff; }
+.seg button.on.neg { background: var(--bad); }
+.seg button.on.neu { background: var(--warn); }
+@media (prefers-color-scheme: dark) { .seg button.on { color: #111; } }
+
+.step { margin-bottom: 14px; }
+.stephead { display: flex; gap: 8px; align-items: baseline; margin: 0 0 6px; flex-wrap: wrap; }
+.stephead .n { font-weight: 700; }
+.stephead .target { color: var(--muted); font-size: 12.5px; overflow-wrap: anywhere; }
+.card { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-bottom: 8px; }
+.card.builder { border-left-color: var(--builder); }
+.card.dispatch { border-left-color: var(--dispatch); }
+.card.check { border-left-color: var(--check); }
+.card.added { border-left-color: var(--added); border-style: dashed; border-left-style: solid; }
+.cardhead { display: flex; gap: 8px; align-items: center; }
+.cardhead .call { font-size: 12.5px; font-weight: 650; }
+.cardhead .call { flex: none; max-width: 45%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cardhead .loc { color: var(--muted); font-size: 12px; cursor: pointer; text-decoration: underline dotted; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cardhead .state, .cardhead .btn { flex: none; white-space: nowrap; }
+.cardhead .grow { flex: 1; }
+.state { font-size: 12px; font-weight: 650; }
+.state.todo { color: var(--muted); } .state.ok { color: var(--ok); } .state.issue { color: var(--bad); }
+.claims { margin-top: 6px; display: grid; gap: 5px; }
+.claim { display: flex; gap: 8px; align-items: center; justify-content: space-between; flex-wrap: wrap; font-size: 13px; }
+.claim .text { flex: 1 1 180px; overflow-wrap: anywhere; }
+.claim .text b { font-weight: 650; }
+.claim.unresolved .text { color: var(--warn); }
+.claim .extra { flex-basis: 100%; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.claim .extra input[type=text] { flex: 1; min-width: 140px; }
+.claim .extra label { font-size: 12.5px; display: inline-flex; gap: 3px; align-items: center; }
+.small { font-size: 12px; padding: 2px 8px; }
+.notice { border: 1px solid var(--warn); color: var(--warn); border-radius: 8px; padding: 6px 10px; margin-bottom: 12px; font-size: 12.5px; }
+textarea { width: 100%; min-height: 56px; resize: vertical; }
+.addform { display: grid; gap: 8px; }
+.addform .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.addform .row > span:first-child { width: 92px; color: var(--muted); font-size: 12.5px; }
+.addform input[type=text] { flex: 1; min-width: 120px; }
+.footer { display: flex; gap: 8px; align-items: center; justify-content: flex-end; flex-wrap: wrap; }
+
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.45); display: none; align-items: flex-start; justify-content: center; padding: 4vh 16px; overflow-y: auto; z-index: 10; }
+.modal.open { display: flex; }
+.guide { background: var(--panel); border-radius: 10px; max-width: 820px; width: 100%; padding: 22px 26px; border: 1px solid var(--line); }
+.guide h2 { margin: 0 0 4px; font-size: 19px; }
+.guide h3 { margin: 18px 0 4px; font-size: 14px; }
+.guide p, .guide li { font-size: 13.5px; }
+.guide ul { margin: 4px 0; padding-left: 20px; }
+.guide dl { margin: 6px 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; font-size: 13.5px; }
+.guide dt { font-weight: 650; } .guide dd { margin: 0; }
+.guide code { font-size: 12.5px; background: var(--code-bg); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+.guide .rule { border-left: 3px solid var(--accent); padding: 4px 10px; margin: 8px 0; background: var(--bg); border-radius: 0 6px 6px 0; }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Gerbil validation</h1>
+  <label>Annotator <select id="annotator"></select></label>
+  <button class="btn" id="prev" title="Previous test">←</button>
+  <select id="picker" aria-label="Test"></select>
+  <button class="btn" id="next" title="Next test">→</button>
+  <span class="progress" id="progress"></span>
+  <span class="grow"></span>
+  <span class="legend"><span class="chip builder">builder</span><span class="chip dispatch">dispatch</span><span class="chip check">check</span><span class="chip added">added by you</span></span>
+  <button class="btn" id="guideBtn">Guide</button>
+  <button class="btn" id="importBtn">Import</button>
+  <button class="btn primary" id="exportBtn">Export</button>
+  <input type="file" id="importFile" accept="application/json" hidden>
+</header>
+
+<div class="main">
+  <div class="col code" id="codeCol"></div>
+  <div class="col" id="panelCol"></div>
+</div>
+
+<div class="modal" id="guideModal">
+  <div class="guide">
+    <h2>Annotation guide</h2>
+    <p>Gerbil is a static analysis that splits each API test into <b>API invocation steps</b>. You are checking whether that split is right. Judge what the test code does, not how you think the tool works, and do not discuss individual tests with the other annotators.</p>
+
+    <h3>The three kinds of item</h3>
+    <dl>
+      <dt><span class="chip dispatch">dispatch</span></dt>
+      <dd>The call that sends an HTTP request to the application under test, such as <code>mockMvc.perform(...)</code>, <code>.exchange()</code>, <code>given()...get("/x")</code> or <code>restTemplate.getForEntity(...)</code>. Each dispatch starts one step. A request dispatched in-process, without a network, still counts: <code>mockMvc.perform(...)</code>, <code>WebTestClient</code> bound to the application and similar test clients run the application's own request handling. Stubbing or verifying a mocked HTTP client, calling a third-party or stub server (WireMock, MockWebServer), and building a request object that is never sent are not dispatches.</dd>
+      <dt><span class="chip builder">builder</span></dt>
+      <dd>A call that configures a request before it is sent. It sets the request's <b>method</b>, <b>path</b>, a <b>header/auth</b> (any header, or credentials or a token however they are sent; one part, as the paper counts them), a <b>parameter</b> (query, path or form), or the <b>body</b>. A builder belongs to the step whose request it configures. Calls that only start or join a request chain and set none of these, such as <code>given()</code> or <code>when()</code>, are not builders and are not highlighted. A call that does set one of them but is not highlighted is a missed builder.</dd>
+      <dt><span class="chip check">check</span></dt>
+      <dd>A call that can fail the test because of the HTTP response: its <b>status</b>, its <b>body</b>, or its <b>headers</b>. A value read from the response and asserted later still counts, with the part of the response it came from. Assertions about anything else (database rows, mock interactions, values that never came from a response) are not checks. A check belongs to the step whose response it inspects.</dd>
+    </dl>
+
+    <h3>What to do for each test</h3>
+    <ul>
+      <li>Read the test method, then the setup, teardown and helper code shown under it. Highlighted calls are what Gerbil extracted; the small number is the step it put the call in.</li>
+      <li>Answer every line of every card on the right. <b>All correct</b> answers a whole card at once when nothing is wrong.</li>
+      <li>Look for what Gerbil missed. Click a line number (shift-click to extend), then <b>Add missed item</b>. Select every line of the missed call's statement, from its first line to its last, so that your selection and the other annotators' overlap.</li>
+      <li>Tick the box at the bottom if the test calls code that is not shown and probably sends requests or checks responses, then <b>Mark complete</b>.</li>
+    </ul>
+
+    <h3>Rules that keep us consistent</h3>
+    <div class="rule"><b>Requests that do not reach the application.</b> A request to a mocked HTTP client, a stub server or a third-party service is not the application's: answer No on its dispatch, builder and check cards, even in a test that also calls the application. A test whose requests all go there has every card answered No.</div>
+    <div class="rule"><b>Paths are judged on the dispatch.</b> A builder's parts can leave out <b>path</b> when Gerbil could not resolve the path's value. When the dispatch says "Path: not resolved", a builder such as <code>get(BASE_URL + id)</code> listing only <b>method</b> is the same abstention: answer Correct if the rest of its parts are right, and judge the path on the dispatch card.</div>
+    <div class="rule"><b>Judge the claim, not the token.</b> In <code>andExpect(status().isNotFound())</code> Gerbil highlights one call of the chain. You are judging "this checks the status and expects 404", not which word carries it.</div>
+    <div class="rule"><b>One check per call that can fail the test on its own.</b> Three <code>andExpect(jsonPath(...))</code> clauses are three body checks. Add a missed check per such call, not per line.</div>
+    <div class="rule"><b>One assertion, two cards.</b> In <code>andExpect(header().string("Location", url))</code> Gerbil can highlight both <code>header()</code> and <code>string(...)</code> as checks. They are one check: answer Yes on <code>string(...)</code> and No on <code>header()</code>, which only opens the header assertion. The same holds for <code>cookie()</code>. When <code>header()</code> or <code>cookie()</code> is the only card on its clause, judge it as the check.</div>
+    <div class="rule"><b>Paths.</b> Ignore scheme, host and port. A variable segment is written in braces and its name does not matter, so <code>"/users/" + id</code> is <code>/users/{id}</code>. Ignore the query string. If Gerbil's path is a correct prefix that stops at a variable (for example <code>/users/</code>), answer <b>Partly</b>.</div>
+    <div class="rule"><b>Helpers run once per call.</b> A helper called twice appears as two sets of items on the same highlighted call. Judge each set for the step it is in.</div>
+
+    <h3>"Not resolved" is not a wrong answer</h3>
+    <p>Sometimes Gerbil finds a request or a status check but cannot tell its method, path or status code, and says so. That is the tool declining to answer, so there is nothing to mark right or wrong. Instead, tell us whether the value is readable:</p>
+    <ul>
+      <li><b>I can read it</b>: the value is visible in the code shown (a literal, a constant, a simple concatenation). Enter it. This counts as something Gerbil missed.</li>
+      <li><b>Cannot be determined</b>: the value only exists at run time (a URL returned by an earlier response, a random port, a value from configuration you cannot see). This counts as Gerbil correctly declining.</li>
+    </ul>
+    <p>A value Gerbil did report is judged normally, as correct, partly correct or wrong.</p>
+
+    <h3>Code that is not shown</h3>
+    <p>You see the test method, its fixtures, and the helpers it reaches in its own class and superclasses. If the test calls other code that probably sends requests or checks responses (a client wrapper in another class, for example), tick the box at the bottom. Do not go looking for that code.</p>
+
+    <h3>Saving</h3>
+    <p>Choose the annotator id you were given (<code>author1</code>, <code>author2</code>, …) at the top; the page never asks for your name. Your answers are saved in this browser as you go. When you finish, or to move to another machine, use <b>Export</b> and send the file. It holds your id and your answers, with no name, date or file path. <b>Import</b> restores an exported file.</p>
+    <p style="text-align:right"><button class="btn primary" id="guideClose">Start</button></p>
+  </div>
+</div>
+
+<script id="bundle" type="application/json">__GERBIL_BUNDLE_JSON__</script>
+<script>
+"use strict";
+const BUNDLE = JSON.parse(document.getElementById("bundle").textContent);
+const STORAGE_KEY = "gerbil-validation:" + BUNDLE.bundle_digest;
+const VERBS = ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS", "other"];
+const PARTS = ["method", "path", "header/auth", "parameter", "body"];
+const TARGETS = ["status", "body", "header"];
+const ROLE_LABEL = { test: "Test method", setup: "Setup fixture", teardown: "Teardown fixture", helper: "Helper" };
+const ANNOTATORS = ["author1", "author2", "author3", "author4", "author5"];
+const KIND_LABEL = { builder: "Request builder", dispatch: "Request dispatch", check: "Response check" };
+
+let state = { annotator: "", current: 0, tests: {} };
+try {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) state = Object.assign(state, JSON.parse(saved));
+} catch (error) { /* storage unavailable: answers live until the tab closes */ }
+if (state.current >= BUNDLE.tests.length) state.current = 0;
+let selection = null;
+let draft = null;
+
+const $ = (id) => document.getElementById(id);
+function save() { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch (error) { /* see above */ } }
+function currentTest() { return BUNDLE.tests[state.current]; }
+function record(test) {
+  if (!state.tests[test.id]) state.tests[test.id] = { hiddenHttp: false, notes: "", done: false, items: {}, added: [] };
+  return state.tests[test.id];
+}
+function stepNumbers(test) { return [...new Set(test.items.map((i) => i.step).filter((s) => s !== null))].sort((a, b) => a - b); }
+function simpleName(qualified) { return qualified.split(".").pop(); }
+
+/* logic:start -- what Gerbil claims about an item and when an answer is complete.
+   No DOM and no page state in this block: the tests run it on its own. */
+const POSITIVE = new Set(["yes", "correct"]);
+const NEUTRAL = new Set(["undeterminable"]);
+const esc = (text) => String(text).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+function stepClaim(item, verb) {
+  return {
+    key: "step",
+    text: item.step === null ? "Gerbil attached this to <b>no step</b>" : verb + " <b>step " + item.step + "</b>",
+    opts: [["correct", "Correct"], ["wrong", "Other", "step"]],
+  };
+}
+function claimsFor(item) {
+  const claims = [];
+  if (item.kind === "builder") {
+    claims.push({ key: "role", text: "Configures an HTTP request before it is sent", opts: [["yes", "Yes"], ["no", "No"]] });
+    claims.push({ key: "part", text: "Sets the request's: <b>" + esc(item.parts.join(", ")) + "</b>", opts: [["correct", "Correct"], ["wrong", "Wrong", "parts"]] });
+    claims.push(stepClaim(item, "Builds the request of"));
+  } else if (item.kind === "dispatch") {
+    claims.push({ key: "role", text: "Sends an HTTP request to the application under test", opts: [["yes", "Yes"], ["no", "No"]] });
+    if (item.http_method) claims.push({ key: "verb", text: "Method: <b>" + esc(item.http_method) + "</b>", opts: [["correct", "Correct"], ["wrong", "Wrong", "verb"]] });
+    else claims.push({ key: "verb", unresolved: true, text: "Method: <b>not resolved</b>", opts: [["found", "I can read it", "verb"], ["undeterminable", "Cannot be determined"]] });
+    if (item.path) claims.push({ key: "path", text: "Path: <b class='mono'>" + esc(item.path) + "</b>" + (item.path_truncated ? " (Gerbil marks it as cut short at a variable)" : ""), opts: [["correct", "Correct"], ["partial", "Partly", "text"], ["wrong", "Wrong", "text"]] });
+    else claims.push({ key: "path", unresolved: true, text: "Path: <b>not resolved</b>", opts: [["found", "I can read it", "text"], ["undeterminable", "Cannot be determined"]] });
+  } else {
+    claims.push({ key: "role", text: "Can fail the test because of the HTTP response", opts: [["yes", "Yes"], ["no", "No"]] });
+    claims.push({ key: "target", text: "Checks the response's: <b>" + esc(item.target) + "</b>", opts: [["correct", "Correct"], ["wrong", "Wrong", "target"]] });
+    if (item.target === "status") {
+      if (item.status_code !== null) claims.push({ key: "code", text: "Expected status: <b>" + item.status_code + "</b>", opts: [["correct", "Correct"], ["wrong", "Wrong", "text"]] });
+      else if (item.status_range) claims.push({ key: "code", text: "Expected status: <b>any " + esc(item.status_range) + "</b>", opts: [["correct", "Correct"], ["wrong", "Wrong", "text"]] });
+      else claims.push({ key: "code", unresolved: true, text: "Expected status: <b>not resolved</b>", opts: [["found", "I can read it", "text"], ["undeterminable", "Cannot be determined"]] });
+    }
+    claims.push(stepClaim(item, "Checks the response of"));
+  }
+  return claims;
+}
+function requiredClaims(item, answers) {
+  const claims = claimsFor(item);
+  if (answers.role && answers.role.a === "no") return claims.filter((c) => c.key === "role");
+  if (answers.target && answers.target.a === "wrong") return claims.filter((c) => c.key !== "code");
+  return claims;
+}
+function valueFilled(value) { return Array.isArray(value) ? value.length > 0 : Boolean(value && String(value).trim()); }
+function claimDone(claim, answers) {
+  const answer = answers[claim.key];
+  if (!answer || !answer.a) return false;
+  const option = claim.opts.find((o) => o[0] === answer.a);
+  return option && (!option[2] || valueFilled(answer.v));
+}
+function itemState(item, answers) {
+  const required = requiredClaims(item, answers);
+  if (!required.every((c) => claimDone(c, answers))) return "todo";
+  return required.every((c) => POSITIVE.has(answers[c.key].a) || NEUTRAL.has(answers[c.key].a)) ? "ok" : "issue";
+}
+function testReady(test, rec) {
+  return test.items.every((item) => itemState(item, rec.items[item.id] || {}) !== "todo");
+}
+function allCorrect(item) {
+  const answers = {};
+  for (const claim of claimsFor(item)) {
+    const positive = claim.opts.find((o) => POSITIVE.has(o[0]));
+    if (positive) answers[claim.key] = { a: positive[0] };
+  }
+  return answers;
+}
+function draftReady(draft) {
+  if (draft.kind === "dispatch") return Boolean(draft.verb);
+  if (draft.kind === "builder") return draft.parts.length > 0 && draft.step !== "";
+  return draft.kind === "check" && Boolean(draft.target) && draft.step !== "";
+}
+/* logic:end */
+
+const INPUT_HINT = {
+  path: "the path as the code shows it, e.g. /users/{id}",
+  code: "the status code or range, e.g. 404 or 4xx",
+};
+const STATE_LABEL = { todo: "to do", ok: "✓ correct", issue: "✗ issue" };
+
+/* ---------- code column ---------- */
+const KEYWORDS = "abstract assert boolean break byte case catch char class const continue default do double else enum extends final finally float for if implements import instanceof int interface long native new null package private protected public return short static super switch synchronized this throw throws transient try var void volatile while true false record";
+const SYNTAX = new RegExp('(//.*$)|("(?:[^"\\\\]|\\\\.)*")|(\'(?:[^\'\\\\]|\\\\.)*\')|(@\\w+)|\\b(' + KEYWORDS.split(" ").join("|") + ')\\b|\\b(\\d[\\d_.]*[LlFfDd]?)\\b', "g");
+function highlight(text) {
+  let out = "", last = 0, match;
+  SYNTAX.lastIndex = 0;
+  while ((match = SYNTAX.exec(text)) !== null) {
+    out += esc(text.slice(last, match.index));
+    const cls = match[1] ? "com" : match[2] || match[3] ? "str" : match[4] ? "ann" : match[5] ? "kw" : "num";
+    out += '<span class="' + cls + '">' + esc(match[0]) + "</span>";
+    last = match.index + match[0].length;
+  }
+  return out + esc(text.slice(last));
+}
+function renderLine(text, tokens) {
+  let out = "", at = 0;
+  for (const token of tokens) {
+    if (token.start < at) continue;
+    out += highlight(text.slice(at, token.start));
+    const steps = [...new Set(token.items.map((i) => (i.step === null ? "–" : i.step)))].join(",");
+    out += '<span class="tok ' + token.items[0].kind + '" data-items="' + token.items.map((i) => i.id).join(",") + '" title="' + esc(KIND_LABEL[token.items[0].kind]) + '">' + esc(text.slice(token.start, token.end)) + "<sup>" + steps + "</sup></span>";
+    at = token.end;
+  }
+  return out + highlight(text.slice(at));
+}
+function renderCode() {
+  const test = currentTest(), rec = record(test);
+  let html = '<div class="testhead"><div class="name mono">' + esc(simpleName(test.class)) + "#" + esc(test.method) + '</div><div class="sub">' + esc(test.dataset) + " · " + esc(test.class) + "</div></div>";
+  for (const unit of test.units) {
+    const tokensByLine = {};
+    for (const item of test.items) {
+      if (item.unit !== unit.id || !item.token) continue;
+      const line = (tokensByLine[item.token.line] = tokensByLine[item.token.line] || []);
+      const same = line.find((t) => t.start === item.token.start);
+      if (same) same.items.push(item); else line.push({ start: item.token.start, end: item.token.end, items: [item] });
+    }
+    const addedLines = new Set();
+    for (const added of rec.added) if (added.unit === unit.id) for (let n = added.start; n <= added.end; n++) addedLines.add(n);
+    const label = ROLE_LABEL[unit.role] + (unit.role === "helper" && !unit.has_items ? " · nothing extracted" : "");
+    html += '<details class="unit" open data-unit="' + unit.id + '"><summary><span class="role ' + unit.role + '">' + label + '</span><span class="sig mono">' + esc(simpleName(unit.class)) + "#" + esc(unit.signature) + '</span><span class="file">' + esc(unit.file) + ":" + unit.start_line + '</span></summary><div class="codebox">';
+    let inBlockComment = false;
+    unit.lines.forEach((text, index) => {
+      const number = unit.start_line + index;
+      const tokens = (tokensByLine[number] || []).sort((a, b) => a.start - b.start);
+      const trimmed = text.trim();
+      let body;
+      const opens = !inBlockComment && trimmed.startsWith("/*");
+      if ((inBlockComment || opens) && !tokens.length) {
+        body = '<span class="com">' + esc(text) + "</span>";
+        inBlockComment = !text.slice(opens ? text.indexOf("/*") + 2 : 0).includes("*/");
+      } else body = renderLine(text, tokens);
+      const selected = selection && selection.unit === unit.id && number >= selection.start && number <= selection.end;
+      html += '<div class="ln' + (selected ? " sel" : "") + (addedLines.has(number) ? " hasadded" : "") + '" data-unit="' + unit.id + '" data-line="' + number + '"><span class="no" title="Click to select, shift-click to extend">' + number + '</span><span class="src">' + (body || " ") + "</span></div>";
+    });
+    html += "</div></details>";
+  }
+  if (selection) {
+    const range = selection.start === selection.end ? "line " + selection.start : "lines " + selection.start + "–" + selection.end;
+    html += '<div class="selbar"><span>Selected ' + range + '</span><span class="grow" style="flex:1"></span><button class="btn primary" data-act="startAdd">Add missed item</button><button class="btn" data-act="clearSel">Clear</button></div>';
+  } else html += '<p class="hint">To add something Gerbil missed, click a line number (shift-click to extend the selection).</p>';
+  $("codeCol").innerHTML = html;
+}
+
+/* ---------- annotation column ---------- */
+function seg(name, options, current, extraAttrs) {
+  return '<span class="seg">' + options.map(([value, label]) => {
+    const tone = POSITIVE.has(value) ? "" : NEUTRAL.has(value) ? " neu" : " neg";
+    return "<button " + extraAttrs + ' data-act="' + name + '" data-value="' + value + '" class="' + (current === value ? "on" + tone : "") + '">' + esc(label) + "</button>";
+  }).join("") + "</span>";
+}
+function selectHtml(attrs, options, current, placeholder) {
+  return "<select " + attrs + '><option value="">' + esc(placeholder) + "</option>" + options.map(([value, label]) => '<option value="' + esc(value) + '"' + (String(current) === String(value) ? " selected" : "") + ">" + esc(label) + "</option>").join("") + "</select>";
+}
+function stepOptions(test) {
+  return stepNumbers(test).map((n) => [n, "step " + n]).concat([["missed", "a request Gerbil missed"], ["none", "no request"]]);
+}
+function inputHtml(kind, attrs, value, test, claimKey) {
+  if (kind === "verb") return selectHtml(attrs, VERBS.map((v) => [v, v]), value, "method…");
+  if (kind === "target") return selectHtml(attrs, TARGETS.map((t) => [t, t]), value, "it checks the…");
+  if (kind === "step") return selectHtml(attrs, stepOptions(test), value, "it belongs to…");
+  if (kind === "parts") return PARTS.map((part) => "<label><input type='checkbox' " + attrs + ' value="' + part + '"' + ((value || []).includes(part) ? " checked" : "") + ">" + part + "</label>").join("");
+  return '<input type="text" ' + attrs + ' value="' + esc(value || "") + '" placeholder="' + esc(INPUT_HINT[claimKey] || "") + '">';
+}
+function unitLabel(test, item) {
+  const unit = test.units.find((u) => u.id === item.unit);
+  const line = item.token ? item.token.line : item.span.end_line;
+  if (!unit) return "source not shown · line " + line;
+  const where = unit.role === "test" ? "test method" : unit.role + " " + unit.signature.split("(")[0];
+  return where + " · line " + line;
+}
+function cardHtml(test, item, answers) {
+  const status = itemState(item, answers);
+  const required = new Set(requiredClaims(item, answers).map((c) => c.key));
+  let html = '<div class="card ' + item.kind + '" data-item="' + item.id + '"><div class="cardhead"><span class="chip ' + item.kind + '">' + item.kind + '</span><span class="call mono">' + esc(item.method_name) + '()</span><span class="loc" data-act="goto">' + esc(unitLabel(test, item)) + '</span><span class="grow"></span><span class="state ' + status + '">' + STATE_LABEL[status] + '</span><button class="btn small" data-act="allCorrect">All correct</button></div><div class="claims">';
+  for (const claim of claimsFor(item)) {
+    if (!required.has(claim.key)) continue;
+    const answer = answers[claim.key] || {};
+    html += '<div class="claim' + (claim.unresolved ? " unresolved" : "") + '" data-claim="' + claim.key + '"><span class="text">' + claim.text + "</span>" + seg("answer", claim.opts, answer.a, "");
+    const option = claim.opts.find((o) => o[0] === answer.a);
+    if (option && option[2]) html += '<span class="extra">' + inputHtml(option[2], 'data-input="value"', answer.v, test, claim.key) + "</span>";
+    html += "</div>";
+  }
+  return html + "</div></div>";
+}
+function addedSummary(added) {
+  if (added.kind === "dispatch") return (added.verb || "?") + " " + (added.path || "(path cannot be determined)");
+  if (added.kind === "builder") return "sets " + (added.parts.length ? added.parts.join(", ") : "?");
+  return "checks " + (added.target || "?") + (added.code ? " " + added.code : "");
+}
+function addedHtml(test, added) {
+  const unit = test.units.find((u) => u.id === added.unit);
+  const range = added.start === added.end ? "line " + added.start : "lines " + added.start + "–" + added.end;
+  const step = added.step === "missed" ? "a request Gerbil missed" : added.step === "none" ? "no request" : "step " + added.step;
+  return '<div class="card added" data-added="' + added.id + '"><div class="cardhead"><span class="chip added">' + added.kind + '</span><span class="call">' + esc(addedSummary(added)) + '</span><span class="loc" data-act="gotoAdded">' + esc(unit.signature.split("(")[0] + " · " + range) + '</span><span class="grow"></span><span class="hint">' + (added.kind === "dispatch" ? "" : esc(step)) + '</span><button class="btn small" data-act="removeAdded">Remove</button></div>' + (added.note ? '<div class="hint">' + esc(added.note) + "</div>" : "") + "</div>";
+}
+function addFormHtml(test) {
+  const kind = draft.kind;
+  let html = '<div class="block" id="addForm"><h3>Add an item Gerbil missed</h3><div class="addform"><div class="row"><span>It is a</span>' + seg("draftKind", [["dispatch", "Request dispatch"], ["builder", "Request builder"], ["check", "Response check"]].map(([v, l]) => [v, l]), kind, "") + "</div>";
+  if (kind === "dispatch") {
+    html += '<div class="row"><span>Method</span>' + selectHtml('data-draft="verb"', VERBS.map((v) => [v, v]).concat([["undeterminable", "cannot be determined"]]), draft.verb, "method…") + "</div>";
+    html += '<div class="row"><span>Path</span><input type="text" data-draft="path" value="' + esc(draft.path) + '" placeholder="e.g. /users/{id}; leave empty if it cannot be determined"></div>';
+  } else if (kind === "builder") {
+    html += '<div class="row"><span>It sets the</span>' + inputHtml("parts", 'data-draft="parts"', draft.parts, test) + "</div>";
+  } else if (kind === "check") {
+    html += '<div class="row"><span>It checks the</span>' + selectHtml('data-draft="target"', TARGETS.map((t) => [t, t]), draft.target, "status, body or header…") + "</div>";
+    if (draft.target === "status") html += '<div class="row"><span>Expected</span><input type="text" data-draft="code" value="' + esc(draft.code) + '" placeholder="e.g. 404 or 4xx; leave empty if it cannot be determined"></div>';
+  }
+  if (kind && kind !== "dispatch") html += '<div class="row"><span>Belongs to</span>' + selectHtml('data-draft="step"', stepOptions(test), draft.step, "which request…") + "</div>";
+  html += '<div class="row"><span>Note</span><input type="text" data-draft="note" value="' + esc(draft.note) + '" placeholder="optional"></div>';
+  return html + '<div class="footer"><button class="btn" data-act="cancelAdd">Cancel</button><button class="btn primary" data-act="saveAdd"' + (draftReady(draft) ? "" : " disabled") + ">Add</button></div></div></div>";
+}
+function renderPanel() {
+  const test = currentTest(), rec = record(test);
+  let html = "";
+  if (test.missing_units.length) html += '<div class="notice">Source was not found for: ' + test.missing_units.map((u) => esc(simpleName(u.class) + "#" + u.signature)).join(", ") + ". Judge items there from what you can see and say so in the notes.</div>";
+  if (draft) html += addFormHtml(test);
+  const groups = stepNumbers(test).map((n) => [n, test.items.filter((i) => i.step === n)]);
+  const loose = test.items.filter((i) => i.step === null);
+  for (const [number, items] of groups) {
+    const dispatch = items.find((i) => i.kind === "dispatch");
+    const target = dispatch ? (dispatch.http_method || "method not resolved") + " " + (dispatch.path || "path not resolved") : "";
+    html += '<div class="step" data-step="' + number + '"><div class="stephead"><span class="n">Step ' + number + '</span><span class="target mono">' + esc(target) + '</span><span class="grow" style="flex:1"></span><button class="btn small" data-act="stepCorrect">Whole step correct</button></div>' + items.map((item) => cardHtml(test, item, rec.items[item.id] || {})).join("") + "</div>";
+  }
+  if (loose.length) html += '<div class="step"><div class="stephead"><span class="n">Not in any step</span><span class="target">Gerbil extracted these calls but attached them to no request.</span></div>' + loose.map((item) => cardHtml(test, item, rec.items[item.id] || {})).join("") + "</div>";
+  if (rec.added.length) html += '<div class="step"><div class="stephead"><span class="n">Added by you</span></div>' + rec.added.map((added) => addedHtml(test, added)).join("") + "</div>";
+  html += '<div class="block"><label class="q" style="justify-content:flex-start"><input type="checkbox" id="hiddenHttp"' + (rec.hiddenHttp ? " checked" : "") + '><span>This test calls code that is not shown and that probably sends requests or checks responses.</span></label><div style="margin-top:8px"><textarea id="notes" placeholder="Notes on this test (optional)">' + esc(rec.notes) + "</textarea></div></div>";
+  const ready = testReady(test, rec);
+  html += '<div class="footer"><span class="hint" id="doneHint"' + (ready ? " hidden" : "") + '>Answer every card to finish.</span><button class="btn primary" data-act="done"' + (ready ? "" : " disabled") + ">" + (rec.done ? "Completed ✓ · next" : "Mark complete · next") + "</button></div>";
+  $("panelCol").innerHTML = html;
+}
+function renderTop() {
+  const done = BUNDLE.tests.filter((t) => state.tests[t.id] && state.tests[t.id].done).length;
+  $("progress").textContent = done + " of " + BUNDLE.tests.length + " complete";
+  $("picker").innerHTML = BUNDLE.tests.map((t, index) => {
+    const rec = state.tests[t.id];
+    const mark = rec && rec.done ? "✓ " : rec && Object.keys(rec.items).length ? "• " : "";
+    return '<option value="' + index + '"' + (index === state.current ? " selected" : "") + ">" + mark + (index + 1) + ". " + esc(simpleName(t.class) + "#" + t.method.split("(")[0]) + "</option>";
+  }).join("");
+  $("prev").disabled = state.current === 0;
+  $("next").disabled = state.current === BUNDLE.tests.length - 1;
+}
+function render(keepScroll) {
+  const codeTop = $("codeCol").scrollTop, panelTop = $("panelCol").scrollTop;
+  renderTop(); renderCode(); renderPanel();
+  if (keepScroll) { $("codeCol").scrollTop = codeTop; $("panelCol").scrollTop = panelTop; }
+  else { $("codeCol").scrollTop = 0; $("panelCol").scrollTop = 0; }
+}
+function goTo(index) {
+  state.current = Math.max(0, Math.min(BUNDLE.tests.length - 1, index));
+  selection = null; draft = null; save(); render(false);
+}
+function flash(element) {
+  if (!element) return;
+  const unit = element.closest("details");
+  if (unit) unit.open = true;
+  element.scrollIntoView({ block: "center", behavior: "smooth" });
+  element.classList.remove("flash"); void element.offsetWidth; element.classList.add("flash");
+}
+
+/* ---------- events ---------- */
+function answersFor(itemId) {
+  const rec = record(currentTest());
+  if (!rec.items[itemId]) rec.items[itemId] = {};
+  return rec.items[itemId];
+}
+function markCorrect(item) { Object.assign(answersFor(item.id), allCorrect(item)); }
+function tokenOf(itemId) {
+  return [...document.querySelectorAll(".tok")].find((el) => el.dataset.items.split(",").includes(itemId));
+}
+$("panelCol").addEventListener("click", (event) => {
+  const target = event.target.closest("[data-act]");
+  if (!target) return;
+  const test = currentTest(), rec = record(test), act = target.dataset.act;
+  const card = target.closest("[data-item]");
+  const item = card && test.items.find((i) => i.id === card.dataset.item);
+  if (act === "answer") {
+    const key = target.closest("[data-claim]").dataset.claim;
+    answersFor(item.id)[key] = { a: target.dataset.value };
+  } else if (act === "allCorrect") markCorrect(item);
+  else if (act === "stepCorrect") {
+    const number = Number(target.closest("[data-step]").dataset.step);
+    test.items.filter((i) => i.step === number).forEach(markCorrect);
+  } else if (act === "goto") {
+    flash(tokenOf(item.id) || document.querySelector('.ln[data-unit="' + item.unit + '"][data-line="' + item.span.end_line + '"]'));
+    return;
+  } else if (act === "gotoAdded") {
+    const added = rec.added.find((a) => a.id === target.closest("[data-added]").dataset.added);
+    flash(document.querySelector('.ln[data-unit="' + added.unit + '"][data-line="' + added.start + '"]'));
+    return;
+  } else if (act === "removeAdded") {
+    rec.added = rec.added.filter((a) => a.id !== target.closest("[data-added]").dataset.added);
+  } else if (act === "draftKind") draft.kind = target.dataset.value;
+  else if (act === "cancelAdd") { draft = null; selection = null; }
+  else if (act === "saveAdd") {
+    const last = Math.max(0, ...rec.added.map((a) => Number(a.id.slice(1))));
+    rec.added.push(Object.assign({ id: "a" + (last + 1) }, draft));
+    draft = null; selection = null;
+  } else if (act === "done") {
+    rec.done = true; save();
+    if (state.current < BUNDLE.tests.length - 1) { goTo(state.current + 1); return; }
+  }
+  rec.done = rec.done && testReady(test, rec);
+  save(); render(true);
+});
+function readInput(element) {
+  if (element.type === "checkbox") {
+    const scope = element.closest(".extra, .row");
+    return [...scope.querySelectorAll("input[type=checkbox]:checked")].map((box) => box.value);
+  }
+  return element.value;
+}
+function syncReady() {
+  const test = currentTest(), rec = record(test);
+  document.querySelectorAll("#panelCol .card[data-item]").forEach((card) => {
+    const item = test.items.find((i) => i.id === card.dataset.item);
+    const status = itemState(item, rec.items[item.id] || {});
+    const label = card.querySelector(".state");
+    label.className = "state " + status; label.textContent = STATE_LABEL[status];
+  });
+  const ready = testReady(test, rec);
+  document.querySelector('[data-act="done"]').disabled = !ready;
+  $("doneHint").hidden = ready;
+  const add = document.querySelector('[data-act="saveAdd"]');
+  if (add) add.disabled = !draftReady(draft);
+}
+function storeInput(element) {
+  const rec = record(currentTest());
+  if (element.id === "notes") rec.notes = element.value;
+  else if (element.id === "hiddenHttp") rec.hiddenHttp = element.checked;
+  else if (element.dataset.input === "value") {
+    const key = element.closest("[data-claim]").dataset.claim;
+    answersFor(element.closest("[data-item]").dataset.item)[key].v = readInput(element);
+  } else if (element.dataset.draft) draft[element.dataset.draft] = readInput(element);
+  else return false;
+  rec.done = rec.done && testReady(currentTest(), rec);
+  save();
+  return true;
+}
+const isTyped = (element) => element.matches("input[type=text], textarea");
+// Typing updates the page in place: a re-render on blur would remove the button
+// whose click caused the blur, and the click would be lost.
+$("panelCol").addEventListener("input", (event) => { if (isTyped(event.target) && storeInput(event.target)) syncReady(); });
+$("panelCol").addEventListener("change", (event) => { if (!isTyped(event.target) && storeInput(event.target)) render(true); });
+
+$("codeCol").addEventListener("click", (event) => {
+  const act = event.target.closest("[data-act]");
+  if (act && act.dataset.act === "clearSel") { selection = null; draft = null; render(true); return; }
+  if (act && act.dataset.act === "startAdd") {
+    draft = { unit: selection.unit, start: selection.start, end: selection.end, kind: "", step: "", verb: "", path: "", parts: [], target: "", code: "", note: "" };
+    render(true); $("panelCol").scrollTop = 0; return;
+  }
+  const number = event.target.closest(".no");
+  if (number) {
+    const line = number.parentElement, unit = line.dataset.unit, n = Number(line.dataset.line);
+    if (event.shiftKey && selection && selection.unit === unit) selection = { unit, start: Math.min(selection.start, n), end: Math.max(selection.end, n) };
+    else selection = { unit, start: n, end: n };
+    if (draft) Object.assign(draft, selection);
+    render(true); return;
+  }
+  const token = event.target.closest(".tok");
+  if (token) flash(document.querySelector('.card[data-item="' + token.dataset.items.split(",")[0] + '"]'));
+});
+function hoverSync(source, on) {
+  const token = source.closest(".tok"), card = source.closest(".card[data-item]");
+  const ids = token ? token.dataset.items.split(",") : card ? [card.dataset.item] : [];
+  for (const id of ids) {
+    document.querySelectorAll('.card[data-item="' + id + '"]').forEach((el) => el.classList.toggle("hover", on && Boolean(token)));
+    document.querySelectorAll(".tok").forEach((el) => { if (el.dataset.items.split(",").includes(id)) el.classList.toggle("hover", on && Boolean(card)); });
+  }
+}
+document.addEventListener("mouseover", (event) => hoverSync(event.target, true));
+document.addEventListener("mouseout", (event) => hoverSync(event.target, false));
+
+$("prev").addEventListener("click", () => goTo(state.current - 1));
+$("next").addEventListener("click", () => goTo(state.current + 1));
+$("picker").addEventListener("change", (event) => goTo(Number(event.target.value)));
+function renderAnnotator() {
+  $("annotator").innerHTML = '<option value="">choose…</option>' + ANNOTATORS.map((id) => '<option value="' + id + '"' + (id === state.annotator ? " selected" : "") + ">" + id + "</option>").join("");
+}
+renderAnnotator();
+$("annotator").addEventListener("change", (event) => { state.annotator = event.target.value; save(); });
+$("guideBtn").addEventListener("click", () => $("guideModal").classList.add("open"));
+$("guideClose").addEventListener("click", () => $("guideModal").classList.remove("open"));
+$("exportBtn").addEventListener("click", () => {
+  if (!state.annotator) { alert("Choose your annotator id first."); $("annotator").focus(); return; }
+  // No name, timestamp or path: the export is published with the artifact.
+  const payload = { format: BUNDLE.format, bundle_digest: BUNDLE.bundle_digest, sample_digest: BUNDLE.sample_digest, annotator: state.annotator, tests: state.tests };
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" }));
+  link.download = "gerbil-validation-" + state.annotator + ".json";
+  link.click();
+});
+$("importBtn").addEventListener("click", () => $("importFile").click());
+$("importFile").addEventListener("change", async (event) => {
+  const file = event.target.files[0];
+  event.target.value = "";
+  if (!file) return;
+  let payload;
+  try { payload = JSON.parse(await file.text()); } catch (error) { alert("That file is not an exported annotation file."); return; }
+  if (payload.bundle_digest !== BUNDLE.bundle_digest) { alert("That file was exported from a different bundle."); return; }
+  if (!ANNOTATORS.includes(payload.annotator) || typeof payload.tests !== "object" || payload.tests === null) { alert("That file is not an exported annotation file."); return; }
+  if (!confirm("Replace the answers in this browser with the imported file?")) return;
+  state.annotator = payload.annotator; state.tests = payload.tests; renderAnnotator();
+  selection = null; draft = null;
+  save(); render(false);
+});
+
+render(false);
+if (!state.annotator) $("guideModal").classList.add("open");
+</script>
+</body>
+</html>

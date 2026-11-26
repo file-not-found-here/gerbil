@@ -1,0 +1,645 @@
+{
+  "commit": "fb8e21f44ac4a73168845ac19b1c83bf419b810e",
+  "tests": [
+    {
+      "class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "method_signature": "postToBitstreamContentReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "method_signature": "retrieveBitstreamNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "method_signature": "updateBitstreamFormatNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "method_signature": "headBitstreamNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.BitstreamRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "getDiscoverRootWithScopeReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "getFacetConfigurationReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "postToDiscoverReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "postToDiscoverSearchReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "getFacetValuesForNamedFacetReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "getSearchConfigurationReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "getSearchObjectsEndpointReachable()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "getDiscoverRootReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "method_signature": "getSearchFacetsReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.DiscoveryRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "getStatusWithSpecialGroupsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "deleteLoginReturns405MethodNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "getAuthnRootWithNullConverterResult()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "getAuthnRootReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "putLogoutReturns405MethodNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "postLoginWithoutCredentialsReturnsForbidden()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "deleteLogoutReturns405MethodNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "putLoginReturns405MethodNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "getLoginReturns405MethodNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "getStatusAnonymousReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "getAuthnStatusUsesEntityModel()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "postLogoutReturns204NoContent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "patchLoginReturns405MethodNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "method_signature": "getLogoutReturns405MethodNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.AuthenticationRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "deleteSubmittersGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "postAdminGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "deleteAdminGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "postItemReadGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "postBitstreamReadGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "getAdminGroupReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "getSubmittersGroupReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "postSubmittersGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "deleteBitstreamReadGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "method_signature": "deleteItemReadGroupCollectionNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CollectionGroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.UUIDLookupRestControllerTest",
+      "method_signature": "findDsoByUuidInvalidUuidReturnsBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.UUIDLookupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.UUIDLookupRestControllerTest",
+      "method_signature": "findDsoByUuidMissingParamReturnsBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.UUIDLookupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.UUIDLookupRestControllerTest",
+      "method_signature": "findDsoByUuidNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.UUIDLookupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "method_signature": "removeSubgroupNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "method_signature": "addMembersWrongContentTypeReturns415()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "method_signature": "addMembersGroupNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "method_signature": "removeMemberNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "method_signature": "addSubgroupsGroupNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "method_signature": "getGroupReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "method_signature": "addSubgroupsWrongContentTypeReturns415()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.GroupRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CsrfRestControllerTest",
+      "method_signature": "getCsrfWithDeleteReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CsrfRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.CsrfRestControllerTest",
+      "method_signature": "getCsrfWithPostReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.CsrfRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "method_signature": "addBundleWithInvalidUuidReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "method_signature": "getOnBundlesEndpointReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "method_signature": "addBundleItemNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "method_signature": "deleteOnBundlesEndpointReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.ItemAddBundleControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "getStatisticsSupportReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "getViewEventsByUuidReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "getSearchEventsByUuidReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "postViewEventReturns201()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "getViewEventsReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "getSearchEventsReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "postSearchEventReturns201()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "method_signature": "getStatisticsSupportWithNullRepositoryResult()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.StatisticsRestControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.RootRestResourceControllerTest",
+      "method_signature": "getApiRootConverterReturnsNull()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.RootRestResourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.RootRestResourceControllerTest",
+      "method_signature": "getApiRootReturns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.RootRestResourceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.RootRestResourceControllerTest",
+      "method_signature": "postToApiRootReturns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.RootRestResourceControllerTest",
+      "status": "passed"
+    }
+  ]
+}

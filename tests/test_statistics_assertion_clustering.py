@@ -109,6 +109,23 @@ def test_per_sequence_distribution_is_conditioned_on_presence() -> None:
     assert body["share_two_or_more_checks"]["proportion"] == pytest.approx(0.5)
 
 
+def test_bearing_sequence_check_counts_pools_the_sequences_carrying_a_role() -> None:
+    records = _records(
+        api_test(
+            test_sequences=[
+                _sequence(_BODY, _BODY, fingerprint="a"),
+                _sequence(_STATUS, _HEADER, fingerprint="b"),
+            ]
+        ),
+        api_test(test_sequences=[_sequence(_BODY, _HEADER, _HEADER)]),
+        non_api_test(),
+    )
+
+    assert clustering_stats.bearing_sequence_check_counts(records, "body") == [2, 1]
+    assert clustering_stats.bearing_sequence_check_counts(records, "header") == [1, 2]
+    assert clustering_stats.bearing_sequence_check_counts(records, "status") == [1]
+
+
 def test_concentration_reports_top_decile_topsidedness() -> None:
     # Ten header-bearing sequences: one holds 10 header checks, nine hold 1 each
     # (19 total). The top decile is one sequence holding 10/19 of all checks.

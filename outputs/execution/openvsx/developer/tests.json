@@ -1,0 +1,2265 @@
+{
+  "commit": "45863019ec2134678b86aa4fb6b49de0f70edfbf",
+  "tests": [
+    {
+      "class_name": "org.eclipse.openvsx.IntegrationTest",
+      "method_signature": "testPublishExtension()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.IntegrationTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testDownloadMacOSX()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testSearchExcludeBuiltInExtensions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseDirectoryNotFound()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseSyntaxesDir()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testGetItem()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseFileNotFound()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseVsixManifest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindIncludeVersionProperties()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindByNameLinuxTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowsePackageJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindByIdAlpineTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseExtensionDir()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseIcon()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testDownload()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseVsixManifestUniversal()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindIncludeLatestVersionOnly()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindByNameDuplicate()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testSearch()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testAssetExcludeBuiltInExtensions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindByIdDuplicate()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindIncludeFiles()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testGetItemBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindIncludeVersions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindByName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindIncludeStatistics()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testDownloadExcludeBuiltInExtensions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testAssetMacOSX()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindByIdInactive()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testNotWebResourceAsset()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testAssetNotFound()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseTopDir()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testAsset()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseExcludeBuiltInExtensions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testWebResourceAsset()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseVsixManifestWindows()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testSearchMultipleTargetsResponse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testSearchMacOSXTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testBrowseDownloadNotFound()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindIncludeAssetUri()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testGetItemExcludeBuiltInExtensions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "method_signature": "testFindById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.adapter.VSCodeAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testCreateExistingNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportFutureMonthCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testRevokePublisherAgreement()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testCreateNamespaceNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testArchivedReportCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceMemberSameRole()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportMonthGreaterThanTwelveJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testRevokePublisherAgreementNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceOldNamespaceEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespaceMembersWithInvalidToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportNegativeYearJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportUnsupportedMediaType()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetUserPublishInfoNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportNoAdminTokenJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetExtensionNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testAddNamespaceMemberNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceOldNamespaceDoesNotExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testAddNamespaceMember()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testCurrentMonthAdminReportJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testRemoveNamespaceMember()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtensionNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testRevokePublisherAgreementNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceNewNamespaceNull()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportMonthLessThanOneJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceOldNamespaceNull()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteDependingExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceMemberWithInvalidToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteLastExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespaceNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespaceMembers()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportFutureYearJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceNewNamespaceEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceAbortOnNewNamespaceExists()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtensionNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testCreateNamespaceNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtensionWithInvalidToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespaceMembersNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportNoAdminTokenCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetExtensionNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportMonthLessThanOneCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtensionVersionWithToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetUserPublishInfoNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportFutureYearCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testCurrentMonthAdminReportCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceMember()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetUserPublishInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportFutureMonthJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testAddNamespaceMemberNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testChangeNamespaceMemberWithToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtensionVersionWithInvalidToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testCreateNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportMonthGreaterThanTwelveCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespaceNotAdmin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetInactiveExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespaceMembersWithToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteBundledExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testReportNegativeYearCsv()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testArchivedReportJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testGetNamespaceMembersNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "method_signature": "testDeleteExtensionWithToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.admin.AdminAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testDeleteAccessTokenNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testNamespaceMembers()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testChangeNamespaceMemberSameRole()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testChangeNamespaceMember()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testDeleteAccessToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testAddNamespaceMemberNotOwner()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testAccessTokens()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testAddNamespaceMemberNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testOwnNamespacesNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testAddNamespaceMember()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testDeleteAccessTokenWrongUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testRemoveNamespaceMember()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testNamespaceMembersNotOwner()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testAccessTokensNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testOwnNamespaces()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testCreateAccessTokenNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testDeleteAccessTokenInactive()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testCreateAccessToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.UserAPITest",
+      "method_signature": "testNamespaceMembersNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.UserAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.web.SitemapControllerTest",
+      "method_signature": "testSitemap()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.web.SitemapControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2ExtensionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostReviewNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2NamespaceUuid()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishSoleContributor()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishOrphan()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPreReleaseExtensionVersionWebTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublicNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPreReleaseExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostQueryExtensionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testDeleteReviewUnknownExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testDeleteReviewNotLoggedIn()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostExistingReview()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostQueryNamespaceUuid()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2InactiveExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2ExtensionUuid()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testInactiveFile()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testDeleteReview()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPreReleaseExtensionVersionNonDefaultTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2UnknownExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testLatestExtensionVersionNonDefaultTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testUnknownExtensionTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostQueryNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testVerifiedNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishSameVersionDifferentTargetPlatformStableRelease()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryExtensionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostQueryExtensionUuid()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testLicense()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishInvalidVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testCreateNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testUnknownNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishInvalidName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishSameVersionDifferentTargetPlatformPreRelease()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testInactiveExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2IncludeAllVersionsTrue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testReadmeUniversalTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryInactiveExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testUnknownExtensionVersionTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishExistingExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testChangelog()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryMultipleTargets()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostReview()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishRestrictedUnrelated()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishVerifiedContributor()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testCreateNamespaceInvalidName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testDeleteNonExistingReview()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishRequireLicenseOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2ExtensionVersionIncludeAllVersionsTrue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testVerifyToken(java.lang.String)",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testCreateExistingNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2IncludeAllVersionsLinks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryExtensionName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testExtensionWithPublicKey()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2IncludeAllVersionsFalse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testVerifyTokenNoToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostQueryExtensionName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testCreateNamespaceInactiveToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testReadmeWindowsTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2TargetPlatformIncludeAllVersionsTrue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishRequireLicenseNone()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testInactiveExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testVerifyTokenNoPermission()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testReviews()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testCreateNamespaceNoName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testReadmeUnknownTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testLatestFile()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testSearchInactive()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testVerifyTokenInvalid()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishVerifiedOwner()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testUnknownFile()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testExtensionVersionMacOSXTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryExtensionUuid()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostReviewInvalidRating()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2ExtensionVersionIncludeAllVersionsFalse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryNamespaceUuid()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testLatestExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testSearch()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testLatestExtensionVersionAlpineLinuxTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testVerifyTokenNoNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPostReviewUnknownExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testExtensionNonDefaultTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2MultipleTargetsIncludeAllVersionsLinks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishUnknownNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishRestrictedPrivileged()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryNamespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2Namespace()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testExtensionLinuxTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testExtensionVersionNonDefaultTarget()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryUnknownExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2MultipleTargets()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testUnknownExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testPublishInactiveToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testUnknownExtensionVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2ExtensionName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "method_signature": "testGetQueryV2ExtensionVersionIncludeAllVersionsLinks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.RegistryAPITest",
+      "status": "passed"
+    }
+  ]
+}

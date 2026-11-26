@@ -27,6 +27,7 @@ from gerbil.analysis.runtime.call_sites import (
     CallSiteNode,
     MethodRef,
     PathRecovery,
+    call_site_argument_exprs,
 )
 from gerbil.analysis.schema import (
     BuilderCorrelationSource,
@@ -2018,7 +2019,7 @@ def _literal_keys_set_on_variable(
         method_name = call_site.method_name or ""
         if method_name.lower() not in mutator_methods:
             continue
-        argument_exprs = [str(argument) for argument in (call_site.argument_expr or [])]
+        argument_exprs = call_site_argument_exprs(call_site)
         key = extract_key(method_name, argument_exprs)
         if key:
             keys.append(key)
@@ -2335,7 +2336,7 @@ def _normalize_webtestclient_response_role(
         classification.response_role = HttpResponseRole.MATCHER
     elif method_name in {"expectBody", "expectBodyList"}:
         classification.response_role = _webtestclient_expect_body_role(
-            [str(argument) for argument in (call_site.argument_expr or [])]
+            call_site_argument_exprs(call_site)
         )
 
 
@@ -2373,9 +2374,7 @@ def _classify_call_site(
     resolve_class_expression: Callable[[str, str], str | None] | None = None,
 ) -> HttpClassification | None:
     method_name: str = call_site.method_name or ""
-    argument_exprs: list[str] = [
-        str(argument) for argument in (call_site.argument_expr or [])
-    ]
+    argument_exprs: list[str] = call_site_argument_exprs(call_site)
     argument_types: list[str] = list(call_site.argument_types or [])
     resolved_receiver = receiver_resolver(call_site)
     receiver_type = resolved_receiver.receiver_type
@@ -2542,7 +2541,7 @@ def _inferred_request_classification(
     resolve_expression: Callable[[str], str | None] | None = None,
 ) -> HttpClassification | None:
     method_name = call_site.method_name or ""
-    argument_exprs = [str(argument) for argument in (call_site.argument_expr or [])]
+    argument_exprs = call_site_argument_exprs(call_site)
     argument_types = list(call_site.argument_types or [])
     path_argument_exprs = _argument_exprs_at_positions(
         argument_exprs,
@@ -2838,9 +2837,7 @@ def _resolve_variable_backed_names(
         classification = node.http_classification
         if classification is None or not accept(node, classification):
             continue
-        argument_exprs = [
-            str(argument) for argument in (node.call_site.argument_expr or [])
-        ]
+        argument_exprs = call_site_argument_exprs(node.call_site)
         existing = target_names(classification)
         for variable_name in container_variables(argument_exprs):
             for name in _literal_keys_set_on_variable(
@@ -3635,7 +3632,7 @@ def _recover_event_paths_from_builder_returning_helpers(
             # leniency: a helper named `request` taking "application/json"
             # would otherwise adopt it as a relative path.
             extracted = _extract_path(
-                [str(argument) for argument in (helper_call_site.argument_expr or [])],
+                call_site_argument_exprs(helper_call_site),
                 "",
                 resolve_expression,
             )
@@ -3662,10 +3659,7 @@ def _recover_event_paths_from_builder_returning_helpers(
             truncated = extracted.truncated or chain_extends
             if not truncated and "?" not in recovered_path:
                 recovered_path += _query_only_event_argument(
-                    [
-                        str(argument)
-                        for argument in (node.call_site.argument_expr or [])
-                    ],
+                    call_site_argument_exprs(node.call_site),
                     resolve_expression,
                 )
             classification.path = recovered_path
@@ -3704,9 +3698,7 @@ def _webtestclient_receiverless_response_state(
         )
     if method_name in {"expectBody", "expectBodyList"}:
         return (
-            _webtestclient_expect_body_role(
-                [str(argument) for argument in (node.call_site.argument_expr or [])]
-            ),
+            _webtestclient_expect_body_role(call_site_argument_exprs(node.call_site)),
             HttpResponseRole.BODY_ASSERTION,
             True,
         )
@@ -4176,7 +4168,7 @@ def _recover_citrus_send_chain(
 
     for node in chain_nodes:
         method_name = node.call_site.method_name or ""
-        argument_exprs = [str(arg) for arg in (node.call_site.argument_expr or [])]
+        argument_exprs = call_site_argument_exprs(node.call_site)
         if method_name == _CITRUS_SEND_METHOD and send_node is None:
             send_node = node
         elif method_name in _CITRUS_VERB_HTTP_METHODS and verb_node is None:
@@ -4389,9 +4381,7 @@ def _helper_parameter_values(
     parameters = callee_details.parameters or []
     parameter_names = [str(parameter.name or "") for parameter in parameters]
     bound: dict[str, str | None] = {name: None for name in parameter_names if name}
-    argument_exprs = [
-        str(argument) for argument in (helper_node.call_site.argument_expr or [])
-    ]
+    argument_exprs = call_site_argument_exprs(helper_node.call_site)
     if len(parameters) != len(argument_exprs):
         return bound
 

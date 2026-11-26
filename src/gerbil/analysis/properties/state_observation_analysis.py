@@ -11,7 +11,11 @@ from cldk.models.java import JImport
 from cldk.models.java.models import JCallable, JVariableDeclaration
 
 from gerbil.analysis.runtime import TestRuntimeView
-from gerbil.analysis.runtime.call_sites import CallSiteNode, MethodRef
+from gerbil.analysis.runtime.call_sites import (
+    CallSiteNode,
+    MethodRef,
+    call_site_argument_exprs,
+)
 from gerbil.analysis.schema import (
     LifecyclePhase,
     StateObservation,
@@ -130,8 +134,8 @@ def _assertion_references_name(node: CallSiteNode, pattern: re.Pattern[str]) -> 
         receiver_expr = call_site.receiver_expr or ""
         if receiver_expr and pattern.search(receiver_expr):
             return True
-        for argument in call_site.argument_expr or []:
-            if argument and pattern.search(str(argument)):
+        for argument in call_site_argument_exprs(call_site):
+            if argument and pattern.search(argument):
                 return True
         return False
 

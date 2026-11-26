@@ -1,41 +1,41 @@
 {
   "scope": "all_tests",
-  "test_count": 3998,
+  "test_count": 22929,
   "test_type_split": {
     "api": {
-      "test_count": 3998,
-      "pct_of_tests": 100.0
+      "test_count": 22814,
+      "pct_of_tests": 99.49845174233504
     },
     "controller_unit": {
       "test_count": 0,
       "pct_of_tests": 0.0
     },
     "other": {
-      "test_count": 0,
-      "pct_of_tests": 0.0
+      "test_count": 115,
+      "pct_of_tests": 0.5015482576649658
     }
   },
   "focal_resource_split": {
     "scope": "api_tests",
-    "test_count": 3998,
+    "test_count": 22814,
     "multi_resource": {
-      "test_count": 2245,
-      "pct_of_tests": 56.15307653826913
+      "test_count": 10558,
+      "pct_of_tests": 46.27860085912159
     },
     "single_resource": {
-      "test_count": 1746,
-      "pct_of_tests": 43.67183591795898
+      "test_count": 11623,
+      "pct_of_tests": 50.94678706057684
     },
     "no_resource_recovered": {
-      "test_count": 7,
-      "pct_of_tests": 0.17508754377188596
+      "test_count": 633,
+      "pct_of_tests": 2.7746120803015693
     }
   },
   "multi_resource_origin_split": {
     "scope": "multi_resource_api_tests",
-    "test_count": 2245,
+    "test_count": 10558,
     "multi_in_test_body": {
-      "test_count": 2245,
+      "test_count": 10558,
       "pct_of_tests": 100.0
     },
     "multi_only_with_fixture_requests": {
@@ -45,14 +45,14 @@
   },
   "focal_endpoint_split": {
     "scope": "single_resource_api_tests",
-    "test_count": 1746,
+    "test_count": 11623,
     "multi_endpoint": {
-      "test_count": 99,
-      "pct_of_tests": 5.670103092783505
+      "test_count": 1465,
+      "pct_of_tests": 12.604319022627548
     },
     "single_endpoint": {
-      "test_count": 1647,
-      "pct_of_tests": 94.3298969072165
+      "test_count": 10158,
+      "pct_of_tests": 87.39568097737245
     },
     "no_endpoint_resolved": {
       "test_count": 0,

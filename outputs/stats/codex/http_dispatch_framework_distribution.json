@@ -1,18 +1,18 @@
 {
   "scope": "http_call_sites",
-  "call_site_count": 483,
+  "call_site_count": 3288,
   "framework_split": {
     "mockmvc": {
-      "call_site_count": 381,
-      "pct_of_call_sites": 78.88198757763975
+      "call_site_count": 2716,
+      "pct_of_call_sites": 82.60340632603406
     },
     "webtestclient": {
       "call_site_count": 0,
       "pct_of_call_sites": 0.0
     },
     "test-rest-template": {
-      "call_site_count": 0,
-      "pct_of_call_sites": 0.0
+      "call_site_count": 3,
+      "pct_of_call_sites": 0.09124087591240876
     },
     "rest-template": {
       "call_site_count": 0,
@@ -27,8 +27,8 @@
       "pct_of_call_sites": 0.0
     },
     "rest-assured": {
-      "call_site_count": 0,
-      "pct_of_call_sites": 0.0
+      "call_site_count": 569,
+      "pct_of_call_sites": 17.305352798053526
     },
     "okhttp": {
       "call_site_count": 0,
@@ -39,8 +39,8 @@
       "pct_of_call_sites": 0.0
     },
     "java-httpclient": {
-      "call_site_count": 102,
-      "pct_of_call_sites": 21.11801242236025
+      "call_site_count": 0,
+      "pct_of_call_sites": 0.0
     },
     "micronaut-client": {
       "call_site_count": 0,

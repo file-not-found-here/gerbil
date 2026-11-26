@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from collections import Counter
+from dataclasses import replace
 
 import pytest
 
@@ -206,6 +207,32 @@ def test_per_test_lifecycle_shares_scoped_to_tests_with_sequences() -> None:
         "proportion": pytest.approx(1.0),
     }
     assert per_test["has_cleanup_delete"] == {
+        "count": 1,
+        "total": 2,
+        "proportion": pytest.approx(0.5),
+    }
+
+
+def test_read_after_write_share_is_scoped_to_writing_tests() -> None:
+    tests = [
+        replace(
+            make_test(
+                resource_lifecycle_labels=("create-verify",),
+                has_read_after_write=True,
+            ),
+            writes_resource=True,
+        ),
+        replace(
+            make_test(resource_lifecycle_labels=("create-and-trust", "read-only")),
+            writes_resource=True,
+        ),
+        # Reads only -> not a writing test.
+        make_test(resource_lifecycle_labels=("read-only",)),
+    ]
+
+    per_test = resource_interaction_stats.compute(tests, [])["per_test"]
+
+    assert per_test["read_after_write_among_writing_tests"] == {
         "count": 1,
         "total": 2,
         "proportion": pytest.approx(0.5),

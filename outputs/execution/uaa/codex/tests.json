@@ -1,0 +1,95 @@
+{
+  "commit": "0b76f4f0f63967e3a9902ee516af03f51a1b5266",
+  "tests": [
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.HttpEndpointSmokeTests",
+      "method_signature": "samlMetadataRoutesReturnUnauthorizedWhenNoRegistrationCanBeResolved()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.HttpEndpointSmokeTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.HttpEndpointSmokeTests",
+      "method_signature": "rateLimitStatusEndpointReturnsJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.HttpEndpointSmokeTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.HttpEndpointSmokeTests",
+      "method_signature": "healthEndpointReportsRunningAndAcceptsWildcardProbePaths()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.HttpEndpointSmokeTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "method_signature": "tokenKeyEndpointSupportsEtagRevalidation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "uaa",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "method_signature": "healthIsPublicAndReportsApplicationState()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "uaa",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "method_signature": "openIdConfigurationIsAvailableOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "uaa",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "method_signature": "tokenKeysEndpointReturnsJwkSet()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "uaa",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "method_signature": "scimUserListingRequiresAuthorization()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "uaa",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "method_signature": "everyRegisteredMvcRouteDispatchesThroughTheUaaHttpStack()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "uaa",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.api.UaaHttpApiTests",
+      "status": "passed"
+    }
+  ]
+}

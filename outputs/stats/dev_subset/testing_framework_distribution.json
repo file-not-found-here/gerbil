@@ -1,0 +1,132 @@
+{
+  "scope": "test_classes",
+  "test_class_count": 4488,
+  "framework_split": {
+    "junit3": {
+      "class_count": 13,
+      "pct_of_classes": 0.2896613190730838
+    },
+    "junit4": {
+      "class_count": 1444,
+      "pct_of_classes": 32.174688057040996
+    },
+    "junit5": {
+      "class_count": 3672,
+      "pct_of_classes": 81.81818181818181
+    },
+    "testng": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "assertj": {
+      "class_count": 1826,
+      "pct_of_classes": 40.68627450980392
+    },
+    "hamcrest": {
+      "class_count": 565,
+      "pct_of_classes": 12.589126559714796
+    },
+    "google-truth": {
+      "class_count": 41,
+      "pct_of_classes": 0.9135472370766489
+    },
+    "mockito": {
+      "class_count": 2187,
+      "pct_of_classes": 48.72994652406417
+    },
+    "easymock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "powermock": {
+      "class_count": 51,
+      "pct_of_classes": 1.1363636363636365
+    },
+    "jmockit": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "jmock": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "spring-test": {
+      "class_count": 1291,
+      "pct_of_classes": 28.76559714795009
+    },
+    "rest-assured": {
+      "class_count": 166,
+      "pct_of_classes": 3.698752228163993
+    },
+    "karate": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "pact": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    },
+    "citrus": {
+      "class_count": 0,
+      "pct_of_classes": 0.0
+    }
+  },
+  "category_split": {
+    "test-runner": {
+      "frameworks": [
+        "junit3",
+        "junit4",
+        "junit5",
+        "testng"
+      ],
+      "class_count": 4488,
+      "pct_of_classes": 100.0
+    },
+    "assertion-library": {
+      "frameworks": [
+        "assertj",
+        "hamcrest",
+        "google-truth"
+      ],
+      "class_count": 2336,
+      "pct_of_classes": 52.04991087344028
+    },
+    "mocking-library": {
+      "frameworks": [
+        "mockito",
+        "easymock",
+        "powermock",
+        "jmockit",
+        "jmock"
+      ],
+      "class_count": 2187,
+      "pct_of_classes": 48.72994652406417
+    },
+    "api-test-framework": {
+      "frameworks": [
+        "spring-test",
+        "rest-assured",
+        "karate",
+        "pact",
+        "citrus"
+      ],
+      "class_count": 1398,
+      "pct_of_classes": 31.149732620320854
+    }
+  },
+  "classes_without_frameworks": {
+    "count": 0,
+    "total": 4488,
+    "proportion": 0.0
+  },
+  "framework_count_per_class": {
+    "count": 4488,
+    "min": 1.0,
+    "max": 6.0,
+    "mean": 2.5080213903743314,
+    "p25": 2.0,
+    "p50": 2.0,
+    "p75": 3.0,
+    "p90": 4.0
+  }
+}

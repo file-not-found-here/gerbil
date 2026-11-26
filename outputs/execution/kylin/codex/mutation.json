@@ -1,0 +1,373 @@
+{
+  "target_classes": 19,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 4,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "25e30eb3fe2286c896212b4625dc41eeae019e007dbd007f76c02277f4c10dc8",
+  "runs": [
+    {
+      "module": "src/common-server",
+      "threads": 1,
+      "seconds": 97.3,
+      "peak_memory_bytes": 1120575488
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "org.apache.kylin.common.KapConfig|getCircuitBreakerThresholdOfFavoriteQuery|()I|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|9",
+      "mutated_class": "org.apache.kylin.common.KapConfig",
+      "mutated_method": "getCircuitBreakerThresholdOfFavoriteQuery",
+      "line": 499,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KapConfig|getColumnarSparkConf|(Ljava/lang/String;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|10",
+      "mutated_class": "org.apache.kylin.common.KapConfig",
+      "mutated_method": "getColumnarSparkConf",
+      "line": 263,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getExecutableSurvivalTimeThreshold|()J|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|9",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getExecutableSurvivalTimeThreshold",
+      "line": 2853,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getIndexOptimizationLevel|()I|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|8",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getIndexOptimizationLevel",
+      "line": 2833,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getIndexPlannerQueueKey|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|16",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getIndexPlannerQueueKey",
+      "line": 4069,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getInstanceLogRetentionTime|()J|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|9",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getInstanceLogRetentionTime",
+      "line": 3536,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getJobErrorNotificationEnabled|()Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator|8",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getJobErrorNotificationEnabled",
+      "line": 2891,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getMaxMeasureSegmentPrunerBeforeDays|()J|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|8",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getMaxMeasureSegmentPrunerBeforeDays",
+      "line": 4229,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getQueueKey|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|16",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getQueueKey",
+      "line": 4061,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getRedisSentinelMasterId|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|7",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getRedisSentinelMasterId",
+      "line": 2117,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getRemoteHadoopCliPort|()I|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|8",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getRemoteHadoopCliPort",
+      "line": 1103,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|getZKAcls|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|7",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "getZKAcls",
+      "line": 504,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|isQueryDryRunEnabled|()Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|8",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "isQueryDryRunEnabled",
+      "line": 2058,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|isQueryFilterReductionEnabled|()Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator|8",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "isQueryFilterReductionEnabled",
+      "line": 1956,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfigBase|partialMatchNonEquiJoins|()Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator|8",
+      "mutated_class": "org.apache.kylin.common.KylinConfigBase",
+      "mutated_method": "partialMatchNonEquiJoins",
+      "line": 1901,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinConfig|getHdfsWorkingDirectoryFromProperties|(Ljava/util/Properties;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|98",
+      "mutated_class": "org.apache.kylin.common.KylinConfig",
+      "mutated_method": "getHdfsWorkingDirectoryFromProperties",
+      "line": 669,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinExternalConfigLoader|getProperties|()Ljava/util/Properties;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|12",
+      "mutated_class": "org.apache.kylin.common.KylinExternalConfigLoader",
+      "mutated_method": "getProperties",
+      "line": 175,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinExternalConfigLoader|getPropertyEntries|()Lorg/apache/kylin/guava30/shaded/common/collect/ImmutableMap;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|5",
+      "mutated_class": "org.apache.kylin.common.KylinExternalConfigLoader",
+      "mutated_method": "getPropertyEntries",
+      "line": 181,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.apache.kylin.rest.controller.ApiEndpointHttpTest#monitorStatisticsRejectsMissingAndReversedTimeRanges"
+      ]
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.KylinExternalConfigLoader|getProperty|(Ljava/lang/String;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|9",
+      "mutated_class": "org.apache.kylin.common.KylinExternalConfigLoader",
+      "mutated_method": "getProperty",
+      "line": 164,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.msg.Message|getInvalidProjectName|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|4",
+      "mutated_class": "org.apache.kylin.common.msg.Message",
+      "mutated_method": "getInvalidProjectName",
+      "line": 405,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.msg.Message|getModelIsNotMlp|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|4",
+      "mutated_class": "org.apache.kylin.common.msg.Message",
+      "mutated_method": "getModelIsNotMlp",
+      "line": 1291,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.msg.Message|getModelNumOverThreshold|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|4",
+      "mutated_class": "org.apache.kylin.common.msg.Message",
+      "mutated_method": "getModelNumOverThreshold",
+      "line": 1059,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.msg.MsgPicker|setMsg|(Ljava/lang/String;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|11",
+      "mutated_class": "org.apache.kylin.common.msg.MsgPicker",
+      "mutated_method": "setMsg",
+      "line": 33,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.common.util.FileUtils|fileExist|(Ljava/lang/String;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator|21",
+      "mutated_class": "org.apache.kylin.common.util.FileUtils",
+      "mutated_method": "fileExist",
+      "line": 109,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.rest.controller.HealthController|readEncryptedToken|(Ljava/io/BufferedInputStream;)[B|org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator|51",
+      "mutated_class": "org.apache.kylin.rest.controller.HealthController",
+      "mutated_method": "readEncryptedToken",
+      "line": 130,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.kylin.rest.controller.ApiEndpointHttpTest#healthInstanceInfoRejectsMissingTokenInEnvelope"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.rest.controller.NBasicController|checkStreamingJobsStatus|(Ljava/util/List;)V|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|5",
+      "mutated_class": "org.apache.kylin.rest.controller.NBasicController",
+      "mutated_method": "checkStreamingJobsStatus",
+      "line": 637,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.rest.controller.NBasicController|handleError|(Ljavax/servlet/http/HttpServletRequest;Ljava/lang/Throwable;)Lorg/apache/kylin/rest/response/ErrorResponse;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|87",
+      "mutated_class": "org.apache.kylin.rest.controller.NBasicController",
+      "mutated_method": "handleError",
+      "line": 199,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.kylin.rest.controller.ApiEndpointHttpTest#errorEndpointPropagatesTheStoredFailureAsServerError"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.kylin.rest.response.ErrorResponse|<init>|(Ljava/lang/String;Ljava/lang/Throwable;)V|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|73",
+      "mutated_class": "org.apache.kylin.rest.response.ErrorResponse",
+      "mutated_method": "<init>",
+      "line": 74,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.apache.kylin.rest.controller.ApiEndpointHttpTest#monitorStatisticsRejectsMissingAndReversedTimeRanges"
+      ]
+    },
+    {
+      "mutant_id": "org.apache.kylin.rest.service.MonitorService|lambda$timeClusterStatus$5|(Ljava/lang/String;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|4",
+      "mutated_class": "org.apache.kylin.rest.service.MonitorService",
+      "mutated_method": "lambda$timeClusterStatus$5",
+      "line": 237,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    }
+  ]
+}

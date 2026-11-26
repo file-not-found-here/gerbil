@@ -1,0 +1,154 @@
+{
+  "target_classes": 23,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 6,
+  "untested_line_covered_mutants": 1,
+  "sample_sha256": "2edd9788c9d0fd9523382f732d561658e149c8f9ad0d8a3bf1ba1d29b35a8d07",
+  "runs": [
+    {
+      "module": "clouddriver/clouddriver-web",
+      "threads": 1,
+      "seconds": 927.4,
+      "peak_memory_bytes": 1786351616
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "com.netflix.spinnaker.cats.agent.CachingAgent$CacheExecution|executeAgent|(Lcom/netflix/spinnaker/cats/agent/Agent;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|18",
+      "mutated_class": "com.netflix.spinnaker.cats.agent.CachingAgent$CacheExecution",
+      "mutated_method": "executeAgent",
+      "line": 78,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "em.generated.EvoMaster_clouddriver_0_Test#test_410_getOnSecurityGroupReturns404",
+        "em.generated.EvoMaster_clouddriver_1_Test#test_379_getOnJobCauses500_internalServerError"
+      ]
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.cats.cache.DefaultAgentIntrospection|lambda$finish$2|(Ljava/lang/Integer;Ljava/util/Collection;)Ljava/lang/Integer;|org.pitest.mutationtest.engine.gregor.mutators.MathMutator|7",
+      "mutated_class": "com.netflix.spinnaker.cats.cache.DefaultAgentIntrospection",
+      "mutated_method": "lambda$finish$2",
+      "line": 49,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.artifacts.config.ArtifactCredentials|handlesType|(Ljava/lang/String;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator|7",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.artifacts.config.ArtifactCredentials",
+      "mutated_method": "handlesType",
+      "line": 74,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "em.generated.EvoMaster_clouddriver_0_Test#test_101_putOnFetchCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_103_putOnFetchCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_104_putOnFetchCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_105_putOnFetchCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_106_putOnFetchCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_107_putOnFetchCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_160_putOnFetchReturns400",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_162_putOnFetchReturns400",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_165_putOnFetchReturns400",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_166_putOnFetchReturns400",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_295_getOnVersionsShowsFaults_100_309",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_296_getOnVersionsCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_300_getOnVersionsCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_301_getOnVersionsCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_302_getOnNamesShowsFaults_100_309",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_330_getOnVersionsReturns400",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_331_getOnNamesReturns400",
+        "em.generated.EvoMaster_clouddriver_1_Test#test_262_getOnNamesCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_1_Test#test_263_getOnNamesCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_1_Test#test_308_getOnVersionsReturns400",
+        "em.generated.EvoMaster_clouddriver_1_Test#test_309_getOnVersionsReturns400",
+        "em.generated.EvoMaster_clouddriver_1_Test#test_70_putOnFetchCauses500_internalServerError",
+        "em.generated.EvoMaster_clouddriver_1_Test#test_74_putOnFetchShowsFaults_100_309"
+      ],
+      "surviving_tests": [
+        "em.generated.EvoMaster_clouddriver_0_Test#test_367_getOnVersionsReturns404",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_369_getOnVersionsReturns404",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_371_getOnNamesReturns404",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_372_getOnNamesReturns404",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_375_getOnNamesReturns404"
+      ]
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.cache.CatsOnDemandCacheUpdater|pendingOnDemandRequests|(Lcom/netflix/spinnaker/clouddriver/cache/OnDemandType;Ljava/lang/String;)Ljava/util/Collection;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|12",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.cache.CatsOnDemandCacheUpdater",
+      "mutated_method": "pendingOnDemandRequests",
+      "line": 196,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig|noopApplicationProvider|()Lcom/netflix/spinnaker/clouddriver/model/ApplicationProvider;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|6",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig",
+      "mutated_method": "noopApplicationProvider",
+      "line": 270,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "em.generated.EvoMaster_clouddriver_0_Test#test_410_getOnSecurityGroupReturns404"
+      ]
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig|projectSearchProvider|(Lcom/netflix/spinnaker/clouddriver/core/services/Front50Service;)Lcom/netflix/spinnaker/clouddriver/search/ProjectSearchProvider;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|7",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig",
+      "mutated_method": "projectSearchProvider",
+      "line": 252,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "em.generated.EvoMaster_clouddriver_0_Test#test_410_getOnSecurityGroupReturns404"
+      ]
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.core.ProjectClustersService|retrieveClusters|(Ljava/lang/String;Lcom/netflix/spinnaker/clouddriver/core/ProjectClustersService$Project;)Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|26",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.core.ProjectClustersService",
+      "mutated_method": "retrieveClusters",
+      "line": 164,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.model.NoopSubnetProvider|getCloudProvider|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|4",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.model.NoopSubnetProvider",
+      "mutated_method": "getCloudProvider",
+      "line": 25,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "em.generated.EvoMaster_clouddriver_0_Test#test_112_getOnSubnetWithQueryParamsReturnsEmptyList",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_113_getOnSubnetReturnsEmptyList",
+        "em.generated.EvoMaster_clouddriver_0_Test#test_118_getOnSubnetReturnsEmptyList"
+      ]
+    }
+  ]
+}

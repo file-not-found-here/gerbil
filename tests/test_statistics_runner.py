@@ -157,18 +157,15 @@ def test_coverage_family_stats_require_resolved_event() -> None:
     assert resource["lifecycle_label_distribution"]["pair_count"] == 0
 
 
-def test_saint_comparison_and_correlation_are_opt_in() -> None:
+def test_saint_comparison_is_opt_in() -> None:
     default = compute_all_statistics(_records())
     assert "saint_comparison" not in default["parameter_exercise_distribution"]
 
-    statistics = compute_all_statistics(
-        _records(), saint_comparison=True, api_test_count_correlation=True
-    )
+    statistics = compute_all_statistics(_records(), saint_comparison=True)
 
     assert set(statistics) - _EXPECTED_STEMS == {
         "saint_comparison_distribution",
         "production_resource_sequence_distribution",
-        "api_test_count_correlation",
     }
     # saint_comparison scores the full ungated universe (3 endpoints); with no
     # SAINT context-path prefix present, the stripped view mirrors the baseline.

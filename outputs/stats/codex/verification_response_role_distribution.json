@@ -1,58 +1,58 @@
 {
   "scope": "api_tests",
-  "api_test_count": 89,
+  "api_test_count": 304,
   "verification_roles": {
     "scope": "http_verifications",
-    "verification_count": 232,
+    "verification_count": 1478,
     "by_role": {
       "inspector": {
         "count": 0,
-        "total": 232,
+        "total": 1478,
         "proportion": 0.0
       },
       "matcher": {
         "count": 0,
-        "total": 232,
+        "total": 1478,
         "proportion": 0.0
       },
       "extractor": {
         "count": 0,
-        "total": 232,
+        "total": 1478,
         "proportion": 0.0
       },
       "body-assertion": {
-        "count": 73,
-        "total": 232,
-        "proportion": 0.3146551724137931
+        "count": 585,
+        "total": 1478,
+        "proportion": 0.39580514208389717
       },
       "header-assertion": {
-        "count": 10,
-        "total": 232,
-        "proportion": 0.04310344827586207
+        "count": 36,
+        "total": 1478,
+        "proportion": 0.02435723951285521
       },
       "status-assertion": {
-        "count": 127,
-        "total": 232,
-        "proportion": 0.5474137931034483
+        "count": 844,
+        "total": 1478,
+        "proportion": 0.571041948579161
       },
       "none": {
-        "count": 22,
-        "total": 232,
-        "proportion": 0.09482758620689655
+        "count": 13,
+        "total": 1478,
+        "proportion": 0.008795669824086604
       }
     }
   },
   "response_extraction": {
     "tests_with_extraction": {
-      "count": 6,
-      "total": 89,
-      "proportion": 0.06741573033707865
+      "count": 14,
+      "total": 304,
+      "proportion": 0.046052631578947366
     },
     "extraction_count_per_test": {
-      "count": 89,
+      "count": 304,
       "min": 0.0,
-      "max": 2.0,
-      "mean": 0.07865168539325842,
+      "max": 9.0,
+      "mean": 0.1118421052631579,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 0.0,
@@ -60,9 +60,9 @@
     },
     "multi_request_tests_with_extraction": {
       "scope": "api_tests_with_multiple_request_events",
-      "count": 3,
-      "total": 26,
-      "proportion": 0.11538461538461539
+      "count": 9,
+      "total": 151,
+      "proportion": 0.059602649006622516
     }
   }
 }

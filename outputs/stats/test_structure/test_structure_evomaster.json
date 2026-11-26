@@ -1,0 +1,4200 @@
+{
+  "suite": "evomaster",
+  "projects": [
+    "dolphinscheduler",
+    "DSpace",
+    "hertzbeat",
+    "incubator-kie-kogito-runtimes",
+    "kylin",
+    "openvsx",
+    "spinnaker",
+    "uaa"
+  ],
+  "projects_left_out": [
+    "spring-cloud-dataflow"
+  ],
+  "method": {
+    "encounter": "a passing test running a sampled mutant",
+    "kill_rate": "a group's kills over its encounters",
+    "test_strength": "mutants a group kills over the mutants it runs",
+    "shared_mutants": "The mutants that tests of both groups run. A group's kill rate on a mutant is the share of its tests running the mutant that kill it, and the mean kill rates and their difference are over the shared mutants, each counted once whatever the size of the groups.",
+    "same_test_class": "The shared mutants that tests of both groups in one test class run, which share that class's harness and fixtures. A group's kill rate on a mutant is the mean, over such test classes, of the share of the class's tests of the group running the mutant that kill it.",
+    "mean_difference_without": "The pooled mean difference with each project left out in turn.",
+    "difference_interval": "95% percentile interval of the mean difference over 10000 resamples of whole mutated classes",
+    "test": "class_sign_flip: the share of 10000 random sign flips of whole mutated classes' differences whose mean difference is at least as far from zero as the observed one, counting the observed one",
+    "alternative": "two-sided",
+    "correction": "holm, over the tested comparisons of one set of tests; not over suites, nor over the pooled and per-project sets together",
+    "alpha": 0.05,
+    "untested": "A comparison whose mutants are of fewer than two classes has no interval or test, and one whose classes' differences are all zero has no test.",
+    "killed_only_by": "Counts of shared mutants by which groups kill them; a group with more tests has more chances to kill."
+  },
+  "pooled": {
+    "tests": 12315,
+    "encounters": 98674,
+    "traits": [
+      {
+        "name": "multi_step",
+        "label": "Two or more steps",
+        "population": "tests with a step",
+        "holding": {
+          "tests": 6638,
+          "tests_running_a_mutant": 4756,
+          "encounters": 88949,
+          "kills": 29472,
+          "kill_rate": 0.33133593407458206,
+          "mutants_run": 426,
+          "mutants_killed": 167,
+          "test_strength": 0.392018779342723
+        },
+        "lacking": {
+          "tests": 5677,
+          "tests_running_a_mutant": 2109,
+          "encounters": 9725,
+          "kills": 1698,
+          "kill_rate": 0.17460154241645245,
+          "mutants_run": 274,
+          "mutants_killed": 98,
+          "test_strength": 0.35766423357664234
+        },
+        "shared_mutants": {
+          "mutants": 122,
+          "mutated_classes": 96,
+          "mean_kill_rate_holding": 0.3835445203276782,
+          "mean_kill_rate_lacking": 0.32536270902131614,
+          "mean_difference": 0.05818181130636214,
+          "difference_interval": [
+            0.02805608455053248,
+            0.09396799028828227
+          ],
+          "holding_higher": 33,
+          "lacking_higher": 7,
+          "tied": 82,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.00029997000299970003,
+            "p_adjusted": 0.0026997300269973002,
+            "significant": true
+          },
+          "killed_only_by_holding": 18,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 50,
+          "killed_by_neither": 54,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.05438244686191086,
+            "DSpace": 0.059453160418571335,
+            "hertzbeat": 0.05818181130636214,
+            "incubator-kie-kogito-runtimes": 0.040870907706134885,
+            "kylin": 0.05409252820842628,
+            "openvsx": 0.05723400085959485,
+            "spinnaker": 0.05818181130636214,
+            "uaa": 0.08241489290039601
+          }
+        },
+        "same_test_class": {
+          "mutants": 114,
+          "mutated_classes": 88,
+          "mean_kill_rate_holding": 0.3850572607486508,
+          "mean_kill_rate_lacking": 0.32235712811834194,
+          "mean_difference": 0.0627001326303089,
+          "difference_interval": [
+            0.028698889385426953,
+            0.10310961703309408
+          ],
+          "holding_higher": 26,
+          "lacking_higher": 6,
+          "tied": 82,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.00019998000199980003,
+            "p_adjusted": 0.001999800019998,
+            "significant": true
+          },
+          "test_classes": 19,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.05813429019985532,
+            "DSpace": 0.06676681346137747,
+            "hertzbeat": 0.0627001326303089,
+            "incubator-kie-kogito-runtimes": 0.03760390832271978,
+            "kylin": 0.05652433935752228,
+            "openvsx": 0.06384353825197188,
+            "spinnaker": 0.0627001326303089,
+            "uaa": 0.09258375891631332
+          }
+        }
+      },
+      {
+        "name": "five_or_more_steps",
+        "label": "Five or more steps",
+        "population": "tests with a step",
+        "holding": {
+          "tests": 513,
+          "tests_running_a_mutant": 504,
+          "encounters": 20125,
+          "kills": 7526,
+          "kill_rate": 0.37396273291925464,
+          "mutants_run": 186,
+          "mutants_killed": 86,
+          "test_strength": 0.46236559139784944
+        },
+        "lacking": {
+          "tests": 11802,
+          "tests_running_a_mutant": 6361,
+          "encounters": 78549,
+          "kills": 23644,
+          "kill_rate": 0.3010095609110237,
+          "mutants_run": 577,
+          "mutants_killed": 214,
+          "test_strength": 0.3708838821490468
+        },
+        "shared_mutants": {
+          "mutants": 185,
+          "mutated_classes": 137,
+          "mean_kill_rate_holding": 0.4037561495267858,
+          "mean_kill_rate_lacking": 0.3644564964261401,
+          "mean_difference": 0.03929965310064556,
+          "difference_interval": [
+            0.0196450338292404,
+            0.05952798047149643
+          ],
+          "holding_higher": 43,
+          "lacking_higher": 21,
+          "tied": 121,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.00029997000299970003,
+            "p_adjusted": 0.0026997300269973002,
+            "significant": true
+          },
+          "killed_only_by_holding": 0,
+          "killed_only_by_lacking": 17,
+          "killed_by_both": 85,
+          "killed_by_neither": 83,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.04115679309331922,
+            "DSpace": 0.038053337172733084,
+            "hertzbeat": 0.04559568261931882,
+            "incubator-kie-kogito-runtimes": 0.03171565615493892,
+            "kylin": 0.03929965310064556,
+            "openvsx": 0.03929965310064556,
+            "spinnaker": 0.03929965310064556,
+            "uaa": 0.03736028807002339
+          }
+        },
+        "same_test_class": {
+          "mutants": 164,
+          "mutated_classes": 121,
+          "mean_kill_rate_holding": 0.37358900971936704,
+          "mean_kill_rate_lacking": 0.33885234676187725,
+          "mean_difference": 0.03473666295748986,
+          "difference_interval": [
+            0.015533634280956086,
+            0.05369818339055794
+          ],
+          "holding_higher": 37,
+          "lacking_higher": 16,
+          "tied": 111,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.0010998900109989002,
+            "p_adjusted": 0.0054994500549945015,
+            "significant": true
+          },
+          "test_classes": 17,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.03616423408277436,
+            "DSpace": 0.036654216027145546,
+            "hertzbeat": 0.035165510648323066,
+            "incubator-kie-kogito-runtimes": 0.023748988302941705,
+            "kylin": 0.03473666295748986,
+            "openvsx": 0.03473666295748986,
+            "spinnaker": 0.03473666295748986,
+            "uaa": 0.045996038365583615
+          }
+        }
+      },
+      {
+        "name": "checks_body",
+        "label": "Checks the body, against only the status",
+        "population": "tests checking the body or only the status",
+        "holding": {
+          "tests": 11571,
+          "tests_running_a_mutant": 6327,
+          "encounters": 72150,
+          "kills": 23139,
+          "kill_rate": 0.3207068607068607,
+          "mutants_run": 575,
+          "mutants_killed": 214,
+          "test_strength": 0.37217391304347824
+        },
+        "lacking": {
+          "tests": 20,
+          "tests_running_a_mutant": 4,
+          "encounters": 152,
+          "kills": 60,
+          "kill_rate": 0.39473684210526316,
+          "mutants_run": 38,
+          "mutants_killed": 15,
+          "test_strength": 0.39473684210526316
+        },
+        "shared_mutants": {
+          "mutants": 38,
+          "mutated_classes": 28,
+          "mean_kill_rate_holding": 0.38087964854287104,
+          "mean_kill_rate_lacking": 0.39473684210526316,
+          "mean_difference": -0.01385719356239212,
+          "difference_interval": [
+            -0.0559721272556927,
+            0.05781668138009201
+          ],
+          "holding_higher": 2,
+          "lacking_higher": 11,
+          "tied": 25,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.7235276472352765,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "killed_only_by_holding": 2,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 15,
+          "killed_by_neither": 21,
+          "mean_difference_without": {
+            "dolphinscheduler": -0.01385719356239212,
+            "DSpace": -0.01385719356239212,
+            "hertzbeat": -0.01385719356239212,
+            "incubator-kie-kogito-runtimes": -0.01385719356239212,
+            "kylin": -0.01385719356239212,
+            "openvsx": -0.01385719356239212,
+            "spinnaker": -0.01385719356239212,
+            "uaa": null
+          }
+        },
+        "same_test_class": {
+          "mutants": 38,
+          "mutated_classes": 28,
+          "mean_kill_rate_holding": 0.3745331800346656,
+          "mean_kill_rate_lacking": 0.39473684210526316,
+          "mean_difference": -0.020203662070597535,
+          "difference_interval": [
+            -0.06808431266025172,
+            0.0567495743918972
+          ],
+          "holding_higher": 2,
+          "lacking_higher": 11,
+          "tied": 25,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.595040495950405,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "test_classes": 2,
+          "mean_difference_without": {
+            "dolphinscheduler": -0.020203662070597535,
+            "DSpace": -0.020203662070597535,
+            "hertzbeat": -0.020203662070597535,
+            "incubator-kie-kogito-runtimes": -0.020203662070597535,
+            "kylin": -0.020203662070597535,
+            "openvsx": -0.020203662070597535,
+            "spinnaker": -0.020203662070597535,
+            "uaa": null
+          }
+        }
+      },
+      {
+        "name": "deep_body_check",
+        "label": "A step with two or more body checks, against at most one",
+        "population": "tests with a body check in a step",
+        "holding": {
+          "tests": 7267,
+          "tests_running_a_mutant": 5155,
+          "encounters": 59960,
+          "kills": 19675,
+          "kill_rate": 0.3281354236157438,
+          "mutants_run": 546,
+          "mutants_killed": 202,
+          "test_strength": 0.36996336996337
+        },
+        "lacking": {
+          "tests": 4304,
+          "tests_running_a_mutant": 1172,
+          "encounters": 12190,
+          "kills": 3464,
+          "kill_rate": 0.2841673502871206,
+          "mutants_run": 194,
+          "mutants_killed": 76,
+          "test_strength": 0.3917525773195876
+        },
+        "shared_mutants": {
+          "mutants": 165,
+          "mutated_classes": 121,
+          "mean_kill_rate_holding": 0.34948836334187194,
+          "mean_kill_rate_lacking": 0.298380712994993,
+          "mean_difference": 0.05110765034687888,
+          "difference_interval": [
+            0.02957148539606327,
+            0.07578837829326769
+          ],
+          "holding_higher": 54,
+          "lacking_higher": 9,
+          "tied": 102,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 9.999000099990002e-05,
+            "p_adjusted": 0.0011998800119988001,
+            "significant": true
+          },
+          "killed_only_by_holding": 25,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 64,
+          "killed_by_neither": 76,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.05033806119989956,
+            "DSpace": 0.05278459712750329,
+            "hertzbeat": 0.05110765034687888,
+            "incubator-kie-kogito-runtimes": 0.054559027146588675,
+            "kylin": 0.04514974025299531,
+            "openvsx": 0.05645285449330964,
+            "spinnaker": 0.04864766373591196,
+            "uaa": 0.05009679648307361
+          }
+        },
+        "same_test_class": {
+          "mutants": 154,
+          "mutated_classes": 111,
+          "mean_kill_rate_holding": 0.36442334094289985,
+          "mean_kill_rate_lacking": 0.31325223921179807,
+          "mean_difference": 0.051171101731101704,
+          "difference_interval": [
+            0.024905955675470208,
+            0.08215344382880425
+          ],
+          "holding_higher": 50,
+          "lacking_higher": 9,
+          "tied": 95,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 9.999000099990002e-05,
+            "p_adjusted": 0.0011998800119988001,
+            "significant": true
+          },
+          "test_classes": 25,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.047406524118783704,
+            "DSpace": 0.0533343315838961,
+            "hertzbeat": 0.051171101731101704,
+            "incubator-kie-kogito-runtimes": 0.05327993768512036,
+            "kylin": 0.04422952613779277,
+            "openvsx": 0.060456859836838184,
+            "spinnaker": 0.04969001234517571,
+            "uaa": 0.05043738895619963
+          }
+        }
+      },
+      {
+        "name": "re_dispatches_endpoint",
+        "label": "Re-dispatches an endpoint",
+        "population": "multi-step tests with every dispatch resolved",
+        "holding": {
+          "tests": 986,
+          "tests_running_a_mutant": 941,
+          "encounters": 23001,
+          "kills": 8070,
+          "kill_rate": 0.35085431068214423,
+          "mutants_run": 207,
+          "mutants_killed": 103,
+          "test_strength": 0.4975845410628019
+        },
+        "lacking": {
+          "tests": 5464,
+          "tests_running_a_mutant": 3657,
+          "encounters": 57655,
+          "kills": 18428,
+          "kill_rate": 0.31962535773133294,
+          "mutants_run": 419,
+          "mutants_killed": 150,
+          "test_strength": 0.35799522673031026
+        },
+        "shared_mutants": {
+          "mutants": 200,
+          "mutated_classes": 152,
+          "mean_kill_rate_holding": 0.4053663914505253,
+          "mean_kill_rate_lacking": 0.3547972547783293,
+          "mean_difference": 0.0505691366721959,
+          "difference_interval": [
+            0.02104899469852465,
+            0.08200894657249777
+          ],
+          "holding_higher": 47,
+          "lacking_higher": 23,
+          "tied": 130,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.0011998800119988001,
+            "p_adjusted": 0.0054994500549945015,
+            "significant": true
+          },
+          "killed_only_by_holding": 13,
+          "killed_only_by_lacking": 10,
+          "killed_by_both": 86,
+          "killed_by_neither": 91,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.05736783597000554,
+            "DSpace": 0.04794921480792177,
+            "hertzbeat": 0.03863603446818333,
+            "incubator-kie-kogito-runtimes": 0.04213354304951235,
+            "kylin": 0.04657154621658828,
+            "openvsx": 0.04880115398192475,
+            "spinnaker": 0.0505691366721959,
+            "uaa": 0.09695819501560175
+          }
+        },
+        "same_test_class": {
+          "mutants": 169,
+          "mutated_classes": 127,
+          "mean_kill_rate_holding": 0.3721517605705976,
+          "mean_kill_rate_lacking": 0.3469287130220812,
+          "mean_difference": 0.02522304754851654,
+          "difference_interval": [
+            -0.006050664410663288,
+            0.05623310968788071
+          ],
+          "holding_higher": 43,
+          "lacking_higher": 13,
+          "tied": 113,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.11848815118488151,
+            "p_adjusted": 0.3554644535546445,
+            "significant": false
+          },
+          "test_classes": 22,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.0269832626930502,
+            "DSpace": 0.021828460487991717,
+            "hertzbeat": 0.025373184736305326,
+            "incubator-kie-kogito-runtimes": 0.011975310747682705,
+            "kylin": 0.02497578273800383,
+            "openvsx": 0.019654789371682482,
+            "spinnaker": 0.02522304754851654,
+            "uaa": 0.06825876085757909
+          }
+        }
+      },
+      {
+        "name": "reads_after_write",
+        "label": "Reads a resource back after writing it",
+        "population": "tests writing a resource",
+        "holding": {
+          "tests": 222,
+          "tests_running_a_mutant": 200,
+          "encounters": 6295,
+          "kills": 2321,
+          "kill_rate": 0.3687053216838761,
+          "mutants_run": 180,
+          "mutants_killed": 95,
+          "test_strength": 0.5277777777777778
+        },
+        "lacking": {
+          "tests": 8313,
+          "tests_running_a_mutant": 5572,
+          "encounters": 87589,
+          "kills": 28015,
+          "kill_rate": 0.31984609939604286,
+          "mutants_run": 489,
+          "mutants_killed": 165,
+          "test_strength": 0.3374233128834356
+        },
+        "shared_mutants": {
+          "mutants": 178,
+          "mutated_classes": 130,
+          "mean_kill_rate_holding": 0.40315361137572886,
+          "mean_kill_rate_lacking": 0.3568230930203523,
+          "mean_difference": 0.04633051835537644,
+          "difference_interval": [
+            0.02111543834268031,
+            0.07402599430707586
+          ],
+          "holding_higher": 52,
+          "lacking_higher": 12,
+          "tied": 114,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.00039996000399960006,
+            "p_adjusted": 0.0026997300269973002,
+            "significant": true
+          },
+          "killed_only_by_holding": 15,
+          "killed_only_by_lacking": 6,
+          "killed_by_both": 78,
+          "killed_by_neither": 79,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.04691177835664888,
+            "DSpace": 0.046265417846820346,
+            "hertzbeat": 0.03724355718517144,
+            "incubator-kie-kogito-runtimes": 0.04515326433238686,
+            "kylin": 0.04659227269636726,
+            "openvsx": 0.04633051835537644,
+            "spinnaker": 0.04633051835537644,
+            "uaa": 0.06565190061518147
+          }
+        },
+        "same_test_class": {
+          "mutants": 155,
+          "mutated_classes": 109,
+          "mean_kill_rate_holding": 0.38958412125995234,
+          "mean_kill_rate_lacking": 0.3477442909207062,
+          "mean_difference": 0.041839830339246174,
+          "difference_interval": [
+            0.02287501579234006,
+            0.06280981324920955
+          ],
+          "holding_higher": 45,
+          "lacking_higher": 10,
+          "tied": 100,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.00029997000299970003,
+            "p_adjusted": 0.0026997300269973002,
+            "significant": true
+          },
+          "test_classes": 20,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.04176123721453246,
+            "DSpace": 0.04238741520608694,
+            "hertzbeat": 0.042111517549241285,
+            "incubator-kie-kogito-runtimes": 0.02983828146766913,
+            "kylin": 0.042111517549241285,
+            "openvsx": 0.041839830339246174,
+            "spinnaker": 0.041839830339246174,
+            "uaa": 0.06087416805604721
+          }
+        }
+      },
+      {
+        "name": "fixture_request",
+        "label": "Issues a request from a fixture",
+        "population": "tests",
+        "holding": {
+          "tests": 0,
+          "tests_running_a_mutant": 0,
+          "encounters": 0,
+          "kills": 0,
+          "kill_rate": null,
+          "mutants_run": 0,
+          "mutants_killed": 0,
+          "test_strength": null
+        },
+        "lacking": {
+          "tests": 12315,
+          "tests_running_a_mutant": 6865,
+          "encounters": 98674,
+          "kills": 31170,
+          "kill_rate": 0.3158886839491659,
+          "mutants_run": 578,
+          "mutants_killed": 215,
+          "test_strength": 0.3719723183391003
+        },
+        "shared_mutants": {
+          "mutants": 0,
+          "mutated_classes": 0,
+          "mean_kill_rate_holding": null,
+          "mean_kill_rate_lacking": null,
+          "mean_difference": null,
+          "difference_interval": null,
+          "holding_higher": 0,
+          "lacking_higher": 0,
+          "tied": 0,
+          "test": null,
+          "killed_only_by_holding": 0,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 0,
+          "killed_by_neither": 0,
+          "mean_difference_without": {
+            "dolphinscheduler": null,
+            "DSpace": null,
+            "hertzbeat": null,
+            "incubator-kie-kogito-runtimes": null,
+            "kylin": null,
+            "openvsx": null,
+            "spinnaker": null,
+            "uaa": null
+          }
+        },
+        "same_test_class": {
+          "mutants": 0,
+          "mutated_classes": 0,
+          "mean_kill_rate_holding": null,
+          "mean_kill_rate_lacking": null,
+          "mean_difference": null,
+          "difference_interval": null,
+          "holding_higher": 0,
+          "lacking_higher": 0,
+          "tied": 0,
+          "test": null,
+          "test_classes": 0,
+          "mean_difference_without": {
+            "dolphinscheduler": null,
+            "DSpace": null,
+            "hertzbeat": null,
+            "incubator-kie-kogito-runtimes": null,
+            "kylin": null,
+            "openvsx": null,
+            "spinnaker": null,
+            "uaa": null
+          }
+        }
+      }
+    ]
+  },
+  "by_project": {
+    "dolphinscheduler": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 3003,
+      "encounters": 3180,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 2674,
+            "tests_running_a_mutant": 2053,
+            "encounters": 3166,
+            "kills": 1981,
+            "kill_rate": 0.6257106759317751,
+            "mutants_run": 46,
+            "mutants_killed": 23,
+            "test_strength": 0.5
+          },
+          "lacking": {
+            "tests": 329,
+            "tests_running_a_mutant": 14,
+            "encounters": 14,
+            "kills": 3,
+            "kill_rate": 0.21428571428571427,
+            "mutants_run": 5,
+            "mutants_killed": 1,
+            "test_strength": 0.2
+          },
+          "shared_mutants": {
+            "mutants": 5,
+            "mutated_classes": 5,
+            "mean_kill_rate_holding": 0.34708693930652185,
+            "mean_kill_rate_lacking": 0.2,
+            "mean_difference": 0.14708693930652186,
+            "difference_interval": [
+              -0.0021126760563380254,
+              0.44337349397590364
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 1,
+            "tied": 3,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 1,
+            "killed_by_neither": 3
+          },
+          "same_test_class": {
+            "mutants": 5,
+            "mutated_classes": 5,
+            "mean_kill_rate_holding": 0.3622354976141966,
+            "mean_kill_rate_lacking": 0.2,
+            "mean_difference": 0.1622354976141966,
+            "difference_interval": [
+              -0.006915052160953827,
+              0.4936215450035436
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 1,
+            "tied": 3,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 5
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 195,
+            "tests_running_a_mutant": 190,
+            "encounters": 455,
+            "kills": 312,
+            "kill_rate": 0.6857142857142857,
+            "mutants_run": 15,
+            "mutants_killed": 10,
+            "test_strength": 0.6666666666666666
+          },
+          "lacking": {
+            "tests": 2808,
+            "tests_running_a_mutant": 1877,
+            "encounters": 2725,
+            "kills": 1672,
+            "kill_rate": 0.6135779816513761,
+            "mutants_run": 45,
+            "mutants_killed": 22,
+            "test_strength": 0.4888888888888889
+          },
+          "shared_mutants": {
+            "mutants": 14,
+            "mutated_classes": 13,
+            "mean_kill_rate_holding": 0.6386999244142101,
+            "mean_kill_rate_lacking": 0.6220839097955071,
+            "mean_difference": 0.0166160146187031,
+            "difference_interval": [
+              0.0,
+              0.053037451519286884
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 12,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5135486451354865,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 9,
+            "killed_by_neither": 5
+          },
+          "same_test_class": {
+            "mutants": 13,
+            "mutated_classes": 13,
+            "mean_kill_rate_holding": 0.6124117428465254,
+            "mean_kill_rate_lacking": 0.5942568675750325,
+            "mean_difference": 0.01815487527149296,
+            "difference_interval": [
+              0.0,
+              0.05414936730249907
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 11,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5135486451354865,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 8
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 2979,
+            "tests_running_a_mutant": 2043,
+            "encounters": 3146,
+            "kills": 1984,
+            "kill_rate": 0.6306420851875397,
+            "mutants_run": 46,
+            "mutants_killed": 23,
+            "test_strength": 0.5
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 1594,
+            "tests_running_a_mutant": 1577,
+            "encounters": 2673,
+            "kills": 1740,
+            "kill_rate": 0.6509539842873177,
+            "mutants_run": 46,
+            "mutants_killed": 23,
+            "test_strength": 0.5
+          },
+          "lacking": {
+            "tests": 1385,
+            "tests_running_a_mutant": 466,
+            "encounters": 473,
+            "kills": 244,
+            "kill_rate": 0.5158562367864693,
+            "mutants_run": 3,
+            "mutants_killed": 1,
+            "test_strength": 0.3333333333333333
+          },
+          "shared_mutants": {
+            "mutants": 3,
+            "mutated_classes": 3,
+            "mean_kill_rate_holding": 0.27102803738317754,
+            "mean_kill_rate_lacking": 0.1783625730994152,
+            "mean_difference": 0.09266546428376236,
+            "difference_interval": [
+              0.0,
+              0.2779963928512871
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 1,
+            "killed_by_neither": 2
+          },
+          "same_test_class": {
+            "mutants": 3,
+            "mutated_classes": 3,
+            "mean_kill_rate_holding": 0.2782990431297352,
+            "mean_kill_rate_lacking": 0.03764420157862781,
+            "mean_difference": 0.2406548415511074,
+            "difference_interval": [
+              0.0,
+              0.7219645246533221
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 9
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 587,
+            "tests_running_a_mutant": 561,
+            "encounters": 964,
+            "kills": 464,
+            "kill_rate": 0.48132780082987553,
+            "mutants_run": 14,
+            "mutants_killed": 9,
+            "test_strength": 0.6428571428571429
+          },
+          "lacking": {
+            "tests": 2084,
+            "tests_running_a_mutant": 1490,
+            "encounters": 2200,
+            "kills": 1515,
+            "kill_rate": 0.6886363636363636,
+            "mutants_run": 45,
+            "mutants_killed": 22,
+            "test_strength": 0.4888888888888889
+          },
+          "shared_mutants": {
+            "mutants": 13,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.5802797202797203,
+            "mean_kill_rate_lacking": 0.6275072581221706,
+            "mean_difference": -0.047227537842450346,
+            "difference_interval": [
+              -0.1197620256020956,
+              0.000685283536063051
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 2,
+            "tied": 10,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.49635036496350365,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 1,
+            "killed_by_both": 8,
+            "killed_by_neither": 4
+          },
+          "same_test_class": {
+            "mutants": 9,
+            "mutated_classes": 9,
+            "mean_kill_rate_holding": 0.6411643263938832,
+            "mean_kill_rate_lacking": 0.6472339925259653,
+            "mean_difference": -0.006069666132081992,
+            "difference_interval": [
+              -0.018903442840690416,
+              0.000694444444444442
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 1,
+            "tied": 7,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 8
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 75,
+            "tests_running_a_mutant": 69,
+            "encounters": 133,
+            "kills": 86,
+            "kill_rate": 0.6466165413533834,
+            "mutants_run": 8,
+            "mutants_killed": 5,
+            "test_strength": 0.625
+          },
+          "lacking": {
+            "tests": 2746,
+            "tests_running_a_mutant": 1990,
+            "encounters": 3039,
+            "kills": 1896,
+            "kill_rate": 0.6238894373149062,
+            "mutants_run": 46,
+            "mutants_killed": 23,
+            "test_strength": 0.5
+          },
+          "shared_mutants": {
+            "mutants": 8,
+            "mutated_classes": 8,
+            "mean_kill_rate_holding": 0.625,
+            "mean_kill_rate_lacking": 0.5910212566716632,
+            "mean_difference": 0.03397874332833682,
+            "difference_interval": [
+              0.0,
+              0.1009981436810705
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 6,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.49625037496250374,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 5,
+            "killed_by_neither": 3
+          },
+          "same_test_class": {
+            "mutants": 6,
+            "mutated_classes": 6,
+            "mean_kill_rate_holding": 0.6666666666666666,
+            "mean_kill_rate_lacking": 0.6228751070636965,
+            "mean_difference": 0.04379155960297019,
+            "difference_interval": [
+              0.0,
+              0.13137467880891057
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 5,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 8
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 3003,
+            "tests_running_a_mutant": 2067,
+            "encounters": 3180,
+            "kills": 1984,
+            "kill_rate": 0.6238993710691824,
+            "mutants_run": 46,
+            "mutants_killed": 23,
+            "test_strength": 0.5
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "DSpace": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 1091,
+      "encounters": 3657,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 810,
+            "tests_running_a_mutant": 810,
+            "encounters": 3370,
+            "kills": 320,
+            "kill_rate": 0.09495548961424333,
+            "mutants_run": 42,
+            "mutants_killed": 9,
+            "test_strength": 0.21428571428571427
+          },
+          "lacking": {
+            "tests": 281,
+            "tests_running_a_mutant": 217,
+            "encounters": 287,
+            "kills": 16,
+            "kill_rate": 0.05574912891986063,
+            "mutants_run": 12,
+            "mutants_killed": 3,
+            "test_strength": 0.25
+          },
+          "shared_mutants": {
+            "mutants": 12,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.26875,
+            "mean_kill_rate_lacking": 0.2222222222222222,
+            "mean_difference": 0.046527777777777786,
+            "difference_interval": [
+              0.0,
+              0.11319444444444444
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 0,
+            "tied": 9,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.25307469253074694,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 2,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 3,
+            "killed_by_neither": 7
+          },
+          "same_test_class": {
+            "mutants": 11,
+            "mutated_classes": 11,
+            "mean_kill_rate_holding": 0.20643939393939395,
+            "mean_kill_rate_lacking": 0.18181818181818182,
+            "mean_difference": 0.02462121212121212,
+            "difference_interval": [
+              0.0,
+              0.07007575757575758
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 9,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.49105089491050896,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 11,
+            "tests_running_a_mutant": 11,
+            "encounters": 69,
+            "kills": 20,
+            "kill_rate": 0.2898550724637681,
+            "mutants_run": 14,
+            "mutants_killed": 6,
+            "test_strength": 0.42857142857142855
+          },
+          "lacking": {
+            "tests": 1080,
+            "tests_running_a_mutant": 1016,
+            "encounters": 3588,
+            "kills": 316,
+            "kill_rate": 0.08807134894091416,
+            "mutants_run": 42,
+            "mutants_killed": 9,
+            "test_strength": 0.21428571428571427
+          },
+          "shared_mutants": {
+            "mutants": 14,
+            "mutated_classes": 14,
+            "mean_kill_rate_holding": 0.33766233766233766,
+            "mean_kill_rate_lacking": 0.283139825727904,
+            "mean_difference": 0.05452251193443363,
+            "difference_interval": [
+              -0.0017421602787456446,
+              0.11500925321772808
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 1,
+            "tied": 10,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.24587541245875413,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 1,
+            "killed_by_both": 6,
+            "killed_by_neither": 7
+          },
+          "same_test_class": {
+            "mutants": 13,
+            "mutated_classes": 13,
+            "mean_kill_rate_holding": 0.26153846153846155,
+            "mean_kill_rate_lacking": 0.249074915005434,
+            "mean_difference": 0.01246354653302755,
+            "difference_interval": [
+              0.0,
+              0.031158866332568872
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 11,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5051494850514948,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 2
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 1078,
+            "tests_running_a_mutant": 1015,
+            "encounters": 3623,
+            "kills": 326,
+            "kill_rate": 0.08998067899530776,
+            "mutants_run": 42,
+            "mutants_killed": 9,
+            "test_strength": 0.21428571428571427
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 789,
+            "tests_running_a_mutant": 728,
+            "encounters": 2849,
+            "kills": 277,
+            "kill_rate": 0.09722709722709723,
+            "mutants_run": 41,
+            "mutants_killed": 9,
+            "test_strength": 0.21951219512195122
+          },
+          "lacking": {
+            "tests": 289,
+            "tests_running_a_mutant": 287,
+            "encounters": 774,
+            "kills": 49,
+            "kill_rate": 0.06330749354005168,
+            "mutants_run": 9,
+            "mutants_killed": 4,
+            "test_strength": 0.4444444444444444
+          },
+          "shared_mutants": {
+            "mutants": 8,
+            "mutated_classes": 8,
+            "mean_kill_rate_holding": 0.2820097244732577,
+            "mean_kill_rate_lacking": 0.2638121546961326,
+            "mean_difference": 0.018197569777125104,
+            "difference_interval": [
+              0.0,
+              0.045493924442812764
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 6,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5003499650034996,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 4,
+            "killed_by_neither": 4
+          },
+          "same_test_class": {
+            "mutants": 8,
+            "mutated_classes": 8,
+            "mean_kill_rate_holding": 0.2721394560972975,
+            "mean_kill_rate_lacking": 0.26044729917969356,
+            "mean_difference": 0.011692156917603919,
+            "difference_interval": [
+              0.0,
+              0.029230392294009797
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 6,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5003499650034996,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 24,
+            "tests_running_a_mutant": 24,
+            "encounters": 110,
+            "kills": 44,
+            "kill_rate": 0.4,
+            "mutants_run": 13,
+            "mutants_killed": 5,
+            "test_strength": 0.38461538461538464
+          },
+          "lacking": {
+            "tests": 766,
+            "tests_running_a_mutant": 766,
+            "encounters": 3190,
+            "kills": 276,
+            "kill_rate": 0.08652037617554859,
+            "mutants_run": 41,
+            "mutants_killed": 8,
+            "test_strength": 0.1951219512195122
+          },
+          "shared_mutants": {
+            "mutants": 12,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.27777777777777773,
+            "mean_kill_rate_lacking": 0.18616319856528732,
+            "mean_difference": 0.09161457921249044,
+            "difference_interval": [
+              -0.005050505050505051,
+              0.2328243268191049
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 1,
+            "tied": 9,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5028497150284972,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 1,
+            "killed_by_both": 4,
+            "killed_by_neither": 7
+          },
+          "same_test_class": {
+            "mutants": 12,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.24814814814814815,
+            "mean_kill_rate_lacking": 0.17851258655776547,
+            "mean_difference": 0.06963556159038269,
+            "difference_interval": [
+              0.0,
+              0.17408890397595675
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 10,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5028497150284972,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 4,
+            "tests_running_a_mutant": 4,
+            "encounters": 17,
+            "kills": 2,
+            "kill_rate": 0.11764705882352941,
+            "mutants_run": 5,
+            "mutants_killed": 2,
+            "test_strength": 0.4
+          },
+          "lacking": {
+            "tests": 924,
+            "tests_running_a_mutant": 861,
+            "encounters": 3416,
+            "kills": 329,
+            "kill_rate": 0.09631147540983606,
+            "mutants_run": 42,
+            "mutants_killed": 9,
+            "test_strength": 0.21428571428571427
+          },
+          "shared_mutants": {
+            "mutants": 5,
+            "mutated_classes": 5,
+            "mean_kill_rate_holding": 0.1,
+            "mean_kill_rate_lacking": 0.051417004048583,
+            "mean_difference": 0.048582995951417005,
+            "difference_interval": [
+              -0.010526315789473684,
+              0.10769230769230768
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 1,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5050494950504949,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 1,
+            "killed_by_both": 2,
+            "killed_by_neither": 2
+          },
+          "same_test_class": {
+            "mutants": 5,
+            "mutated_classes": 5,
+            "mean_kill_rate_holding": 0.06666666666666667,
+            "mean_kill_rate_lacking": 0.041254382332643204,
+            "mean_difference": 0.025412284334023462,
+            "difference_interval": [
+              -0.017391304347826087,
+              0.06821587301587301
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 1,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5050494950504949,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 1091,
+            "tests_running_a_mutant": 1027,
+            "encounters": 3657,
+            "kills": 336,
+            "kill_rate": 0.0918785890073831,
+            "mutants_run": 42,
+            "mutants_killed": 9,
+            "test_strength": 0.21428571428571427
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "hertzbeat": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 1470,
+      "encounters": 391,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 1453,
+            "tests_running_a_mutant": 282,
+            "encounters": 391,
+            "kills": 122,
+            "kill_rate": 0.31202046035805625,
+            "mutants_run": 55,
+            "mutants_killed": 22,
+            "test_strength": 0.4
+          },
+          "lacking": {
+            "tests": 17,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 6,
+            "tests_running_a_mutant": 2,
+            "encounters": 15,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 8,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "lacking": {
+            "tests": 1464,
+            "tests_running_a_mutant": 280,
+            "encounters": 376,
+            "kills": 122,
+            "kill_rate": 0.324468085106383,
+            "mutants_run": 55,
+            "mutants_killed": 22,
+            "test_strength": 0.4
+          },
+          "shared_mutants": {
+            "mutants": 8,
+            "mutated_classes": 6,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.09999999999999999,
+            "mean_difference": -0.09999999999999999,
+            "difference_interval": [
+              -0.3333333333333333,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 2,
+            "tied": 6,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5042495750424958,
+              "p_adjusted": 0.7361263873612639,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 2,
+            "killed_by_both": 0,
+            "killed_by_neither": 6
+          },
+          "same_test_class": {
+            "mutants": 2,
+            "mutated_classes": 2,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": [
+              0.0,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 1440,
+            "tests_running_a_mutant": 280,
+            "encounters": 377,
+            "kills": 122,
+            "kill_rate": 0.32360742705570295,
+            "mutants_run": 55,
+            "mutants_killed": 22,
+            "test_strength": 0.4
+          },
+          "lacking": {
+            "tests": 16,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 1139,
+            "tests_running_a_mutant": 280,
+            "encounters": 377,
+            "kills": 122,
+            "kill_rate": 0.32360742705570295,
+            "mutants_run": 55,
+            "mutants_killed": 22,
+            "test_strength": 0.4
+          },
+          "lacking": {
+            "tests": 301,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 23,
+            "tests_running_a_mutant": 10,
+            "encounters": 14,
+            "kills": 7,
+            "kill_rate": 0.5,
+            "mutants_run": 13,
+            "mutants_killed": 7,
+            "test_strength": 0.5384615384615384
+          },
+          "lacking": {
+            "tests": 1397,
+            "tests_running_a_mutant": 268,
+            "encounters": 360,
+            "kills": 114,
+            "kill_rate": 0.31666666666666665,
+            "mutants_run": 55,
+            "mutants_killed": 20,
+            "test_strength": 0.36363636363636365
+          },
+          "shared_mutants": {
+            "mutants": 13,
+            "mutated_classes": 11,
+            "mean_kill_rate_holding": 0.5384615384615384,
+            "mean_kill_rate_lacking": 0.3162393162393162,
+            "mean_difference": 0.2222222222222222,
+            "difference_interval": [
+              0.0,
+              0.40740740740740744
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 0,
+            "tied": 10,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.24537546245375463,
+              "p_adjusted": 0.7361263873612639,
+              "significant": false
+            },
+            "killed_only_by_holding": 2,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 5,
+            "killed_by_neither": 6
+          },
+          "same_test_class": {
+            "mutants": 1,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 1,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 21,
+            "tests_running_a_mutant": 11,
+            "encounters": 16,
+            "kills": 7,
+            "kill_rate": 0.4375,
+            "mutants_run": 14,
+            "mutants_killed": 7,
+            "test_strength": 0.5
+          },
+          "lacking": {
+            "tests": 1434,
+            "tests_running_a_mutant": 271,
+            "encounters": 375,
+            "kills": 115,
+            "kill_rate": 0.30666666666666664,
+            "mutants_run": 55,
+            "mutants_killed": 20,
+            "test_strength": 0.36363636363636365
+          },
+          "shared_mutants": {
+            "mutants": 14,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.5,
+            "mean_kill_rate_lacking": 0.3472222222222222,
+            "mean_difference": 0.15277777777777776,
+            "difference_interval": [
+              -0.10416666666666667,
+              0.35714285714285715
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 1,
+            "tied": 10,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.2582741725827417,
+              "p_adjusted": 0.7361263873612639,
+              "significant": false
+            },
+            "killed_only_by_holding": 2,
+            "killed_only_by_lacking": 1,
+            "killed_by_both": 5,
+            "killed_by_neither": 6
+          },
+          "same_test_class": {
+            "mutants": 1,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 1,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 1470,
+            "tests_running_a_mutant": 282,
+            "encounters": 391,
+            "kills": 122,
+            "kill_rate": 0.31202046035805625,
+            "mutants_run": 55,
+            "mutants_killed": 22,
+            "test_strength": 0.4
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "incubator-kie-kogito-runtimes": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 1694,
+      "encounters": 9236,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 231,
+            "tests_running_a_mutant": 177,
+            "encounters": 5086,
+            "kills": 1615,
+            "kill_rate": 0.31753834054266616,
+            "mutants_run": 54,
+            "mutants_killed": 37,
+            "test_strength": 0.6851851851851852
+          },
+          "lacking": {
+            "tests": 1463,
+            "tests_running_a_mutant": 256,
+            "encounters": 4150,
+            "kills": 398,
+            "kill_rate": 0.09590361445783133,
+            "mutants_run": 87,
+            "mutants_killed": 26,
+            "test_strength": 0.2988505747126437
+          },
+          "shared_mutants": {
+            "mutants": 51,
+            "mutated_classes": 36,
+            "mean_kill_rate_holding": 0.366934021822769,
+            "mean_kill_rate_lacking": 0.28465271726903185,
+            "mean_difference": 0.08228130455373735,
+            "difference_interval": [
+              0.028105710049439757,
+              0.15874205487438353
+            ],
+            "holding_higher": 21,
+            "lacking_higher": 2,
+            "tied": 28,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0072992700729927005,
+              "p_adjusted": 0.043795620437956206,
+              "significant": true
+            },
+            "killed_only_by_holding": 13,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 22,
+            "killed_by_neither": 16
+          },
+          "same_test_class": {
+            "mutants": 45,
+            "mutated_classes": 30,
+            "mean_kill_rate_holding": 0.37102776856489567,
+            "mean_kill_rate_lacking": 0.26984675866295016,
+            "mean_difference": 0.1011810099019455,
+            "difference_interval": [
+              0.03561670804252157,
+              0.1971082403837201
+            ],
+            "holding_higher": 15,
+            "lacking_higher": 1,
+            "tied": 29,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.004299570042995701,
+              "p_adjusted": 0.030096990300969906,
+              "significant": true
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 32,
+            "tests_running_a_mutant": 32,
+            "encounters": 938,
+            "kills": 336,
+            "kill_rate": 0.3582089552238806,
+            "mutants_run": 45,
+            "mutants_killed": 23,
+            "test_strength": 0.5111111111111111
+          },
+          "lacking": {
+            "tests": 1662,
+            "tests_running_a_mutant": 401,
+            "encounters": 8298,
+            "kills": 1677,
+            "kill_rate": 0.20209689081706436,
+            "mutants_run": 90,
+            "mutants_killed": 41,
+            "test_strength": 0.45555555555555555
+          },
+          "shared_mutants": {
+            "mutants": 45,
+            "mutated_classes": 32,
+            "mean_kill_rate_holding": 0.4101218226218225,
+            "mean_kill_rate_lacking": 0.3472275123567564,
+            "mean_difference": 0.06289431026506624,
+            "difference_interval": [
+              0.023514104095510344,
+              0.10562799620322981
+            ],
+            "holding_higher": 10,
+            "lacking_higher": 12,
+            "tied": 23,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.011998800119988001,
+              "p_adjusted": 0.05349465053494651,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 11,
+            "killed_by_both": 23,
+            "killed_by_neither": 11
+          },
+          "same_test_class": {
+            "mutants": 41,
+            "mutated_classes": 28,
+            "mean_kill_rate_holding": 0.3686479469836715,
+            "mean_kill_rate_lacking": 0.3009482600625372,
+            "mean_difference": 0.06769968692113422,
+            "difference_interval": [
+              0.02023582644045645,
+              0.11866061342109789
+            ],
+            "holding_higher": 10,
+            "lacking_higher": 12,
+            "tied": 19,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0173982601739826,
+              "p_adjusted": 0.05349465053494651,
+              "significant": false
+            },
+            "test_classes": 2
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 1560,
+            "tests_running_a_mutant": 401,
+            "encounters": 8556,
+            "kills": 1878,
+            "kill_rate": 0.21949509116409538,
+            "mutants_run": 89,
+            "mutants_killed": 41,
+            "test_strength": 0.4606741573033708
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 1067,
+            "tests_running_a_mutant": 319,
+            "encounters": 7062,
+            "kills": 1652,
+            "kill_rate": 0.23392806570376665,
+            "mutants_run": 83,
+            "mutants_killed": 40,
+            "test_strength": 0.4819277108433735
+          },
+          "lacking": {
+            "tests": 493,
+            "tests_running_a_mutant": 82,
+            "encounters": 1494,
+            "kills": 226,
+            "kill_rate": 0.15127175368139223,
+            "mutants_run": 44,
+            "mutants_killed": 14,
+            "test_strength": 0.3181818181818182
+          },
+          "shared_mutants": {
+            "mutants": 38,
+            "mutated_classes": 26,
+            "mean_kill_rate_holding": 0.2702715343050014,
+            "mean_kill_rate_lacking": 0.23069874852557365,
+            "mean_difference": 0.03957278577942772,
+            "difference_interval": [
+              0.012799656289030022,
+              0.07129997890323261
+            ],
+            "holding_higher": 21,
+            "lacking_higher": 1,
+            "tied": 16,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.010698930106989302,
+              "p_adjusted": 0.05349465053494651,
+              "significant": false
+            },
+            "killed_only_by_holding": 15,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 13,
+            "killed_by_neither": 10
+          },
+          "same_test_class": {
+            "mutants": 36,
+            "mutated_classes": 24,
+            "mean_kill_rate_holding": 0.26009810221215385,
+            "mean_kill_rate_lacking": 0.2158392961081133,
+            "mean_difference": 0.04425880610404051,
+            "difference_interval": [
+              0.012141645758880219,
+              0.08400010971598121
+            ],
+            "holding_higher": 20,
+            "lacking_higher": 1,
+            "tied": 15,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.015298470152984701,
+              "p_adjusted": 0.05349465053494651,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 11,
+            "tests_running_a_mutant": 7,
+            "encounters": 210,
+            "kills": 85,
+            "kill_rate": 0.40476190476190477,
+            "mutants_run": 39,
+            "mutants_killed": 27,
+            "test_strength": 0.6923076923076923
+          },
+          "lacking": {
+            "tests": 200,
+            "tests_running_a_mutant": 150,
+            "encounters": 4299,
+            "kills": 1345,
+            "kill_rate": 0.3128634566178181,
+            "mutants_run": 53,
+            "mutants_killed": 26,
+            "test_strength": 0.49056603773584906
+          },
+          "shared_mutants": {
+            "mutants": 38,
+            "mutated_classes": 26,
+            "mean_kill_rate_holding": 0.4179824561403508,
+            "mean_kill_rate_lacking": 0.33145105191882,
+            "mean_difference": 0.08653140422153086,
+            "difference_interval": [
+              0.03942021118191588,
+              0.16144111181200754
+            ],
+            "holding_higher": 18,
+            "lacking_higher": 4,
+            "tied": 16,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0006999300069993001,
+              "p_adjusted": 0.006299370062993701,
+              "significant": true
+            },
+            "killed_only_by_holding": 11,
+            "killed_only_by_lacking": 2,
+            "killed_by_both": 16,
+            "killed_by_neither": 9
+          },
+          "same_test_class": {
+            "mutants": 38,
+            "mutated_classes": 26,
+            "mean_kill_rate_holding": 0.40460526315789475,
+            "mean_kill_rate_lacking": 0.33371238611176696,
+            "mean_difference": 0.07089287704612782,
+            "difference_interval": [
+              0.02118668263083529,
+              0.14359152919097712
+            ],
+            "holding_higher": 18,
+            "lacking_higher": 4,
+            "tied": 16,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.011698830116988301,
+              "p_adjusted": 0.05349465053494651,
+              "significant": false
+            },
+            "test_classes": 2
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 31,
+            "tests_running_a_mutant": 27,
+            "encounters": 777,
+            "kills": 257,
+            "kill_rate": 0.3307593307593308,
+            "mutants_run": 50,
+            "mutants_killed": 35,
+            "test_strength": 0.7
+          },
+          "lacking": {
+            "tests": 822,
+            "tests_running_a_mutant": 303,
+            "encounters": 6943,
+            "kills": 1749,
+            "kill_rate": 0.25190839694656486,
+            "mutants_run": 87,
+            "mutants_killed": 26,
+            "test_strength": 0.2988505747126437
+          },
+          "shared_mutants": {
+            "mutants": 50,
+            "mutated_classes": 35,
+            "mean_kill_rate_holding": 0.3915349270612429,
+            "mean_kill_rate_lacking": 0.3421906384070131,
+            "mean_difference": 0.04934428865422971,
+            "difference_interval": [
+              0.024409529630581073,
+              0.07812238527152326
+            ],
+            "holding_higher": 21,
+            "lacking_higher": 2,
+            "tied": 27,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.00039996000399960006,
+              "p_adjusted": 0.003999600039996,
+              "significant": true
+            },
+            "killed_only_by_holding": 12,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 23,
+            "killed_by_neither": 15
+          },
+          "same_test_class": {
+            "mutants": 47,
+            "mutated_classes": 32,
+            "mean_kill_rate_holding": 0.428368794326241,
+            "mean_kill_rate_lacking": 0.35895093679273277,
+            "mean_difference": 0.06941785753350838,
+            "difference_interval": [
+              0.03653261736876013,
+              0.10962504178689292
+            ],
+            "holding_higher": 20,
+            "lacking_higher": 3,
+            "tied": 24,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0008999100089991,
+              "p_adjusted": 0.0071992800719928,
+              "significant": true
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 1694,
+            "tests_running_a_mutant": 433,
+            "encounters": 9236,
+            "kills": 2013,
+            "kill_rate": 0.21795149415331314,
+            "mutants_run": 90,
+            "mutants_killed": 41,
+            "test_strength": 0.45555555555555555
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "kylin": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 10,
+      "tests": 2094,
+      "encounters": 1721,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 144,
+            "tests_running_a_mutant": 120,
+            "encounters": 175,
+            "kills": 35,
+            "kill_rate": 0.2,
+            "mutants_run": 7,
+            "mutants_killed": 3,
+            "test_strength": 0.42857142857142855
+          },
+          "lacking": {
+            "tests": 1950,
+            "tests_running_a_mutant": 1086,
+            "encounters": 1546,
+            "kills": 65,
+            "kill_rate": 0.04204398447606727,
+            "mutants_run": 51,
+            "mutants_killed": 9,
+            "test_strength": 0.17647058823529413
+          },
+          "shared_mutants": {
+            "mutants": 7,
+            "mutated_classes": 7,
+            "mean_kill_rate_holding": 0.26832298136645966,
+            "mean_kill_rate_lacking": 0.14296009059400847,
+            "mean_difference": 0.1253628907724512,
+            "difference_interval": [
+              0.006211180124223599,
+              0.2542802237397477
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 0,
+            "tied": 4,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.25247475252474755,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 2,
+            "killed_by_neither": 4
+          },
+          "same_test_class": {
+            "mutants": 6,
+            "mutated_classes": 6,
+            "mean_kill_rate_holding": 0.34045584045584043,
+            "mean_kill_rate_lacking": 0.1665914289153726,
+            "mean_difference": 0.17386441154046786,
+            "difference_interval": [
+              0.0032051282051281937,
+              0.3493038000080253
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 0,
+            "tied": 3,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.2508749125087491,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 2094,
+            "tests_running_a_mutant": 1206,
+            "encounters": 1721,
+            "kills": 100,
+            "kill_rate": 0.05810575246949448,
+            "mutants_run": 51,
+            "mutants_killed": 10,
+            "test_strength": 0.19607843137254902
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 2091,
+            "tests_running_a_mutant": 1205,
+            "encounters": 1720,
+            "kills": 100,
+            "kill_rate": 0.05813953488372093,
+            "mutants_run": 51,
+            "mutants_killed": 10,
+            "test_strength": 0.19607843137254902
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 1272,
+            "tests_running_a_mutant": 1187,
+            "encounters": 1686,
+            "kills": 100,
+            "kill_rate": 0.05931198102016608,
+            "mutants_run": 51,
+            "mutants_killed": 10,
+            "test_strength": 0.19607843137254902
+          },
+          "lacking": {
+            "tests": 819,
+            "tests_running_a_mutant": 18,
+            "encounters": 34,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 11,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "shared_mutants": {
+            "mutants": 11,
+            "mutated_classes": 11,
+            "mean_kill_rate_holding": 0.1345183916612488,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.1345183916612488,
+            "difference_interval": [
+              0.013468013468013467,
+              0.31819476819476816
+            ],
+            "holding_higher": 4,
+            "lacking_higher": 0,
+            "tied": 7,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.13018698130186981,
+              "p_adjusted": 0.7811218878112189,
+              "significant": false
+            },
+            "killed_only_by_holding": 4,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 7
+          },
+          "same_test_class": {
+            "mutants": 4,
+            "mutated_classes": 4,
+            "mean_kill_rate_holding": 0.3114801864801865,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.3114801864801865,
+            "difference_interval": [
+              0.0,
+              0.75
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.4911508849115088,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 6,
+            "tests_running_a_mutant": 5,
+            "encounters": 14,
+            "kills": 6,
+            "kill_rate": 0.42857142857142855,
+            "mutants_run": 6,
+            "mutants_killed": 3,
+            "test_strength": 0.5
+          },
+          "lacking": {
+            "tests": 138,
+            "tests_running_a_mutant": 115,
+            "encounters": 161,
+            "kills": 29,
+            "kill_rate": 0.18012422360248448,
+            "mutants_run": 7,
+            "mutants_killed": 3,
+            "test_strength": 0.42857142857142855
+          },
+          "shared_mutants": {
+            "mutants": 6,
+            "mutated_classes": 6,
+            "mean_kill_rate_holding": 0.4583333333333333,
+            "mean_kill_rate_lacking": 0.27850877192982454,
+            "mean_difference": 0.17982456140350878,
+            "difference_interval": [
+              0.0,
+              0.4298245614035088
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 0,
+            "tied": 4,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.5042495750424958,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 3,
+            "killed_by_neither": 3
+          },
+          "same_test_class": {
+            "mutants": 5,
+            "mutated_classes": 5,
+            "mean_kill_rate_holding": 0.3333333333333333,
+            "mean_kill_rate_lacking": 0.3,
+            "mean_difference": 0.033333333333333326,
+            "difference_interval": [
+              0.0,
+              0.09999999999999998
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 4,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 3
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 2,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 1,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "lacking": {
+            "tests": 807,
+            "tests_running_a_mutant": 759,
+            "encounters": 1073,
+            "kills": 91,
+            "kill_rate": 0.08480894687791239,
+            "mutants_run": 18,
+            "mutants_killed": 8,
+            "test_strength": 0.4444444444444444
+          },
+          "shared_mutants": {
+            "mutants": 1,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 1,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 1
+          },
+          "same_test_class": {
+            "mutants": 1,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 1,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 2094,
+            "tests_running_a_mutant": 1206,
+            "encounters": 1721,
+            "kills": 100,
+            "kill_rate": 0.05810575246949448,
+            "mutants_run": 51,
+            "mutants_killed": 10,
+            "test_strength": 0.19607843137254902
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "openvsx": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 1,
+      "tests": 590,
+      "encounters": 1409,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 17,
+            "tests_running_a_mutant": 7,
+            "encounters": 34,
+            "kills": 18,
+            "kill_rate": 0.5294117647058824,
+            "mutants_run": 13,
+            "mutants_killed": 8,
+            "test_strength": 0.6153846153846154
+          },
+          "lacking": {
+            "tests": 573,
+            "tests_running_a_mutant": 331,
+            "encounters": 1375,
+            "kills": 616,
+            "kill_rate": 0.448,
+            "mutants_run": 79,
+            "mutants_killed": 44,
+            "test_strength": 0.5569620253164557
+          },
+          "shared_mutants": {
+            "mutants": 12,
+            "mutated_classes": 8,
+            "mean_kill_rate_holding": 0.638888888888889,
+            "mean_kill_rate_lacking": 0.5720188151538266,
+            "mean_difference": 0.06687007373506228,
+            "difference_interval": [
+              0.0014492753623188395,
+              0.16971777269260105
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 0,
+            "tied": 9,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.24537546245375463,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 8,
+            "killed_by_neither": 4
+          },
+          "same_test_class": {
+            "mutants": 12,
+            "mutated_classes": 8,
+            "mean_kill_rate_holding": 0.625,
+            "mean_kill_rate_lacking": 0.5720188151538266,
+            "mean_difference": 0.0529811848461734,
+            "difference_interval": [
+              0.0014492753623188395,
+              0.15305110602593439
+            ],
+            "holding_higher": 3,
+            "lacking_higher": 0,
+            "tied": 9,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.24537546245375463,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 590,
+            "tests_running_a_mutant": 338,
+            "encounters": 1409,
+            "kills": 634,
+            "kill_rate": 0.44996451383960256,
+            "mutants_run": 80,
+            "mutants_killed": 44,
+            "test_strength": 0.55
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 562,
+            "tests_running_a_mutant": 330,
+            "encounters": 1393,
+            "kills": 630,
+            "kill_rate": 0.45226130653266333,
+            "mutants_run": 78,
+            "mutants_killed": 43,
+            "test_strength": 0.5512820512820513
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 358,
+            "tests_running_a_mutant": 255,
+            "encounters": 1207,
+            "kills": 531,
+            "kill_rate": 0.43993371996686,
+            "mutants_run": 65,
+            "mutants_killed": 34,
+            "test_strength": 0.5230769230769231
+          },
+          "lacking": {
+            "tests": 204,
+            "tests_running_a_mutant": 75,
+            "encounters": 186,
+            "kills": 99,
+            "kill_rate": 0.532258064516129,
+            "mutants_run": 25,
+            "mutants_killed": 18,
+            "test_strength": 0.72
+          },
+          "shared_mutants": {
+            "mutants": 12,
+            "mutated_classes": 9,
+            "mean_kill_rate_holding": 0.6799259944495836,
+            "mean_kill_rate_lacking": 0.6969696969696969,
+            "mean_difference": -0.017043702520113252,
+            "difference_interval": [
+              -0.08901690354049281,
+              0.02727272727272727
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 2,
+            "tied": 9,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.7490250974902509,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 9,
+            "killed_by_neither": 3
+          },
+          "same_test_class": {
+            "mutants": 12,
+            "mutated_classes": 9,
+            "mean_kill_rate_holding": 0.638259327782917,
+            "mean_kill_rate_lacking": 0.6969696969696969,
+            "mean_difference": -0.058710369186779916,
+            "difference_interval": [
+              -0.1330159202499628,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 3,
+            "tied": 9,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.24427557244275572,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 3,
+            "kills": 2,
+            "kill_rate": 0.6666666666666666,
+            "mutants_run": 3,
+            "mutants_killed": 2,
+            "test_strength": 0.6666666666666666
+          },
+          "lacking": {
+            "tests": 16,
+            "tests_running_a_mutant": 6,
+            "encounters": 31,
+            "kills": 16,
+            "kill_rate": 0.5161290322580645,
+            "mutants_run": 13,
+            "mutants_killed": 8,
+            "test_strength": 0.6153846153846154
+          },
+          "shared_mutants": {
+            "mutants": 3,
+            "mutated_classes": 3,
+            "mean_kill_rate_holding": 0.6666666666666666,
+            "mean_kill_rate_lacking": 0.5,
+            "mean_difference": 0.16666666666666666,
+            "difference_interval": [
+              0.0,
+              0.5
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 2,
+            "killed_by_neither": 1
+          },
+          "same_test_class": {
+            "mutants": 3,
+            "mutated_classes": 3,
+            "mean_kill_rate_holding": 0.6666666666666666,
+            "mean_kill_rate_lacking": 0.3333333333333333,
+            "mean_difference": 0.3333333333333333,
+            "difference_interval": [
+              0.0,
+              1.0
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 129,
+            "tests_running_a_mutant": 81,
+            "encounters": 278,
+            "kills": 104,
+            "kill_rate": 0.37410071942446044,
+            "mutants_run": 33,
+            "mutants_killed": 16,
+            "test_strength": 0.48484848484848486
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 590,
+            "tests_running_a_mutant": 338,
+            "encounters": 1409,
+            "kills": 634,
+            "kill_rate": 0.44996451383960256,
+            "mutants_run": 80,
+            "mutants_killed": 44,
+            "test_strength": 0.55
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "spinnaker": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 894,
+      "encounters": 35,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 2,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 892,
+            "tests_running_a_mutant": 33,
+            "encounters": 35,
+            "kills": 23,
+            "kill_rate": 0.6571428571428571,
+            "mutants_run": 5,
+            "mutants_killed": 1,
+            "test_strength": 0.2
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 894,
+            "tests_running_a_mutant": 33,
+            "encounters": 35,
+            "kills": 23,
+            "kill_rate": 0.6571428571428571,
+            "mutants_run": 5,
+            "mutants_killed": 1,
+            "test_strength": 0.2
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 841,
+            "tests_running_a_mutant": 33,
+            "encounters": 35,
+            "kills": 23,
+            "kill_rate": 0.6571428571428571,
+            "mutants_run": 5,
+            "mutants_killed": 1,
+            "test_strength": 0.2
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 258,
+            "tests_running_a_mutant": 19,
+            "encounters": 21,
+            "kills": 17,
+            "kill_rate": 0.8095238095238095,
+            "mutants_run": 4,
+            "mutants_killed": 1,
+            "test_strength": 0.25
+          },
+          "lacking": {
+            "tests": 583,
+            "tests_running_a_mutant": 14,
+            "encounters": 14,
+            "kills": 6,
+            "kill_rate": 0.42857142857142855,
+            "mutants_run": 2,
+            "mutants_killed": 1,
+            "test_strength": 0.5
+          },
+          "shared_mutants": {
+            "mutants": 1,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 1.0,
+            "mean_kill_rate_lacking": 0.5454545454545454,
+            "mean_difference": 0.4545454545454546,
+            "difference_interval": null,
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 1,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 1,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 1.0,
+            "mean_kill_rate_lacking": 0.7222222222222222,
+            "mean_difference": 0.2777777777777778,
+            "difference_interval": null,
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 2
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 156,
+            "tests_running_a_mutant": 12,
+            "encounters": 12,
+            "kills": 12,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 894,
+            "tests_running_a_mutant": 33,
+            "encounters": 35,
+            "kills": 23,
+            "kill_rate": 0.6571428571428571,
+            "mutants_run": 5,
+            "mutants_killed": 1,
+            "test_strength": 0.2
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "uaa": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 1479,
+      "encounters": 79045,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 1307,
+            "tests_running_a_mutant": 1307,
+            "encounters": 76727,
+            "kills": 25381,
+            "kill_rate": 0.3307961995125575,
+            "mutants_run": 209,
+            "mutants_killed": 65,
+            "test_strength": 0.31100478468899523
+          },
+          "lacking": {
+            "tests": 172,
+            "tests_running_a_mutant": 172,
+            "encounters": 2318,
+            "kills": 577,
+            "kill_rate": 0.24892148403796377,
+            "mutants_run": 35,
+            "mutants_killed": 14,
+            "test_strength": 0.4
+          },
+          "shared_mutants": {
+            "mutants": 35,
+            "mutated_classes": 28,
+            "mean_kill_rate_holding": 0.3878124038357437,
+            "mean_kill_rate_lacking": 0.3898671096345515,
+            "mean_difference": -0.002054705798807781,
+            "difference_interval": [
+              -0.026599217755910134,
+              0.029125199369553403
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 4,
+            "tied": 29,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.879012098790121,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 14,
+            "killed_by_neither": 20
+          },
+          "same_test_class": {
+            "mutants": 35,
+            "mutated_classes": 28,
+            "mean_kill_rate_holding": 0.3878723507367581,
+            "mean_kill_rate_lacking": 0.39262383172343057,
+            "mean_difference": -0.004751480986672538,
+            "difference_interval": [
+              -0.027102390420206127,
+              0.019760983771231675
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 4,
+            "tied": 29,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.6196380361963804,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 4
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 269,
+            "tests_running_a_mutant": 269,
+            "encounters": 18648,
+            "kills": 6858,
+            "kill_rate": 0.36776061776061775,
+            "mutants_run": 104,
+            "mutants_killed": 47,
+            "test_strength": 0.4519230769230769
+          },
+          "lacking": {
+            "tests": 1210,
+            "tests_running_a_mutant": 1210,
+            "encounters": 60397,
+            "kills": 19100,
+            "kill_rate": 0.31624087289103764,
+            "mutants_run": 209,
+            "mutants_killed": 65,
+            "test_strength": 0.31100478468899523
+          },
+          "shared_mutants": {
+            "mutants": 104,
+            "mutated_classes": 72,
+            "mean_kill_rate_holding": 0.40933013437886256,
+            "mean_kill_rate_lacking": 0.3685200142832133,
+            "mean_difference": 0.04081012009564936,
+            "difference_interval": [
+              0.016042595863640416,
+              0.0671721396070618
+            ],
+            "holding_higher": 28,
+            "lacking_higher": 6,
+            "tied": 70,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0014998500149985001,
+              "p_adjusted": 0.014998500149985002,
+              "significant": true
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 3,
+            "killed_by_both": 47,
+            "killed_by_neither": 54
+          },
+          "same_test_class": {
+            "mutants": 95,
+            "mutated_classes": 65,
+            "mean_kill_rate_holding": 0.36623872748042996,
+            "mean_kill_rate_lacking": 0.33967992666145025,
+            "mean_difference": 0.026558800818979617,
+            "difference_interval": [
+              0.0002668377685552084,
+              0.04936480468837746
+            ],
+            "holding_higher": 23,
+            "lacking_higher": 4,
+            "tied": 68,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.03949605039496051,
+              "p_adjusted": 0.27647235276472354,
+              "significant": false
+            },
+            "test_classes": 4
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 1020,
+            "tests_running_a_mutant": 1020,
+            "encounters": 53300,
+            "kills": 18076,
+            "kill_rate": 0.33913696060037524,
+            "mutants_run": 209,
+            "mutants_killed": 65,
+            "test_strength": 0.31100478468899523
+          },
+          "lacking": {
+            "tests": 4,
+            "tests_running_a_mutant": 4,
+            "encounters": 152,
+            "kills": 60,
+            "kill_rate": 0.39473684210526316,
+            "mutants_run": 38,
+            "mutants_killed": 15,
+            "test_strength": 0.39473684210526316
+          },
+          "shared_mutants": {
+            "mutants": 38,
+            "mutated_classes": 28,
+            "mean_kill_rate_holding": 0.38087964854287104,
+            "mean_kill_rate_lacking": 0.39473684210526316,
+            "mean_difference": -0.01385719356239212,
+            "difference_interval": [
+              -0.0559721272556927,
+              0.05781668138009201
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 11,
+            "tied": 25,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.7235276472352765,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 2,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 15,
+            "killed_by_neither": 21
+          },
+          "same_test_class": {
+            "mutants": 38,
+            "mutated_classes": 28,
+            "mean_kill_rate_holding": 0.3745331800346656,
+            "mean_kill_rate_lacking": 0.39473684210526316,
+            "mean_difference": -0.020203662070597535,
+            "difference_interval": [
+              -0.06808431266025172,
+              0.0567495743918972
+            ],
+            "holding_higher": 2,
+            "lacking_higher": 11,
+            "tied": 25,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.595040495950405,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 2
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 790,
+            "tests_running_a_mutant": 790,
+            "encounters": 44085,
+            "kills": 15236,
+            "kill_rate": 0.3456050810933424,
+            "mutants_run": 201,
+            "mutants_killed": 63,
+            "test_strength": 0.31343283582089554
+          },
+          "lacking": {
+            "tests": 230,
+            "tests_running_a_mutant": 230,
+            "encounters": 9215,
+            "kills": 2840,
+            "kill_rate": 0.3081931633206728,
+            "mutants_run": 100,
+            "mutants_killed": 38,
+            "test_strength": 0.38
+          },
+          "shared_mutants": {
+            "mutants": 92,
+            "mutated_classes": 63,
+            "mean_kill_rate_holding": 0.3661661467197224,
+            "mean_kill_rate_lacking": 0.3142564058069981,
+            "mean_difference": 0.05190974091272437,
+            "difference_interval": [
+              0.02324883372875983,
+              0.08715094444196415
+            ],
+            "holding_higher": 24,
+            "lacking_higher": 6,
+            "tied": 62,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0006999300069993001,
+              "p_adjusted": 0.008399160083991601,
+              "significant": true
+            },
+            "killed_only_by_holding": 6,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 36,
+            "killed_by_neither": 50
+          },
+          "same_test_class": {
+            "mutants": 90,
+            "mutated_classes": 62,
+            "mean_kill_rate_holding": 0.3760068596453969,
+            "mean_kill_rate_lacking": 0.3243140066076979,
+            "mean_difference": 0.05169285303769872,
+            "difference_interval": [
+              0.02041666462866596,
+              0.09446097343887394
+            ],
+            "holding_higher": 24,
+            "lacking_higher": 5,
+            "tied": 61,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0007999200079992001,
+              "p_adjusted": 0.008799120087991202,
+              "significant": true
+            },
+            "test_classes": 4
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 333,
+            "tests_running_a_mutant": 333,
+            "encounters": 21686,
+            "kills": 7462,
+            "kill_rate": 0.34409296320206584,
+            "mutants_run": 119,
+            "mutants_killed": 50,
+            "test_strength": 0.42016806722689076
+          },
+          "lacking": {
+            "tests": 862,
+            "tests_running_a_mutant": 862,
+            "encounters": 47414,
+            "kills": 15133,
+            "kill_rate": 0.3191673345425402,
+            "mutants_run": 205,
+            "mutants_killed": 63,
+            "test_strength": 0.3073170731707317
+          },
+          "shared_mutants": {
+            "mutants": 115,
+            "mutated_classes": 82,
+            "mean_kill_rate_holding": 0.3701128283461044,
+            "mean_kill_rate_lacking": 0.3538312565364259,
+            "mean_difference": 0.01628157180967849,
+            "difference_interval": [
+              -0.018150095066966545,
+              0.051656250831998055
+            ],
+            "holding_higher": 20,
+            "lacking_higher": 16,
+            "tied": 79,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.3848615138486151,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 6,
+            "killed_by_both": 48,
+            "killed_by_neither": 61
+          },
+          "same_test_class": {
+            "mutants": 101,
+            "mutated_classes": 71,
+            "mean_kill_rate_holding": 0.3475616252915012,
+            "mean_kill_rate_lacking": 0.3513131173966109,
+            "mean_difference": -0.0037514921051097724,
+            "difference_interval": [
+              -0.04702461643024175,
+              0.036980657810562874
+            ],
+            "holding_higher": 20,
+            "lacking_higher": 8,
+            "tied": 73,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.8692130786921308,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 4
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 88,
+            "tests_running_a_mutant": 88,
+            "encounters": 5351,
+            "kills": 1969,
+            "kill_rate": 0.36796860399925246,
+            "mutants_run": 102,
+            "mutants_killed": 46,
+            "test_strength": 0.45098039215686275
+          },
+          "lacking": {
+            "tests": 1295,
+            "tests_running_a_mutant": 1295,
+            "encounters": 72453,
+            "kills": 23719,
+            "kill_rate": 0.32737084730790994,
+            "mutants_run": 207,
+            "mutants_killed": 62,
+            "test_strength": 0.2995169082125604
+          },
+          "shared_mutants": {
+            "mutants": 100,
+            "mutated_classes": 69,
+            "mean_kill_rate_holding": 0.3968459647181756,
+            "mean_kill_rate_lacking": 0.36558612452544714,
+            "mean_difference": 0.03125984019272852,
+            "difference_interval": [
+              0.005863369111932521,
+              0.061953615914531975
+            ],
+            "holding_higher": 24,
+            "lacking_higher": 8,
+            "tied": 68,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.0216978302169783,
+              "p_adjusted": 0.1735826417358264,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 4,
+            "killed_by_both": 43,
+            "killed_by_neither": 52
+          },
+          "same_test_class": {
+            "mutants": 95,
+            "mutated_classes": 64,
+            "mean_kill_rate_holding": 0.37809339082764165,
+            "mean_kill_rate_lacking": 0.34827524746742755,
+            "mean_difference": 0.029818143360213968,
+            "difference_interval": [
+              0.0064651189841079156,
+              0.05851796168436821
+            ],
+            "holding_higher": 22,
+            "lacking_higher": 6,
+            "tied": 67,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.013998600139986002,
+              "p_adjusted": 0.125987401259874,
+              "significant": false
+            },
+            "test_classes": 4
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 1479,
+            "tests_running_a_mutant": 1479,
+            "encounters": 79045,
+            "kills": 25958,
+            "kill_rate": 0.3283952179138465,
+            "mutants_run": 209,
+            "mutants_killed": 65,
+            "test_strength": 0.31100478468899523
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    }
+  }
+}

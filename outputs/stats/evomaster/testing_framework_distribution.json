@@ -1,38 +1,38 @@
 {
   "scope": "test_classes",
-  "test_class_count": 10,
+  "test_class_count": 65,
   "framework_split": {
     "junit3": {
       "class_count": 0,
       "pct_of_classes": 0.0
     },
     "junit4": {
-      "class_count": 0,
-      "pct_of_classes": 0.0
+      "class_count": 3,
+      "pct_of_classes": 4.615384615384615
     },
     "junit5": {
-      "class_count": 10,
-      "pct_of_classes": 100.0
+      "class_count": 62,
+      "pct_of_classes": 95.38461538461539
     },
     "testng": {
       "class_count": 0,
       "pct_of_classes": 0.0
     },
     "assertj": {
-      "class_count": 0,
-      "pct_of_classes": 0.0
+      "class_count": 2,
+      "pct_of_classes": 3.076923076923077
     },
     "hamcrest": {
-      "class_count": 10,
-      "pct_of_classes": 100.0
+      "class_count": 50,
+      "pct_of_classes": 76.92307692307692
     },
     "google-truth": {
       "class_count": 0,
       "pct_of_classes": 0.0
     },
     "mockito": {
-      "class_count": 0,
-      "pct_of_classes": 0.0
+      "class_count": 12,
+      "pct_of_classes": 18.46153846153846
     },
     "easymock": {
       "class_count": 0,
@@ -55,8 +55,8 @@
       "pct_of_classes": 0.0
     },
     "rest-assured": {
-      "class_count": 10,
-      "pct_of_classes": 100.0
+      "class_count": 50,
+      "pct_of_classes": 76.92307692307692
     },
     "karate": {
       "class_count": 0,
@@ -79,7 +79,7 @@
         "junit5",
         "testng"
       ],
-      "class_count": 10,
+      "class_count": 65,
       "pct_of_classes": 100.0
     },
     "assertion-library": {
@@ -88,8 +88,8 @@
         "hamcrest",
         "google-truth"
       ],
-      "class_count": 10,
-      "pct_of_classes": 100.0
+      "class_count": 52,
+      "pct_of_classes": 80.0
     },
     "mocking-library": {
       "frameworks": [
@@ -99,8 +99,8 @@
         "jmockit",
         "jmock"
       ],
-      "class_count": 0,
-      "pct_of_classes": 0.0
+      "class_count": 12,
+      "pct_of_classes": 18.46153846153846
     },
     "api-test-framework": {
       "frameworks": [
@@ -110,20 +110,20 @@
         "pact",
         "citrus"
       ],
-      "class_count": 10,
-      "pct_of_classes": 100.0
+      "class_count": 50,
+      "pct_of_classes": 76.92307692307692
     }
   },
   "classes_without_frameworks": {
     "count": 0,
-    "total": 10,
+    "total": 65,
     "proportion": 0.0
   },
   "framework_count_per_class": {
-    "count": 10,
-    "min": 3.0,
+    "count": 65,
+    "min": 1.0,
     "max": 3.0,
-    "mean": 3.0,
+    "mean": 2.753846153846154,
     "p25": 3.0,
     "p50": 3.0,
     "p75": 3.0,

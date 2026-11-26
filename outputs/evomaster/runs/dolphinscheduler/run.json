@@ -1,0 +1,62 @@
+{
+  "target": "dolphinscheduler",
+  "project": "dolphinscheduler",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "c2360663177c574d6cf83c062bd22788a0cdc040",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 0.7,
+      "error": null
+    },
+    {
+      "stage": "build",
+      "seconds": 74.0,
+      "error": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 192.5,
+      "error": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 4637.7,
+      "error": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 3186.1,
+      "error": null
+    }
+  ],
+  "schema_operations": 297,
+  "scoped_operations": 297,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 4418,
+    "endpoints": 297,
+    "endpoints_2xx": 297,
+    "potential_faults": 1237,
+    "covered_targets": 38409,
+    "covered_lines": 8554,
+    "total_lines": 36290,
+    "covered_branches": 1353,
+    "total_branches": 27352,
+    "sql_heuristics_evaluations": 243465,
+    "sql_parsing_failures": 3
+  },
+  "repaired_classes": [],
+  "verification": {
+    "tests": 4418,
+    "passed": 3003,
+    "failed": 1415,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 0
+  },
+  "finished": true
+}

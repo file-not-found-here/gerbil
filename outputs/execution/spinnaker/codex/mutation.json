@@ -1,0 +1,35 @@
+{
+  "target_classes": 6,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 0,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "2edd9788c9d0fd9523382f732d561658e149c8f9ad0d8a3bf1ba1d29b35a8d07",
+  "runs": [
+    {
+      "module": "clouddriver/clouddriver-appengine",
+      "threads": 1,
+      "seconds": 3.3,
+      "peak_memory_bytes": 314986496
+    },
+    {
+      "module": "clouddriver/clouddriver-web",
+      "threads": 1,
+      "seconds": 27.7,
+      "peak_memory_bytes": 981041152
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.core.ProjectClustersService|retrieveClusters|(Ljava/lang/String;Lcom/netflix/spinnaker/clouddriver/core/ProjectClustersService$Project;)Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|26",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.core.ProjectClustersService",
+      "mutated_method": "retrieveClusters",
+      "line": 164,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    }
+  ]
+}

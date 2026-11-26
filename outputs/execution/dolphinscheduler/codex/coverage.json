@@ -1,0 +1,97 @@
+{
+  "heap": "-Xmx16g",
+  "measured_tests": [
+    "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest#errorRouteForwardsNotFoundToTheUi",
+    "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest#everyProtectedEndpointRejectsAnAnonymousHttpRequest",
+    "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest#publicLoginRoutesDispatchAndValidateInputs"
+  ],
+  "report": {
+    "counters": {
+      "INSTRUCTION": {
+        "covered": 8470,
+        "missed": 175607,
+        "ratio": 0.0460133531076669
+      },
+      "BRANCH": {
+        "covered": 21,
+        "missed": 11407,
+        "ratio": 0.0018375918795939796
+      },
+      "LINE": {
+        "covered": 746,
+        "missed": 41269,
+        "ratio": 0.017755563489230037
+      },
+      "COMPLEXITY": {
+        "covered": 93,
+        "missed": 14568,
+        "ratio": 0.0063433599345201555
+      },
+      "METHOD": {
+        "covered": 88,
+        "missed": 8728,
+        "ratio": 0.009981851179673321
+      },
+      "CLASS": {
+        "covered": 53,
+        "missed": 1582,
+        "ratio": 0.03241590214067278
+      }
+    },
+    "covered_classes": [
+      "org.apache.dolphinscheduler.api.audit.enums.AuditType",
+      "org.apache.dolphinscheduler.api.controller.AccessTokenController",
+      "org.apache.dolphinscheduler.api.controller.AlertGroupController",
+      "org.apache.dolphinscheduler.api.controller.AlertPluginInstanceController",
+      "org.apache.dolphinscheduler.api.controller.AuditLogController",
+      "org.apache.dolphinscheduler.api.controller.BaseController",
+      "org.apache.dolphinscheduler.api.controller.CloudController",
+      "org.apache.dolphinscheduler.api.controller.ClusterController",
+      "org.apache.dolphinscheduler.api.controller.DataAnalysisController",
+      "org.apache.dolphinscheduler.api.controller.DataSourceController",
+      "org.apache.dolphinscheduler.api.controller.DsErrorController",
+      "org.apache.dolphinscheduler.api.controller.DynamicTaskTypeController",
+      "org.apache.dolphinscheduler.api.controller.EnvironmentController",
+      "org.apache.dolphinscheduler.api.controller.ExecutorController",
+      "org.apache.dolphinscheduler.api.controller.FavTaskController",
+      "org.apache.dolphinscheduler.api.controller.K8sNamespaceController",
+      "org.apache.dolphinscheduler.api.controller.LoggerController",
+      "org.apache.dolphinscheduler.api.controller.LoginController",
+      "org.apache.dolphinscheduler.api.controller.MonitorController",
+      "org.apache.dolphinscheduler.api.controller.ProjectController",
+      "org.apache.dolphinscheduler.api.controller.ProjectParameterController",
+      "org.apache.dolphinscheduler.api.controller.ProjectPreferenceController",
+      "org.apache.dolphinscheduler.api.controller.ProjectWorkerGroupController",
+      "org.apache.dolphinscheduler.api.controller.QueueController",
+      "org.apache.dolphinscheduler.api.controller.ResourcesController",
+      "org.apache.dolphinscheduler.api.controller.SchedulerController",
+      "org.apache.dolphinscheduler.api.controller.TaskDefinitionController",
+      "org.apache.dolphinscheduler.api.controller.TaskGroupController",
+      "org.apache.dolphinscheduler.api.controller.TaskInstanceController",
+      "org.apache.dolphinscheduler.api.controller.TenantController",
+      "org.apache.dolphinscheduler.api.controller.UiPluginController",
+      "org.apache.dolphinscheduler.api.controller.UsersController",
+      "org.apache.dolphinscheduler.api.controller.WorkerGroupController",
+      "org.apache.dolphinscheduler.api.controller.WorkflowDefinitionController",
+      "org.apache.dolphinscheduler.api.controller.WorkflowInstanceController",
+      "org.apache.dolphinscheduler.api.controller.WorkflowLineageController",
+      "org.apache.dolphinscheduler.api.controller.WorkflowTaskRelationController",
+      "org.apache.dolphinscheduler.api.controller.v2.AccessTokenV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.ProjectV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.QueueV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.ScheduleV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.StatisticsV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.TaskDefinitionV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.TaskInstanceV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.WorkflowInstanceV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.WorkflowTaskRelationV2Controller",
+      "org.apache.dolphinscheduler.api.controller.v2.WorkflowV2Controller",
+      "org.apache.dolphinscheduler.api.enums.Status",
+      "org.apache.dolphinscheduler.api.interceptor.LoginHandlerInterceptor",
+      "org.apache.dolphinscheduler.api.metrics.ApiServerMetrics",
+      "org.apache.dolphinscheduler.api.utils.Result",
+      "org.apache.dolphinscheduler.common.enums.AuditModelType",
+      "org.apache.dolphinscheduler.common.enums.AuditOperationType"
+    ]
+  }
+}

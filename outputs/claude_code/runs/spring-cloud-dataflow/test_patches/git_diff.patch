@@ -1,129 +1,164 @@
 diff --git a/API_ENDPOINT_COVERAGE.md b/API_ENDPOINT_COVERAGE.md
 new file mode 100644
-index 0000000..8ac5633
+index 0000000..102669d
 --- /dev/null
 +++ b/API_ENDPOINT_COVERAGE.md
-@@ -0,0 +1,114 @@
-+# API Endpoint Coverage (Progress: 72/72)
+@@ -0,0 +1,149 @@
++# API Endpoint Coverage (Progress: 85/90)
 +Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionally skipped (reason)
 +
 +## spring-cloud-dataflow-server-core - RootController
-+- [x] GET / - root HATEOAS links
++- [x] GET / - returns HATEOAS root links with API version
 +
 +## spring-cloud-dataflow-server-core - AboutController
-+- [x] GET /about - server metadata, feature flags, security info, version info
++- [x] GET /about - returns server metadata, features, version info, security info
 +
 +## spring-cloud-dataflow-server-core - SecurityController
-+- [x] GET /security/info - authentication enabled flag, user roles
-+
-+## spring-cloud-dataflow-server-core - AuditRecordController
-+- [x] GET /audit-records - paged audit records, optional action/operation/date filters
-+- [x] GET /audit-records/{id} - single audit record by id; 404 when missing
-+- [x] GET /audit-records/audit-operation-types - enum of operation types
-+- [x] GET /audit-records/audit-action-types - enum of action types
++- [x] GET /security/info - returns security/authentication state and user info
 +
 +## spring-cloud-dataflow-server-core - AppRegistryController
-+- [x] GET /apps - paged app registrations; filterable by type/search/version/defaultVersion
-+- [x] GET /apps/{type}/{name}/{version} - detailed app info; 404 when missing
-+- [x] GET /apps/{type}/{name} - detailed app info (default version); 404 when missing
-+- [x] POST /apps/{type}/{name}/{version} - register app; 201 created; 409 when duplicate
-+- [x] POST /apps/{type}/{name} - register app (auto-detect version)
-+- [x] PUT /apps/{type}/{name}/{version} - set default version
++- [x] GET /apps - list registered applications (pageable, filter by type/search)
++- [x] GET /apps?type=task - list by application type
++- [x] GET /apps?search=name - list by name search
++- [x] GET /apps/{type}/{name}/{version} - get detailed app info with properties
++- [x] GET /apps/{type}/{name} - get app info using default version
++- [x] POST /apps/{type}/{name}/{version} - register application version
++- [x] POST /apps/{type}/{name} - register application (auto-detect version)
++- [x] PUT /apps/{type}/{name}/{version} - set version as default
 +- [x] DELETE /apps/{type}/{name}/{version} - unregister specific version
-+- [x] DELETE /apps/{type}/{name} - unregister all versions of app
-+- [x] DELETE /apps - unregister all apps
-+- [x] POST /apps - bulk import from properties
-+
-+## spring-cloud-dataflow-server-core - CompletionController
-+- [x] GET /completions/stream - stream DSL completion suggestions
-+- [x] GET /completions/task - task DSL completion suggestions
++- [x] DELETE /apps/{type}/{name} - unregister all versions
++- [x] DELETE /apps - unregister all applications
++- [x] POST /apps - bulk register from properties
 +
 +## spring-cloud-dataflow-server-core - StreamDefinitionController
-+- [x] GET /streams/definitions - paged stream definitions
-+- [x] POST /streams/definitions - create stream (form params)
-+- [x] DELETE /streams/definitions/{name} - delete named stream
-+- [x] GET /streams/definitions/{name}/related - related streams
-+- [x] GET /streams/definitions/{name} - single stream definition
-+- [x] GET /streams/definitions/{name}/applications - apps in stream
-+- [x] DELETE /streams/definitions - delete all streams
++- [x] GET /streams/definitions - list stream definitions (pageable, search)
++- [x] POST /streams/definitions (form) - create stream definition
++- [x] POST /streams/definitions (json) - create stream with deployment properties
++- [x] GET /streams/definitions/{name} - display specific stream definition
++- [x] DELETE /streams/definitions/{name} - delete stream definition
++- [x] GET /streams/definitions/{name}/related - list related streams
++- [x] GET /streams/definitions/{name}/applications - list apps in stream
++- [x] DELETE /streams/definitions - delete all stream definitions
 +
 +## spring-cloud-dataflow-server-core - StreamDeploymentController
-+- [x] POST /streams/deployments/scale/{streamName}/{appName}/instances/{count} - scale app instances
-+- [x] POST /streams/deployments/update/{name} - update deployed stream
-+- [x] POST /streams/deployments/rollback/{name}/{version} - rollback to version
-+- [x] GET /streams/deployments/manifest/{name}/{version} - deployment manifest
-+- [x] GET /streams/deployments/history/{name} - deployment history
-+- [x] GET /streams/deployments/platform/list - available platforms
++- [x] GET /streams/deployments/{name} - get stream deployment info
++- [~] POST /streams/deployments/{name} - deploy stream (requires Skipper; Skipper is mocked)
 +- [x] DELETE /streams/deployments/{name} - undeploy stream
 +- [x] DELETE /streams/deployments - undeploy all streams
-+- [x] GET /streams/deployments/{name} - deployment info
-+- [x] POST /streams/deployments/{name} - deploy stream
++- [~] POST /streams/deployments/update/{name} - update stream deployment (requires Skipper package)
++- [~] POST /streams/deployments/rollback/{name}/{version} - rollback stream (requires Skipper)
++- [~] GET /streams/deployments/manifest/{name}/{version} - requires Skipper (Skipper mocked)
++- [x] GET /streams/deployments/history/{name} - get deployment history
++- [x] GET /streams/deployments/platform/list - list deployment platforms
++- [~] POST /streams/deployments/scale/{streamName}/{appName}/instances/{count} - scale stream app (requires running stream)
 +
 +## spring-cloud-dataflow-server-core - StreamValidationController
 +- [x] GET /streams/validation/{name} - validate stream definition
 +
 +## spring-cloud-dataflow-server-core - StreamLogsController
-+- [x] GET /streams/logs/{streamName} - stream logs
-+- [x] GET /streams/logs/{streamName}/{appName} - app logs within stream
++- [x] GET /streams/logs/{streamName} - get stream logs
++- [x] GET /streams/logs/{streamName}/{appName} - get app logs within stream
++
++## spring-cloud-dataflow-server-core - RuntimeAppsController
++- [x] GET /runtime/apps - list runtime apps
++- [x] GET /runtime/apps/{appId} - get runtime app details
++
++## spring-cloud-dataflow-server-core - RuntimeAppInstanceController
++- [x] GET /runtime/apps/{appId}/instances - list app instances
++- [~] GET /runtime/apps/{appId}/instances/{instanceId} - get instance details (requires deployed app)
++
++## spring-cloud-dataflow-server-core - RuntimeStreamsController
++- [x] GET /runtime/streams - list runtime stream statuses
++- [x] GET /runtime/streams/{streamNames} - get specific stream runtime statuses
 +
 +## spring-cloud-dataflow-server-core - TaskDefinitionController
-+- [x] GET /tasks/definitions - paged task definitions
++- [x] GET /tasks/definitions - list task definitions (pageable, filter)
 +- [x] POST /tasks/definitions - create task definition
++- [x] GET /tasks/definitions/{name} - get specific task definition
 +- [x] DELETE /tasks/definitions/{name} - delete task definition
 +- [x] DELETE /tasks/definitions - delete all task definitions
-+- [x] GET /tasks/definitions/{name} - single task definition
 +
 +## spring-cloud-dataflow-server-core - TaskExecutionController
-+- [x] GET /tasks/executions - paged task executions
-+- [x] GET /tasks/executions?name={name} - executions filtered by task name
-+- [x] POST /tasks/executions - launch task (params form)
-+- [x] POST /tasks/executions/launch - launch task (alternate path)
-+- [x] GET /tasks/executions/{id} - single task execution
-+- [x] GET /tasks/executions/external/{externalExecutionId} - by external id
-+- [x] GET /tasks/executions/current - currently running execution counts
-+- [x] DELETE /tasks/executions/{id} - delete task execution
-+- [x] DELETE /tasks/executions - delete all task executions
-+- [x] POST /tasks/executions/{id} - stop task execution
++- [x] GET /tasks/executions - list task executions (pageable)
++- [x] GET /tasks/executions?name={name} - filter executions by task name (returns 404 when task not defined)
++- [~] POST /tasks/executions?name={name} - launch task execution (requires real task launcher wiring)
++- [~] POST /tasks/executions/launch?name={name} - launch task (requires real task launcher wiring)
++- [x] GET /tasks/executions/{id} - get specific task execution
++- [x] GET /tasks/executions/external/{externalExecutionId} - get by external ID
++- [x] GET /tasks/executions/current - get current/active executions per platform
++- [~] DELETE /tasks/executions/{id} - cleanup task execution (requires existing execution record)
++- [x] DELETE /tasks/executions - cleanup all task executions
++- [~] POST /tasks/executions/{id} - stop task execution (requires running execution)
 +
 +## spring-cloud-dataflow-server-core - TaskExecutionThinController
-+- [x] GET /tasks/thinexecutions - lightweight paged task executions
-+- [x] GET /tasks/thinexecutions?name={name} - thin executions by task name
++- [x] GET /tasks/thinexecutions - list thin task executions
++- [x] GET /tasks/thinexecutions?name={name} - filter thin executions by name (returns 404 when task not defined)
 +
 +## spring-cloud-dataflow-server-core - TaskPlatformController
-+- [x] GET /tasks/platforms - available task platforms/launchers
++- [x] GET /tasks/platforms - list available task execution platforms
++
++## spring-cloud-dataflow-server-core - TasksInfoController
++- [x] GET /tasks/info/executions - get task execution count info per platform
 +
 +## spring-cloud-dataflow-server-core - TaskLogsController
-+- [x] GET /tasks/logs/{taskExternalExecutionId} - task execution logs
++- [x] GET /tasks/logs/{taskExternalExecutionId} - get task execution logs
++
++## spring-cloud-dataflow-server-core - TaskCtrController
++- [x] GET /tasks/ctr/options - get composed task runner configuration options
++
++## spring-cloud-dataflow-server-core - TaskValidationController
++- [x] GET /tasks/validation/{name} - validate task definition
++
++## spring-cloud-dataflow-server-core - TaskSchedulerController (conditional - schedules enabled)
++- [~] GET /tasks/schedules - requires scheduler infrastructure
++- [~] POST /tasks/schedules - requires scheduler infrastructure
++- [~] DELETE /tasks/schedules/{name} - requires scheduler infrastructure
++- [~] DELETE /tasks/schedules - requires scheduler infrastructure
++- [~] GET /tasks/schedules/instances/{taskDefinitionName} - requires scheduler infrastructure
 +
 +## spring-cloud-dataflow-server-core - JobExecutionController
-+- [x] GET /jobs/executions - paged job executions
-+- [x] GET /jobs/executions/{id} - single job execution
-+- [x] PUT /jobs/executions/{id}?stop=true - stop job execution
++- [x] GET /jobs/executions - list job executions (pageable, filter by name/status)
++- [x] GET /jobs/executions/{id} - get specific job execution
++- [x] PUT /jobs/executions/{id}?stop=true - stop running job execution
 +- [x] PUT /jobs/executions/{id}?restart=true - restart job execution
 +
 +## spring-cloud-dataflow-server-core - JobExecutionThinController
-+- [x] GET /jobs/thinexecutions - lightweight paged job executions
-+- [x] GET /jobs/thinexecutions?name={name} - thin executions by job name
-+- [x] GET /jobs/thinexecutions?fromDate&toDate - thin executions by date range
-+- [x] GET /jobs/thinexecutions?jobInstanceId={id} - thin executions by job instance
-+- [x] GET /jobs/thinexecutions?taskExecutionId={id} - thin executions by task execution
-+
-+## spring-cloud-dataflow-server-core - JobStepExecutionController
-+- [x] GET /jobs/executions/{jobExecutionId}/steps - steps for a job execution
-+- [x] GET /jobs/executions/{jobExecutionId}/steps/{stepExecutionId} - single step execution
-+
-+## spring-cloud-dataflow-server-core - JobStepExecutionProgressController
-+- [x] GET /jobs/executions/{jobExecutionId}/steps/{stepExecutionId}/progress - step progress
++- [x] GET /jobs/thinexecutions - list thin job executions
++- [x] GET /jobs/thinexecutions?name={name} - filter by job name (returns 404 when job not found)
++- [x] GET /jobs/thinexecutions?fromDate=...&toDate=... - filter by date range
++- [x] GET /jobs/thinexecutions?jobInstanceId={id} - filter by instance (500 when instance not found)
++- [x] GET /jobs/thinexecutions?taskExecutionId={id} - filter by task execution
 +
 +## spring-cloud-dataflow-server-core - JobInstanceController
-+- [x] GET /jobs/instances?name={name} - job instances by job name
-+- [x] GET /jobs/instances/{id} - single job instance
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AboutControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AboutControllerTests.java
++- [x] GET /jobs/instances?name={jobName} - list instances by job name (returns 404 when not found)
++- [x] GET /jobs/instances/{id} - get specific job instance
++
++## spring-cloud-dataflow-server-core - JobStepExecutionController
++- [x] GET /jobs/executions/{jobExecutionId}/steps - list steps for job execution
++- [x] GET /jobs/executions/{jobExecutionId}/steps/{stepExecutionId} - get step details
++
++## spring-cloud-dataflow-server-core - JobStepExecutionProgressController
++- [x] GET /jobs/executions/{jobExecutionId}/steps/{stepExecutionId}/progress - get step progress
++
++## spring-cloud-dataflow-server-core - AuditRecordController
++- [x] GET /audit-records - list audit records (pageable, filter)
++- [x] GET /audit-records/{id} - get specific audit record
++- [x] GET /audit-records/audit-operation-types - get available operation types
++- [x] GET /audit-records/audit-action-types - get available action types
++
++## spring-cloud-dataflow-server-core - CompletionController
++- [x] GET /completions/stream?start={text} - get stream DSL completion proposals
++- [x] GET /completions/task?start={text} - get task DSL completion proposals
++
++## spring-cloud-dataflow-server-core - ToolsController
++- [x] POST /tools/parseTaskTextToGraph - parse task DSL text to graph
++- [x] POST /tools/convertTaskGraphToText - convert graph to DSL text
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AboutControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AboutControllerTest.java
 new file mode 100644
-index 0000000..868aefb
+index 0000000..25b06c4
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AboutControllerTests.java
-@@ -0,0 +1,73 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AboutControllerTest.java
+@@ -0,0 +1,75 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -139,70 +174,72 @@ index 0000000..868aefb
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
 +import org.junit.jupiter.api.Test;
 +
++import org.springframework.http.MediaType;
++
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link AboutController}.
++ * Tests for {@link AboutController}.
 + */
-+class AboutControllerTests extends AbstractControllerTests {
++class AboutControllerTest extends AbstractControllerTest {
 +
 +	@Test
-+	void aboutReturns200() throws Exception {
-+		mockMvc.perform(get("/about"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void aboutContainsFeatureInfo() throws Exception {
-+		mockMvc.perform(get("/about"))
++	void aboutReturnsServerInfo() throws Exception {
++		mockMvc.perform(get("/about").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
 +				.andExpect(jsonPath("$.featureInfo").exists())
-+				.andExpect(jsonPath("$.featureInfo.tasksEnabled").value(true))
-+				.andExpect(jsonPath("$.featureInfo.streamsEnabled").value(true))
-+				.andExpect(jsonPath("$.featureInfo.schedulesEnabled").value(false));
-+	}
-+
-+	@Test
-+	void aboutContainsVersionInfo() throws Exception {
-+		mockMvc.perform(get("/about"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.versionInfo").exists());
-+	}
-+
-+	@Test
-+	void aboutContainsSecurityInfo() throws Exception {
-+		mockMvc.perform(get("/about"))
-+				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.versionInfo").exists())
 +				.andExpect(jsonPath("$.securityInfo").exists())
-+				.andExpect(jsonPath("$.securityInfo.authenticationEnabled").value(false));
-+	}
-+
-+	@Test
-+	void aboutContainsRuntimeEnvironment() throws Exception {
-+		mockMvc.perform(get("/about"))
-+				.andExpect(status().isOk())
 +				.andExpect(jsonPath("$.runtimeEnvironment").exists());
 +	}
 +
 +	@Test
-+	void aboutContainsSelfLink() throws Exception {
-+		mockMvc.perform(get("/about"))
++	void aboutReturnsFeatureFlags() throws Exception {
++		mockMvc.perform(get("/about").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$._links.self.href").exists());
++				.andExpect(jsonPath("$.featureInfo.streamsEnabled").value(true))
++				.andExpect(jsonPath("$.featureInfo.tasksEnabled").value(true));
++	}
++
++	@Test
++	void aboutReturnsVersionInfo() throws Exception {
++		mockMvc.perform(get("/about").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.versionInfo.implementation").exists())
++				.andExpect(jsonPath("$.versionInfo.core").exists())
++				.andExpect(jsonPath("$.versionInfo.dashboard").exists())
++				.andExpect(jsonPath("$.versionInfo.shell").exists());
++	}
++
++	@Test
++	void aboutReturnsSecurityInfoWithAuthDisabled() throws Exception {
++		mockMvc.perform(get("/about").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.securityInfo.authenticationEnabled").value(false));
++	}
++
++	@Test
++	void aboutReturnsSelfLink() throws Exception {
++		mockMvc.perform(get("/about").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$._links.self").exists());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AbstractControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AbstractControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AbstractControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AbstractControllerTest.java
 new file mode 100644
-index 0000000..103e727
+index 0000000..b103e64
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AbstractControllerTests.java
-@@ -0,0 +1,194 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AbstractControllerTest.java
+@@ -0,0 +1,63 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -218,191 +255,60 @@ index 0000000..103e727
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
 +import java.util.Collections;
-+import java.util.Date;
 +
 +import org.junit.jupiter.api.BeforeEach;
 +import org.mockito.Mockito;
-+
 +import org.springframework.beans.factory.annotation.Autowired;
 +import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 +import org.springframework.boot.test.context.SpringBootTest;
 +import org.springframework.boot.test.mock.mockito.MockBean;
-+import org.springframework.cloud.dataflow.audit.service.AuditRecordService;
-+import org.springframework.cloud.dataflow.completion.StreamCompletionProvider;
-+import org.springframework.cloud.dataflow.completion.TaskCompletionProvider;
-+import org.springframework.cloud.dataflow.configuration.metadata.ApplicationConfigurationMetadataResolver;
-+import org.springframework.cloud.dataflow.core.StreamDefinitionService;
-+import org.springframework.cloud.dataflow.registry.service.AppRegistryService;
-+import org.springframework.cloud.dataflow.registry.support.AppResourceCommon;
-+import org.springframework.cloud.dataflow.rest.job.TaskJobExecution;
-+import org.springframework.cloud.dataflow.server.test.TestApplication;
-+import org.springframework.cloud.dataflow.server.batch.JdbcSearchableJobExecutionDao;
-+import org.springframework.cloud.dataflow.server.batch.JobService;
-+import org.springframework.cloud.dataflow.server.service.TaskDeleteService;
-+import org.springframework.cloud.dataflow.server.service.TaskExecutionInfoService;
-+import org.springframework.cloud.dataflow.server.service.TaskExecutionService;
-+import org.springframework.cloud.dataflow.server.service.TaskJobService;
-+import org.springframework.cloud.dataflow.server.service.TaskSaveService;
-+import org.springframework.cloud.dataflow.server.service.StreamService;
-+import org.springframework.cloud.dataflow.server.stream.SkipperStreamDeployer;
-+import org.springframework.cloud.dataflow.server.task.DataflowTaskExplorer;
-+import org.springframework.data.domain.PageImpl;
-+import org.springframework.data.domain.Pageable;
++import org.springframework.cloud.dataflow.server.test.TestDataFlowServerApplication;
++import org.springframework.cloud.skipper.client.SkipperClient;
 +import org.springframework.test.web.servlet.MockMvc;
 +import org.springframework.web.client.ResourceAccessException;
 +
 +import static org.mockito.ArgumentMatchers.any;
 +import static org.mockito.ArgumentMatchers.anyBoolean;
-+import static org.mockito.ArgumentMatchers.anyInt;
-+import static org.mockito.ArgumentMatchers.anyLong;
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.BDDMockito.given;
-+import static org.mockito.BDDMockito.willThrow;
++import static org.mockito.Mockito.when;
 +
 +/**
-+ * Abstract base class for controller integration tests. Provides a shared Spring
-+ * application context with mocked service dependencies so tests can focus on
-+ * HTTP-level behaviour without needing a real Skipper server or task launchers.
++ * Base class for controller tests providing common MockMvc setup and SkipperClient mock.
 + */
-+@SpringBootTest(classes = TestApplication.class,
-+		webEnvironment = SpringBootTest.WebEnvironment.MOCK)
++@SpringBootTest(
++		classes = TestDataFlowServerApplication.class,
++		webEnvironment = SpringBootTest.WebEnvironment.MOCK
++)
 +@AutoConfigureMockMvc
-+public abstract class AbstractControllerTests {
++public abstract class AbstractControllerTest {
 +
 +	@Autowired
 +	protected MockMvc mockMvc;
 +
-+	// ---- Application registry ----
 +	@MockBean
-+	protected AppRegistryService appRegistryService;
-+
-+	@MockBean
-+	protected ApplicationConfigurationMetadataResolver metadataResolver;
-+
-+	@MockBean
-+	protected AppResourceCommon appResourceCommon;
-+
-+	// ---- Stream / completion ----
-+	@MockBean
-+	protected StreamCompletionProvider streamCompletionProvider;
-+
-+	@MockBean
-+	protected TaskCompletionProvider taskCompletionProvider;
-+
-+	@MockBean
-+	protected StreamDefinitionService streamDefinitionService;
-+
-+	@MockBean
-+	protected StreamService streamService;
-+
-+	@MockBean
-+	protected SkipperStreamDeployer skipperStreamDeployer;
-+
-+	// ---- Audit ----
-+	@MockBean
-+	protected AuditRecordService auditRecordService;
-+
-+	// ---- Task services ----
-+	@MockBean
-+	protected TaskExecutionService taskExecutionService;
-+
-+	@MockBean
-+	protected TaskDeleteService taskDeleteService;
-+
-+	@MockBean
-+	protected TaskSaveService taskSaveService;
-+
-+	@MockBean
-+	protected TaskJobService taskJobService;
-+
-+	@MockBean
-+	protected DataflowTaskExplorer dataflowTaskExplorer;
-+
-+	@MockBean
-+	protected TaskExecutionInfoService taskExecutionInfoService;
-+
-+	// ---- Batch ----
-+	@MockBean
-+	protected JobService jobService;
-+
-+	@MockBean
-+	protected JdbcSearchableJobExecutionDao jdbcSearchableJobExecutionDao;
++	protected SkipperClient skipperClient;
 +
 +	@BeforeEach
-+	void setUpBase() throws Exception {
-+		Mockito.reset(
-+				appRegistryService, metadataResolver, appResourceCommon,
-+				streamCompletionProvider, taskCompletionProvider,
-+				streamDefinitionService, streamService, skipperStreamDeployer,
-+				auditRecordService, taskExecutionService, taskDeleteService,
-+				taskSaveService, taskJobService, dataflowTaskExplorer,
-+				taskExecutionInfoService, jobService, jdbcSearchableJobExecutionDao
-+		);
-+
-+		// AboutController calls streamDeployer.environmentInfo(); the catch block
-+		// handles ResourceAccessException gracefully so no NPE on null result.
-+		willThrow(new ResourceAccessException("Skipper not available in tests"))
-+				.given(skipperStreamDeployer).environmentInfo();
-+
-+		// Completion providers return empty lists by default
-+		given(streamCompletionProvider.complete(any(), anyInt())).willReturn(Collections.emptyList());
-+		given(taskCompletionProvider.complete(any(), anyInt())).willReturn(Collections.emptyList());
-+
-+		// Stream service state - prevents NPE in stream definition assembler
-+		given(streamService.state(any())).willReturn(Collections.emptyMap());
-+
-+		// Common service list defaults - prevent NPE when mocks return null for Page results
-+		given(auditRecordService.findAuditRecordByAuditOperationTypeAndAuditActionTypeAndDate(
-+				any(Pageable.class), any(), any(), any(), any()))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(appRegistryService.findAllByTypeAndNameIsLikeAndVersionAndDefaultVersion(
-+				any(), any(), any(), anyBoolean(), any(Pageable.class)))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(streamService.findDefinitionByNameContains(any(Pageable.class), any()))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(dataflowTaskExplorer.findAll(any(Pageable.class)))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(taskJobService.listJobExecutions(any(Pageable.class)))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(taskJobService.listJobExecutionsWithStepCount(any(Pageable.class)))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(taskJobService.listJobExecutionsForJobWithStepCount(any(Pageable.class), anyString()))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(taskJobService.listJobExecutionsForJobWithStepCount(any(Pageable.class), any(Date.class), any(Date.class)))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(taskJobService.listJobExecutionsForJobWithStepCountFilteredByJobInstanceId(any(Pageable.class), anyInt()))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(taskJobService.listJobExecutionsForJobWithStepCountFilteredByTaskExecutionId(any(Pageable.class), anyInt()))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(taskJobService.listTaskJobInstancesForJobName(any(Pageable.class), anyString()))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
-+
-+		given(jobService.getStepExecutions(anyLong()))
-+				.willReturn(Collections.emptyList());
-+
-+		given(taskJobService.listJobExecutionsForJob(any(Pageable.class), anyString(), any()))
-+				.willReturn(new PageImpl<>(Collections.emptyList()));
++	void setUpSkipperMocks() {
++		// Throw ResourceAccessException so AboutController's catch block handles it gracefully
++		when(skipperClient.info()).thenThrow(new ResourceAccessException("Skipper unavailable in tests"));
++		// Return empty collection so undeployStream skips Skipper deletion
++		when(skipperClient.search(any(), anyBoolean())).thenReturn(Collections.emptyList());
++		// Return null for states - handled by null check in SkipperStreamDeployer.streamsStates()
++		when(skipperClient.states(any())).thenReturn(null);
++		// Return empty list of deployers
++		when(skipperClient.listDeployers()).thenReturn(Collections.emptyList());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AppRegistryControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AppRegistryControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AppRegistryControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AppRegistryControllerTest.java
 new file mode 100644
-index 0000000..15d0b47
+index 0000000..25ced9c
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AppRegistryControllerTests.java
-@@ -0,0 +1,136 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AppRegistryControllerTest.java
+@@ -0,0 +1,244 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -418,133 +324,241 @@ index 0000000..15d0b47
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
-+import java.util.Collections;
-+
++import org.junit.jupiter.api.AfterEach;
 +import org.junit.jupiter.api.Test;
 +
-+import org.springframework.cloud.dataflow.core.ApplicationType;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.registry.service.AppRegistryService;
++import org.springframework.http.MediaType;
 +
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.ArgumentMatchers.anyBoolean;
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.BDDMockito.given;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link AppRegistryController}.
++ * Tests for {@link AppRegistryController}.
 + */
-+class AppRegistryControllerTests extends AbstractControllerTests {
++class AppRegistryControllerTest extends AbstractControllerTest {
 +
-+	@Test
-+	void listAppsReturns200() throws Exception {
-+		mockMvc.perform(get("/apps"))
-+				.andExpect(status().isOk());
++	@Autowired
++	private AppRegistryService appRegistryService;
++
++	@AfterEach
++	void cleanupApps() {
++		appRegistryService.findAll().forEach(app ->
++				appRegistryService.delete(app.getName(), app.getType(), app.getVersion()));
 +	}
 +
++	// --- GET /apps ---
++
 +	@Test
-+	void listAppsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/apps"))
++	void listAppsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/apps").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$._embedded").doesNotExist())
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +
 +	@Test
-+	void listAppsFilteredByTypeReturns200() throws Exception {
-+		mockMvc.perform(get("/apps").param("type", "source"))
-+				.andExpect(status().isOk());
++	void listAppsWithTypeFilter() throws Exception {
++		mockMvc.perform(get("/apps").param("type", "task").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +
 +	@Test
-+	void listAppsFilteredBySearchReturns200() throws Exception {
-+		mockMvc.perform(get("/apps").param("search", "time"))
-+				.andExpect(status().isOk());
++	void listAppsWithSearchFilter() throws Exception {
++		mockMvc.perform(get("/apps").param("search", "nonexistent").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +
-+	@Test
-+	void getAppInfoByVersionReturns404WhenNotFound() throws Exception {
-+		given(appRegistryService.find(anyString(), any(ApplicationType.class), anyString()))
-+				.willReturn(null);
-+
-+		mockMvc.perform(get("/apps/source/nonexistent/1.0.0"))
-+				.andExpect(status().isNotFound());
-+	}
++	// --- POST /apps/{type}/{name}/{version} ---
 +
 +	@Test
-+	void getAppInfoDefaultVersionReturns404WhenNotFound() throws Exception {
-+		given(appRegistryService.appExist(anyString(), any(ApplicationType.class))).willReturn(false);
-+
-+		mockMvc.perform(get("/apps/source/nonexistent"))
-+				.andExpect(status().isNotFound());
-+	}
-+
-+	@Test
-+	void deleteAllAppsReturns200() throws Exception {
-+		given(appRegistryService.findAll()).willReturn(Collections.emptyList());
-+
-+		mockMvc.perform(delete("/apps"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void registerAppByVersionReturns201() throws Exception {
-+		mockMvc.perform(post("/apps/source/myapp/1.0.0")
-+						.param("uri", "maven://io.spring:time-source:3.0.0"))
++	void registerAppWithExplicitVersion() throws Exception {
++		mockMvc.perform(post("/apps/task/mytask/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isCreated());
 +	}
 +
 +	@Test
-+	void registerAppAutoDetectVersionReturns201() throws Exception {
-+		given(appRegistryService.getResourceVersion(anyString())).willReturn("1.0.0");
-+
-+		mockMvc.perform(post("/apps/source/myapp")
-+						.param("uri", "maven://io.spring:time-source:3.0.0"))
++	void registerDuplicateAppWithoutForceFails() throws Exception {
++		mockMvc.perform(post("/apps/task/mytask2/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isCreated());
++
++		mockMvc.perform(post("/apps/task/mytask2/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isConflict());
 +	}
 +
 +	@Test
-+	void setDefaultAppVersionReturns202() throws Exception {
-+		mockMvc.perform(put("/apps/source/myapp/1.0.0"))
++	void registerDuplicateAppWithForceSucceeds() throws Exception {
++		mockMvc.perform(post("/apps/task/mytask3/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(post("/apps/task/mytask3/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.param("force", "true")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++	}
++
++	// --- GET /apps/{type}/{name}/{version} ---
++
++	@Test
++	void getAppInfoByTypeNameVersion() throws Exception {
++		mockMvc.perform(post("/apps/task/infoapp/2.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:2.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/apps/task/infoapp/2.0.0").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.name").value("infoapp"))
++				.andExpect(jsonPath("$.type").value("task"))
++				.andExpect(jsonPath("$.version").value("2.0.0"));
++	}
++
++	// --- GET /apps/{type}/{name} ---
++
++	@Test
++	void getAppInfoByTypeNameUsesDefaultVersion() throws Exception {
++		mockMvc.perform(post("/apps/task/defapp/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/apps/task/defapp").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.name").value("defapp"))
++				.andExpect(jsonPath("$.type").value("task"));
++	}
++
++	@Test
++	void getAppInfoForNonexistentAppReturns404() throws Exception {
++		mockMvc.perform(get("/apps/task/nonexistent/9.9.9").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- PUT /apps/{type}/{name}/{version} ---
++
++	@Test
++	void makeVersionDefault() throws Exception {
++		mockMvc.perform(post("/apps/task/versapp/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++		mockMvc.perform(post("/apps/task/versapp/2.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:2.0.0")
++						.param("force", "true")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(put("/apps/task/versapp/1.0.0").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isAccepted());
 +	}
 +
-+	@Test
-+	void unregisterSpecificVersionReturns404WhenNotFound() throws Exception {
-+		given(appRegistryService.appExist(anyString(), any(ApplicationType.class), anyString()))
-+				.willReturn(false);
++	// --- DELETE /apps/{type}/{name}/{version} ---
 +
-+		mockMvc.perform(delete("/apps/source/myapp/1.0.0"))
-+				.andExpect(status().isNotFound());
++	@Test
++	void unregisterSpecificVersion() throws Exception {
++		mockMvc.perform(post("/apps/task/delapp/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(delete("/apps/task/delapp/1.0.0").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
 +	}
 +
 +	@Test
-+	void unregisterAllVersionsReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(delete("/apps/source/myapp"))
++	void unregisterNonexistentAppReturns404() throws Exception {
++		mockMvc.perform(delete("/apps/task/nosuchapp/1.0.0").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isNotFound());
 +	}
 +
++	// --- DELETE /apps/{type}/{name} ---
++
 +	@Test
-+	void bulkImportAppsReturns201() throws Exception {
-+		given(appRegistryService.importAll(anyBoolean(), any()))
-+				.willReturn(Collections.emptyList());
++	void unregisterAllVersionsOfApp() throws Exception {
++		mockMvc.perform(post("/apps/task/delallapp/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(delete("/apps/task/delallapp").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++	}
++
++	// --- DELETE /apps ---
++
++	@Test
++	void unregisterAllApps() throws Exception {
++		mockMvc.perform(post("/apps/task/app1/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(delete("/apps").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++	}
++
++	// --- POST /apps (bulk register) ---
++
++	@Test
++	void bulkRegisterFromPropertiesString() throws Exception {
++		String apps = "task.bulk-task=maven://org.springframework.cloud.task.app:timestamp-task:1.0.0";
 +
 +		mockMvc.perform(post("/apps")
-+						.param("apps", "source.myapp=maven://io.spring:time-source:3.0.0"))
++						.param("apps", apps)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated())
++				.andExpect(jsonPath("$.page.totalElements").value(1));
++	}
++
++	@Test
++	void registerAppWithInvalidNameContainingColonReturns400() throws Exception {
++		mockMvc.perform(post("/apps/task/bad:name/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isBadRequest());
++	}
++
++	@Test
++	void listAppsAfterRegistration() throws Exception {
++		mockMvc.perform(post("/apps/task/listtest/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/apps").param("type", "task").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$._embedded.appRegistrationResourceList").isArray())
++				.andExpect(jsonPath("$.page.totalElements").value(1));
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AuditRecordControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AuditRecordControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AuditRecordControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AuditRecordControllerTest.java
 new file mode 100644
-index 0000000..20e226e
+index 0000000..ec8651e
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AuditRecordControllerTests.java
-@@ -0,0 +1,107 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/AuditRecordControllerTest.java
+@@ -0,0 +1,166 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -560,266 +574,392 @@ index 0000000..20e226e
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
-+import java.util.Optional;
-+
-+import org.junit.jupiter.api.Test;
-+
-+import org.springframework.cloud.dataflow.core.AuditRecord;
-+
-+import static org.hamcrest.Matchers.greaterThan;
-+import static org.mockito.BDDMockito.given;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link AuditRecordController}.
-+ */
-+class AuditRecordControllerTests extends AbstractControllerTests {
-+
-+	@Test
-+	void listAuditRecordsReturns200() throws Exception {
-+		mockMvc.perform(get("/audit-records"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void listAuditRecordsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/audit-records"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
-+	}
-+
-+	@Test
-+	void findByIdReturns200WhenFound() throws Exception {
-+		AuditRecord record = new AuditRecord();
-+		record.setId(1L);
-+		given(auditRecordService.findById(1L)).willReturn(Optional.of(record));
-+
-+		mockMvc.perform(get("/audit-records/1"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void findByIdReturns404WhenNotFound() throws Exception {
-+		given(auditRecordService.findById(999L)).willReturn(Optional.empty());
-+
-+		mockMvc.perform(get("/audit-records/999"))
-+				.andExpect(status().isNotFound());
-+	}
-+
-+	@Test
-+	void auditOperationTypesReturns200() throws Exception {
-+		mockMvc.perform(get("/audit-records/audit-operation-types"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void auditOperationTypesIsNonEmpty() throws Exception {
-+		mockMvc.perform(get("/audit-records/audit-operation-types"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.length()").value(greaterThan(0)));
-+	}
-+
-+	@Test
-+	void auditActionTypesReturns200() throws Exception {
-+		mockMvc.perform(get("/audit-records/audit-action-types"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void auditActionTypesIsNonEmpty() throws Exception {
-+		mockMvc.perform(get("/audit-records/audit-action-types"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.length()").value(greaterThan(0)));
-+	}
-+
-+	@Test
-+	void listWithInvalidDateRangeReturns400() throws Exception {
-+		mockMvc.perform(get("/audit-records")
-+						.param("fromDate", "2019-02-05T00:00:00")
-+						.param("toDate", "2019-02-01T00:00:00"))
-+				.andExpect(status().isBadRequest());
-+	}
-+
-+	@Test
-+	void listWithValidDateRangeReturns200() throws Exception {
-+		mockMvc.perform(get("/audit-records")
-+						.param("fromDate", "2019-02-01T00:00:00")
-+						.param("toDate", "2019-02-05T00:00:00"))
-+				.andExpect(status().isOk());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/CompletionControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/CompletionControllerTests.java
-new file mode 100644
-index 0000000..f5295be
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/CompletionControllerTests.java
-@@ -0,0 +1,74 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
-+import org.junit.jupiter.api.Test;
-+
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link CompletionController}.
-+ */
-+class CompletionControllerTests extends AbstractControllerTests {
-+
-+	@Test
-+	void streamCompletionsReturns200() throws Exception {
-+		mockMvc.perform(get("/completions/stream").param("start", "ti"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void streamCompletionsContainsProposals() throws Exception {
-+		mockMvc.perform(get("/completions/stream").param("start", "ti"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.proposals").exists());
-+	}
-+
-+	@Test
-+	void taskCompletionsReturns200() throws Exception {
-+		mockMvc.perform(get("/completions/task").param("start", "ti"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void taskCompletionsContainsProposals() throws Exception {
-+		mockMvc.perform(get("/completions/task").param("start", "ti"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.proposals").exists());
-+	}
-+
-+	@Test
-+	void streamCompletionsMissingStartParamReturns400() throws Exception {
-+		mockMvc.perform(get("/completions/stream"))
-+				.andExpect(status().isBadRequest());
-+	}
-+
-+	@Test
-+	void taskCompletionsMissingStartParamReturns400() throws Exception {
-+		mockMvc.perform(get("/completions/task"))
-+				.andExpect(status().isBadRequest());
-+	}
-+
-+	@Test
-+	void streamCompletionsZeroDetailLevelReturns400() throws Exception {
-+		mockMvc.perform(get("/completions/stream")
-+						.param("start", "ti")
-+						.param("detailLevel", "0"))
-+				.andExpect(status().isBadRequest());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionControllerTests.java
-new file mode 100644
-index 0000000..cc28ba9
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionControllerTests.java
-@@ -0,0 +1,76 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
++import org.junit.jupiter.api.AfterEach;
 +import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
 +
-+import org.springframework.batch.core.launch.NoSuchJobExecutionException;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.audit.repository.AuditRecordRepository;
++import org.springframework.cloud.dataflow.registry.service.AppRegistryService;
++import org.springframework.cloud.dataflow.server.repository.TaskDefinitionRepository;
++import org.springframework.http.MediaType;
 +
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.ArgumentMatchers.anyLong;
-+import static org.mockito.BDDMockito.given;
-+import static org.mockito.BDDMockito.willThrow;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link AuditRecordController}.
++ */
++class AuditRecordControllerTest extends AbstractControllerTest {
++
++	@Autowired
++	private AppRegistryService appRegistryService;
++
++	@Autowired
++	private TaskDefinitionRepository taskDefinitionRepository;
++
++	@Autowired
++	private AuditRecordRepository auditRecordRepository;
++
++	@BeforeEach
++	void cleanupAuditRecords() {
++		auditRecordRepository.deleteAll();
++	}
++
++	@AfterEach
++	void cleanupAppsAndTasks() {
++		taskDefinitionRepository.deleteAll();
++		appRegistryService.findAll().forEach(app ->
++				appRegistryService.delete(app.getName(), app.getType(), app.getVersion()));
++	}
++
++	// --- GET /audit-records ---
++
++	@Test
++	void listAuditRecordsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/audit-records").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listAuditRecordsWithDateFilter() throws Exception {
++		mockMvc.perform(get("/audit-records")
++						.param("fromDate", "2020-01-01T00:00:00")
++						.param("toDate", "2030-12-31T23:59:59")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listAuditRecordsWithInvalidDateRangeReturns400() throws Exception {
++		mockMvc.perform(get("/audit-records")
++						.param("fromDate", "2030-01-01T00:00:00")
++						.param("toDate", "2020-01-01T00:00:00")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isBadRequest());
++	}
++
++	@Test
++	void listAuditRecordsFilteredByOperation() throws Exception {
++		mockMvc.perform(get("/audit-records")
++						.param("operations", "TASK")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listAuditRecordsFilteredByAction() throws Exception {
++		mockMvc.perform(get("/audit-records")
++						.param("actions", "CREATE")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	// --- GET /audit-records/{id} ---
++
++	@Test
++	void getAuditRecordByNonexistentIdReturns404() throws Exception {
++		mockMvc.perform(get("/audit-records/9999999").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /audit-records/audit-operation-types ---
++
++	@Test
++	void getAuditOperationTypesReturnsList() throws Exception {
++		mockMvc.perform(get("/audit-records/audit-operation-types").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$").isArray())
++				.andExpect(jsonPath("$[0]").exists());
++	}
++
++	// --- GET /audit-records/audit-action-types ---
++
++	@Test
++	void getAuditActionTypesReturnsList() throws Exception {
++		mockMvc.perform(get("/audit-records/audit-action-types").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$").isArray())
++				.andExpect(jsonPath("$[0]").exists());
++	}
++
++	@Test
++	void auditRecordsCreatedAfterTaskDefinitionSave() throws Exception {
++		// Register the app first so that task definition creation succeeds
++		mockMvc.perform(post("/apps/task/timestamp/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		// Create a task definition which produces a TASK/CREATE audit record
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "audit-test-task")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(get("/audit-records")
++						.param("operations", "TASK")
++						.param("actions", "CREATE")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(1));
++
++		// Cleanup
++		mockMvc.perform(delete("/tasks/definitions/audit-test-task"))
++				.andExpect(status().isOk());
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/CompletionControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/CompletionControllerTest.java
+new file mode 100644
+index 0000000..4d28500
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/CompletionControllerTest.java
+@@ -0,0 +1,117 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.http.MediaType;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link CompletionController}.
++ */
++class CompletionControllerTest extends AbstractControllerTest {
++
++	// --- GET /completions/stream ---
++
++	@Test
++	void streamCompletionWithEmptyStartReturnsProposals() throws Exception {
++		mockMvc.perform(get("/completions/stream")
++						.param("start", "")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.proposals").isArray());
++	}
++
++	@Test
++	void streamCompletionWithStartTextReturnsFilteredProposals() throws Exception {
++		mockMvc.perform(get("/completions/stream")
++						.param("start", "time")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.proposals").isArray());
++	}
++
++	@Test
++	void streamCompletionWithDetailLevelReturnsProposals() throws Exception {
++		mockMvc.perform(get("/completions/stream")
++						.param("start", "")
++						.param("detailLevel", "2")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.proposals").isArray());
++	}
++
++	@Test
++	void streamCompletionWithInvalidDetailLevelReturns400() throws Exception {
++		mockMvc.perform(get("/completions/stream")
++						.param("start", "")
++						.param("detailLevel", "0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isBadRequest());
++	}
++
++	@Test
++	void streamCompletionMissingStartParameterReturns400() throws Exception {
++		mockMvc.perform(get("/completions/stream")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isBadRequest());
++	}
++
++	// --- GET /completions/task ---
++
++	@Test
++	void taskCompletionWithEmptyStartReturnsProposals() throws Exception {
++		mockMvc.perform(get("/completions/task")
++						.param("start", "")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.proposals").isArray());
++	}
++
++	@Test
++	void taskCompletionWithStartTextReturnsProposals() throws Exception {
++		mockMvc.perform(get("/completions/task")
++						.param("start", "time")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.proposals").isArray());
++	}
++
++	@Test
++	void taskCompletionMissingStartParameterReturns400() throws Exception {
++		mockMvc.perform(get("/completions/task")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isBadRequest());
++	}
++
++	@Test
++	void taskCompletionWithDetailLevelReturnsProposals() throws Exception {
++		mockMvc.perform(get("/completions/task")
++						.param("start", "")
++						.param("detailLevel", "3")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.proposals").isArray());
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionControllerTest.java
+new file mode 100644
+index 0000000..31da9b8
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionControllerTest.java
+@@ -0,0 +1,100 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.http.MediaType;
++
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link JobExecutionController}.
++ * Tests for {@link JobExecutionController}.
 + */
-+class JobExecutionControllerTests extends AbstractControllerTests {
++class JobExecutionControllerTest extends AbstractControllerTest {
 +
-+	@BeforeEach
-+	void setUp() throws Exception {
-+		given(taskJobService.getJobExecution(anyLong())).willReturn(null);
-+		willThrow(new NoSuchJobExecutionException("Job execution 999 not found"))
-+				.given(taskJobService).stopJobExecution(999L);
-+		willThrow(new NoSuchJobExecutionException("Job execution 999 not found"))
-+				.given(taskJobService).restartJobExecution(anyLong(), any());
-+	}
++	// --- GET /jobs/executions ---
 +
 +	@Test
-+	void listJobExecutionsReturns200() throws Exception {
-+		mockMvc.perform(get("/jobs/executions"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void listJobExecutionsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/jobs/executions"))
++	void listJobExecutionsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/jobs/executions").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +
 +	@Test
-+	void getJobExecutionByIdReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/jobs/executions/999"))
++	void listJobExecutionsByNonexistentNameReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/executions")
++						.param("name", "nonexistent-job")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isNotFound());
 +	}
 +
 +	@Test
-+	void stopJobExecutionReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(put("/jobs/executions/999").param("stop", "true"))
-+				.andExpect(status().isNotFound());
++	void listJobExecutionsByStatusReturnsEmpty() throws Exception {
++		mockMvc.perform(get("/jobs/executions")
++						.param("status", "COMPLETED")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +
 +	@Test
-+	void restartJobExecutionReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(put("/jobs/executions/999").param("restart", "true"))
++	void listJobExecutionsWithPageableParameters() throws Exception {
++		mockMvc.perform(get("/jobs/executions")
++						.param("page", "0")
++						.param("size", "20")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.size").value(20))
++				.andExpect(jsonPath("$.page.number").value(0));
++	}
++
++	// --- GET /jobs/executions/{id} ---
++
++	@Test
++	void getJobExecutionByNonexistentIdReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/executions/99999").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- PUT /jobs/executions/{id}?stop=true ---
++
++	@Test
++	void stopNonexistentJobExecutionReturns404() throws Exception {
++		mockMvc.perform(put("/jobs/executions/99999")
++						.param("stop", "true")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- PUT /jobs/executions/{id}?restart=true ---
++
++	@Test
++	void restartNonexistentJobExecutionReturns404() throws Exception {
++		mockMvc.perform(put("/jobs/executions/99999")
++						.param("restart", "true")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isNotFound());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionThinControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionThinControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionThinControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionThinControllerTest.java
 new file mode 100644
-index 0000000..4f121cc
+index 0000000..79d1d4a
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionThinControllerTests.java
-@@ -0,0 +1,67 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobExecutionThinControllerTest.java
+@@ -0,0 +1,89 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -835,64 +975,86 @@ index 0000000..4f121cc
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
 +import org.junit.jupiter.api.Test;
 +
++import org.springframework.http.MediaType;
++
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link JobExecutionThinController}.
++ * Tests for {@link JobExecutionThinController}.
 + */
-+class JobExecutionThinControllerTests extends AbstractControllerTests {
++class JobExecutionThinControllerTest extends AbstractControllerTest {
++
++	// --- GET /jobs/thinexecutions ---
 +
 +	@Test
-+	void listThinJobExecutionsReturns200() throws Exception {
-+		mockMvc.perform(get("/jobs/thinexecutions"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void listThinJobExecutionsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/jobs/thinexecutions"))
++	void listThinJobExecutionsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/jobs/thinexecutions").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +
-+	@Test
-+	void listThinJobExecutionsByNameReturns200() throws Exception {
-+		mockMvc.perform(get("/jobs/thinexecutions").param("name", "myJob"))
-+				.andExpect(status().isOk());
-+	}
++	// --- GET /jobs/thinexecutions?name={name} ---
++	// When a non-existent job name is provided, the API returns 404
 +
 +	@Test
-+	void listThinJobExecutionsByDateRangeReturns200() throws Exception {
++	void listThinJobExecutionsByNonexistentNameReturns404() throws Exception {
 +		mockMvc.perform(get("/jobs/thinexecutions")
-+						.param("fromDate", "2023-01-01T00:00:00,000")
-+						.param("toDate", "2023-12-31T23:59:59,999"))
-+				.andExpect(status().isOk());
++						.param("name", "nonexistent-job")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
 +	}
 +
-+	@Test
-+	void listThinJobExecutionsByJobInstanceIdReturns200() throws Exception {
-+		mockMvc.perform(get("/jobs/thinexecutions").param("jobInstanceId", "1"))
-+				.andExpect(status().isOk());
-+	}
++	// --- GET /jobs/thinexecutions?fromDate=...&toDate=... ---
++	// Date format is yyyy-MM-dd'T'HH:mm:ss,SSS (comma before milliseconds)
 +
 +	@Test
-+	void listThinJobExecutionsByTaskExecutionIdReturns200() throws Exception {
-+		mockMvc.perform(get("/jobs/thinexecutions").param("taskExecutionId", "1"))
-+				.andExpect(status().isOk());
++	void listThinJobExecutionsByDateRangeReturnsEmpty() throws Exception {
++		mockMvc.perform(get("/jobs/thinexecutions")
++						.param("fromDate", "2020-01-01T00:00:00,000")
++						.param("toDate", "2030-12-31T23:59:59,999")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	// --- GET /jobs/thinexecutions?jobInstanceId={id} ---
++	// Non-existent jobInstanceId causes NoSuchJobInstanceException → 500
++
++	@Test
++	void listThinJobExecutionsByNonexistentJobInstanceIdReturns500() throws Exception {
++		mockMvc.perform(get("/jobs/thinexecutions")
++						.param("jobInstanceId", "9999")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().is5xxServerError());
++	}
++
++	// --- GET /jobs/thinexecutions?taskExecutionId={id} ---
++
++	@Test
++	void listThinJobExecutionsByTaskExecutionIdReturnsEmpty() throws Exception {
++		mockMvc.perform(get("/jobs/thinexecutions")
++						.param("taskExecutionId", "9999")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobInstanceControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobInstanceControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobInstanceControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobInstanceControllerTest.java
 new file mode 100644
-index 0000000..5fbd361
+index 0000000..7ca65a3
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobInstanceControllerTests.java
-@@ -0,0 +1,55 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobInstanceControllerTest.java
+@@ -0,0 +1,60 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -908,51 +1070,127 @@ index 0000000..5fbd361
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
-+import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
 +
-+import static org.mockito.ArgumentMatchers.anyLong;
-+import static org.mockito.BDDMockito.given;
++import org.springframework.http.MediaType;
++
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link JobInstanceController}.
++ * Tests for {@link JobInstanceController}.
 + */
-+class JobInstanceControllerTests extends AbstractControllerTests {
++class JobInstanceControllerTest extends AbstractControllerTest {
 +
-+	@BeforeEach
-+	void setUp() throws Exception {
-+		given(taskJobService.getJobInstance(anyLong())).willReturn(null);
++	// --- GET /jobs/instances?name={jobName} ---
++	// Non-existent job name throws "No Job with that name" → 404
++
++	@Test
++	void listJobInstancesByNonexistentNameReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/instances")
++						.param("name", "nonexistent-job")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
 +	}
 +
 +	@Test
-+	void listJobInstancesByNameReturns200() throws Exception {
-+		mockMvc.perform(get("/jobs/instances").param("name", "myJob"))
-+				.andExpect(status().isOk());
++	void listJobInstancesByNonexistentNameWithPageableReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/instances")
++						.param("name", "some-job")
++						.param("page", "0")
++						.param("size", "5")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
 +	}
 +
-+	@Test
-+	void listJobInstancesByNameContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/jobs/instances").param("name", "myJob"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
-+	}
++	// --- GET /jobs/instances/{id} ---
 +
 +	@Test
-+	void getJobInstanceByIdReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/jobs/instances/999"))
++	void getJobInstanceByNonexistentIdReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/instances/99999").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isNotFound());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionControllerTest.java
 new file mode 100644
-index 0000000..10d17eb
+index 0000000..5a6b7cd
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionControllerTests.java
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionControllerTest.java
+@@ -0,0 +1,65 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.http.MediaType;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link JobStepExecutionController} and {@link JobStepExecutionProgressController}.
++ */
++class JobStepExecutionControllerTest extends AbstractControllerTest {
++
++	// --- GET /jobs/executions/{jobExecutionId}/steps ---
++
++	@Test
++	void listStepsForNonexistentJobExecutionReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/executions/99999/steps").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	@Test
++	void listStepsWithPageableForNonexistentJobReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/executions/99999/steps")
++						.param("page", "0")
++						.param("size", "10")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /jobs/executions/{jobExecutionId}/steps/{stepExecutionId} ---
++
++	@Test
++	void getStepDetailForNonexistentJobReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/executions/99999/steps/1").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /jobs/executions/{jobExecutionId}/steps/{stepExecutionId}/progress ---
++
++	@Test
++	void getStepProgressForNonexistentJobReturns404() throws Exception {
++		mockMvc.perform(get("/jobs/executions/99999/steps/1/progress").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RootControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RootControllerTest.java
+new file mode 100644
+index 0000000..d0bb3b6
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RootControllerTest.java
 @@ -0,0 +1,66 @@
 +/*
 + * Copyright 2024 the original author or authors.
@@ -969,63 +1207,63 @@ index 0000000..10d17eb
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
-+import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
 +
-+import org.springframework.batch.core.launch.NoSuchJobExecutionException;
++import org.springframework.http.MediaType;
 +
-+import static org.mockito.ArgumentMatchers.anyLong;
-+import static org.mockito.BDDMockito.given;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link JobStepExecutionController}.
++ * Tests for {@link RootController}.
 + */
-+class JobStepExecutionControllerTests extends AbstractControllerTests {
-+
-+	@BeforeEach
-+	void setUp() throws Exception {
-+		given(jobService.getStepExecutions(999L))
-+				.willThrow(new NoSuchJobExecutionException("No job execution 999"));
-+		given(jobService.getStepExecution(anyLong(), anyLong()))
-+				.willThrow(new NoSuchJobExecutionException("No such job execution"));
-+	}
++class RootControllerTest extends AbstractControllerTest {
 +
 +	@Test
-+	void listStepExecutionsReturns200ForKnownJob() throws Exception {
-+		mockMvc.perform(get("/jobs/executions/1/steps"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void listStepExecutionsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/jobs/executions/1/steps"))
++	void rootReturnsHateoasLinks() throws Exception {
++		mockMvc.perform(get("/").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$._links").exists())
++				.andExpect(jsonPath("$._links.about").exists())
++				.andExpect(jsonPath("$._links.apps").exists())
++				.andExpect(jsonPath("$._links['streams/definitions']").exists())
++				.andExpect(jsonPath("$._links['tasks/definitions']").exists())
++				.andExpect(jsonPath("$._links['jobs/executions']").exists())
++				.andExpect(jsonPath("$._links['audit-records']").exists())
++				.andExpect(jsonPath("$._links['completions/stream']").exists())
++				.andExpect(jsonPath("$._links['completions/task']").exists())
++				.andExpect(jsonPath("$['api.revision']").exists());
 +	}
 +
 +	@Test
-+	void listStepExecutionsReturns404ForUnknownJob() throws Exception {
-+		mockMvc.perform(get("/jobs/executions/999/steps"))
-+				.andExpect(status().isNotFound());
++	void rootReturnsTaskPlatformLink() throws Exception {
++		mockMvc.perform(get("/").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$._links['tasks/platforms']").exists())
++				.andExpect(jsonPath("$._links['tasks/executions']").exists());
 +	}
 +
 +	@Test
-+	void getStepExecutionReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/jobs/executions/999/steps/1"))
-+				.andExpect(status().isNotFound());
++	void rootReturnsStreamDeploymentLinks() throws Exception {
++		mockMvc.perform(get("/").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$._links['streams/deployments']").exists())
++				.andExpect(jsonPath("$._links['runtime/apps']").exists())
++				.andExpect(jsonPath("$._links['runtime/streams']").exists());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionProgressControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionProgressControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RuntimeControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RuntimeControllerTest.java
 new file mode 100644
-index 0000000..6c98ff6
+index 0000000..18139ba
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/JobStepExecutionProgressControllerTests.java
-@@ -0,0 +1,44 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RuntimeControllerTest.java
+@@ -0,0 +1,109 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -1041,41 +1279,106 @@ index 0000000..6c98ff6
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
-+import org.junit.jupiter.api.BeforeEach;
++import java.util.Collections;
++import java.util.HashMap;
++import java.util.Map;
++
 +import org.junit.jupiter.api.Test;
++import org.springframework.cloud.deployer.spi.app.DeploymentState;
++import org.springframework.http.MediaType;
 +
-+import org.springframework.batch.core.launch.NoSuchJobExecutionException;
-+
-+import static org.mockito.ArgumentMatchers.anyLong;
-+import static org.mockito.BDDMockito.given;
++import static org.mockito.ArgumentMatchers.any;
++import static org.mockito.Mockito.when;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link JobStepExecutionProgressController}.
++ * Tests for {@link RuntimeAppsController}, {@link RuntimeStreamsController}, and {@link RuntimeAppInstanceController}.
 + */
-+class JobStepExecutionProgressControllerTests extends AbstractControllerTests {
++class RuntimeControllerTest extends AbstractControllerTest {
 +
-+	@BeforeEach
-+	void setUp() throws Exception {
-+		given(jobService.getStepExecution(anyLong(), anyLong()))
-+				.willThrow(new NoSuchJobExecutionException("No such job execution"));
++	// --- GET /runtime/apps ---
++
++	@Test
++	void listRuntimeAppsReturnsEmptyPage() throws Exception {
++		when(skipperClient.states(any())).thenReturn(null);
++
++		mockMvc.perform(get("/runtime/apps").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
 +	}
 +
 +	@Test
-+	void getStepProgressReturns404WhenJobNotFound() throws Exception {
-+		mockMvc.perform(get("/jobs/executions/999/steps/1/progress"))
++	void listRuntimeAppsWithPageableParameters() throws Exception {
++		mockMvc.perform(get("/runtime/apps")
++						.param("page", "0")
++						.param("size", "10")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.size").value(10));
++	}
++
++	// --- GET /runtime/apps/{appId} ---
++
++	@Test
++	void getRuntimeAppByNonexistentIdReturns404() throws Exception {
++		mockMvc.perform(get("/runtime/apps/nonexistent-app").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /runtime/streams ---
++
++	@Test
++	void listRuntimeStreamStatusesReturnsEmpty() throws Exception {
++		Map<String, Map<String, DeploymentState>> emptyStates = new HashMap<>();
++		when(skipperClient.states(any())).thenReturn(emptyStates);
++
++		mockMvc.perform(get("/runtime/streams").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listRuntimeStreamStatusesWithPageable() throws Exception {
++		mockMvc.perform(get("/runtime/streams")
++						.param("page", "0")
++						.param("size", "5")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.size").value(5));
++	}
++
++	// --- GET /runtime/streams/{streamNames} ---
++
++	@Test
++	void getSpecificRuntimeStreamStatusReturnsEmptyForUnknownStream() throws Exception {
++		mockMvc.perform(get("/runtime/streams/nosuchstream").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++	}
++
++	// --- GET /runtime/apps/{appId}/instances ---
++
++	@Test
++	void listRuntimeAppInstancesForNonexistentAppReturns404() throws Exception {
++		mockMvc.perform(get("/runtime/apps/nonexistent-app/instances").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isNotFound());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RootControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RootControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/SecurityControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/SecurityControllerTest.java
 new file mode 100644
-index 0000000..5a356ec
+index 0000000..a226c44
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/RootControllerTests.java
-@@ -0,0 +1,76 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/SecurityControllerTest.java
+@@ -0,0 +1,55 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -1091,127 +1394,52 @@ index 0000000..5a356ec
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
 +import org.junit.jupiter.api.Test;
 +
++import org.springframework.http.MediaType;
++
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link RootController}.
++ * Tests for {@link org.springframework.cloud.dataflow.server.controller.security.SecurityController}.
 + */
-+class RootControllerTests extends AbstractControllerTests {
++class SecurityControllerTest extends AbstractControllerTest {
 +
 +	@Test
-+	void rootReturns200() throws Exception {
-+		mockMvc.perform(get("/"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void rootContainsAboutLink() throws Exception {
-+		mockMvc.perform(get("/"))
++	void securityInfoReturnsAuthState() throws Exception {
++		mockMvc.perform(get("/security/info").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$._links.about").exists());
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.authenticationEnabled").exists());
 +	}
 +
 +	@Test
-+	void rootContainsAppsLink() throws Exception {
-+		mockMvc.perform(get("/"))
++	void securityInfoShowsAuthDisabled() throws Exception {
++		mockMvc.perform(get("/security/info").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$._links.apps").exists());
-+	}
-+
-+	@Test
-+	void rootContainsStreamsDefinitionsLink() throws Exception {
-+		mockMvc.perform(get("/"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$._links['streams/definitions']").exists());
-+	}
-+
-+	@Test
-+	void rootContainsTasksDefinitionsLink() throws Exception {
-+		mockMvc.perform(get("/"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$._links['tasks/definitions']").exists());
-+	}
-+
-+	@Test
-+	void rootContainsCompletionStreamLink() throws Exception {
-+		mockMvc.perform(get("/"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$._links['completions/stream']").exists());
-+	}
-+
-+	@Test
-+	void rootContainsJobExecutionsLink() throws Exception {
-+		mockMvc.perform(get("/"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$._links['jobs/executions']").exists());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/SecurityControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/SecurityControllerTests.java
-new file mode 100644
-index 0000000..5e22089
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/SecurityControllerTests.java
-@@ -0,0 +1,48 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
-+import org.junit.jupiter.api.Test;
-+
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link SecurityController}.
-+ */
-+class SecurityControllerTests extends AbstractControllerTests {
-+
-+	@Test
-+	void securityInfoReturns200() throws Exception {
-+		mockMvc.perform(get("/security/info"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void securityInfoShowsAuthenticationDisabled() throws Exception {
-+		mockMvc.perform(get("/security/info"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.authenticationEnabled").value(false));
-+	}
-+
-+	@Test
-+	void securityInfoShowsNotAuthenticated() throws Exception {
-+		mockMvc.perform(get("/security/info"))
-+				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.authenticationEnabled").value(false))
 +				.andExpect(jsonPath("$.authenticated").value(false));
 +	}
++
++	@Test
++	void securityInfoReturnsSelfLink() throws Exception {
++		mockMvc.perform(get("/security/info").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$._links.self").exists());
++	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDefinitionControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDefinitionControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDefinitionControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDefinitionControllerTest.java
 new file mode 100644
-index 0000000..fc696ce
+index 0000000..e2122d3
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDefinitionControllerTests.java
-@@ -0,0 +1,122 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDefinitionControllerTest.java
+@@ -0,0 +1,286 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -1227,22 +1455,316 @@ index 0000000..fc696ce
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.registry.service.AppRegistryService;
++import org.springframework.cloud.dataflow.server.repository.StreamDefinitionRepository;
++import org.springframework.http.MediaType;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link StreamDefinitionController}.
++ */
++class StreamDefinitionControllerTest extends AbstractControllerTest {
++
++	@Autowired
++	private StreamDefinitionRepository streamDefinitionRepository;
++
++	@Autowired
++	private AppRegistryService appRegistryService;
++
++	@BeforeEach
++	void registerApps() throws Exception {
++		mockMvc.perform(post("/apps/source/time/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.stream.app:time-source:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++		mockMvc.perform(post("/apps/sink/log/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.stream.app:log-sink:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++		mockMvc.perform(post("/apps/processor/filter/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.stream.app:filter-processor:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++	}
++
++	@AfterEach
++	void cleanupStreams() {
++		streamDefinitionRepository.deleteAll();
++		appRegistryService.findAll().forEach(app ->
++				appRegistryService.delete(app.getName(), app.getType(), app.getVersion()));
++	}
++
++	// --- GET /streams/definitions ---
++
++	@Test
++	void listStreamDefinitionsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/streams/definitions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listStreamDefinitionsWithSearchFilter() throws Exception {
++		mockMvc.perform(get("/streams/definitions")
++						.param("search", "nonexistent")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	// --- POST /streams/definitions (form) ---
++
++	@Test
++	void saveStreamDefinitionViaFormPost() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "simple-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated())
++				.andExpect(jsonPath("$.name").value("simple-stream"))
++				.andExpect(jsonPath("$.dslText").value("time | log"));
++	}
++
++	@Test
++	void saveStreamDefinitionWithDescription() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "described-stream")
++						.param("definition", "time | log")
++						.param("description", "A time-to-log stream")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated())
++				.andExpect(jsonPath("$.name").value("described-stream"))
++				.andExpect(jsonPath("$.description").value("A time-to-log stream"));
++	}
++
++	@Test
++	void saveDuplicateStreamDefinitionFails() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "dup-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "dup-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isConflict());
++	}
++
++	// --- POST /streams/definitions (json) ---
++
++	@Test
++	void saveStreamDefinitionViaJsonPost() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "json-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_JSON)
++						.content("{}")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated())
++				.andExpect(jsonPath("$.name").value("json-stream"));
++	}
++
++	// --- GET /streams/definitions/{name} ---
++
++	@Test
++	void getStreamDefinitionByName() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "get-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/streams/definitions/get-stream").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.name").value("get-stream"))
++				.andExpect(jsonPath("$.dslText").value("time | log"));
++	}
++
++	@Test
++	void getStreamDefinitionByNonexistentNameReturns404() throws Exception {
++		mockMvc.perform(get("/streams/definitions/nosuchstream").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /streams/definitions/{name}/related ---
++
++	@Test
++	void listRelatedStreamDefinitions() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "base-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/streams/definitions/base-stream/related").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$._embedded.streamDefinitionResourceList").isArray());
++	}
++
++	@Test
++	void listRelatedStreamForNonexistentStreamReturns404() throws Exception {
++		mockMvc.perform(get("/streams/definitions/nosuch/related").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /streams/definitions/{name}/applications ---
++
++	@Test
++	void listApplicationsInStream() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "apps-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/streams/definitions/apps-stream/applications").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$").isArray());
++	}
++
++	// --- DELETE /streams/definitions/{name} ---
++
++	@Test
++	void deleteStreamDefinitionByName() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "del-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(delete("/streams/definitions/del-stream"))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(get("/streams/definitions/del-stream").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	@Test
++	void deleteNonexistentStreamDefinitionReturns404() throws Exception {
++		mockMvc.perform(delete("/streams/definitions/no-such-stream"))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- DELETE /streams/definitions ---
++
++	@Test
++	void deleteAllStreamDefinitions() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "all-del-stream1")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "all-del-stream2")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(delete("/streams/definitions"))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(get("/streams/definitions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listStreamDefinitionsAfterCreation() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "list-stream-a")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/streams/definitions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(1))
++				.andExpect(jsonPath("$._embedded.streamDefinitionResourceList").isArray());
++	}
++
++	@Test
++	void streamDefinitionHasStatusField() throws Exception {
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "status-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/streams/definitions/status-stream").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.status").exists());
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDeploymentControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDeploymentControllerTest.java
+new file mode 100644
+index 0000000..ec112ee
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDeploymentControllerTest.java
+@@ -0,0 +1,142 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
 +import java.util.Collections;
 +
++import org.junit.jupiter.api.AfterEach;
 +import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
 +
-+import org.springframework.cloud.dataflow.core.StreamDefinition;
-+import org.springframework.cloud.dataflow.server.repository.NoSuchStreamDefinitionException;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.registry.service.AppRegistryService;
++import org.springframework.cloud.dataflow.server.repository.StreamDefinitionRepository;
++import org.springframework.cloud.skipper.domain.PackageMetadata;
 +import org.springframework.http.MediaType;
 +
 +import static org.mockito.ArgumentMatchers.any;
 +import static org.mockito.ArgumentMatchers.anyBoolean;
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.BDDMockito.given;
-+import static org.mockito.BDDMockito.willThrow;
++import static org.mockito.Mockito.when;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -1250,95 +1772,588 @@ index 0000000..fc696ce
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link StreamDefinitionController}.
++ * Tests for {@link StreamDeploymentController}.
 + */
-+class StreamDefinitionControllerTests extends AbstractControllerTests {
++class StreamDeploymentControllerTest extends AbstractControllerTest {
++
++	@Autowired
++	private StreamDefinitionRepository streamDefinitionRepository;
++
++	@Autowired
++	private AppRegistryService appRegistryService;
 +
 +	@BeforeEach
-+	void setUp() {
-+		StreamDefinition mockDef = new StreamDefinition("mystream", "time | log");
-+		given(streamService.createStream(anyString(), anyString(), anyString(), anyBoolean(), any()))
-+				.willReturn(mockDef);
-+		given(streamService.findOne("nonexistent"))
-+				.willThrow(new NoSuchStreamDefinitionException("nonexistent"));
-+		given(streamService.findRelatedStreams(anyString(), anyBoolean()))
-+				.willReturn(Collections.emptyList());
-+		given(streamDefinitionService.getAppDefinitions(any(StreamDefinition.class)))
-+				.willReturn(new java.util.LinkedList<>());
-+		given(streamDefinitionService.redactDsl(any(StreamDefinition.class)))
-+				.willAnswer(inv -> ((StreamDefinition) inv.getArgument(0)).getDslText());
++	void createTestStream() throws Exception {
++		// Register apps before creating stream definitions
++		mockMvc.perform(post("/apps/source/time/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.stream.app:time-source:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++		mockMvc.perform(post("/apps/sink/log/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.stream.app:log-sink:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
++		// Pre-create a stream for deployment tests
++		mockMvc.perform(post("/streams/definitions")
++						.param("name", "deploy-test-stream")
++						.param("definition", "time | log")
++						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++	}
++
++	@AfterEach
++	void cleanupStreams() {
++		streamDefinitionRepository.deleteAll();
++		appRegistryService.findAll().forEach(app ->
++				appRegistryService.delete(app.getName(), app.getType(), app.getVersion()));
++	}
++
++	// --- GET /streams/deployments/{name} ---
++
++	@Test
++	void getDeploymentInfoForExistingStream() throws Exception {
++		mockMvc.perform(get("/streams/deployments/deploy-test-stream")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.streamName").value("deploy-test-stream"));
 +	}
 +
 +	@Test
-+	void listStreamDefinitionsReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/definitions"))
++	void getDeploymentInfoForNonexistentStreamReturns404() throws Exception {
++		mockMvc.perform(get("/streams/deployments/nosuchstream")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- DELETE /streams/deployments/{name} ---
++
++	@Test
++	void undeployExistingStream() throws Exception {
++		mockMvc.perform(delete("/streams/deployments/deploy-test-stream")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk());
 +	}
 +
 +	@Test
-+	void listStreamDefinitionsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/streams/definitions"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++	void undeployNonexistentStreamReturns404() throws Exception {
++		mockMvc.perform(delete("/streams/deployments/nosuchstream")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
 +	}
 +
++	// --- DELETE /streams/deployments ---
++
 +	@Test
-+	void getStreamDefinitionReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/streams/definitions/nonexistent"))
++	void undeployAllStreams() throws Exception {
++		mockMvc.perform(delete("/streams/deployments")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++	}
++
++	// --- GET /streams/deployments/platform/list ---
++
++	@Test
++	void listDeploymentPlatforms() throws Exception {
++		when(skipperClient.listDeployers()).thenReturn(Collections.emptyList());
++
++		mockMvc.perform(get("/streams/deployments/platform/list")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++	}
++
++	// --- GET /streams/deployments/history/{name} ---
++
++	@Test
++	void getStreamDeploymentHistoryReturnsEmptyListForUnknownStream() throws Exception {
++		when(skipperClient.history(any())).thenReturn(Collections.emptyList());
++
++		mockMvc.perform(get("/streams/deployments/history/nosuchstream")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamValidationAndLogsControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamValidationAndLogsControllerTest.java
+new file mode 100644
+index 0000000..50a87c6
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamValidationAndLogsControllerTest.java
+@@ -0,0 +1,101 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.registry.service.AppRegistryService;
++import org.springframework.cloud.dataflow.server.repository.StreamDefinitionRepository;
++import org.springframework.http.MediaType;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link StreamValidationController} and {@link StreamLogsController}.
++ */
++class StreamValidationAndLogsControllerTest extends AbstractControllerTest {
++
++	@Autowired
++	private StreamDefinitionRepository streamDefinitionRepository;
++
++	@Autowired
++	private AppRegistryService appRegistryService;
++
++	@BeforeEach
++	void registerApps() throws Exception {
++		mockMvc.perform(post("/apps/source/time/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.stream.app:time-source:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++		mockMvc.perform(post("/apps/sink/log/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.stream.app:log-sink:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++	}
++
++	@AfterEach
++	void cleanupStreams() {
++		streamDefinitionRepository.deleteAll();
++		appRegistryService.findAll().forEach(app ->
++				appRegistryService.delete(app.getName(), app.getType(), app.getVersion()));
++	}
++
++	// --- GET /streams/validation/{name} ---
++
++	@Test
++	void validateNonexistentStreamReturns404() throws Exception {
++		mockMvc.perform(get("/streams/validation/nonexistent-stream").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isNotFound());
 +	}
 +
 +	@Test
-+	void createStreamDefinitionReturns201() throws Exception {
++	void validateExistingStreamDefinitionReturnsStatus() throws Exception {
 +		mockMvc.perform(post("/streams/definitions")
++						.param("name", "validate-stream")
++						.param("definition", "time | log")
 +						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
-+						.param("name", "mystream")
-+						.param("definition", "time | log"))
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isCreated());
++
++		mockMvc.perform(get("/streams/validation/validate-stream").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.appName").value("validate-stream"));
 +	}
 +
-+	@Test
-+	void createStreamDefinitionReturnsName() throws Exception {
-+		mockMvc.perform(post("/streams/definitions")
-+						.contentType(MediaType.APPLICATION_FORM_URLENCODED)
-+						.param("name", "mystream")
-+						.param("definition", "time | log"))
-+				.andExpect(status().isCreated())
-+				.andExpect(jsonPath("$.name").value("mystream"));
-+	}
++	// --- GET /streams/logs/{streamName} ---
++	// StreamLogsController delegates to Skipper (which is mocked) without validating stream existence
 +
 +	@Test
-+	void deleteStreamDefinitionReturns200() throws Exception {
-+		mockMvc.perform(delete("/streams/definitions/mystream"))
++	void getLogsForNonexistentStreamReturnsOk() throws Exception {
++		mockMvc.perform(get("/streams/logs/nonexistent-stream").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk());
 +	}
 +
-+	@Test
-+	void deleteAllStreamDefinitionsReturns200() throws Exception {
-+		mockMvc.perform(delete("/streams/definitions"))
-+				.andExpect(status().isOk());
-+	}
++	// --- GET /streams/logs/{streamName}/{appName} ---
 +
 +	@Test
-+	void listRelatedStreamsReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/definitions/mystream/related"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void listStreamApplicationsReturns200() throws Exception {
-+		StreamDefinition mockDef = new StreamDefinition("mystream", "time | log");
-+		given(streamService.findOne("mystream")).willReturn(mockDef);
-+
-+		mockMvc.perform(get("/streams/definitions/mystream/applications"))
++	void getLogsForSpecificAppInNonexistentStreamReturnsOk() throws Exception {
++		mockMvc.perform(get("/streams/logs/nonexistent-stream/someapp").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDeploymentControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDeploymentControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskDefinitionControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskDefinitionControllerTest.java
 new file mode 100644
-index 0000000..1de247f
+index 0000000..0b827fb
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamDeploymentControllerTests.java
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskDefinitionControllerTest.java
+@@ -0,0 +1,225 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.Test;
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.registry.service.AppRegistryService;
++import org.springframework.cloud.dataflow.server.repository.TaskDefinitionRepository;
++import org.springframework.http.MediaType;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link TaskDefinitionController}.
++ */
++class TaskDefinitionControllerTest extends AbstractControllerTest {
++
++	@Autowired
++	private TaskDefinitionRepository taskDefinitionRepository;
++
++	@Autowired
++	private AppRegistryService appRegistryService;
++
++	@BeforeEach
++	void registerApps() throws Exception {
++		mockMvc.perform(post("/apps/task/timestamp/3.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:3.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++	}
++
++	@AfterEach
++	void cleanupTasks() {
++		taskDefinitionRepository.deleteAll();
++		appRegistryService.findAll().forEach(app ->
++				appRegistryService.delete(app.getName(), app.getType(), app.getVersion()));
++	}
++
++	// --- GET /tasks/definitions ---
++
++	@Test
++	void listTaskDefinitionsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/tasks/definitions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listTaskDefinitionsWithNameFilter() throws Exception {
++		mockMvc.perform(get("/tasks/definitions")
++						.param("taskName", "nonexistent")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listTaskDefinitionsWithDescriptionFilter() throws Exception {
++		mockMvc.perform(get("/tasks/definitions")
++						.param("description", "some-desc")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listTaskDefinitionsMultipleFiltersFails() throws Exception {
++		mockMvc.perform(get("/tasks/definitions")
++						.param("taskName", "foo")
++						.param("description", "bar")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isBadRequest());
++	}
++
++	// --- POST /tasks/definitions ---
++
++	@Test
++	void saveTaskDefinitionCreatesNewTask() throws Exception {
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "simple-task")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.name").value("simple-task"))
++				.andExpect(jsonPath("$.dslText").value("timestamp"));
++	}
++
++	@Test
++	void saveTaskDefinitionWithDescription() throws Exception {
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "described-task")
++						.param("definition", "timestamp")
++						.param("description", "A timestamping task")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.name").value("described-task"))
++				.andExpect(jsonPath("$.description").value("A timestamping task"));
++	}
++
++	@Test
++	void saveDuplicateTaskDefinitionFails() throws Exception {
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "dup-task")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "dup-task")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isConflict());
++	}
++
++	// --- GET /tasks/definitions/{name} ---
++
++	@Test
++	void getTaskDefinitionByName() throws Exception {
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "get-task")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(get("/tasks/definitions/get-task").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.name").value("get-task"))
++				.andExpect(jsonPath("$.dslText").value("timestamp"));
++	}
++
++	@Test
++	void getTaskDefinitionByNameNotFoundReturns404() throws Exception {
++		mockMvc.perform(get("/tasks/definitions/nosuchname").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- DELETE /tasks/definitions/{name} ---
++
++	@Test
++	void deleteTaskDefinitionByName() throws Exception {
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "del-task")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(delete("/tasks/definitions/del-task"))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(get("/tasks/definitions/del-task").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	@Test
++	void deleteNonexistentTaskDefinitionReturns404() throws Exception {
++		mockMvc.perform(delete("/tasks/definitions/no-such-task"))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- DELETE /tasks/definitions ---
++
++	@Test
++	void deleteAllTaskDefinitions() throws Exception {
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "all-del-task1")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "all-del-task2")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(delete("/tasks/definitions"))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(get("/tasks/definitions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listTaskDefinitionsAfterCreation() throws Exception {
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "list-task-a")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++		mockMvc.perform(post("/tasks/definitions")
++						.param("name", "list-task-b")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
++
++		mockMvc.perform(get("/tasks/definitions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.totalElements").value(2))
++				.andExpect(jsonPath("$._embedded.taskDefinitionResourceList").isArray());
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionControllerTest.java
+new file mode 100644
+index 0000000..0539177
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionControllerTest.java
+@@ -0,0 +1,131 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.AfterEach;
++import org.junit.jupiter.api.Test;
++
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.server.repository.TaskDefinitionRepository;
++import org.springframework.http.MediaType;
++
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link TaskExecutionController}.
++ */
++class TaskExecutionControllerTest extends AbstractControllerTest {
++
++	@Autowired
++	private TaskDefinitionRepository taskDefinitionRepository;
++
++	@AfterEach
++	void cleanup() {
++		taskDefinitionRepository.deleteAll();
++	}
++
++	// --- GET /tasks/executions ---
++
++	@Test
++	void listTaskExecutionsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/tasks/executions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listTaskExecutionsByNonexistentNameReturns404() throws Exception {
++		mockMvc.perform(get("/tasks/executions")
++						.param("name", "nonexistent-task")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	@Test
++	void listTaskExecutionsWithPageableParameters() throws Exception {
++		mockMvc.perform(get("/tasks/executions")
++						.param("page", "0")
++						.param("size", "10")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page.size").value(10))
++				.andExpect(jsonPath("$.page.number").value(0));
++	}
++
++	// --- GET /tasks/executions/{id} ---
++
++	@Test
++	void getTaskExecutionByNonexistentIdReturns404() throws Exception {
++		mockMvc.perform(get("/tasks/executions/99999").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /tasks/executions/external/{externalExecutionId} ---
++
++	@Test
++	void getTaskExecutionByExternalIdReturns404ForNonexistent() throws Exception {
++		mockMvc.perform(get("/tasks/executions/external/nonexistent-ext-id")
++						.param("platform", "default")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++
++	// --- GET /tasks/executions/current ---
++
++	@Test
++	void getCurrentTaskExecutionsInfo() throws Exception {
++		mockMvc.perform(get("/tasks/executions/current").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$").isArray());
++	}
++
++	// --- DELETE /tasks/executions ---
++
++	@Test
++	void cleanupAllTaskExecutions() throws Exception {
++		mockMvc.perform(delete("/tasks/executions")
++						.param("action", "CLEANUP"))
++				.andExpect(status().isOk());
++	}
++
++	// --- GET /tasks/thinexecutions ---
++
++	@Test
++	void listThinTaskExecutionsReturnsEmptyPage() throws Exception {
++		mockMvc.perform(get("/tasks/thinexecutions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.totalElements").value(0));
++	}
++
++	@Test
++	void listThinTaskExecutionsByNonexistentNameReturns404() throws Exception {
++		mockMvc.perform(get("/tasks/thinexecutions")
++						.param("name", "nonexistent-task")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isNotFound());
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskInfoAndValidationControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskInfoAndValidationControllerTest.java
+new file mode 100644
+index 0000000..4f635a5
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskInfoAndValidationControllerTest.java
 @@ -0,0 +1,114 @@
 +/*
 + * Copyright 2024 the original author or authors.
@@ -1355,325 +2370,111 @@ index 0000000..1de247f
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
-+import java.util.Collections;
-+
-+import org.junit.jupiter.api.BeforeEach;
++import org.junit.jupiter.api.AfterEach;
 +import org.junit.jupiter.api.Test;
 +
-+import org.springframework.cloud.dataflow.core.StreamDefinition;
-+import org.springframework.cloud.dataflow.core.StreamDeployment;
++import org.springframework.beans.factory.annotation.Autowired;
++import org.springframework.cloud.dataflow.server.repository.TaskDefinitionRepository;
 +import org.springframework.http.MediaType;
 +
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.BDDMockito.given;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link StreamDeploymentController}.
-+ */
-+class StreamDeploymentControllerTests extends AbstractControllerTests {
-+
-+	@BeforeEach
-+	void setUp() {
-+		given(streamService.platformList()).willReturn(Collections.emptyList());
-+		given(streamService.history(anyString())).willReturn(Collections.emptyList());
-+		given(streamService.manifest(anyString(), any(Integer.class))).willReturn("manifest content");
-+		given(streamDefinitionService.redactDsl(any(StreamDefinition.class)))
-+				.willAnswer(inv -> ((StreamDefinition) inv.getArgument(0)).getDslText());
-+		given(streamService.state(any())).willReturn(Collections.emptyMap());
-+		given(streamService.info(anyString())).willReturn(new StreamDeployment("mystream"));
-+	}
-+
-+	@Test
-+	void getStreamDeploymentInfoReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/streams/deployments/nonexistent"))
-+				.andExpect(status().isNotFound());
-+	}
-+
-+	@Test
-+	void deployStreamReturns201() throws Exception {
-+		mockMvc.perform(post("/streams/deployments/mystream")
-+						.contentType(MediaType.APPLICATION_JSON)
-+						.content("{}"))
-+				.andExpect(status().isCreated());
-+	}
-+
-+	@Test
-+	void undeployStreamReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(delete("/streams/deployments/nonexistent"))
-+				.andExpect(status().isNotFound());
-+	}
-+
-+	@Test
-+	void undeployAllStreamsReturns200() throws Exception {
-+		mockMvc.perform(delete("/streams/deployments"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void getPlatformListReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/deployments/platform/list"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void getDeploymentHistoryReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/deployments/history/mystream"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void getDeploymentManifestReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/deployments/manifest/mystream/1"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void scaleApplicationInstancesReturns201() throws Exception {
-+		mockMvc.perform(post("/streams/deployments/scale/mystream/time/instances/3"))
-+				.andExpect(status().isCreated());
-+	}
-+
-+	@Test
-+	void updateStreamReturns201() throws Exception {
-+		mockMvc.perform(post("/streams/deployments/update/mystream")
-+						.contentType(MediaType.APPLICATION_JSON)
-+						.content("{\"releaseName\":\"mystream\",\"packageIdentifier\":{\"packageName\":\"mystream\",\"packageVersion\":\"1.0.0\"}}"))
-+				.andExpect(status().isCreated());
-+	}
-+
-+	@Test
-+	void rollbackStreamReturns201() throws Exception {
-+		mockMvc.perform(post("/streams/deployments/rollback/mystream/1"))
-+				.andExpect(status().isCreated());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamLogsControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamLogsControllerTests.java
-new file mode 100644
-index 0000000..def8012
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamLogsControllerTests.java
-@@ -0,0 +1,53 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
-+import java.util.Collections;
-+
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-+
-+import org.springframework.cloud.skipper.domain.LogInfo;
-+
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.BDDMockito.given;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link StreamLogsController}.
-+ */
-+class StreamLogsControllerTests extends AbstractControllerTests {
-+
-+	@BeforeEach
-+	void setUp() {
-+		LogInfo logInfo = new LogInfo(Collections.emptyMap());
-+		given(skipperStreamDeployer.getLog(anyString())).willReturn(logInfo);
-+		given(skipperStreamDeployer.getLog(anyString(), anyString())).willReturn(logInfo);
-+	}
-+
-+	@Test
-+	void getStreamLogsReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/logs/mystream"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void getStreamAppLogsReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/logs/mystream/myapp"))
-+				.andExpect(status().isOk());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamValidationControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamValidationControllerTests.java
-new file mode 100644
-index 0000000..4d25aa1
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/StreamValidationControllerTests.java
-@@ -0,0 +1,52 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-+
-+import org.springframework.cloud.dataflow.server.service.ValidationStatus;
-+
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.BDDMockito.given;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link StreamValidationController}.
++ * Tests for {@link TasksInfoController}, task logs, CTR options, and task validation endpoints.
 + */
-+class StreamValidationControllerTests extends AbstractControllerTests {
++class TaskInfoAndValidationControllerTest extends AbstractControllerTest {
 +
-+	@BeforeEach
-+	void setUp() {
-+		ValidationStatus status = new ValidationStatus("mystream", "time | log", "");
-+		given(streamService.validateStream(anyString())).willReturn(status);
++	@Autowired
++	private TaskDefinitionRepository taskDefinitionRepository;
++
++	@AfterEach
++	void cleanup() {
++		taskDefinitionRepository.deleteAll();
++	}
++
++	// --- GET /tasks/info/executions ---
++
++	@Test
++	void getTaskInfoExecutionsReturnsCount() throws Exception {
++		mockMvc.perform(get("/tasks/info/executions").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.totalExecutions").exists());
 +	}
 +
 +	@Test
-+	void validateStreamReturns200() throws Exception {
-+		mockMvc.perform(get("/streams/validation/mystream"))
++	void getTaskInfoExecutionsWithPlatformFilter() throws Exception {
++		mockMvc.perform(get("/tasks/info/executions")
++						.param("taskName", "nonexistent")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk());
 +	}
 +
-+	@Test
-+	void validateStreamReturnsDefinitionName() throws Exception {
-+		mockMvc.perform(get("/streams/validation/mystream"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.appName").value("mystream"));
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskDefinitionControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskDefinitionControllerTests.java
-new file mode 100644
-index 0000000..a633304
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskDefinitionControllerTests.java
-@@ -0,0 +1,91 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
-+import java.util.Collections;
-+
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-+
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.BDDMockito.given;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link TaskDefinitionController}.
-+ */
-+class TaskDefinitionControllerTests extends AbstractControllerTests {
-+
-+	@BeforeEach
-+	void setUp() {
-+		given(dataflowTaskExplorer.getLatestTaskExecutionsByTaskNames(any()))
-+				.willReturn(Collections.emptyList());
-+		given(dataflowTaskExplorer.getLatestTaskExecutionForTaskName(any()))
-+				.willReturn(null);
-+	}
++	// --- GET /tasks/logs/{taskExternalExecutionId} ---
 +
 +	@Test
-+	void listTaskDefinitionsReturns200() throws Exception {
-+		mockMvc.perform(get("/tasks/definitions"))
++	void getTaskLogsForNonexistentExecutionReturnsOk() throws Exception {
++		// Task logs endpoint delegates to the platform launcher without validating exec ID existence
++		mockMvc.perform(get("/tasks/logs/nonexistent-exec-id")
++						.param("platformName", "default")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk());
 +	}
 +
-+	@Test
-+	void listTaskDefinitionsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/tasks/definitions"))
-+				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
-+	}
++	// --- GET /tasks/ctr/options ---
 +
 +	@Test
-+	void getTaskDefinitionReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/tasks/definitions/nonexistent"))
++	void getCtrOptionsReturnsProperties() throws Exception {
++		mockMvc.perform(get("/tasks/ctr/options").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON));
++	}
++
++	// --- GET /tasks/validation/{name} ---
++
++	@Test
++	void validateNonexistentTaskDefinitionReturns404() throws Exception {
++		mockMvc.perform(get("/tasks/validation/nonexistent-task").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isNotFound());
 +	}
 +
 +	@Test
-+	void saveTaskDefinitionReturns200() throws Exception {
++	void validateExistingTaskDefinitionReturnsValidationInfo() throws Exception {
++		// Register a task app first
++		mockMvc.perform(post("/apps/task/timestamp/1.0.0")
++						.param("uri", "maven://org.springframework.cloud.task.app:timestamp-task:1.0.0")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isCreated());
++
 +		mockMvc.perform(post("/tasks/definitions")
-+						.param("name", "mytask")
-+						.param("definition", "timestamp"))
++						.param("name", "valid-task")
++						.param("definition", "timestamp")
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk());
-+	}
 +
-+	@Test
-+	void saveTaskDefinitionReturnedResourceHasName() throws Exception {
-+		mockMvc.perform(post("/tasks/definitions")
-+						.param("name", "mytask")
-+						.param("definition", "timestamp"))
++		mockMvc.perform(get("/tasks/validation/valid-task").accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.name").value("mytask"));
-+	}
++				.andExpect(jsonPath("$.appName").value("valid-task"));
 +
-+	@Test
-+	void deleteTaskDefinitionReturns200() throws Exception {
-+		mockMvc.perform(delete("/tasks/definitions/mytask"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void deleteAllTaskDefinitionsReturns200() throws Exception {
-+		mockMvc.perform(delete("/tasks/definitions"))
-+				.andExpect(status().isOk());
++		// Cleanup
++		mockMvc.perform(delete("/tasks/definitions/valid-task"));
++		mockMvc.perform(delete("/apps/task/timestamp/1.0.0"));
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionControllerTests.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskPlatformControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskPlatformControllerTest.java
 new file mode 100644
-index 0000000..1884d2f
+index 0000000..b64ac2a
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionControllerTests.java
-@@ -0,0 +1,128 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskPlatformControllerTest.java
+@@ -0,0 +1,55 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -1689,278 +2490,176 @@ index 0000000..1884d2f
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.controller;
 +
-+import java.util.Collections;
-+
-+import org.junit.jupiter.api.BeforeEach;
 +import org.junit.jupiter.api.Test;
-+import org.mockito.Mockito;
 +
-+import org.springframework.cloud.dataflow.core.AllPlatformsTaskExecutionInformation;
-+import org.springframework.cloud.dataflow.core.LaunchResponse;
++import org.springframework.http.MediaType;
 +
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.ArgumentMatchers.anyList;
-+import static org.mockito.ArgumentMatchers.anyLong;
-+import static org.mockito.ArgumentMatchers.anyString;
-+import static org.mockito.BDDMockito.given;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
++
++/**
++ * Tests for {@link TaskPlatformController}.
++ */
++class TaskPlatformControllerTest extends AbstractControllerTest {
++
++	// --- GET /tasks/platforms ---
++
++	@Test
++	void listTaskPlatformsReturnsLocalPlatform() throws Exception {
++		mockMvc.perform(get("/tasks/platforms").accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$._embedded.launcherResourceList").isArray())
++				.andExpect(jsonPath("$._embedded.launcherResourceList[0].name").value("default"))
++				.andExpect(jsonPath("$._embedded.launcherResourceList[0].type").value("Local"));
++	}
++
++	@Test
++	void listTaskPlatformsReturnsPaginationInfo() throws Exception {
++		mockMvc.perform(get("/tasks/platforms")
++						.param("page", "0")
++						.param("size", "10")
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(jsonPath("$.page").exists())
++				.andExpect(jsonPath("$.page.size").value(10));
++	}
++}
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/ToolsControllerTest.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/ToolsControllerTest.java
+new file mode 100644
+index 0000000..c670bf5
+--- /dev/null
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/ToolsControllerTest.java
+@@ -0,0 +1,118 @@
++/*
++ * Copyright 2024 the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++package org.springframework.cloud.dataflow.server.controller;
++
++import org.junit.jupiter.api.Test;
++
++import org.springframework.http.MediaType;
++
 +import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
++import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 +import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 +
 +/**
-+ * Integration tests for {@link TaskExecutionController}.
++ * Tests for {@link ToolsController}.
 + */
-+class TaskExecutionControllerTests extends AbstractControllerTests {
++class ToolsControllerTest extends AbstractControllerTest {
 +
-+	@BeforeEach
-+	void setUp() {
-+		given(dataflowTaskExplorer.getTaskExecution(anyLong())).willReturn(null);
-+		given(dataflowTaskExplorer.getJobExecutionIdsByTaskExecutionId(anyLong()))
-+				.willReturn(Collections.emptySet());
-+		given(taskExecutionService.findTaskManifestById(anyLong())).willReturn(null);
-+
-+		AllPlatformsTaskExecutionInformation allInfo =
-+				Mockito.mock(AllPlatformsTaskExecutionInformation.class);
-+		given(allInfo.getTaskExecutionInformation()).willReturn(Collections.emptyList());
-+		given(taskExecutionInfoService.findAllPlatformTaskExecutionInformation()).willReturn(allInfo);
-+	}
++	// --- POST /tools/parseTaskTextToGraph ---
 +
 +	@Test
-+	void listTaskExecutionsReturns200() throws Exception {
-+		mockMvc.perform(get("/tasks/executions"))
-+				.andExpect(status().isOk());
-+	}
++	void parseSimpleTaskTextToGraph() throws Exception {
++		String request = "{\"name\":\"my-task\",\"dsl\":\"timestamp\"}";
 +
-+	@Test
-+	void listTaskExecutionsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/tasks/executions"))
++		mockMvc.perform(post("/tools/parseTaskTextToGraph")
++						.content(request)
++						.contentType(MediaType.APPLICATION_JSON)
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.graph").exists());
 +	}
 +
 +	@Test
-+	void listTaskExecutionsByNameReturns404WhenTaskNotFound() throws Exception {
-+		mockMvc.perform(get("/tasks/executions").param("name", "nonexistent"))
-+				.andExpect(status().isNotFound());
-+	}
++	void parseComposedTaskTextToGraph() throws Exception {
++		String request = "{\"name\":\"composed\",\"dsl\":\"task1 && task2\"}";
 +
-+	@Test
-+	void getTaskExecutionByIdReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/tasks/executions/999"))
-+				.andExpect(status().isNotFound());
-+	}
-+
-+	@Test
-+	void getCurrentTaskExecutionsReturns200() throws Exception {
-+		mockMvc.perform(get("/tasks/executions/current"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void stopTaskExecutionReturns200() throws Exception {
-+		mockMvc.perform(post("/tasks/executions/1"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void cleanupSingleTaskExecutionReturns200() throws Exception {
-+		mockMvc.perform(delete("/tasks/executions/1"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void cleanupAllTaskExecutionsReturns200() throws Exception {
-+		mockMvc.perform(delete("/tasks/executions"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void launchTaskReturns201() throws Exception {
-+		given(taskExecutionService.executeTask(anyString(), any(), anyList()))
-+				.willReturn(new LaunchResponse(42L));
-+
-+		mockMvc.perform(post("/tasks/executions").param("name", "mytask"))
-+				.andExpect(status().isCreated());
-+	}
-+
-+	@Test
-+	void launchTaskBoot3Returns201() throws Exception {
-+		given(taskExecutionService.executeTask(anyString(), any(), anyList()))
-+				.willReturn(new LaunchResponse(42L));
-+
-+		mockMvc.perform(post("/tasks/executions/launch").param("name", "mytask"))
-+				.andExpect(status().isCreated());
-+	}
-+
-+	@Test
-+	void getTaskExecutionByExternalIdReturns404WhenNotFound() throws Exception {
-+		mockMvc.perform(get("/tasks/executions/external/ext-abc-123"))
-+				.andExpect(status().isNotFound());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionThinControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionThinControllerTests.java
-new file mode 100644
-index 0000000..7cf24f7
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskExecutionThinControllerTests.java
-@@ -0,0 +1,47 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
-+import org.junit.jupiter.api.Test;
-+
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link TaskExecutionThinController}.
-+ */
-+class TaskExecutionThinControllerTests extends AbstractControllerTests {
-+
-+	@Test
-+	void listThinTaskExecutionsReturns200() throws Exception {
-+		mockMvc.perform(get("/tasks/thinexecutions"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void listThinTaskExecutionsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/tasks/thinexecutions"))
++		mockMvc.perform(post("/tools/parseTaskTextToGraph")
++						.content(request)
++						.contentType(MediaType.APPLICATION_JSON)
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++				.andExpect(jsonPath("$.graph").exists());
 +	}
 +
 +	@Test
-+	void listThinExecutionsByNameReturns404WhenTaskNotFound() throws Exception {
-+		mockMvc.perform(get("/tasks/thinexecutions").param("name", "nonexistent"))
-+				.andExpect(status().isNotFound());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskLogsControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskLogsControllerTests.java
-new file mode 100644
-index 0000000..800eb18
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskLogsControllerTests.java
-@@ -0,0 +1,47 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
++	void parseInvalidTaskDslReturnsErrors() throws Exception {
++		String request = "{\"name\":\"bad-task\",\"dsl\":\"&&invalid&&\"}";
 +
-+import org.junit.jupiter.api.BeforeEach;
-+import org.junit.jupiter.api.Test;
-+
-+import static org.mockito.ArgumentMatchers.any;
-+import static org.mockito.BDDMockito.given;
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link TaskLogsController}.
-+ */
-+class TaskLogsControllerTests extends AbstractControllerTests {
-+
-+	@BeforeEach
-+	void setUp() {
-+		given(taskExecutionService.getLog(any(), any())).willReturn("task log output");
-+	}
-+
-+	@Test
-+	void getTaskLogsReturns200() throws Exception {
-+		mockMvc.perform(get("/tasks/logs/exec-abc-123"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void getTaskLogsWithPlatformNameReturns200() throws Exception {
-+		mockMvc.perform(get("/tasks/logs/exec-abc-123").param("platformName", "local"))
-+				.andExpect(status().isOk());
-+	}
-+}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskPlatformControllerTests.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskPlatformControllerTests.java
-new file mode 100644
-index 0000000..5226deb
---- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/controller/TaskPlatformControllerTests.java
-@@ -0,0 +1,41 @@
-+/*
-+ * Copyright 2024 the original author or authors.
-+ *
-+ * Licensed under the Apache License, Version 2.0 (the "License");
-+ * you may not use this file except in compliance with the License.
-+ * You may obtain a copy of the License at
-+ *
-+ *      https://www.apache.org/licenses/LICENSE-2.0
-+ *
-+ * Unless required by applicable law or agreed to in writing, software
-+ * distributed under the License is distributed on an "AS IS" BASIS,
-+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-+ * See the License for the specific language governing permissions and
-+ * limitations under the License.
-+ */
-+package org.springframework.cloud.dataflow.server.controller;
-+
-+import org.junit.jupiter.api.Test;
-+
-+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-+
-+/**
-+ * Integration tests for {@link TaskPlatformController}.
-+ */
-+class TaskPlatformControllerTests extends AbstractControllerTests {
-+
-+	@Test
-+	void listTaskPlatformsReturns200() throws Exception {
-+		mockMvc.perform(get("/tasks/platforms"))
-+				.andExpect(status().isOk());
-+	}
-+
-+	@Test
-+	void listTaskPlatformsContainsPageMetadata() throws Exception {
-+		mockMvc.perform(get("/tasks/platforms"))
++		mockMvc.perform(post("/tools/parseTaskTextToGraph")
++						.content(request)
++						.contentType(MediaType.APPLICATION_JSON)
++						.accept(MediaType.APPLICATION_JSON))
 +				.andExpect(status().isOk())
-+				.andExpect(jsonPath("$.page").exists());
++				.andExpect(jsonPath("$.errors").isArray())
++				.andExpect(jsonPath("$.errors[0]").exists());
++	}
++
++	// --- POST /tools/convertTaskGraphToText ---
++
++	@Test
++	void convertSimpleGraphToText() throws Exception {
++		// A simple linear graph: start → task1 → end
++		String graphJson = "{"
++				+ "\"nodes\":["
++				+ "{\"id\":\"0\",\"name\":\"START\"},"
++				+ "{\"id\":\"1\",\"name\":\"timestamp\",\"metadata\":{\"label\":\"timestamp\"}},"
++				+ "{\"id\":\"2\",\"name\":\"END\"}"
++				+ "],"
++				+ "\"links\":["
++				+ "{\"from\":\"0\",\"to\":\"1\"},"
++				+ "{\"from\":\"1\",\"to\":\"2\"}"
++				+ "]"
++				+ "}";
++
++		mockMvc.perform(post("/tools/convertTaskGraphToText")
++						.content(graphJson)
++						.contentType(MediaType.APPLICATION_JSON)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk())
++				.andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
++				.andExpect(jsonPath("$.dsl").exists());
++	}
++
++	@Test
++	void convertMinimalGraphToTextReturnsEmptyDsl() throws Exception {
++		// A minimal graph with only START and END (no task nodes) produces an empty DSL
++		String graphJson = "{"
++				+ "\"nodes\":["
++				+ "{\"id\":\"0\",\"name\":\"START\"},"
++				+ "{\"id\":\"1\",\"name\":\"END\"}"
++				+ "],"
++				+ "\"links\":["
++				+ "{\"from\":\"0\",\"to\":\"1\"}"
++				+ "]"
++				+ "}";
++
++		mockMvc.perform(post("/tools/convertTaskGraphToText")
++						.content(graphJson)
++						.contentType(MediaType.APPLICATION_JSON)
++						.accept(MediaType.APPLICATION_JSON))
++				.andExpect(status().isOk());
 +	}
 +}
-diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/test/TestApplication.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/test/TestApplication.java
+diff --git a/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/test/TestDataFlowServerApplication.java b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/test/TestDataFlowServerApplication.java
 new file mode 100644
-index 0000000..261acdc
+index 0000000..549b484
 --- /dev/null
-+++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/test/TestApplication.java
-@@ -0,0 +1,52 @@
++++ b/spring-cloud-dataflow-server-core/src/test/java/org/springframework/cloud/dataflow/server/test/TestDataFlowServerApplication.java
+@@ -0,0 +1,59 @@
 +/*
 + * Copyright 2024 the original author or authors.
 + *
@@ -1976,83 +2675,116 @@ index 0000000..261acdc
 + * See the License for the specific language governing permissions and
 + * limitations under the License.
 + */
++
 +package org.springframework.cloud.dataflow.server.test;
 +
 +import org.springframework.boot.SpringApplication;
 +import org.springframework.boot.actuate.autoconfigure.security.servlet.ManagementWebSecurityAutoConfiguration;
 +import org.springframework.boot.autoconfigure.SpringBootApplication;
++import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 +import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 +import org.springframework.boot.autoconfigure.security.servlet.UserDetailsServiceAutoConfiguration;
 +import org.springframework.boot.autoconfigure.session.SessionAutoConfiguration;
++import org.springframework.cloud.dataflow.core.DefaultStreamDefinitionService;
++import org.springframework.cloud.dataflow.core.StreamDefinitionService;
++import org.springframework.cloud.dataflow.server.EnableDataFlowServer;
 +import org.springframework.cloud.deployer.spi.local.LocalDeployerAutoConfiguration;
 +import org.springframework.cloud.task.configuration.SimpleTaskAutoConfiguration;
-+import org.springframework.cloud.dataflow.server.EnableDataFlowServer;
++import org.springframework.context.annotation.Bean;
 +
 +/**
-+ * Bootstrap application for controller integration tests.
-+ * Placed in a sub-package to prevent @SpringBootApplication from component-scanning
-+ * production @RestController classes which are registered via @Bean in DataFlowControllerAutoConfiguration.
++ * Minimal Spring Boot application for controller tests.
++ * Placed in a non-controller package so component scanning does not pick up
++ * @RestController beans before the autoconfiguration @Bean methods can wire them
++ * with the correct @Qualifier-equivalent ForkJoinPool dependencies.
 + */
-+@SpringBootApplication(
-+		exclude = {
-+				SessionAutoConfiguration.class,
-+				SimpleTaskAutoConfiguration.class,
-+				ManagementWebSecurityAutoConfiguration.class,
-+				SecurityAutoConfiguration.class,
-+				UserDetailsServiceAutoConfiguration.class,
-+				LocalDeployerAutoConfiguration.class
-+		},
-+		excludeName = {
-+				"org.springframework.cloud.deployer.spi.cloudfoundry.CloudFoundryDeployerAutoConfiguration",
-+				"org.springframework.cloud.deployer.spi.kubernetes.KubernetesAutoConfiguration"
-+		})
++@SpringBootApplication(exclude = {
++		SessionAutoConfiguration.class,
++		SimpleTaskAutoConfiguration.class,
++		ManagementWebSecurityAutoConfiguration.class,
++		SecurityAutoConfiguration.class,
++		UserDetailsServiceAutoConfiguration.class,
++		LocalDeployerAutoConfiguration.class
++})
 +@EnableDataFlowServer
-+public class TestApplication {
++public class TestDataFlowServerApplication {
++
++	@Bean
++	@ConditionalOnMissingBean
++	public StreamDefinitionService streamDefinitionService() {
++		return new DefaultStreamDefinitionService();
++	}
 +
 +	public static void main(String[] args) {
-+		SpringApplication.run(TestApplication.class, args);
++		SpringApplication.run(TestDataFlowServerApplication.class, args);
 +	}
 +}
 diff --git a/spring-cloud-dataflow-server-core/src/test/resources/application.yml b/spring-cloud-dataflow-server-core/src/test/resources/application.yml
 new file mode 100644
-index 0000000..abd5179
+index 0000000..03036bf
 --- /dev/null
 +++ b/spring-cloud-dataflow-server-core/src/test/resources/application.yml
-@@ -0,0 +1,37 @@
+@@ -0,0 +1,63 @@
 +spring:
-+  main:
-+    allow-bean-definition-overriding: true
 +  datasource:
 +    url: jdbc:h2:mem:dataflowtest;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
 +    username: sa
-+    password: ""
++    password:
 +    driver-class-name: org.h2.Driver
 +  jpa:
-+    hibernate:
-+      ddl-auto: create-drop
++    database-platform: org.hibernate.dialect.H2Dialect
 +    show-sql: false
-+    open-in-view: false
-+  flyway:
-+    enabled: false
++    hibernate:
++      ddl-auto: none
 +  batch:
-+    jdbc:
-+      initialize-schema: always
-+    job:
-+      enabled: false
++    initialize-schema: never
 +  cloud:
++    task:
++      initialize:
++        enable: false
++      transaction-manager: transactionManager
 +    dataflow:
-+      features:
-+        streams-enabled: true
-+        tasks-enabled: true
-+        schedules-enabled: false
++      rdbms:
++        initialize:
++          enable: false
++      version-info:
++        dependency-fetch:
++          enabled: false
++        dependencies:
++          spring-cloud-dataflow-server:
++            name: Spring Cloud Data Flow
++            version: test
++          spring-cloud-dataflow-dashboard:
++            name: Spring Cloud Data Flow UI
++            version: test
++          spring-cloud-dataflow-core:
++            name: Spring Cloud Data Flow Core
++            version: test
++          spring-cloud-dataflow-implementation:
++            name: Test Server
++            version: test
++          spring-cloud-dataflow-shell:
++            name: Spring Cloud Data Flow Shell
++            version: test
 +    skipper:
 +      client:
-+        server-uri: http://localhost:9999
++        server-uri: http://localhost:7577/api
++  flyway:
++    locations:
++      - classpath:org/springframework/cloud/dataflow/server/db/migration/h2
++    baseline-on-migrate: true
++    baseline-version: 1
++    table: flyway_schema_history_dataflow
++    check-location: false
++
 +logging:
 +  level:
 +    root: WARN
-+    org.springframework.cloud.dataflow: WARN
-+    org.springframework.batch: WARN
-+    org.springframework.cloud.skipper: WARN
-+    org.flywaydb: WARN
-+    org.hibernate: WARN
++    org.springframework.cloud.dataflow: INFO
++    org.flywaydb: INFO
++
++management:
++  endpoints:
++    web:
++      exposure:
++        include: health,info

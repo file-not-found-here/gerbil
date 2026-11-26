@@ -1,0 +1,1105 @@
+{
+  "commit": "c1e86c1d51e701df6434963a32b1127712a86f49",
+  "tests": [
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "method_signature": "testGetUnknownUserTaskReturns404OrError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "method_signature": "testGetExistingUserTaskReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "method_signature": "testPatchExistingUserTaskReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "method_signature": "testPutExistingUserTaskReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testManagementGetParentProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testListSubprocessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testStartParentProcessReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testListMultiInstanceTaskProcessReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testManagementGetSubprocessProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testListParentProcessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testStartingParentAlsoCreatesSubprocessInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testDeleteParentInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testStartGatewayFeelProcessWithVaFalseVbTrue()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testManagementGetMultiInstanceProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testDeleteMultiInstanceTaskProcessReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testListGatewayFeelProcessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testManagementGetGatewayFeelProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testStartGatewayFeelProcessWithVaTrueVbFalse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testGetParentInstanceByIdReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "method_signature": "testStartMultiInstanceTaskProcessReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SubprocessAndGatewayTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testManagementGetGreetingsProcessNodes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testStartGreetingsProcessReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testGetGreetingsInstanceByIdReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testListGreetingsProcessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testGetTasksForGreetingsInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testGreetingsInstanceAppearsInList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testDeleteGreetingsInstanceMakesItUnavailable()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testManagementGetGreetingsProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "method_signature": "testDeleteGreetingsInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GreetingsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testSwaggerUiIsAvailable()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testVersionIsString()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testVersionEndpointReturnsVersionJson()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testManagementProcessesListContainsAllExpectedProcesses()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testApprovalsDetailsEndpointReturnsTypeJson()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testOpenApiDocumentationIsAvailable()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testManagementProcessesListReturnsProcessIds()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testApprovalsDetailsTypeIsString()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "method_signature": "testOpenApiDocumentationContainsProcessPaths()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testManagementGetNodeInstancesForMonitoringInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testCompleteMonitoringTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testMonitoringInstanceAppearInList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testGetTasksForMonitoringInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testStartMonitoringProcessReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testListMonitoringProcessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testManagementGetMonitoringProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testManagementGetTimersForMonitoringInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testManagementCancelMonitoringInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testMonitoringTaskHasExpectedName()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testDeleteMonitoringInstanceMakesItUnavailable()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testGetNonExistentMonitoringReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testGetMonitoringInstanceByIdReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "method_signature": "testDeleteMonitoringInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testGetTimersInstanceByIdReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testSignalStartProcessCreatesInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testManagementGetTimersProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testDeleteTimersInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testManagementGetSignalStartProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testListSignalStartProcessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testListTimersProcessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testSignalStartProcessViaSignalEndpointReturns202()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testStartTimersProcessReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "method_signature": "testManagementGetTimersProcessNodes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalAndTimerProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testListAllProcessesReturnsNonEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetErrorForRunningInstanceReturnsBadRequest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetProcessInfoForApprovals()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetProcessInfoContainsTypeAndVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetNodeInstancesForRunningApprovalInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetProcessNodesForApprovals()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testRetriggerNonErrorInstanceReturnsBadRequest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testSkipNonErrorInstanceReturnsBadRequest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetProcessNodesForNonExistentProcessReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetTimersForRunningApprovalInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetProcessInfoForAllRegisteredProcesses()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testCancelProcessInstanceViaMgmtEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "method_signature": "testGetProcessInfoForNonExistentProcessReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessManagementApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testDeleteCinemaInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testGetReviewRatingTaskDetails()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testListCinemaProcessesReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testStartCinemaProcessReturns201()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testCinemaProcessResponseContainsMovieData()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testGetCinemaInstanceByIdReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testManagementGetCinemaProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testCompleteReviewRatingTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testGetNonExistentCinemaInstanceReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testDeleteCinemaInstanceMakesItUnavailable()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "method_signature": "testGetTasksForCinemaInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.CinemaProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testPatchApprovalInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testManagementGetApprovalProcessNodes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testListApprovalsReturnsArray()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testStartApprovalProcessReturns201WithId()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testGetApprovalInstanceByIdReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testDeleteApprovalInstanceMakesItUnavailable()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testStartApprovalProcessResponseContainsTravellerData()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testListApprovalsReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testManagementGetApprovalProcessInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testCompleteFirstLineApprovalTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testGetApprovalsSchemaReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testAfterFirstLineApprovalSecondLineTaskIsAvailable()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testGetNonExistentApprovalReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testUpdateApprovalInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testAbortFirstLineApprovalTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testGetFirstLineApprovalTaskDetails()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testGetTasksForApprovalInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "method_signature": "testDeleteApprovalInstanceReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ApprovalsProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "method_signature": "testGetSvgForApprovalsProcessReturnsSvgContentType()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "method_signature": "testGetSvgForProcessInstanceWithUnknownIdReturnsErrorStatus()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "method_signature": "testGetSvgForProcessInstanceWithRunningInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "method_signature": "testGetSvgForApprovalsProcessReturnsSvgContent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "method_signature": "testGetSvgForApprovalsProcessReturns200()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "method_signature": "testGetSvgForNonExistentProcessReturns404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SvgApiTest",
+      "status": "passed"
+    }
+  ]
+}

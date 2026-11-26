@@ -1,0 +1,28 @@
+diff --git a/dolphinscheduler-standalone-server/pom.xml b/dolphinscheduler-standalone-server/pom.xml
+--- a/dolphinscheduler-standalone-server/pom.xml
++++ b/dolphinscheduler-standalone-server/pom.xml
+@@ -87,6 +87,24 @@
+             <version>${project.version}</version>
+             <scope>provided</scope>
+         </dependency>
++        <!-- EvoMaster's embedded driver and the client its generated tests call. -->
++        <dependency>
++            <groupId>org.evomaster</groupId>
++            <artifactId>evomaster-client-java-controller</artifactId>
++            <version>6.2.0</version>
++            <scope>test</scope>
++        </dependency>
++        <dependency>
++            <groupId>org.evomaster</groupId>
++            <artifactId>evomaster-test-utils-java</artifactId>
++            <version>6.2.0</version>
++            <scope>test</scope>
++        </dependency>
++        <dependency>
++            <groupId>io.rest-assured</groupId>
++            <artifactId>rest-assured</artifactId>
++            <scope>test</scope>
++        </dependency>
+     </dependencies>
+ 
+     <build>

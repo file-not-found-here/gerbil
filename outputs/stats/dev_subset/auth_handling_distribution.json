@@ -1,0 +1,30 @@
+{
+  "scope": "api_tests",
+  "test_count": 6980,
+  "label_split": {
+    "bypassed": {
+      "test_count": 0,
+      "pct_of_tests": 0.0
+    },
+    "mocked": {
+      "test_count": 271,
+      "pct_of_tests": 3.8825214899713467
+    },
+    "test-token": {
+      "test_count": 828,
+      "pct_of_tests": 11.862464183381089
+    },
+    "real-flow": {
+      "test_count": 3596,
+      "pct_of_tests": 51.51862464183381
+    },
+    "unknown": {
+      "test_count": 57,
+      "pct_of_tests": 0.8166189111747851
+    },
+    "none": {
+      "test_count": 2228,
+      "pct_of_tests": 31.91977077363897
+    }
+  }
+}

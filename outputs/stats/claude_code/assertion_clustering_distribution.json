@@ -1,131 +1,131 @@
 {
   "scope": "api_tests",
-  "api_test_count": 1243,
+  "api_test_count": 1298,
   "per_sequence_assertion_count": {
     "scope": "http_test_sequences",
-    "sequence_count": 1394,
+    "sequence_count": 1589,
     "by_target": {
       "status": {
         "sequences_with_assertion": {
-          "count": 1325,
-          "total": 1394,
-          "proportion": 0.9505021520803444
+          "count": 1492,
+          "total": 1589,
+          "proportion": 0.9389553178099433
         },
         "checks_per_bearing_sequence": {
-          "count": 1325,
+          "count": 1492,
           "min": 1.0,
           "max": 2.0,
-          "mean": 1.0067924528301886,
+          "mean": 1.0060321715817695,
           "p25": 1.0,
           "p50": 1.0,
           "p75": 1.0,
           "p90": 1.0
         },
         "share_exactly_one_check": {
-          "count": 1316,
-          "total": 1325,
-          "proportion": 0.9932075471698113
+          "count": 1483,
+          "total": 1492,
+          "proportion": 0.9939678284182306
         },
         "share_two_or_more_checks": {
           "count": 9,
-          "total": 1325,
-          "proportion": 0.006792452830188679
+          "total": 1492,
+          "proportion": 0.006032171581769437
         },
         "share_more_than_three_checks": {
           "count": 0,
-          "total": 1325,
+          "total": 1492,
           "proportion": 0.0
         },
         "concentration": {
-          "bearing_sequence_count": 1325,
-          "total_checks": 1334,
-          "top_decile_sequence_count": 133,
-          "top_decile_share_of_checks": 0.10644677661169415,
-          "evenness_ratio": 1.0604660075977048,
-          "top_5pct_share_of_checks": 0.05697151424287856,
-          "top_25pct_share_of_checks": 0.2556221889055472
+          "bearing_sequence_count": 1492,
+          "total_checks": 1501,
+          "top_decile_sequence_count": 150,
+          "top_decile_share_of_checks": 0.10592938041305797,
+          "evenness_ratio": 1.0536442371752166,
+          "top_5pct_share_of_checks": 0.05596269153897402,
+          "top_25pct_share_of_checks": 0.25449700199866754
         }
       },
       "body": {
         "sequences_with_assertion": {
-          "count": 753,
-          "total": 1394,
-          "proportion": 0.5401721664275466
+          "count": 874,
+          "total": 1589,
+          "proportion": 0.5500314663310258
         },
         "checks_per_bearing_sequence": {
-          "count": 753,
+          "count": 874,
           "min": 1.0,
-          "max": 6.0,
-          "mean": 1.2416998671978752,
+          "max": 11.0,
+          "mean": 1.356979405034325,
           "p25": 1.0,
           "p50": 1.0,
           "p75": 1.0,
           "p90": 2.0
         },
         "share_exactly_one_check": {
-          "count": 628,
-          "total": 753,
-          "proportion": 0.8339973439575034
+          "count": 664,
+          "total": 874,
+          "proportion": 0.7597254004576659
         },
         "share_two_or_more_checks": {
-          "count": 125,
-          "total": 753,
-          "proportion": 0.16600265604249667
+          "count": 210,
+          "total": 874,
+          "proportion": 0.2402745995423341
         },
         "share_more_than_three_checks": {
-          "count": 15,
-          "total": 753,
-          "proportion": 0.0199203187250996
+          "count": 22,
+          "total": 874,
+          "proportion": 0.02517162471395881
         },
         "concentration": {
-          "bearing_sequence_count": 753,
-          "total_checks": 935,
-          "top_decile_sequence_count": 76,
-          "top_decile_share_of_checks": 0.2235294117647059,
-          "evenness_ratio": 2.2147058823529413,
-          "top_5pct_share_of_checks": 0.14224598930481283,
-          "top_25pct_share_of_checks": 0.3967914438502674
+          "bearing_sequence_count": 874,
+          "total_checks": 1186,
+          "top_decile_sequence_count": 88,
+          "top_decile_share_of_checks": 0.23440134907251264,
+          "evenness_ratio": 2.3280315805610914,
+          "top_5pct_share_of_checks": 0.14586846543001686,
+          "top_25pct_share_of_checks": 0.4477234401349072
         }
       },
       "header": {
         "sequences_with_assertion": {
-          "count": 25,
-          "total": 1394,
-          "proportion": 0.017934002869440458
+          "count": 86,
+          "total": 1589,
+          "proportion": 0.054122089364380115
         },
         "checks_per_bearing_sequence": {
-          "count": 25,
+          "count": 86,
           "min": 1.0,
           "max": 4.0,
-          "mean": 1.96,
-          "p25": 2.0,
-          "p50": 2.0,
-          "p75": 2.0,
+          "mean": 1.2790697674418605,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 1.75,
           "p90": 2.0
         },
         "share_exactly_one_check": {
-          "count": 3,
-          "total": 25,
-          "proportion": 0.12
+          "count": 64,
+          "total": 86,
+          "proportion": 0.7441860465116279
         },
         "share_two_or_more_checks": {
           "count": 22,
-          "total": 25,
-          "proportion": 0.88
+          "total": 86,
+          "proportion": 0.2558139534883721
         },
         "share_more_than_three_checks": {
           "count": 1,
-          "total": 25,
-          "proportion": 0.04
+          "total": 86,
+          "proportion": 0.011627906976744186
         },
         "concentration": {
-          "bearing_sequence_count": 25,
-          "total_checks": 49,
-          "top_decile_sequence_count": 3,
-          "top_decile_share_of_checks": 0.16326530612244897,
-          "evenness_ratio": 1.3605442176870748,
-          "top_5pct_share_of_checks": 0.12244897959183673,
-          "top_25pct_share_of_checks": 0.32653061224489793
+          "bearing_sequence_count": 86,
+          "total_checks": 110,
+          "top_decile_sequence_count": 9,
+          "top_decile_share_of_checks": 0.18181818181818182,
+          "evenness_ratio": 1.7373737373737372,
+          "top_5pct_share_of_checks": 0.10909090909090909,
+          "top_25pct_share_of_checks": 0.41818181818181815
         }
       }
     }
@@ -133,84 +133,84 @@
   "blob_vs_spread": {
     "body": {
       "scope": "api_tests_with_sequenced_body_assertion",
-      "test_count": 749,
+      "test_count": 870,
       "single_check": {
-        "count": 620,
-        "total": 749,
-        "proportion": 0.8277703604806409
+        "count": 656,
+        "total": 870,
+        "proportion": 0.7540229885057471
       },
       "concentrated_blob": {
-        "count": 125,
-        "total": 749,
-        "proportion": 0.16688918558077437
+        "count": 210,
+        "total": 870,
+        "proportion": 0.2413793103448276
       },
       "spread_across_sequences": {
         "count": 4,
-        "total": 749,
-        "proportion": 0.0053404539385847796
+        "total": 870,
+        "proportion": 0.004597701149425287
       },
       "bearing_sequence_count_per_test": {
-        "count": 749,
+        "count": 870,
         "min": 1.0,
         "max": 2.0,
-        "mean": 1.0053404539385848,
+        "mean": 1.0045977011494254,
         "p25": 1.0,
         "p50": 1.0,
         "p75": 1.0,
         "p90": 1.0
       },
       "checks_per_test": {
-        "count": 749,
+        "count": 870,
         "min": 1.0,
-        "max": 6.0,
-        "mean": 1.2483311081441923,
+        "max": 11.0,
+        "mean": 1.3632183908045976,
         "p25": 1.0,
         "p50": 1.0,
         "p75": 1.0,
         "p90": 2.0
       },
       "max_checks_in_one_sequence": {
-        "count": 749,
+        "count": 870,
         "min": 1.0,
-        "max": 6.0,
-        "mean": 1.2429906542056075,
+        "max": 11.0,
+        "mean": 1.3586206896551725,
         "p25": 1.0,
         "p50": 1.0,
         "p75": 1.0,
         "p90": 2.0
       },
-      "multi_check_test_count": 129,
+      "multi_check_test_count": 214,
       "share_blob_given_multi_check": {
-        "count": 125,
-        "total": 129,
-        "proportion": 0.9689922480620154
+        "count": 210,
+        "total": 214,
+        "proportion": 0.9813084112149533
       },
       "share_spread_given_multi_check": {
         "count": 4,
-        "total": 129,
-        "proportion": 0.031007751937984496
+        "total": 214,
+        "proportion": 0.018691588785046728
       }
     },
     "header": {
       "scope": "api_tests_with_sequenced_header_assertion",
-      "test_count": 25,
+      "test_count": 86,
       "single_check": {
-        "count": 3,
-        "total": 25,
-        "proportion": 0.12
+        "count": 64,
+        "total": 86,
+        "proportion": 0.7441860465116279
       },
       "concentrated_blob": {
         "count": 22,
-        "total": 25,
-        "proportion": 0.88
+        "total": 86,
+        "proportion": 0.2558139534883721
       },
       "spread_across_sequences": {
         "count": 0,
-        "total": 25,
+        "total": 86,
         "proportion": 0.0
       },
       "bearing_sequence_count_per_test": {
-        "count": 25,
+        "count": 86,
         "min": 1.0,
         "max": 1.0,
         "mean": 1.0,
@@ -220,23 +220,23 @@
         "p90": 1.0
       },
       "checks_per_test": {
-        "count": 25,
+        "count": 86,
         "min": 1.0,
         "max": 4.0,
-        "mean": 1.96,
-        "p25": 2.0,
-        "p50": 2.0,
-        "p75": 2.0,
+        "mean": 1.2790697674418605,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.75,
         "p90": 2.0
       },
       "max_checks_in_one_sequence": {
-        "count": 25,
+        "count": 86,
         "min": 1.0,
         "max": 4.0,
-        "mean": 1.96,
-        "p25": 2.0,
-        "p50": 2.0,
-        "p75": 2.0,
+        "mean": 1.2790697674418605,
+        "p25": 1.0,
+        "p50": 1.0,
+        "p75": 1.75,
         "p90": 2.0
       },
       "multi_check_test_count": 22,
@@ -255,63 +255,63 @@
   "co_occurrence": {
     "sequence_level": {
       "scope": "http_test_sequences",
-      "sequence_count": 1394,
+      "sequence_count": 1589,
       "body_and_header": {
-        "count": 2,
-        "total": 1394,
-        "proportion": 0.0014347202295552368
+        "count": 29,
+        "total": 1589,
+        "proportion": 0.01825047199496539
       },
       "body_only": {
-        "count": 751,
-        "total": 1394,
-        "proportion": 0.5387374461979914
+        "count": 845,
+        "total": 1589,
+        "proportion": 0.5317809943360604
       },
       "header_only": {
-        "count": 23,
-        "total": 1394,
-        "proportion": 0.01649928263988522
+        "count": 57,
+        "total": 1589,
+        "proportion": 0.03587161736941473
       },
       "header_given_body": {
-        "count": 2,
-        "total": 753,
-        "proportion": 0.0026560424966799467
+        "count": 29,
+        "total": 874,
+        "proportion": 0.03318077803203661
       },
       "body_given_header": {
-        "count": 2,
-        "total": 25,
-        "proportion": 0.08
+        "count": 29,
+        "total": 86,
+        "proportion": 0.3372093023255814
       },
-      "lift": 0.14810092961487384
+      "lift": 0.6130727475919323
     },
     "test_level": {
       "scope": "api_tests",
-      "test_count": 1243,
+      "test_count": 1298,
       "body_and_header": {
-        "count": 2,
-        "total": 1243,
-        "proportion": 0.0016090104585679806
+        "count": 29,
+        "total": 1298,
+        "proportion": 0.02234206471494607
       },
       "tests_with_body": {
-        "count": 749,
-        "total": 1243,
-        "proportion": 0.6025744167337088
+        "count": 870,
+        "total": 1298,
+        "proportion": 0.6702619414483821
       },
       "tests_with_header": {
-        "count": 25,
-        "total": 1243,
-        "proportion": 0.02011263073209976
+        "count": 86,
+        "total": 1298,
+        "proportion": 0.0662557781201849
       },
       "header_given_body": {
-        "count": 2,
-        "total": 749,
-        "proportion": 0.0026702269692923898
+        "count": 29,
+        "total": 870,
+        "proportion": 0.03333333333333333
       },
       "body_given_header": {
-        "count": 2,
-        "total": 25,
-        "proportion": 0.08
+        "count": 29,
+        "total": 86,
+        "proportion": 0.3372093023255814
       },
-      "lift": 0.13276368491321763
+      "lift": 0.5031007751937985
     }
   }
 }

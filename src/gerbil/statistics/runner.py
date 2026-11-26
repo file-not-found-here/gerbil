@@ -8,9 +8,6 @@ from collections.abc import Sequence
 from pathlib import Path
 from typing import Any
 
-from gerbil.statistics import (
-    api_test_count_correlation as api_test_count_correlation_stats,
-)
 from gerbil.statistics import assertion_clustering as assertion_clustering_stats
 from gerbil.statistics import assertion_verification as assertion_verification_stats
 from gerbil.statistics import auth_handling as auth_handling_stats
@@ -70,17 +67,15 @@ PRODUCTION_RESOURCE_SEQUENCE_DISTRIBUTION = "production_resource_sequence_distri
 PARAMETERIZED_TEST_DISTRIBUTION = "parameterized_test_distribution"
 VERIFICATION_RESPONSE_ROLE_DISTRIBUTION = "verification_response_role_distribution"
 REQUEST_CONSTRUCTION_DISTRIBUTION = "request_construction_distribution"
-API_TEST_COUNT_CORRELATION = "api_test_count_correlation"
 
 
 def compute_all_statistics(
     records: Sequence[ProjectStatsRecord],
     *,
     saint_comparison: bool = False,
-    api_test_count_correlation: bool = False,
 ) -> dict[str, dict[str, Any]]:
     """Compute every statistics payload, keyed by output file stem. The SAINT
-    comparison views and the API test count correlation are opt-in."""
+    comparison views are opt-in."""
     tests = [test for record in records for test in record.tests]
     test_classes = [
         test_class for record in records for test_class in record.test_classes
@@ -192,12 +187,6 @@ def compute_all_statistics(
                     for sequence in record.production_resource_sequences
                 ],
             )
-        )
-    if api_test_count_correlation:
-        # Applies its own scope (>= 10 API tests and >= 1 endpoint) to `records`;
-        # only meaningful over the full project corpus.
-        statistics[API_TEST_COUNT_CORRELATION] = (
-            api_test_count_correlation_stats.compute(records)
         )
     return statistics
 

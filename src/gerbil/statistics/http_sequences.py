@@ -84,12 +84,17 @@ def _sequence_shape_distribution(api_tests: Sequence[TestRecord]) -> dict[str, A
     }
 
 
-def _dispatch_event_fan_distribution(api_tests: Sequence[TestRecord]) -> dict[str, Any]:
-    request_builder_counts = [
+def request_builder_counts_per_dispatch(api_tests: Sequence[TestRecord]) -> list[int]:
+    """Request-builder count of every sequenced dispatch event."""
+    return [
         count
         for test in api_tests
         for count in test.dispatch_event_request_builder_counts
     ]
+
+
+def _dispatch_event_fan_distribution(api_tests: Sequence[TestRecord]) -> dict[str, Any]:
+    request_builder_counts = request_builder_counts_per_dispatch(api_tests)
     response_check_counts = [
         count
         for test in api_tests
@@ -307,6 +312,9 @@ def _multi_sequence_composition(api_tests: Sequence[TestRecord]) -> dict[str, An
         "api_test_count": len(api_tests),
         "multi_sequence_test_count": len(multi_tests),
         "fully_resolved_multi_sequence_test_count": len(fully_resolved),
+        "share_one_sequence": share(
+            test.http_sequence_count == 1 for test in api_tests
+        ).to_dict(),
         "share_two_or_more_sequences": share(
             test.http_sequence_count >= 2 for test in api_tests
         ).to_dict(),

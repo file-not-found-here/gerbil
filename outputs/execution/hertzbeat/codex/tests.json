@@ -1,0 +1,135 @@
+{
+  "commit": "4892ef101fb74020082b5348773f760977a68a15",
+  "tests": [
+    {
+      "class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest",
+      "method_signature": "failedPushWrapperReturnsBadRequestWithJobAndInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-push",
+      "binary_class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest",
+      "method_signature": "successfulPushWrapperReturnsJobAndInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-push",
+      "binary_class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest",
+      "method_signature": "unmatchedPushRequestReturnsBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-push",
+      "binary_class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "method_signature": "publicIncidentCollectionEndpointReturnsJsonEnvelope()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "method_signature": "publicComponentCollectionEndpointReturnsJsonEnvelope()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "method_signature": "publicOrganizationEndpointReportsMissingOrganizationInJsonEnvelope()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "method_signature": "i18nEndpointNormalizesLocaleAndReturnsLocalizedJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "method_signature": "summaryEndpointReturnsJsonEnvelope()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "method_signature": "publicComponentByIdEndpointReturnsJsonEnvelope()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.ReadOnlyApiControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "method_signature": "createDashboardReturnsSuccessWhenGrafanaAcceptsIt()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "method_signature": "createDashboardConvertsServiceFailureToFailureMessage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "method_signature": "deleteDashboardReturnsJsonMessageEnvelope()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "method_signature": "getDashboardReturnsJsonMessageEnvelope()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.grafana.controller.DashboardControllerApiTest",
+      "status": "passed"
+    }
+  ]
+}

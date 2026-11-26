@@ -1,0 +1,65 @@
+{
+  "commit": "fb8e21f44ac4a73168845ac19b1c83bf419b810e",
+  "tests": [
+    {
+      "class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "method_signature": "captchaChallengeWithoutConfiguredHmacKeyReturnsBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "method_signature": "captchaChallengeReturnsSignedJsonWhenConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "method_signature": "ldnInboxOptionsAdvertisesSupportedMethodsAndContentType()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "method_signature": "oidcRedirectAllowsConfiguredHostAndRejectsUntrustedHost()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "method_signature": "apiRootReturnsDiscoverableResourceAsJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "method_signature": "csrfEndpointReturnsNoContentAndPersistsToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dspace-server-webapp",
+      "binary_class_name": "org.dspace.app.rest.PublicApiHttpTest",
+      "status": "passed"
+    }
+  ]
+}

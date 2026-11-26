@@ -1,0 +1,1345 @@
+{
+  "commit": "a1216d3594467afe51aaea6a1144ff67b2239498",
+  "tests": [
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "method_signature": "aboutReturnsSelfLink()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "method_signature": "aboutReturnsVersionInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "method_signature": "aboutReturnsServerInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "method_signature": "aboutReturnsFeatureFlags()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "method_signature": "aboutReturnsSecurityInfoWithAuthDisabled()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AboutControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "saveStreamDefinitionViaFormPost()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "saveDuplicateStreamDefinitionFails()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "listRelatedStreamDefinitions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "deleteStreamDefinitionByName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "listStreamDefinitionsAfterCreation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "listStreamDefinitionsWithSearchFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "listRelatedStreamForNonexistentStreamReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "deleteNonexistentStreamDefinitionReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "listStreamDefinitionsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "deleteAllStreamDefinitions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "getStreamDefinitionByName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "saveStreamDefinitionWithDescription()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "streamDefinitionHasStatusField()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "listApplicationsInStream()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "saveStreamDefinitionViaJsonPost()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "method_signature": "getStreamDefinitionByNonexistentNameReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "streamCompletionWithEmptyStartReturnsProposals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "streamCompletionWithDetailLevelReturnsProposals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "streamCompletionWithInvalidDetailLevelReturns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "taskCompletionWithDetailLevelReturnsProposals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "taskCompletionMissingStartParameterReturns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "streamCompletionWithStartTextReturnsFilteredProposals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "taskCompletionWithEmptyStartReturnsProposals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "taskCompletionWithStartTextReturnsProposals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "method_signature": "streamCompletionMissingStartParameterReturns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.CompletionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobInstanceControllerTest",
+      "method_signature": "listJobInstancesByNonexistentNameWithPageableReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobInstanceControllerTest",
+      "method_signature": "listJobInstancesByNonexistentNameReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobInstanceControllerTest",
+      "method_signature": "getJobInstanceByNonexistentIdReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobInstanceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskPlatformControllerTest",
+      "method_signature": "listTaskPlatformsReturnsLocalPlatform()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskPlatformControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskPlatformControllerTest",
+      "method_signature": "listTaskPlatformsReturnsPaginationInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskPlatformControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "listAppsAfterRegistration()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "getAppInfoByTypeNameVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "getAppInfoForNonexistentAppReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "getAppInfoByTypeNameUsesDefaultVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "bulkRegisterFromPropertiesString()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "listAppsWithSearchFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "registerDuplicateAppWithForceSucceeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "registerAppWithInvalidNameContainingColonReturns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "unregisterAllApps()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "registerAppWithExplicitVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "listAppsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "registerDuplicateAppWithoutForceFails()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "unregisterSpecificVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "unregisterNonexistentAppReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "listAppsWithTypeFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "makeVersionDefault()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "method_signature": "unregisterAllVersionsOfApp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AppRegistryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RootControllerTest",
+      "method_signature": "rootReturnsStreamDeploymentLinks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RootControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RootControllerTest",
+      "method_signature": "rootReturnsHateoasLinks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RootControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RootControllerTest",
+      "method_signature": "rootReturnsTaskPlatformLink()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RootControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.SecurityControllerTest",
+      "method_signature": "securityInfoShowsAuthDisabled()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.SecurityControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.SecurityControllerTest",
+      "method_signature": "securityInfoReturnsAuthState()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.SecurityControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.SecurityControllerTest",
+      "method_signature": "securityInfoReturnsSelfLink()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.SecurityControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "method_signature": "getTaskInfoExecutionsWithPlatformFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "method_signature": "getTaskInfoExecutionsReturnsCount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "method_signature": "validateExistingTaskDefinitionReturnsValidationInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "method_signature": "getTaskLogsForNonexistentExecutionReturnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "method_signature": "getCtrOptionsReturnsProperties()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "method_signature": "validateNonexistentTaskDefinitionReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskInfoAndValidationControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "method_signature": "convertSimpleGraphToText()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "method_signature": "parseSimpleTaskTextToGraph()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "method_signature": "parseInvalidTaskDslReturnsErrors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "method_signature": "convertMinimalGraphToTextReturnsEmptyDsl()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "method_signature": "parseComposedTaskTextToGraph()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.ToolsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "listAuditRecordsFilteredByAction()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "auditRecordsCreatedAfterTaskDefinitionSave()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "listAuditRecordsFilteredByOperation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "listAuditRecordsWithInvalidDateRangeReturns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "getAuditOperationTypesReturnsList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "getAuditActionTypesReturnsList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "listAuditRecordsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "listAuditRecordsWithDateFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "method_signature": "getAuditRecordByNonexistentIdReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.AuditRecordControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "method_signature": "getSpecificRuntimeStreamStatusReturnsEmptyForUnknownStream()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "method_signature": "listRuntimeAppsWithPageableParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "method_signature": "listRuntimeStreamStatusesReturnsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "method_signature": "listRuntimeAppInstancesForNonexistentAppReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "method_signature": "listRuntimeStreamStatusesWithPageable()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "method_signature": "listRuntimeAppsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "method_signature": "getRuntimeAppByNonexistentIdReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.RuntimeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "method_signature": "undeployNonexistentStreamReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "method_signature": "getDeploymentInfoForExistingStream()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "method_signature": "getDeploymentInfoForNonexistentStreamReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "method_signature": "getStreamDeploymentHistoryReturnsEmptyListForUnknownStream()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "method_signature": "undeployExistingStream()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "method_signature": "listDeploymentPlatforms()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "method_signature": "undeployAllStreams()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamDeploymentControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "method_signature": "listStepsForNonexistentJobExecutionReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "method_signature": "getStepProgressForNonexistentJobReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "method_signature": "listStepsWithPageableForNonexistentJobReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "method_signature": "getStepDetailForNonexistentJobReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobStepExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "method_signature": "getLogsForSpecificAppInNonexistentStreamReturnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "method_signature": "getLogsForNonexistentStreamReturnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "method_signature": "validateNonexistentStreamReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "method_signature": "validateExistingStreamDefinitionReturnsStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.StreamValidationAndLogsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "cleanupAllTaskExecutions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "getTaskExecutionByNonexistentIdReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "listThinTaskExecutionsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "listTaskExecutionsByNonexistentNameReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "getTaskExecutionByExternalIdReturns404ForNonexistent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "listThinTaskExecutionsByNonexistentNameReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "listTaskExecutionsWithPageableParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "getCurrentTaskExecutionsInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "method_signature": "listTaskExecutionsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "method_signature": "listThinJobExecutionsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "method_signature": "listThinJobExecutionsByNonexistentNameReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "method_signature": "listThinJobExecutionsByDateRangeReturnsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "method_signature": "listThinJobExecutionsByNonexistentJobInstanceIdReturns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "method_signature": "listThinJobExecutionsByTaskExecutionIdReturnsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionThinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "method_signature": "listJobExecutionsWithPageableParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "method_signature": "restartNonexistentJobExecutionReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "method_signature": "getJobExecutionByNonexistentIdReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "method_signature": "stopNonexistentJobExecutionReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "method_signature": "listJobExecutionsByStatusReturnsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "method_signature": "listJobExecutionsByNonexistentNameReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "method_signature": "listJobExecutionsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.JobExecutionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "listTaskDefinitionsWithNameFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "deleteTaskDefinitionByName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "listTaskDefinitionsMultipleFiltersFails()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "deleteNonexistentTaskDefinitionReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "saveTaskDefinitionCreatesNewTask()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "getTaskDefinitionByName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "getTaskDefinitionByNameNotFoundReturns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "saveDuplicateTaskDefinitionFails()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "listTaskDefinitionsWithDescriptionFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "saveTaskDefinitionWithDescription()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "deleteAllTaskDefinitions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "listTaskDefinitionsAfterCreation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "method_signature": "listTaskDefinitionsReturnsEmptyPage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "spring-cloud-dataflow-server-core",
+      "binary_class_name": "org.springframework.cloud.dataflow.server.controller.TaskDefinitionControllerTest",
+      "status": "passed"
+    }
+  ]
+}

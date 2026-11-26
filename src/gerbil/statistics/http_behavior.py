@@ -8,7 +8,7 @@ from __future__ import annotations
 from collections.abc import Sequence
 from typing import Any
 
-from gerbil.statistics.distributions import summarize
+from gerbil.statistics.distributions import share, summarize
 from gerbil.statistics.records import (
     FIXTURE_PHASE_BUCKETS,
     ORIGIN_BUCKETS,
@@ -36,6 +36,9 @@ def _unit_distributions(
         ).to_dict(),
         "http_events": summarize(
             unit_count(test.event_counts) for test in api_tests
+        ).to_dict(),
+        "tests_with_http_events": share(
+            unit_count(test.event_counts) > 0 for test in api_tests
         ).to_dict(),
         "http_verifications": summarize(
             unit_count(test.verification_counts) for test in api_tests

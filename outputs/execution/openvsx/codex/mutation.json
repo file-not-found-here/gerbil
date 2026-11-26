@@ -1,0 +1,1031 @@
+{
+  "target_classes": 26,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 29,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "74947e7f56dbf9c1f9a2dcc2f108512c3d792f43af72b8ab0aac926505d6c778",
+  "runs": [
+    {
+      "module": ".",
+      "threads": 1,
+      "seconds": 85.1,
+      "peak_memory_bytes": 705085440
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|createNamespace|(Lorg/eclipse/openvsx/json/NamespaceJson;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|10",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "createNamespace",
+      "line": 1189,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|deleteReview|(Ljava/lang/String;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|27",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "deleteReview",
+      "line": 1356,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|getNamespace|(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|57",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "getNamespace",
+      "line": 104,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|getQueryV2|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.MathMutator|172",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "getQueryV2",
+      "line": 922,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|getQueryV2|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|141",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "getQueryV2",
+      "line": 918,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|getQueryV2|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|224",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "getQueryV2",
+      "line": 934,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|getQuery|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator|23",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "getQuery",
+      "line": 1005,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|getQuery|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|205",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "getQuery",
+      "line": 1048,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|getReviews|(Ljava/lang/String;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|59",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "getReviews",
+      "line": 710,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|handleGetVersionReferences|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator|4",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "handleGetVersionReferences",
+      "line": 561,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|handleGetVersionReferences|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|18",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "handleGetVersionReferences",
+      "line": 563,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|lambda$mergeSearchResults$0|(Lorg/eclipse/openvsx/json/SearchEntryJson;Lorg/eclipse/openvsx/json/SearchEntryJson;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|8",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "lambda$mergeSearchResults$0",
+      "line": 817,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|search|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Z)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator|23",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "search",
+      "line": 771,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.ConditionalsBoundaryMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController",
+        "org.eclipse.openvsx.ApiEndpointHttpTest#registryQueryAndSearchRejectNegativePagination"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.RegistryAPI|search|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IILjava/lang/String;Ljava/lang/String;Z)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|89",
+      "mutated_class": "org.eclipse.openvsx.RegistryAPI",
+      "mutated_method": "search",
+      "line": 781,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|createAccessToken|(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|8",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "createAccessToken",
+      "line": 156,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#tokenDescriptionValidationRunsBeforeAuthenticationCheck"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|getAuthError|(Ljakarta/servlet/http/HttpServletRequest;)Lorg/eclipse/openvsx/json/ErrorJson;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|22",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "getAuthError",
+      "line": 91,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController",
+        "org.eclipse.openvsx.ApiEndpointHttpTest#loggedOutUserEndpointsReturnExpectedSafeResponses"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|getNamespaceMembers|(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|31",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "getNamespaceMembers",
+      "line": 298,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|getUserData|()Lorg/eclipse/openvsx/json/UserJson;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|10",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "getUserData",
+      "line": 109,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController",
+        "org.eclipse.openvsx.ApiEndpointHttpTest#loggedOutUserEndpointsReturnExpectedSafeResponses"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|getUsersStartWith|(Ljava/lang/String;)Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|32",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "getUsersStartWith",
+      "line": 334,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|lambda$getOwnNamespaces$3|(Lorg/eclipse/openvsx/entities/NamespaceMembership;)Lorg/eclipse/openvsx/json/NamespaceJson;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|76",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "lambda$getOwnNamespaces$3",
+      "line": 233,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|login|()Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|29",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "login",
+      "line": 76,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|login|()Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|35",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "login",
+      "line": 79,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|signPublisherAgreement|()Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|40",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "signPublisherAgreement",
+      "line": 352,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.UserAPI|signPublisherAgreement|()Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|56",
+      "mutated_class": "org.eclipse.openvsx.UserAPI",
+      "mutated_method": "signPublisherAgreement",
+      "line": 353,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.adapter.ExtensionQueryParam$Filter|lambda$findCriteria$2|(ILorg/eclipse/openvsx/adapter/ExtensionQueryParam$Criterion;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|17",
+      "mutated_class": "org.eclipse.openvsx.adapter.ExtensionQueryParam$Filter",
+      "mutated_method": "lambda$findCriteria$2",
+      "line": 74,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.adapter.VSCodeAPI|extensionQuery|(Lorg/eclipse/openvsx/adapter/ExtensionQueryParam;)Lorg/eclipse/openvsx/adapter/ExtensionQueryResult;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|13",
+      "mutated_class": "org.eclipse.openvsx.adapter.VSCodeAPI",
+      "mutated_method": "extensionQuery",
+      "line": 81,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.adapter.VSCodeAPI|getAsset|(Ljakarta/servlet/http/HttpServletRequest;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|32",
+      "mutated_class": "org.eclipse.openvsx.adapter.VSCodeAPI",
+      "mutated_method": "getAsset",
+      "line": 152,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.adapter.VSCodeAPI|getItemUrl|(Ljava/lang/String;Lorg/springframework/ui/ModelMap;)Lorg/springframework/web/servlet/ModelAndView;|org.pitest.mutationtest.engine.gregor.mutators.MathMutator|32",
+      "mutated_class": "org.eclipse.openvsx.adapter.VSCodeAPI",
+      "mutated_method": "getItemUrl",
+      "line": 196,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.admin.AdminAPI|deleteExtension|(Lorg/eclipse/openvsx/entities/UserData;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|4",
+      "mutated_class": "org.eclipse.openvsx.admin.AdminAPI",
+      "mutated_method": "deleteExtension",
+      "line": 288,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.admin.AdminAPI|getExtension|(Ljava/lang/String;Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|136",
+      "mutated_class": "org.eclipse.openvsx.admin.AdminAPI",
+      "mutated_method": "getExtension",
+      "line": 225,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.admin.AdminAPI|getNamespaceMembers|(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|44",
+      "mutated_class": "org.eclipse.openvsx.admin.AdminAPI",
+      "mutated_method": "getNamespaceMembers",
+      "line": 399,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.admin.AdminAPI|getNamespace|(Ljava/lang/String;)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|31",
+      "mutated_class": "org.eclipse.openvsx.admin.AdminAPI",
+      "mutated_method": "getNamespace",
+      "line": 314,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.admin.AdminAPI|getReportCsv|(Ljava/lang/String;II)Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|28",
+      "mutated_class": "org.eclipse.openvsx.admin.AdminAPI",
+      "mutated_method": "getReportCsv",
+      "line": 115,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#invalidAdminCredentialsAreRejectedWithForbiddenStatus"
+      ],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.admin.AdminAPI|updateSearchIndex|()Lorg/springframework/http/ResponseEntity;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|30",
+      "mutated_class": "org.eclipse.openvsx.admin.AdminAPI",
+      "mutated_method": "updateSearchIndex",
+      "line": 188,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|checkPublisherAgreement|(Lorg/eclipse/openvsx/entities/UserData;)V|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|57",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "checkPublisherAgreement",
+      "line": 114,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|enrichUserJson|(Lorg/eclipse/openvsx/json/UserJson;Lorg/eclipse/openvsx/entities/UserData;Lorg/eclipse/openvsx/eclipse/PublisherAgreement;Z)V|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|77",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "enrichUserJson",
+      "line": 203,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|enrichUserJson|(Lorg/eclipse/openvsx/json/UserJson;Lorg/eclipse/openvsx/entities/UserData;Lorg/eclipse/openvsx/eclipse/PublisherAgreement;Z)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|105",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "enrichUserJson",
+      "line": 212,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|enrichUserJson|(Lorg/eclipse/openvsx/json/UserJson;Lorg/eclipse/openvsx/entities/UserData;Lorg/eclipse/openvsx/eclipse/PublisherAgreement;Z)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|121",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "enrichUserJson",
+      "line": 214,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|getPublisherAgreement|(Lorg/eclipse/openvsx/entities/UserData;)Lorg/eclipse/openvsx/eclipse/PublisherAgreement;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|109",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "getPublisherAgreement",
+      "line": 321,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|getPublisherAgreement|(Lorg/eclipse/openvsx/entities/UserData;)Lorg/eclipse/openvsx/eclipse/PublisherAgreement;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|98",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "getPublisherAgreement",
+      "line": 318,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|getUserProfile|(Ljava/lang/String;)Lorg/eclipse/openvsx/eclipse/EclipseProfile;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|4",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "getUserProfile",
+      "line": 251,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|parseAgreementResponse|(Lorg/springframework/http/ResponseEntity;)Lorg/eclipse/openvsx/eclipse/PublisherAgreement;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|123",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "parseAgreementResponse",
+      "line": 411,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.eclipse.EclipseService|signPublisherAgreement|(Lorg/eclipse/openvsx/entities/UserData;)Lorg/eclipse/openvsx/eclipse/PublisherAgreement;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|125",
+      "mutated_class": "org.eclipse.openvsx.eclipse.EclipseService",
+      "mutated_method": "signPublisherAgreement",
+      "line": 362,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.AccessTokenJson|error|(Ljava/lang/String;)Lorg/eclipse/openvsx/json/AccessTokenJson;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|11",
+      "mutated_class": "org.eclipse.openvsx.json.AccessTokenJson",
+      "mutated_method": "error",
+      "line": 22,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#tokenDescriptionValidationRunsBeforeAuthenticationCheck"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.AccessTokenJson|error|(Ljava/lang/String;)Lorg/eclipse/openvsx/json/AccessTokenJson;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|15",
+      "mutated_class": "org.eclipse.openvsx.json.AccessTokenJson",
+      "mutated_method": "error",
+      "line": 23,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#tokenDescriptionValidationRunsBeforeAuthenticationCheck"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.AdminStatisticsJson|getAverageReviewsPerExtension|()D|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.AdminStatisticsJson",
+      "mutated_method": "getAverageReviewsPerExtension",
+      "line": 102,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController",
+        "org.eclipse.openvsx.ApiEndpointHttpTest#invalidAdminCredentialsAreRejectedWithForbiddenStatus"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.AdminStatisticsJson|getNamespaceOwners|()J|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.AdminStatisticsJson",
+      "mutated_method": "getNamespaceOwners",
+      "line": 110,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController",
+        "org.eclipse.openvsx.ApiEndpointHttpTest#invalidAdminCredentialsAreRejectedWithForbiddenStatus"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.ExtensionJson|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|283",
+      "mutated_class": "org.eclipse.openvsx.json.ExtensionJson",
+      "mutated_method": "equals",
+      "line": 626,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.ExtensionJson|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|99",
+      "mutated_class": "org.eclipse.openvsx.json.ExtensionJson",
+      "mutated_method": "equals",
+      "line": 603,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.ExtensionJson|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|21",
+      "mutated_class": "org.eclipse.openvsx.json.ExtensionJson",
+      "mutated_method": "equals",
+      "line": 593,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.ExtensionJson|getNamespaceDisplayName|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.ExtensionJson",
+      "mutated_method": "getNamespaceDisplayName",
+      "line": 391,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.ExtensionJson|getSponsorLink|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.ExtensionJson",
+      "mutated_method": "getSponsorLink",
+      "line": 463,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.ExtensionJson|getUnrelatedPublisher|()Ljava/lang/Boolean;|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.ExtensionJson",
+      "mutated_method": "getUnrelatedPublisher",
+      "line": 303,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.NamespaceDetailsJson|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|17",
+      "mutated_class": "org.eclipse.openvsx.json.NamespaceDetailsJson",
+      "mutated_method": "equals",
+      "line": 134,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.NamespaceDetailsJson|hashCode|()I|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|52",
+      "mutated_class": "org.eclipse.openvsx.json.NamespaceDetailsJson",
+      "mutated_method": "hashCode",
+      "line": 149,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.NamespaceJson|error|(Ljava/lang/String;)Lorg/eclipse/openvsx/json/NamespaceJson;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|15",
+      "mutated_class": "org.eclipse.openvsx.json.NamespaceJson",
+      "mutated_method": "error",
+      "line": 29,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.NamespaceJson|getName|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.NamespaceJson",
+      "mutated_method": "getName",
+      "line": 63,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.QueryParamJson|getExtensionName|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.QueryParamJson",
+      "mutated_method": "getExtensionName",
+      "line": 74,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.QueryParamJson|getOffset|()Ljava/lang/Integer;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.QueryParamJson",
+      "mutated_method": "getOffset",
+      "line": 138,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.QueryResultJson|getTotalSize|()I|org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator|5",
+      "mutated_class": "org.eclipse.openvsx.json.QueryResultJson",
+      "mutated_method": "getTotalSize",
+      "line": 57,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.PrimitiveReturnsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController",
+        "org.eclipse.openvsx.ApiEndpointHttpTest#registryQueryAndSearchRejectNegativePagination"
+      ]
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.UserJson|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|107",
+      "mutated_class": "org.eclipse.openvsx.json.UserJson",
+      "mutated_method": "equals",
+      "line": 206,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.json.UserPublishInfoJson|error|(Ljava/lang/String;)Lorg/eclipse/openvsx/json/UserPublishInfoJson;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|11",
+      "mutated_class": "org.eclipse.openvsx.json.UserPublishInfoJson",
+      "mutated_method": "error",
+      "line": 24,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findActiveReviews|(Lorg/eclipse/openvsx/entities/Extension;)Lorg/springframework/data/util/Streamable;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findActiveReviews",
+      "line": 266,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findActiveVersionsSorted|(Ljava/lang/String;Ljava/lang/String;Lorg/springframework/data/domain/PageRequest;)Lorg/springframework/data/domain/Page;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|11",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findActiveVersionsSorted",
+      "line": 182,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findActiveVersions|(Lorg/eclipse/openvsx/json/QueryRequest;)Lorg/springframework/data/domain/Page;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findActiveVersions",
+      "line": 374,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findAdminStatisticsByYearAndMonth|(II)Lorg/eclipse/openvsx/entities/AdminStatistics;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|8",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findAdminStatisticsByYearAndMonth",
+      "line": 390,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findAllReviews|(Lorg/eclipse/openvsx/entities/Extension;)Lorg/springframework/data/util/Streamable;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findAllReviews",
+      "line": 270,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findLatestVersions|(Ljava/util/Collection;)Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findLatestVersions",
+      "line": 555,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findPublicId|(Ljava/lang/String;)Lorg/eclipse/openvsx/entities/Extension;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findPublicId",
+      "line": 495,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findVersionStringsSorted|(Lorg/eclipse/openvsx/entities/Extension;Ljava/lang/String;Z)Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|12",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findVersionStringsSorted",
+      "line": 194,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|findVersion|(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/eclipse/openvsx/entities/ExtensionVersion;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|10",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "findVersion",
+      "line": 170,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|hasAccessToken|(Ljava/lang/String;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "hasAccessToken",
+      "line": 599,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|hasSameVersion|(Lorg/eclipse/openvsx/entities/ExtensionVersion;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "hasSameVersion",
+      "line": 591,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|namespacePublicIdExists|(Ljava/lang/String;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|7",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "namespacePublicIdExists",
+      "line": 515,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.repositories.RepositoryService|updateNamespacePublicIds|(Ljava/util/Map;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|6",
+      "mutated_class": "org.eclipse.openvsx.repositories.RepositoryService",
+      "mutated_method": "updateNamespacePublicIds",
+      "line": 507,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.search.ISearchService$Options|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|39",
+      "mutated_class": "org.eclipse.openvsx.search.ISearchService$Options",
+      "mutated_method": "equals",
+      "line": 82,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.util.UrlUtil|addQuery|(Ljava/lang/String;[Ljava/lang/String;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.MathMutator|48",
+      "mutated_class": "org.eclipse.openvsx.util.UrlUtil",
+      "mutated_method": "addQuery",
+      "line": 128,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.util.UrlUtil|getBaseUrlHostAndPort|(Ljakarta/servlet/http/HttpServletRequest;)Lorg/springframework/data/util/Pair;|org.pitest.mutationtest.engine.gregor.mutators.MathMutator|65",
+      "mutated_class": "org.eclipse.openvsx.util.UrlUtil",
+      "mutated_method": "getBaseUrlHostAndPort",
+      "line": 217,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.eclipse.openvsx.util.UrlUtil|getBaseUrl|(Ljakarta/servlet/http/HttpServletRequest;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|135",
+      "mutated_class": "org.eclipse.openvsx.util.UrlUtil",
+      "mutated_method": "getBaseUrl",
+      "line": 180,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController"
+      ]
+    }
+  ]
+}

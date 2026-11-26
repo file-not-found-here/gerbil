@@ -1,85 +1,85 @@
 {
   "scope": "resolved_test_resource_sequences",
-  "api_test_count": 3998,
-  "resolved_sequence_count": 8973,
-  "unresolved_sequence_count": 5,
-  "total_sequence_count": 8978,
+  "api_test_count": 22814,
+  "resolved_sequence_count": 41158,
+  "unresolved_sequence_count": 2486,
+  "total_sequence_count": 43644,
   "combinations": {
     "create-only": {
       "operations": [
         "create"
       ],
-      "count": 4617,
-      "pct": 51.4543630892678
+      "count": 21512,
+      "pct": 52.26687399776471
     },
     "read-only": {
       "operations": [
         "read"
       ],
-      "count": 2564,
-      "pct": 28.5746127270701
+      "count": 9965,
+      "pct": 24.21157490645804
     },
     "update-only": {
       "operations": [
         "update"
       ],
-      "count": 346,
-      "pct": 3.8560124818901147
+      "count": 2890,
+      "pct": 7.021721172068614
     },
     "delete-only": {
       "operations": [
         "delete"
       ],
-      "count": 217,
-      "pct": 2.418366209740332
+      "count": 1864,
+      "pct": 4.528888672918995
     },
     "create-read": {
       "operations": [
         "create",
         "read"
       ],
-      "count": 1174,
-      "pct": 13.083695531037558
+      "count": 469,
+      "pct": 1.139511152145391
     },
     "create-update": {
       "operations": [
         "create",
         "update"
       ],
-      "count": 29,
-      "pct": 0.32319179761506744
+      "count": 2107,
+      "pct": 5.11929637008601
     },
     "create-delete": {
       "operations": [
         "create",
         "delete"
       ],
-      "count": 7,
-      "pct": 0.07801181321743007
+      "count": 675,
+      "pct": 1.640021381019486
     },
     "read-update": {
       "operations": [
         "read",
         "update"
       ],
-      "count": 3,
-      "pct": 0.03343363423604146
+      "count": 584,
+      "pct": 1.418922202245007
     },
     "read-delete": {
       "operations": [
         "read",
         "delete"
       ],
-      "count": 0,
-      "pct": 0.0
+      "count": 46,
+      "pct": 0.11176442003984645
     },
     "update-delete": {
       "operations": [
         "update",
         "delete"
       ],
-      "count": 12,
-      "pct": 0.13373453694416584
+      "count": 54,
+      "pct": 0.13120171048155888
     },
     "create-read-update": {
       "operations": [
@@ -87,8 +87,8 @@
         "read",
         "update"
       ],
-      "count": 3,
-      "pct": 0.03343363423604146
+      "count": 929,
+      "pct": 2.2571553525438555
     },
     "create-read-delete": {
       "operations": [
@@ -105,8 +105,8 @@
         "update",
         "delete"
       ],
-      "count": 1,
-      "pct": 0.011144544745347153
+      "count": 55,
+      "pct": 0.13363137178677292
     },
     "read-update-delete": {
       "operations": [
@@ -114,8 +114,8 @@
         "update",
         "delete"
       ],
-      "count": 0,
-      "pct": 0.0
+      "count": 7,
+      "pct": 0.01700762913649837
     },
     "create-read-update-delete": {
       "operations": [
@@ -124,62 +124,62 @@
         "update",
         "delete"
       ],
-      "count": 0,
-      "pct": 0.0
+      "count": 1,
+      "pct": 0.0024296613052140533
     }
   },
   "multi_operation_combinations": {
     "scope": "resolved_multi_operation_test_resource_sequences",
-    "multi_operation_sequence_count": 1229,
-    "pct_of_resolved_sequences": 13.696645492031651,
+    "multi_operation_sequence_count": 4927,
+    "pct_of_resolved_sequences": 11.97094125078964,
     "combinations": {
       "create-read": {
         "operations": [
           "create",
           "read"
         ],
-        "count": 1174,
-        "pct": 95.52481692432872
+        "count": 469,
+        "pct": 9.518977065151208
       },
       "create-update": {
         "operations": [
           "create",
           "update"
         ],
-        "count": 29,
-        "pct": 2.3596419853539463
+        "count": 2107,
+        "pct": 42.76435965090319
       },
       "create-delete": {
         "operations": [
           "create",
           "delete"
         ],
-        "count": 7,
-        "pct": 0.5695687550854354
+        "count": 675,
+        "pct": 13.700020296326365
       },
       "read-update": {
         "operations": [
           "read",
           "update"
         ],
-        "count": 3,
-        "pct": 0.24410089503661514
+        "count": 584,
+        "pct": 11.853054597117922
       },
       "read-delete": {
         "operations": [
           "read",
           "delete"
         ],
-        "count": 0,
-        "pct": 0.0
+        "count": 46,
+        "pct": 0.9336310127866856
       },
       "update-delete": {
         "operations": [
           "update",
           "delete"
         ],
-        "count": 12,
-        "pct": 0.9764035801464606
+        "count": 54,
+        "pct": 1.0960016237061092
       },
       "create-read-update": {
         "operations": [
@@ -187,8 +187,8 @@
           "read",
           "update"
         ],
-        "count": 3,
-        "pct": 0.24410089503661514
+        "count": 929,
+        "pct": 18.855287193018064
       },
       "create-read-delete": {
         "operations": [
@@ -205,8 +205,8 @@
           "update",
           "delete"
         ],
-        "count": 1,
-        "pct": 0.08136696501220504
+        "count": 55,
+        "pct": 1.116297950071037
       },
       "read-update-delete": {
         "operations": [
@@ -214,8 +214,8 @@
           "update",
           "delete"
         ],
-        "count": 0,
-        "pct": 0.0
+        "count": 7,
+        "pct": 0.14207428455449564
       },
       "create-read-update-delete": {
         "operations": [
@@ -224,15 +224,15 @@
           "update",
           "delete"
         ],
-        "count": 0,
-        "pct": 0.0
+        "count": 1,
+        "pct": 0.02029632636492795
       }
     },
     "create_delete_pairing": {
       "scope": "resolved_multi_operation_sequences_with_create",
-      "create_sequence_count": 1214,
-      "paired_with_delete_count": 8,
-      "pct_paired_with_delete": 0.6589785831960461
+      "create_sequence_count": 4236,
+      "paired_with_delete_count": 731,
+      "pct_paired_with_delete": 17.25684608120869
     }
   }
 }

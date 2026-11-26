@@ -1,65 +1,75 @@
 {
   "scope": "api_tests",
-  "api_test_count": 89,
+  "api_test_count": 304,
   "by_origin": {
     "test-method": {
       "http_builders": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
-        "max": 14.0,
-        "mean": 2.662921348314607,
-        "p25": 1.0,
-        "p50": 2.0,
-        "p75": 3.0,
-        "p90": 6.0
+        "max": 87.0,
+        "mean": 6.9144736842105265,
+        "p25": 2.0,
+        "p50": 4.0,
+        "p75": 9.0,
+        "p90": 15.699999999999989
       },
       "http_events": {
-        "count": 89,
-        "min": 0.0,
-        "max": 7.0,
-        "mean": 1.4943820224719102,
+        "count": 304,
+        "min": 1.0,
+        "max": 36.0,
+        "mean": 2.8223684210526314,
         "p25": 1.0,
         "p50": 1.0,
-        "p75": 2.0,
-        "p90": 2.200000000000003
+        "p75": 4.0,
+        "p90": 6.0
+      },
+      "tests_with_http_events": {
+        "count": 304,
+        "total": 304,
+        "proportion": 1.0
       },
       "http_verifications": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
-        "max": 8.0,
-        "mean": 2.4269662921348316,
-        "p25": 1.0,
-        "p50": 2.0,
-        "p75": 3.0,
-        "p90": 4.0
+        "max": 53.0,
+        "mean": 4.8618421052631575,
+        "p25": 2.0,
+        "p50": 3.0,
+        "p75": 6.0,
+        "p90": 11.0
       }
     },
     "test-helper": {
       "http_builders": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
-        "max": 80.0,
-        "mean": 1.0786516853932584,
+        "max": 98.0,
+        "mean": 1.069078947368421,
         "p25": 0.0,
         "p50": 0.0,
         "p75": 0.0,
         "p90": 0.0
       },
       "http_events": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
-        "max": 16.0,
-        "mean": 0.19101123595505617,
+        "max": 1.0,
+        "mean": 0.009868421052631578,
         "p25": 0.0,
         "p50": 0.0,
         "p75": 0.0,
         "p90": 0.0
       },
+      "tests_with_http_events": {
+        "count": 3,
+        "total": 304,
+        "proportion": 0.009868421052631578
+      },
       "http_verifications": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
-        "max": 16.0,
-        "mean": 0.1797752808988764,
+        "max": 0.0,
+        "mean": 0.0,
         "p25": 0.0,
         "p50": 0.0,
         "p75": 0.0,
@@ -68,7 +78,7 @@
     },
     "fixture": {
       "http_builders": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -78,7 +88,7 @@
         "p90": 0.0
       },
       "http_events": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -87,8 +97,13 @@
         "p75": 0.0,
         "p90": 0.0
       },
+      "tests_with_http_events": {
+        "count": 0,
+        "total": 304,
+        "proportion": 0.0
+      },
       "http_verifications": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -100,7 +115,7 @@
       "by_phase": {
         "setup": {
           "http_builders": {
-            "count": 89,
+            "count": 304,
             "min": 0.0,
             "max": 0.0,
             "mean": 0.0,
@@ -110,7 +125,7 @@
             "p90": 0.0
           },
           "http_events": {
-            "count": 89,
+            "count": 304,
             "min": 0.0,
             "max": 0.0,
             "mean": 0.0,
@@ -120,7 +135,7 @@
             "p90": 0.0
           },
           "http_verifications": {
-            "count": 89,
+            "count": 304,
             "min": 0.0,
             "max": 0.0,
             "mean": 0.0,
@@ -132,7 +147,7 @@
         },
         "teardown": {
           "http_builders": {
-            "count": 89,
+            "count": 304,
             "min": 0.0,
             "max": 0.0,
             "mean": 0.0,
@@ -142,7 +157,7 @@
             "p90": 0.0
           },
           "http_events": {
-            "count": 89,
+            "count": 304,
             "min": 0.0,
             "max": 0.0,
             "mean": 0.0,
@@ -152,7 +167,7 @@
             "p90": 0.0
           },
           "http_verifications": {
-            "count": 89,
+            "count": 304,
             "min": 0.0,
             "max": 0.0,
             "mean": 0.0,
@@ -166,49 +181,54 @@
     },
     "total": {
       "http_builders": {
-        "count": 89,
+        "count": 304,
+        "min": 0.0,
+        "max": 170.0,
+        "mean": 7.983552631578948,
+        "p25": 2.0,
+        "p50": 4.0,
+        "p75": 10.0,
+        "p90": 16.69999999999999
+      },
+      "http_events": {
+        "count": 304,
         "min": 1.0,
-        "max": 80.0,
-        "mean": 3.741573033707865,
+        "max": 36.0,
+        "mean": 2.8322368421052633,
         "p25": 1.0,
-        "p50": 2.0,
+        "p50": 1.0,
         "p75": 4.0,
         "p90": 6.0
       },
-      "http_events": {
-        "count": 89,
-        "min": 1.0,
-        "max": 16.0,
-        "mean": 1.6853932584269662,
-        "p25": 1.0,
-        "p50": 1.0,
-        "p75": 2.0,
-        "p90": 3.0
+      "tests_with_http_events": {
+        "count": 304,
+        "total": 304,
+        "proportion": 1.0
       },
       "http_verifications": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
-        "max": 16.0,
-        "mean": 2.606741573033708,
+        "max": 53.0,
+        "mean": 4.8618421052631575,
         "p25": 2.0,
-        "p50": 2.0,
-        "p75": 3.0,
-        "p90": 4.200000000000003
+        "p50": 3.0,
+        "p75": 6.0,
+        "p90": 11.0
       }
     }
   },
   "assertion_count": {
-    "count": 89,
+    "count": 304,
     "min": 1.0,
-    "max": 16.0,
-    "mean": 2.707865168539326,
+    "max": 53.0,
+    "mean": 4.957236842105263,
     "p25": 2.0,
-    "p50": 2.0,
-    "p75": 3.0,
-    "p90": 4.200000000000003
+    "p50": 3.0,
+    "p75": 6.0,
+    "p90": 11.0
   },
   "mocked_interaction_count": {
-    "count": 89,
+    "count": 304,
     "min": 0.0,
     "max": 0.0,
     "mean": 0.0,
@@ -219,34 +239,34 @@
   },
   "fixtures": {
     "setup_method_count": {
-      "count": 89,
+      "count": 304,
       "min": 0.0,
       "max": 1.0,
-      "mean": 0.7078651685393258,
-      "p25": 0.0,
-      "p50": 1.0,
-      "p75": 1.0,
-      "p90": 1.0
-    },
-    "teardown_method_count": {
-      "count": 89,
-      "min": 0.0,
-      "max": 1.0,
-      "mean": 0.1348314606741573,
+      "mean": 0.24013157894736842,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 0.0,
       "p90": 1.0
+    },
+    "teardown_method_count": {
+      "count": 304,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.039473684210526314,
+      "p25": 0.0,
+      "p50": 0.0,
+      "p75": 0.0,
+      "p90": 0.0
     }
   },
   "test_helper_method_count": {
-    "count": 89,
+    "count": 304,
     "min": 0.0,
     "max": 4.0,
-    "mean": 0.16853932584269662,
+    "mean": 0.20065789473684212,
     "p25": 0.0,
     "p50": 0.0,
     "p75": 0.0,
-    "p90": 0.0
+    "p90": 1.0
   }
 }

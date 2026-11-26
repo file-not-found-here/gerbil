@@ -1,48 +1,54 @@
 {
   "scope": "all_tests",
   "api": {
-    "test_count": 89,
+    "test_count": 304,
     "parameterized": {
-      "count": 0,
-      "total": 89,
-      "proportion": 0.0
+      "count": 1,
+      "total": 304,
+      "proportion": 0.003289473684210526
     },
     "source_kinds": {
       "scope": "parameterized_tests",
-      "test_count": 0,
+      "test_count": 1,
       "by_kind": {
         "static_only": {
           "count": 0,
-          "total": 0,
-          "proportion": null
+          "total": 1,
+          "proportion": 0.0
         },
         "dynamic_only": {
-          "count": 0,
-          "total": 0,
-          "proportion": null
+          "count": 1,
+          "total": 1,
+          "proportion": 1.0
         },
         "mixed": {
           "count": 0,
-          "total": 0,
-          "proportion": null
+          "total": 1,
+          "proportion": 0.0
         },
         "no_recognized_source": {
           "count": 0,
-          "total": 0,
-          "proportion": null
+          "total": 1,
+          "proportion": 0.0
         }
       }
     },
     "source_annotations": {
-      "total": 0,
-      "by_annotation": {}
+      "total": 1,
+      "by_annotation": {
+        "@MethodSource": {
+          "count": 1,
+          "total": 1,
+          "proportion": 1.0
+        }
+      }
     }
   },
   "non_api": {
-    "test_count": 70,
+    "test_count": 72,
     "parameterized": {
       "count": 0,
-      "total": 70,
+      "total": 72,
       "proportion": 0.0
     },
     "source_kinds": {

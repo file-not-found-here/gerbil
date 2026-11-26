@@ -1,0 +1,2285 @@
+{
+  "commit": "243d98d5b18e85779816de2105e81504ed0bcb39",
+  "tests": [
+    {
+      "class_name": "com.netflix.spinnaker.echo.scheduler.ValidationControllerApiTest",
+      "method_signature": "rejectsAnInvalidCronExpressionWithBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.scheduler.ValidationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.scheduler.ValidationControllerApiTest",
+      "method_signature": "describesAValidCronExpression()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.scheduler.ValidationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.history.HistoryControllerApiTest",
+      "method_signature": "acceptsHistoryEventsAndPassesThemToTheEventPropagator()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.history.HistoryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "method_signature": "returnsNotFoundWhenDeletingAnUnknownScheduledAction()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "method_signature": "rejectsScheduledActionsWithMissingRequiredFields()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "method_signature": "listsEmptyPipelineAndUserScheduledActions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "method_signature": "createsAValidScheduledActionAndReturnsCreated()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.scheduler.ScheduledActionsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.controllers.WebhooksControllerApiTest",
+      "method_signature": "forwardsTypedSourceWebhookPayloadAndReturnsAnEventId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-webhooks",
+      "binary_class_name": "com.netflix.spinnaker.echo.controllers.WebhooksControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.controllers.WebhooksControllerApiTest",
+      "method_signature": "acceptsCDEventsAndForwardsValidatedData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-webhooks",
+      "binary_class_name": "com.netflix.spinnaker.echo.controllers.WebhooksControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.controllers.WebhooksControllerApiTest",
+      "method_signature": "forwardsWebhookPayloadWithAnEmbeddedSource()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-webhooks",
+      "binary_class_name": "com.netflix.spinnaker.echo.controllers.WebhooksControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.appengine.artifacts.controllers.AppengineStorageControllerApiTest",
+      "method_signature": "listsNoStorageAccountsWhenStorageIsNotConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-appengine",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.appengine.artifacts.controllers.AppengineStorageControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.newrelic.controller.NewRelicFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredRequestBodyAndTimes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-newrelic-insights",
+      "binary_class_name": "com.netflix.kayenta.newrelic.controller.NewRelicFetchControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoCertificatesForACloudProviderWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "returnsNotFoundWhenASecurityGroupDoesNotExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoServerGroupManagersWhenNoProvidersAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoElasticIpsForAnAccountAndRegionWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsVpcNetworksAsAnEmptyJsonArrayWhenNoNetworkProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSubnetsWhenNoSubnetProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "rejectsLoadBalancerQueriesForAnUnknownProvider()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSecurityGroupsForAnAccountAndProviderWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoClusterNamesWhenAnApplicationHasNoProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSecurityGroupsForAnAccountWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "returnsAnEmptySearchResultWhenThereAreNoSearchProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "returnsEmptyResultsWhenNoUpdaterHandlesAnOnDemandCacheType()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsAvailableStagesAsAnEmptyJsonArrayWhenNoConvertersAreRegistered()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSecurityGroupsForAnAccountProviderAndRegionWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsKeyPairsAsAnEmptyJsonArrayWhenNoProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSecurityGroupsForAnAccountAndRegionWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoFunctionsWhenNoProvidersAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoNetworksWhenNoNetworkProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "returnsNotFoundWhenNoImageProviderCanResolveAnImage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSubnetsForACloudProviderWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsInstanceTypesAsAnEmptyJsonArrayWhenNoProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSecurityGroupsWhenNoProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoSecurityGroupsMatchingAnAccountProviderAndNameWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "returnsNoReservationReportsWhenNoProvidersAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoCertificatesWhenNoCertificateProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoNetworksForACloudProviderWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoApplicationLoadBalancersWhenNoProvidersExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "method_signature": "listsNoElasticIpsForAnAccountWithoutProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.BasicReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.OperationsControllerApiTest",
+      "method_signature": "listsTasksAndReturnsNotFoundForMissingTaskOperations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.OperationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.OperationsControllerApiTest",
+      "method_signature": "startsLegacyAndCloudProviderOperationsAndReturnsTaskLinks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.OperationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AmazonImageLookupApiTest",
+      "method_signature": "returnsNotFoundForAnUnknownImageId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AmazonImageLookupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AmazonImageLookupApiTest",
+      "method_signature": "returnsNoImageMatchesForAnEmptyCache()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AmazonImageLookupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.EntityTagsControllerApiTest",
+      "method_signature": "listsNoEntityTagsAndReturnsNotFoundForAnUnknownTagId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.EntityTagsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "method_signature": "returnsArtifactNamesAndVersionsFromCredentials()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "method_signature": "returnsAStoredArtifactReferenceForItsContentAddress()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "method_signature": "returnsNoArtifactCredentialsWhenTheOptionalRepositoryIsNotConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "method_signature": "returnsServerErrorWhenFetchingArtifactsIsDisabled()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ApplicationsControllerApiTest",
+      "method_signature": "returnsNotFoundForAnUnknownApplication()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ApplicationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ApplicationsControllerApiTest",
+      "method_signature": "listsApplicationsSortedAndHonorsExpandQueryParameter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ApplicationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.controllers.KubernetesReadApiTest",
+      "method_signature": "listsEmptyRawResourcesAndReturnsRequestedPodFileContents()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.kubernetes.controllers.KubernetesReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AmazonClusterApiTest",
+      "method_signature": "rejectsScalingActivityRequestsForAnUnknownAccount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AmazonClusterApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.JobControllerApiTest",
+      "method_signature": "collectsJobStatusAndFileContentsAndCancelsById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.JobControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "method_signature": "listsNoCredentialsWhenTheProviderIsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "method_signature": "rejectsAnUpdateWhoseBodyNameDoesNotMatchThePath()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "method_signature": "listsByTypeAndReturnsEmptyAccountHistoryAndDeletesAnAccount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "method_signature": "createsSavesAndUpdatesAccountDefinitionsOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "method_signature": "returnsNotFoundForAnUnknownAccount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CredentialsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CloudMetricControllerApiTest",
+      "method_signature": "listsDescriptorsAndForwardsFilters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CloudMetricControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CloudMetricControllerApiTest",
+      "method_signature": "statisticsExcludeTimeBoundsFromFiltersAndUseSuppliedBounds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CloudMetricControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ProjectControllerApiTest",
+      "method_signature": "returnsAnEmptyClusterListForAProjectWithoutCachedClusters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ProjectControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageApiTest",
+      "method_signature": "servesImageAndTagSearchOnDockerRegistryAndTitusPrefixes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CacheIntrospectionControllerApiTest",
+      "method_signature": "returnsAgentIntrospectionsAsAJsonCollection()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CacheIntrospectionControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.DataControllerApiTest",
+      "method_signature": "returnsNotFoundForStaticAndAdHocDataWhenNoProviderSupportsTheIdentifier()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.DataControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ClusterControllerApiTest",
+      "method_signature": "returnsNotFoundForClusterReadsWithoutMatchingProvidersOrResources()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ClusterControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ServiceBrokerControllerApiTest",
+      "method_signature": "returnsNoServicesOrInstanceWhenNoProvidersAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ServiceBrokerControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.azure.resources.loadbalancer.view.AzureLoadBalancerApiTest",
+      "method_signature": "returnsNoApplicationL4LoadBalancersWhenTheCacheIsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.azure.resources.loadbalancer.view.AzureLoadBalancerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.controllers.EcsReadApiTest",
+      "method_signature": "rejectsServerGroupEventsForAnUnknownEcsAccount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.ecs.controllers.EcsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.controllers.EcsReadApiTest",
+      "method_signature": "returnsEmptyEcsReadCollectionsAndHandlesUnmatchedImageProvider()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.ecs.controllers.EcsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.InstanceControllerApiTest",
+      "method_signature": "returnsNotFoundForAnUnknownInstanceAndConsole()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.InstanceControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.admin.EntityTagsAdminControllerApiTest",
+      "method_signature": "exposesDeltaAndReindexOperations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.admin.EntityTagsAdminControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.admin.EntityTagsAdminControllerApiTest",
+      "method_signature": "forwardsDryRunDefaultsAndExplicitDeleteOptions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.admin.EntityTagsAdminControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ServerGroupControllerApiTest",
+      "method_signature": "listsNoApplicationServerGroupsWhenNoProvidersAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ServerGroupControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ServerGroupControllerApiTest",
+      "method_signature": "listsServerGroupsForAnApplicationAndRequiresAnApplicationOrIdsFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ServerGroupControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ServerGroupControllerApiTest",
+      "method_signature": "returnsNotFoundForUnknownServerGroupsByApplicationAndByMoniker()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ServerGroupControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.azure.resources.vmimage.view.AzureImageLookupApiTest",
+      "method_signature": "returnsServerErrorForAnImageMissingFromAllAzureSources()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.azure.resources.vmimage.view.AzureImageLookupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.azure.resources.vmimage.view.AzureImageLookupApiTest",
+      "method_signature": "returnsNoSearchResultsWhenTheImageCacheIsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.azure.resources.vmimage.view.AzureImageLookupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AwsReadApiTest",
+      "method_signature": "returnsNotFoundForAnUnknownStackId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AwsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AwsReadApiTest",
+      "method_signature": "returnsAnEmptyRoleListWhenNoProvidersAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AwsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AwsReadApiTest",
+      "method_signature": "listsStacksUsingDefaultRegion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.aws.controllers.AwsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.controllers.ManifestControllerApiTest",
+      "method_signature": "readsManifestAliasesAndClusterCoordinates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.kubernetes.controllers.ManifestControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.oracle.controller.OracleImageLookupApiTest",
+      "method_signature": "searchesAndLooksUpImagesAsEmptyCollectionsWhenNoImagesAreCached()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.oracle.controller.OracleImageLookupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.CloudProviderImageApiTest",
+      "method_signature": "returnsEmptyImageAndAccountResultsWhenProviderCachesAreEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.CloudProviderImageApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexClusterApiTest",
+      "method_signature": "rejectsScalingActivityRequestsForCredentialsOfAnotherProvider()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexClusterApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.wavefront.controller.WavefrontFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredMetricParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-wavefront",
+      "binary_class_name": "com.netflix.kayenta.wavefront.controller.WavefrontFetchControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ApiExtensionControllerApiTest",
+      "method_signature": "dispatchesRequestToMatchingApiExtension()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-proxy",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ApiExtensionControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ProxyControllerApiTest",
+      "method_signature": "forwardsProxyRequestAndReturnsUpstreamResponse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-proxy",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ProxyControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ProxyControllerApiTest",
+      "method_signature": "listsConfiguredProxies()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-proxy",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ProxyControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.pipelinetriggers.QuietPeriodControllerApiTest",
+      "method_signature": "reportsCurrentQuietPeriodStateAndConfiguredBounds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-pipelinetriggers",
+      "binary_class_name": "com.netflix.spinnaker.echo.pipelinetriggers.QuietPeriodControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.plugins.web.publish.PluginPublishControllerApiTest",
+      "method_signature": "verifiesAndUploadsPluginBinaryBeforePersistingMetadata()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-plugins",
+      "binary_class_name": "com.netflix.spinnaker.gate.plugins.web.publish.PluginPublishControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.plugins.web.installed.PluginsInstalledControllerApiTest",
+      "method_signature": "listsInstalledGatePlugins()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-plugins",
+      "binary_class_name": "com.netflix.spinnaker.gate.plugins.web.installed.PluginsInstalledControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.plugins.web.info.PluginInfoControllerApiTest",
+      "method_signature": "listsPersistsAndDeletesPluginMetadata()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-plugins",
+      "binary_class_name": "com.netflix.spinnaker.gate.plugins.web.info.PluginInfoControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.prometheus.controllers.PrometheusFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredMetricParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-prometheus",
+      "binary_class_name": "com.netflix.kayenta.prometheus.controllers.PrometheusFetchControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.datadog.controller.DatadogFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredMetricParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-datadog",
+      "binary_class_name": "com.netflix.kayenta.datadog.controller.DatadogFetchControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.atlas.controllers.AtlasFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredMetricParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-atlas",
+      "binary_class_name": "com.netflix.kayenta.atlas.controllers.AtlasFetchControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.gremlin.GremlinControllerApiTest",
+      "method_signature": "retrievesCommandAndTargetTemplatesWithApiKeyAuthorization()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-integrations-gremlin",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.gremlin.GremlinControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ImageAndInstanceControllersApiTest",
+      "method_signature": "retrievesInstanceDetailsAndConsoleOutput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ImageAndInstanceControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ImageAndInstanceControllersApiTest",
+      "method_signature": "searchesImagesFiltersTagsAndLooksUpImageDetails()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ImageAndInstanceControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.MiscControllersApiTest",
+      "method_signature": "servesPubsubStorageManifestAndRawResourceEndpoints()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.MiscControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.MiscControllersApiTest",
+      "method_signature": "readsResourceHistoryAndBatchUpdatesEntityTags()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.MiscControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.CleanupAndLoadBalancerApiTest",
+      "method_signature": "loadBalancerHttpRoutesReturnProviderApplicationAndSingleBalancerViews()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.CleanupAndLoadBalancerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.CleanupAndLoadBalancerApiTest",
+      "method_signature": "cleanupResourceHttpReadsReturnMarkedDeletedAndOptOutStates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.CleanupAndLoadBalancerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ClusterProjectServerGroupApiTest",
+      "method_signature": "readsProjectAndServerGroupHttpViews()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ClusterProjectServerGroupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ClusterProjectServerGroupApiTest",
+      "method_signature": "readsClusterCoordinatesServerGroupsAndLoadBalancers()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ClusterProjectServerGroupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.CredentialsReadApiTest",
+      "method_signature": "readsCredentialAccountsByNameAndTypeOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.CredentialsReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PipelineControllerApiTest",
+      "method_signature": "createsUpdatesAndTriggersPipelineConfigurations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PipelineControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PipelineControllerApiTest",
+      "method_signature": "readsAndMutatesPipelineExecutionsAndEvaluatesExpressions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PipelineControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ManagedControllerApiTest",
+      "method_signature": "dispatchesManagedDeliveryResourceAndApplicationRoutesOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ManagedControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ApplicationControllerApiTest",
+      "method_signature": "readsApplicationsHistoryPipelinesAndConfiguration()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ApplicationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ApplicationControllerApiTest",
+      "method_signature": "createsAndCancelsTasksPipelinesAndInvokesPipelineConfig()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ApplicationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.EntityTagsMutationApiTest",
+      "method_signature": "deletesMultipleTagsInOneAcceptedTask()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.EntityTagsMutationApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.EntityTagsMutationApiTest",
+      "method_signature": "createsTagUpdateTaskAndReturnsAccepted()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.EntityTagsMutationApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "method_signature": "readsAndMutatesLegacyCanaryViews()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "method_signature": "coversCanaryConfigurationAndExecutionHttpRoutes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "method_signature": "appliesSearchMinimumLengthAndForwardsFilters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "method_signature": "readsBakeryOptionsAndLogs()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "method_signature": "getsSlackChannelsFromTheCurrentCache()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.GateAdditionalReadControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ReadOnlyControllersApiTest",
+      "method_signature": "servesCronValidationBuildRepositoryAndCapabilityRoutes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ReadOnlyControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ReadOnlyControllersApiTest",
+      "method_signature": "servesNetworkCertificateRoleAndVersionEndpoints()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ReadOnlyControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.AuthControllerApiTest",
+      "method_signature": "exposesAuthenticationAndSessionHttpRoutes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.AuthControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PipelineTemplatesApiTest",
+      "method_signature": "servesV2TemplateQueriesAndMutations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PipelineTemplatesApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PipelineTemplatesApiTest",
+      "method_signature": "servesLegacyTemplateQueriesAndMutations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PipelineTemplatesApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PipelineTemplatesApiTest",
+      "method_signature": "reordersPipelinesAndStrategiesThroughTaskCreation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PipelineTemplatesApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.StrategyAndJobApiTest",
+      "method_signature": "readsApplicationJobsAndPreconfiguredJobOptionsOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.StrategyAndJobApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.StrategyAndJobApiTest",
+      "method_signature": "createsMovesUpdatesAndDeletesStrategiesOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.StrategyAndJobApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "method_signature": "listsCodeBuildAccountsAndProjects()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "method_signature": "queriesCiBuildsAndBuildOutput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "method_signature": "exposesDeprecatedV2AndCurrentV3BuildHttpRoutes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "method_signature": "listsGoogleCloudBuildAccountsAndTriggers()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "method_signature": "exposesConcourseTeamsPipelinesJobsResourcesAndStageCallback()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.BuildIntegrationsApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.RootControllerApiTest",
+      "method_signature": "redirectsTheRootRequestToDeck()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.RootControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InfrastructureReadControllersApiTest",
+      "method_signature": "listsApplicationAndIdentifiedServerGroupsAndManagers()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InfrastructureReadControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InfrastructureReadControllersApiTest",
+      "method_signature": "readsAmazonFunctionsInstanceTypesKeyPairsSubnetsAndVpcs()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InfrastructureReadControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.WebhookApiTest",
+      "method_signature": "forwardsWebhookRequestsAndListsPreconfiguredHooks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.WebhookApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.WebhookApiTest",
+      "method_signature": "acceptsCdeventsAndPassesTheStructuredDataToTheService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.WebhookApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.StrategySnapshotApiTest",
+      "method_signature": "readsStrategyConfigsAndApplicationSnapshotsOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.StrategySnapshotApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.TasksAndExecutionsApiTest",
+      "method_signature": "createsReadsCancelsAndDeletesTasksOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.TasksAndExecutionsApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.TasksAndExecutionsApiTest",
+      "method_signature": "queriesExecutionsByPipelineConfigAndTrigger()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.TasksAndExecutionsApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PagerDutyNotificationApiTest",
+      "method_signature": "readsAndMutatesNotificationConfigsAndAcceptsFormCallbacks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PagerDutyNotificationApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PagerDutyNotificationApiTest",
+      "method_signature": "readsCachedPagerDutyServicesAndGroupedOnCalls()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PagerDutyNotificationApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ArtifactControllerApiTest",
+      "method_signature": "readsAndFetchesArtifactsAcrossTheHttpApi()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ArtifactControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.FirewallAndSecurityGroupApiTest",
+      "method_signature": "readsFirewallsAndSecurityGroupsAcrossAccountAndRegionScopes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.FirewallAndSecurityGroupApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PipelineConfigApiTest",
+      "method_signature": "listsReadsHistoryAndConvertsPipelineConfigsOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PipelineConfigApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ecs.EcsControllersApiTest",
+      "method_signature": "readsEcsAlarmsClustersSecretsEventsAndServiceDiscoveryOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ecs.EcsControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PluginBinaryControllerApiTest",
+      "method_signature": "uploadsChecksumVerifiedBinaryAndReadsItBack()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PluginBinaryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.StrategyControllerApiTest",
+      "method_signature": "listsReadsHistoryAndMutatesStrategies()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.StrategyControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PipelineControllerApiTest",
+      "method_signature": "readsAndFiltersPipelinesAcrossCollectionAndItemRoutes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PipelineControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PipelineControllerApiTest",
+      "method_signature": "createsBatchUpdatesUpdatesAndDeletesPipelines()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PipelineControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.V2PipelineTemplateControllerApiTest",
+      "method_signature": "savesUpdatesAndDeletesVersionedTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.V2PipelineTemplateControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.V2PipelineTemplateControllerApiTest",
+      "method_signature": "listsGetsVersionsAndListsDependentPipelines()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.V2PipelineTemplateControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.NotificationControllerApiTest",
+      "method_signature": "readsAndWritesGlobalAndApplicationNotifications()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.NotificationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.SnapshotsControllerApiTest",
+      "method_signature": "savesAndReadsCurrentHistoricalAndTimestampedSnapshots()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.SnapshotsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.DeliveryControllerApiTest",
+      "method_signature": "listsAndLoadsDeliveryConfigurations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.DeliveryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.DeliveryControllerApiTest",
+      "method_signature": "createsUpdatesAndDeletesDeliveryConfigurations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.DeliveryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.ProjectsControllerApiTest",
+      "method_signature": "searchesListsAndLoadsProjects()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.ProjectsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.ProjectsControllerApiTest",
+      "method_signature": "createsUpdatesDeletesAndBatchImportsProjects()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.ProjectsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.AdminControllerApiTest",
+      "method_signature": "recoveringAnApplicationAlsoRecoversItsPermission()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.AdminControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PipelineTemplateControllerApiTest",
+      "method_signature": "listsLoadsAndFindsDependentPipelineConfigurations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PipelineTemplateControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PipelineTemplateControllerApiTest",
+      "method_signature": "createsUpdatesAndDeletesTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PipelineTemplateControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.EntityTagsControllerApiTest",
+      "method_signature": "listsLoadsCreatesAndBatchUpdatesTags()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.EntityTagsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.EntityTagsControllerApiTest",
+      "method_signature": "deletesSingleAndMultipleTagRecords()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.EntityTagsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PluginInfoControllerApiTest",
+      "method_signature": "readsUpsertsAndDeletesPluginInformationAndReleases()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PluginInfoControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PluginVersionControllerApiTest",
+      "method_signature": "pinsRequestedPluginVersionsForAServerGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PluginVersionControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "method_signature": "listsApplicationsAsAnEmptyArrayWhenTheRepositoryIsEmpty()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "method_signature": "createsAnApplication()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "method_signature": "getsAnApplicationAndItsHistory()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "method_signature": "patchesAndReplacesAnApplication()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "method_signature": "deletesAnApplicationAndAcceptsAnEmptyBatchUpdate()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.v2.ApplicationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.ReorderPipelinesControllerApiTest",
+      "method_signature": "reordersPipelinesAndStrategiesWithinTheirApplication()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.ReorderPipelinesControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.ServiceAccountsControllerApiTest",
+      "method_signature": "listsCreatesAndDeletesServiceAccounts()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.ServiceAccountsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.controllers.PermissionsControllerApiTest",
+      "method_signature": "readsCreatesUpdatesAndDeletesApplicationPermissions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "front50/front50-web",
+      "binary_class_name": "com.netflix.spinnaker.front50.controllers.PermissionsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CanaryControllerApiTest",
+      "method_signature": "canaryHttpRoutesStartAdHocAndConfiguredRunsAndReadLiveResults()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CanaryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CanaryJudgesControllerApiTest",
+      "method_signature": "judgesHttpRoutesListJudgeCompareAndReturnComparisonResults()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CanaryJudgesControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "method_signature": "metricSetListHttpRoutesSupportCreateReadDeleteAndList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "method_signature": "metricSetPairListHttpRoutesExposeCollectionDetailNotFoundCreateDeleteAndList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "method_signature": "metricsServiceMetadataPassesOptionalFilterToConfiguredService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "method_signature": "archivedCanaryResultRoutesCreateReadUpdateDeleteAndList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "method_signature": "canaryConfigHttpRoutesReadCreateUpdateDeleteAndList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.StorageBackedControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.MetricsServicesControllerApiTest",
+      "method_signature": "listsNoMetricsServicesWhenNoMetricsStoreCredentialsAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.MetricsServicesControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CredentialsControllerApiTest",
+      "method_signature": "deletesCredentialsByAccountName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CredentialsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CredentialsControllerApiTest",
+      "method_signature": "returnsAnEmptyCredentialsCollectionWhenNoneAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CredentialsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.web.controllers.GenericErrorControllerApiTest",
+      "method_signature": "returnsTheErrorAttributesAsJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kork/kork-web",
+      "binary_class_name": "com.netflix.spinnaker.kork.web.controllers.GenericErrorControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerApiTest",
+      "method_signature": "operationAndPipelineRoutesDispatchToTheExecutionLauncher()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerApiTest",
+      "method_signature": "taskAndPreconfiguredRoutesReturnReferencesAndEmptyConfigurations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OrcaUtilityControllersApiTest",
+      "method_signature": "postsConcourseBuildUpdatesAndGetsExecutionsByCorrelationId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OrcaUtilityControllersApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OrcaAdminAndImportApiTest",
+      "method_signature": "importsOnlyNewTerminalExecutionsAndReturnsCreatedResponse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OrcaAdminAndImportApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OrcaAdminAndImportApiTest",
+      "method_signature": "adminEndpointsToggleStatusAndForceCancelWithDefaultQueryValues()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OrcaAdminAndImportApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.QueueAdminControllerApiTest",
+      "method_signature": "queueAdminRoutesHydratePushAndKillExecutions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.QueueAdminControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.TaskControllerApiTest",
+      "method_signature": "taskListAndDeleteRoutesReturnViewsAndDeleteCompletedTasks()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.TaskControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.TaskControllerApiTest",
+      "method_signature": "pipelineAndTaskReadAndMutationRoutesDispatchOverHttp()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.TaskControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.CapabilitiesControllerApiTest",
+      "method_signature": "listsNoDeploymentMonitorsWhenTheOptionalProviderIsNotConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.CapabilitiesControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.CapabilitiesControllerApiTest",
+      "method_signature": "returnsExpressionCapabilitiesFromTheCapabilitiesService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.CapabilitiesControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.V2PipelineTemplateControllerApiTest",
+      "method_signature": "planAddsV2SourceAndReturnsPipelineWithoutStartingIt()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.V2PipelineTemplateControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.standalonecanaryanalysis.controller.StandaloneCanaryAnalysisControllerApiTest",
+      "method_signature": "validatesBothRequiredJsonRequestBodiesAndServesExecutionLookup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-standalone-canary-analysis",
+      "binary_class_name": "com.netflix.kayenta.standalonecanaryanalysis.controller.StandaloneCanaryAnalysisControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.orca.controllers.PipelineControllerApiTest",
+      "method_signature": "startsListsLoadsCancelsAndDeletesPipelineExecutions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-orca",
+      "binary_class_name": "com.netflix.kayenta.orca.controllers.PipelineControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.orca.controllers.AdminControllerApiTest",
+      "method_signature": "acceptsEnabledStateAndPublishesStatusChange()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-orca",
+      "binary_class_name": "com.netflix.kayenta.orca.controllers.AdminControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.stackdriver.controllers.StackdriverFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredMetricParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-stackdriver",
+      "binary_class_name": "com.netflix.kayenta.stackdriver.controllers.StackdriverFetchControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.fiat.controllers.AuthorizeControllerApiTest",
+      "method_signature": "returnsMethodNotAllowedWhenTheDiagnosticGetAllRouteIsDisabled()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "fiat/fiat-web",
+      "binary_class_name": "com.netflix.spinnaker.fiat.controllers.AuthorizeControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.fiat.controllers.AuthorizeControllerApiTest",
+      "method_signature": "readsUserPermissionsAndIndividualResources()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "fiat/fiat-web",
+      "binary_class_name": "com.netflix.spinnaker.fiat.controllers.AuthorizeControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.fiat.controllers.RolesControllerApiTest",
+      "method_signature": "resolvesReplacesDeletesAndSyncsRolePermissions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "fiat/fiat-web",
+      "binary_class_name": "com.netflix.spinnaker.fiat.controllers.RolesControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.pubsub.PubsubControllerApiTest",
+      "method_signature": "listsConfiguredPublishersAsAnEmptyJsonArray()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-pubsub-core",
+      "binary_class_name": "com.netflix.spinnaker.echo.pubsub.PubsubControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.pubsub.PubsubControllerApiTest",
+      "method_signature": "listsConfiguredSubscriptionsAsAnEmptyJsonArray()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-pubsub-core",
+      "binary_class_name": "com.netflix.spinnaker.echo.pubsub.PubsubControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.codebuild.AwsCodeBuildControllerApiTest",
+      "method_signature": "accountAndBuildRoutesDispatchToConfiguredCodeBuildAccount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.codebuild.AwsCodeBuildControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildControllerApiTest",
+      "method_signature": "googleCloudBuildRoutesExposeAccountOperationsAndJsonBodies()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.scm.ScmInfoControllerApiTest",
+      "method_signature": "listsAnEmptyMapWhenNoSourceControlMastersAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.scm.ScmInfoControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.controllers.IgorReadApiTest",
+      "method_signature": "concourseLookupsFilterByTeamAndKeepJobOrder()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.controllers.IgorReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.controllers.IgorReadApiTest",
+      "method_signature": "ciBuildEndpointsExposeBuildFiltersAndOutput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.controllers.IgorReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.controllers.IgorReadApiTest",
+      "method_signature": "artifactVersionAndArtifactLookupsForwardQueryParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.controllers.IgorReadApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.nexus.NexusControllerApiTest",
+      "method_signature": "listsConfiguredRepositoriesAndAcceptsJsonWebhookWithoutEcho()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.nexus.NexusControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.controllers.IgorAdministrativeAndScmApiTest",
+      "method_signature": "managedDeliveryManifestEndpointsFilterAndParseSourceFiles()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.controllers.IgorAdministrativeAndScmApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.controllers.IgorAdministrativeAndScmApiTest",
+      "method_signature": "adminFastForwardRunsWholeMonitorOrFastForwardsOnePartition()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.controllers.IgorAdministrativeAndScmApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.controllers.IgorAdministrativeAndScmApiTest",
+      "method_signature": "commitComparisonRoutesRequireBothRangeParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.controllers.IgorAdministrativeAndScmApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.influxdb.controller.InfluxDbFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredMetricParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-influxdb",
+      "binary_class_name": "com.netflix.kayenta.influxdb.controller.InfluxDbFetchControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.controller.NotificationControllerApiTest",
+      "method_signature": "returnsAnEmptyMetadataListWhenNoNotificationAgentsAreConfigured()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-notifications",
+      "binary_class_name": "com.netflix.spinnaker.echo.controller.NotificationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.controller.NotificationControllerApiTest",
+      "method_signature": "acceptsGenericNotificationsWhenThereAreNoMatchingServices()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-notifications",
+      "binary_class_name": "com.netflix.spinnaker.echo.controller.NotificationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.controller.NotificationControllerApiTest",
+      "method_signature": "forwardsFormEncodedInteractiveCallbacksToTheCallbackHandler()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-notifications",
+      "binary_class_name": "com.netflix.spinnaker.echo.controller.NotificationControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.StatusControllerApiTest",
+      "method_signature": "reportsThisInstanceIdleWhenItHasNoIncompleteBakes()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.StatusControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.StatusControllerApiTest",
+      "method_signature": "reportsTheInstanceAndAnEmptyInstanceMapWhenNoBakesAreIncomplete()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.StatusControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerApiTest",
+      "method_signature": "reportsUnsupportedManifestRendererAsBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "method_signature": "rejectsBakeCreationAndDeletionWhenProviderIsUnknown()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "method_signature": "listsNoBakeOptionsWhenNoCloudProviderHandlersAreRegistered()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "method_signature": "returnsNotFoundForOptionsAndBaseImagesOfAnUnknownProvider()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "method_signature": "returnsNotFoundWhenBakeLogsAreMissing()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "method_signature": "returnsBadRequestForUnknownBakeStatusBakeOrCancellation()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "method_signature": "acceptsAnEmptyBakeDeleteRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.BakeryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.artifactory.ArtifactoryControllerApiTest",
+      "method_signature": "listsConfiguredRepositoryNamesInConfigurationOrder()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-monitor-artifactory",
+      "binary_class_name": "com.netflix.spinnaker.igor.artifactory.ArtifactoryControllerApiTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.graphite.controller.GraphiteFetchControllerApiTest",
+      "method_signature": "rejectsQueryWithoutRequiredMetricParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-graphite",
+      "binary_class_name": "com.netflix.kayenta.graphite.controller.GraphiteFetchControllerApiTest",
+      "status": "passed"
+    }
+  ]
+}

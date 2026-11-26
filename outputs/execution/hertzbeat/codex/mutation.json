@@ -1,0 +1,83 @@
+{
+  "target_classes": 3,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 0,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "525201f8cd5a8ccf6f961d9c949dbc5edb30b5e314cf10c2f504105984a8b88c",
+  "runs": [
+    {
+      "module": "hertzbeat-manager",
+      "threads": 1,
+      "seconds": 5.9,
+      "peak_memory_bytes": 391319552
+    },
+    {
+      "module": "hertzbeat-push",
+      "threads": 1,
+      "seconds": 2.6,
+      "peak_memory_bytes": 283103232
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "org.apache.hertzbeat.common.entity.dto.Message|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|56",
+      "mutated_class": "org.apache.hertzbeat.common.entity.dto.Message",
+      "mutated_method": "equals",
+      "line": 33,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.hertzbeat.common.entity.dto.Message|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|60",
+      "mutated_class": "org.apache.hertzbeat.common.entity.dto.Message",
+      "mutated_method": "equals",
+      "line": 33,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.hertzbeat.grafana.service.DashboardService|deleteDashboard|(Ljava/lang/Long;)V|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|12",
+      "mutated_class": "org.apache.hertzbeat.grafana.service.DashboardService",
+      "mutated_method": "deleteDashboard",
+      "line": 132,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.hertzbeat.manager.pojo.dto.Dashboard|canEqual|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|5",
+      "mutated_class": "org.apache.hertzbeat.manager.pojo.dto.Dashboard",
+      "mutated_method": "canEqual",
+      "line": 29,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.hertzbeat.manager.pojo.dto.Dashboard|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|24",
+      "mutated_class": "org.apache.hertzbeat.manager.pojo.dto.Dashboard",
+      "mutated_method": "equals",
+      "line": 29,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    }
+  ]
+}

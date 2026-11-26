@@ -3,41 +3,41 @@
   "api_test_count": 269,
   "verification_roles": {
     "scope": "http_verifications",
-    "verification_count": 433,
+    "verification_count": 431,
     "by_role": {
       "inspector": {
         "count": 0,
-        "total": 433,
+        "total": 431,
         "proportion": 0.0
       },
       "matcher": {
         "count": 0,
-        "total": 433,
+        "total": 431,
         "proportion": 0.0
       },
       "extractor": {
         "count": 0,
-        "total": 433,
+        "total": 431,
         "proportion": 0.0
       },
       "body-assertion": {
-        "count": 108,
-        "total": 433,
-        "proportion": 0.24942263279445728
+        "count": 106,
+        "total": 431,
+        "proportion": 0.2459396751740139
       },
       "header-assertion": {
         "count": 6,
-        "total": 433,
-        "proportion": 0.013856812933025405
+        "total": 431,
+        "proportion": 0.013921113689095127
       },
       "status-assertion": {
         "count": 319,
-        "total": 433,
-        "proportion": 0.7367205542725174
+        "total": 431,
+        "proportion": 0.740139211136891
       },
       "none": {
         "count": 0,
-        "total": 433,
+        "total": 431,
         "proportion": 0.0
       }
     }

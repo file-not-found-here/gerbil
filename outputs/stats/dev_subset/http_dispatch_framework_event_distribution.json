@@ -1,0 +1,74 @@
+{
+  "scope": "http_dispatch_events",
+  "event_count": 36465,
+  "framework_split": {
+    "mockmvc": {
+      "event_count": 31864,
+      "pct_of_events": 87.38242150006856
+    },
+    "webtestclient": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "test-rest-template": {
+      "event_count": 57,
+      "pct_of_events": 0.1563142739613328
+    },
+    "rest-template": {
+      "event_count": 3380,
+      "pct_of_events": 9.269162210338681
+    },
+    "rest-client": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "webclient": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "rest-assured": {
+      "event_count": 1003,
+      "pct_of_events": 2.7505827505827507
+    },
+    "okhttp": {
+      "event_count": 119,
+      "pct_of_events": 0.32634032634032634
+    },
+    "apache-httpclient": {
+      "event_count": 20,
+      "pct_of_events": 0.054847113670643086
+    },
+    "java-httpclient": {
+      "event_count": 22,
+      "pct_of_events": 0.06033182503770739
+    },
+    "micronaut-client": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "jax-rs": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "feign": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "http-interface": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "karate": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "pact": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    },
+    "citrus": {
+      "event_count": 0,
+      "pct_of_events": 0.0
+    }
+  }
+}

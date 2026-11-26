@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Callable, Iterator
 
@@ -361,3 +362,20 @@ def call_site_key(call_site: JCallSite) -> CallSiteKey:
         end_column,
         method_name,
     )
+
+
+# CLDK renders each argument with JavaParser's Node.toString(), which prints the
+# comment JavaParser attaches to the argument (e.g. a same-line trailing `//` comment
+# after the call) ahead of the expression. No Java expression can itself begin with
+# `//` or `/*`, so only a leading run is stripped; comments inside the expression stay.
+_LEADING_JAVA_COMMENTS_RE = re.compile(
+    r"\A(?:\s*(?://[^\n]*(?:\n|\Z)|/\*.*?\*/))+\s*", re.DOTALL
+)
+
+
+def call_site_argument_exprs(call_site: JCallSite) -> list[str]:
+    """Argument expressions of a call site, without CLDK's leading comment text."""
+    return [
+        _LEADING_JAVA_COMMENTS_RE.sub("", argument, count=1)
+        for argument in call_site.argument_expr
+    ]

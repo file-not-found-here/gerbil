@@ -1,0 +1,35 @@
+{
+  "commit": "c2360663177c574d6cf83c062bd22788a0cdc040",
+  "tests": [
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest",
+      "method_signature": "errorRouteForwardsNotFoundToTheUi()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest",
+      "method_signature": "everyProtectedEndpointRejectsAnAnonymousHttpRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest",
+      "method_signature": "publicLoginRoutesDispatchAndValidateInputs()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "dolphinscheduler-api",
+      "binary_class_name": "org.apache.dolphinscheduler.api.controller.ApiEndpointHttpSmokeTest",
+      "status": "passed"
+    }
+  ]
+}

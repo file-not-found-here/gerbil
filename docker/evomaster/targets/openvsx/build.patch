@@ -1,0 +1,14 @@
+diff --git a/server/build.gradle b/server/build.gradle
+--- a/server/build.gradle
++++ b/server/build.gradle
+@@ -118,6 +118,10 @@
+ 
+     devRuntimeOnly "org.springframework.boot:spring-boot-devtools"
+ 
++    // EvoMaster's embedded driver and the client its generated tests call.
++    testImplementation "org.evomaster:evomaster-client-java-controller:6.2.0"
++    testImplementation "org.evomaster:evomaster-test-utils-java:6.2.0"
++    testImplementation "io.rest-assured:rest-assured"
+     testImplementation("org.springframework.boot:spring-boot-starter-test") {
+         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+     }

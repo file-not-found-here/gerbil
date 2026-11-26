@@ -1,0 +1,1845 @@
+{
+  "commit": "4892ef101fb74020082b5348773f760977a68a15",
+  "tests": [
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testCancelStar_CancelStarServiceFailed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testCancelStar_InvalidUserId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testGetAllVersionByUserStar_InvalidUserId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testCancelStar_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testCancelStar_InvalidVersionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testGetVersionPageByUserStar_InvalidUserId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testGetVersionPageByUserStar_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testCancelStar_CancelVersionServiceFailed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarDOControllerTest",
+      "method_signature": "testCancelStar_CancelTemplateServiceFailed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testUploadVersion_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testGetVersionPageByTemplate_ValidParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testGetVersionsByTemplate_ValidTemplateId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testUploadVersion_EmptyFile()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testGetVersionById_ValidVersionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testGetVersionById_InvalidVersionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testGetVersionsByTemplate_InvalidTemplateId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionDOControllerTest",
+      "method_signature": "testStarVersion_InvalidParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testGetCategoryPageByIsDel_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testGetAllCategory_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testAddCategory_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testDeleteCategory_InvalidId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testModifyCategory_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testAddCategory_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testModifyCategory_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testGetAllCategory_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testGetCategoryPageByIsDel_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryDOControllerTest",
+      "method_signature": "testDeleteCategory_ValidId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testGetCategoryPageByIsDel_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testGetAllCategory_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testAddCategory_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testDeleteCategory_InvalidId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testModifyCategory_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testAddCategory_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testModifyCategory_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testGetAllCategory_InvalidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testGetCategoryPageByIsDel_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.CategoryControllerTest",
+      "method_signature": "testDeleteCategory_ValidId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.ShareControllerTest",
+      "method_signature": "testDownloadShare_ValidKey()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.ShareControllerTest",
+      "method_signature": "testDownloadShare_InvalidKey()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.ShareControllerTest",
+      "method_signature": "testGetShareURL_ValidVersion()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateControllerTest",
+      "method_signature": "testGetCountByIsDelAndOffshelf_WithValidParams_ShouldReturnCount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateControllerTest",
+      "method_signature": "testUploadTemplate_WithValidInputs_ShouldReturnUploadSuccess()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateControllerTest",
+      "method_signature": "testGetTemplatePageByCategory_WithValidParams_ShouldReturnTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateControllerTest",
+      "method_signature": "testGetPageByName_WithValidParams_ShouldReturnTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateControllerTest",
+      "method_signature": "testUploadTemplate_WithEmptyFileAndString_ShouldReturnParamsError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testCancelStar_CancelStarServiceFailed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testCancelStar_InvalidUserId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testGetAllVersionByUserStar_InvalidUserId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testCancelStar_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testCancelStar_InvalidVersionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testGetVersionPageByUserStar_InvalidUserId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testGetAllVersionByUserStar_ValidUserId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testGetVersionPageByUserStar_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testCancelStar_CancelVersionServiceFailed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.StarControllerTest",
+      "method_signature": "testCancelStar_CancelTemplateServiceFailed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateDOControllerTest",
+      "method_signature": "testGetCountByIsDelAndOffshelf_WithValidParams_ShouldReturnCount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateDOControllerTest",
+      "method_signature": "testUploadTemplate_WithValidInputs_ShouldReturnUploadSuccess()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateDOControllerTest",
+      "method_signature": "testGetTemplatePageByCategory_WithValidParams_ShouldReturnTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateDOControllerTest",
+      "method_signature": "testGetPageByName_WithValidParams_ShouldReturnTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.TemplateDOControllerTest",
+      "method_signature": "testUploadTemplate_WithEmptyFileAndString_ShouldReturnParamsError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testUploadVersion_ValidInput()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testGetVersionPageByTemplate_ValidParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testStarVersion_ValidParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testGetVersionsByTemplate_ValidTemplateId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testUploadVersion_EmptyFile()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testGetVersionById_ValidVersionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testGetVersionById_InvalidVersionId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testGetVersionsByTemplate_InvalidTemplateId()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.templatehub.controller.VersionControllerTest",
+      "method_signature": "testStarVersion_InvalidParameters()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerTest",
+      "method_signature": "testPushMetricsFailure()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-push",
+      "binary_class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerTest",
+      "method_signature": "testPushMetricsSuccess()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-push",
+      "binary_class_name": "org.apache.hertzbeat.push.controller.PushPrometheusControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.warehouse.controller.MetricsDataControllerTest",
+      "method_signature": "getMetricsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-warehouse",
+      "binary_class_name": "org.apache.hertzbeat.warehouse.controller.MetricsDataControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.warehouse.controller.MetricsDataControllerTest",
+      "method_signature": "getMetricHistoryData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-warehouse",
+      "binary_class_name": "org.apache.hertzbeat.warehouse.controller.MetricsDataControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.warehouse.controller.MetricsDataControllerTest",
+      "method_signature": "getWarehouseStorageServerStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-warehouse",
+      "binary_class_name": "org.apache.hertzbeat.warehouse.controller.MetricsDataControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "testGetAlertGroupConvergeNotExists()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "testAddNewAlertGroupConverge()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "testModifyAlertGroupConverge()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "testGetAlertGroupConvergeExists()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertReportControllerTest",
+      "method_signature": "addNewAlertReportTencent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertReportControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertReportControllerTest",
+      "method_signature": "addNewAlertReport()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertReportControllerTest",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertDefinesControllerTest",
+      "method_signature": "getAlertDefines()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertDefinesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertDefinesControllerTest",
+      "method_signature": "deleteAlertDefines()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertDefinesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergesControllerTest",
+      "method_signature": "testDeleteAlertDefines()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergesControllerTest",
+      "method_signature": "testGetAlertGroupConverges()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertGroupConvergesControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "method_signature": "applyGroupAlertStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "method_signature": "getAlertsSummary()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "method_signature": "deleteGroupAlerts()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "method_signature": "getAlerts()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "testGetTemplatesById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "addNewNoticeRule()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "deleteNoticeRule()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "editNoticeRule()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "getReceivers()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "sendTestMsg()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "getAllReceivers()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "deleteNoticeTemplate_Success()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "deleteNoticeReceiver()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "sendTestMsg_Failure()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "addNewNoticeTemplate()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "getAllTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "editNoticeReceiver()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "getReceiverById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "getTemplates()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "deleteNoticeTemplate_NotFound()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "addNewNoticeReceiver()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "editNoticeTemplate()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "getRules()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "method_signature": "getRuleById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "method_signature": "testModifyAlertInhibit()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "method_signature": "testGetAlertInhibitNotExists()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "method_signature": "testGetAlertInhibitExists()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "method_signature": "testAddNewAlertInhibit()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "method_signature": "getAlertDefine()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "method_signature": "deleteAlertDefine()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "method_signature": "modifyAlertDefine()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "method_signature": "addNewAlertDefine()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "method_signature": "testAddNewAlertSilence()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "method_signature": "testModifyAlertSilence()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "method_signature": "testGetAlertSilenceNotExists()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "method_signature": "testGetAlertSilence()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-alerter",
+      "binary_class_name": "org.apache.hertzbeat.alert.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "deleteAppDefineYml_Failure()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "queryAppParamDefines()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "queryAppDefineYml()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "newAppDefineYml()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "queryPushDefine()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "queryAppDefine()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "queryAutoGenerateDynamicAppDefine()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "queryAppsHierarchy()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "deleteAppDefineYml_Success()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MetricsControllerTest",
+      "method_signature": "testGetMetricsInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MetricsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "testGetAllMetricsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "testAddNewBulletin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "testEditBulletin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testQueryStatusPageIncident()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testDeleteStatusPageComponent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testQueryStatusPageOrg()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testQueryStatusPageOrg_NotFound()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testQueryStatusPageComponentById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testNewStatusPageIncident()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testUpdateStatusPageComponent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testUpdateStatusPageIncident()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testQueryStatusPageComponent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testNewStatusPageComponent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testDeleteStatusPageIncident()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testSaveStatusPageOrg()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "testQueryStatusPageIncidentById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "refreshToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "authGetToken()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "export2()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "getMonitors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "enableManageMonitors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "getAppMonitors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "export()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "cancelManageMonitors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "deleteMonitors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AiControllerTest",
+      "method_signature": "testRequestAi()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AiControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "testQueryStatusPageOrgNotFound()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "testQueryStatusPageIncident()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "testQueryStatusPageOrg()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "testQueryStatusPageComponent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "testQueryStatusPageComponentById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "deleteLabels()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "getLabels()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "addNewLabel()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "modifyLabel()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "uploadNewPlugin()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "deleteTags()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "updatePluginStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "getPlugins()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "addNewMonitor()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "modifyMonitor()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "getMonitor()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "detectMonitor()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "deleteMonitor()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "method_signature": "appMonitors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "testGetConfig()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "testUpdateTemplateAppConfig()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "testSaveOrUpdateConfig()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "method_signature": "queryI18n()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "getCollectors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "onlineCollector()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "deleteCollector()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "generateCollectorDeployInfo()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "offlineCollector()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    }
+  ]
+}

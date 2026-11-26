@@ -1,0 +1,61 @@
+{
+  "target": "kylin",
+  "project": "kylin",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "7fe50b2d5833ad4b8a09d6a27027563dedce8287",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 4.8,
+      "error": null
+    },
+    {
+      "stage": "build",
+      "seconds": 144.2,
+      "error": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 238.5,
+      "error": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 4511.8,
+      "error": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 3444.0,
+      "error": null
+    }
+  ],
+  "schema_operations": 502,
+  "scoped_operations": 482,
+  "shadowed_operations": 18,
+  "search": {
+    "generated_tests": 2128,
+    "endpoints": 482,
+    "endpoints_2xx": 90,
+    "potential_faults": 2185,
+    "covered_targets": 54795,
+    "covered_lines": 16731,
+    "total_lines": 86022,
+    "covered_branches": 4473,
+    "total_branches": 64960,
+    "sql_heuristics_evaluations": 21264,
+    "sql_parsing_failures": 423
+  },
+  "verification": {
+    "tests": 2128,
+    "passed": 2093,
+    "failed": 34,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 1
+  },
+  "finished": true
+}

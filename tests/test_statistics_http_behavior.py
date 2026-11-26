@@ -177,3 +177,22 @@ def test_empty_inputs_yield_zeroed_distributions() -> None:
     assert behavior["scope"] == "api_tests"
     assert behavior["api_test_count"] == 0
     assert behavior["by_origin"]["total"]["http_events"]["count"] == 0
+
+
+def test_tests_with_http_events_counts_api_tests_dispatching_from_each_origin() -> None:
+    tests = [
+        make_test(event_counts=(1, 0, 2)),
+        make_test(event_counts=(3, 0, 0)),
+        make_test(event_counts=(0, 0, 0)),
+        make_test(is_api_test=False, event_counts=(0, 0, 5)),  # excluded
+    ]
+
+    by_origin = http_behavior_stats.compute(tests)["by_origin"]
+
+    assert by_origin["fixture"]["tests_with_http_events"] == {
+        "count": 1,
+        "total": 3,
+        "proportion": pytest.approx(1 / 3),
+    }
+    assert by_origin["test-method"]["tests_with_http_events"]["count"] == 2
+    assert by_origin["total"]["tests_with_http_events"]["count"] == 2

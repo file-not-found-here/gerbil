@@ -1,10 +1,10 @@
 {
   "scope": "all_tests",
   "api": {
-    "test_count": 3998,
+    "test_count": 22814,
     "parameterized": {
       "count": 0,
-      "total": 3998,
+      "total": 22814,
       "proportion": 0.0
     },
     "source_kinds": {
@@ -39,11 +39,11 @@
     }
   },
   "non_api": {
-    "test_count": 0,
+    "test_count": 115,
     "parameterized": {
       "count": 0,
-      "total": 0,
-      "proportion": null
+      "total": 115,
+      "proportion": 0.0
     },
     "source_kinds": {
       "scope": "parameterized_tests",

@@ -1,6 +1,6 @@
 {
   "scope": "test_classes",
-  "test_class_count": 161,
+  "test_class_count": 170,
   "framework_split": {
     "junit3": {
       "class_count": 0,
@@ -8,31 +8,31 @@
     },
     "junit4": {
       "class_count": 18,
-      "pct_of_classes": 11.180124223602485
+      "pct_of_classes": 10.588235294117647
     },
     "junit5": {
-      "class_count": 143,
-      "pct_of_classes": 88.81987577639751
+      "class_count": 152,
+      "pct_of_classes": 89.41176470588235
     },
     "testng": {
       "class_count": 0,
       "pct_of_classes": 0.0
     },
     "assertj": {
-      "class_count": 29,
-      "pct_of_classes": 18.012422360248447
+      "class_count": 37,
+      "pct_of_classes": 21.764705882352942
     },
     "hamcrest": {
-      "class_count": 12,
-      "pct_of_classes": 7.453416149068323
+      "class_count": 8,
+      "pct_of_classes": 4.705882352941177
     },
     "google-truth": {
       "class_count": 0,
       "pct_of_classes": 0.0
     },
     "mockito": {
-      "class_count": 117,
-      "pct_of_classes": 72.67080745341615
+      "class_count": 130,
+      "pct_of_classes": 76.47058823529412
     },
     "easymock": {
       "class_count": 0,
@@ -40,7 +40,7 @@
     },
     "powermock": {
       "class_count": 7,
-      "pct_of_classes": 4.3478260869565215
+      "pct_of_classes": 4.117647058823529
     },
     "jmockit": {
       "class_count": 0,
@@ -51,12 +51,12 @@
       "pct_of_classes": 0.0
     },
     "spring-test": {
-      "class_count": 156,
-      "pct_of_classes": 96.8944099378882
+      "class_count": 167,
+      "pct_of_classes": 98.23529411764706
     },
     "rest-assured": {
-      "class_count": 13,
-      "pct_of_classes": 8.074534161490684
+      "class_count": 10,
+      "pct_of_classes": 5.882352941176471
     },
     "karate": {
       "class_count": 0,
@@ -79,7 +79,7 @@
         "junit5",
         "testng"
       ],
-      "class_count": 161,
+      "class_count": 170,
       "pct_of_classes": 100.0
     },
     "assertion-library": {
@@ -88,8 +88,8 @@
         "hamcrest",
         "google-truth"
       ],
-      "class_count": 39,
-      "pct_of_classes": 24.22360248447205
+      "class_count": 37,
+      "pct_of_classes": 21.764705882352942
     },
     "mocking-library": {
       "frameworks": [
@@ -99,8 +99,8 @@
         "jmockit",
         "jmock"
       ],
-      "class_count": 117,
-      "pct_of_classes": 72.67080745341615
+      "class_count": 130,
+      "pct_of_classes": 76.47058823529412
     },
     "api-test-framework": {
       "frameworks": [
@@ -110,23 +110,23 @@
         "pact",
         "citrus"
       ],
-      "class_count": 158,
-      "pct_of_classes": 98.13664596273291
+      "class_count": 167,
+      "pct_of_classes": 98.23529411764706
     }
   },
   "classes_without_frameworks": {
     "count": 0,
-    "total": 161,
+    "total": 170,
     "proportion": 0.0
   },
   "framework_count_per_class": {
-    "count": 161,
+    "count": 170,
     "min": 1.0,
     "max": 5.0,
-    "mean": 3.0745341614906834,
+    "mean": 3.111764705882353,
     "p25": 3.0,
     "p50": 3.0,
     "p75": 3.0,
-    "p90": 4.0
+    "p90": 3.0999999999999943
   }
 }

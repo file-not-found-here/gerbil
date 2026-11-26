@@ -1,61 +1,61 @@
 {
   "scope": "api_tests",
-  "api_test_count": 1243,
+  "api_test_count": 1298,
   "sequence_count_per_test": {
-    "count": 1243,
+    "count": 1298,
     "min": 1.0,
-    "max": 5.0,
-    "mean": 1.1214802896218825,
+    "max": 7.0,
+    "mean": 1.224191063174114,
     "p25": 1.0,
     "p50": 1.0,
     "p75": 1.0,
-    "p90": 1.0
+    "p90": 2.0
   },
   "sequence_length": {
-    "count": 1394,
+    "count": 1589,
     "min": 1.0,
     "max": 20.0,
-    "mean": 4.782639885222381,
-    "p25": 3.0,
+    "mean": 5.176211453744493,
+    "p25": 4.0,
     "p50": 5.0,
-    "p75": 6.0,
+    "p75": 7.0,
     "p90": 7.0
   },
   "http_assertion_count_per_test": {
-    "count": 1243,
+    "count": 1298,
     "min": 0.0,
-    "max": 7.0,
-    "mean": 1.8648431214802896,
-    "p25": 1.0,
+    "max": 12.0,
+    "mean": 2.1548536209553157,
+    "p25": 2.0,
     "p50": 2.0,
-    "p75": 2.0,
+    "p75": 3.0,
     "p90": 3.0
   },
   "sequenced_response_check_count_per_test": {
-    "count": 1243,
+    "count": 1298,
     "min": 0.0,
-    "max": 7.0,
-    "mean": 1.8648431214802896,
-    "p25": 1.0,
+    "max": 12.0,
+    "mean": 2.1548536209553157,
+    "p25": 2.0,
     "p50": 2.0,
-    "p75": 2.0,
+    "p75": 3.0,
     "p90": 3.0
   },
   "request_side_sequence_length": {
-    "count": 1394,
+    "count": 1589,
     "min": 1.0,
     "max": 18.0,
-    "mean": 3.119799139167862,
+    "mean": 3.4159848961611075,
     "p25": 2.0,
-    "p50": 3.0,
-    "p75": 5.0,
-    "p90": 5.0
+    "p50": 4.0,
+    "p75": 4.0,
+    "p90": 6.0
   },
   "response_side_sequence_length": {
-    "count": 1394,
+    "count": 1589,
     "min": 0.0,
-    "max": 7.0,
-    "mean": 1.6628407460545194,
+    "max": 12.0,
+    "mean": 1.7602265575833858,
     "p25": 1.0,
     "p50": 2.0,
     "p75": 2.0,
@@ -63,125 +63,125 @@
   },
   "verification_concentration": {
     "scope": "http_test_sequences",
-    "item_count": 1394,
-    "total": 2318,
+    "item_count": 1589,
+    "total": 2797,
     "by_top_fraction": {
       "top_1pct": {
-        "item_count": 14,
-        "share_of_total": 0.034081104400345126,
+        "item_count": 16,
+        "share_of_total": 0.03539506614229532,
         "distribution": {
-          "count": 14,
+          "count": 16,
           "min": 5.0,
-          "max": 7.0,
-          "mean": 5.642857142857143,
-          "p25": 5.0,
+          "max": 12.0,
+          "mean": 6.1875,
+          "p25": 5.75,
           "p50": 6.0,
           "p75": 6.0,
-          "p90": 6.0
+          "p90": 6.5
         }
       },
       "top_5pct": {
-        "item_count": 70,
-        "share_of_total": 0.11604831751509923,
+        "item_count": 80,
+        "share_of_total": 0.12298891669646049,
         "distribution": {
-          "count": 70,
+          "count": 80,
           "min": 3.0,
-          "max": 7.0,
-          "mean": 3.842857142857143,
-          "p25": 3.0,
-          "p50": 3.0,
-          "p75": 4.0,
+          "max": 12.0,
+          "mean": 4.3,
+          "p25": 4.0,
+          "p50": 4.0,
+          "p75": 5.0,
           "p90": 6.0
         }
       },
       "top_10pct": {
-        "item_count": 140,
-        "share_of_total": 0.20664365832614323,
+        "item_count": 159,
+        "share_of_total": 0.2077225598855917,
         "distribution": {
-          "count": 140,
+          "count": 159,
           "min": 3.0,
-          "max": 7.0,
-          "mean": 3.4214285714285713,
+          "max": 12.0,
+          "mean": 3.6540880503144653,
           "p25": 3.0,
           "p50": 3.0,
-          "p75": 3.0,
+          "p75": 4.0,
           "p90": 5.0
         }
       },
       "top_25pct": {
-        "item_count": 349,
-        "share_of_total": 0.3912855910267472,
+        "item_count": 398,
+        "share_of_total": 0.4154451197711834,
         "distribution": {
-          "count": 349,
+          "count": 398,
           "min": 2.0,
-          "max": 7.0,
-          "mean": 2.5988538681948423,
+          "max": 12.0,
+          "mean": 2.919597989949749,
           "p25": 2.0,
-          "p50": 2.0,
+          "p50": 3.0,
           "p75": 3.0,
-          "p90": 3.0
+          "p90": 4.0
         }
       }
     },
     "share_zero_checks": {
-      "count": 65,
-      "total": 1394,
-      "proportion": 0.046628407460545196
+      "count": 94,
+      "total": 1589,
+      "proportion": 0.0591567023285085
     },
     "share_at_most_one_check": {
-      "count": 614,
-      "total": 1394,
-      "proportion": 0.44045911047345765
+      "count": 653,
+      "total": 1589,
+      "proportion": 0.41095028319697924
     },
     "share_more_than_five_checks": {
-      "count": 8,
-      "total": 1394,
-      "proportion": 0.005738880918220947
+      "count": 12,
+      "total": 1589,
+      "proportion": 0.007551919446192574
     },
     "share_more_than_ten_checks": {
-      "count": 0,
-      "total": 1394,
-      "proportion": 0.0
+      "count": 1,
+      "total": 1589,
+      "proportion": 0.0006293266205160479
     }
   },
   "unverified_sequence_crud": {
     "scope": "http_test_sequences",
-    "sequence_count": 1394,
-    "no_verification_sequence_count": 65,
-    "pct_of_sequences": 4.66284074605452,
-    "crud_mapped_no_verification_sequence_count": 65,
+    "sequence_count": 1589,
+    "no_verification_sequence_count": 94,
+    "pct_of_sequences": 5.915670232850849,
+    "crud_mapped_no_verification_sequence_count": 94,
     "operations": {
       "create": {
-        "count": 24,
-        "pct_of_crud_mapped_no_verification_sequences": 36.92307692307692,
+        "count": 26,
+        "pct_of_crud_mapped_no_verification_sequences": 27.659574468085108,
         "followed_by_later_sequence": {
-          "count": 24,
-          "total": 24,
+          "count": 26,
+          "total": 26,
           "proportion": 1.0
         },
         "followed_by_read": {
           "count": 23,
-          "total": 24,
-          "proportion": 0.9583333333333334
+          "total": 26,
+          "proportion": 0.8846153846153846
         }
       },
       "read": {
-        "count": 40,
-        "pct_of_crud_mapped_no_verification_sequences": 61.53846153846154,
+        "count": 22,
+        "pct_of_crud_mapped_no_verification_sequences": 23.404255319148938,
         "followed_by_later_sequence": {
-          "count": 17,
-          "total": 40,
-          "proportion": 0.425
+          "count": 19,
+          "total": 22,
+          "proportion": 0.8636363636363636
         },
         "followed_by_read": {
           "count": 7,
-          "total": 40,
-          "proportion": 0.175
+          "total": 22,
+          "proportion": 0.3181818181818182
         }
       },
       "update": {
         "count": 1,
-        "pct_of_crud_mapped_no_verification_sequences": 1.5384615384615385,
+        "pct_of_crud_mapped_no_verification_sequences": 1.0638297872340425,
         "followed_by_later_sequence": {
           "count": 0,
           "total": 1,
@@ -194,17 +194,17 @@
         }
       },
       "delete": {
-        "count": 0,
-        "pct_of_crud_mapped_no_verification_sequences": 0.0,
+        "count": 45,
+        "pct_of_crud_mapped_no_verification_sequences": 47.87234042553192,
         "followed_by_later_sequence": {
-          "count": 0,
-          "total": 0,
-          "proportion": null
+          "count": 1,
+          "total": 45,
+          "proportion": 0.022222222222222223
         },
         "followed_by_read": {
           "count": 0,
-          "total": 0,
-          "proportion": null
+          "total": 45,
+          "proportion": 0.0
         }
       }
     },
@@ -223,34 +223,34 @@
       }
     },
     "followed_by_later_sequence": {
-      "count": 41,
-      "total": 65,
-      "proportion": 0.6307692307692307
+      "count": 46,
+      "total": 94,
+      "proportion": 0.48936170212765956
     },
     "followed_by_read": {
       "count": 30,
-      "total": 65,
-      "proportion": 0.46153846153846156
+      "total": 94,
+      "proportion": 0.3191489361702128
     }
   },
   "request_dispatch_event_fan": {
     "scope": "sequenced_request_dispatch_events",
-    "dispatch_event_count": 1394,
+    "dispatch_event_count": 1589,
     "request_builder_fan_in": {
-      "count": 1394,
+      "count": 1589,
       "min": 0.0,
       "max": 17.0,
-      "mean": 2.119799139167862,
+      "mean": 2.4159848961611075,
       "p25": 1.0,
-      "p50": 2.0,
-      "p75": 4.0,
-      "p90": 4.0
+      "p50": 3.0,
+      "p75": 3.0,
+      "p90": 5.0
     },
     "verification_fan_out": {
-      "count": 1394,
+      "count": 1589,
       "min": 0.0,
-      "max": 7.0,
-      "mean": 1.6628407460545194,
+      "max": 12.0,
+      "mean": 1.7602265575833858,
       "p25": 1.0,
       "p50": 2.0,
       "p75": 2.0,
@@ -259,257 +259,341 @@
   },
   "sequence_shape_distribution": {
     "scope": "http_test_sequences",
-    "sequence_count": 1394,
-    "classified_sequence_count": 1394,
+    "sequence_count": 1589,
+    "classified_sequence_count": 1589,
     "excluded_sequence_count": 0,
     "labels": {
       "build-dispatch-verification": {
-        "count": 1045,
-        "pct_of_classified_sequences": 74.96413199426112
+        "count": 1285,
+        "pct_of_classified_sequences": 80.86847073631215
       },
       "build-dispatch-no-verification": {
-        "count": 2,
-        "pct_of_classified_sequences": 0.14347202295552366
+        "count": 52,
+        "pct_of_classified_sequences": 3.2724984266834487
       },
       "dispatch-only": {
-        "count": 63,
-        "pct_of_classified_sequences": 4.519368723098996
+        "count": 42,
+        "pct_of_classified_sequences": 2.643171806167401
       },
       "dispatch-verification-no-build": {
-        "count": 284,
-        "pct_of_classified_sequences": 20.37302725968436
+        "count": 210,
+        "pct_of_classified_sequences": 13.215859030837004
       }
     }
   },
   "multi_sequence_composition": {
     "scope": "api_tests",
-    "api_test_count": 1243,
-    "multi_sequence_test_count": 93,
-    "fully_resolved_multi_sequence_test_count": 71,
+    "api_test_count": 1298,
+    "multi_sequence_test_count": 134,
+    "fully_resolved_multi_sequence_test_count": 134,
+    "share_one_sequence": {
+      "count": 1164,
+      "total": 1298,
+      "proportion": 0.8967642526964561
+    },
     "share_two_or_more_sequences": {
-      "count": 93,
-      "total": 1243,
-      "proportion": 0.07481898632341111
+      "count": 134,
+      "total": 1298,
+      "proportion": 0.10323574730354391
     },
     "share_five_or_more_sequences": {
-      "count": 2,
-      "total": 1243,
-      "proportion": 0.0016090104585679806
+      "count": 13,
+      "total": 1298,
+      "proportion": 0.010015408320493066
     },
     "share_ten_or_more_sequences": {
       "count": 0,
-      "total": 1243,
+      "total": 1298,
       "proportion": 0.0
     },
     "fully_resolved_multi_sequence": {
       "scope": "api_tests_with_multiple_sequences_and_all_dispatches_resolved",
-      "test_count": 71,
+      "test_count": 134,
       "sequence_count": {
-        "count": 71,
+        "count": 134,
         "min": 2.0,
-        "max": 5.0,
-        "mean": 2.816901408450704,
+        "max": 7.0,
+        "mean": 3.171641791044776,
         "p25": 2.0,
         "p50": 3.0,
-        "p75": 3.0,
+        "p75": 4.0,
         "p90": 4.0
       },
       "distinct_endpoint_count": {
-        "count": 71,
+        "count": 134,
         "min": 1.0,
-        "max": 5.0,
-        "mean": 2.732394366197183,
+        "max": 6.0,
+        "mean": 3.082089552238806,
         "p25": 2.0,
         "p50": 3.0,
-        "p75": 3.0,
+        "p75": 4.0,
         "p90": 4.0
       },
       "share_multiple_endpoints": {
-        "count": 69,
-        "total": 71,
-        "proportion": 0.971830985915493
+        "count": 132,
+        "total": 134,
+        "proportion": 0.9850746268656716
       },
       "re_dispatches_endpoint": {
-        "count": 6,
-        "total": 71,
-        "proportion": 0.08450704225352113
+        "count": 12,
+        "total": 134,
+        "proportion": 0.08955223880597014
       },
       "has_duplicate_sequence": {
-        "count": 2,
-        "total": 71,
-        "proportion": 0.028169014084507043
+        "count": 8,
+        "total": 134,
+        "proportion": 0.05970149253731343
       },
       "top_decile": {
         "scope": "largest_10pct_by_sequence_count",
-        "test_count": 8,
+        "test_count": 14,
         "sequence_count": {
-          "count": 8,
+          "count": 14,
           "min": 4.0,
-          "max": 5.0,
-          "mean": 4.25,
-          "p25": 4.0,
-          "p50": 4.0,
-          "p75": 4.25,
-          "p90": 5.0
+          "max": 7.0,
+          "mean": 5.142857142857143,
+          "p25": 5.0,
+          "p50": 5.0,
+          "p75": 5.0,
+          "p90": 5.700000000000001
         },
         "distinct_endpoint_count": {
-          "count": 8,
+          "count": 14,
           "min": 4.0,
-          "max": 5.0,
-          "mean": 4.25,
-          "p25": 4.0,
-          "p50": 4.0,
-          "p75": 4.25,
-          "p90": 5.0
+          "max": 6.0,
+          "mean": 4.857142857142857,
+          "p25": 4.25,
+          "p50": 5.0,
+          "p75": 5.0,
+          "p90": 5.700000000000001
         },
         "share_multiple_endpoints": {
-          "count": 8,
-          "total": 8,
+          "count": 14,
+          "total": 14,
           "proportion": 1.0
         },
         "re_dispatches_endpoint": {
-          "count": 0,
-          "total": 8,
-          "proportion": 0.0
+          "count": 4,
+          "total": 14,
+          "proportion": 0.2857142857142857
         },
         "has_duplicate_sequence": {
-          "count": 0,
-          "total": 8,
-          "proportion": 0.0
+          "count": 4,
+          "total": 14,
+          "proportion": 0.2857142857142857
+        }
+      }
+    },
+    "all_multi_sequence": {
+      "scope": "api_tests_with_multiple_sequences_any_resolution",
+      "note": "Includes multi-sequence tests with statically unresolved dispatches (e.g. dynamically built URLs); has_duplicate_sequence may over-count via the '*' fingerprint, while re_dispatches_endpoint and distinct_endpoint_count remain resolved-only.",
+      "test_count": 134,
+      "sequence_count": {
+        "count": 134,
+        "min": 2.0,
+        "max": 7.0,
+        "mean": 3.171641791044776,
+        "p25": 2.0,
+        "p50": 3.0,
+        "p75": 4.0,
+        "p90": 4.0
+      },
+      "distinct_endpoint_count": {
+        "count": 134,
+        "min": 1.0,
+        "max": 6.0,
+        "mean": 3.082089552238806,
+        "p25": 2.0,
+        "p50": 3.0,
+        "p75": 4.0,
+        "p90": 4.0
+      },
+      "share_multiple_endpoints": {
+        "count": 132,
+        "total": 134,
+        "proportion": 0.9850746268656716
+      },
+      "re_dispatches_endpoint": {
+        "count": 12,
+        "total": 134,
+        "proportion": 0.08955223880597014
+      },
+      "has_duplicate_sequence": {
+        "count": 8,
+        "total": 134,
+        "proportion": 0.05970149253731343
+      },
+      "top_decile": {
+        "scope": "largest_10pct_by_sequence_count",
+        "test_count": 14,
+        "sequence_count": {
+          "count": 14,
+          "min": 4.0,
+          "max": 7.0,
+          "mean": 5.142857142857143,
+          "p25": 5.0,
+          "p50": 5.0,
+          "p75": 5.0,
+          "p90": 5.700000000000001
+        },
+        "distinct_endpoint_count": {
+          "count": 14,
+          "min": 4.0,
+          "max": 6.0,
+          "mean": 4.857142857142857,
+          "p25": 4.25,
+          "p50": 5.0,
+          "p75": 5.0,
+          "p90": 5.700000000000001
+        },
+        "share_multiple_endpoints": {
+          "count": 14,
+          "total": 14,
+          "proportion": 1.0
+        },
+        "re_dispatches_endpoint": {
+          "count": 4,
+          "total": 14,
+          "proportion": 0.2857142857142857
+        },
+        "has_duplicate_sequence": {
+          "count": 4,
+          "total": 14,
+          "proportion": 0.2857142857142857
         }
       }
     }
   },
   "scenario_verification_placement": {
     "scope": "api_tests_with_multiple_sequences",
-    "multi_sequence_test_count": 93,
+    "multi_sequence_test_count": 134,
     "terminal_sequence_verified": {
-      "count": 71,
-      "total": 93,
-      "proportion": 0.7634408602150538
+      "count": 90,
+      "total": 134,
+      "proportion": 0.6716417910447762
     },
     "interior_sequence_verified": {
-      "count": 110,
-      "total": 151,
-      "proportion": 0.7284768211920529
+      "count": 245,
+      "total": 291,
+      "proportion": 0.8419243986254296
     },
     "shapes": {
       "no_verification": {
         "count": 0,
-        "total": 93,
+        "total": 134,
         "proportion": 0.0
       },
       "terminal_only": {
         "count": 17,
-        "total": 93,
-        "proportion": 0.1827956989247312
+        "total": 134,
+        "proportion": 0.12686567164179105
       },
       "any_interior_verified": {
-        "count": 76,
-        "total": 93,
-        "proportion": 0.8172043010752689
+        "count": 117,
+        "total": 134,
+        "proportion": 0.8731343283582089
       },
       "fully_verified": {
-        "count": 46,
-        "total": 93,
-        "proportion": 0.4946236559139785
+        "count": 65,
+        "total": 134,
+        "proportion": 0.48507462686567165
       }
     },
     "verified_sequence_fraction": {
-      "count": 93,
+      "count": 134,
       "min": 0.3333333333333333,
       "max": 1.0,
-      "mean": 0.7329749103942653,
-      "p25": 0.5,
-      "p50": 0.6666666666666666,
+      "mean": 0.7748756218905474,
+      "p25": 0.6666666666666666,
+      "p50": 0.8,
       "p75": 1.0,
       "p90": 1.0
     }
   },
   "sequence_operation_transitions": {
     "scope": "consecutive_sequence_pairs",
-    "consecutive_pair_count": 151,
-    "crud_mapped_pair_count": 151,
+    "consecutive_pair_count": 291,
+    "crud_mapped_pair_count": 291,
     "transitions": {
       "create->create": {
-        "count": 8,
-        "total": 151,
-        "proportion": 0.052980132450331126
+        "count": 82,
+        "total": 291,
+        "proportion": 0.281786941580756
       },
       "create->read": {
-        "count": 57,
-        "total": 151,
-        "proportion": 0.37748344370860926
+        "count": 88,
+        "total": 291,
+        "proportion": 0.3024054982817869
       },
       "create->update": {
-        "count": 6,
-        "total": 151,
-        "proportion": 0.039735099337748346
+        "count": 3,
+        "total": 291,
+        "proportion": 0.010309278350515464
       },
       "create->delete": {
-        "count": 4,
-        "total": 151,
-        "proportion": 0.026490066225165563
+        "count": 37,
+        "total": 291,
+        "proportion": 0.12714776632302405
       },
       "read->create": {
-        "count": 10,
-        "total": 151,
-        "proportion": 0.06622516556291391
+        "count": 6,
+        "total": 291,
+        "proportion": 0.020618556701030927
       },
       "read->read": {
-        "count": 40,
-        "total": 151,
-        "proportion": 0.26490066225165565
+        "count": 15,
+        "total": 291,
+        "proportion": 0.05154639175257732
       },
       "read->update": {
-        "count": 16,
-        "total": 151,
-        "proportion": 0.10596026490066225
+        "count": 12,
+        "total": 291,
+        "proportion": 0.041237113402061855
       },
       "read->delete": {
-        "count": 2,
-        "total": 151,
-        "proportion": 0.013245033112582781
+        "count": 31,
+        "total": 291,
+        "proportion": 0.10652920962199312
       },
       "update->create": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "update->read": {
-        "count": 1,
-        "total": 151,
-        "proportion": 0.006622516556291391
+        "count": 0,
+        "total": 291,
+        "proportion": 0.0
       },
       "update->update": {
-        "count": 1,
-        "total": 151,
-        "proportion": 0.006622516556291391
+        "count": 0,
+        "total": 291,
+        "proportion": 0.0
       },
       "update->delete": {
-        "count": 0,
-        "total": 151,
-        "proportion": 0.0
+        "count": 4,
+        "total": 291,
+        "proportion": 0.013745704467353952
       },
       "delete->create": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "delete->read": {
-        "count": 6,
-        "total": 151,
-        "proportion": 0.039735099337748346
+        "count": 12,
+        "total": 291,
+        "proportion": 0.041237113402061855
       },
       "delete->update": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "delete->delete": {
-        "count": 0,
-        "total": 151,
-        "proportion": 0.0
+        "count": 1,
+        "total": 291,
+        "proportion": 0.003436426116838488
       }
     },
     "operation_self_affinity": {
@@ -517,358 +601,358 @@
       "by_operation": {
         "create": {
           "source_share": {
-            "count": 75,
-            "total": 151,
-            "proportion": 0.4966887417218543
+            "count": 210,
+            "total": 291,
+            "proportion": 0.7216494845360825
           },
           "target_share": {
-            "count": 18,
-            "total": 151,
-            "proportion": 0.11920529801324503
+            "count": 88,
+            "total": 291,
+            "proportion": 0.3024054982817869
           },
           "self_repeat_given_source": {
-            "count": 8,
-            "total": 75,
-            "proportion": 0.10666666666666667
+            "count": 82,
+            "total": 210,
+            "proportion": 0.3904761904761905
           },
-          "expected_if_independent": 0.11920529801324503,
-          "lift": 0.8948148148148148
+          "expected_if_independent": 0.3024054982817869,
+          "lift": 1.2912337662337663
         },
         "read": {
           "source_share": {
-            "count": 68,
-            "total": 151,
-            "proportion": 0.4503311258278146
+            "count": 64,
+            "total": 291,
+            "proportion": 0.21993127147766323
           },
           "target_share": {
-            "count": 104,
-            "total": 151,
-            "proportion": 0.6887417218543046
+            "count": 115,
+            "total": 291,
+            "proportion": 0.3951890034364261
           },
           "self_repeat_given_source": {
-            "count": 40,
-            "total": 68,
-            "proportion": 0.5882352941176471
+            "count": 15,
+            "total": 64,
+            "proportion": 0.234375
           },
-          "expected_if_independent": 0.6887417218543046,
-          "lift": 0.8540723981900452
+          "expected_if_independent": 0.3951890034364261,
+          "lift": 0.5930706521739131
         },
         "update": {
           "source_share": {
-            "count": 2,
-            "total": 151,
-            "proportion": 0.013245033112582781
+            "count": 4,
+            "total": 291,
+            "proportion": 0.013745704467353952
           },
           "target_share": {
-            "count": 23,
-            "total": 151,
-            "proportion": 0.152317880794702
-          },
-          "self_repeat_given_source": {
-            "count": 1,
-            "total": 2,
-            "proportion": 0.5
-          },
-          "expected_if_independent": 0.152317880794702,
-          "lift": 3.282608695652174
-        },
-        "delete": {
-          "source_share": {
-            "count": 6,
-            "total": 151,
-            "proportion": 0.039735099337748346
-          },
-          "target_share": {
-            "count": 6,
-            "total": 151,
-            "proportion": 0.039735099337748346
+            "count": 15,
+            "total": 291,
+            "proportion": 0.05154639175257732
           },
           "self_repeat_given_source": {
             "count": 0,
-            "total": 6,
+            "total": 4,
             "proportion": 0.0
           },
-          "expected_if_independent": 0.039735099337748346,
+          "expected_if_independent": 0.05154639175257732,
           "lift": 0.0
+        },
+        "delete": {
+          "source_share": {
+            "count": 13,
+            "total": 291,
+            "proportion": 0.044673539518900345
+          },
+          "target_share": {
+            "count": 73,
+            "total": 291,
+            "proportion": 0.2508591065292096
+          },
+          "self_repeat_given_source": {
+            "count": 1,
+            "total": 13,
+            "proportion": 0.07692307692307693
+          },
+          "expected_if_independent": 0.2508591065292096,
+          "lift": 0.3066385669125395
         }
       },
       "aggregate": {
-        "observed_self_repeat": 0.32450331125827814,
-        "expected_self_repeat_if_independent": 0.37296609797815883,
-        "lift": 0.8700611476952023
+        "observed_self_repeat": 0.33676975945017185,
+        "expected_self_repeat_if_independent": 0.3170604976322906,
+        "lift": 1.0621624641513652
       }
     },
     "same_operation_repeat": {
-      "count": 49,
-      "total": 151,
-      "proportion": 0.32450331125827814
+      "count": 98,
+      "total": 291,
+      "proportion": 0.33676975945017185
     },
     "read_to_read": {
-      "count": 40,
-      "total": 151,
-      "proportion": 0.26490066225165565
+      "count": 15,
+      "total": 291,
+      "proportion": 0.05154639175257732
     },
     "write_then_read": {
-      "count": 64,
-      "total": 151,
-      "proportion": 0.423841059602649
+      "count": 100,
+      "total": 291,
+      "proportion": 0.3436426116838488
     },
     "create_then_delete": {
-      "count": 4,
-      "total": 151,
-      "proportion": 0.026490066225165563
+      "count": 37,
+      "total": 291,
+      "proportion": 0.12714776632302405
     }
   },
   "sequence_verb_transitions": {
     "scope": "consecutive_sequence_pairs",
-    "consecutive_pair_count": 151,
-    "verb_mapped_pair_count": 151,
+    "consecutive_pair_count": 291,
+    "verb_mapped_pair_count": 291,
     "transitions": {
       "GET->GET": {
-        "count": 40,
-        "total": 151,
-        "proportion": 0.26490066225165565
+        "count": 15,
+        "total": 291,
+        "proportion": 0.05154639175257732
       },
       "GET->HEAD": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "GET->POST": {
-        "count": 10,
-        "total": 151,
-        "proportion": 0.06622516556291391
+        "count": 6,
+        "total": 291,
+        "proportion": 0.020618556701030927
       },
       "GET->PUT": {
-        "count": 14,
-        "total": 151,
-        "proportion": 0.09271523178807947
+        "count": 11,
+        "total": 291,
+        "proportion": 0.037800687285223365
       },
       "GET->PATCH": {
-        "count": 2,
-        "total": 151,
-        "proportion": 0.013245033112582781
+        "count": 1,
+        "total": 291,
+        "proportion": 0.003436426116838488
       },
       "GET->DELETE": {
-        "count": 2,
-        "total": 151,
-        "proportion": 0.013245033112582781
+        "count": 31,
+        "total": 291,
+        "proportion": 0.10652920962199312
       },
       "HEAD->GET": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "HEAD->HEAD": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "HEAD->POST": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "HEAD->PUT": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "HEAD->PATCH": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "HEAD->DELETE": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "POST->GET": {
-        "count": 57,
-        "total": 151,
-        "proportion": 0.37748344370860926
+        "count": 88,
+        "total": 291,
+        "proportion": 0.3024054982817869
       },
       "POST->HEAD": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "POST->POST": {
-        "count": 8,
-        "total": 151,
-        "proportion": 0.052980132450331126
+        "count": 82,
+        "total": 291,
+        "proportion": 0.281786941580756
       },
       "POST->PUT": {
-        "count": 3,
-        "total": 151,
-        "proportion": 0.019867549668874173
+        "count": 2,
+        "total": 291,
+        "proportion": 0.006872852233676976
       },
       "POST->PATCH": {
-        "count": 3,
-        "total": 151,
-        "proportion": 0.019867549668874173
+        "count": 1,
+        "total": 291,
+        "proportion": 0.003436426116838488
       },
       "POST->DELETE": {
-        "count": 4,
-        "total": 151,
-        "proportion": 0.026490066225165563
+        "count": 37,
+        "total": 291,
+        "proportion": 0.12714776632302405
       },
       "PUT->GET": {
-        "count": 1,
-        "total": 151,
-        "proportion": 0.006622516556291391
+        "count": 0,
+        "total": 291,
+        "proportion": 0.0
       },
       "PUT->HEAD": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PUT->POST": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PUT->PUT": {
-        "count": 1,
-        "total": 151,
-        "proportion": 0.006622516556291391
+        "count": 0,
+        "total": 291,
+        "proportion": 0.0
       },
       "PUT->PATCH": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PUT->DELETE": {
-        "count": 0,
-        "total": 151,
-        "proportion": 0.0
+        "count": 2,
+        "total": 291,
+        "proportion": 0.006872852233676976
       },
       "PATCH->GET": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PATCH->HEAD": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PATCH->POST": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PATCH->PUT": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PATCH->PATCH": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "PATCH->DELETE": {
-        "count": 0,
-        "total": 151,
-        "proportion": 0.0
+        "count": 2,
+        "total": 291,
+        "proportion": 0.006872852233676976
       },
       "DELETE->GET": {
-        "count": 6,
-        "total": 151,
-        "proportion": 0.039735099337748346
+        "count": 12,
+        "total": 291,
+        "proportion": 0.041237113402061855
       },
       "DELETE->HEAD": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "DELETE->POST": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "DELETE->PUT": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "DELETE->PATCH": {
         "count": 0,
-        "total": 151,
+        "total": 291,
         "proportion": 0.0
       },
       "DELETE->DELETE": {
-        "count": 0,
-        "total": 151,
-        "proportion": 0.0
+        "count": 1,
+        "total": 291,
+        "proportion": 0.003436426116838488
       }
     },
     "same_verb_repeat": {
-      "count": 49,
-      "total": 151,
-      "proportion": 0.32450331125827814
+      "count": 98,
+      "total": 291,
+      "proportion": 0.33676975945017185
     }
   },
   "tests_with_multiple_sequences": {
-    "count": 93,
-    "total": 1243,
-    "proportion": 0.07481898632341111
+    "count": 134,
+    "total": 1298,
+    "proportion": 0.10323574730354391
   },
   "tests_with_repeated_sequence": {
-    "count": 2,
-    "total": 1243,
-    "proportion": 0.0016090104585679806
+    "count": 8,
+    "total": 1298,
+    "proportion": 0.0061633281972265025
   },
   "tests_with_shared_sequence": {
-    "count": 353,
-    "total": 1243,
-    "proportion": 0.2839903459372486
+    "count": 356,
+    "total": 1298,
+    "proportion": 0.27426810477657937
   },
   "distinct_endpoint_count_per_test": {
-    "count": 1243,
+    "count": 1298,
     "min": 1.0,
-    "max": 5.0,
-    "mean": 1.0989541432019307,
+    "max": 6.0,
+    "mean": 1.2149460708782742,
     "p25": 1.0,
     "p50": 1.0,
     "p75": 1.0,
-    "p90": 1.0
+    "p90": 2.0
   },
   "http_method_diversity": {
     "distinct_method_count_per_test": {
-      "count": 1243,
+      "count": 1298,
       "min": 1.0,
-      "max": 3.0,
-      "mean": 1.0691874497184233,
+      "max": 4.0,
+      "mean": 1.140215716486903,
       "p25": 1.0,
       "p50": 1.0,
       "p75": 1.0,
       "p90": 1.0
     },
     "tests_with_multiple_methods": {
-      "count": 62,
-      "total": 1243,
-      "proportion": 0.0498793242156074
+      "count": 123,
+      "total": 1298,
+      "proportion": 0.09476117103235747
     },
     "multi_request_tests": {
       "scope": "api_tests_with_multiple_request_events",
-      "test_count": 93,
+      "test_count": 134,
       "distinct_method_count_per_test": {
-        "count": 93,
+        "count": 134,
         "min": 1.0,
-        "max": 3.0,
-        "mean": 1.924731182795699,
-        "p25": 1.0,
+        "max": 4.0,
+        "mean": 2.3582089552238807,
+        "p25": 2.0,
         "p50": 2.0,
         "p75": 3.0,
         "p90": 3.0
       },
       "tests_with_multiple_methods": {
-        "count": 62,
-        "total": 93,
-        "proportion": 0.6666666666666666
+        "count": 123,
+        "total": 134,
+        "proportion": 0.917910447761194
       }
     }
   }

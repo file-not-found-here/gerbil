@@ -1,0 +1,61 @@
+{
+  "target": "uaa",
+  "project": "uaa",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "0b76f4f0f63967e3a9902ee516af03f51a1b5266",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 0.8,
+      "error": null
+    },
+    {
+      "stage": "build",
+      "seconds": 29.7,
+      "error": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 31.1,
+      "error": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 4440.0,
+      "error": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 480.4,
+      "error": null
+    }
+  ],
+  "schema_operations": 116,
+  "scoped_operations": 109,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 1751,
+    "endpoints": 109,
+    "endpoints_2xx": 44,
+    "potential_faults": 384,
+    "covered_targets": 39531,
+    "covered_lines": 12453,
+    "total_lines": 27644,
+    "covered_branches": 2542,
+    "total_branches": 15554,
+    "sql_heuristics_evaluations": 391329,
+    "sql_parsing_failures": 0
+  },
+  "verification": {
+    "tests": 1751,
+    "passed": 1479,
+    "failed": 272,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 0
+  },
+  "finished": true
+}

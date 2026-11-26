@@ -1,37 +1,37 @@
 {
   "scope": "resolved_test_resource_sequences",
-  "api_test_count": 1243,
-  "resolved_sequence_count": 1325,
+  "api_test_count": 1298,
+  "resolved_sequence_count": 1464,
   "unresolved_sequence_count": 0,
-  "total_sequence_count": 1325,
+  "total_sequence_count": 1464,
   "combinations": {
     "create-only": {
       "operations": [
         "create"
       ],
-      "count": 349,
-      "pct": 26.339622641509433
+      "count": 423,
+      "pct": 28.89344262295082
     },
     "read-only": {
       "operations": [
         "read"
       ],
-      "count": 761,
-      "pct": 57.43396226415094
+      "count": 792,
+      "pct": 54.09836065573771
     },
     "update-only": {
       "operations": [
         "update"
       ],
-      "count": 95,
-      "pct": 7.169811320754717
+      "count": 74,
+      "pct": 5.054644808743169
     },
     "delete-only": {
       "operations": [
         "delete"
       ],
       "count": 87,
-      "pct": 6.566037735849057
+      "pct": 5.942622950819672
     },
     "create-read": {
       "operations": [
@@ -39,39 +39,39 @@
         "read"
       ],
       "count": 15,
-      "pct": 1.1320754716981132
+      "pct": 1.0245901639344261
     },
     "create-update": {
       "operations": [
         "create",
         "update"
       ],
-      "count": 8,
-      "pct": 0.6037735849056604
+      "count": 7,
+      "pct": 0.4781420765027322
     },
     "create-delete": {
       "operations": [
         "create",
         "delete"
       ],
-      "count": 0,
-      "pct": 0.0
+      "count": 39,
+      "pct": 2.6639344262295084
     },
     "read-update": {
       "operations": [
         "read",
         "update"
       ],
-      "count": 1,
-      "pct": 0.07547169811320754
+      "count": 0,
+      "pct": 0.0
     },
     "read-delete": {
       "operations": [
         "read",
         "delete"
       ],
-      "count": 1,
-      "pct": 0.07547169811320754
+      "count": 3,
+      "pct": 0.20491803278688525
     },
     "update-delete": {
       "operations": [
@@ -88,7 +88,7 @@
         "update"
       ],
       "count": 4,
-      "pct": 0.3018867924528302
+      "pct": 0.273224043715847
     },
     "create-read-delete": {
       "operations": [
@@ -96,8 +96,8 @@
         "read",
         "delete"
       ],
-      "count": 4,
-      "pct": 0.3018867924528302
+      "count": 18,
+      "pct": 1.2295081967213115
     },
     "create-update-delete": {
       "operations": [
@@ -105,8 +105,8 @@
         "update",
         "delete"
       ],
-      "count": 0,
-      "pct": 0.0
+      "count": 2,
+      "pct": 0.1366120218579235
     },
     "read-update-delete": {
       "operations": [
@@ -130,8 +130,8 @@
   },
   "multi_operation_combinations": {
     "scope": "resolved_multi_operation_test_resource_sequences",
-    "multi_operation_sequence_count": 33,
-    "pct_of_resolved_sequences": 2.490566037735849,
+    "multi_operation_sequence_count": 88,
+    "pct_of_resolved_sequences": 6.0109289617486334,
     "combinations": {
       "create-read": {
         "operations": [
@@ -139,39 +139,39 @@
           "read"
         ],
         "count": 15,
-        "pct": 45.45454545454545
+        "pct": 17.045454545454547
       },
       "create-update": {
         "operations": [
           "create",
           "update"
         ],
-        "count": 8,
-        "pct": 24.242424242424242
+        "count": 7,
+        "pct": 7.954545454545454
       },
       "create-delete": {
         "operations": [
           "create",
           "delete"
         ],
-        "count": 0,
-        "pct": 0.0
+        "count": 39,
+        "pct": 44.31818181818182
       },
       "read-update": {
         "operations": [
           "read",
           "update"
         ],
-        "count": 1,
-        "pct": 3.0303030303030303
+        "count": 0,
+        "pct": 0.0
       },
       "read-delete": {
         "operations": [
           "read",
           "delete"
         ],
-        "count": 1,
-        "pct": 3.0303030303030303
+        "count": 3,
+        "pct": 3.409090909090909
       },
       "update-delete": {
         "operations": [
@@ -188,7 +188,7 @@
           "update"
         ],
         "count": 4,
-        "pct": 12.121212121212121
+        "pct": 4.545454545454546
       },
       "create-read-delete": {
         "operations": [
@@ -196,8 +196,8 @@
           "read",
           "delete"
         ],
-        "count": 4,
-        "pct": 12.121212121212121
+        "count": 18,
+        "pct": 20.454545454545453
       },
       "create-update-delete": {
         "operations": [
@@ -205,8 +205,8 @@
           "update",
           "delete"
         ],
-        "count": 0,
-        "pct": 0.0
+        "count": 2,
+        "pct": 2.272727272727273
       },
       "read-update-delete": {
         "operations": [
@@ -230,9 +230,9 @@
     },
     "create_delete_pairing": {
       "scope": "resolved_multi_operation_sequences_with_create",
-      "create_sequence_count": 31,
-      "paired_with_delete_count": 4,
-      "pct_paired_with_delete": 12.903225806451612
+      "create_sequence_count": 85,
+      "paired_with_delete_count": 59,
+      "pct_paired_with_delete": 69.41176470588235
     }
   }
 }

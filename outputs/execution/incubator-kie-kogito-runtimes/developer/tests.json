@@ -1,0 +1,3495 @@
+{
+  "commit": "c1e86c1d51e701df6434963a32b1127712a86f49",
+  "tests": [
+    {
+      "class_name": "org.kie.kogito.integrationtests.QuarkusTopicsInformationResourceIT",
+      "method_signature": "test()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.QuarkusCloudEventResourceIT",
+      "method_signature": "verifyHttpRequestWithJSONPayloadExpectsString()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.QuarkusCloudEventResourceIT",
+      "method_signature": "verifyHttpRequestWithCEPayloadExpectsString()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.QuarkusCloudEventResourceIT",
+      "method_signature": "verifyHttpRequestWithJSONPayloadExpectsPOJO()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.QuarkusCloudEventResourceIT",
+      "method_signature": "verifyHttpRequestWithCEPayloadExpectsPOJO()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.rules.hotreload.ChangePojoIT",
+      "method_signature": "test2Changes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-rules-extension/kogito-quarkus-rules-integration-test-hot-reload",
+      "binary_class_name": "org.kie.kogito.quarkus.rules.hotreload.ChangePojoIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.rules.hotreload.ChangePojoIT",
+      "method_signature": "test1Change()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-rules-extension/kogito-quarkus-rules-integration-test-hot-reload",
+      "binary_class_name": "org.kie.kogito.quarkus.rules.hotreload.ChangePojoIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.rules.hotreload.newunit.NewUnitIT",
+      "method_signature": "testServletChange()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-rules-extension/kogito-quarkus-rules-integration-test-hot-reload",
+      "binary_class_name": "org.kie.kogito.quarkus.rules.hotreload.newunit.NewUnitIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.rules.hotreload.HotReloadIT",
+      "method_signature": "testServletChange()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-rules-extension/kogito-quarkus-rules-integration-test-hot-reload",
+      "binary_class_name": "org.kie.kogito.quarkus.rules.hotreload.HotReloadIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.PythonFlowIT",
+      "method_signature": "testPythonService()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.PythonFlowIT",
+      "method_signature": "testPythonScript()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskAttachmentsIT",
+      "method_signature": "testUserTaskAttachments()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-usertasks-it",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskAttachmentsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskAttachmentsIT",
+      "method_signature": "testUserTaskAttachments()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-usertasks",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskAttachmentsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskOutputsIT",
+      "method_signature": "testUserTaskOutputs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-usertasks-it",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskOutputsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskOutputsIT",
+      "method_signature": "testUserTaskOutputs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-usertasks",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskOutputsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskInputs",
+      "method_signature": "testUserTaskInputs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-usertasks-it",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskInputs",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskInputs",
+      "method_signature": "testUserTaskInputs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-usertasks",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskInputs",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "method_signature": "testUserTaskLifeCycle()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-usertasks-it",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "method_signature": "testUserTaskLifeCycle()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-usertasks",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "method_signature": "testUserTaskAllowedTransitions()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-usertasks-it",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "method_signature": "testUserTaskAllowedTransitions()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-usertasks",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskLifeCycleIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskCommentsIT",
+      "method_signature": "testUserTaskComments()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-usertasks-it",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskCommentsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.jbpm.userTask.jpa.it.UserTaskCommentsIT",
+      "method_signature": "testUserTaskComments()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-usertasks",
+      "binary_class_name": "org.jbpm.userTask.jpa.it.UserTaskCommentsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "method_signature": "testDynamicCallWithMissingMethodParameter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/dynamic/integration-tests",
+      "binary_class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "method_signature": "testDynamicCallWithMissingUrlParameter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/dynamic/integration-tests",
+      "binary_class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "method_signature": "testDynamicCall()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/dynamic/integration-tests",
+      "binary_class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "method_signature": "testDynamicCallWithMissingPortParameter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/dynamic/integration-tests",
+      "binary_class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "method_signature": "testConcurrentDynamicCalls()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/dynamic/integration-tests",
+      "binary_class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "method_signature": "testDynamicCallWithInvalidEndpointFormat()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/dynamic/integration-tests",
+      "binary_class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "method_signature": "testDynamicCallWithInvalidProcessId()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/dynamic/integration-tests",
+      "binary_class_name": "org.kie.kogito.process.dynamic.DynamicCallResourceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "method_signature": "testGetSourceFilesByProcessIdNonAuthenticated()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "method_signature": "testGetSourceFileNonAuthenticated()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-source-files",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "method_signature": "testGetSourceFileFromResourcesRoot()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-source-files",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "method_signature": "testGetSourceFileByProcessIdNonAuthenticated()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "method_signature": "testGetSourceFilesByProcessId()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "method_signature": "testGetSourceFileFromInternalDirectory()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-source-files",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.source.files.SourceFilesAddOnIT",
+      "method_signature": "testGetSourceFileByProcessId()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "method_signature": "verifyAuthHeadersOpenApi3_0()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-openapi-client",
+      "binary_class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "method_signature": "verifyAuthHeadersOpenApi2_0()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-openapi-client",
+      "binary_class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "method_signature": "verifyAuthHeadersOpenApi3_0NoAuth()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-openapi-client",
+      "binary_class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "method_signature": "verifyAuthHeadersOpenApi2_0NoAuth()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-openapi-client",
+      "binary_class_name": "org.kie.kogito.quarkus.it.openapi.client.ApiWithSecurityContextIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ProcessManagementIT",
+      "method_signature": "testRescheduleSLATimersEndpoints()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/process-management/integration-tests",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ProcessManagementIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ProcessManagementIT",
+      "method_signature": "testManagementTimersEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/process-management/integration-tests",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ProcessManagementIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ManagementFlowIT",
+      "method_signature": "testManagementAPINodes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/process-management/integration-tests",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ManagementFlowIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ManagementFlowIT",
+      "method_signature": "testManagementAPIProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/process-management/integration-tests",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ManagementFlowIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "method_signature": "verifyArbitraryBody()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/camel/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "method_signature": "verifyNoArgs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/camel/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "method_signature": "verifyBody()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/camel/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "method_signature": "verifyBodyAndHeaders()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/camel/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.camel.integration.test.CamelCustomFunctionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.microprofile.config.service.catalog.it.MicroProfileConfigServiceAddonIT",
+      "method_signature": "executeWithEmptyParameters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/microprofile-config-service-catalog/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.microprofile.config.service.catalog.it.MicroProfileConfigServiceAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.legacy.rules.TmsEndpointTest",
+      "method_signature": "testHelloEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-legacy-rules",
+      "binary_class_name": "org.kie.kogito.legacy.rules.TmsEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.drools.DroolsIT",
+      "method_signature": "testAdult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-rules-extension/kogito-quarkus-rules-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.drools.DroolsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.drools.CustomEndpointIT",
+      "method_signature": "testAdult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-rules-extension/kogito-quarkus-rules-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.drools.CustomEndpointIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.PMMLTreeIT",
+      "method_signature": "testEvaluateSampleMineResult()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.PMMLTreeIT",
+      "method_signature": "testEvaluateSampleMineDescriptive()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.PMMLRegressionIT",
+      "method_signature": "testEvaluateLinRegResult()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.PMMLRegressionIT",
+      "method_signature": "testEvaluateLinRegDescriptive()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ParallelStateIT",
+      "method_signature": "testPartialParallelRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ParallelStateIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ParallelStateIT",
+      "method_signature": "testAllParallelRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ParallelStateIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ForEachRestIT",
+      "method_signature": "testForEachWorkItem(java.lang.String)",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ForEachRestIT",
+      "method_signature": "testForEachSubflow()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ForEachRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.WorkflowEventIT",
+      "method_signature": "testWorkflowDefinitionsEvents()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.WorkflowEventIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.WorkflowEventIT",
+      "method_signature": "testWorkflowEvents()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.WorkflowEventIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.OpenAPIArrayFlowIT",
+      "method_signature": "testArray()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.OpenAPIArrayFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.OpenAPIArrayFlowIT",
+      "method_signature": "testInt()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.OpenAPIArrayFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.SwaggerIT",
+      "method_signature": "testSwagger()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.SwaggerIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.RPCGreetIT",
+      "method_signature": "testUnsupportedLanguage()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.RPCGreetIT",
+      "method_signature": "testSpanish()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.RPCGreetIT",
+      "method_signature": "testDefaultLanguage()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.RPCGreetIT",
+      "method_signature": "testEnglish()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EmitEnumRPCGreetIT",
+      "method_signature": "testStateIsUnknown()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EmitEnumRPCGreetIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.KeepActiveIT",
+      "method_signature": "testEndIt()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.KeepActiveIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.KeepActiveIT",
+      "method_signature": "testKeepActive()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.KeepActiveIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestIT",
+      "method_signature": "testExpressionRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestIT",
+      "method_signature": "testExpressionInputValidation()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestIT",
+      "method_signature": "testExpressionOutputValidation()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "method_signature": "testEmptyWorkflowDataHelloWorld()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "method_signature": "testNoBodyHelloWorld()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "method_signature": "testeEmptyBodyHelloWorld()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "method_signature": "testStringBodyHelloWorld()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.HelloWorldIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ConversationFlowIT",
+      "method_signature": "sanityVerification()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ConversationFlowIT",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ConversationFlowIT",
+      "method_signature": "wrongData()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ConversationFlowIT",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ConversationFlowIT",
+      "method_signature": "wrongCluster()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ConversationFlowIT",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.OpenAPIInterfaceGenIT",
+      "method_signature": "verifyOperationIdIsGeneratedByDefault()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.OpenAPIInterfaceGenIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.SubFlowsIT",
+      "method_signature": "testSubFlows()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.SubFlowsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "method_signature": "testSquareService()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "method_signature": "testTypesPojo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "method_signature": "testPojo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "method_signature": "testFilterPojo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.PojoServiceIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingEvent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingMultipleEvent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingMultipleEventTimeout()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingMultipleEventTimeoutExclusive()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingMultipleEventRainy()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testStartingEventWithToStateFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingMultipleEventExclusive1()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingMultipleEventExclusive2()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingMultipleEventExclusive3()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "method_signature": "testNotStartingEventWorkflowTimeout()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventFlowIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventTimedoutIT",
+      "method_signature": "testStartEventWithError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventTimedoutIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.EventTimedoutIT",
+      "method_signature": "testTimedout()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.EventTimedoutIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.RetriggerIT",
+      "method_signature": "testRetrigger()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.RetriggerIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.CustomRestIT",
+      "method_signature": "testCustomType()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.CustomRestIT",
+      "method_signature": "testCustomFunction()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "method_signature": "testCompensationOnAbort()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "method_signature": "testErrorRest1()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "method_signature": "testErrorRest2()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "method_signature": "testErrorRest3()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.CompensationRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.AsyncAPIIT",
+      "method_signature": "testConsumer()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.AsyncAPIIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.AsyncAPIIT",
+      "method_signature": "testPublisher()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.AsyncAPIIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "method_signature": "testErrorGenericRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "method_signature": "testErrorRepeatedRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "method_signature": "testErrorWithMetadata()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "method_signature": "testErrorRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ErrorRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "method_signature": "testGreetHiddenRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "method_signature": "testGreetRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "method_signature": "testVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "method_signature": "testGreetUnknownRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "method_signature": "testWorkflowType()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.GreetRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.OpenAPIEnumParameterIT",
+      "method_signature": "test()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.OpenAPIEnumParameterIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessIT",
+      "method_signature": "testProcessSchema()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-reactive",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessIT",
+      "method_signature": "testStartProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-reactive",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessSvgAddonIT",
+      "method_signature": "testInvalidSvgProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-reactive",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessSvgAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessSvgAddonIT",
+      "method_signature": "testGetSvgProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-reactive",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.reactive.ProcessSvgAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.dmn.CustomEndpointIT",
+      "method_signature": "testHelloEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.dmn.CustomEndpointIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "method_signature": "testAdult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "method_signature": "allTypes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "method_signature": "testOASdmnDefinitions()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "method_signature": "testAdult_dmnResult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.dmn.DMNIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessEventIT",
+      "method_signature": "testSaveTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-kafka-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessEventIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MessageSenderReceiverTest",
+      "method_signature": "testMessageSignalBetweenProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-kafka-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MessageSenderReceiverTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.PingPongMessageTest",
+      "method_signature": "testPingPongBetweenProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-kafka-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.PingPongMessageTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.PingPongMessageTest",
+      "method_signature": "verifyTopicsInformation()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-kafka-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.PingPongMessageTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testAdHocProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-persistence-it/integration-tests-springboot-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testAdHocProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-persistence/integration-tests-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testMultipleInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-persistence-it/integration-tests-springboot-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testMultipleInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-persistence/integration-tests-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testAsyncWIH()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-persistence-it/integration-tests-springboot-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testAsyncWIH()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-persistence/integration-tests-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testPersistence()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-persistence-it/integration-tests-springboot-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testPersistence()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-persistence/integration-tests-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testEmbeddedProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-persistence-it/integration-tests-springboot-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testEmbeddedProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-persistence/integration-tests-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testMultipleEmbeddedInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-persistence-it/integration-tests-springboot-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.PersistenceTest",
+      "method_signature": "testMultipleEmbeddedInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-persistence/integration-tests-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.PersistenceTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.OptimisticLockingTest",
+      "method_signature": "testParallelPersistence()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-persistence-it/integration-tests-springboot-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.OptimisticLockingTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.it.OptimisticLockingTest",
+      "method_signature": "testParallelPersistence()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes-persistence/integration-tests-processes-persistence-common",
+      "binary_class_name": "org.kie.kogito.it.OptimisticLockingTest",
+      "status": "not-run"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "method_signature": "testProcessJsonSchema()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-processes-extension/kogito-quarkus-processes-integration-test-hot-reload",
+      "binary_class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "method_signature": "testJavaFileChange()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-processes-extension/kogito-quarkus-processes-integration-test-hot-reload",
+      "binary_class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "method_signature": "testRenameProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-processes-extension/kogito-quarkus-processes-integration-test-hot-reload",
+      "binary_class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "method_signature": "testUserTaskJsonSchema()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-processes-extension/kogito-quarkus-processes-integration-test-hot-reload",
+      "binary_class_name": "io.quarkus.it.kogito.process.HotReloadTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.jbpm.OrdersProcessIT",
+      "method_signature": "testOrdersRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-extension/kogito-quarkus-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.jbpm.OrdersProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.jbpm.ProcessEndpointIT",
+      "method_signature": "testProcessRestEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-extension/kogito-quarkus-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.jbpm.ProcessEndpointIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.JavaFNctxIT",
+      "method_signature": "testJavaFNctx()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.JavaFNctxIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ElementAtIndexIT",
+      "method_signature": "testGET()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ElementAtIndexIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ElementAtIndexIT",
+      "method_signature": "testHeaderPopulated()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ElementAtIndexIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ElementAtIndexIT",
+      "method_signature": "testHeaderEmpty()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ElementAtIndexIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "method_signature": "testYoungBabyWithoutNeedForAMask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "method_signature": "testSomeoneWithBreathingIssuesButInBuilding()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "method_signature": "testRespiratorNeededInABuilding()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "method_signature": "testSurgicalMaskNeededInCity()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "method_signature": "testSomeoneWithBreathingIssues()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.FaceMaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.OneOfEachTypeIT",
+      "method_signature": "allTypes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.OneOfEachTypeIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "method_signature": "testDs1_dmnresult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "method_signature": "testDs1()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "method_signature": "testWholeModel()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "method_signature": "testWholeModel_dmnresult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicAddIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.OASIT",
+      "method_signature": "testOASdmnDefinitions(java.lang.String)",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.OASIT",
+      "status": "not-run"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "method_signature": "testCovidPositive()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "method_signature": "testDiabetes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "method_signature": "testTumor()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "method_signature": "testBrokenLeg()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsStatusIT",
+      "method_signature": "testHospitalStatus()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.HospitalsStatusIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSn()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSdtd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSymd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSt()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSdt()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testWholeModel()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "method_signature": "testDSb()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-decisions",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DSCoercionIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DecisionTableIT",
+      "method_signature": "testNotApproved()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-rules",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DecisionTableIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.DecisionTableIT",
+      "method_signature": "testApproved()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-rules",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.DecisionTableIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.acme.GreetingResourceIT",
+      "method_signature": "testVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-processes-extension/kogito-quarkus-processes-integration-test",
+      "binary_class_name": "org.acme.GreetingResourceIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.acme.GreetingResourceIT",
+      "method_signature": "testHelloEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-processes-extension/kogito-quarkus-processes-integration-test",
+      "binary_class_name": "org.acme.GreetingResourceIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.decisions.hotreload.NewFileHotReloadIT",
+      "method_signature": "newFileTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test-hot-reload",
+      "binary_class_name": "org.kie.kogito.quarkus.decisions.hotreload.NewFileHotReloadIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.decisions.hotreload.SimpleHotReloadIT",
+      "method_signature": "simpleHotReloadTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test-hot-reload",
+      "binary_class_name": "org.kie.kogito.quarkus.decisions.hotreload.SimpleHotReloadIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.decisions.hotreload.SimpleModifyHotReloadIT",
+      "method_signature": "simpleHotReloadTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-decisions-extension/kogito-quarkus-decisions-integration-test-hot-reload",
+      "binary_class_name": "org.kie.kogito.quarkus.decisions.hotreload.SimpleModifyHotReloadIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testIdNotFound()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testGeneratedId()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testWithBusinessKey()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testWithInaccurateModel()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testDelete()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testUpdate()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testGetTasks()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testCustomErrorStrategy()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testPatch()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "method_signature": "testWorkflowType()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.BasicRestIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.FlexibleProcessIT",
+      "method_signature": "testInstantiateProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.FlexibleProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.FlexibleProcessIT",
+      "method_signature": "testProcessException()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.FlexibleProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ProcessSvgAddonIT",
+      "method_signature": "testInvalidSvgProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ProcessSvgAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ProcessSvgAddonIT",
+      "method_signature": "testGetSvgProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ProcessSvgAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.GatewayFEELIT",
+      "method_signature": "testGatewayFEEL()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.GatewayFEELIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.EnumsIT",
+      "method_signature": "testSubmitMovie()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.EnumsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.TopicInformationResourceIT",
+      "method_signature": "verifyTopicsInformation()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.TopicInformationResourceIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.AdHocFragmentsIT",
+      "method_signature": "testServiceTaskProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.AdHocFragmentsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.AdHocFragmentsIT",
+      "method_signature": "testUserTaskProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.AdHocFragmentsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.AdHocFragmentsIT",
+      "method_signature": "testNonAdHocUserTaskProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.AdHocFragmentsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.MonitoringIT",
+      "method_signature": "test()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.MonitoringIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ProcessIT",
+      "method_signature": "testProcessSchema()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ProcessIT",
+      "method_signature": "testStartProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.MultiInstanceTaskIT",
+      "method_signature": "testStartProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.MultiInstanceTaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.SignalProcessIT",
+      "method_signature": "testProcessSignals()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.SignalProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.SignalProcessIT",
+      "method_signature": "testSignalStartProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.SignalProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.LinkIT",
+      "method_signature": "testLink()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.LinkIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.LinkIT",
+      "method_signature": "testMultipleLink()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.LinkIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ProcessEventIT",
+      "method_signature": "testSaveTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ProcessEventIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ParentSubProcessIT",
+      "method_signature": "testParentSubProcessRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ParentSubProcessIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "method_signature": "testSaveTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "method_signature": "testInputOutputsViaJsonTypeProperty()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "method_signature": "testJsonSchema()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "method_signature": "testUpdateTaskInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "method_signature": "testCommentAndAttachment()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.TaskIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.SagaIT",
+      "method_signature": "testSuccessProcess()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.SagaIT",
+      "method_signature": "testFailedProcess()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testGetProcessNodes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testReTriggerNode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testRescheduleSLATimersEndpoints()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testAbortProcessInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testManagementTimersEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testRescheduleSLATimersProcessInstanceWithoutSLAsConfigured()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testGetProcessNodesWithInvalidProcessId()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "method_signature": "testGetNodeInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.ManagementAddOnIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.PingPongMessageIT",
+      "method_signature": "testPingPongBetweenProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.PingPongMessageIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.quarkus.MessageSenderReceiverIT",
+      "method_signature": "testMessageSignalBetweenProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-processes",
+      "binary_class_name": "org.kie.kogito.integrationtests.quarkus.MessageSenderReceiverIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "method_signature": "testBPMN2HotReload()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-extension/kogito-quarkus-integration-test-maven-devmode",
+      "binary_class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "status": "skipped"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "method_signature": "testDRLHotReload()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-extension/kogito-quarkus-integration-test-maven-devmode",
+      "binary_class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "status": "skipped"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "method_signature": "testStaticResource()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-extension/kogito-quarkus-integration-test-maven-devmode",
+      "binary_class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "status": "skipped"
+    },
+    {
+      "class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "method_signature": "testDMNHotReload()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-extension/kogito-quarkus-integration-test-maven-devmode",
+      "binary_class_name": "io.quarkus.it.kogito.devmode.DevMojoIT",
+      "status": "skipped"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessSvgAddonTest",
+      "method_signature": "testInvalidSvgProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessSvgAddonTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessSvgAddonTest",
+      "method_signature": "testGetSvgProcessInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessSvgAddonTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testGetProcessNodes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testReTriggerNode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testRescheduleSLATimersEndpoints()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testAbortProcessInstance()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testManagementTimersEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testRescheduleSLATimersProcessInstanceWithoutSLAsConfigured()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testGetProcessNodesWithInvalidProcessId()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "method_signature": "testGetNodeInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ManagementAddOnTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ParentSubProcessTest",
+      "method_signature": "testParentSubProcessRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ParentSubProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.AdHocFragmentsTest",
+      "method_signature": "testServiceTaskProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.AdHocFragmentsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.AdHocFragmentsTest",
+      "method_signature": "testUserTaskProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.AdHocFragmentsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.AdHocFragmentsTest",
+      "method_signature": "testNonAdHocUserTaskProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.AdHocFragmentsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testDelete()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testIdNotFound()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testGeneratedId()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testUpdate()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testGetTasks()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testWithBusinessKey()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testWorkflowType()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "method_signature": "testWithInaccurateModel()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicRestTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.EnumsTest",
+      "method_signature": "testSubmitMovie()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.EnumsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MonitoringTest",
+      "method_signature": "test()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MonitoringTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.MultiInstanceTaskTest",
+      "method_signature": "testStartProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.MultiInstanceTaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalProcessTest",
+      "method_signature": "testProcessSignals()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.SignalProcessTest",
+      "method_signature": "testSignalStartProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.SignalProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.FlexibleProcessTest",
+      "method_signature": "testInstantiateProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.FlexibleProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.GatewayFEELTest",
+      "method_signature": "testGatewayFEEL()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.GatewayFEELTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "method_signature": "testSaveTask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "method_signature": "testInputOutputsViaJsonTypeProperty()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "method_signature": "testJsonSchema()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "method_signature": "testUpdateTaskInfo()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "method_signature": "testCommentAndAttachment()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.TaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessTest",
+      "method_signature": "testProcessSchema()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessTest",
+      "method_signature": "testStartProcess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.LinkTest",
+      "method_signature": "testLink()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.LinkTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.acme.travels.SignalProcessTest",
+      "method_signature": "testProcessSignals()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeCloudEvent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeWithInvalidCloudEvent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeWithCloudEventWithIdAsPlainJson()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "cloudEventWithIdMustBeSentAsIs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeWithParametersShouldSendOnlyFunctionArgs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "execute404()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeWithEmptyParameters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeWithCloudEventWithoutIdAsPlainJson()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeTimeout()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeWithArray()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeHttpGet()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeWithParameters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "method_signature": "executeCloudEventWithMissingIdShouldNotThrowException()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/knative/serving/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.knative.serving.customfunctions.it.KnativeServingAddonIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.addons.quarkus.kubernetes.ConfigValueExpanderIT",
+      "method_signature": "test()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/kubernetes/integration-tests",
+      "binary_class_name": "org.kie.kogito.addons.quarkus.kubernetes.ConfigValueExpanderIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "method_signature": "testCovidPositive()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "method_signature": "testDiabetes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "method_signature": "testTumor()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "method_signature": "testBrokenLeg()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.HospitalsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.OASTest",
+      "method_signature": "testOASdmnDefinitions(java.lang.String)",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.OASTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.PMMLTreeTest",
+      "method_signature": "testEvaluateSampleMineResult()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.PMMLTreeTest",
+      "method_signature": "testEvaluateSampleMineDescriptive()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.HospitalsStatusTest",
+      "method_signature": "testHospitalStatus()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.HospitalsStatusTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSn()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSdtd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSymd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSt()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSdt()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testWholeModel()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "method_signature": "testDSb()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DSCoercionTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ElementAtIndexTest",
+      "method_signature": "testGET()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ElementAtIndexTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ElementAtIndexTest",
+      "method_signature": "testHeaderPopulated()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ElementAtIndexTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ElementAtIndexTest",
+      "method_signature": "testHeaderEmpty()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ElementAtIndexTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.JavaFNctxTest",
+      "method_signature": "testJavaFNctx()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.JavaFNctxTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.OneOfEachTypeTest",
+      "method_signature": "allTypes()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.OneOfEachTypeTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "method_signature": "testYoungBabyWithoutNeedForAMask()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "method_signature": "testSomeoneWithBreathingIssuesButInBuilding()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "method_signature": "testRespiratorNeededInABuilding()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "method_signature": "testSurgicalMaskNeededInCity()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "method_signature": "testSomeoneWithBreathingIssues()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.FaceMaskTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "method_signature": "testDs1_dmnresult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "method_signature": "testDs1()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "method_signature": "testWholeModel()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "method_signature": "testWholeModel_dmnresult()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.BasicAddTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.PMMLRegressionTest",
+      "method_signature": "testEvaluateLinRegResult()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.PMMLRegressionTest",
+      "method_signature": "testEvaluateLinRegDescriptive()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.acme.PricingTest",
+      "method_signature": "testBasePrice()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestFromImageIT",
+      "method_signature": "testExpressionRest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-image-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.workflows.ExpressionRestFromImageIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.serverless.workflow.deployment.livereload.LiveReloadProcessorTest",
+      "method_signature": "testOpenApi()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-extension-live-reload-test",
+      "binary_class_name": "org.kie.kogito.quarkus.serverless.workflow.deployment.livereload.LiveReloadProcessorTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.serverless.workflow.deployment.livereload.LiveReloadProcessorTest",
+      "method_signature": "testGrpc()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-extension-live-reload-test",
+      "binary_class_name": "org.kie.kogito.quarkus.serverless.workflow.deployment.livereload.LiveReloadProcessorTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.serverless.workflow.deployment.livereload.LiveReloadProcessorTest",
+      "method_signature": "testAsyncApi()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-serverless-workflow-extension/kogito-quarkus-serverless-workflow-extension-live-reload-test",
+      "binary_class_name": "org.kie.kogito.quarkus.serverless.workflow.deployment.livereload.LiveReloadProcessorTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.pmml.PMMLRegressionIT",
+      "method_signature": "testEvaluateLinRegResult()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.pmml.PMMLRegressionIT",
+      "method_signature": "testEvaluateLinRegDescriptive()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.pmml.CustomEndpointIT",
+      "method_signature": "testHelloEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/extensions/kogito-quarkus-predictions-extension/kogito-quarkus-predictions-integration-test",
+      "binary_class_name": "org.kie.kogito.quarkus.pmml.CustomEndpointIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "method_signature": "testGeneratedResource()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-resteasy-classic",
+      "binary_class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "method_signature": "testGeneratedResource()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-resteasy-reactive",
+      "binary_class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "method_signature": "testGeneratedRestEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-resteasy-classic",
+      "binary_class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "method_signature": "testGeneratedRestEndpoint()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/integration-tests/integration-tests-quarkus-resteasy-reactive",
+      "binary_class_name": "org.kie.kogito.quarkus.EndpointsIT",
+      "status": "failed"
+    },
+    {
+      "class_name": "org.kie.kogito.tracing.QuarkusTracingAddonDevServicesIT",
+      "method_signature": "testEvaluateLoanEligibility()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.tracing.QuarkusTracingAddonDevServicesIT",
+      "method_signature": "testExecutionsAreStored()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "method_signature": "explainServiceFail()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/explainability/integration-tests",
+      "binary_class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "method_signature": "explainServiceTestMultipleInputs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/explainability/integration-tests",
+      "binary_class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "method_signature": "explainServiceTestNoInputs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/explainability/integration-tests",
+      "binary_class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "method_signature": "explainServiceTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/explainability/integration-tests",
+      "binary_class_name": "org.kie.kogito.explainability.QuarkusExplainableResourceIT",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.acme.GreetTest",
+      "method_signature": "testSpanish()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.acme.GreetTest",
+      "method_signature": "testEnglish()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.SpringBootTopicsInformationResourceTest",
+      "method_signature": "test()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "org.kie.kogito.process.definitions.ProcessDefinitionsResourceTest",
+      "method_signature": "testAddDefinition()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "quarkus/addons/process-definitions/runtime",
+      "binary_class_name": "org.kie.kogito.process.definitions.ProcessDefinitionsResourceTest",
+      "status": "passed"
+    }
+  ]
+}

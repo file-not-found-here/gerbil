@@ -68,6 +68,7 @@ def _per_test_lifecycle(tests: Sequence[TestRecord]) -> dict[str, Any]:
     """
     tests_with_resources = [test for test in tests if test.resource_lifecycle_labels]
     total = len(tests_with_resources)
+    writing_tests = [test for test in tests_with_resources if test.writes_resource]
     label_counts = {
         label: sum(
             1
@@ -92,6 +93,9 @@ def _per_test_lifecycle(tests: Sequence[TestRecord]) -> dict[str, Any]:
         ).to_dict(),
         "has_read_after_write": share(
             test.has_read_after_write for test in tests_with_resources
+        ).to_dict(),
+        "read_after_write_among_writing_tests": share(
+            test.has_read_after_write for test in writing_tests
         ).to_dict(),
         "has_cleanup_delete": share(
             test.has_cleanup_delete for test in tests_with_resources

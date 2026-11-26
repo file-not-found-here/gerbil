@@ -1,0 +1,67 @@
+{
+  "target": "dspace",
+  "project": "DSpace",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "fb8e21f44ac4a73168845ac19b1c83bf419b810e",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 3.0,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "build",
+      "seconds": 126.0,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 96.9,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 4125.2,
+      "error": null,
+      "gerbil_commit": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 191.6,
+      "error": null,
+      "gerbil_commit": "929209daf82001a5fcf96cf414485ffc03e471a8"
+    }
+  ],
+  "schema_operations": 119,
+  "scoped_operations": 118,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 1129,
+    "endpoints": 118,
+    "endpoints_2xx": 18,
+    "potential_faults": 387,
+    "covered_targets": 36625,
+    "covered_lines": 10374,
+    "total_lines": 69291,
+    "covered_branches": 2484,
+    "total_branches": 82356,
+    "sql_heuristics_evaluations": 0,
+    "sql_parsing_failures": 43327
+  },
+  "repaired_classes": [],
+  "verification": {
+    "tests": 1129,
+    "passed": 1091,
+    "failed": 38,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 0
+  },
+  "finished": true
+}

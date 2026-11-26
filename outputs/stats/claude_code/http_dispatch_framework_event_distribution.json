@@ -1,10 +1,10 @@
 {
   "scope": "http_dispatch_events",
-  "event_count": 1394,
+  "event_count": 1589,
   "framework_split": {
     "mockmvc": {
-      "event_count": 873,
-      "pct_of_events": 62.62553802008608
+      "event_count": 1115,
+      "pct_of_events": 70.16991818753934
     },
     "webtestclient": {
       "event_count": 0,
@@ -12,7 +12,7 @@
     },
     "test-rest-template": {
       "event_count": 252,
-      "pct_of_events": 18.077474892395983
+      "pct_of_events": 15.859030837004406
     },
     "rest-template": {
       "event_count": 0,
@@ -27,8 +27,8 @@
       "pct_of_events": 0.0
     },
     "rest-assured": {
-      "event_count": 269,
-      "pct_of_events": 19.296987087517934
+      "event_count": 222,
+      "pct_of_events": 13.971050975456262
     },
     "okhttp": {
       "event_count": 0,

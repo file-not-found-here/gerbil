@@ -1,0 +1,1659 @@
+{
+  "baseline": "developer",
+  "suites": [
+    "claude_code",
+    "codex",
+    "evomaster",
+    "saint"
+  ],
+  "suite_sizes": {
+    "developer": {
+      "project_count": 10,
+      "api_test_count": 6980
+    },
+    "claude_code": {
+      "project_count": 10,
+      "api_test_count": 1298
+    },
+    "codex": {
+      "project_count": 10,
+      "api_test_count": 304
+    },
+    "evomaster": {
+      "project_count": 9,
+      "api_test_count": 22814
+    },
+    "saint": {
+      "project_count": 5,
+      "api_test_count": 269
+    }
+  },
+  "method": {
+    "proportion": {
+      "test": "fisher_exact",
+      "effect_size": "cohens_h",
+      "effect_sign": "positive when the baseline share is higher",
+      "magnitude_thresholds": {
+        "small": 0.2,
+        "medium": 0.5,
+        "large": 0.8
+      }
+    },
+    "distribution": {
+      "test": "mann_whitney_u",
+      "effect_size": "cliffs_delta",
+      "effect_sign": "positive when baseline observations tend to be larger; the means can order the other way",
+      "magnitude_thresholds": {
+        "small": 0.147,
+        "medium": 0.33,
+        "large": 0.474
+      }
+    },
+    "alternative": "two-sided",
+    "correction": "holm",
+    "alpha": 0.05,
+    "untested": "A comparison with an empty sample in either suite has no test or effect size and is left out of the correction; descriptive measures are single aggregates that no test applies to.",
+    "limitations": "Observations are pooled over a suite's projects and treated as independent, although those of one test or project are related, so the p-values are optimistic. A p-value below the smallest positive float is reported as 0.0."
+  },
+  "summary": {
+    "tested_comparison_count": 76,
+    "significant_count": 68,
+    "magnitude_counts": {
+      "negligible": 14,
+      "small": 20,
+      "medium": 11,
+      "large": 31
+    },
+    "not_significant": [
+      {
+        "measure": "request_builders_per_step",
+        "suite": "saint"
+      },
+      {
+        "measure": "steps_setting_header",
+        "suite": "claude_code"
+      },
+      {
+        "measure": "tests_checking_status_body_headers",
+        "suite": "claude_code"
+      },
+      {
+        "measure": "tests_checking_status_body_headers",
+        "suite": "codex"
+      },
+      {
+        "measure": "tests_checking_status_body_headers",
+        "suite": "saint"
+      },
+      {
+        "measure": "body_checks_per_checking_step",
+        "suite": "saint"
+      },
+      {
+        "measure": "status_assertions_expecting_5xx",
+        "suite": "claude_code"
+      },
+      {
+        "measure": "status_assertions_expecting_5xx",
+        "suite": "codex"
+      }
+    ],
+    "significant_but_negligible": [
+      {
+        "measure": "request_builders_per_step",
+        "suite": "evomaster"
+      },
+      {
+        "measure": "body_checks_per_checking_step",
+        "suite": "claude_code"
+      },
+      {
+        "measure": "status_assertions_expecting_4xx",
+        "suite": "claude_code"
+      },
+      {
+        "measure": "status_assertions_expecting_4xx",
+        "suite": "codex"
+      },
+      {
+        "measure": "tests_mixing_success_and_error",
+        "suite": "evomaster"
+      },
+      {
+        "measure": "writing_tests_with_read_after_write",
+        "suite": "evomaster"
+      }
+    ]
+  },
+  "measures": [
+    {
+      "name": "request_builders_per_step",
+      "label": "Request builders per step",
+      "kind": "distribution",
+      "unit": "steps",
+      "baseline": {
+        "count": 36465,
+        "mean": 3.824955436720143,
+        "median": 3.0
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 1589,
+          "mean": 2.4159848961611075,
+          "median": 3.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 1.4483327167857153e-134,
+            "p_adjusted": 7.53133012728572e-133,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": 0.35805276178429835,
+            "magnitude": "medium"
+          }
+        },
+        "codex": {
+          "count": 861,
+          "mean": 2.818815331010453,
+          "median": 2.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 9.987233110590523e-59,
+            "p_adjusted": 4.0947655753421144e-57,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": 0.3152998444246651,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 58734,
+          "mean": 4.178108080498519,
+          "median": 3.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 8.042661047508088e-75,
+            "p_adjusted": 3.780050692328801e-73,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": -0.06604899089981386,
+            "magnitude": "negligible"
+          }
+        },
+        "saint": {
+          "count": 319,
+          "mean": 3.7711598746081503,
+          "median": 4.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 0.07491229441812257,
+            "p_adjusted": 0.2996491776724903,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": -0.05665870179976762,
+            "magnitude": "negligible"
+          }
+        }
+      }
+    },
+    {
+      "name": "steps_setting_header",
+      "label": "Steps setting a header",
+      "kind": "proportion",
+      "unit": "steps",
+      "baseline": {
+        "count": 17894,
+        "total": 36465,
+        "proportion": 0.4907171260112437
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 735,
+          "total": 1589,
+          "proportion": 0.46255506607929514,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.029321242977554195,
+            "p_adjusted": 0.15777677593412728,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.05639323361203896,
+            "magnitude": "negligible"
+          }
+        },
+        "codex": {
+          "count": 559,
+          "total": 861,
+          "proportion": 0.6492450638792102,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 2.3946847609003266e-20,
+            "p_adjusted": 6.944585806610948e-19,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.32167708560945485,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 58734,
+          "total": 58734,
+          "proportion": 1.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.5893631414998657,
+            "magnitude": "large"
+          }
+        },
+        "saint": {
+          "count": 51,
+          "total": 319,
+          "proportion": 0.15987460815047022,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 7.762066011180414e-35,
+            "p_adjusted": 2.716723103913145e-33,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.7295379085381675,
+            "magnitude": "medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "distinct_header_names",
+      "label": "Distinct header names",
+      "kind": "descriptive",
+      "baseline": {
+        "value": 35
+      },
+      "comparisons": {
+        "claude_code": {
+          "value": 5
+        },
+        "codex": {
+          "value": 9
+        },
+        "evomaster": {
+          "value": 25
+        },
+        "saint": {
+          "value": 1
+        }
+      }
+    },
+    {
+      "name": "header_uses_content_negotiation",
+      "label": "Header uses: content negotiation",
+      "kind": "proportion",
+      "unit": "header uses",
+      "baseline": {
+        "count": 27298,
+        "total": 49604,
+        "proportion": 0.5503185226997823
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 1778,
+          "total": 1790,
+          "proportion": 0.9932960893854749,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.306050285581567,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 1365,
+          "total": 1462,
+          "proportion": 0.9336525307797537,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 3.0271525960177223e-229,
+            "p_adjusted": 1.8162915576106333e-227,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.9489548708814806,
+            "magnitude": "large"
+          }
+        },
+        "evomaster": {
+          "count": 129807,
+          "total": 320983,
+          "proportion": 0.404404594635853,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.29318289063032377,
+            "magnitude": "small"
+          }
+        },
+        "saint": {
+          "count": 98,
+          "total": 98,
+          "proportion": 1.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 5.551225656679625e-26,
+            "p_adjusted": 1.6653676970038875e-24,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.4699886302721008,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "steps_with_response_check",
+      "label": "Steps with a response check",
+      "kind": "proportion",
+      "unit": "steps",
+      "baseline": {
+        "count": 20510,
+        "total": 36465,
+        "proportion": 0.5624571506924448
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 1495,
+          "total": 1589,
+          "proportion": 0.9408432976714916,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 6.632109250965353e-246,
+            "p_adjusted": 4.1119077355985185e-244,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.954183434347611,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 853,
+          "total": 861,
+          "proportion": 0.9907084785133565,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 2.2651442938799412e-194,
+            "p_adjusted": 1.3137836904503658e-192,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.2524699944924043,
+            "magnitude": "large"
+          }
+        },
+        "evomaster": {
+          "count": 50048,
+          "total": 58734,
+          "proportion": 0.8521129158579358,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.6560906850861687,
+            "magnitude": "medium"
+          }
+        },
+        "saint": {
+          "count": 319,
+          "total": 319,
+          "proportion": 1.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 6.4904481373479996e-80,
+            "p_adjusted": 3.11541510592704e-78,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.4455548712420165,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "tests_checking_only_status",
+      "label": "Tests checking only the status",
+      "kind": "proportion",
+      "unit": "tests",
+      "baseline": {
+        "count": 4203,
+        "total": 6980,
+        "proportion": 0.6021489971346705
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 367,
+          "total": 1298,
+          "proportion": 0.2827426810477658,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 3.543224817163954e-101,
+            "p_adjusted": 1.8070446567536164e-99,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.6552458361072957,
+            "magnitude": "medium"
+          }
+        },
+        "codex": {
+          "count": 72,
+          "total": 304,
+          "proportion": 0.23684210526315788,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.330270628266773e-36,
+            "p_adjusted": 4.788974261760383e-35,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.7600083570567278,
+            "magnitude": "medium"
+          }
+        },
+        "evomaster": {
+          "count": 20,
+          "total": 22814,
+          "proportion": 0.0008766546857192952,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.7173174838861873,
+            "magnitude": "large"
+          }
+        },
+        "saint": {
+          "count": 219,
+          "total": 269,
+          "proportion": 0.8141263940520446,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 2.691671592634191e-13,
+            "p_adjusted": 6.460011822322058e-12,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.47355890019642044,
+            "magnitude": "small"
+          }
+        }
+      }
+    },
+    {
+      "name": "tests_checking_status_body_headers",
+      "label": "Tests checking status, body, headers",
+      "kind": "proportion",
+      "unit": "tests",
+      "baseline": {
+        "count": 250,
+        "total": 6980,
+        "proportion": 0.03581661891117478
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 29,
+          "total": 1298,
+          "proportion": 0.02234206471494607,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.011863711376643885,
+            "p_adjusted": 0.09490969101315108,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.08073249727919324,
+            "magnitude": "negligible"
+          }
+        },
+        "codex": {
+          "count": 11,
+          "total": 304,
+          "proportion": 0.03618421052631579,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.875432788365609,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.0019732167925975985,
+            "magnitude": "negligible"
+          }
+        },
+        "evomaster": {
+          "count": 18724,
+          "total": 22814,
+          "proportion": 0.8207241167704041,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.886378616224419,
+            "magnitude": "large"
+          }
+        },
+        "saint": {
+          "count": 3,
+          "total": 269,
+          "proportion": 0.011152416356877323,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.026296129322354547,
+            "p_adjusted": 0.15777677593412728,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.1691976896012545,
+            "magnitude": "negligible"
+          }
+        }
+      }
+    },
+    {
+      "name": "body_checks_per_checking_step",
+      "label": "Body checks per checking step",
+      "kind": "distribution",
+      "unit": "steps with a body check",
+      "baseline": {
+        "count": 3387,
+        "mean": 2.1727192205491583,
+        "median": 1.0
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 874,
+          "mean": 1.356979405034325,
+          "median": 1.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 1.8924613843861958e-09,
+            "p_adjusted": 3.406430491895152e-08,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": 0.10707247187557223,
+            "magnitude": "negligible"
+          }
+        },
+        "codex": {
+          "count": 548,
+          "mean": 1.0802919708029197,
+          "median": 1.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 5.866852050946429e-38,
+            "p_adjusted": 2.170735258850179e-36,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": 0.27251200920651963,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 47512,
+          "mean": 3.7133987203232866,
+          "median": 2.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 1.813002085044062e-168,
+            "p_adjusted": 9.971511467742341e-167,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": -0.26522235359756585,
+            "magnitude": "small"
+          }
+        },
+        "saint": {
+          "count": 59,
+          "mean": 1.7966101694915255,
+          "median": 1.0,
+          "test": {
+            "name": "mann_whitney_u",
+            "p_value": 0.0196005680292881,
+            "p_adjusted": 0.13720397620501668,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cliffs_delta",
+            "value": 0.1462321038066785,
+            "magnitude": "negligible"
+          }
+        }
+      }
+    },
+    {
+      "name": "most_body_checks_in_one_step",
+      "label": "Most body checks in one step",
+      "kind": "descriptive",
+      "baseline": {
+        "value": 77.0
+      },
+      "comparisons": {
+        "claude_code": {
+          "value": 11.0
+        },
+        "codex": {
+          "value": 5.0
+        },
+        "evomaster": {
+          "value": 394.0
+        },
+        "saint": {
+          "value": 13.0
+        }
+      }
+    },
+    {
+      "name": "body_checks_in_top_decile_of_steps",
+      "label": "Body checks in top decile of steps",
+      "kind": "descriptive",
+      "baseline": {
+        "value": 0.4397336594646012
+      },
+      "comparisons": {
+        "claude_code": {
+          "value": 0.23440134907251264
+        },
+        "codex": {
+          "value": 0.16722972972972974
+        },
+        "evomaster": {
+          "value": 0.46652799111267296
+        },
+        "saint": {
+          "value": 0.46226415094339623
+        }
+      }
+    },
+    {
+      "name": "header_checking_steps_with_two_or_more_checks",
+      "label": "Header-checking steps, 2+ checks",
+      "kind": "proportion",
+      "unit": "steps with a header check",
+      "baseline": {
+        "count": 368,
+        "total": 534,
+        "proportion": 0.6891385767790262
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 22,
+          "total": 86,
+          "proportion": 0.2558139534883721,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 3.71923957773952e-14,
+            "p_adjusted": 9.67002290212275e-13,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.89815771427844,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 7,
+          "total": 27,
+          "proportion": 0.25925925925925924,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 9.88015545733532e-06,
+            "p_adjusted": 0.00013832217640269448,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.8902786812001564,
+            "magnitude": "large"
+          }
+        },
+        "evomaster": {
+          "count": 1049,
+          "total": 44214,
+          "proportion": 0.023725516804632016,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.6494376326109033,
+            "magnitude": "large"
+          }
+        },
+        "saint": {
+          "count": 0,
+          "total": 6,
+          "proportion": 0.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0009831692299761845,
+            "p_adjusted": 0.009831692299761845,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.958730770335985,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "status_assertions_expecting_4xx",
+      "label": "Status assertions expecting 4xx",
+      "kind": "proportion",
+      "unit": "status assertions",
+      "baseline": {
+        "count": 2506,
+        "total": 20292,
+        "proportion": 0.1234969446087128
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 224,
+          "total": 1459,
+          "proportion": 0.15352981494174092,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0010579544706340667,
+            "p_adjusted": 0.009831692299761845,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.08705936342999476,
+            "magnitude": "negligible"
+          }
+        },
+        "codex": {
+          "count": 141,
+          "total": 849,
+          "proportion": 0.16607773851590105,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0003822496156063731,
+            "p_adjusted": 0.004586995387276477,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.12130964301185898,
+            "magnitude": "negligible"
+          }
+        },
+        "evomaster": {
+          "count": 20019,
+          "total": 50048,
+          "proportion": 0.3999960038363171,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.6512526003941785,
+            "magnitude": "medium"
+          }
+        },
+        "saint": {
+          "count": 12,
+          "total": 319,
+          "proportion": 0.03761755485893417,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.679356793906037e-07,
+            "p_adjusted": 2.519035190859055e-06,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.3277986176127431,
+            "magnitude": "small"
+          }
+        }
+      }
+    },
+    {
+      "name": "status_assertions_expecting_5xx",
+      "label": "Status assertions expecting 5xx",
+      "kind": "proportion",
+      "unit": "status assertions",
+      "baseline": {
+        "count": 219,
+        "total": 20292,
+        "proportion": 0.010792430514488468
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 19,
+          "total": 1459,
+          "proportion": 0.013022618231665525,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.43266339732787595,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.020582862221570825,
+            "magnitude": "negligible"
+          }
+        },
+        "codex": {
+          "count": 7,
+          "total": 849,
+          "proportion": 0.008244994110718492,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.60900782109412,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.0262944190744539,
+            "magnitude": "negligible"
+          }
+        },
+        "evomaster": {
+          "count": 3123,
+          "total": 50048,
+          "proportion": 0.06240009590792839,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 2.4890549209150747e-239,
+            "p_adjusted": 1.5183235017581957e-237,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.29679883095782966,
+            "magnitude": "small"
+          }
+        },
+        "saint": {
+          "count": 135,
+          "total": 319,
+          "proportion": 0.4231974921630094,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.729205078222502e-159,
+            "p_adjusted": 9.337707422401512e-158,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.2084319639788643,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "tests_mixing_success_and_error",
+      "label": "Tests mixing success and error",
+      "kind": "proportion",
+      "unit": "tests asserting a status",
+      "baseline": {
+        "count": 927,
+        "total": 6701,
+        "proportion": 0.1383375615579764
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 22,
+          "total": 1294,
+          "proportion": 0.017001545595054096,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 2.7737873575037986e-48,
+            "p_adjusted": 1.0817770694264815e-46,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.5006663491041827,
+            "magnitude": "medium"
+          }
+        },
+        "codex": {
+          "count": 22,
+          "total": 301,
+          "proportion": 0.07308970099667775,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0007380241587100819,
+            "p_adjusted": 0.0081182657458109,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.21467563109434262,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 4631,
+          "total": 22807,
+          "proportion": 0.20305169465514974,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.9785323253022734e-34,
+            "p_adjusted": 6.72700990602773e-33,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.17271187051235404,
+            "magnitude": "negligible"
+          }
+        },
+        "saint": {
+          "count": 5,
+          "total": 269,
+          "proportion": 0.01858736059479554,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.550263373274864e-11,
+            "p_adjusted": 3.2555530838772144e-10,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.4886681625862774,
+            "magnitude": "small"
+          }
+        }
+      }
+    },
+    {
+      "name": "single_step_tests",
+      "label": "Single-step tests",
+      "kind": "proportion",
+      "unit": "tests",
+      "baseline": {
+        "count": 1993,
+        "total": 6980,
+        "proportion": 0.2855300859598854
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 1164,
+          "total": 1298,
+          "proportion": 0.8967642526964561,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.359904478477023,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 153,
+          "total": 304,
+          "proportion": 0.5032894736842105,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 6.9679409887953644e-15,
+            "p_adjusted": 1.8813440669747484e-13,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.44989782188948046,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 10487,
+          "total": 22814,
+          "proportion": 0.45967388445691243,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.9215282003420355e-151,
+            "p_adjusted": 1.0184099461812788e-149,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.36257890150140204,
+            "magnitude": "small"
+          }
+        },
+        "saint": {
+          "count": 244,
+          "total": 269,
+          "proportion": 0.9070631970260223,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 4.5664681581421433e-98,
+            "p_adjusted": 2.283234079071072e-96,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.394541998144711,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "tests_with_five_or_more_steps",
+      "label": "Tests with 5+ steps",
+      "kind": "proportion",
+      "unit": "tests",
+      "baseline": {
+        "count": 2356,
+        "total": 6980,
+        "proportion": 0.3375358166189112
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 13,
+          "total": 1298,
+          "proportion": 0.010015408320493066,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 4.926464660944353e-184,
+            "p_adjusted": 2.808084856738281e-182,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.039370700091158,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 55,
+          "total": 304,
+          "proportion": 0.18092105263157895,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 3.4709578365238794e-09,
+            "p_adjusted": 5.900628322090595e-08,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.36116726403779875,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 3621,
+          "total": 22814,
+          "proportion": 0.1587183308494784,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.047195793270221e-214,
+            "p_adjusted": 6.178455180294304e-213,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.420328383207225,
+            "magnitude": "small"
+          }
+        },
+        "saint": {
+          "count": 4,
+          "total": 269,
+          "proportion": 0.01486988847583643,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.7457045136369382e-40,
+            "p_adjusted": 6.633677151820365e-39,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.99536753582513,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "tests_with_ten_or_more_steps",
+      "label": "Tests with 10+ steps",
+      "kind": "proportion",
+      "unit": "tests",
+      "baseline": {
+        "count": 930,
+        "total": 6980,
+        "proportion": 0.1332378223495702
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 0,
+          "total": 1298,
+          "proportion": 0.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 4.547940899042682e-74,
+            "p_adjusted": 2.046573404569207e-72,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.7473033384017276,
+            "magnitude": "medium"
+          }
+        },
+        "codex": {
+          "count": 9,
+          "total": 304,
+          "proportion": 0.029605263157894735,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.3701791415750483e-09,
+            "p_adjusted": 2.6033403689925916e-08,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.4014587313661878,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 513,
+          "total": 22814,
+          "proportion": 0.022486192688699922,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 2.335072045018873e-255,
+            "p_adjusted": 1.47109538836189e-253,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.446259908906588,
+            "magnitude": "small"
+          }
+        },
+        "saint": {
+          "count": 0,
+          "total": 269,
+          "proportion": 0.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 9.72261228821425e-17,
+            "p_adjusted": 2.72233144069999e-15,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.7473033384017276,
+            "magnitude": "medium"
+          }
+        }
+      }
+    },
+    {
+      "name": "tests_confined_to_one_resource",
+      "label": "Tests confined to one resource",
+      "kind": "proportion",
+      "unit": "tests",
+      "baseline": {
+        "count": 2251,
+        "total": 6980,
+        "proportion": 0.32249283667621775
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 1205,
+          "total": 1298,
+          "proportion": 0.9283513097072419,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.391772099978068,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 160,
+          "total": 304,
+          "proportion": 0.5263157894736842,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 9.583574414015439e-13,
+            "p_adjusted": 2.204222115223551e-11,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.41558530038612096,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 11623,
+          "total": 22814,
+          "proportion": 0.5094678706057684,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.038829388085512e-168,
+            "p_adjusted": 5.817444573278868e-167,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -0.38186626512585375,
+            "magnitude": "small"
+          }
+        },
+        "saint": {
+          "count": 251,
+          "total": 269,
+          "proportion": 0.9330855018587361,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 9.072215192657392e-96,
+            "p_adjusted": 4.4453854444021224e-94,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": -1.410418216665069,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "multi_step_tests_redispatching_endpoint",
+      "label": "Multi-step: re-dispatch an endpoint",
+      "kind": "proportion",
+      "unit": "multi-step tests",
+      "baseline": {
+        "count": 3493,
+        "total": 4442,
+        "proportion": 0.7863574966231427
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 12,
+          "total": 134,
+          "proportion": 0.08955223880597014,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.0826223192702466e-64,
+            "p_adjusted": 4.6552759728620606e-63,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.5727913781973253,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 24,
+          "total": 148,
+          "proportion": 0.16216216216216217,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.6158743830883877e-56,
+            "p_adjusted": 6.463497532353551e-55,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.3516948592045863,
+            "magnitude": "large"
+          }
+        },
+        "evomaster": {
+          "count": 4478,
+          "total": 11191,
+          "proportion": 0.40014297203109644,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.8108800860968439,
+            "magnitude": "large"
+          }
+        },
+        "saint": {
+          "count": 2,
+          "total": 23,
+          "proportion": 0.08695652173913043,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.6101927111361611e-12,
+            "p_adjusted": 3.5424239644995546e-11,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.5819422710142108,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "multi_step_tests_with_duplicate_step",
+      "label": "Multi-step: contain a duplicate step",
+      "kind": "proportion",
+      "unit": "multi-step tests",
+      "baseline": {
+        "count": 3307,
+        "total": 4442,
+        "proportion": 0.7444844664565511
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 8,
+          "total": 134,
+          "proportion": 0.05970149253731343,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 5.255284385698173e-62,
+            "p_adjusted": 2.207219441993233e-60,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.5880279636540355,
+            "magnitude": "large"
+          }
+        },
+        "codex": {
+          "count": 7,
+          "total": 148,
+          "proportion": 0.0472972972972973,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 3.992054910207445e-71,
+            "p_adjusted": 1.7565041604912758e-69,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.6432410143641656,
+            "magnitude": "large"
+          }
+        },
+        "evomaster": {
+          "count": 3024,
+          "total": 11191,
+          "proportion": 0.2702171387722277,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.9884135172094224,
+            "magnitude": "large"
+          }
+        },
+        "saint": {
+          "count": 2,
+          "total": 23,
+          "proportion": 0.08695652173913043,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 5.989956756122758e-11,
+            "p_adjusted": 1.1979913512245515e-09,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 1.4830356266695301,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "tests_with_fixture_request",
+      "label": "Tests with a fixture request",
+      "kind": "proportion",
+      "unit": "tests",
+      "baseline": {
+        "count": 1512,
+        "total": 6980,
+        "proportion": 0.2166189111747851
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 40,
+          "total": 1298,
+          "proportion": 0.030816640986132512,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.1402676123981918e-74,
+            "p_adjusted": 5.2452310170316826e-73,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.6153036581913054,
+            "magnitude": "medium"
+          }
+        },
+        "codex": {
+          "count": 0,
+          "total": 304,
+          "proportion": 0.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 5.970946079977449e-32,
+            "p_adjusted": 1.9107027455927836e-30,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.9682257699642299,
+            "magnitude": "large"
+          }
+        },
+        "evomaster": {
+          "count": 0,
+          "total": 22814,
+          "proportion": 0.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 0.0,
+            "p_adjusted": 0.0,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.9682257699642299,
+            "magnitude": "large"
+          }
+        },
+        "saint": {
+          "count": 0,
+          "total": 269,
+          "proportion": 0.0,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.9367045599855932e-28,
+            "p_adjusted": 6.003784135955339e-27,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.9682257699642299,
+            "magnitude": "large"
+          }
+        }
+      }
+    },
+    {
+      "name": "writing_tests_with_read_after_write",
+      "label": "Mutating tests: read after write",
+      "kind": "proportion",
+      "unit": "tests writing a resource, in projects with endpoints",
+      "baseline": {
+        "count": 914,
+        "total": 5021,
+        "proportion": 0.1820354511053575
+      },
+      "comparisons": {
+        "claude_code": {
+          "count": 39,
+          "total": 575,
+          "proportion": 0.06782608695652174,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 5.07586667642702e-14,
+            "p_adjusted": 1.268966669106755e-12,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.3546402701458268,
+            "magnitude": "small"
+          }
+        },
+        "codex": {
+          "count": 6,
+          "total": 129,
+          "proportion": 0.046511627906976744,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.1411920980173799e-05,
+            "p_adjusted": 0.0001483549727422594,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.4468377855496669,
+            "magnitude": "small"
+          }
+        },
+        "evomaster": {
+          "count": 1982,
+          "total": 17128,
+          "proportion": 0.11571695469406819,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 1.9046119062199797e-32,
+            "p_adjusted": 6.285219290525933e-31,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.18738502471814933,
+            "magnitude": "negligible"
+          }
+        },
+        "saint": {
+          "count": 2,
+          "total": 126,
+          "proportion": 0.015873015873015872,
+          "test": {
+            "name": "fisher_exact",
+            "p_value": 9.72155890772915e-09,
+            "p_adjusted": 1.555449425236664e-07,
+            "significant": true
+          },
+          "effect_size": {
+            "name": "cohens_h",
+            "value": 0.6289367884070387,
+            "magnitude": "medium"
+          }
+        }
+      }
+    }
+  ]
+}

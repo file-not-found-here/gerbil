@@ -1,0 +1,2395 @@
+{
+  "commit": "243d98d5b18e85779816de2105e81504ed0bcb39",
+  "tests": [
+    {
+      "class_name": "com.netflix.spinnaker.orca.clouddriver.pipeline.providers.aws.lambda.LambdaTrafficRoutingStageTest",
+      "method_signature": "LambdaTrafficRoutingStageIntegrationTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-clouddriver",
+      "binary_class_name": "com.netflix.spinnaker.orca.clouddriver.pipeline.providers.aws.lambda.LambdaTrafficRoutingStageTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.telemetry.TelemetrySpec",
+      "method_signature": "telemetryDownEchoStillHealthyTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "echo/echo-web",
+      "binary_class_name": "com.netflix.spinnaker.echo.telemetry.TelemetrySpec",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.retrofit.exceptions.SpinnakerRetrofitExceptionHandlersTest",
+      "method_signature": "testChainedSpinnakerServerException()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.retrofit.exceptions.SpinnakerRetrofitExceptionHandlersTest",
+      "method_signature": "testChainedSpinnakerHttpException(int)",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.retrofit.exceptions.SpinnakerRetrofitExceptionHandlersTest",
+      "method_signature": "testSpinnakerHttpException(int)",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.retrofit.exceptions.SpinnakerRetrofitExceptionHandlersTest",
+      "method_signature": "testSpinnakerServerException()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.PostgresContainerTest",
+      "method_signature": "testHealthCheckWithPostgres()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.PostgresMigrationContainerTest",
+      "method_signature": "testHealthCheckWithPostgres()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.MySqlContainerTest",
+      "method_signature": "testHealthCheckWithMySql()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.RedisContainerTest",
+      "method_signature": "testHealthCheckWithRedis()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployNewConfigmapVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployBlueGreenReplicaSet()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldUseSourceCapacityVersioned()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldBindOptionalDockerImage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployRedBlackReplicaSet()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldBindRequiredOverOptionalDockerImage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployBlueGreenMultidoc()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployMultidocManifest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldAddVersionToSecret()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldUpdateExistingDeployment()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployUsingApplyWithServerSideApplyDisabled()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldBindRequiredDockerImage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployManifestFromText()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldAddVersionToConfigmap()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployCrdV1()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldUseSourceCapacityNonVersioned()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployCrCrdNamespacedV1()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldNotDeployToNamespaceNotListed()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployRedBlackMultidoc()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployNewSecretVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployCrCrdClusterV1()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldNotAddVersionToConfigmap()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployManifestToDefaultNs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldNotBindArtifacts()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployUsingServerSideApply()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldNotAddVersionToSecret()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldBindVersionedConfigMap()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldBindVersionedSecret()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployUsingClientApply()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldDeployCrdV1beta1IfSupported()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldGetDeployedCrdsCredentials()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "labelSelectors()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldStepReplicaSetVersion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeployManifestIT",
+      "method_signature": "shouldBindRequiredCronJobDockerImage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldListSecurityGroupsByAccountAndRegion()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetServerGroupManagerForApplication()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldListSecurityGroups()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetServerGroupByApplication()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetLoadBalancers()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetManifestByAccountLocationName()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetServerGroups()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldListSecurityGroupsByAccount()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetClustersByAccountAndName()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetServerGroupByMoniker()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldListSecurityGroupsByAccountAndCloudProvider()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetClusters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetLoadBalancerByAccountRegionAndName()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetApplicationInCluster()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldListSecurityGroupsByAccountAndCloudProviderAndName()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetInstanceByAccountRegionId()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetInstanceLogs()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetSecurityGroupByAccountAndName()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetClustersByAccount()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetClustersByAccountNameAndType()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.InfrastructureIT",
+      "method_signature": "shouldGetServerGroupsForApplications()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteSecondNewestByDynamicTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "deleteWithValidCascadingValue(java.lang.String)",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteLargestByDynamicTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteCrd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldNotDeleteStaticTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "deleteWithInvalidCascadingValue()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldNotFoundDynamicTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteOldestByDynamicTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteWithoutCascading()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteNewestByDynamicTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteSmallestByDynamicTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteCr()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.DeleteManifestIT",
+      "method_signature": "shouldDeleteByStaticTarget()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.PatchManifestIT",
+      "method_signature": "shouldPatchCr()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.PatchManifestIT",
+      "method_signature": "shouldPatchManifestFromText()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.PatchManifestIT",
+      "method_signature": "shouldBindRequiredDockerImage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.PatchManifestIT",
+      "method_signature": "shouldBindOptionalDockerImage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.PatchManifestIT",
+      "method_signature": "shouldPatchCrd()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.kubernetes.it.PatchManifestIT",
+      "method_signature": "shouldBindRequiredOverOptionalDockerImage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "method_signature": "authorizedToReadTags()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-docker",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "method_signature": "filtersOutUnauthorizedItems()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-docker",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "method_signature": "canSearchForAuthorizedItems()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-docker",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "method_signature": "notAuthorizedToReadTags()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-docker",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.docker.registry.controllers.DockerRegistryImageLookupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.CompositeStorageContainerTest",
+      "method_signature": "verifyFront50CompositeMigrationSqlToSql()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.front50.CompositeStorageContainerSqlToProgressTest",
+      "method_signature": "verifyFront50CompositeMigrationSqlToPostgres()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.halyard.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.service.PipelineServiceTest",
+      "method_signature": "invokeDeletePipelineExecution()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.service.PipelineServiceTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.service.PipelineServiceTest",
+      "method_signature": "invokePipelineConfigViaEcho()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.service.PipelineServiceTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ArtifactControllerTest",
+      "method_signature": "TestFetch()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ArtifactControllerTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.MultiAuthSupportTest",
+      "method_signature": "handleErrorResponse()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.AuthConfigTest",
+      "method_signature": "forwardNoCredsRequiresAuth()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.AuthConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.config.GateWebConfigAuthenticatedRequestFilterTest",
+      "method_signature": "TestHeaderAvailableInAuthenticatedRequestMDCDuringAsyncApi()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.config.GateWebConfigAuthenticatedRequestFilterTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.ImageControllerTest",
+      "method_signature": "testFindImages()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.ImageControllerTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.PipelineControllerTest",
+      "method_signature": "invokePipelineConfigRuntimeException()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.PipelineControllerTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest.PartialFieldsDefinedInPropertyTest",
+      "method_signature": "testPartialFieldsConfiguredAllHeaderFieldsInAuthenticatedRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest$PartialFieldsDefinedInPropertyTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest.AllFieldsDefinedInPropertyTest",
+      "method_signature": "testAllHeaderFieldsInAuthenticatedRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest$AllFieldsDefinedInPropertyTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest.AllFieldsDefinedInPropertyTest",
+      "method_signature": "testNoHeaderFieldsInAuthenticatedRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest$AllFieldsDefinedInPropertyTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest.AllFieldsDefinedInPropertyTest",
+      "method_signature": "testRequestIdExistsInAuthenticatedRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest$AllFieldsDefinedInPropertyTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest.EmptyFieldsDefinedInPropertyTest",
+      "method_signature": "testNoHeaderFieldsInAuthenticatedRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.interceptors.ResponseHeaderInterceptorTest$EmptyFieldsDefinedInPropertyTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.testconfig.GateConfigAuthenticatedRequestFilterTest",
+      "method_signature": "TestHeaderAvailableInAuthenticatedRequestMDC()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.testconfig.GateConfigAuthenticatedRequestFilterTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "method_signature": "shouldRedirectOnOauth2Authentication()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "method_signature": "whenAccessingPublicEndpointThenSuccess()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "method_signature": "whenAuthenticatedWithOAuth2ThenAccessGranted()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "method_signature": "whenLoggingOutThenRedirectToHome()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.security.oauth.OAuth2Test",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.config.GateSwaggerConfigTest",
+      "method_signature": "TestSwaggerDocsIsNotMalformed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.config.GateSwaggerConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigOrcaBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigFront50BadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigNoPipelineConfigInFront50()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigSuccess()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigFront50NonJsonRespone()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigFront50Error()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigFront50NetworkError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "method_signature": "invokePipelineConfigOrcaError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.InvokePipelineConfigTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.controllers.CredentialsControllerTest",
+      "method_signature": "invokeAccountDefinitionsByType()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "gate/gate-web",
+      "binary_class_name": "com.netflix.spinnaker.gate.controllers.CredentialsControllerTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "stopBuildTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "listAccountTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "testListTrigersWorkWhenNoTrigerDefined()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "listTriggersTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "runTriggerWorksSuccessfullyTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "missingAccountTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "presentAccountTestWithPoolOption()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "presentAccountTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "updateBuildTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "method_signature": "fallbackToPollingTest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "igor/igor-web",
+      "binary_class_name": "com.netflix.spinnaker.igor.gcb.GoogleCloudBuildTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.fiat.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.igor.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "method_signature": "scalingActivities()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-yandex",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "method_signature": "imageFindByName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-yandex",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "method_signature": "serviceAccountsList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-yandex",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "method_signature": "imageFindByTag()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-yandex",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kayenta.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoWithUserPass()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoUpdates()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoSubdir()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoShaWithSsh()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoWithSshAndKnownHosts()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoWithToken()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoShortSha()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoWithSsh()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoWithoutUrlSuffix()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.artifacts.GitRepoTest",
+      "method_signature": "shouldDownloadGitRepoShaWithToken()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.echo.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.PostgresMigrationContainerTest",
+      "method_signature": "testHealthCheckWithPostgres()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.PostgresContainerTest",
+      "method_signature": "testHealthCheckWithPostgres()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.RedisContainerTest",
+      "method_signature": "testHealthCheckWithRedis()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.MySqlContainerTest",
+      "method_signature": "testHealthCheckWithMySql()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec",
+      "method_signature": "testArtifactVersions()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec",
+      "method_signature": "testArtifactNames()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec",
+      "method_signature": "testFetchWithMisconfiguredArtifact()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "method_signature": "orchestrateTreatsMissingTypeAsBadRequest()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "method_signature": "orchestrateWithEmptyRequestBody()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "method_signature": "orchestrateWithEmptyPipelineMap()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "method_signature": "orchestrateWithoutStages()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.OperationsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "method_signature": "getCanaryConfig_returnsOkResponseForExistingConfiguration()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "method_signature": "getCanaryConfig_returnsNotFoundResponseForNotExistingConfiguration()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "method_signature": "getCanaryConfig_returnsBadRequestResponseForNotResolvedAccount()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "method_signature": "postCanaryConfig_returnsBadRequestResponseForDuplicateMetricName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CanaryConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.controllers.CanaryControllerTest",
+      "method_signature": "initiateCanary_failsIfNoMetricsSpecified()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kayenta/kayenta-web",
+      "binary_class_name": "com.netflix.kayenta.controllers.CanaryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.web.context.MdcCopyingAsyncTaskExecutorTest",
+      "method_signature": "testAsyncEndpoint()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "kork/kork-web",
+      "binary_class_name": "com.netflix.spinnaker.kork.web.context.MdcCopyingAsyncTaskExecutorTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.config.okhttp3.RefreshableOkHttpClientBuilderProviderTest",
+      "method_signature": "smokeTest()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.kayenta.signalfx.EndToEndCanaryIntegrationTests",
+      "method_signature": "test_that_signalfx_can_be_used_as_a_data_source_for_a_canary_execution_unhealthy()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.kayenta.signalfx.EndToEndCanaryIntegrationTests",
+      "method_signature": "test_that_signalfx_can_be_used_as_a_data_source_for_a_canary_execution_healthy()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.kayenta.signalfx.EndToEndStandaloneCanaryAnalysisIntegrationTests",
+      "method_signature": "test_that_a_canary_analysis_execution_can_be_created_healthy()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.web.config.MetricsEndpointConfigurationTest",
+      "method_signature": "spectatorMetricsAccess()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.CorrelatedTasksControllerTest",
+      "method_signature": "returnsIdsOfAnyCorrelatedOrchestrations()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.CorrelatedTasksControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.CorrelatedTasksControllerTest",
+      "method_signature": "returnsEmptyResponseIfNoCorrelatedExecutionsExist()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.CorrelatedTasksControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.orca.controllers.CorrelatedTasksControllerTest",
+      "method_signature": "returnsIdsOfAnyCorrelatedPipelines()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "orca/orca-web",
+      "binary_class_name": "com.netflix.spinnaker.orca.controllers.CorrelatedTasksControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithMonikerSpec",
+      "method_signature": "createServerGroup_errorIfCreateServiceFails()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithMonikerSpec",
+      "method_signature": "createServerGroup_InputsEc2WithMoniker()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_InputsEc2LegacyTargetGroupTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_InputsEc2WithoutLoadBalacingTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_InputsFargateLegacyTargetGroupTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_InputsEc2ServiceDiscoveryTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_InputsFargateTgMappingsTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_errorIfCreateServiceFails()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithAppAutoScalingSpec",
+      "method_signature": "createServerGroup_InputsEc2TargetGroupMappingsWithAppAutoScalingGroupTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.EcsControllersSpec",
+      "method_signature": "getEcsClustersTest(java.lang.String)",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.EcsControllersSpec",
+      "method_signature": "getServiceDiscoveryRegistriesTest(java.lang.String)",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.EcsControllersSpec",
+      "method_signature": "getAllEcsClusterDetailsTest()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.EcsControllersSpec",
+      "method_signature": "getEcsSecretsTest(java.lang.String)",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithArtifactsSpec",
+      "method_signature": "createServerGroup_ProcessedArtifactsEC2TgMappingsTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithArtifactsSpec",
+      "method_signature": "createServerGroup_ArtifactsFARGATETgMappingsTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithArtifactsSpec",
+      "method_signature": "createServerGroup_ArtifactsEC2TgMappingsTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithArtifactsSpec",
+      "method_signature": "createServerGroup_errorIfNoContainersTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithArtifactsSpec",
+      "method_signature": "createServerGroup_ArtifactsEC2WithMultipleLBsTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupWithArtifactsSpec",
+      "method_signature": "createServerGroup_ArtifactsFARGATECapacityProviderTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.LoadBalancersSpec",
+      "method_signature": "getLoadBalancersTest()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.LoadBalancersSpec",
+      "method_signature": "getLoadBalancersForApplicationTest()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.ecs.test.CreateServerGroupForExistingServiceSpec",
+      "method_signature": "createServerGroup_inputsEC2TgMappingsExistingServiceTest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.kayenta.graphite.E2EIntegrationTest",
+      "method_signature": "test_healthy_graphite_canary_execution()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.kayenta.graphite.E2EIntegrationTest",
+      "method_signature": "test_unhealthy_graphite_canary_execution()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "not-in-build"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupLaunchTemplatesEnabledSpec",
+      "method_signature": "createServerGroup_ltAndSpot_expect_launchTemplate()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupLaunchTemplatesEnabledSpec",
+      "method_signature": "createServerGroup_setLaunchTemplateDisabled_expect_launchConfiguration()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupLaunchTemplatesEnabledSpec",
+      "method_signature": "createServerGroup_incompatible_ami_and_instanceType_expect_exception()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupLaunchTemplatesEnabledSpec",
+      "method_signature": "createServerGroup_ltEnabled_and_excludedApp_expect_launchConfiguration()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupLaunchTemplatesEnabledSpec",
+      "method_signature": "createServerGroup_ltFeatures_used_expect_launchTemplate()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupMixedInstancesPolicySpec",
+      "method_signature": "createServerGroup_instancesDistribution_used_expect_mixedInstancesPolicy()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupMixedInstancesPolicySpec",
+      "method_signature": "createServerGroup_multiInstanceTypes_used_expect_mixedInstancesPolicy()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_invalidRequests_expect_validationFailure()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_subnetType_expect_deploymentToSubnetIds()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_metrics_monitoring_enabled_expect_success()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_noSubnetType_expect_deploymentToAZs()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_alreadyExists_inSafetyWindow_expect_success()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_invalid_subnetType_expect_error()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupSpec",
+      "method_signature": "createServerGroup_alreadyExists_notInSafetyWindow_expect_exception()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyLaunchTemplate_onUpdateFailure_andDeletionOfLtVersionFailure_exceptionReportedCorrectly()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyMipOnlyFields_sgWithLtOnDemand_skips_newLaunchTemplateVersionCreation()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyServerGroupLaunchTemplate_convert_SgWithLtSpot_To_SgWithMip_createsNewLaunchTemplateVersion()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyServerGroupLaunchTemplate_sgWithLaunchConfig_expect_exception()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyServerGroupLaunchTemplate_invalidRequests_expect_validationFailure()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyServerGroupLaunchTemplate_sgWithLaunchTemplate_success()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyServerGroupLaunchTemplate_ltAndMipFields_createsNewLaunchTemplateVersion()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyLaunchTemplate_newLaunchTemplateVersionCreated_andDeleted_onUpdateFailure()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifyMipOnlyFields_sgWithMixedInstancesPolicy_skips_newLaunchTemplateVersionCreation()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.ModifyServerGroupLaunchTemplateSpec",
+      "method_signature": "modifySpotPrice_sgWithMixedInstancesPolicy_skips_newLaunchTemplateVersionCreation()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupLaunchConfigEnabledSpec",
+      "method_signature": "createServerGroup_lcAndSpot_expect_launchConfiguration()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.aws.test.CreateServerGroupLaunchConfigEnabledSpec",
+      "method_signature": "createServerGroup_defaultSettings_expect_launchConfiguration()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.gate.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.kork.tomcat.WebEnvironmentTest",
+      "method_signature": "testTomcatWithIllegalHttpHeaders()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerWithClouddriverServiceTest",
+      "method_signature": "testRequestHeadersToClouddriver()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerWithClouddriverServiceTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerTest",
+      "method_signature": "testSpinnakerHttpExceptionWith404Response()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerTest",
+      "method_signature": "testSpinnakerServerException()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "rosco/rosco-web",
+      "binary_class_name": "com.netflix.spinnaker.rosco.controllers.V2BakeryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.StandaloneContainerTest",
+      "method_signature": "testHealthCheck()",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.rosco.StandaloneContainerTest",
+      "method_signature": "testHelmOverridesPriority(com.netflix.spinnaker.rosco.StandaloneContainerTest.HelmTemplateValues, boolean, com.netflix.spinnaker.rosco.manifests.BakeManifestRequest.TemplateRenderer, com.netflix.spinnaker.rosco.StandaloneContainerTest.HelmTemplateValues, boolean, boolean)",
+      "dispatch": [
+        "unknown"
+      ],
+      "module": null,
+      "binary_class_name": null,
+      "status": "out-of-scope"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.standalone.PrometheusStandaloneCanaryAnalysisTest",
+      "method_signature": "canaryAnalysisIsFailed()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.standalone.PrometheusStandaloneCanaryAnalysisTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.standalone.PrometheusStandaloneCanaryAnalysisTest",
+      "method_signature": "canaryAnalysisIsSuccessful()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.standalone.PrometheusStandaloneCanaryAnalysisTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.standalone.PrometheusStandaloneCanaryAnalysisTest",
+      "method_signature": "mutedMetricsAreNotTakenIntoFinalScore()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.standalone.PrometheusStandaloneCanaryAnalysisTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.SwaggerTest",
+      "method_signature": "swaggerUiIsPresent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.SwaggerTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.standalone.GraphiteStandaloneCanaryAnalysisTest",
+      "method_signature": "canaryAnalysisIsFailed()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.standalone.GraphiteStandaloneCanaryAnalysisTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.standalone.GraphiteStandaloneCanaryAnalysisTest",
+      "method_signature": "canaryAnalysisIsSuccessful()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.standalone.GraphiteStandaloneCanaryAnalysisTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.ManagementTest",
+      "method_signature": "healthIsUp()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.ManagementTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.kayenta.tests.ManagementTest",
+      "method_signature": "prometheusTargetsAreAllReportingUp()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "kayenta/kayenta-integration-tests",
+      "binary_class_name": "com.netflix.kayenta.tests.ManagementTest",
+      "status": "failed"
+    },
+    {
+      "class_name": "com.netflix.spinnaker.clouddriver.controllers.KubernetesCustomPropertyBindingRefreshTest",
+      "method_signature": "testRefreshScopeRefreshedEvent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "clouddriver/clouddriver-web",
+      "binary_class_name": "com.netflix.spinnaker.clouddriver.controllers.KubernetesCustomPropertyBindingRefreshTest",
+      "status": "failed"
+    }
+  ]
+}

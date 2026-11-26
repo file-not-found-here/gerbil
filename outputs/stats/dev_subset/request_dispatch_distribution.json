@@ -1,0 +1,585 @@
+{
+  "scope": "api_tests_with_dispatch_labels",
+  "labeled_test_count": 6980,
+  "label_split": {
+    "in-process": {
+      "test_count": 6048,
+      "pct_of_labeled_tests": 86.64756446991404
+    },
+    "local-network": {
+      "test_count": 674,
+      "pct_of_labeled_tests": 9.656160458452723
+    },
+    "remote-network": {
+      "test_count": 6,
+      "pct_of_labeled_tests": 0.08595988538681948
+    },
+    "unknown": {
+      "test_count": 252,
+      "pct_of_labeled_tests": 3.6103151862464182
+    }
+  },
+  "multiple_label_tests": {
+    "count": 0,
+    "total": 6980,
+    "proportion": 0.0
+  },
+  "per_label": {
+    "in-process": {
+      "test_count": 6048,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 6048,
+          "min": 3.0,
+          "max": 4043.0,
+          "mean": 506.90261243386243,
+          "p25": 148.0,
+          "p50": 416.0,
+          "p75": 706.0,
+          "p90": 1044.9000000000005
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 6048,
+          "min": 1.0,
+          "max": 849.0,
+          "mean": 104.14765211640211,
+          "p25": 21.75,
+          "p50": 86.0,
+          "p75": 151.0,
+          "p90": 219.0
+        },
+        "expanded_objects_created": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 145.0,
+          "mean": 18.229166666666668,
+          "p25": 7.0,
+          "p50": 16.0,
+          "p75": 23.0,
+          "p90": 34.0
+        },
+        "expanded_helper_method_count": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 520.0,
+          "mean": 58.51438492063492,
+          "p25": 11.0,
+          "p50": 42.0,
+          "p75": 83.0,
+          "p90": 127.0
+        },
+        "mocked_interaction_count": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.34077380952380953,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 763,
+          "total": 6048,
+          "proportion": 0.1261574074074074
+        },
+        "has_cleanup_delete": {
+          "count": 141,
+          "total": 6048,
+          "proportion": 0.023313492063492064
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 33.0,
+          "mean": 2.3764880952380953,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 2.0,
+          "p90": 6.0
+        },
+        "3xx": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 0.1832010582010582,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "4xx": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 0.3794642857142857,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        },
+        "5xx": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 8.0,
+          "mean": 0.037698412698412696,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 6048,
+          "min": 0.0,
+          "max": 18.0,
+          "mean": 0.05026455026455026,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    },
+    "local-network": {
+      "test_count": 674,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 674,
+          "min": 3.0,
+          "max": 6498.0,
+          "mean": 186.06379821958458,
+          "p25": 19.25,
+          "p50": 53.0,
+          "p75": 135.75,
+          "p90": 438.0
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 674,
+          "min": 1.0,
+          "max": 1380.0,
+          "mean": 37.22255192878338,
+          "p25": 2.0,
+          "p50": 7.0,
+          "p75": 26.0,
+          "p90": 97.80000000000018
+        },
+        "expanded_objects_created": {
+          "count": 674,
+          "min": 0.0,
+          "max": 822.0,
+          "mean": 21.090504451038576,
+          "p25": 0.0,
+          "p50": 2.0,
+          "p75": 15.0,
+          "p90": 52.40000000000009
+        },
+        "expanded_helper_method_count": {
+          "count": 674,
+          "min": 0.0,
+          "max": 703.0,
+          "mean": 18.99258160237389,
+          "p25": 0.0,
+          "p50": 3.0,
+          "p75": 12.0,
+          "p90": 49.700000000000045
+        },
+        "mocked_interaction_count": {
+          "count": 674,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 674,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.06973293768545995,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 151,
+          "total": 674,
+          "proportion": 0.22403560830860533
+        },
+        "has_cleanup_delete": {
+          "count": 83,
+          "total": 674,
+          "proportion": 0.12314540059347182
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 674,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 674,
+          "min": 0.0,
+          "max": 29.0,
+          "mean": 2.308605341246291,
+          "p25": 1.0,
+          "p50": 1.0,
+          "p75": 3.0,
+          "p90": 5.0
+        },
+        "3xx": {
+          "count": 674,
+          "min": 0.0,
+          "max": 24.0,
+          "mean": 0.43026706231454004,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "4xx": {
+          "count": 674,
+          "min": 0.0,
+          "max": 14.0,
+          "mean": 0.26409495548961426,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "5xx": {
+          "count": 674,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.010385756676557863,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 674,
+          "min": 0.0,
+          "max": 4.0,
+          "mean": 0.04302670623145401,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    },
+    "remote-network": {
+      "test_count": 6,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 6,
+          "min": 40.0,
+          "max": 133.0,
+          "mean": 101.5,
+          "p25": 63.0,
+          "p50": 132.0,
+          "p75": 132.0,
+          "p90": 132.5
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 6,
+          "min": 5.0,
+          "max": 19.0,
+          "mean": 14.333333333333334,
+          "p25": 8.5,
+          "p50": 19.0,
+          "p75": 19.0,
+          "p90": 19.0
+        },
+        "expanded_objects_created": {
+          "count": 6,
+          "min": 6.0,
+          "max": 19.0,
+          "mean": 14.666666666666666,
+          "p25": 9.25,
+          "p50": 19.0,
+          "p75": 19.0,
+          "p90": 19.0
+        },
+        "expanded_helper_method_count": {
+          "count": 6,
+          "min": 3.0,
+          "max": 8.0,
+          "mean": 6.333333333333333,
+          "p25": 4.25,
+          "p50": 8.0,
+          "p75": 8.0,
+          "p90": 8.0
+        },
+        "mocked_interaction_count": {
+          "count": 6,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 6,
+          "min": 0.0,
+          "max": 1.0,
+          "mean": 0.3333333333333333,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.75,
+          "p90": 1.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 0,
+          "total": 6,
+          "proportion": 0.0
+        },
+        "has_cleanup_delete": {
+          "count": 0,
+          "total": 6,
+          "proportion": 0.0
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 6,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 6,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "3xx": {
+          "count": 6,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "4xx": {
+          "count": 6,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "5xx": {
+          "count": 6,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 6,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    },
+    "unknown": {
+      "test_count": 252,
+      "metrics": {
+        "expanded_ncloc": {
+          "count": 252,
+          "min": 3.0,
+          "max": 1036.0,
+          "mean": 166.19444444444446,
+          "p25": 46.25,
+          "p50": 100.5,
+          "p75": 180.75,
+          "p90": 393.0
+        },
+        "expanded_cyclomatic_complexity": {
+          "count": 252,
+          "min": 1.0,
+          "max": 235.0,
+          "mean": 33.34920634920635,
+          "p25": 7.0,
+          "p50": 16.0,
+          "p75": 29.5,
+          "p90": 94.0
+        },
+        "expanded_objects_created": {
+          "count": 252,
+          "min": 0.0,
+          "max": 84.0,
+          "mean": 14.154761904761905,
+          "p25": 5.0,
+          "p50": 8.0,
+          "p75": 19.0,
+          "p90": 30.900000000000006
+        },
+        "expanded_helper_method_count": {
+          "count": 252,
+          "min": 0.0,
+          "max": 138.0,
+          "mean": 15.952380952380953,
+          "p25": 2.0,
+          "p50": 8.0,
+          "p75": 13.0,
+          "p90": 49.0
+        },
+        "mocked_interaction_count": {
+          "count": 252,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "dependency_strategy_label_count": {
+          "count": 252,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.30158730158730157,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 1.0
+        }
+      },
+      "resource_lifecycle": {
+        "has_read_after_write": {
+          "count": 0,
+          "total": 252,
+          "proportion": 0.0
+        },
+        "has_cleanup_delete": {
+          "count": 0,
+          "total": 252,
+          "proportion": 0.0
+        }
+      },
+      "status_range_counts": {
+        "1xx": {
+          "count": 252,
+          "min": 0.0,
+          "max": 0.0,
+          "mean": 0.0,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "2xx": {
+          "count": 252,
+          "min": 0.0,
+          "max": 4.0,
+          "mean": 0.6031746031746031,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 1.0,
+          "p90": 2.0
+        },
+        "3xx": {
+          "count": 252,
+          "min": 0.0,
+          "max": 9.0,
+          "mean": 0.4007936507936508,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "4xx": {
+          "count": 252,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.1626984126984127,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 1.0
+        },
+        "5xx": {
+          "count": 252,
+          "min": 0.0,
+          "max": 2.0,
+          "mean": 0.01984126984126984,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        },
+        "unknown": {
+          "count": 252,
+          "min": 0.0,
+          "max": 3.0,
+          "mean": 0.03968253968253968,
+          "p25": 0.0,
+          "p50": 0.0,
+          "p75": 0.0,
+          "p90": 0.0
+        }
+      }
+    }
+  }
+}

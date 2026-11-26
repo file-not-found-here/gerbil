@@ -1,0 +1,169 @@
+{
+  "target_classes": 32,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 4,
+  "untested_line_covered_mutants": 1,
+  "sample_sha256": "2edd9788c9d0fd9523382f732d561658e149c8f9ad0d8a3bf1ba1d29b35a8d07",
+  "runs": [
+    {
+      "module": "clouddriver/clouddriver-docker",
+      "threads": 1,
+      "seconds": 19.5,
+      "peak_memory_bytes": 667590656
+    },
+    {
+      "module": "clouddriver/clouddriver-web",
+      "threads": 1,
+      "seconds": 483.5,
+      "peak_memory_bytes": 1432469504
+    },
+    {
+      "module": "clouddriver/clouddriver-yandex",
+      "threads": 1,
+      "seconds": 775.7,
+      "peak_memory_bytes": 1360613376
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "com.netflix.spinnaker.cats.agent.CachingAgent$CacheExecution|executeAgent|(Lcom/netflix/spinnaker/cats/agent/Agent;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|18",
+      "mutated_class": "com.netflix.spinnaker.cats.agent.CachingAgent$CacheExecution",
+      "mutated_method": "executeAgent",
+      "line": 78,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec#testArtifactNames",
+        "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest#imageFindByName"
+      ]
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.cats.cache.DefaultAgentIntrospection|lambda$finish$2|(Ljava/lang/Integer;Ljava/util/Collection;)Ljava/lang/Integer;|org.pitest.mutationtest.engine.gregor.mutators.MathMutator|7",
+      "mutated_class": "com.netflix.spinnaker.cats.cache.DefaultAgentIntrospection",
+      "mutated_method": "lambda$finish$2",
+      "line": 49,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.MathMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.cats.mem.InMemoryCache$Glob|handleDelim|(Ljava/lang/String;)V|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|59",
+      "mutated_class": "com.netflix.spinnaker.cats.mem.InMemoryCache$Glob",
+      "mutated_method": "handleDelim",
+      "line": 318,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.cache.CatsOnDemandCacheUpdater|pendingOnDemandRequests|(Lcom/netflix/spinnaker/clouddriver/cache/OnDemandType;Ljava/lang/String;)Ljava/util/Collection;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|12",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.cache.CatsOnDemandCacheUpdater",
+      "mutated_method": "pendingOnDemandRequests",
+      "line": 196,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.cache.OnDemandMetricsSupport|onDemandStore|(Ljava/util/function/Supplier;)Ljava/lang/Object;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|8",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.cache.OnDemandMetricsSupport",
+      "mutated_method": "onDemandStore",
+      "line": 79,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig|noopApplicationProvider|()Lcom/netflix/spinnaker/clouddriver/model/ApplicationProvider;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|6",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig",
+      "mutated_method": "noopApplicationProvider",
+      "line": 270,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec#testArtifactNames"
+      ]
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig|projectSearchProvider|(Lcom/netflix/spinnaker/clouddriver/core/services/Front50Service;)Lcom/netflix/spinnaker/clouddriver/search/ProjectSearchProvider;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|7",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.config.CloudDriverConfig",
+      "mutated_method": "projectSearchProvider",
+      "line": 252,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "com.netflix.spinnaker.clouddriver.controllers.ArtifactControllerSpec#testArtifactNames",
+        "com.netflix.spinnaker.clouddriver.yandex.controller.YandexControllersTest#imageFindByName"
+      ]
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.core.ProjectClustersService|retrieveClusters|(Ljava/lang/String;Lcom/netflix/spinnaker/clouddriver/core/ProjectClustersService$Project;)Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|26",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.core.ProjectClustersService",
+      "mutated_method": "retrieveClusters",
+      "line": 164,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.model.NoopSubnetProvider|getCloudProvider|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|4",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.model.NoopSubnetProvider",
+      "mutated_method": "getCloudProvider",
+      "line": 25,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.yandex.provider.agent.YandexInstanceCachingAgent|lambda$linkWithLoadBalancers$1|(Lcom/netflix/spinnaker/cats/cache/CacheData;)Lcom/netflix/spinnaker/clouddriver/yandex/model/YandexCloudLoadBalancer;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|8",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.yandex.provider.agent.YandexInstanceCachingAgent",
+      "mutated_method": "lambda$linkWithLoadBalancers$1",
+      "line": 76,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "com.netflix.spinnaker.clouddriver.yandex.provider.agent.YandexNetworkLoadBalancerCachingAgent|lambda$handle$1|(Lcom/netflix/spinnaker/clouddriver/yandex/model/YandexCloudLoadBalancer;)Lcom/netflix/spinnaker/cats/agent/CacheResult;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|24",
+      "mutated_class": "com.netflix.spinnaker.clouddriver.yandex.provider.agent.YandexNetworkLoadBalancerCachingAgent",
+      "mutated_method": "lambda$handle$1",
+      "line": 98,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    }
+  ]
+}

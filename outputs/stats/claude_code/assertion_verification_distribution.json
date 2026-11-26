@@ -1,60 +1,60 @@
 {
   "scope": "api_tests",
-  "api_test_count": 1243,
+  "api_test_count": 1298,
   "assertion_targets": {
-    "countable_assertion_count": 2575,
-    "response_surface_assertion_count": 2318,
+    "countable_assertion_count": 2932,
+    "response_surface_assertion_count": 2797,
     "excluded_countable_assertions": {
-      "general": 257,
+      "general": 135,
       "exception": 0
     },
     "by_target": {
       "status": {
-        "count": 1334,
-        "total": 2318,
-        "proportion": 0.5754961173425367,
-        "proportion_of_countable_assertions": 0.5180582524271845
+        "count": 1501,
+        "total": 2797,
+        "proportion": 0.5366464068644977,
+        "proportion_of_countable_assertions": 0.51193724420191
       },
       "body": {
-        "count": 935,
-        "total": 2318,
-        "proportion": 0.40336496980155306,
-        "proportion_of_countable_assertions": 0.36310679611650487
+        "count": 1186,
+        "total": 2797,
+        "proportion": 0.42402574186628533,
+        "proportion_of_countable_assertions": 0.4045020463847203
       },
       "header": {
-        "count": 49,
-        "total": 2318,
-        "proportion": 0.02113891285591027,
-        "proportion_of_countable_assertions": 0.019029126213592235
+        "count": 110,
+        "total": 2797,
+        "proportion": 0.03932785126921702,
+        "proportion_of_countable_assertions": 0.03751705320600273
       }
     }
   },
   "target_assertions_per_test": {
     "status": {
-      "count": 1243,
+      "count": 1298,
       "min": 0.0,
-      "max": 5.0,
-      "mean": 1.073209975864843,
+      "max": 7.0,
+      "mean": 1.1563944530046224,
       "p25": 1.0,
       "p50": 1.0,
       "p75": 1.0,
       "p90": 1.0
     },
     "body": {
-      "count": 1243,
+      "count": 1298,
       "min": 0.0,
-      "max": 6.0,
-      "mean": 0.7522123893805309,
+      "max": 11.0,
+      "mean": 0.9137134052388289,
       "p25": 0.0,
       "p50": 1.0,
       "p75": 1.0,
       "p90": 2.0
     },
     "header": {
-      "count": 1243,
+      "count": 1298,
       "min": 0.0,
       "max": 4.0,
-      "mean": 0.039420756234915526,
+      "mean": 0.0847457627118644,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 0.0,
@@ -62,454 +62,454 @@
     }
   },
   "response_surface_combinations": {
-    "total": 1243,
+    "total": 1298,
     "by_combination": {
       "none": {
-        "count": 2,
-        "total": 1243,
-        "proportion": 0.0016090104585679806
+        "count": 4,
+        "total": 1298,
+        "proportion": 0.0030816640986132513
       },
       "status-only": {
-        "count": 469,
-        "total": 1243,
-        "proportion": 0.37731295253419145
+        "count": 367,
+        "total": 1298,
+        "proportion": 0.2827426810477658
       },
       "body-only": {
         "count": 0,
-        "total": 1243,
+        "total": 1298,
         "proportion": 0.0
       },
       "header-only": {
         "count": 0,
-        "total": 1243,
+        "total": 1298,
         "proportion": 0.0
       },
       "status+body": {
-        "count": 747,
-        "total": 1243,
-        "proportion": 0.6009654062751408
+        "count": 841,
+        "total": 1298,
+        "proportion": 0.6479198767334361
       },
       "status+header": {
-        "count": 23,
-        "total": 1243,
-        "proportion": 0.01850362027353178
+        "count": 57,
+        "total": 1298,
+        "proportion": 0.04391371340523883
       },
       "body+header": {
         "count": 0,
-        "total": 1243,
+        "total": 1298,
         "proportion": 0.0
       },
       "status+body+header": {
-        "count": 2,
-        "total": 1243,
-        "proportion": 0.0016090104585679806
+        "count": 29,
+        "total": 1298,
+        "proportion": 0.02234206471494607
       }
     }
   },
   "oracle_types": {
-    "total": 1243,
+    "total": 1298,
     "by_type": {
       "example-based": {
-        "count": 1242,
-        "total": 1243,
-        "proportion": 0.999195494770716
+        "count": 1297,
+        "total": 1298,
+        "proportion": 0.9992295839753467
       },
       "implicit": {
         "count": 1,
-        "total": 1243,
-        "proportion": 0.0008045052292839903
+        "total": 1298,
+        "proportion": 0.0007704160246533128
       }
     }
   },
   "status_assertions": {
-    "status_assertion_count": 1334,
-    "status_asserted_test_count": 1241,
+    "status_assertion_count": 1501,
+    "status_asserted_test_count": 1294,
     "range_assertion_counts": {
       "1xx": {
         "count": 0,
-        "total": 1334,
+        "total": 1501,
         "proportion": 0.0
       },
       "2xx": {
-        "count": 1045,
-        "total": 1334,
-        "proportion": 0.7833583208395802
+        "count": 1210,
+        "total": 1501,
+        "proportion": 0.8061292471685543
       },
       "3xx": {
         "count": 6,
-        "total": 1334,
-        "proportion": 0.004497751124437781
+        "total": 1501,
+        "proportion": 0.003997335109926716
       },
       "4xx": {
-        "count": 222,
-        "total": 1334,
-        "proportion": 0.1664167916041979
+        "count": 224,
+        "total": 1501,
+        "proportion": 0.1492338441039307
       },
       "5xx": {
         "count": 19,
-        "total": 1334,
-        "proportion": 0.01424287856071964
+        "total": 1501,
+        "proportion": 0.012658227848101266
       },
       "unknown": {
         "count": 42,
-        "total": 1334,
-        "proportion": 0.031484257871064465
+        "total": 1501,
+        "proportion": 0.02798134576948701
       }
     },
     "tests_with_range": {
       "2xx": {
-        "count": 976,
-        "total": 1243,
-        "proportion": 0.7851971037811746
+        "count": 1034,
+        "total": 1298,
+        "proportion": 0.7966101694915254
       },
       "4xx": {
-        "count": 222,
-        "total": 1243,
-        "proportion": 0.17860016090104586
+        "count": 224,
+        "total": 1298,
+        "proportion": 0.17257318952234207
       },
       "5xx": {
         "count": 19,
-        "total": 1243,
-        "proportion": 0.015285599356395816
+        "total": 1298,
+        "proportion": 0.014637904468412942
       }
     },
     "tests_with_range_among_status_asserted": {
       "2xx": {
-        "count": 976,
-        "total": 1241,
-        "proportion": 0.7864625302175665
+        "count": 1034,
+        "total": 1294,
+        "proportion": 0.7990726429675425
       },
       "4xx": {
-        "count": 222,
-        "total": 1241,
-        "proportion": 0.1788879935535858
+        "count": 224,
+        "total": 1294,
+        "proportion": 0.1731066460587326
       },
       "5xx": {
         "count": 19,
-        "total": 1241,
-        "proportion": 0.015310233682514102
+        "total": 1294,
+        "proportion": 0.014683153013910355
       }
     },
-    "exact_status_code_assertion_count": 1285,
+    "exact_status_code_assertion_count": 1451,
     "exact_status_code_assertion_counts": {
       "200": {
-        "count": 934,
-        "total": 1285,
-        "proportion": 0.7268482490272373
+        "count": 979,
+        "total": 1451,
+        "proportion": 0.6747070985527223
       },
       "201": {
-        "count": 109,
-        "total": 1285,
-        "proportion": 0.08482490272373541
+        "count": 226,
+        "total": 1451,
+        "proportion": 0.15575465196416263
       },
       "202": {
-        "count": 1,
-        "total": 1285,
-        "proportion": 0.0007782101167315176
+        "count": 4,
+        "total": 1451,
+        "proportion": 0.0027567195037904893
       },
       "204": {
         "count": 1,
-        "total": 1285,
-        "proportion": 0.0007782101167315176
+        "total": 1451,
+        "proportion": 0.0006891798759476223
       },
       "301": {
         "count": 1,
-        "total": 1285,
-        "proportion": 0.0007782101167315176
+        "total": 1451,
+        "proportion": 0.0006891798759476223
       },
       "304": {
         "count": 2,
-        "total": 1285,
-        "proportion": 0.0015564202334630351
+        "total": 1451,
+        "proportion": 0.0013783597518952446
       },
       "400": {
-        "count": 48,
-        "total": 1285,
-        "proportion": 0.03735408560311284
+        "count": 45,
+        "total": 1451,
+        "proportion": 0.031013094417643005
       },
       "401": {
         "count": 2,
-        "total": 1285,
-        "proportion": 0.0015564202334630351
+        "total": 1451,
+        "proportion": 0.0013783597518952446
       },
       "403": {
         "count": 29,
-        "total": 1285,
-        "proportion": 0.022568093385214007
+        "total": 1451,
+        "proportion": 0.019986216402481046
       },
       "404": {
-        "count": 113,
-        "total": 1285,
-        "proportion": 0.08793774319066149
+        "count": 115,
+        "total": 1451,
+        "proportion": 0.07925568573397657
       },
       "405": {
         "count": 24,
-        "total": 1285,
-        "proportion": 0.01867704280155642
+        "total": 1451,
+        "proportion": 0.016540317022742935
       },
       "409": {
-        "count": 1,
-        "total": 1285,
-        "proportion": 0.0007782101167315176
+        "count": 4,
+        "total": 1451,
+        "proportion": 0.0027567195037904893
       },
       "415": {
         "count": 2,
-        "total": 1285,
-        "proportion": 0.0015564202334630351
+        "total": 1451,
+        "proportion": 0.0013783597518952446
       },
       "422": {
         "count": 3,
-        "total": 1285,
-        "proportion": 0.0023346303501945525
+        "total": 1451,
+        "proportion": 0.002067539627842867
       },
       "500": {
-        "count": 14,
-        "total": 1285,
-        "proportion": 0.010894941634241245
+        "count": 13,
+        "total": 1451,
+        "proportion": 0.00895933838731909
       },
       "503": {
         "count": 1,
-        "total": 1285,
-        "proportion": 0.0007782101167315176
+        "total": 1451,
+        "proportion": 0.0006891798759476223
       }
     },
     "tests_with_exact_status_code": {
       "200": {
-        "count": 900,
-        "total": 1243,
-        "proportion": 0.7240547063555913
+        "count": 948,
+        "total": 1298,
+        "proportion": 0.7303543913713405
       },
       "201": {
-        "count": 107,
-        "total": 1243,
-        "proportion": 0.08608205953338696
+        "count": 161,
+        "total": 1298,
+        "proportion": 0.12403697996918336
       },
       "202": {
-        "count": 1,
-        "total": 1243,
-        "proportion": 0.0008045052292839903
+        "count": 4,
+        "total": 1298,
+        "proportion": 0.0030816640986132513
       },
       "204": {
         "count": 1,
-        "total": 1243,
-        "proportion": 0.0008045052292839903
+        "total": 1298,
+        "proportion": 0.0007704160246533128
       },
       "301": {
         "count": 1,
-        "total": 1243,
-        "proportion": 0.0008045052292839903
+        "total": 1298,
+        "proportion": 0.0007704160246533128
       },
       "304": {
         "count": 2,
-        "total": 1243,
-        "proportion": 0.0016090104585679806
+        "total": 1298,
+        "proportion": 0.0015408320493066256
       },
       "400": {
-        "count": 48,
-        "total": 1243,
-        "proportion": 0.038616251005631534
+        "count": 45,
+        "total": 1298,
+        "proportion": 0.03466872110939907
       },
       "401": {
         "count": 2,
-        "total": 1243,
-        "proportion": 0.0016090104585679806
+        "total": 1298,
+        "proportion": 0.0015408320493066256
       },
       "403": {
         "count": 29,
-        "total": 1243,
-        "proportion": 0.02333065164923572
+        "total": 1298,
+        "proportion": 0.02234206471494607
       },
       "404": {
-        "count": 113,
-        "total": 1243,
-        "proportion": 0.09090909090909091
+        "count": 115,
+        "total": 1298,
+        "proportion": 0.08859784283513097
       },
       "405": {
         "count": 24,
-        "total": 1243,
-        "proportion": 0.019308125502815767
+        "total": 1298,
+        "proportion": 0.01848998459167951
       },
       "409": {
-        "count": 1,
-        "total": 1243,
-        "proportion": 0.0008045052292839903
+        "count": 4,
+        "total": 1298,
+        "proportion": 0.0030816640986132513
       },
       "415": {
         "count": 2,
-        "total": 1243,
-        "proportion": 0.0016090104585679806
+        "total": 1298,
+        "proportion": 0.0015408320493066256
       },
       "422": {
         "count": 3,
-        "total": 1243,
-        "proportion": 0.002413515687851971
+        "total": 1298,
+        "proportion": 0.0023112480739599386
       },
       "500": {
-        "count": 14,
-        "total": 1243,
-        "proportion": 0.011263073209975865
+        "count": 13,
+        "total": 1298,
+        "proportion": 0.010015408320493066
       },
       "503": {
         "count": 1,
-        "total": 1243,
-        "proportion": 0.0008045052292839903
+        "total": 1298,
+        "proportion": 0.0007704160246533128
       }
     }
   },
   "status_range_coverage": {
     "resolved_assertion_range_share": {
       "scope": "sequenced_status_assertions",
-      "status_assertion_count": 1334,
-      "resolved_assertion_count": 1292,
+      "status_assertion_count": 1501,
+      "resolved_assertion_count": 1459,
       "unknown_assertion_count": 42,
       "by_range": {
         "1xx": {
           "count": 0,
-          "total": 1292,
+          "total": 1459,
           "proportion": 0.0
         },
         "2xx": {
-          "count": 1045,
-          "total": 1292,
-          "proportion": 0.8088235294117647
+          "count": 1210,
+          "total": 1459,
+          "proportion": 0.8293351610692254
         },
         "3xx": {
           "count": 6,
-          "total": 1292,
-          "proportion": 0.0046439628482972135
+          "total": 1459,
+          "proportion": 0.00411240575736806
         },
         "4xx": {
-          "count": 222,
-          "total": 1292,
-          "proportion": 0.17182662538699692
+          "count": 224,
+          "total": 1459,
+          "proportion": 0.15352981494174092
         },
         "5xx": {
           "count": 19,
-          "total": 1292,
-          "proportion": 0.014705882352941176
+          "total": 1459,
+          "proportion": 0.013022618231665525
         }
       }
     },
     "all_sequence_membership": {
       "scope": "http_test_sequences",
-      "sequence_count": 1394,
+      "sequence_count": 1589,
       "by_range": {
         "1xx": {
           "count": 0,
-          "total": 1394,
+          "total": 1589,
           "proportion": 0.0
         },
         "2xx": {
-          "count": 1045,
-          "total": 1394,
-          "proportion": 0.7496413199426112
+          "count": 1210,
+          "total": 1589,
+          "proportion": 0.7614852108244179
         },
         "3xx": {
           "count": 6,
-          "total": 1394,
-          "proportion": 0.00430416068866571
+          "total": 1589,
+          "proportion": 0.003775959723096287
         },
         "4xx": {
-          "count": 222,
-          "total": 1394,
-          "proportion": 0.15925394548063126
+          "count": 224,
+          "total": 1589,
+          "proportion": 0.14096916299559473
         },
         "5xx": {
           "count": 19,
-          "total": 1394,
-          "proportion": 0.013629842180774749
+          "total": 1589,
+          "proportion": 0.01195720578980491
         }
       }
     },
     "sequence_membership": {
       "scope": "http_test_sequences_with_resolved_status_assertion",
-      "status_bearing_sequence_count": 1325,
-      "resolved_status_bearing_sequence_count": 1292,
+      "status_bearing_sequence_count": 1492,
+      "resolved_status_bearing_sequence_count": 1459,
       "by_range": {
         "1xx": {
           "count": 0,
-          "total": 1292,
+          "total": 1459,
           "proportion": 0.0
         },
         "2xx": {
-          "count": 1045,
-          "total": 1292,
-          "proportion": 0.8088235294117647
+          "count": 1210,
+          "total": 1459,
+          "proportion": 0.8293351610692254
         },
         "3xx": {
           "count": 6,
-          "total": 1292,
-          "proportion": 0.0046439628482972135
+          "total": 1459,
+          "proportion": 0.00411240575736806
         },
         "4xx": {
-          "count": 222,
-          "total": 1292,
-          "proportion": 0.17182662538699692
+          "count": 224,
+          "total": 1459,
+          "proportion": 0.15352981494174092
         },
         "5xx": {
           "count": 19,
-          "total": 1292,
-          "proportion": 0.014705882352941176
+          "total": 1459,
+          "proportion": 0.013022618231665525
         }
       }
     }
   },
   "status_outcome_mix": {
     "scope": "api_tests_with_status_assertion",
-    "test_count": 1241,
+    "test_count": 1294,
     "by_mix": {
       "2xx_only": {
-        "count": 961,
-        "total": 1241,
-        "proportion": 0.774375503626108
+        "count": 1012,
+        "total": 1294,
+        "proportion": 0.7820710973724884
       },
       "4xx_only": {
-        "count": 207,
-        "total": 1241,
-        "proportion": 0.16680096696212732
+        "count": 202,
+        "total": 1294,
+        "proportion": 0.1561051004636785
       },
       "5xx_only": {
         "count": 19,
-        "total": 1241,
-        "proportion": 0.015310233682514102
+        "total": 1294,
+        "proportion": 0.014683153013910355
       },
       "4xx_and_5xx_only": {
         "count": 0,
-        "total": 1241,
+        "total": 1294,
         "proportion": 0.0
       },
       "success_and_error": {
-        "count": 15,
-        "total": 1241,
-        "proportion": 0.012087026591458501
+        "count": 22,
+        "total": 1294,
+        "proportion": 0.017001545595054096
       },
       "neither_success_nor_error": {
         "count": 39,
-        "total": 1241,
-        "proportion": 0.031426269137792104
+        "total": 1294,
+        "proportion": 0.030139103554868624
       }
     },
     "success_and_error_breakdown": {
       "success_and_client_error": {
-        "count": 15,
-        "total": 15,
+        "count": 22,
+        "total": 22,
         "proportion": 1.0
       },
       "success_and_server_error": {
         "count": 0,
-        "total": 15,
+        "total": 22,
         "proportion": 0.0
       },
       "success_and_both_errors": {
         "count": 0,
-        "total": 15,
+        "total": 22,
         "proportion": 0.0
       }
     }
   },
   "has_exception_assertion": {
     "count": 0,
-    "total": 1243,
+    "total": 1298,
     "proportion": 0.0
   }
 }

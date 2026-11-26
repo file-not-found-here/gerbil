@@ -291,6 +291,10 @@ class TestRecord:
     # tallied in unresolved_resource_crud_sequence_count instead.
     resource_crud_combinations: tuple[tuple[str, ...], ...] = ()
     unresolved_resource_crud_sequence_count: int = 0
+    # Whether any (test, resource) sequence creates, updates, or deletes, read
+    # from the same mapped steps as has_read_after_write; unlike the combinations
+    # above, a sequence with an unmapped method still counts.
+    writes_resource: bool = False
     # HTTP-verb analog of the two fields above: one verb-combination tuple per
     # (test, resource) sequence whose every request resolved to a verb, and the
     # count of sequences excluded by the shared resolution rule. Because that rule
@@ -946,6 +950,11 @@ def project_test(
             )
         ),
         resource_crud_combinations=tuple(resource_crud_combinations),
+        writes_resource=any(
+            WRITE_OPERATIONS
+            & {operation.value for operation in sequence.exercised_operations}
+            for sequence in http.resource_interaction_sequences
+        ),
         unresolved_resource_crud_sequence_count=(
             unresolved_resource_crud_sequence_count
         ),

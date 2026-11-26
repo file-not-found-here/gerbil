@@ -2,109 +2,109 @@
   "scope": "endpoints_api_tests_and_resolved_endpoint_events",
   "endpoint_count": 2397,
   "request_attributed": {
-    "count": 815,
+    "count": 830,
     "total": 2397,
-    "proportion": 0.3400083437630371
+    "proportion": 0.34626616604088445
   },
   "status_asserted": {
-    "count": 814,
+    "count": 821,
     "total": 2397,
-    "proportion": 0.33959115561118064
+    "proportion": 0.34251147267417603
   },
   "outcome_mix": {
     "scope": "status_asserted_endpoints",
-    "endpoint_count": 814,
+    "endpoint_count": 821,
     "by_mix": {
       "success_only": {
-        "count": 601,
-        "total": 814,
-        "proportion": 0.7383292383292384
+        "count": 600,
+        "total": 821,
+        "proportion": 0.730816077953715
       },
       "error_without_success": {
-        "count": 79,
-        "total": 814,
-        "proportion": 0.09705159705159705
+        "count": 56,
+        "total": 821,
+        "proportion": 0.0682095006090134
       },
       "success_and_error": {
-        "count": 129,
-        "total": 814,
-        "proportion": 0.15847665847665848
+        "count": 160,
+        "total": 821,
+        "proportion": 0.19488428745432398
       },
       "neither_success_nor_error": {
         "count": 5,
-        "total": 814,
-        "proportion": 0.006142506142506142
+        "total": 821,
+        "proportion": 0.0060901339829476245
       }
     },
     "has_auth_denial_assertion": {
       "count": 40,
-      "total": 814,
-      "proportion": 0.04914004914004914
+      "total": 821,
+      "proportion": 0.048721071863580996
     }
   },
   "asserted_status_ranges": {
     "attributed_assertion_counts": {
       "1xx": {
         "count": 0,
-        "total": 1812,
+        "total": 1835,
         "proportion": 0.0
       },
       "2xx": {
-        "count": 1308,
-        "total": 1812,
-        "proportion": 0.7218543046357616
+        "count": 1319,
+        "total": 1835,
+        "proportion": 0.7188010899182561
       },
       "3xx": {
         "count": 6,
-        "total": 1812,
-        "proportion": 0.0033112582781456954
+        "total": 1835,
+        "proportion": 0.0032697547683923707
       },
       "4xx": {
-        "count": 427,
-        "total": 1812,
-        "proportion": 0.23565121412803533
+        "count": 436,
+        "total": 1835,
+        "proportion": 0.23760217983651227
       },
       "5xx": {
-        "count": 25,
-        "total": 1812,
-        "proportion": 0.01379690949227373
+        "count": 28,
+        "total": 1835,
+        "proportion": 0.015258855585831062
       },
       "unknown": {
         "count": 46,
-        "total": 1812,
-        "proportion": 0.025386313465783666
+        "total": 1835,
+        "proportion": 0.025068119891008173
       }
     },
     "endpoints_with_range": {
       "1xx": {
         "count": 0,
-        "total": 814,
+        "total": 821,
         "proportion": 0.0
       },
       "2xx": {
-        "count": 730,
-        "total": 814,
-        "proportion": 0.8968058968058968
+        "count": 760,
+        "total": 821,
+        "proportion": 0.925700365408039
       },
       "3xx": {
         "count": 5,
-        "total": 814,
-        "proportion": 0.006142506142506142
+        "total": 821,
+        "proportion": 0.0060901339829476245
       },
       "4xx": {
-        "count": 186,
-        "total": 814,
-        "proportion": 0.2285012285012285
+        "count": 194,
+        "total": 821,
+        "proportion": 0.23629719853836784
       },
       "5xx": {
-        "count": 25,
-        "total": 814,
-        "proportion": 0.030712530712530713
+        "count": 28,
+        "total": 821,
+        "proportion": 0.0341047503045067
       },
       "unknown": {
         "count": 29,
-        "total": 814,
-        "proportion": 0.03562653562653563
+        "total": 821,
+        "proportion": 0.03532277710109622
       }
     },
     "endpoints_with_range_among_all_endpoints": {
@@ -114,9 +114,9 @@
         "proportion": 0.0
       },
       "2xx": {
-        "count": 730,
+        "count": 760,
         "total": 2397,
-        "proportion": 0.3045473508552357
+        "proportion": 0.3170629954109303
       },
       "3xx": {
         "count": 5,
@@ -124,14 +124,14 @@
         "proportion": 0.0020859407592824365
       },
       "4xx": {
-        "count": 186,
+        "count": 194,
         "total": 2397,
-        "proportion": 0.07759699624530664
+        "proportion": 0.08093450146015853
       },
       "5xx": {
-        "count": 25,
+        "count": 28,
         "total": 2397,
-        "proportion": 0.010429703796412181
+        "proportion": 0.011681268251981644
       },
       "unknown": {
         "count": 29,
@@ -143,195 +143,195 @@
   "asserted_status_codes": {
     "attributed_assertion_counts": {
       "200": {
-        "count": 1172,
-        "total": 1757,
-        "proportion": 0.6670461013090495
+        "count": 1049,
+        "total": 1775,
+        "proportion": 0.5909859154929578
       },
       "201": {
-        "count": 127,
-        "total": 1757,
-        "proportion": 0.07228229937393284
+        "count": 261,
+        "total": 1775,
+        "proportion": 0.14704225352112676
       },
       "202": {
         "count": 1,
-        "total": 1757,
-        "proportion": 0.0005691519635742744
+        "total": 1775,
+        "proportion": 0.0005633802816901409
       },
       "204": {
         "count": 8,
-        "total": 1757,
-        "proportion": 0.004553215708594195
+        "total": 1775,
+        "proportion": 0.004507042253521127
       },
       "301": {
         "count": 1,
-        "total": 1757,
-        "proportion": 0.0005691519635742744
+        "total": 1775,
+        "proportion": 0.0005633802816901409
       },
       "304": {
         "count": 2,
-        "total": 1757,
-        "proportion": 0.0011383039271485487
+        "total": 1775,
+        "proportion": 0.0011267605633802818
       },
       "400": {
         "count": 63,
-        "total": 1757,
-        "proportion": 0.035856573705179286
+        "total": 1775,
+        "proportion": 0.03549295774647887
       },
       "401": {
         "count": 4,
-        "total": 1757,
-        "proportion": 0.0022766078542970974
+        "total": 1775,
+        "proportion": 0.0022535211267605635
       },
       "403": {
         "count": 37,
-        "total": 1757,
-        "proportion": 0.02105862265224815
+        "total": 1775,
+        "proportion": 0.020845070422535212
       },
       "404": {
-        "count": 179,
-        "total": 1757,
-        "proportion": 0.10187820147979511
+        "count": 184,
+        "total": 1775,
+        "proportion": 0.10366197183098591
       },
       "405": {
         "count": 126,
-        "total": 1757,
-        "proportion": 0.07171314741035857
+        "total": 1775,
+        "proportion": 0.07098591549295774
       },
       "409": {
-        "count": 1,
-        "total": 1757,
-        "proportion": 0.0005691519635742744
+        "count": 5,
+        "total": 1775,
+        "proportion": 0.0028169014084507044
       },
       "415": {
         "count": 14,
-        "total": 1757,
-        "proportion": 0.00796812749003984
+        "total": 1775,
+        "proportion": 0.007887323943661971
       },
       "422": {
         "count": 3,
-        "total": 1757,
-        "proportion": 0.001707455890722823
+        "total": 1775,
+        "proportion": 0.0016901408450704226
       },
       "500": {
-        "count": 17,
-        "total": 1757,
-        "proportion": 0.009675583380762664
+        "count": 15,
+        "total": 1775,
+        "proportion": 0.008450704225352112
       },
       "503": {
         "count": 2,
-        "total": 1757,
-        "proportion": 0.0011383039271485487
+        "total": 1775,
+        "proportion": 0.0011267605633802818
       }
     },
     "endpoints_with_code": {
       "200": {
-        "count": 665,
-        "total": 814,
-        "proportion": 0.816953316953317
+        "count": 701,
+        "total": 821,
+        "proportion": 0.853836784409257
       },
       "201": {
-        "count": 67,
-        "total": 814,
-        "proportion": 0.08230958230958231
+        "count": 59,
+        "total": 821,
+        "proportion": 0.07186358099878197
       },
       "202": {
         "count": 1,
-        "total": 814,
-        "proportion": 0.0012285012285012285
+        "total": 821,
+        "proportion": 0.001218026796589525
       },
       "204": {
         "count": 8,
-        "total": 814,
-        "proportion": 0.009828009828009828
+        "total": 821,
+        "proportion": 0.0097442143727162
       },
       "301": {
         "count": 1,
-        "total": 814,
-        "proportion": 0.0012285012285012285
+        "total": 821,
+        "proportion": 0.001218026796589525
       },
       "304": {
         "count": 2,
-        "total": 814,
-        "proportion": 0.002457002457002457
+        "total": 821,
+        "proportion": 0.00243605359317905
       },
       "400": {
-        "count": 38,
-        "total": 814,
-        "proportion": 0.04668304668304668
+        "count": 39,
+        "total": 821,
+        "proportion": 0.047503045066991476
       },
       "401": {
         "count": 4,
-        "total": 814,
-        "proportion": 0.004914004914004914
+        "total": 821,
+        "proportion": 0.0048721071863581
       },
       "403": {
         "count": 36,
-        "total": 814,
-        "proportion": 0.044226044226044224
+        "total": 821,
+        "proportion": 0.0438489646772229
       },
       "404": {
-        "count": 107,
-        "total": 814,
-        "proportion": 0.13144963144963145
+        "count": 110,
+        "total": 821,
+        "proportion": 0.13398294762484775
       },
       "405": {
         "count": 46,
-        "total": 814,
-        "proportion": 0.056511056511056514
+        "total": 821,
+        "proportion": 0.05602923264311815
       },
       "409": {
-        "count": 1,
-        "total": 814,
-        "proportion": 0.0012285012285012285
+        "count": 5,
+        "total": 821,
+        "proportion": 0.0060901339829476245
       },
       "415": {
         "count": 7,
-        "total": 814,
-        "proportion": 0.0085995085995086
+        "total": 821,
+        "proportion": 0.008526187576126675
       },
       "422": {
         "count": 3,
-        "total": 814,
-        "proportion": 0.0036855036855036856
+        "total": 821,
+        "proportion": 0.0036540803897685747
       },
       "500": {
-        "count": 17,
-        "total": 814,
-        "proportion": 0.020884520884520884
+        "count": 15,
+        "total": 821,
+        "proportion": 0.018270401948842874
       },
       "503": {
         "count": 2,
-        "total": 814,
-        "proportion": 0.002457002457002457
+        "total": 821,
+        "proportion": 0.00243605359317905
       }
     }
   },
   "per_endpoint": {
     "attributed_request_count_among_attributed": {
-      "count": 815,
+      "count": 830,
       "min": 1.0,
-      "max": 74.0,
-      "mean": 2.2699386503067487,
+      "max": 99.0,
+      "mean": 2.2734939759036146,
       "p25": 1.0,
       "p50": 1.0,
       "p75": 2.0,
       "p90": 4.0
     },
     "status_asserted_request_count_among_asserted": {
-      "count": 814,
+      "count": 821,
       "min": 1.0,
-      "max": 74.0,
-      "mean": 2.2125307125307123,
+      "max": 99.0,
+      "mean": 2.2216808769792937,
       "p25": 1.0,
       "p50": 1.0,
       "p75": 2.0,
       "p90": 3.0
     },
     "asserting_test_count_among_asserted": {
-      "count": 814,
+      "count": 821,
       "min": 1.0,
-      "max": 74.0,
-      "mean": 2.2076167076167077,
+      "max": 58.0,
+      "mean": 2.1546894031668695,
       "p25": 1.0,
       "p50": 1.0,
       "p75": 2.0,

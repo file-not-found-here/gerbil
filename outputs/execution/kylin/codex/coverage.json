@@ -1,0 +1,93 @@
+{
+  "heap": "-Xmx16g",
+  "measured_tests": [
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#adminInstanceInfoReturnsConfiguredTimezone",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#configurationEndpointsReturnSuccessfulEnvelopes",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#deprecatedMonitorMetricsReturnEmptyLists",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#errorEndpointPropagatesTheStoredFailureAsServerError",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#fixtureEndpointReturnsSuccessEnvelope",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#healthInstanceInfoRejectsMissingTokenInEnvelope",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#healthStateChangeRejectsMalformedOversizedTokenInEnvelope",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#monitorStatisticsRejectsMissingAndReversedTimeRanges",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#monitorStatusAndStatisticsReturnSuccessfulEnvelopes",
+    "org.apache.kylin.rest.controller.ApiEndpointHttpTest#validAlertPayloadIsPassedToMonitorService"
+  ],
+  "report": {
+    "counters": {
+      "INSTRUCTION": {
+        "covered": 6643,
+        "missed": 793116,
+        "ratio": 0.008306252258492871
+      },
+      "BRANCH": {
+        "covered": 124,
+        "missed": 60724,
+        "ratio": 0.00203786484354457
+      },
+      "LINE": {
+        "covered": 968,
+        "missed": 139566,
+        "ratio": 0.006888012865214112
+      },
+      "COMPLEXITY": {
+        "covered": 217,
+        "missed": 70990,
+        "ratio": 0.0030474531998258597
+      },
+      "METHOD": {
+        "covered": 188,
+        "missed": 39864,
+        "ratio": 0.004693897932687506
+      },
+      "CLASS": {
+        "covered": 42,
+        "missed": 3621,
+        "ratio": 0.011466011466011465
+      }
+    },
+    "covered_classes": [
+      "org.apache.kylin.common.BackwardCompatibilityConfig",
+      "org.apache.kylin.common.KapConfig",
+      "org.apache.kylin.common.KylinConfig",
+      "org.apache.kylin.common.KylinConfigBase",
+      "org.apache.kylin.common.KylinExternalConfigLoader",
+      "org.apache.kylin.common.PropertiesDelegate",
+      "org.apache.kylin.common.ShellKylinExternalConfigLoaderFactory",
+      "org.apache.kylin.common.Singletons",
+      "org.apache.kylin.common.StorageURL",
+      "org.apache.kylin.common.StorageURL$1",
+      "org.apache.kylin.common.SystemPropertiesCache",
+      "org.apache.kylin.common.exception.CommonErrorCode",
+      "org.apache.kylin.common.exception.ErrorCode",
+      "org.apache.kylin.common.exception.KylinException",
+      "org.apache.kylin.common.exception.ServerErrorCode",
+      "org.apache.kylin.common.exception.code.AbstractErrorContent",
+      "org.apache.kylin.common.exception.code.ErrorCode",
+      "org.apache.kylin.common.exception.code.ErrorCodeProducer",
+      "org.apache.kylin.common.exception.code.ErrorCodeServer",
+      "org.apache.kylin.common.exception.code.ErrorMsg",
+      "org.apache.kylin.common.exception.code.ErrorSuggestion",
+      "org.apache.kylin.common.msg.Message",
+      "org.apache.kylin.common.msg.MsgPicker",
+      "org.apache.kylin.common.util.CompositeMapView",
+      "org.apache.kylin.common.util.FileUtils",
+      "org.apache.kylin.common.util.HadoopUtil",
+      "org.apache.kylin.common.util.OrderedProperties",
+      "org.apache.kylin.common.util.OrderedProperties$CustomProperties",
+      "org.apache.kylin.common.util.OrderedProperties$OrderedPropertiesBuilder",
+      "org.apache.kylin.common.util.ResourceUtils",
+      "org.apache.kylin.common.util.Unsafe",
+      "org.apache.kylin.rest.controller.ErrorController",
+      "org.apache.kylin.rest.controller.HealthController",
+      "org.apache.kylin.rest.controller.NAdminController",
+      "org.apache.kylin.rest.controller.NBasicController",
+      "org.apache.kylin.rest.controller.NConfigController",
+      "org.apache.kylin.rest.controller.NMonitorController",
+      "org.apache.kylin.rest.controller.fixture.FixtureController",
+      "org.apache.kylin.rest.response.EnvelopeResponse",
+      "org.apache.kylin.rest.response.ErrorResponse",
+      "org.apache.kylin.rest.service.BasicService",
+      "org.apache.kylin.rest.service.MonitorService"
+    ]
+  }
+}

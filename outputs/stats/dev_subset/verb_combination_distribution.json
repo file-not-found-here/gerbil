@@ -1,0 +1,359 @@
+{
+  "scope": "resolved_test_resource_sequences",
+  "api_test_count": 6980,
+  "resolved_sequence_count": 16416,
+  "unresolved_sequence_count": 8,
+  "total_sequence_count": 16424,
+  "single_verb_sequence_count": 14906,
+  "combinations": {
+    "GET-only": {
+      "verbs": [
+        "GET"
+      ],
+      "count": 7141,
+      "pct": 43.500243664717345
+    },
+    "HEAD-only": {
+      "verbs": [
+        "HEAD"
+      ],
+      "count": 0,
+      "pct": 0.0
+    },
+    "POST-only": {
+      "verbs": [
+        "POST"
+      ],
+      "count": 6917,
+      "pct": 42.13572124756335
+    },
+    "PUT-only": {
+      "verbs": [
+        "PUT"
+      ],
+      "count": 316,
+      "pct": 1.9249512670565303
+    },
+    "PATCH-only": {
+      "verbs": [
+        "PATCH"
+      ],
+      "count": 172,
+      "pct": 1.0477582846003899
+    },
+    "DELETE-only": {
+      "verbs": [
+        "DELETE"
+      ],
+      "count": 360,
+      "pct": 2.192982456140351
+    },
+    "GET-POST-PUT": {
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT"
+      ],
+      "count": 322,
+      "pct": 1.9615009746588694
+    },
+    "GET-POST": {
+      "verbs": [
+        "GET",
+        "POST"
+      ],
+      "count": 308,
+      "pct": 1.8762183235867447
+    },
+    "GET-PATCH": {
+      "verbs": [
+        "GET",
+        "PATCH"
+      ],
+      "count": 202,
+      "pct": 1.2305068226120857
+    },
+    "GET-DELETE": {
+      "verbs": [
+        "GET",
+        "DELETE"
+      ],
+      "count": 150,
+      "pct": 0.9137426900584795
+    },
+    "POST-DELETE": {
+      "verbs": [
+        "POST",
+        "DELETE"
+      ],
+      "count": 139,
+      "pct": 0.8467348927875243
+    },
+    "POST-PUT": {
+      "verbs": [
+        "POST",
+        "PUT"
+      ],
+      "count": 123,
+      "pct": 0.7492690058479532
+    },
+    "GET-POST-DELETE": {
+      "verbs": [
+        "GET",
+        "POST",
+        "DELETE"
+      ],
+      "count": 79,
+      "pct": 0.4812378167641326
+    },
+    "GET-PUT": {
+      "verbs": [
+        "GET",
+        "PUT"
+      ],
+      "count": 66,
+      "pct": 0.402046783625731
+    },
+    "POST-PATCH": {
+      "verbs": [
+        "POST",
+        "PATCH"
+      ],
+      "count": 45,
+      "pct": 0.2741228070175439
+    },
+    "GET-POST-PUT-DELETE": {
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "count": 43,
+      "pct": 0.26193957115009747
+    },
+    "GET-POST-PATCH": {
+      "verbs": [
+        "GET",
+        "POST",
+        "PATCH"
+      ],
+      "count": 14,
+      "pct": 0.08528265107212475
+    },
+    "PUT-DELETE": {
+      "verbs": [
+        "PUT",
+        "DELETE"
+      ],
+      "count": 7,
+      "pct": 0.042641325536062376
+    },
+    "GET-HEAD": {
+      "verbs": [
+        "GET",
+        "HEAD"
+      ],
+      "count": 4,
+      "pct": 0.024366471734892786
+    },
+    "POST-PUT-DELETE": {
+      "verbs": [
+        "POST",
+        "PUT",
+        "DELETE"
+      ],
+      "count": 4,
+      "pct": 0.024366471734892786
+    },
+    "GET-PUT-DELETE": {
+      "verbs": [
+        "GET",
+        "PUT",
+        "DELETE"
+      ],
+      "count": 2,
+      "pct": 0.012183235867446393
+    },
+    "GET-POST-PUT-PATCH-DELETE": {
+      "verbs": [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE"
+      ],
+      "count": 1,
+      "pct": 0.0060916179337231965
+    },
+    "POST-PATCH-DELETE": {
+      "verbs": [
+        "POST",
+        "PATCH",
+        "DELETE"
+      ],
+      "count": 1,
+      "pct": 0.0060916179337231965
+    }
+  },
+  "multi_verb_combinations": {
+    "scope": "resolved_multi_verb_test_resource_sequences",
+    "multi_verb_sequence_count": 1510,
+    "pct_of_resolved_sequences": 9.198343079922028,
+    "combinations": {
+      "GET-POST-PUT": {
+        "verbs": [
+          "GET",
+          "POST",
+          "PUT"
+        ],
+        "count": 322,
+        "pct": 21.32450331125828
+      },
+      "GET-POST": {
+        "verbs": [
+          "GET",
+          "POST"
+        ],
+        "count": 308,
+        "pct": 20.397350993377483
+      },
+      "GET-PATCH": {
+        "verbs": [
+          "GET",
+          "PATCH"
+        ],
+        "count": 202,
+        "pct": 13.37748344370861
+      },
+      "GET-DELETE": {
+        "verbs": [
+          "GET",
+          "DELETE"
+        ],
+        "count": 150,
+        "pct": 9.933774834437086
+      },
+      "POST-DELETE": {
+        "verbs": [
+          "POST",
+          "DELETE"
+        ],
+        "count": 139,
+        "pct": 9.205298013245033
+      },
+      "POST-PUT": {
+        "verbs": [
+          "POST",
+          "PUT"
+        ],
+        "count": 123,
+        "pct": 8.14569536423841
+      },
+      "GET-POST-DELETE": {
+        "verbs": [
+          "GET",
+          "POST",
+          "DELETE"
+        ],
+        "count": 79,
+        "pct": 5.231788079470198
+      },
+      "GET-PUT": {
+        "verbs": [
+          "GET",
+          "PUT"
+        ],
+        "count": 66,
+        "pct": 4.370860927152318
+      },
+      "POST-PATCH": {
+        "verbs": [
+          "POST",
+          "PATCH"
+        ],
+        "count": 45,
+        "pct": 2.980132450331126
+      },
+      "GET-POST-PUT-DELETE": {
+        "verbs": [
+          "GET",
+          "POST",
+          "PUT",
+          "DELETE"
+        ],
+        "count": 43,
+        "pct": 2.847682119205298
+      },
+      "GET-POST-PATCH": {
+        "verbs": [
+          "GET",
+          "POST",
+          "PATCH"
+        ],
+        "count": 14,
+        "pct": 0.9271523178807947
+      },
+      "PUT-DELETE": {
+        "verbs": [
+          "PUT",
+          "DELETE"
+        ],
+        "count": 7,
+        "pct": 0.46357615894039733
+      },
+      "GET-HEAD": {
+        "verbs": [
+          "GET",
+          "HEAD"
+        ],
+        "count": 4,
+        "pct": 0.26490066225165565
+      },
+      "POST-PUT-DELETE": {
+        "verbs": [
+          "POST",
+          "PUT",
+          "DELETE"
+        ],
+        "count": 4,
+        "pct": 0.26490066225165565
+      },
+      "GET-PUT-DELETE": {
+        "verbs": [
+          "GET",
+          "PUT",
+          "DELETE"
+        ],
+        "count": 2,
+        "pct": 0.13245033112582782
+      },
+      "GET-POST-PUT-PATCH-DELETE": {
+        "verbs": [
+          "GET",
+          "POST",
+          "PUT",
+          "PATCH",
+          "DELETE"
+        ],
+        "count": 1,
+        "pct": 0.06622516556291391
+      },
+      "POST-PATCH-DELETE": {
+        "verbs": [
+          "POST",
+          "PATCH",
+          "DELETE"
+        ],
+        "count": 1,
+        "pct": 0.06622516556291391
+      }
+    },
+    "post_delete_pairing": {
+      "scope": "resolved_multi_verb_sequences_with_post",
+      "post_sequence_count": 1079,
+      "paired_with_delete_count": 267,
+      "pct_paired_with_delete": 24.7451343836886
+    }
+  }
+}

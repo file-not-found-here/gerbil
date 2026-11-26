@@ -1,0 +1,85 @@
+{
+  "heap": "-Xmx16g",
+  "measured_tests": [
+    "org.eclipse.openvsx.ApiEndpointHttpTest#everyInventoryRouteDispatchesToItsController",
+    "org.eclipse.openvsx.ApiEndpointHttpTest#invalidAdminCredentialsAreRejectedWithForbiddenStatus",
+    "org.eclipse.openvsx.ApiEndpointHttpTest#loggedOutUserEndpointsReturnExpectedSafeResponses",
+    "org.eclipse.openvsx.ApiEndpointHttpTest#registryQueryAndSearchRejectNegativePagination",
+    "org.eclipse.openvsx.ApiEndpointHttpTest#reviewAndVscodeItemValidationReturnClientErrors",
+    "org.eclipse.openvsx.ApiEndpointHttpTest#tokenDescriptionValidationRunsBeforeAuthenticationCheck"
+  ],
+  "report": {
+    "counters": {
+      "INSTRUCTION": {
+        "covered": 2456,
+        "missed": 63358,
+        "ratio": 0.03731728811499073
+      },
+      "BRANCH": {
+        "covered": 107,
+        "missed": 3095,
+        "ratio": 0.033416614615865085
+      },
+      "LINE": {
+        "covered": 573,
+        "missed": 13078,
+        "ratio": 0.041974946890337705
+      },
+      "COMPLEXITY": {
+        "covered": 261,
+        "missed": 5725,
+        "ratio": 0.04360173738723688
+      },
+      "METHOD": {
+        "covered": 248,
+        "missed": 4119,
+        "ratio": 0.056789558049003895
+      },
+      "CLASS": {
+        "covered": 38,
+        "missed": 271,
+        "ratio": 0.12297734627831715
+      }
+    },
+    "covered_classes": [
+      "org.eclipse.openvsx.RegistryAPI",
+      "org.eclipse.openvsx.UserAPI",
+      "org.eclipse.openvsx.adapter.ExtensionQueryParam",
+      "org.eclipse.openvsx.adapter.ExtensionQueryParam$Criterion",
+      "org.eclipse.openvsx.adapter.ExtensionQueryParam$Filter",
+      "org.eclipse.openvsx.adapter.ExtensionQueryResult",
+      "org.eclipse.openvsx.adapter.VSCodeAPI",
+      "org.eclipse.openvsx.admin.AdminAPI",
+      "org.eclipse.openvsx.eclipse.EclipseService",
+      "org.eclipse.openvsx.eclipse.EclipseService$1",
+      "org.eclipse.openvsx.eclipse.EclipseService$2",
+      "org.eclipse.openvsx.eclipse.EclipseService$3",
+      "org.eclipse.openvsx.json.AccessTokenJson",
+      "org.eclipse.openvsx.json.AdminStatisticsJson",
+      "org.eclipse.openvsx.json.ChangeNamespaceJson",
+      "org.eclipse.openvsx.json.CsrfTokenJson",
+      "org.eclipse.openvsx.json.ExtensionJson",
+      "org.eclipse.openvsx.json.LoginProvidersJson",
+      "org.eclipse.openvsx.json.NamespaceDetailsJson",
+      "org.eclipse.openvsx.json.NamespaceJson",
+      "org.eclipse.openvsx.json.NamespaceMembershipListJson",
+      "org.eclipse.openvsx.json.QueryParamJson",
+      "org.eclipse.openvsx.json.QueryRequest",
+      "org.eclipse.openvsx.json.QueryRequestV2",
+      "org.eclipse.openvsx.json.QueryResultJson",
+      "org.eclipse.openvsx.json.ResultJson",
+      "org.eclipse.openvsx.json.ReviewJson",
+      "org.eclipse.openvsx.json.SearchResultJson",
+      "org.eclipse.openvsx.json.StatsJson",
+      "org.eclipse.openvsx.json.UserJson",
+      "org.eclipse.openvsx.json.UserPublishInfoJson",
+      "org.eclipse.openvsx.repositories.RepositoryService",
+      "org.eclipse.openvsx.search.ISearchService$Options",
+      "org.eclipse.openvsx.util.ErrorResultException",
+      "org.eclipse.openvsx.util.NotFoundException",
+      "org.eclipse.openvsx.util.UrlUtil",
+      "org.eclipse.openvsx.web.ServerErrorController",
+      "org.eclipse.openvsx.web.SitemapController"
+    ]
+  }
+}

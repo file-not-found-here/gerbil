@@ -613,6 +613,47 @@ def test_distinct_resource_counts_split_by_test_phase_participation() -> None:
     assert record.test_phase_distinct_resource_count == 1
 
 
+def test_writes_resource_counts_a_write_beside_an_unmapped_method() -> None:
+    def step(order: int, http_method: str) -> ResourceInteractionStep:
+        return ResourceInteractionStep(
+            http_method=http_method,
+            path="/a",
+            normalized_path="/a",
+            event_order=order,
+            phase=LifecyclePhase.TEST,
+        )
+
+    writing = project_test(
+        api_test(
+            resource_sequences=[
+                ResourceInteractionSequence(
+                    resource_key="a",
+                    steps=[step(1, "POST"), step(2, "OPTIONS")],
+                    exercised_operations=[CrudOperation.CREATE],
+                )
+            ]
+        )
+    )
+    reading = project_test(
+        api_test(
+            resource_sequences=[
+                ResourceInteractionSequence(
+                    resource_key="a",
+                    steps=[step(1, "GET")],
+                    exercised_operations=[CrudOperation.READ],
+                )
+            ]
+        )
+    )
+
+    # OPTIONS maps to no CRUD operation, so the sequence has no combination, yet
+    # the test still writes.
+    assert writing.resource_crud_combinations == ()
+    assert writing.unresolved_resource_crud_sequence_count == 1
+    assert writing.writes_resource is True
+    assert reading.writes_resource is False
+
+
 def test_method_resolved_resource_counts_drop_unresolved_method_events() -> None:
     def step(
         phase: LifecyclePhase, order: int, *, http_method: str

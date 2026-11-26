@@ -92,6 +92,7 @@ def test_application_endpoint_surface_summarizes_route_shape() -> None:
         ("/", 0, 0),
         ("/api/users", 2, 0),
         ("/api/users/{id}", 3, 1),
+        ("/api/{version:(?:[0-9]+/)?latest}/file", 3, 1),
         ("/api/users/{userId}/orders/{orderId}", 5, 2),
         ("/api/files/{*path}", 3, 1),
     ]
@@ -4029,6 +4030,13 @@ def test_http_methods_match_exact_match() -> None:
 
     assert _http_methods_match(get_endpoint, "GET") is True
     assert _http_methods_match(post_endpoint, "GET") is False
+
+
+def test_template_matches_regex_constraints_holding_a_question_mark() -> None:
+    template = "/api/{version:(?:[0-9]+)|latest}/file"
+    assert _template_matches(template, "/api/latest/file")
+    assert _template_matches(template, "/api/12/file")
+    assert not _template_matches(template, "/api/beta/file")
 
 
 def test_template_matches_exact_paths_without_wildcards() -> None:

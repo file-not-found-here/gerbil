@@ -1,0 +1,763 @@
+{
+  "scope": "endpoints_and_api_tests",
+  "api_test_count": 6980,
+  "resource_count": 1579,
+  "tested": {
+    "count": 716,
+    "total": 1579,
+    "proportion": 0.45345155161494616
+  },
+  "lifecycle_label_distribution": {
+    "scope": "test_resource_pairs",
+    "pair_count": 16424,
+    "labels": {
+      "read-only": {
+        "count": 3094,
+        "pct": 18.838285435947395
+      },
+      "create-and-trust": {
+        "count": 6917,
+        "pct": 42.11519727228446
+      },
+      "create-verify": {
+        "count": 303,
+        "pct": 1.8448611787627862
+      },
+      "create-update-verify": {
+        "count": 201,
+        "pct": 1.2238188017535314
+      },
+      "create-verify-cleanup": {
+        "count": 69,
+        "pct": 0.42011690209449587
+      },
+      "delete-verify": {
+        "count": 113,
+        "pct": 0.6880175353141744
+      },
+      "full-crud": {
+        "count": 44,
+        "pct": 0.2679006332196785
+      },
+      "write-only": {
+        "count": 1167,
+        "pct": 7.105455431076473
+      },
+      "other": {
+        "count": 4516,
+        "pct": 27.496346809547003
+      }
+    }
+  },
+  "per_test": {
+    "scope": "api_tests_with_resource_sequences",
+    "test_count": 6671,
+    "labels": {
+      "read-only": {
+        "test_count": 2879,
+        "pct_of_tests": 43.156947983810525
+      },
+      "create-and-trust": {
+        "test_count": 4547,
+        "pct_of_tests": 68.16069554789387
+      },
+      "create-verify": {
+        "test_count": 299,
+        "pct_of_tests": 4.482086643681607
+      },
+      "create-update-verify": {
+        "test_count": 156,
+        "pct_of_tests": 2.338479988007795
+      },
+      "create-verify-cleanup": {
+        "test_count": 69,
+        "pct_of_tests": 1.0343276870034477
+      },
+      "delete-verify": {
+        "test_count": 112,
+        "pct_of_tests": 1.6789087093389297
+      },
+      "full-crud": {
+        "test_count": 41,
+        "pct_of_tests": 0.6146005096687154
+      },
+      "write-only": {
+        "test_count": 1063,
+        "pct_of_tests": 15.93464248238645
+      },
+      "other": {
+        "test_count": 4019,
+        "pct_of_tests": 60.24584020386749
+      }
+    },
+    "multiple_distinct_label_tests": {
+      "count": 4095,
+      "total": 6671,
+      "proportion": 0.6138509968520461
+    },
+    "has_read_after_write": {
+      "count": 914,
+      "total": 6671,
+      "proportion": 0.13701094288712337
+    },
+    "read_after_write_among_writing_tests": {
+      "count": 914,
+      "total": 5021,
+      "proportion": 0.1820354511053575
+    },
+    "has_cleanup_delete": {
+      "count": 224,
+      "total": 6671,
+      "proportion": 0.033578174186778595
+    }
+  },
+  "resource_count_per_test": {
+    "scope": "api_tests",
+    "distribution": {
+      "count": 6980,
+      "min": 0.0,
+      "max": 11.0,
+      "mean": 2.3530085959885385,
+      "p25": 1.0,
+      "p50": 2.0,
+      "p75": 3.0,
+      "p90": 4.0
+    },
+    "tests_with_multiple_resources": {
+      "count": 4420,
+      "total": 6980,
+      "proportion": 0.6332378223495702
+    }
+  },
+  "http_method_distribution": {
+    "scope": "http_dispatch_events",
+    "request_count": 36465,
+    "methods": {
+      "GET": {
+        "count": 18661,
+        "pct": 51.17509941039353
+      },
+      "HEAD": {
+        "count": 5,
+        "pct": 0.013711778417660771
+      },
+      "POST": {
+        "count": 14472,
+        "pct": 39.687371452077336
+      },
+      "PUT": {
+        "count": 1387,
+        "pct": 3.803647333059098
+      },
+      "PATCH": {
+        "count": 560,
+        "pct": 1.5357191827780063
+      },
+      "DELETE": {
+        "count": 1067,
+        "pct": 2.9260935143288083
+      },
+      "OPTIONS": {
+        "count": 17,
+        "pct": 0.046620046620046623
+      },
+      "TRACE": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "CONNECT": {
+        "count": 0,
+        "pct": 0.0
+      },
+      "UNKNOWN": {
+        "count": 296,
+        "pct": 0.8117372823255177
+      }
+    }
+  },
+  "crud_operation_distribution": {
+    "scope": "crud_mapped_http_dispatch_events",
+    "request_count": 36152,
+    "operations": {
+      "create": {
+        "count": 14472,
+        "pct": 40.0309803053773
+      },
+      "read": {
+        "count": 18666,
+        "pct": 51.63199822969683
+      },
+      "update": {
+        "count": 1947,
+        "pct": 5.385594157999558
+      },
+      "delete": {
+        "count": 1067,
+        "pct": 2.9514273069263113
+      }
+    }
+  },
+  "exercised_completeness": {
+    "among_tested": {
+      "count": 697,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.9805117168818747,
+      "p25": 1.0,
+      "p50": 1.0,
+      "p75": 1.0,
+      "p90": 1.0
+    }
+  },
+  "availability_profile_distribution": {
+    "scope": "production_resources",
+    "resource_count": 1579,
+    "crud_capable_resource_count": 1533,
+    "no_crud_operation_resource_count": 46,
+    "combinations": {
+      "create-only": {
+        "operations": [
+          "create"
+        ],
+        "count": 442,
+        "pct": 28.83235485975212
+      },
+      "read-only": {
+        "operations": [
+          "read"
+        ],
+        "count": 662,
+        "pct": 43.18330071754729
+      },
+      "update-only": {
+        "operations": [
+          "update"
+        ],
+        "count": 135,
+        "pct": 8.806262230919765
+      },
+      "delete-only": {
+        "operations": [
+          "delete"
+        ],
+        "count": 35,
+        "pct": 2.2831050228310503
+      },
+      "create-read": {
+        "operations": [
+          "create",
+          "read"
+        ],
+        "count": 40,
+        "pct": 2.609262883235486
+      },
+      "create-update": {
+        "operations": [
+          "create",
+          "update"
+        ],
+        "count": 6,
+        "pct": 0.3913894324853229
+      },
+      "create-delete": {
+        "operations": [
+          "create",
+          "delete"
+        ],
+        "count": 24,
+        "pct": 1.5655577299412915
+      },
+      "read-update": {
+        "operations": [
+          "read",
+          "update"
+        ],
+        "count": 47,
+        "pct": 3.065883887801696
+      },
+      "read-delete": {
+        "operations": [
+          "read",
+          "delete"
+        ],
+        "count": 22,
+        "pct": 1.4350945857795172
+      },
+      "update-delete": {
+        "operations": [
+          "update",
+          "delete"
+        ],
+        "count": 1,
+        "pct": 0.06523157208088715
+      },
+      "create-read-update": {
+        "operations": [
+          "create",
+          "read",
+          "update"
+        ],
+        "count": 11,
+        "pct": 0.7175472928897586
+      },
+      "create-read-delete": {
+        "operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "count": 31,
+        "pct": 2.0221787345075017
+      },
+      "create-update-delete": {
+        "operations": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "count": 5,
+        "pct": 0.32615786040443573
+      },
+      "read-update-delete": {
+        "operations": [
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 9,
+        "pct": 0.5870841487279843
+      },
+      "create-read-update-delete": {
+        "operations": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 63,
+        "pct": 4.109589041095891
+      }
+    }
+  },
+  "fully_exercised": {
+    "crud_capable_resource_count": 1533,
+    "tested_resource_count": 697,
+    "fully_exercised_count": 671,
+    "not_fully_exercised_count": 862,
+    "pct_fully_exercised_of_capable": 43.77038486627528,
+    "pct_not_fully_exercised_of_capable": 56.22961513372472,
+    "pct_fully_exercised_of_tested": 96.26972740315638
+  },
+  "exercise_by_availability_breadth": {
+    "single_operation_available": {
+      "resource_count": 1274,
+      "exercised_count": 577,
+      "exercised_rate": 0.45290423861852436,
+      "fully_exercised_count": 576,
+      "pct_fully_exercised_of_exercised": 99.8266897746967
+    },
+    "multi_operation_available": {
+      "resource_count": 259,
+      "exercised_count": 120,
+      "exercised_rate": 0.46332046332046334,
+      "fully_exercised_count": 95,
+      "pct_fully_exercised_of_exercised": 79.16666666666667
+    },
+    "tested_composition": {
+      "tested_resource_count": 716,
+      "single_operation_available_count": 577,
+      "multi_operation_available_count": 120,
+      "no_crud_operation_available_count": 19,
+      "pct_single_operation_available": 80.58659217877096,
+      "pct_multi_operation_available": 16.75977653631285
+    }
+  },
+  "exercised_combination_when_full_crud_capable": {
+    "scope": "full_crud_capable_production_resources",
+    "capable_resource_count": 63,
+    "none_exercised_count": 25,
+    "none_exercised_pct": 39.682539682539684,
+    "tested_resource_count": 38,
+    "fully_exercised_count": 26,
+    "pct_fully_exercised_of_tested": 68.42105263157895,
+    "combinations": {
+      "create-only": {
+        "operations": [
+          "create"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-only": {
+        "operations": [
+          "read"
+        ],
+        "count": 3,
+        "pct": 4.761904761904762
+      },
+      "update-only": {
+        "operations": [
+          "update"
+        ],
+        "count": 1,
+        "pct": 1.5873015873015872
+      },
+      "delete-only": {
+        "operations": [
+          "delete"
+        ],
+        "count": 1,
+        "pct": 1.5873015873015872
+      },
+      "create-read": {
+        "operations": [
+          "create",
+          "read"
+        ],
+        "count": 3,
+        "pct": 4.761904761904762
+      },
+      "create-update": {
+        "operations": [
+          "create",
+          "update"
+        ],
+        "count": 1,
+        "pct": 1.5873015873015872
+      },
+      "create-delete": {
+        "operations": [
+          "create",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-update": {
+        "operations": [
+          "read",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "read-delete": {
+        "operations": [
+          "read",
+          "delete"
+        ],
+        "count": 1,
+        "pct": 1.5873015873015872
+      },
+      "update-delete": {
+        "operations": [
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update": {
+        "operations": [
+          "create",
+          "read",
+          "update"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-delete": {
+        "operations": [
+          "create",
+          "read",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-update-delete": {
+        "operations": [
+          "create",
+          "update",
+          "delete"
+        ],
+        "count": 2,
+        "pct": 3.1746031746031744
+      },
+      "read-update-delete": {
+        "operations": [
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 0,
+        "pct": 0.0
+      },
+      "create-read-update-delete": {
+        "operations": [
+          "create",
+          "read",
+          "update",
+          "delete"
+        ],
+        "count": 26,
+        "pct": 41.26984126984127
+      }
+    }
+  },
+  "per_operation_exercise": {
+    "create": {
+      "available_resource_count": 622,
+      "exercised_resource_count": 301,
+      "rate": 0.48392282958199356
+    },
+    "read": {
+      "available_resource_count": 885,
+      "exercised_resource_count": 386,
+      "rate": 0.43615819209039547
+    },
+    "update": {
+      "available_resource_count": 277,
+      "exercised_resource_count": 107,
+      "rate": 0.3862815884476534
+    },
+    "delete": {
+      "available_resource_count": 190,
+      "exercised_resource_count": 86,
+      "rate": 0.45263157894736844
+    }
+  },
+  "read_only_when_writable": {
+    "writable_resource_count": 871,
+    "writable_tested_resource_count": 408,
+    "read_only_tested_count": 7,
+    "proportion_of_writable_tested": 0.01715686274509804
+  },
+  "full_crud_tested": {
+    "full_crud_capable_resource_count": 63,
+    "full_crud_tested_count": 5,
+    "proportion_of_capable": 0.07936507936507936
+  },
+  "verb_resource_exercise": {
+    "scope": "production_resources_http_verb_view",
+    "availability_profile": {
+      "scope": "production_resources",
+      "resource_count": 1579,
+      "verb_capable_resource_count": 1533,
+      "no_verb_resource_count": 46,
+      "single_verb": {
+        "GET": {
+          "count": 658,
+          "pct": 42.922374429223744
+        },
+        "HEAD": {
+          "count": 0,
+          "pct": 0.0
+        },
+        "POST": {
+          "count": 442,
+          "pct": 28.83235485975212
+        },
+        "PUT": {
+          "count": 130,
+          "pct": 8.48010437051533
+        },
+        "PATCH": {
+          "count": 5,
+          "pct": 0.32615786040443573
+        },
+        "DELETE": {
+          "count": 35,
+          "pct": 2.2831050228310503
+        }
+      },
+      "expose_multiple_verbs": {
+        "count": 263,
+        "pct": 17.155903457273322
+      },
+      "multi_verb_profiles": {
+        "GET-POST-PUT-DELETE": {
+          "verbs": [
+            "GET",
+            "POST",
+            "PUT",
+            "DELETE"
+          ],
+          "count": 56,
+          "pct": 3.65296803652968
+        },
+        "GET-PUT": {
+          "verbs": [
+            "GET",
+            "PUT"
+          ],
+          "count": 46,
+          "pct": 3.0006523157208087
+        },
+        "GET-POST": {
+          "verbs": [
+            "GET",
+            "POST"
+          ],
+          "count": 40,
+          "pct": 2.609262883235486
+        },
+        "GET-POST-DELETE": {
+          "verbs": [
+            "GET",
+            "POST",
+            "DELETE"
+          ],
+          "count": 31,
+          "pct": 2.0221787345075017
+        },
+        "POST-DELETE": {
+          "verbs": [
+            "POST",
+            "DELETE"
+          ],
+          "count": 24,
+          "pct": 1.5655577299412915
+        },
+        "GET-DELETE": {
+          "verbs": [
+            "GET",
+            "DELETE"
+          ],
+          "count": 22,
+          "pct": 1.4350945857795172
+        },
+        "GET-POST-PUT": {
+          "verbs": [
+            "GET",
+            "POST",
+            "PUT"
+          ],
+          "count": 11,
+          "pct": 0.7175472928897586
+        },
+        "GET-PUT-DELETE": {
+          "verbs": [
+            "GET",
+            "PUT",
+            "DELETE"
+          ],
+          "count": 8,
+          "pct": 0.5218525766470972
+        },
+        "GET-POST-PUT-PATCH-DELETE": {
+          "verbs": [
+            "GET",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ],
+          "count": 6,
+          "pct": 0.3913894324853229
+        },
+        "POST-PUT": {
+          "verbs": [
+            "POST",
+            "PUT"
+          ],
+          "count": 6,
+          "pct": 0.3913894324853229
+        },
+        "POST-PUT-DELETE": {
+          "verbs": [
+            "POST",
+            "PUT",
+            "DELETE"
+          ],
+          "count": 5,
+          "pct": 0.32615786040443573
+        },
+        "GET-HEAD": {
+          "verbs": [
+            "GET",
+            "HEAD"
+          ],
+          "count": 4,
+          "pct": 0.2609262883235486
+        },
+        "GET-HEAD-POST-PUT-PATCH-DELETE": {
+          "verbs": [
+            "GET",
+            "HEAD",
+            "POST",
+            "PUT",
+            "PATCH",
+            "DELETE"
+          ],
+          "count": 1,
+          "pct": 0.06523157208088715
+        },
+        "GET-PUT-PATCH": {
+          "verbs": [
+            "GET",
+            "PUT",
+            "PATCH"
+          ],
+          "count": 1,
+          "pct": 0.06523157208088715
+        },
+        "GET-PATCH-DELETE": {
+          "verbs": [
+            "GET",
+            "PATCH",
+            "DELETE"
+          ],
+          "count": 1,
+          "pct": 0.06523157208088715
+        },
+        "PUT-DELETE": {
+          "verbs": [
+            "PUT",
+            "DELETE"
+          ],
+          "count": 1,
+          "pct": 0.06523157208088715
+        }
+      }
+    },
+    "fully_exercised": {
+      "verb_capable_resource_count": 1533,
+      "tested_resource_count": 697,
+      "fully_exercised_count": 670,
+      "not_fully_exercised_count": 863,
+      "pct_fully_exercised_of_capable": 43.70515329419439,
+      "pct_not_fully_exercised_of_capable": 56.29484670580561,
+      "pct_fully_exercised_of_tested": 96.12625538020086
+    },
+    "exercise_by_availability_breadth": {
+      "single_verb_available": {
+        "resource_count": 1270,
+        "exercised_count": 575,
+        "exercised_rate": 0.452755905511811,
+        "fully_exercised_count": 574,
+        "pct_fully_exercised_of_exercised": 99.82608695652173
+      },
+      "multi_verb_available": {
+        "resource_count": 263,
+        "exercised_count": 122,
+        "exercised_rate": 0.46387832699619774,
+        "fully_exercised_count": 96,
+        "pct_fully_exercised_of_exercised": 78.68852459016394
+      }
+    },
+    "full_traversal_within_single_sequence": {
+      "scope": "multi_verb_resources_with_exercising_sequence",
+      "resource_count": 122,
+      "fully_traversed_count": 17,
+      "pct_fully_traversed_in_single_sequence": 13.934426229508198
+    },
+    "exercise_when_full_crud_capable": {
+      "scope": "full_crud_capable_production_resources",
+      "capable_resource_count": 63,
+      "tested_resource_count": 38,
+      "fully_exercised_count": 26,
+      "pct_fully_exercised_of_tested": 68.42105263157895
+    }
+  }
+}

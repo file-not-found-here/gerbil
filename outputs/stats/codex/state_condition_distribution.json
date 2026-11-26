@@ -1,9 +1,9 @@
 {
   "scope": "api_tests",
-  "api_test_count": 89,
+  "api_test_count": 304,
   "preconditions": {
     "entry_count_per_test": {
-      "count": 89,
+      "count": 304,
       "min": 0.0,
       "max": 0.0,
       "mean": 0.0,
@@ -14,7 +14,7 @@
     },
     "entry_count_per_label_per_test": {
       "db-seeding": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -24,7 +24,7 @@
         "p90": 0.0
       },
       "container-bootstrap": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -34,7 +34,7 @@
         "p90": 0.0
       },
       "mq-seeding": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -44,7 +44,7 @@
         "p90": 0.0
       },
       "fs-seeding": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -82,7 +82,7 @@
   },
   "postconditions": {
     "entry_count_per_test": {
-      "count": 89,
+      "count": 304,
       "min": 0.0,
       "max": 0.0,
       "mean": 0.0,
@@ -93,7 +93,7 @@
     },
     "entry_count_per_label_per_test": {
       "db": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -103,7 +103,7 @@
         "p90": 0.0
       },
       "mq": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -113,7 +113,7 @@
         "p90": 0.0
       },
       "fs": {
-        "count": 89,
+        "count": 304,
         "min": 0.0,
         "max": 0.0,
         "mean": 0.0,
@@ -150,7 +150,7 @@
       "postcondition_type": "db",
       "tests_with_precondition_and_postcondition": {
         "count": 0,
-        "total": 89,
+        "total": 304,
         "proportion": 0.0
       }
     },
@@ -159,7 +159,7 @@
       "postcondition_type": "mq",
       "tests_with_precondition_and_postcondition": {
         "count": 0,
-        "total": 89,
+        "total": 304,
         "proportion": 0.0
       }
     },
@@ -168,7 +168,7 @@
       "postcondition_type": "fs",
       "tests_with_precondition_and_postcondition": {
         "count": 0,
-        "total": 89,
+        "total": 304,
         "proportion": 0.0
       }
     }

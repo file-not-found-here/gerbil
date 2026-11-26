@@ -1,0 +1,16 @@
+{
+  "target_classes": 1,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 0,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "2edd9788c9d0fd9523382f732d561658e149c8f9ad0d8a3bf1ba1d29b35a8d07",
+  "runs": [
+    {
+      "module": "clouddriver/clouddriver-web",
+      "threads": 1,
+      "seconds": 19.3,
+      "peak_memory_bytes": 741163008
+    }
+  ],
+  "mutants": []
+}

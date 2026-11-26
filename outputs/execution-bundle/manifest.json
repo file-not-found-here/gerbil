@@ -1,0 +1,255 @@
+{
+  "format": 1,
+  "gerbil_commit": "7668b0692ab1f7fdff51461789f8a963da5f966e",
+  "created": "2026-11-10T06:43:06+00:00",
+  "evomaster": {
+    "seed": 1234,
+    "max_time": "1h"
+  },
+  "maven_seed_sha256": "4040582afc2f17520de56f42f98ceb01a255f56a103d76e5b056c5725229dc48",
+  "projects": {
+    "dolphinscheduler": {
+      "commit": "c2360663177c574d6cf83c062bd22788a0cdc040",
+      "cleared_tree": "b3f325072da42108d53694e4c7f1afd44ed52da1",
+      "clearing_sha256": "e10af3f2dfc2e9f2f37f94384c3885a3fe1b99801e46d9a99418340a6df97f41",
+      "suites": {
+        "developer": {
+          "api_tests": 204,
+          "selection_sha256": "97efb8cec04448f63c99edbcf601a18245da74ee9442c2a41a203c11bf79b139",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 290,
+          "selection_sha256": "c9d8c82599de59f7285cb22c8fed2306f16323026d98a0d3480412d7136f1cd1",
+          "patch_sha256": "3c8cdd0b0ccc6f26dcb19d763bd9262f053e36ff4ef697b21e869ac20e5600df"
+        },
+        "codex": {
+          "api_tests": 3,
+          "selection_sha256": "143fc702934bec2c471620ae44963442e36c029725cca264f0f6789df235eb2d",
+          "patch_sha256": "888ac5749220cbe9bf3fc47ed123fc4d7d00c445ccf83d60330f6f0a5db90962"
+        },
+        "evomaster": {
+          "api_tests": 4418,
+          "selection_sha256": "c07d8e1102cfec8f07d7a8d70e93fcb0e52754dc6f3a940dd68a4b296e4cfed0",
+          "patch_sha256": "07d8132394213b88331dc8adfbd78aef084630d7844f941f25cd2d0e13ab0600"
+        }
+      }
+    },
+    "DSpace": {
+      "commit": "fb8e21f44ac4a73168845ac19b1c83bf419b810e",
+      "cleared_tree": "053cd01fad9bd22dd7ad17c50f248737a4edac64",
+      "clearing_sha256": "fdea931c0e2aee44dcac67f158953287835171fc40114288465dc940745bea18",
+      "suites": {
+        "developer": {
+          "api_tests": 3134,
+          "selection_sha256": "2d9078ee8bac3398fbd18b81648f42038a1fea16cd8c42e77052afe37ae19a99",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 64,
+          "selection_sha256": "c5e4afbccc53aa1182fed6de23fca6076dcdb19ac9eed1848185ba9dd96556eb",
+          "patch_sha256": "def3f57dda1f1cb7f5fd008c2022ac14bee73bd7a42f62fe5c05695227ef979b"
+        },
+        "codex": {
+          "api_tests": 6,
+          "selection_sha256": "534e23f6f9914226c6f1a40602beeedde9bc5c0591529dafd269696688a21bec",
+          "patch_sha256": "52d5b117ee82839e9d644b5ec33df035e911a64bbad0ca423062e02217e774ea"
+        },
+        "evomaster": {
+          "api_tests": 1129,
+          "selection_sha256": "062f3ed799b2354fb8db3cf46401540bb2b98b3768b6946f932c5fc232ba0020",
+          "patch_sha256": "0613c71746bba67fa8e197caef291e036719908acb7c1e69c00976a30059e530"
+        }
+      }
+    },
+    "hertzbeat": {
+      "commit": "4892ef101fb74020082b5348773f760977a68a15",
+      "cleared_tree": "1f3c707839b51c4d3b631f5d1175ac50a98559be",
+      "clearing_sha256": "09dc1a23419e9e15da04185d75f7c1f1b7872c40621a7a8227cde62558809b43",
+      "suites": {
+        "developer": {
+          "api_tests": 184,
+          "selection_sha256": "f325a64e294d6299a62040481cdda0e74cb8bd2b093cbea7752b78569990f59b",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 201,
+          "selection_sha256": "6473172a41a5f34ec4d451d86bcc07ec874f9aedcbf29aa2362eaef7a0b427ed",
+          "patch_sha256": "b2c10fe70616b4dc825890dae1aaa76c7362fdf35bfa16546873097b97ff26b1"
+        },
+        "codex": {
+          "api_tests": 13,
+          "selection_sha256": "6bfbc25e31a3fef8bbb0e094c9b581e96d12dddd2398aa33387ea24a9b2326c3",
+          "patch_sha256": "bdbf78a3d8858e1a313d035d13954f4ccf6289a7db6fe1c45a9dca0a77b2c1b3"
+        },
+        "evomaster": {
+          "api_tests": 1844,
+          "selection_sha256": "40107a05282dd8d1783c7e644db9a3cc6a292b51885acbd6286a65c7497767c4",
+          "patch_sha256": "5a19ce5759b38a1a582cfe67125de350db4c7c9bd7073ad221799be5c0a0c2f8"
+        }
+      }
+    },
+    "incubator-kie-kogito-runtimes": {
+      "commit": "c1e86c1d51e701df6434963a32b1127712a86f49",
+      "cleared_tree": "dad69869313ef1ffa0ef2fd2219ee667c9494282",
+      "clearing_sha256": "8655ed31371602c548e4fa277b8a2178fc6e96c1f0a0685664715166ba8166c4",
+      "suites": {
+        "developer": {
+          "api_tests": 334,
+          "selection_sha256": "1fb30bdff2354ed24247313da64dcc036e3e36fadac4b7b18d7d264c9c760d01",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 110,
+          "selection_sha256": "cf8b810970615cf45746c71626327db7e909aae63a1b9ef9a03da556f80fdbf2",
+          "patch_sha256": "963d987ea1aa92ec368a6713775559bae55c0e5720fb777d8421f7cbf068164d"
+        },
+        "codex": {
+          "api_tests": 10,
+          "selection_sha256": "74e672a5cae0714eff800e5a839c990a9ece54a2cb8e7eeed6f0ab99a6b03cd0",
+          "patch_sha256": "2ccead9dce05495a7fc752b91295746b969dd86cb2f0ef038e90fd24f175474b"
+        },
+        "evomaster": {
+          "api_tests": 1728,
+          "selection_sha256": "625d1a1f712d46acb6b0e296a89da7d79c6b2f1875cb6d429821679635407702",
+          "patch_sha256": "8b96b2931139b84197ac5e228387ab4c2afe0bbd042c64f1d8a7780b48f0091f"
+        }
+      }
+    },
+    "kylin": {
+      "commit": "7fe50b2d5833ad4b8a09d6a27027563dedce8287",
+      "cleared_tree": "a473e80cccc672a568a7c747ca3bed74516df025",
+      "clearing_sha256": "6fddbd628972185d4422966c0514e63f971463527fbc1f6c05f30c21c3944af5",
+      "suites": {
+        "developer": {
+          "api_tests": 567,
+          "selection_sha256": "7df3384c440a6c8bd207c4b9e6015efe01ffdddc7ca5101a5a67fb6ac1c379d5",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 88,
+          "selection_sha256": "63f352bf814ad4c74c87bf5d941582f1bbba396af24560ca33fb028f96ef2475",
+          "patch_sha256": "d4cc35f6b3eff7ee1b4041ef8662fa5dac994822952378cb31df9c80ea011866"
+        },
+        "codex": {
+          "api_tests": 10,
+          "selection_sha256": "2c19642433a32fd9bf7dc7fc20b541bfadb512e1e40043f05522885f4dccc59a",
+          "patch_sha256": "8d028f327bd78f93e5a690b5d12266dfc97a5fd64f3d503d4d9cc518500381b9"
+        },
+        "evomaster": {
+          "api_tests": 2128,
+          "selection_sha256": "d099c7c5bf67e7650ba366c8600b8c634ce348630640f7e61ec117131d5228f6",
+          "patch_sha256": "8a3713f2776adb45d698fc53194cd589ec36757c1b660d6da2668d9043f1816a"
+        }
+      }
+    },
+    "openvsx": {
+      "commit": "45863019ec2134678b86aa4fb6b49de0f70edfbf",
+      "cleared_tree": "779d7b4fa6539fef2079d267522fdbe40458828f",
+      "clearing_sha256": "b1d4fa91b4750b5501ff558f0c48ab7837b3ca7b8692f60111ba6edc1fc362e5",
+      "suites": {
+        "developer": {
+          "api_tests": 226,
+          "selection_sha256": "8f84dcc644240add53ad6af0486dcf1c0bb43676282e043312beedeb4a9e5307",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 143,
+          "selection_sha256": "ff650ebd9c3ea4556df631c2fdfe23fcb20b168c6a9fa6eb176b9ed58ff862b1",
+          "patch_sha256": "b76bff64afd80d1072b1618206b7aa020f00a1a769a2999c3555fd9fc70c53c4"
+        },
+        "codex": {
+          "api_tests": 6,
+          "selection_sha256": "04d6188d096ebc05966e0750aee28bd0cf555f44c5ce4656ee2805862a83dcbb",
+          "patch_sha256": "5afab710f129cf798507d1f1f732f3d82d1dae74748cb662a103f67de8b7e48f"
+        },
+        "evomaster": {
+          "api_tests": 607,
+          "selection_sha256": "affd514975627dde6362b477ed899c936c9a333f29dc4b0d449b7ec691e86a50",
+          "patch_sha256": "609a8f26323ab4a492682cfe1ef290812d3d7f7b3d0716fb0ce2e75258963c71"
+        }
+      }
+    },
+    "spinnaker": {
+      "commit": "243d98d5b18e85779816de2105e81504ed0bcb39",
+      "cleared_tree": "791ba0c410b45e61b007f9ed76a824c4f0ef5630",
+      "clearing_sha256": "e727c5edb720a1d38a9114fbc7d1b77a8379879a5d9181da4434728e12a2e291",
+      "suites": {
+        "developer": {
+          "api_tests": 239,
+          "selection_sha256": "4288ea8d797237f5edf62a961223630fa0a939e30a885f1677aea60b37e8b1f3",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 93,
+          "selection_sha256": "3335abdfbca97907fda4ffc7865c99895a006ebc1053c471f4216a073ef9fd73",
+          "patch_sha256": "c3bb21c82e588cf006ae973c826ce7f524d3f5ed753d7ec5855ec50af729e79b"
+        },
+        "codex": {
+          "api_tests": 228,
+          "selection_sha256": "59036a1e23d53f9e52f15569dae65e4e8321383fb63aa0050a63b36bd423a077",
+          "patch_sha256": "c0d670eae918c4bb58f5292f2bd243814b746d9939c8202c583f1e79730fac3e"
+        },
+        "evomaster": {
+          "api_tests": 946,
+          "selection_sha256": "592dcfc9a14e96d4fd4caafb6999095fb8b4344f30f002cb14df86f3d0c396b4",
+          "patch_sha256": "4d938bbbdf892feff8494f0d53bed2560feaa35c93b1f2f86649e5faa61a829a"
+        }
+      }
+    },
+    "spring-cloud-dataflow": {
+      "commit": "a1216d3594467afe51aaea6a1144ff67b2239498",
+      "cleared_tree": "6c01f21adef2044d6c42b00ef2c83a8d5df383b4",
+      "clearing_sha256": "dcb52e789128557665f5204698a5a62ebb5fa5448c7905cdc662a6b8f0a1cca2",
+      "suites": {
+        "developer": {
+          "api_tests": 385,
+          "selection_sha256": "ce346a118024ba2afbd00fe66d9058af6a56f3d34c86ad3ef874bbf1fcbffc6d",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 134,
+          "selection_sha256": "cbb4d13ddb033c9402aee8728bbd129641f1cd89fdeb1c728f03444eafe078fb",
+          "patch_sha256": "a55632d33d52054ef9a6444151b4e26a68d0c227fdd4c0f52e37ab0d1de6c416"
+        },
+        "codex": {
+          "api_tests": 14,
+          "selection_sha256": "33c82d283af693d17de2bef463eb6dac5f7d30449deba78cca8ff953e8e06643",
+          "patch_sha256": "f067001bd63e5293b7c6a01ce3f455d10538cb63b5186c99bbe4f20555e35c70"
+        },
+        "evomaster": {
+          "api_tests": 8263,
+          "selection_sha256": "a4026fc97c693da2acc8da0c2d47e49c2d0e60eea5e8a5536f058be403b96d3b",
+          "patch_sha256": "33e46e46c4d05763e04a239ffb6a24ad1fcb6b2a89d61de144bb1f9a6e288d10"
+        }
+      }
+    },
+    "uaa": {
+      "commit": "0b76f4f0f63967e3a9902ee516af03f51a1b5266",
+      "cleared_tree": "3d68acb7c7e60acee6948f2609a84a34cda00b13",
+      "clearing_sha256": "f279c94193d78a39c7dc15da399f3f03cd812a9f4bef022ca2a73a94dc743cb3",
+      "suites": {
+        "developer": {
+          "api_tests": 1389,
+          "selection_sha256": "0193ad7bbfc8e03f1d3a3d2c7e3fd0d61b24356d2f96b0f68298b006792e1995",
+          "patch_sha256": null
+        },
+        "claude-code": {
+          "api_tests": 85,
+          "selection_sha256": "866530fc3479aa996b529db121c99c1a595da88471b09238ef336a96a0d4c591",
+          "patch_sha256": "d0e2bb1c0d19f06a5cba6336b8661bf4e1dfda8a0a1101956c0ada5c68b7ecae"
+        },
+        "codex": {
+          "api_tests": 9,
+          "selection_sha256": "2323581cba5a1e8567a0e155167b32ea5e40258aa2c12be817d4b95127ba3167",
+          "patch_sha256": "4e89b62c27c07acf14d0bcb8afeb4afc5c308db2098858e36891eee98a5f9ef9"
+        },
+        "evomaster": {
+          "api_tests": 1751,
+          "selection_sha256": "027a87edffdd1329a45a94db6a63bf708dcca2a62de34096a05147316c219daa",
+          "patch_sha256": "6fa34b1e7fcd645792d14217a5f7a6a15b4c8cbffc3247da199666a38ddec8de"
+        }
+      }
+    }
+  }
+}

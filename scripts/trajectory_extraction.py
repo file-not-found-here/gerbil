@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
-"""Copy Claude Code message trajectories into normalized per-project directories."""
+"""Copy agent message trajectories into normalized per-project directories.
+
+Codex reports its turn's whole cumulative diff after every edit, so only each turn's last
+report is kept; the edits themselves stay as file-change items.
+"""
 
 from __future__ import annotations
 
 import argparse
 import json
-import shutil
 import sys
 from collections import Counter
 from dataclasses import asdict, dataclass
@@ -18,10 +21,48 @@ class ExtractionResult:
     source: str
     destination: str
     status: str
+    dropped_diff_reports: int = 0
 
 
 def project_name(raw_project_dir: Path) -> str:
     return raw_project_dir.name.split("__")[-1]
+
+
+CODEX_DIFF_REPORT = "turn/diff/updated"
+
+
+def copy_trajectory(source: Path, destination: Path) -> int:
+    """Copy `source` without the superseded Codex diff reports; returns how many it drops."""
+    last_report: dict[str, int] = {}
+    with source.open(encoding="utf-8") as lines:
+        for index, line in enumerate(lines):
+            turn = _diff_report_turn(line)
+            if turn is not None:
+                last_report[turn] = index
+    kept = set(last_report.values())
+    dropped = 0
+    staging = destination.with_name(f".{destination.name}.partial")
+    with (
+        source.open(encoding="utf-8") as lines,
+        staging.open("w", encoding="utf-8") as out,
+    ):
+        for index, line in enumerate(lines):
+            if _diff_report_turn(line) is not None and index not in kept:
+                dropped += 1
+                continue
+            out.write(line)
+    staging.replace(destination)
+    return dropped
+
+
+def _diff_report_turn(line: str) -> str | None:
+    # A cheap substring test first, since most lines of a long run are not reports.
+    if CODEX_DIFF_REPORT not in line:
+        return None
+    record = json.loads(line)
+    if record.get("method") != CODEX_DIFF_REPORT:
+        return None
+    return str(record["payload"]["turn_id"])
 
 
 def discover_raw_project_dirs(input_root: Path) -> list[Path]:
@@ -47,19 +88,21 @@ def extract_trajectories(
         source = raw_project_dir / "output" / "messages.jsonl"
         destination = output_root / project / "trajectories" / "messages.jsonl"
         status = "copied"
+        dropped = 0
         if not source.is_file():
             status = "exists" if destination.is_file() else "missing"
         elif destination.exists() and not overwrite:
             status = "exists"
         else:
             destination.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source, destination)
+            dropped = copy_trajectory(source, destination)
         results.append(
             ExtractionResult(
                 project=project,
                 source=str(source),
                 destination=str(destination),
                 status=status,
+                dropped_diff_reports=dropped,
             )
         )
     return results

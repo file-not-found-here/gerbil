@@ -1,0 +1,885 @@
+{
+  "commit": "7fe50b2d5833ad4b8a09d6a27027563dedce8287",
+  "tests": [
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testFormatQuery_returnsSqls()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetQueryHistoryModels_returnsFiltersResponse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testSaveQuery_validRequest_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testRemoveSavedQuery_delegatesToService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testClearCache_adminUser_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetServers_returnsHostList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetQueryHistoriesV2_validProject_returnsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetQueryHistorySubmitters_returnsUsernames()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetQueryStatistics_validProject_returnsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testClearCache_nonAdminUser_returnsError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetAvgDuration_validProject_returnsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetQueryCount_validProject_returnsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testGetQueryHistories_validProject_returnsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testRecoverCache_nonAdminUser_returnsError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testRecoverCache_adminUser_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testStopQuery_delegatesAndFiresEvent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "method_signature": "testRunQuery_simpleRequest_returnsResponse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/query-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NQueryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateQueryAccelerateThreshold_tipsDisabled()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testResetProjectConfig_validItem_returnsSuccess()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetProjects_pagination()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testSaveProject_validName_createsProject()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateSegmentConfig_validConfig_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateGarbageCleanupConfig_validConfig_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdatePushDownConfig_nullEnabled_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateProjectOwner_validOwner_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetProjects_withProjectFilter_returnsFiltered()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testResetProjectConfig_emptyItem_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateDefaultDatabase_validDatabase_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateProjectAutoSemi_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetProjects_invalidPermission_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateQueryAccelerateThreshold_tipsEnabled_validThreshold()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateQueryAccelerateThreshold_tipsEnabledButNoThreshold_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateDefaultDatabase_emptyDatabase_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateStorageQuota_validQuota_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateSegmentConfig_missingAutoMergeEnabled_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateYarnQueue_validQueue_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testDeleteProjectConfigPost_nonCustomConfig_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetNonCustomProjectConfigs_returnsSet()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateJobNotificationConfig_validConfig_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testDropProject_delegatesToProjectService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testDeleteProjectConfigPost_validRequest_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testSaveProject_nameTooLong_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetProjectConfig_returnsConfig()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdatePushDownConfig_enabled_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetStorageVolumeInfo_returnsResponse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateProjectGeneralInfo_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetQueryAccelerateThreshold_returnsConfig()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateYarnQueue_emptyQueue_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testGetProjects_noParams_returnsAllProjects()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateProjectOwner_emptyOwner_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateStorageQuota_nullSize_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateSCD2Config_validConfig_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "method_signature": "testUpdateSnapshotConfig_validConfig_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NProjectControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "method_signature": "testUpdateUserWithoutAuth_delegatesToService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "method_signature": "testListSuperAdmin_returnsList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "method_signature": "testListAllUsers_emptyResult_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "method_signature": "testPostAuthentication_withUserDetailsPrincipal_returnsUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "method_signature": "testGetAuthentication_noAuthentication_returnsError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "method_signature": "testGetAuthentication_withUserDetailsPrincipal_returnsUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testGetUsersWithGroup_returnsData()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testListGroups_withNameFilter()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testBatchAddUserGroups_validNames_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testListGroups_returnsGroups()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testAddUserGroup_validName_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testAddUserGroup_emptyName_returnsError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testGetUsersAndGroups_returnsMap()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testDeleteUserGroup_delegatesAndFiresEvent()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testAddOrDelUsers_validGroup_succeeds()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "method_signature": "testBatchDeleteUserGroups_delegatesAndFiresEvents()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/metadata-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NUserGroupControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NConfigControllerTest",
+      "method_signature": "testIsCloud_cloudDeployment_returnsTrue()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NConfigControllerTest",
+      "method_signature": "testIsCloud_onPremDeployment_returnsFalse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NConfigControllerTest",
+      "method_signature": "testFetchAll_returnsProperties()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "method_signature": "testGetThreadInfoMetrics_returnsEmptyList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "method_signature": "testGetClusterStatisticStatus_validRange()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "method_signature": "testAlert_validRequest_delegatesToMonitorService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "method_signature": "testGetMemoryMetrics_returnsEmptyList()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "method_signature": "testGetClusterStatisticStatus_startAfterEnd_returns500()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "method_signature": "testGetClusterCurrentStatus_delegatesToMonitorService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NMonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NAdminControllerTest",
+      "method_signature": "testGetPublicConfig_returnsSuccessCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NAdminControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NAdminControllerTest",
+      "method_signature": "testGetInstanceConfig_returnsTimezone()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NAdminControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NAdminControllerTest",
+      "method_signature": "testGetPublicConfig_responseContainsKylinStreaming()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NAdminControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "method_signature": "testDoCleanupGarbage_delegatesToScheduleService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "method_signature": "testRollEventLog_failureReturnsCode999()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "method_signature": "testBroadcastMetadataBackup_delegatesToFileService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "method_signature": "testGetHostname_returnsLocalInstance()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "method_signature": "testReloadMetadata_delegatesToSystemService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "method_signature": "testRollEventLog_successReturnsCode000()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "method_signature": "testCleanSparderEventLog_delegatesToSystemService()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "src/common-server",
+      "binary_class_name": "org.apache.kylin.rest.controller.NSystemControllerTest",
+      "status": "passed"
+    }
+  ]
+}

@@ -5,28 +5,28 @@
   "quadrants": {
     "endpoints_and_api_tests": {
       "project_count": 10,
-      "test_count": 159,
-      "api_test_count": 89,
+      "test_count": 376,
+      "api_test_count": 304,
       "projects_with_zero_tests": 0,
       "tests_per_project": {
         "count": 10,
-        "min": 2.0,
-        "max": 83.0,
-        "mean": 15.9,
-        "p25": 5.25,
-        "p50": 7.5,
+        "min": 4.0,
+        "max": 243.0,
+        "mean": 37.6,
+        "p25": 6.0,
+        "p50": 9.5,
         "p75": 12.25,
-        "p90": 27.199999999999974
+        "p90": 87.29999999999994
       },
       "api_tests_per_project": {
         "count": 10,
-        "min": 2.0,
-        "max": 29.0,
-        "mean": 8.9,
-        "p25": 5.25,
-        "p50": 6.0,
-        "p75": 9.75,
-        "p90": 14.599999999999994
+        "min": 3.0,
+        "max": 228.0,
+        "mean": 30.4,
+        "p25": 6.0,
+        "p50": 9.5,
+        "p75": 12.25,
+        "p90": 35.39999999999992
       }
     },
     "endpoints_no_api_tests": {
@@ -111,69 +111,69 @@
   "api_test_universe": {
     "scope": "projects_with_api_tests",
     "project_count": 10,
-    "api_test_count": 89,
-    "api_test_class_count": 25,
-    "application_class_count": 22809,
-    "application_method_count": 101232,
+    "api_test_count": 304,
+    "api_test_class_count": 141,
+    "application_class_count": 22844,
+    "application_method_count": 101291,
     "endpoint_count": 2397,
     "api_tests_per_project": {
       "count": 10,
-      "min": 2.0,
-      "max": 29.0,
-      "mean": 8.9,
-      "p25": 5.25,
-      "p50": 6.0,
-      "p75": 9.75,
-      "p90": 14.599999999999994
+      "min": 3.0,
+      "max": 228.0,
+      "mean": 30.4,
+      "p25": 6.0,
+      "p50": 9.5,
+      "p75": 12.25,
+      "p90": 35.39999999999992
     },
     "api_test_classes_per_project": {
       "count": 10,
       "min": 1.0,
-      "max": 8.0,
-      "mean": 2.5,
+      "max": 120.0,
+      "mean": 14.1,
       "p25": 1.0,
-      "p50": 1.5,
-      "p75": 3.0,
-      "p90": 4.399999999999999
+      "p50": 2.0,
+      "p75": 3.75,
+      "p90": 17.39999999999996
     },
     "api_test_ncloc": {
-      "count": 89,
+      "count": 304,
       "min": 3.0,
-      "max": 279.0,
-      "mean": 28.921348314606742,
-      "p25": 12.0,
-      "p50": 21.0,
-      "p75": 38.0,
-      "p90": 45.0
+      "max": 253.0,
+      "mean": 22.917763157894736,
+      "p25": 11.0,
+      "p50": 17.0,
+      "p75": 26.0,
+      "p90": 38.69999999999999
     },
     "fixtures_per_project": {
       "count": 10,
       "min": 0.0,
-      "max": 4.0,
-      "mean": 1.7,
-      "p25": 1.0,
+      "max": 9.0,
+      "mean": 2.6,
+      "p25": 0.25,
       "p50": 1.5,
-      "p75": 2.75,
-      "p90": 3.0999999999999996
+      "p75": 3.75,
+      "p90": 6.299999999999999
     },
     "application_classes_per_project": {
       "count": 10,
       "min": 319.0,
       "max": 6892.0,
-      "mean": 2280.9,
+      "mean": 2284.4,
       "p25": 1044.25,
       "p50": 1669.5,
-      "p75": 3021.5,
+      "p75": 3030.25,
       "p90": 3587.199999999999
     },
     "application_methods_per_project": {
       "count": 10,
       "min": 2946.0,
       "max": 20345.0,
-      "mean": 10123.2,
+      "mean": 10129.1,
       "p25": 4689.75,
       "p50": 6592.0,
-      "p75": 16953.75,
+      "p75": 16968.5,
       "p90": 18648.5
     },
     "endpoints_per_project": {

@@ -1,0 +1,4283 @@
+{
+  "suite": "codex",
+  "projects": [
+    "dolphinscheduler",
+    "DSpace",
+    "hertzbeat",
+    "incubator-kie-kogito-runtimes",
+    "kylin",
+    "openvsx",
+    "spinnaker",
+    "spring-cloud-dataflow",
+    "uaa"
+  ],
+  "projects_left_out": [],
+  "method": {
+    "encounter": "a passing test running a sampled mutant",
+    "kill_rate": "a group's kills over its encounters",
+    "test_strength": "mutants a group kills over the mutants it runs",
+    "shared_mutants": "The mutants that tests of both groups run. A group's kill rate on a mutant is the share of its tests running the mutant that kill it, and the mean kill rates and their difference are over the shared mutants, each counted once whatever the size of the groups.",
+    "same_test_class": "The shared mutants that tests of both groups in one test class run, which share that class's harness and fixtures. A group's kill rate on a mutant is the mean, over such test classes, of the share of the class's tests of the group running the mutant that kill it.",
+    "mean_difference_without": "The pooled mean difference with each project left out in turn.",
+    "difference_interval": "95% percentile interval of the mean difference over 10000 resamples of whole mutated classes",
+    "test": "class_sign_flip: the share of 10000 random sign flips of whole mutated classes' differences whose mean difference is at least as far from zero as the observed one, counting the observed one",
+    "alternative": "two-sided",
+    "correction": "holm, over the tested comparisons of one set of tests; not over suites, nor over the pooled and per-project sets together",
+    "alpha": 0.05,
+    "untested": "A comparison whose mutants are of fewer than two classes has no interval or test, and one whose classes' differences are all zero has no test.",
+    "killed_only_by": "Counts of shared mutants by which groups kill them; a group with more tests has more chances to kill."
+  },
+  "pooled": {
+    "tests": 299,
+    "encounters": 511,
+    "traits": [
+      {
+        "name": "multi_step",
+        "label": "Two or more steps",
+        "population": "tests with a step",
+        "holding": {
+          "tests": 151,
+          "tests_running_a_mutant": 18,
+          "encounters": 310,
+          "kills": 55,
+          "kill_rate": 0.1774193548387097,
+          "mutants_run": 220,
+          "mutants_killed": 34,
+          "test_strength": 0.15454545454545454
+        },
+        "lacking": {
+          "tests": 148,
+          "tests_running_a_mutant": 15,
+          "encounters": 201,
+          "kills": 33,
+          "kill_rate": 0.16417910447761194,
+          "mutants_run": 147,
+          "mutants_killed": 26,
+          "test_strength": 0.17687074829931973
+        },
+        "shared_mutants": {
+          "mutants": 44,
+          "mutated_classes": 31,
+          "mean_kill_rate_holding": 0.3181818181818182,
+          "mean_kill_rate_lacking": 0.21401515151515155,
+          "mean_difference": 0.10416666666666669,
+          "difference_interval": [
+            -0.05753968253968252,
+            0.270845445736434
+          ],
+          "holding_higher": 10,
+          "lacking_higher": 3,
+          "tied": 31,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.33326667333266674,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "killed_only_by_holding": 5,
+          "killed_only_by_lacking": 3,
+          "killed_by_both": 9,
+          "killed_by_neither": 27,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.10416666666666669,
+            "DSpace": 0.10416666666666669,
+            "hertzbeat": 0.10416666666666669,
+            "incubator-kie-kogito-runtimes": 0.10912698412698414,
+            "kylin": 0.10416666666666669,
+            "openvsx": 0.09684684684684686,
+            "spinnaker": 0.10416666666666669,
+            "spring-cloud-dataflow": -0.058333333333333334,
+            "uaa": 0.31884057971014496
+          }
+        },
+        "same_test_class": {
+          "mutants": 41,
+          "mutated_classes": 28,
+          "mean_kill_rate_holding": 0.34146341463414637,
+          "mean_kill_rate_lacking": 0.25,
+          "mean_difference": 0.09146341463414634,
+          "difference_interval": [
+            -0.07237372665534804,
+            0.26563331117021266
+          ],
+          "holding_higher": 9,
+          "lacking_higher": 3,
+          "tied": 29,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.4273572642735726,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "test_classes": 4,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.09146341463414634,
+            "DSpace": 0.09146341463414634,
+            "hertzbeat": 0.09146341463414634,
+            "incubator-kie-kogito-runtimes": 0.09375,
+            "kylin": 0.09146341463414634,
+            "openvsx": 0.08088235294117647,
+            "spinnaker": 0.09146341463414634,
+            "spring-cloud-dataflow": -0.06481481481481481,
+            "uaa": 0.29545454545454547
+          }
+        }
+      },
+      {
+        "name": "five_or_more_steps",
+        "label": "Five or more steps",
+        "population": "tests with a step",
+        "holding": {
+          "tests": 55,
+          "tests_running_a_mutant": 7,
+          "encounters": 105,
+          "kills": 31,
+          "kill_rate": 0.29523809523809524,
+          "mutants_run": 49,
+          "mutants_killed": 17,
+          "test_strength": 0.3469387755102041
+        },
+        "lacking": {
+          "tests": 244,
+          "tests_running_a_mutant": 26,
+          "encounters": 406,
+          "kills": 57,
+          "kill_rate": 0.14039408866995073,
+          "mutants_run": 306,
+          "mutants_killed": 43,
+          "test_strength": 0.14052287581699346
+        },
+        "shared_mutants": {
+          "mutants": 32,
+          "mutated_classes": 22,
+          "mean_kill_rate_holding": 0.29166666666666663,
+          "mean_kill_rate_lacking": 0.28125,
+          "mean_difference": 0.010416666666666666,
+          "difference_interval": [
+            0.0,
+            0.037037037037037035
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 0,
+          "tied": 31,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 1.0,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "killed_only_by_holding": 1,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 9,
+          "killed_by_neither": 22,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.010416666666666666,
+            "DSpace": 0.010416666666666666,
+            "hertzbeat": 0.010416666666666666,
+            "incubator-kie-kogito-runtimes": 0.0,
+            "kylin": 0.010416666666666666,
+            "openvsx": 0.01111111111111111,
+            "spinnaker": 0.010416666666666666,
+            "spring-cloud-dataflow": 0.011494252873563218,
+            "uaa": 0.010416666666666666
+          }
+        },
+        "same_test_class": {
+          "mutants": 32,
+          "mutated_classes": 22,
+          "mean_kill_rate_holding": 0.29166666666666663,
+          "mean_kill_rate_lacking": 0.28125,
+          "mean_difference": 0.010416666666666666,
+          "difference_interval": [
+            0.0,
+            0.037037037037037035
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 0,
+          "tied": 31,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 1.0,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "test_classes": 3,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.010416666666666666,
+            "DSpace": 0.010416666666666666,
+            "hertzbeat": 0.010416666666666666,
+            "incubator-kie-kogito-runtimes": 0.0,
+            "kylin": 0.010416666666666666,
+            "openvsx": 0.01111111111111111,
+            "spinnaker": 0.010416666666666666,
+            "spring-cloud-dataflow": 0.011494252873563218,
+            "uaa": 0.010416666666666666
+          }
+        }
+      },
+      {
+        "name": "checks_body",
+        "label": "Checks the body, against only the status",
+        "population": "tests checking the body or only the status",
+        "holding": {
+          "tests": 223,
+          "tests_running_a_mutant": 23,
+          "encounters": 361,
+          "kills": 60,
+          "kill_rate": 0.16620498614958448,
+          "mutants_run": 274,
+          "mutants_killed": 41,
+          "test_strength": 0.14963503649635038
+        },
+        "lacking": {
+          "tests": 71,
+          "tests_running_a_mutant": 8,
+          "encounters": 83,
+          "kills": 15,
+          "kill_rate": 0.18072289156626506,
+          "mutants_run": 81,
+          "mutants_killed": 15,
+          "test_strength": 0.18518518518518517
+        },
+        "shared_mutants": {
+          "mutants": 48,
+          "mutated_classes": 36,
+          "mean_kill_rate_holding": 0.17708333333333334,
+          "mean_kill_rate_lacking": 0.22916666666666666,
+          "mean_difference": -0.052083333333333336,
+          "difference_interval": [
+            -0.13043478260869565,
+            0.011111111111111112
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 3,
+          "tied": 44,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.2516748325167483,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "killed_only_by_holding": 1,
+          "killed_only_by_lacking": 3,
+          "killed_by_both": 8,
+          "killed_by_neither": 36,
+          "mean_difference_without": {
+            "dolphinscheduler": -0.052083333333333336,
+            "DSpace": -0.052083333333333336,
+            "hertzbeat": -0.052083333333333336,
+            "incubator-kie-kogito-runtimes": -0.15,
+            "kylin": -0.052083333333333336,
+            "openvsx": -0.03333333333333333,
+            "spinnaker": -0.052083333333333336,
+            "spring-cloud-dataflow": -0.05555555555555555,
+            "uaa": -0.014705882352941176
+          }
+        },
+        "same_test_class": {
+          "mutants": 48,
+          "mutated_classes": 36,
+          "mean_kill_rate_holding": 0.17708333333333334,
+          "mean_kill_rate_lacking": 0.22916666666666666,
+          "mean_difference": -0.052083333333333336,
+          "difference_interval": [
+            -0.13043478260869565,
+            0.011111111111111112
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 3,
+          "tied": 44,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 0.2516748325167483,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "test_classes": 5,
+          "mean_difference_without": {
+            "dolphinscheduler": -0.052083333333333336,
+            "DSpace": -0.052083333333333336,
+            "hertzbeat": -0.052083333333333336,
+            "incubator-kie-kogito-runtimes": -0.15,
+            "kylin": -0.052083333333333336,
+            "openvsx": -0.03333333333333333,
+            "spinnaker": -0.052083333333333336,
+            "spring-cloud-dataflow": -0.05555555555555555,
+            "uaa": -0.014705882352941176
+          }
+        }
+      },
+      {
+        "name": "deep_body_check",
+        "label": "A step with two or more body checks, against at most one",
+        "population": "tests with a body check in a step",
+        "holding": {
+          "tests": 29,
+          "tests_running_a_mutant": 7,
+          "encounters": 130,
+          "kills": 24,
+          "kill_rate": 0.18461538461538463,
+          "mutants_run": 93,
+          "mutants_killed": 15,
+          "test_strength": 0.16129032258064516
+        },
+        "lacking": {
+          "tests": 194,
+          "tests_running_a_mutant": 16,
+          "encounters": 231,
+          "kills": 36,
+          "kill_rate": 0.15584415584415584,
+          "mutants_run": 193,
+          "mutants_killed": 27,
+          "test_strength": 0.13989637305699482
+        },
+        "shared_mutants": {
+          "mutants": 12,
+          "mutated_classes": 12,
+          "mean_kill_rate_holding": 0.08333333333333333,
+          "mean_kill_rate_lacking": 0.08333333333333333,
+          "mean_difference": 0.0,
+          "difference_interval": [
+            0.0,
+            0.0
+          ],
+          "holding_higher": 0,
+          "lacking_higher": 0,
+          "tied": 12,
+          "test": null,
+          "killed_only_by_holding": 0,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 1,
+          "killed_by_neither": 11,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.0,
+            "DSpace": 0.0,
+            "hertzbeat": 0.0,
+            "incubator-kie-kogito-runtimes": 0.0,
+            "kylin": 0.0,
+            "openvsx": 0.0,
+            "spinnaker": 0.0,
+            "spring-cloud-dataflow": 0.0,
+            "uaa": null
+          }
+        },
+        "same_test_class": {
+          "mutants": 12,
+          "mutated_classes": 12,
+          "mean_kill_rate_holding": 0.08333333333333333,
+          "mean_kill_rate_lacking": 0.08333333333333333,
+          "mean_difference": 0.0,
+          "difference_interval": [
+            0.0,
+            0.0
+          ],
+          "holding_higher": 0,
+          "lacking_higher": 0,
+          "tied": 12,
+          "test": null,
+          "test_classes": 1,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.0,
+            "DSpace": 0.0,
+            "hertzbeat": 0.0,
+            "incubator-kie-kogito-runtimes": 0.0,
+            "kylin": 0.0,
+            "openvsx": 0.0,
+            "spinnaker": 0.0,
+            "spring-cloud-dataflow": 0.0,
+            "uaa": null
+          }
+        }
+      },
+      {
+        "name": "re_dispatches_endpoint",
+        "label": "Re-dispatches an endpoint",
+        "population": "multi-step tests with every dispatch resolved",
+        "holding": {
+          "tests": 24,
+          "tests_running_a_mutant": 8,
+          "encounters": 219,
+          "kills": 30,
+          "kill_rate": 0.136986301369863,
+          "mutants_run": 163,
+          "mutants_killed": 16,
+          "test_strength": 0.09815950920245399
+        },
+        "lacking": {
+          "tests": 124,
+          "tests_running_a_mutant": 7,
+          "encounters": 81,
+          "kills": 25,
+          "kill_rate": 0.30864197530864196,
+          "mutants_run": 80,
+          "mutants_killed": 25,
+          "test_strength": 0.3125
+        },
+        "shared_mutants": {
+          "mutants": 27,
+          "mutated_classes": 20,
+          "mean_kill_rate_holding": 0.2716049382716049,
+          "mean_kill_rate_lacking": 0.25925925925925924,
+          "mean_difference": 0.012345679012345678,
+          "difference_interval": [
+            0.0,
+            0.043478260869565216
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 0,
+          "tied": 26,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 1.0,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "killed_only_by_holding": 1,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 7,
+          "killed_by_neither": 19,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.012345679012345678,
+            "DSpace": 0.012345679012345678,
+            "hertzbeat": 0.012345679012345678,
+            "incubator-kie-kogito-runtimes": null,
+            "kylin": 0.012345679012345678,
+            "openvsx": 0.012345679012345678,
+            "spinnaker": 0.012345679012345678,
+            "spring-cloud-dataflow": 0.012345679012345678,
+            "uaa": 0.012345679012345678
+          }
+        },
+        "same_test_class": {
+          "mutants": 27,
+          "mutated_classes": 20,
+          "mean_kill_rate_holding": 0.2716049382716049,
+          "mean_kill_rate_lacking": 0.25925925925925924,
+          "mean_difference": 0.012345679012345678,
+          "difference_interval": [
+            0.0,
+            0.043478260869565216
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 0,
+          "tied": 26,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 1.0,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "test_classes": 1,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.012345679012345678,
+            "DSpace": 0.012345679012345678,
+            "hertzbeat": 0.012345679012345678,
+            "incubator-kie-kogito-runtimes": null,
+            "kylin": 0.012345679012345678,
+            "openvsx": 0.012345679012345678,
+            "spinnaker": 0.012345679012345678,
+            "spring-cloud-dataflow": 0.012345679012345678,
+            "uaa": 0.012345679012345678
+          }
+        }
+      },
+      {
+        "name": "reads_after_write",
+        "label": "Reads a resource back after writing it",
+        "population": "tests writing a resource",
+        "holding": {
+          "tests": 6,
+          "tests_running_a_mutant": 5,
+          "encounters": 104,
+          "kills": 27,
+          "kill_rate": 0.25961538461538464,
+          "mutants_run": 48,
+          "mutants_killed": 13,
+          "test_strength": 0.2708333333333333
+        },
+        "lacking": {
+          "tests": 122,
+          "tests_running_a_mutant": 12,
+          "encounters": 110,
+          "kills": 37,
+          "kill_rate": 0.33636363636363636,
+          "mutants_run": 87,
+          "mutants_killed": 29,
+          "test_strength": 0.3333333333333333
+        },
+        "shared_mutants": {
+          "mutants": 31,
+          "mutated_classes": 22,
+          "mean_kill_rate_holding": 0.23655913978494622,
+          "mean_kill_rate_lacking": 0.22580645161290322,
+          "mean_difference": 0.01075268817204301,
+          "difference_interval": [
+            0.0,
+            0.037037037037037035
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 0,
+          "tied": 30,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 1.0,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "killed_only_by_holding": 1,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 7,
+          "killed_by_neither": 23,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.01075268817204301,
+            "DSpace": 0.01075268817204301,
+            "hertzbeat": 0.01075268817204301,
+            "incubator-kie-kogito-runtimes": 0.0,
+            "kylin": 0.01075268817204301,
+            "openvsx": 0.01075268817204301,
+            "spinnaker": 0.01075268817204301,
+            "spring-cloud-dataflow": 0.011904761904761904,
+            "uaa": 0.01075268817204301
+          }
+        },
+        "same_test_class": {
+          "mutants": 31,
+          "mutated_classes": 22,
+          "mean_kill_rate_holding": 0.23655913978494622,
+          "mean_kill_rate_lacking": 0.22580645161290322,
+          "mean_difference": 0.01075268817204301,
+          "difference_interval": [
+            0.0,
+            0.037037037037037035
+          ],
+          "holding_higher": 1,
+          "lacking_higher": 0,
+          "tied": 30,
+          "test": {
+            "name": "class_sign_flip",
+            "p_value": 1.0,
+            "p_adjusted": 1.0,
+            "significant": false
+          },
+          "test_classes": 3,
+          "mean_difference_without": {
+            "dolphinscheduler": 0.01075268817204301,
+            "DSpace": 0.01075268817204301,
+            "hertzbeat": 0.01075268817204301,
+            "incubator-kie-kogito-runtimes": 0.0,
+            "kylin": 0.01075268817204301,
+            "openvsx": 0.01075268817204301,
+            "spinnaker": 0.01075268817204301,
+            "spring-cloud-dataflow": 0.011904761904761904,
+            "uaa": 0.01075268817204301
+          }
+        }
+      },
+      {
+        "name": "fixture_request",
+        "label": "Issues a request from a fixture",
+        "population": "tests",
+        "holding": {
+          "tests": 0,
+          "tests_running_a_mutant": 0,
+          "encounters": 0,
+          "kills": 0,
+          "kill_rate": null,
+          "mutants_run": 0,
+          "mutants_killed": 0,
+          "test_strength": null
+        },
+        "lacking": {
+          "tests": 299,
+          "tests_running_a_mutant": 33,
+          "encounters": 511,
+          "kills": 88,
+          "kill_rate": 0.17221135029354206,
+          "mutants_run": 323,
+          "mutants_killed": 51,
+          "test_strength": 0.15789473684210525
+        },
+        "shared_mutants": {
+          "mutants": 0,
+          "mutated_classes": 0,
+          "mean_kill_rate_holding": null,
+          "mean_kill_rate_lacking": null,
+          "mean_difference": null,
+          "difference_interval": null,
+          "holding_higher": 0,
+          "lacking_higher": 0,
+          "tied": 0,
+          "test": null,
+          "killed_only_by_holding": 0,
+          "killed_only_by_lacking": 0,
+          "killed_by_both": 0,
+          "killed_by_neither": 0,
+          "mean_difference_without": {
+            "dolphinscheduler": null,
+            "DSpace": null,
+            "hertzbeat": null,
+            "incubator-kie-kogito-runtimes": null,
+            "kylin": null,
+            "openvsx": null,
+            "spinnaker": null,
+            "spring-cloud-dataflow": null,
+            "uaa": null
+          }
+        },
+        "same_test_class": {
+          "mutants": 0,
+          "mutated_classes": 0,
+          "mean_kill_rate_holding": null,
+          "mean_kill_rate_lacking": null,
+          "mean_difference": null,
+          "difference_interval": null,
+          "holding_higher": 0,
+          "lacking_higher": 0,
+          "tied": 0,
+          "test": null,
+          "test_classes": 0,
+          "mean_difference_without": {
+            "dolphinscheduler": null,
+            "DSpace": null,
+            "hertzbeat": null,
+            "incubator-kie-kogito-runtimes": null,
+            "kylin": null,
+            "openvsx": null,
+            "spinnaker": null,
+            "spring-cloud-dataflow": null,
+            "uaa": null
+          }
+        }
+      }
+    ]
+  },
+  "by_project": {
+    "dolphinscheduler": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 3,
+      "encounters": 1,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 3,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 3,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "DSpace": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 6,
+      "encounters": 0,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 6,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 3,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 6,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "hertzbeat": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 13,
+      "encounters": 0,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 13,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 13,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 13,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 8,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 6,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 13,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "incubator-kie-kogito-runtimes": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 10,
+      "encounters": 165,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 9,
+            "tests_running_a_mutant": 9,
+            "encounters": 162,
+            "kills": 38,
+            "kill_rate": 0.2345679012345679,
+            "mutants_run": 75,
+            "mutants_killed": 17,
+            "test_strength": 0.22666666666666666
+          },
+          "lacking": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 3,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 3,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "shared_mutants": {
+            "mutants": 2,
+            "mutated_classes": 2,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": [
+              0.0,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 2
+          },
+          "same_test_class": {
+            "mutants": 1,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 1,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 5,
+            "tests_running_a_mutant": 5,
+            "encounters": 100,
+            "kills": 29,
+            "kill_rate": 0.29,
+            "mutants_run": 44,
+            "mutants_killed": 15,
+            "test_strength": 0.3409090909090909
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 5,
+            "encounters": 65,
+            "kills": 9,
+            "kill_rate": 0.13846153846153847,
+            "mutants_run": 59,
+            "mutants_killed": 9,
+            "test_strength": 0.15254237288135594
+          },
+          "shared_mutants": {
+            "mutants": 27,
+            "mutated_classes": 20,
+            "mean_kill_rate_holding": 0.2716049382716049,
+            "mean_kill_rate_lacking": 0.25925925925925924,
+            "mean_difference": 0.012345679012345678,
+            "difference_interval": [
+              0.0,
+              0.043478260869565216
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 26,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 7,
+            "killed_by_neither": 19
+          },
+          "same_test_class": {
+            "mutants": 27,
+            "mutated_classes": 20,
+            "mean_kill_rate_holding": 0.2716049382716049,
+            "mean_kill_rate_lacking": 0.25925925925925924,
+            "mean_difference": 0.012345679012345678,
+            "difference_interval": [
+              0.0,
+              0.043478260869565216
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 26,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 7,
+            "tests_running_a_mutant": 7,
+            "encounters": 80,
+            "kills": 24,
+            "kill_rate": 0.3,
+            "mutants_run": 49,
+            "mutants_killed": 17,
+            "test_strength": 0.3469387755102041
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 2,
+            "encounters": 56,
+            "kills": 7,
+            "kill_rate": 0.125,
+            "mutants_run": 54,
+            "mutants_killed": 7,
+            "test_strength": 0.12962962962962962
+          },
+          "shared_mutants": {
+            "mutants": 28,
+            "mutated_classes": 21,
+            "mean_kill_rate_holding": 0.26785714285714285,
+            "mean_kill_rate_lacking": 0.25,
+            "mean_difference": 0.017857142857142856,
+            "difference_interval": [
+              0.0,
+              0.0625
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 27,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 7,
+            "killed_by_neither": 20
+          },
+          "same_test_class": {
+            "mutants": 28,
+            "mutated_classes": 21,
+            "mean_kill_rate_holding": 0.26785714285714285,
+            "mean_kill_rate_lacking": 0.25,
+            "mean_difference": 0.017857142857142856,
+            "difference_interval": [
+              0.0,
+              0.0625
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 27,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 2
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 7,
+            "tests_running_a_mutant": 7,
+            "encounters": 80,
+            "kills": 24,
+            "kill_rate": 0.3,
+            "mutants_run": 49,
+            "mutants_killed": 17,
+            "test_strength": 0.3469387755102041
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 3,
+            "tests_running_a_mutant": 3,
+            "encounters": 98,
+            "kills": 27,
+            "kill_rate": 0.2755102040816326,
+            "mutants_run": 42,
+            "mutants_killed": 13,
+            "test_strength": 0.30952380952380953
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 5,
+            "encounters": 60,
+            "kills": 11,
+            "kill_rate": 0.18333333333333332,
+            "mutants_run": 59,
+            "mutants_killed": 11,
+            "test_strength": 0.1864406779661017
+          },
+          "shared_mutants": {
+            "mutants": 27,
+            "mutated_classes": 20,
+            "mean_kill_rate_holding": 0.2716049382716049,
+            "mean_kill_rate_lacking": 0.25925925925925924,
+            "mean_difference": 0.012345679012345678,
+            "difference_interval": [
+              0.0,
+              0.043478260869565216
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 26,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 7,
+            "killed_by_neither": 19
+          },
+          "same_test_class": {
+            "mutants": 27,
+            "mutated_classes": 20,
+            "mean_kill_rate_holding": 0.2716049382716049,
+            "mean_kill_rate_lacking": 0.25925925925925924,
+            "mean_difference": 0.012345679012345678,
+            "difference_interval": [
+              0.0,
+              0.043478260869565216
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 26,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 4,
+            "tests_running_a_mutant": 4,
+            "encounters": 101,
+            "kills": 27,
+            "kill_rate": 0.26732673267326734,
+            "mutants_run": 45,
+            "mutants_killed": 13,
+            "test_strength": 0.28888888888888886
+          },
+          "lacking": {
+            "tests": 4,
+            "tests_running_a_mutant": 4,
+            "encounters": 59,
+            "kills": 10,
+            "kill_rate": 0.1694915254237288,
+            "mutants_run": 57,
+            "mutants_killed": 10,
+            "test_strength": 0.17543859649122806
+          },
+          "shared_mutants": {
+            "mutants": 28,
+            "mutated_classes": 21,
+            "mean_kill_rate_holding": 0.2619047619047619,
+            "mean_kill_rate_lacking": 0.25,
+            "mean_difference": 0.011904761904761904,
+            "difference_interval": [
+              0.0,
+              0.041666666666666664
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 27,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 7,
+            "killed_by_neither": 20
+          },
+          "same_test_class": {
+            "mutants": 28,
+            "mutated_classes": 21,
+            "mean_kill_rate_holding": 0.2619047619047619,
+            "mean_kill_rate_lacking": 0.25,
+            "mean_difference": 0.011904761904761904,
+            "difference_interval": [
+              0.0,
+              0.041666666666666664
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 27,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 2
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 10,
+            "tests_running_a_mutant": 10,
+            "encounters": 165,
+            "kills": 38,
+            "kill_rate": 0.23030303030303031,
+            "mutants_run": 76,
+            "mutants_killed": 17,
+            "test_strength": 0.2236842105263158
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "kylin": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 10,
+      "encounters": 4,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 4,
+            "tests_running_a_mutant": 1,
+            "encounters": 2,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 2,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "lacking": {
+            "tests": 6,
+            "tests_running_a_mutant": 2,
+            "encounters": 2,
+            "kills": 2,
+            "kill_rate": 1.0,
+            "mutants_run": 2,
+            "mutants_killed": 2,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 10,
+            "tests_running_a_mutant": 3,
+            "encounters": 4,
+            "kills": 2,
+            "kill_rate": 0.5,
+            "mutants_run": 4,
+            "mutants_killed": 2,
+            "test_strength": 0.5
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 5,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 2,
+            "encounters": 3,
+            "kills": 1,
+            "kill_rate": 0.3333333333333333,
+            "mutants_run": 3,
+            "mutants_killed": 1,
+            "test_strength": 0.3333333333333333
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 2,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 2,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "lacking": {
+            "tests": 3,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 3,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 10,
+            "tests_running_a_mutant": 3,
+            "encounters": 4,
+            "kills": 2,
+            "kill_rate": 0.5,
+            "mutants_run": 4,
+            "mutants_killed": 2,
+            "test_strength": 0.5
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "openvsx": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 6,
+      "encounters": 36,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 4,
+            "tests_running_a_mutant": 3,
+            "encounters": 7,
+            "kills": 3,
+            "kill_rate": 0.42857142857142855,
+            "mutants_run": 7,
+            "mutants_killed": 3,
+            "test_strength": 0.42857142857142855
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 2,
+            "encounters": 29,
+            "kills": 7,
+            "kill_rate": 0.2413793103448276,
+            "mutants_run": 29,
+            "mutants_killed": 7,
+            "test_strength": 0.2413793103448276
+          },
+          "shared_mutants": {
+            "mutants": 7,
+            "mutated_classes": 5,
+            "mean_kill_rate_holding": 0.42857142857142855,
+            "mean_kill_rate_lacking": 0.2857142857142857,
+            "mean_difference": 0.14285714285714285,
+            "difference_interval": [
+              0.0,
+              0.5
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 6,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 1,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 2,
+            "killed_by_neither": 4
+          },
+          "same_test_class": {
+            "mutants": 7,
+            "mutated_classes": 5,
+            "mean_kill_rate_holding": 0.42857142857142855,
+            "mean_kill_rate_lacking": 0.2857142857142857,
+            "mean_difference": 0.14285714285714285,
+            "difference_interval": [
+              0.0,
+              0.5
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 0,
+            "tied": 6,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 2,
+            "kills": 2,
+            "kill_rate": 1.0,
+            "mutants_run": 2,
+            "mutants_killed": 2,
+            "test_strength": 1.0
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 4,
+            "encounters": 34,
+            "kills": 8,
+            "kill_rate": 0.23529411764705882,
+            "mutants_run": 29,
+            "mutants_killed": 8,
+            "test_strength": 0.27586206896551724
+          },
+          "shared_mutants": {
+            "mutants": 2,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 1.0,
+            "mean_kill_rate_lacking": 1.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 2,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 2,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 1.0,
+            "mean_kill_rate_lacking": 1.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 2,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 5,
+            "tests_running_a_mutant": 4,
+            "encounters": 33,
+            "kills": 9,
+            "kill_rate": 0.2727272727272727,
+            "mutants_run": 29,
+            "mutants_killed": 7,
+            "test_strength": 0.2413793103448276
+          },
+          "lacking": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 3,
+            "kills": 1,
+            "kill_rate": 0.3333333333333333,
+            "mutants_run": 3,
+            "mutants_killed": 1,
+            "test_strength": 0.3333333333333333
+          },
+          "shared_mutants": {
+            "mutants": 3,
+            "mutated_classes": 2,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.3333333333333333,
+            "mean_difference": -0.3333333333333333,
+            "difference_interval": [
+              -1.0,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 1,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 1,
+            "killed_by_both": 0,
+            "killed_by_neither": 2
+          },
+          "same_test_class": {
+            "mutants": 3,
+            "mutated_classes": 2,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.3333333333333333,
+            "mean_difference": -0.3333333333333333,
+            "difference_interval": [
+              -1.0,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 1,
+            "tied": 2,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 1.0,
+              "p_adjusted": 1.0,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 5,
+            "tests_running_a_mutant": 4,
+            "encounters": 33,
+            "kills": 9,
+            "kill_rate": 0.2727272727272727,
+            "mutants_run": 29,
+            "mutants_killed": 7,
+            "test_strength": 0.2413793103448276
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 2,
+            "tests_running_a_mutant": 2,
+            "encounters": 5,
+            "kills": 1,
+            "kill_rate": 0.2,
+            "mutants_run": 5,
+            "mutants_killed": 1,
+            "test_strength": 0.2
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 1,
+            "encounters": 2,
+            "kills": 2,
+            "kill_rate": 1.0,
+            "mutants_run": 2,
+            "mutants_killed": 2,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 3,
+            "tests_running_a_mutant": 2,
+            "encounters": 5,
+            "kills": 5,
+            "kill_rate": 1.0,
+            "mutants_run": 5,
+            "mutants_killed": 5,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 6,
+            "tests_running_a_mutant": 5,
+            "encounters": 36,
+            "kills": 10,
+            "kill_rate": 0.2777777777777778,
+            "mutants_run": 29,
+            "mutants_killed": 8,
+            "test_strength": 0.27586206896551724
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "spinnaker": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 228,
+      "encounters": 0,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 123,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 105,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 47,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 181,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 174,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 54,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 10,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 164,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 15,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 108,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 99,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 228,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "spring-cloud-dataflow": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 1,
+      "tests": 14,
+      "encounters": 110,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 6,
+            "tests_running_a_mutant": 4,
+            "encounters": 26,
+            "kills": 13,
+            "kill_rate": 0.5,
+            "mutants_run": 23,
+            "mutants_killed": 13,
+            "test_strength": 0.5652173913043478
+          },
+          "lacking": {
+            "tests": 8,
+            "tests_running_a_mutant": 3,
+            "encounters": 84,
+            "kills": 10,
+            "kill_rate": 0.11904761904761904,
+            "mutants_run": 72,
+            "mutants_killed": 8,
+            "test_strength": 0.1111111111111111
+          },
+          "shared_mutants": {
+            "mutants": 14,
+            "mutated_classes": 6,
+            "mean_kill_rate_holding": 0.7142857142857143,
+            "mean_kill_rate_lacking": 0.2619047619047619,
+            "mean_difference": 0.45238095238095244,
+            "difference_interval": [
+              0.21428571428571427,
+              0.761904761904762
+            ],
+            "holding_higher": 8,
+            "lacking_higher": 0,
+            "tied": 6,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.06419358064193581,
+              "p_adjusted": 0.12838716128387162,
+              "significant": false
+            },
+            "killed_only_by_holding": 4,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 6,
+            "killed_by_neither": 4
+          },
+          "same_test_class": {
+            "mutants": 14,
+            "mutated_classes": 6,
+            "mean_kill_rate_holding": 0.7142857142857143,
+            "mean_kill_rate_lacking": 0.32142857142857145,
+            "mean_difference": 0.39285714285714285,
+            "difference_interval": [
+              0.14705882352941177,
+              0.7307692307692307
+            ],
+            "holding_higher": 7,
+            "lacking_higher": 0,
+            "tied": 7,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.06419358064193581,
+              "p_adjusted": 0.12838716128387162,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 3,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 3,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "lacking": {
+            "tests": 13,
+            "tests_running_a_mutant": 6,
+            "encounters": 107,
+            "kills": 23,
+            "kill_rate": 0.21495327102803738,
+            "mutants_run": 81,
+            "mutants_killed": 15,
+            "test_strength": 0.18518518518518517
+          },
+          "shared_mutants": {
+            "mutants": 3,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 3,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 3
+          },
+          "same_test_class": {
+            "mutants": 3,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 3,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 10,
+            "tests_running_a_mutant": 6,
+            "encounters": 107,
+            "kills": 23,
+            "kill_rate": 0.21495327102803738,
+            "mutants_run": 81,
+            "mutants_killed": 15,
+            "test_strength": 0.18518518518518517
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 1,
+            "encounters": 3,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 3,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "shared_mutants": {
+            "mutants": 3,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 3,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 3
+          },
+          "same_test_class": {
+            "mutants": 3,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 3,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 8,
+            "tests_running_a_mutant": 5,
+            "encounters": 106,
+            "kills": 22,
+            "kill_rate": 0.20754716981132076,
+            "mutants_run": 80,
+            "mutants_killed": 14,
+            "test_strength": 0.175
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 1,
+            "kills": 1,
+            "kill_rate": 1.0,
+            "mutants_run": 1,
+            "mutants_killed": 1,
+            "test_strength": 1.0
+          },
+          "lacking": {
+            "tests": 3,
+            "tests_running_a_mutant": 1,
+            "encounters": 19,
+            "kills": 12,
+            "kill_rate": 0.631578947368421,
+            "mutants_run": 19,
+            "mutants_killed": 12,
+            "test_strength": 0.631578947368421
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 3,
+            "kills": 0,
+            "kill_rate": 0.0,
+            "mutants_run": 3,
+            "mutants_killed": 0,
+            "test_strength": 0.0
+          },
+          "lacking": {
+            "tests": 6,
+            "tests_running_a_mutant": 5,
+            "encounters": 45,
+            "kills": 21,
+            "kill_rate": 0.4666666666666667,
+            "mutants_run": 24,
+            "mutants_killed": 13,
+            "test_strength": 0.5416666666666666
+          },
+          "shared_mutants": {
+            "mutants": 3,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 3,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 3
+          },
+          "same_test_class": {
+            "mutants": 3,
+            "mutated_classes": 1,
+            "mean_kill_rate_holding": 0.0,
+            "mean_kill_rate_lacking": 0.0,
+            "mean_difference": 0.0,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 3,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 14,
+            "tests_running_a_mutant": 7,
+            "encounters": 110,
+            "kills": 23,
+            "kill_rate": 0.20909090909090908,
+            "mutants_run": 81,
+            "mutants_killed": 15,
+            "test_strength": 0.18518518518518517
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    },
+    "uaa": {
+      "unmatched_tests": 0,
+      "stopped_mutants": 0,
+      "tests": 9,
+      "encounters": 195,
+      "traits": [
+        {
+          "name": "multi_step",
+          "label": "Two or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 3,
+            "tests_running_a_mutant": 1,
+            "encounters": 113,
+            "kills": 1,
+            "kill_rate": 0.008849557522123894,
+            "mutants_run": 113,
+            "mutants_killed": 1,
+            "test_strength": 0.008849557522123894
+          },
+          "lacking": {
+            "tests": 6,
+            "tests_running_a_mutant": 6,
+            "encounters": 82,
+            "kills": 13,
+            "kill_rate": 0.15853658536585366,
+            "mutants_run": 40,
+            "mutants_killed": 8,
+            "test_strength": 0.2
+          },
+          "shared_mutants": {
+            "mutants": 21,
+            "mutated_classes": 18,
+            "mean_kill_rate_holding": 0.047619047619047616,
+            "mean_kill_rate_lacking": 0.17857142857142858,
+            "mean_difference": -0.13095238095238096,
+            "difference_interval": [
+              -0.2777777777777778,
+              0.0125
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 3,
+            "tied": 17,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.24727527247275272,
+              "p_adjusted": 0.9891010898910109,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 3,
+            "killed_by_both": 1,
+            "killed_by_neither": 17
+          },
+          "same_test_class": {
+            "mutants": 19,
+            "mutated_classes": 16,
+            "mean_kill_rate_holding": 0.05263157894736842,
+            "mean_kill_rate_lacking": 0.19736842105263158,
+            "mean_difference": -0.14473684210526316,
+            "difference_interval": [
+              -0.3055555555555556,
+              0.013888888888888888
+            ],
+            "holding_higher": 1,
+            "lacking_higher": 3,
+            "tied": 15,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.25417458254174585,
+              "p_adjusted": 0.9891010898910109,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "five_or_more_steps",
+          "label": "Five or more steps",
+          "population": "tests with a step",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 9,
+            "tests_running_a_mutant": 7,
+            "encounters": 195,
+            "kills": 14,
+            "kill_rate": 0.07179487179487179,
+            "mutants_run": 132,
+            "mutants_killed": 8,
+            "test_strength": 0.06060606060606061
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "checks_body",
+          "label": "Checks the body, against only the status",
+          "population": "tests checking the body or only the status",
+          "holding": {
+            "tests": 6,
+            "tests_running_a_mutant": 5,
+            "encounters": 140,
+            "kills": 3,
+            "kill_rate": 0.02142857142857143,
+            "mutants_run": 114,
+            "mutants_killed": 1,
+            "test_strength": 0.008771929824561403
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 1,
+            "encounters": 17,
+            "kills": 5,
+            "kill_rate": 0.29411764705882354,
+            "mutants_run": 17,
+            "mutants_killed": 5,
+            "test_strength": 0.29411764705882354
+          },
+          "shared_mutants": {
+            "mutants": 14,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.07142857142857142,
+            "mean_kill_rate_lacking": 0.21428571428571427,
+            "mean_difference": -0.14285714285714285,
+            "difference_interval": [
+              -0.3125,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 2,
+            "tied": 12,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.49605039496050396,
+              "p_adjusted": 0.9921007899210079,
+              "significant": false
+            },
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 2,
+            "killed_by_both": 1,
+            "killed_by_neither": 11
+          },
+          "same_test_class": {
+            "mutants": 14,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.07142857142857142,
+            "mean_kill_rate_lacking": 0.21428571428571427,
+            "mean_difference": -0.14285714285714285,
+            "difference_interval": [
+              -0.3125,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 2,
+            "tied": 12,
+            "test": {
+              "name": "class_sign_flip",
+              "p_value": 0.49605039496050396,
+              "p_adjusted": 0.9921007899210079,
+              "significant": false
+            },
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "deep_body_check",
+          "label": "A step with two or more body checks, against at most one",
+          "population": "tests with a body check in a step",
+          "holding": {
+            "tests": 2,
+            "tests_running_a_mutant": 2,
+            "encounters": 24,
+            "kills": 2,
+            "kill_rate": 0.08333333333333333,
+            "mutants_run": 13,
+            "mutants_killed": 1,
+            "test_strength": 0.07692307692307693
+          },
+          "lacking": {
+            "tests": 4,
+            "tests_running_a_mutant": 3,
+            "encounters": 116,
+            "kills": 1,
+            "kill_rate": 0.008620689655172414,
+            "mutants_run": 113,
+            "mutants_killed": 1,
+            "test_strength": 0.008849557522123894
+          },
+          "shared_mutants": {
+            "mutants": 12,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.08333333333333333,
+            "mean_kill_rate_lacking": 0.08333333333333333,
+            "mean_difference": 0.0,
+            "difference_interval": [
+              0.0,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 12,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 1,
+            "killed_by_neither": 11
+          },
+          "same_test_class": {
+            "mutants": 12,
+            "mutated_classes": 12,
+            "mean_kill_rate_holding": 0.08333333333333333,
+            "mean_kill_rate_lacking": 0.08333333333333333,
+            "mean_difference": 0.0,
+            "difference_interval": [
+              0.0,
+              0.0
+            ],
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 12,
+            "test": null,
+            "test_classes": 1
+          }
+        },
+        {
+          "name": "re_dispatches_endpoint",
+          "label": "Re-dispatches an endpoint",
+          "population": "multi-step tests with every dispatch resolved",
+          "holding": {
+            "tests": 1,
+            "tests_running_a_mutant": 1,
+            "encounters": 113,
+            "kills": 1,
+            "kill_rate": 0.008849557522123894,
+            "mutants_run": 113,
+            "mutants_killed": 1,
+            "test_strength": 0.008849557522123894
+          },
+          "lacking": {
+            "tests": 2,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "reads_after_write",
+          "label": "Reads a resource back after writing it",
+          "population": "tests writing a resource",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        },
+        {
+          "name": "fixture_request",
+          "label": "Issues a request from a fixture",
+          "population": "tests",
+          "holding": {
+            "tests": 0,
+            "tests_running_a_mutant": 0,
+            "encounters": 0,
+            "kills": 0,
+            "kill_rate": null,
+            "mutants_run": 0,
+            "mutants_killed": 0,
+            "test_strength": null
+          },
+          "lacking": {
+            "tests": 9,
+            "tests_running_a_mutant": 7,
+            "encounters": 195,
+            "kills": 14,
+            "kill_rate": 0.07179487179487179,
+            "mutants_run": 132,
+            "mutants_killed": 8,
+            "test_strength": 0.06060606060606061
+          },
+          "shared_mutants": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "killed_only_by_holding": 0,
+            "killed_only_by_lacking": 0,
+            "killed_by_both": 0,
+            "killed_by_neither": 0
+          },
+          "same_test_class": {
+            "mutants": 0,
+            "mutated_classes": 0,
+            "mean_kill_rate_holding": null,
+            "mean_kill_rate_lacking": null,
+            "mean_difference": null,
+            "difference_interval": null,
+            "holding_higher": 0,
+            "lacking_higher": 0,
+            "tied": 0,
+            "test": null,
+            "test_classes": 0
+          }
+        }
+      ]
+    }
+  }
+}

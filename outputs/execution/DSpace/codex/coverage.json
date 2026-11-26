@@ -1,0 +1,61 @@
+{
+  "heap": "-Xmx16g",
+  "measured_tests": [
+    "org.dspace.app.rest.PublicApiHttpTest#apiRootReturnsDiscoverableResourceAsJson",
+    "org.dspace.app.rest.PublicApiHttpTest#captchaChallengeReturnsSignedJsonWhenConfigured",
+    "org.dspace.app.rest.PublicApiHttpTest#captchaChallengeWithoutConfiguredHmacKeyReturnsBadRequest",
+    "org.dspace.app.rest.PublicApiHttpTest#csrfEndpointReturnsNoContentAndPersistsToken",
+    "org.dspace.app.rest.PublicApiHttpTest#ldnInboxOptionsAdvertisesSupportedMethodsAndContentType",
+    "org.dspace.app.rest.PublicApiHttpTest#oidcRedirectAllowsConfiguredHostAndRejectsUntrustedHost"
+  ],
+  "report": {
+    "counters": {
+      "INSTRUCTION": {
+        "covered": 443,
+        "missed": 428099,
+        "ratio": 0.001033737649985299
+      },
+      "BRANCH": {
+        "covered": 14,
+        "missed": 38511,
+        "ratio": 0.00036340038935756
+      },
+      "LINE": {
+        "covered": 104,
+        "missed": 103508,
+        "ratio": 0.0010037447399915069
+      },
+      "COMPLEXITY": {
+        "covered": 37,
+        "missed": 38786,
+        "ratio": 0.0009530432990752905
+      },
+      "METHOD": {
+        "covered": 32,
+        "missed": 19424,
+        "ratio": 0.001644736842105263
+      },
+      "CLASS": {
+        "covered": 14,
+        "missed": 2769,
+        "ratio": 0.005030542579949695
+      }
+    },
+    "covered_classes": [
+      "org.dspace.app.rest.AltchaCaptchaRestController",
+      "org.dspace.app.rest.CsrfRestController",
+      "org.dspace.app.rest.LDNInboxController",
+      "org.dspace.app.rest.OidcRestController",
+      "org.dspace.app.rest.RootRestResourceController",
+      "org.dspace.app.rest.converter.ConverterService",
+      "org.dspace.app.rest.model.RestAddressableModel",
+      "org.dspace.app.rest.model.RootRest",
+      "org.dspace.app.rest.model.hateoas.HALResource",
+      "org.dspace.app.rest.model.hateoas.RootResource",
+      "org.dspace.app.rest.projection.AbstractProjection",
+      "org.dspace.app.rest.projection.DefaultProjection",
+      "org.dspace.app.rest.projection.Projection",
+      "org.dspace.core.Utils"
+    ]
+  }
+}

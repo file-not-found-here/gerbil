@@ -15,7 +15,7 @@
     "count": 319,
     "min": 4.0,
     "max": 18.0,
-    "mean": 6.128526645768025,
+    "mean": 6.122257053291536,
     "p25": 5.0,
     "p50": 6.0,
     "p75": 7.0,
@@ -25,7 +25,7 @@
     "count": 269,
     "min": 1.0,
     "max": 36.0,
-    "mean": 1.6096654275092936,
+    "mean": 1.6022304832713754,
     "p25": 1.0,
     "p50": 1.0,
     "p75": 1.0,
@@ -35,7 +35,7 @@
     "count": 269,
     "min": 1.0,
     "max": 36.0,
-    "mean": 1.6096654275092936,
+    "mean": 1.6022304832713754,
     "p25": 1.0,
     "p50": 1.0,
     "p75": 1.0,
@@ -55,7 +55,7 @@
     "count": 319,
     "min": 1.0,
     "max": 15.0,
-    "mean": 1.3573667711598747,
+    "mean": 1.3510971786833856,
     "p25": 1.0,
     "p50": 1.0,
     "p75": 1.0,
@@ -64,11 +64,11 @@
   "verification_concentration": {
     "scope": "http_test_sequences",
     "item_count": 319,
-    "total": 433,
+    "total": 431,
     "by_top_fraction": {
       "top_1pct": {
         "item_count": 4,
-        "share_of_total": 0.11778290993071594,
+        "share_of_total": 0.11832946635730858,
         "distribution": {
           "count": 4,
           "min": 12.0,
@@ -82,7 +82,7 @@
       },
       "top_5pct": {
         "item_count": 16,
-        "share_of_total": 0.19630484988452657,
+        "share_of_total": 0.19721577726218098,
         "distribution": {
           "count": 16,
           "min": 2.0,
@@ -96,7 +96,7 @@
       },
       "top_10pct": {
         "item_count": 32,
-        "share_of_total": 0.2702078521939954,
+        "share_of_total": 0.271461716937355,
         "distribution": {
           "count": 32,
           "min": 2.0,
@@ -110,13 +110,13 @@
       },
       "top_25pct": {
         "item_count": 80,
-        "share_of_total": 0.44803695150115475,
+        "share_of_total": 0.44547563805104406,
         "distribution": {
           "count": 80,
           "min": 1.0,
           "max": 15.0,
-          "mean": 2.425,
-          "p25": 2.0,
+          "mean": 2.4,
+          "p25": 1.0,
           "p50": 2.0,
           "p75": 2.0,
           "p90": 3.0
@@ -129,9 +129,9 @@
       "proportion": 0.0
     },
     "share_at_most_one_check": {
-      "count": 258,
+      "count": 260,
       "total": 319,
-      "proportion": 0.8087774294670846
+      "proportion": 0.8150470219435737
     },
     "share_more_than_five_checks": {
       "count": 4,
@@ -250,7 +250,7 @@
       "count": 319,
       "min": 1.0,
       "max": 15.0,
-      "mean": 1.3573667711598747,
+      "mean": 1.3510971786833856,
       "p25": 1.0,
       "p50": 1.0,
       "p75": 1.0,
@@ -286,6 +286,11 @@
     "api_test_count": 269,
     "multi_sequence_test_count": 25,
     "fully_resolved_multi_sequence_test_count": 23,
+    "share_one_sequence": {
+      "count": 244,
+      "total": 269,
+      "proportion": 0.9070631970260223
+    },
     "share_two_or_more_sequences": {
       "count": 25,
       "total": 269,
@@ -338,6 +343,85 @@
         "count": 2,
         "total": 23,
         "proportion": 0.08695652173913043
+      },
+      "top_decile": {
+        "scope": "largest_10pct_by_sequence_count",
+        "test_count": 3,
+        "sequence_count": {
+          "count": 3,
+          "min": 6.0,
+          "max": 9.0,
+          "mean": 7.0,
+          "p25": 6.0,
+          "p50": 6.0,
+          "p75": 7.5,
+          "p90": 8.4
+        },
+        "distinct_endpoint_count": {
+          "count": 3,
+          "min": 5.0,
+          "max": 9.0,
+          "mean": 6.666666666666667,
+          "p25": 5.5,
+          "p50": 6.0,
+          "p75": 7.5,
+          "p90": 8.4
+        },
+        "share_multiple_endpoints": {
+          "count": 3,
+          "total": 3,
+          "proportion": 1.0
+        },
+        "re_dispatches_endpoint": {
+          "count": 1,
+          "total": 3,
+          "proportion": 0.3333333333333333
+        },
+        "has_duplicate_sequence": {
+          "count": 1,
+          "total": 3,
+          "proportion": 0.3333333333333333
+        }
+      }
+    },
+    "all_multi_sequence": {
+      "scope": "api_tests_with_multiple_sequences_any_resolution",
+      "note": "Includes multi-sequence tests with statically unresolved dispatches (e.g. dynamically built URLs); has_duplicate_sequence may over-count via the '*' fingerprint, while re_dispatches_endpoint and distinct_endpoint_count remain resolved-only.",
+      "test_count": 25,
+      "sequence_count": {
+        "count": 25,
+        "min": 2.0,
+        "max": 9.0,
+        "mean": 3.0,
+        "p25": 2.0,
+        "p50": 2.0,
+        "p75": 3.0,
+        "p90": 6.0
+      },
+      "distinct_endpoint_count": {
+        "count": 25,
+        "min": 1.0,
+        "max": 9.0,
+        "mean": 2.84,
+        "p25": 2.0,
+        "p50": 2.0,
+        "p75": 3.0,
+        "p90": 5.600000000000001
+      },
+      "share_multiple_endpoints": {
+        "count": 23,
+        "total": 25,
+        "proportion": 0.92
+      },
+      "re_dispatches_endpoint": {
+        "count": 2,
+        "total": 25,
+        "proportion": 0.08
+      },
+      "has_duplicate_sequence": {
+        "count": 2,
+        "total": 25,
+        "proportion": 0.08
       },
       "top_decile": {
         "scope": "largest_10pct_by_sequence_count",

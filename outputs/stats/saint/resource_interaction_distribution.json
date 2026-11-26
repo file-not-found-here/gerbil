@@ -100,6 +100,11 @@
       "total": 269,
       "proportion": 0.007434944237918215
     },
+    "read_after_write_among_writing_tests": {
+      "count": 2,
+      "total": 126,
+      "proportion": 0.015873015873015872
+    },
     "has_cleanup_delete": {
       "count": 0,
       "total": 269,

@@ -2,8 +2,8 @@
   "scope": "api_tests",
   "api_test_count": 269,
   "assertion_targets": {
-    "countable_assertion_count": 481,
-    "response_surface_assertion_count": 433,
+    "countable_assertion_count": 479,
+    "response_surface_assertion_count": 431,
     "excluded_countable_assertions": {
       "general": 48,
       "exception": 0
@@ -11,21 +11,21 @@
     "by_target": {
       "status": {
         "count": 319,
-        "total": 433,
-        "proportion": 0.7367205542725174,
-        "proportion_of_countable_assertions": 0.6632016632016632
+        "total": 431,
+        "proportion": 0.740139211136891,
+        "proportion_of_countable_assertions": 0.6659707724425887
       },
       "body": {
-        "count": 108,
-        "total": 433,
-        "proportion": 0.24942263279445728,
-        "proportion_of_countable_assertions": 0.22453222453222454
+        "count": 106,
+        "total": 431,
+        "proportion": 0.2459396751740139,
+        "proportion_of_countable_assertions": 0.22129436325678498
       },
       "header": {
         "count": 6,
-        "total": 433,
-        "proportion": 0.013856812933025405,
-        "proportion_of_countable_assertions": 0.012474012474012475
+        "total": 431,
+        "proportion": 0.013921113689095127,
+        "proportion_of_countable_assertions": 0.012526096033402923
       }
     }
   },
@@ -44,7 +44,7 @@
       "count": 269,
       "min": 0.0,
       "max": 30.0,
-      "mean": 0.40148698884758366,
+      "mean": 0.3940520446096654,
       "p25": 0.0,
       "p50": 0.0,
       "p75": 0.0,
@@ -70,9 +70,9 @@
         "proportion": 0.0
       },
       "status-only": {
-        "count": 217,
+        "count": 219,
         "total": 269,
-        "proportion": 0.8066914498141264
+        "proportion": 0.8141263940520446
       },
       "body-only": {
         "count": 0,
@@ -85,9 +85,9 @@
         "proportion": 0.0
       },
       "status+body": {
-        "count": 49,
+        "count": 47,
         "total": 269,
-        "proportion": 0.1821561338289963
+        "proportion": 0.17472118959107807
       },
       "status+header": {
         "count": 0,

@@ -1,0 +1,61 @@
+{
+  "target": "openvsx",
+  "project": "openvsx",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "45863019ec2134678b86aa4fb6b49de0f70edfbf",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 0.4,
+      "error": null
+    },
+    {
+      "stage": "build",
+      "seconds": 12.8,
+      "error": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 60.4,
+      "error": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 3719.7,
+      "error": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 70.6,
+      "error": null
+    }
+  ],
+  "schema_operations": 61,
+  "scoped_operations": 57,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 607,
+    "endpoints": 57,
+    "endpoints_2xx": 27,
+    "potential_faults": 67,
+    "covered_targets": 9473,
+    "covered_lines": 2598,
+    "total_lines": 12069,
+    "covered_branches": 574,
+    "total_branches": 12316,
+    "sql_heuristics_evaluations": 0,
+    "sql_parsing_failures": 95277
+  },
+  "verification": {
+    "tests": 607,
+    "passed": 591,
+    "failed": 16,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 0
+  },
+  "finished": true
+}

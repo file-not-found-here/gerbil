@@ -13,9 +13,25 @@ Legend: [ ] not yet tested  -  [x] test written and passing  -  [~] intentionall
 ```
 
 Keep entries terse (method + route + one-line note); do not record full request/response schemas here — gather that detail when you write each endpoint's test. Then work through the inventory endpoint by endpoint. Prefer breadth first: get at least one passing test for every controller across all modules before deepening coverage on any single endpoint. After an endpoint's test compiles and passes, mark it `[x]`; if you deliberately skip one, mark it `[~]` with a brief reason, and keep the `Progress` count current. The task is NOT complete while any endpoint remains `[ ]`: continue until every discovered endpoint is either `[x]` or `[~]`. Do not stop after a single module or declare completion while untested endpoints remain.
-Generate the tests using the testing frameworks and HTTP request/dispatch facilities already available in the project dependencies. Prioritize MockMvc and REST Assured when they are present, but use whatever frameworks the project provides to achieve sufficient API coverage, including combining multiple frameworks when beneficial.
 
+{% for addition in prompt_additions %}
+{{ addition }}
+
+{% endfor %}
+{% if rest_assured %}
+You MUST use REST Assured for the HTTP API tests; it is already available as a test dependency.
+{% else %}
+Generate the tests using the testing frameworks and HTTP request/dispatch facilities already available in the project dependencies. Prioritize MockMvc and REST Assured when they are present, but use whatever frameworks the project provides to achieve sufficient API coverage, including combining multiple frameworks when beneficial.
+{% endif %}
+{% if service_base_url %}
+A live instance of this service is already running and reachable at {{ service_base_url }}. Exercise the running API directly over HTTP. The service has already been built and started for you; do not build, start, stop, or reconfigure it.
+{% else %}
 No service instance has been set up or started for you. You may perform whatever setup is necessary to run your API tests.
+{% endif %}
+{% if test_module %}
+This is a multi-module build: add your generated tests to the {{ test_module }} module, where REST Assured is configured.
+{% endif %}
+
 Prioritize correctness, broad coverage of meaningful behavior, and successful integration with the build system. Generate as many meaningful, non-redundant tests as possible while preserving correctness and maintainability. Cover happy paths, edge cases, exceptional behavior, and important endpoint interactions. Validate responses to whatever extent you judge appropriate, based on the behavior the repository exposes.
 
 Do NOT modify production code under any circumstances. Only add or modify test files, with the single exception of the `API_ENDPOINT_COVERAGE.md` tracking file described above (keep it in place; do not delete it).

@@ -305,6 +305,16 @@ def test_http_sequence_distributions_are_over_api_tests() -> None:
     }
 
 
+def test_request_builder_counts_per_dispatch_pools_every_dispatch_event() -> None:
+    tests = [
+        make_test(dispatch_event_request_builder_counts=(2, 0)),
+        make_test(dispatch_event_request_builder_counts=(5,)),
+        make_test(),
+    ]
+
+    assert http_sequence_stats.request_builder_counts_per_dispatch(tests) == [2, 0, 5]
+
+
 def test_multi_sequence_composition_gates_duplication_on_full_resolution() -> None:
     tests = [
         # A large, repetitive, multi-endpoint, fully resolved scenario: top decile.
@@ -351,6 +361,12 @@ def test_multi_sequence_composition_gates_duplication_on_full_resolution() -> No
         "proportion": pytest.approx(1 / 4),
     }
     assert composition["share_ten_or_more_sequences"]["count"] == 1
+    # The one API test outside the three multi-sequence ones has a single sequence.
+    assert composition["share_one_sequence"] == {
+        "count": 1,
+        "total": 4,
+        "proportion": pytest.approx(1 / 4),
+    }
     resolved = composition["fully_resolved_multi_sequence"]
     assert resolved["scope"] == (
         "api_tests_with_multiple_sequences_and_all_dispatches_resolved"
@@ -791,6 +807,7 @@ def test_empty_http_sequence_distribution_has_stable_shape() -> None:
     assert composition["api_test_count"] == 0
     assert composition["multi_sequence_test_count"] == 0
     assert composition["fully_resolved_multi_sequence_test_count"] == 0
+    assert composition["share_one_sequence"] == empty_share
     assert composition["share_five_or_more_sequences"] == empty_share
     assert composition["share_ten_or_more_sequences"] == empty_share
     resolved = composition["fully_resolved_multi_sequence"]

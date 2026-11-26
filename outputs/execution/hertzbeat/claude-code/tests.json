@@ -1,0 +1,2015 @@
+{
+  "commit": "4892ef101fb74020082b5348773f760977a68a15",
+  "tests": [
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "method_signature": "getMetricsData_nonExistentMonitor_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "method_signature": "getStorageStatus_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "method_signature": "queryDatasource_withEmptyList_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "method_signature": "getStorageStatus_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "method_signature": "getMetricHistory_withIntervalParam_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "method_signature": "queryDatasource_withRequest_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "method_signature": "getMetricHistory_nonExistentMonitor_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.WarehouseControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "savePluginParams_withEmptyList_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "listPlugins_withSearchFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "listPlugins_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "updatePlugin_withNonExistentId_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "listPlugins_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "getPluginParamDefine_nonExistentPlugin_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "method_signature": "deletePlugins_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PluginControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "addAlertInhibit_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "listAlertInhibits_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "batchDeleteAlertInhibits_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "getAlertInhibit_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "addAndModifyAlertInhibit_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "addAndGetAlertInhibit_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "addAlertInhibit_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "method_signature": "listAlertInhibits_withFilters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertInhibitControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PushControllerTest",
+      "method_signature": "pushPrometheusMetrics_publicEndpoint_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PushControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.PushControllerTest",
+      "method_signature": "pushPrometheusMetrics_emptyBody_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.PushControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "method_signature": "receivePrometheusServerAlert_validFormat()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "method_signature": "receiveDefaultExternAlert_publicEndpointNoAuth()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "method_signature": "receiveExternAlertWithSource_huaweicloudSource()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "method_signature": "receivePrometheusServerAlert_emptyArray()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "method_signature": "receiveDefaultExternAlert_withEmptyJson_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "method_signature": "receiveExternAlertWithSource_prometheusSource()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertReportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineExportControllerTest",
+      "method_signature": "exportAlertDefines_withNonExistentIds_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineExportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineExportControllerTest",
+      "method_signature": "exportAlertDefines_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineExportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineExportControllerTest",
+      "method_signature": "exportAlertDefines_asJson_withNoIds_returnsFile()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineExportControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "addAndGetMonitor_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "addAndDeleteMonitor_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "getMonitor_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "deleteMonitor_nonExistent_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "addMonitor_validWebsiteMonitor_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "copyMonitor_nonExistent_returnsFailCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "addMonitor_missingParams_returnsBadRequest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "method_signature": "getMonitor_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "getAlertGroupConverge_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "listAlertGroupConverges_withFilters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "addAndModifyAlertGroupConverge_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "addAlertGroupConverge_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "listAlertGroupConverges_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "addAlertGroupConverge_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "batchDeleteAlertGroupConverges_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "method_signature": "addAndGetAlertGroupConverge_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertGroupConvergeControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AuthTokenControllerTest",
+      "method_signature": "generateToken_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AuthTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AuthTokenControllerTest",
+      "method_signature": "generateToken_asAdmin_returnsToken()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AuthTokenControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getParamsForWebsite_returnsParamDefinitions()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getHierarchyForSpecificApp_returnsMetrics()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getAllDefines_returnsAppMap()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "addDefineYmlWithMaliciousContent_returnsFailure()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getDefineForWebsite_returnsJobDefinition()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getHierarchyWithoutAuth_returnsOk()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getParamsForNonExistentApp_returnsFailCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getDefinesWithEnglishLang()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getDefineYmlForWebsite_returnsYamlContent()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getHierarchy_publicEndpoint_returnsAppList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "method_signature": "getHierarchyForSpecificApp_englishLang()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AppControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MetricsControllerTest",
+      "method_signature": "getMetrics_asAdmin_returnsMetrics()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MetricsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MetricsControllerTest",
+      "method_signature": "getMetrics_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MetricsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "addAlertDefine_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "addAndGetAlertDefine_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "addAndDeleteAlertDefine_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "listAlertDefines_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "listAlertDefines_withFilters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "deleteAlertDefine_nonExistent_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "batchDeleteAlertDefines_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "addAlertDefine_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "addAndModifyAlertDefine_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "getAlertDefine_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "method_signature": "listAlertDefinesAsGuest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertDefineControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "getAllNoticeReceivers_returnsList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "listNoticeRules_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "deleteNoticeTemplate_nonExistent_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "listNoticeReceivers_withFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addNoticeRule_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "deleteNoticeRule_nonExistent_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "listNoticeReceivers_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addNoticeTemplate_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addAndEditNoticeReceiver_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addAndEditNoticeTemplate_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "listNoticeTemplates_withPresetFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "sendTestMsg_withValidReceiver_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addNoticeReceiver_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "deleteNoticeReceiver_nonExistent_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addNoticeTemplate_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "getNoticeTemplate_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "listNoticeTemplates_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "getNoticeRule_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addNoticeReceiver_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "getNoticeReceiver_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addAndGetNoticeReceiver_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "getAllNoticeTemplates_returnsList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addAndGetNoticeTemplate_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "method_signature": "addNoticeRule_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.NoticeConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "listBulletins_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "listBulletins_withSearchFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "addBulletin_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "addAndModifyBulletin_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "getBulletinMetrics_nonExistentId_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "getBulletin_nonExistentId_returnsNullData()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "addAndGetBulletin_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "method_signature": "deleteBulletins_withNonExistentId_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.BulletinControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "method_signature": "getSummaryData_containsAppsCountList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "method_signature": "getSummaryWithoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "method_signature": "getSummaryAsAdmin_returnsDashboard()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "method_signature": "getSummaryAsGuest_returnsDashboard()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.SummaryControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "getEmailConfig_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "getSystemConfig_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "updateTemplateAppConfig_forWebsite_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "getOssConfig_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "saveEmailConfig_withMinimalPayload_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "getMuteConfig_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "getConfig_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "method_signature": "saveSystemConfig_withMinimalPayload_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.GeneralConfigControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "listGroupAlerts_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "updateGroupAlertStatus_withNoIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "listAlerts_withStatusFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "updateGroupAlertStatus_firingStatus()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "getAlertsSummary_returnsStatistics()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "listAlertsAsGuest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "listAlerts_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "listAlerts_withSearch()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "getAlertsSummaryAsGuest()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "deleteGroupAlerts_withNoIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "deleteGroupAlerts_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "method_signature": "listGroupAlerts_withResolvedStatus()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addStatusPageIncident_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addStatusPageIncident_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "deleteStatusPageIncident_nonExistent_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "getStatusPageIncident_nonExistentId_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addAndGetStatusPageIncident_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addStatusPageComponent_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "saveStatusPageOrg_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "listStatusPageIncidents_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "listStatusPageComponents_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "saveStatusPageOrg_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addAndUpdateStatusPageComponent_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "deleteStatusPageComponent_nonExistent_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "queryStatusPageOrg_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "getStatusPageComponent_nonExistentId_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addAndGetStatusPageComponent_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addStatusPageComponent_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "method_signature": "addAndUpdateStatusPageIncident_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPageControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "loginWithValidCredentials_returnsTokens()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "loginWithWrongPassword_returnsLoginFailedCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "loginWithMissingCredential_returns4xxOrValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "refreshTokenWithValidToken_returnsNewTokens()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "refreshTokenWithInvalidToken_returnsLoginFailedCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "method_signature": "loginWithMissingIdentifier_returns4xxOrValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AccountControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "method_signature": "getEnMessages_returnsMessages()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "method_signature": "getZhCnMessages_returnsMessages()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "method_signature": "getMessages_withUnknownLang_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.I18nControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "listMonitors_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "batchEnableMonitors_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "listMonitors_paginationStructure()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "exportMonitors_withNonExistentIds_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "listMonitors_withFilters_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "listMonitorsAsGuest_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "addMonitorThenFindInList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "importMonitors_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "exportMonitors_withNoIds_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "deleteMonitors_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "deleteMonitors_withNoIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "listMonitorsByApp_returnsMonitors()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "listMonitors_withStatusFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "listMonitorsByUnknownApp_returnsEmptyList()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "method_signature": "batchUnmanageMonitors_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.MonitorsControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "queryPublicComponents_noAuth_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "queryPublicIncidents_noAuth_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "queryPublicComponentById_nonExistent_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "queryPublicOrg_publicEndpointAccessible()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "method_signature": "queryPublicOrg_noAuth_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.StatusPagePublicControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "listCollectors_withNameFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "generateDeployInfo_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "onlineCollector_withNonExistentName_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "deleteCollector_withNonExistentName_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "listCollectors_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "offlineCollector_withNonExistentName_returnsResponse()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "method_signature": "listCollectors_withoutAuth_returnsUnauthorized()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.CollectorControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "listAlertSilences_withFilters()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "addAndModifyAlertSilence_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "listAlertSilences_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "addAlertSilence_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "addAndGetAlertSilence_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "batchDeleteAlertSilences_withNonExistentIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "addAlertSilence_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "method_signature": "getAlertSilence_nonExistentId_returnsNotExistCode()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.AlertSilenceControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "modifyLabel_withoutId_throwsError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "listLabels_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "createAndModifyLabel_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "deleteLabels_withEmptyIds_returnsSuccess()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "createLabel_success()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "listLabelsAsGuest_returnsPage()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "listLabels_withSearchFilter()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "createLabel_missingName_returnsValidationError()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "method_signature": "listLabels_paginationDefaults()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "hertzbeat-manager",
+      "binary_class_name": "org.apache.hertzbeat.manager.controller.LabelControllerTest",
+      "status": "passed"
+    }
+  ]
+}

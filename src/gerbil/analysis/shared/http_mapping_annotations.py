@@ -43,6 +43,8 @@ _OPTIONAL_SLASH_VARIABLE_RE: re.Pattern[str] = re.compile(r"\{(/[^{}:]+)\}")
 # RFC 6570 query/fragment expansion groups declare request parameters, not path:
 # query (``{?a}``), query continuation (``{&a}``), and fragment (``{#a}``).
 _QUERY_FRAGMENT_TEMPLATE_RE: re.Pattern[str] = re.compile(r"\{[?#&][^{}]*\}")
+_TEMPLATE_DELIMITER_MASK = str.maketrans({"?": "\ue000", "#": "\ue001"})
+_TEMPLATE_DELIMITER_UNMASK = str.maketrans({"\ue000": "?", "\ue001": "#"})
 # RFC 6570 query expansion groups (``{?max,offset}`` and the continuation form
 # ``{&b}``), capturing the var list; fragment ``{#...}`` is not a query parameter.
 _QUERY_TEMPLATE_RE: re.Pattern[str] = re.compile(r"\{[?&]([^{}]*)\}")
@@ -524,7 +526,30 @@ def extract_request_mapping_method_specs(annotation: str) -> list[ProductionMeth
     ]
 
 
+def _mask_template_group_delimiters(candidate: str) -> str:
+    """Hide ``?`` and ``#`` inside balanced ``{...}`` groups from URL parsing."""
+    masked = list(candidate)
+    group_start = 0
+    depth = 0
+    for index, character in enumerate(candidate):
+        if character == "{":
+            if depth == 0:
+                group_start = index
+            depth += 1
+        elif character == "}" and depth > 0:
+            depth -= 1
+            if depth == 0:
+                masked[group_start : index + 1] = candidate[
+                    group_start : index + 1
+                ].translate(_TEMPLATE_DELIMITER_MASK)
+    return "".join(masked)
+
+
 def normalize_path(path: str) -> str:
+    return _normalize_masked_path(path).translate(_TEMPLATE_DELIMITER_UNMASK)
+
+
+def _normalize_masked_path(path: str) -> str:
     candidate = path.strip()
     if not candidate:
         return "/"
@@ -532,6 +557,8 @@ def normalize_path(path: str) -> str:
     # RFC 6570 query/fragment expansion groups (``{?a,b}``, ``{#a}``) declare
     # request parameters, not path segments; drop them before URL parsing.
     candidate = _QUERY_FRAGMENT_TEMPLATE_RE.sub("", candidate)
+    # A regex constraint such as ``{version:(?:1|2)}`` is not a query string.
+    candidate = _mask_template_group_delimiters(candidate)
 
     # A scheme-less leading "//" is a sloppy concat artifact, not an authority
     # (classify_request_target already deems such literals local); collapse it

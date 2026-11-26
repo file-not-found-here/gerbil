@@ -1,0 +1,65 @@
+{
+  "commit": "45863019ec2134678b86aa4fb6b49de0f70edfbf",
+  "tests": [
+    {
+      "class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "method_signature": "everyInventoryRouteDispatchesToItsController()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "method_signature": "registryQueryAndSearchRejectNegativePagination()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "method_signature": "reviewAndVscodeItemValidationReturnClientErrors()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "method_signature": "invalidAdminCredentialsAreRejectedWithForbiddenStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "method_signature": "tokenDescriptionValidationRunsBeforeAuthenticationCheck()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "method_signature": "loggedOutUserEndpointsReturnExpectedSafeResponses()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": ".",
+      "binary_class_name": "org.eclipse.openvsx.ApiEndpointHttpTest",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "commit": "c1e86c1d51e701df6434963a32b1127712a86f49",
+  "tests": [
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "method_signature": "generatedWorkItemRoutesExposeSchemasAndHandleUnknownTasks()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "method_signature": "generatedUserTaskEndpointsExposeTaskAndCommentAttachmentInteractions()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "method_signature": "exposesProcessMetadataDefinitionsSchemasAndSvgOverHttp()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "method_signature": "signalRoutesAcceptStartSignalsAndReportUnknownInstances()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "method_signature": "approvalInstanceSupportsCreateReadListUpdateTasksAndDelete()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "method_signature": "everyGeneratedProcessResourceServesItsListSchemaAndMissingInstanceResponse(java.lang.String)",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "method_signature": "processManagementMethodsReturnDocumentedNotFoundAndBadRequestStatuses()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-processes-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.ProcessApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DecisionApiHttpTest",
+      "method_signature": "decisionResourceEvaluatesDmnAndServesXmlMetadata()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DecisionApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DecisionApiHttpTest",
+      "method_signature": "pmmlRoutesRequireJsonRequestBodies()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DecisionApiHttpTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.kie.kogito.integrationtests.springboot.DecisionApiHttpTest",
+      "method_signature": "pmmlRoutesReturnPredictionAndDescriptiveResults()",
+      "dispatch": [
+        "local-network"
+      ],
+      "module": "springboot/integration-tests/integration-tests-springboot-decisions-it",
+      "binary_class_name": "org.kie.kogito.integrationtests.springboot.DecisionApiHttpTest",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,420 @@
+{
+  "target_classes": 24,
+  "unreached_mutants": 0,
+  "line_covered_mutants": 14,
+  "untested_line_covered_mutants": 0,
+  "sample_sha256": "dd44e53eab58ab842f1483c27e65825728ef7e8d4932345b03f8a67f22d2add0",
+  "runs": [
+    {
+      "module": "dolphinscheduler-api",
+      "threads": 1,
+      "seconds": 304.5,
+      "peak_memory_bytes": 1115123712
+    }
+  ],
+  "mutants": [
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.ClusterController|queryClusterListPaging|(Lorg/apache/dolphinscheduler/dao/entity/User;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|8",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.ClusterController",
+      "mutated_method": "queryClusterListPaging",
+      "line": 168,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.DataSourceController|getDatabases|(Ljava/lang/Integer;)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|12",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.DataSourceController",
+      "mutated_method": "getDatabases",
+      "line": 379,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest#testGetDatabases"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.DataSourceController|queryDataSourceListPaging|(Lorg/apache/dolphinscheduler/dao/entity/User;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/Integer;)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|8",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.DataSourceController",
+      "mutated_method": "queryDataSourceListPaging",
+      "line": 195,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.ExecutorController|executeTask|(Lorg/apache/dolphinscheduler/dao/entity/User;JLjava/lang/Integer;Ljava/lang/String;Lorg/apache/dolphinscheduler/common/enums/TaskDependType;)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|23",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.ExecutorController",
+      "mutated_method": "executeTask",
+      "line": 447,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.ExecutorControllerTest#testExecuteTask"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.QueueController|deleteQueueById|(Lorg/apache/dolphinscheduler/dao/entity/User;I)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|7",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.QueueController",
+      "mutated_method": "deleteQueueById",
+      "line": 179,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.QueueControllerTest#testDeleteQueue"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.UsersController|verifyUserName|(Lorg/apache/dolphinscheduler/dao/entity/User;Ljava/lang/String;)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|7",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.UsersController",
+      "mutated_method": "verifyUserName",
+      "line": 430,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.UsersControllerTest#testVerifyUserName"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceController|queryParentInstanceBySubId|(Lorg/apache/dolphinscheduler/dao/entity/User;JLjava/lang/Integer;)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|15",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceController",
+      "mutated_method": "queryParentInstanceBySubId",
+      "line": 312,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest#testQueryParentWorkflowInstanceBySub"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceController|updateWorkflowInstance|(Lorg/apache/dolphinscheduler/dao/entity/User;JLjava/lang/String;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;I)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|22",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceController",
+      "mutated_method": "updateWorkflowInstance",
+      "line": 192,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest#testUpdateWorkflowInstance"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceController|viewTree|(Lorg/apache/dolphinscheduler/dao/entity/User;JLjava/lang/Integer;)Lorg/apache/dolphinscheduler/api/utils/Result;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|14",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.WorkflowInstanceController",
+      "mutated_method": "viewTree",
+      "line": 376,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest#testViewGantt"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.controller.v2.ProjectV2Controller|deleteProject|(Lorg/apache/dolphinscheduler/dao/entity/User;Ljava/lang/Long;)Lorg/apache/dolphinscheduler/api/dto/project/ProjectDeleteResponse;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|15",
+      "mutated_class": "org.apache.dolphinscheduler.api.controller.v2.ProjectV2Controller",
+      "mutated_method": "deleteProject",
+      "line": 179,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.v2.ProjectV2ControllerTest#testDeleteProject"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.dto.auditLog.AuditOperationTypeDto|getOperationTypeDtoList|()Ljava/util/List;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|46",
+      "mutated_class": "org.apache.dolphinscheduler.api.dto.auditLog.AuditOperationTypeDto",
+      "mutated_method": "getOperationTypeDtoList",
+      "line": 40,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.apache.dolphinscheduler.api.controller.AuditLogControllerTest#testQueryAuditOperationTypes"
+      ]
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.dto.project.ProjectCreateResponse|<init>|(Lorg/apache/dolphinscheduler/api/utils/Result;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|16",
+      "mutated_class": "org.apache.dolphinscheduler.api.dto.project.ProjectCreateResponse",
+      "mutated_method": "<init>",
+      "line": 36,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.apache.dolphinscheduler.api.controller.v2.ProjectV2ControllerTest#testCreateProject"
+      ]
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.dto.project.ProjectUpdateResponse|<init>|(Lorg/apache/dolphinscheduler/api/utils/Result;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|10",
+      "mutated_class": "org.apache.dolphinscheduler.api.dto.project.ProjectUpdateResponse",
+      "mutated_method": "<init>",
+      "line": 35,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "KILLED",
+      "killed": true,
+      "covered": true,
+      "killing_tests": [
+        "org.apache.dolphinscheduler.api.controller.v2.ProjectV2ControllerTest#testUpdateProject"
+      ],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.dto.schedule.ScheduleUpdateRequest|mergeIntoSchedule|(Lorg/apache/dolphinscheduler/dao/entity/Schedule;)Lorg/apache/dolphinscheduler/dao/entity/Schedule;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|169",
+      "mutated_class": "org.apache.dolphinscheduler.api.dto.schedule.ScheduleUpdateRequest",
+      "mutated_method": "mergeIntoSchedule",
+      "line": 136,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.dto.taskInstance.TaskInstanceSuccessResponse|<init>|(Lorg/apache/dolphinscheduler/api/utils/Result;)V|org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator|22",
+      "mutated_class": "org.apache.dolphinscheduler.api.dto.taskInstance.TaskInstanceSuccessResponse",
+      "mutated_method": "<init>",
+      "line": 34,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.VoidMethodCallMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.apache.dolphinscheduler.api.controller.v2.TaskInstanceV2ControllerTest#testForceTaskSuccess"
+      ]
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.api.enums.ExecuteType|getEnum|(I)Lorg/apache/dolphinscheduler/api/enums/ExecuteType;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|28",
+      "mutated_class": "org.apache.dolphinscheduler.api.enums.ExecuteType",
+      "mutated_method": "getEnum",
+      "line": 67,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.common.config.IPropertyDelegate|getBoolean|(Ljava/lang/String;)Ljava/lang/Boolean;|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator|8",
+      "mutated_class": "org.apache.dolphinscheduler.common.config.IPropertyDelegate",
+      "mutated_method": "getBoolean",
+      "line": 61,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.common.config.ImmutablePriorityPropertyDelegate|get|(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|14",
+      "mutated_class": "org.apache.dolphinscheduler.common.config.ImmutablePriorityPropertyDelegate",
+      "mutated_method": "get",
+      "line": 83,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.common.enums.FailureStrategy|getDescp|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|5",
+      "mutated_class": "org.apache.dolphinscheduler.common.enums.FailureStrategy",
+      "mutated_method": "getDescp",
+      "line": 48,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.common.enums.UserType|getDescp|()Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|5",
+      "mutated_class": "org.apache.dolphinscheduler.common.enums.UserType",
+      "mutated_method": "getDescp",
+      "line": 47,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.common.enums.WorkflowExecutionTypeEnum|of|(I)Lorg/apache/dolphinscheduler/common/enums/WorkflowExecutionTypeEnum;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|7",
+      "mutated_class": "org.apache.dolphinscheduler.common.enums.WorkflowExecutionTypeEnum",
+      "mutated_method": "of",
+      "line": 53,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.common.utils.PropertyUtils|getBoolean|(Ljava/lang/String;Ljava/lang/Boolean;)Ljava/lang/Boolean;|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator|7",
+      "mutated_class": "org.apache.dolphinscheduler.common.utils.PropertyUtils",
+      "mutated_method": "getBoolean",
+      "line": 76,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanFalseReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.apache.dolphinscheduler.api.controller.DataSourceControllerTest#testGetKerberosStartupState"
+      ]
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.dao.entity.TaskDefinition|equals|(Ljava/lang/Object;)Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|68",
+      "mutated_class": "org.apache.dolphinscheduler.dao.entity.TaskDefinition",
+      "mutated_method": "equals",
+      "line": 282,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.plugin.task.api.enums.TaskExecutionStatus|shouldFailover|()Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|24",
+      "mutated_class": "org.apache.dolphinscheduler.plugin.task.api.enums.TaskExecutionStatus",
+      "mutated_method": "shouldFailover",
+      "line": 93,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.plugin.task.api.enums.TaskTimeoutStrategy|of|(I)Lorg/apache/dolphinscheduler/plugin/task/api/enums/TaskTimeoutStrategy;|org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator|28",
+      "mutated_class": "org.apache.dolphinscheduler.plugin.task.api.enums.TaskTimeoutStrategy",
+      "mutated_method": "of",
+      "line": 56,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.NullReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils|convertParameterPlaceholders|(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|5",
+      "mutated_class": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils",
+      "mutated_method": "convertParameterPlaceholders",
+      "line": 66,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils|convertParameterPlaceholders|(Ljava/lang/String;Ljava/util/Map;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|73",
+      "mutated_class": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils",
+      "mutated_method": "convertParameterPlaceholders",
+      "line": 85,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils|handleEscapes|(Ljava/lang/String;)Ljava/lang/String;|org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator|20",
+      "mutated_class": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils",
+      "mutated_method": "handleEscapes",
+      "line": 326,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.EmptyObjectReturnValsMutator",
+      "status": "SURVIVED",
+      "killed": false,
+      "covered": true,
+      "killing_tests": [],
+      "surviving_tests": [
+        "org.apache.dolphinscheduler.api.controller.AccessTokenControllerTest#testQueryAccessTokenList",
+        "org.apache.dolphinscheduler.api.controller.AlertGroupControllerTest#testQueryAlertGroupListPaging",
+        "org.apache.dolphinscheduler.api.controller.ProjectControllerTest#testQueryProjectListPaging",
+        "org.apache.dolphinscheduler.api.controller.ProjectControllerTest#testQueryProjectWithAuthorizedLevelListPaging",
+        "org.apache.dolphinscheduler.api.controller.ProjectParameterControllerTest#testQueryProjectParameterListPaging",
+        "org.apache.dolphinscheduler.api.controller.QueueControllerTest#testQueryQueueListPaging",
+        "org.apache.dolphinscheduler.api.controller.ResourcesControllerTest#testPagingResourceItemRequest",
+        "org.apache.dolphinscheduler.api.controller.SchedulerControllerTest#testQueryScheduleListPaging",
+        "org.apache.dolphinscheduler.api.controller.TaskInstanceControllerTest#testQueryTaskInstanceListPaging",
+        "org.apache.dolphinscheduler.api.controller.TenantControllerTest#testQueryTenantListPaging",
+        "org.apache.dolphinscheduler.api.controller.UsersControllerTest#testQueryUserListPaging",
+        "org.apache.dolphinscheduler.api.controller.WorkerGroupControllerTest#testQueryAllWorkerGroupsPaging",
+        "org.apache.dolphinscheduler.api.controller.WorkflowDefinitionControllerTest#testQueryWorkflowDefinitionListPaging",
+        "org.apache.dolphinscheduler.api.controller.WorkflowInstanceControllerTest#testQueryWorkflowInstanceListPaging",
+        "org.apache.dolphinscheduler.api.controller.v2.ProjectV2ControllerTest#testQueryProjectListPaging",
+        "org.apache.dolphinscheduler.api.controller.v2.TaskInstanceV2ControllerTest#testQueryTaskListPaging"
+      ]
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils|isBoolean|(Lorg/apache/dolphinscheduler/plugin/task/api/model/Property;)Z|org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator|17",
+      "mutated_class": "org.apache.dolphinscheduler.plugin.task.api.utils.ParameterUtils",
+      "mutated_method": "isBoolean",
+      "line": 186,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.returns.BooleanTrueReturnValsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    },
+    {
+      "mutant_id": "org.apache.dolphinscheduler.spi.enums.DbType|isHive|()Z|org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator|5",
+      "mutated_class": "org.apache.dolphinscheduler.spi.enums.DbType",
+      "mutated_method": "isHive",
+      "line": 91,
+      "mutator": "org.pitest.mutationtest.engine.gregor.mutators.NegateConditionalsMutator",
+      "status": "NO_COVERAGE",
+      "killed": false,
+      "covered": false,
+      "killing_tests": [],
+      "surviving_tests": []
+    }
+  ]
+}

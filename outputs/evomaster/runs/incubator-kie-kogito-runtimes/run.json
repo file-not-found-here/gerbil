@@ -1,0 +1,61 @@
+{
+  "target": "kogito-springboot",
+  "project": "incubator-kie-kogito-runtimes",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "c1e86c1d51e701df6434963a32b1127712a86f49",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 2.2,
+      "error": null
+    },
+    {
+      "stage": "build",
+      "seconds": 58.9,
+      "error": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 16.9,
+      "error": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 3792.6,
+      "error": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 323.9,
+      "error": null
+    }
+  ],
+  "schema_operations": 252,
+  "scoped_operations": 252,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 1728,
+    "endpoints": 252,
+    "endpoints_2xx": 103,
+    "potential_faults": 450,
+    "covered_targets": 29239,
+    "covered_lines": 8841,
+    "total_lines": 18463,
+    "covered_branches": 1529,
+    "total_branches": 8888,
+    "sql_heuristics_evaluations": 0,
+    "sql_parsing_failures": 0
+  },
+  "verification": {
+    "tests": 1728,
+    "passed": 1693,
+    "failed": 32,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 3
+  },
+  "finished": true
+}

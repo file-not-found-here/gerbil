@@ -1,0 +1,855 @@
+{
+  "commit": "0b76f4f0f63967e3a9902ee516af03f51a1b5266",
+  "tests": [
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "method_signature": "getHealthz_wildcardPath_returns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "method_signature": "getHealthz_whenDatabaseStatusUnknown_returns200WithUnknownMessage()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "method_signature": "getHealthz_whenDatabaseConnectionFailed_returns503()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "method_signature": "getHealthz_whenDatabaseConnectionSuccessful_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.health.HealthzEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.UserInfoEndpointTest",
+      "method_signature": "getUserInfo_returnsUserDetailsAsJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.UserInfoEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "method_signature": "getOpenIdConfiguration_includesScopesSupported()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "method_signature": "getOpenIdConfiguration_alternateOAuthPath_returnsDiscoveryDocument()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "method_signature": "getOpenIdConfiguration_returnsDiscoveryDocument()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "method_signature": "getOpenIdConfiguration_includesSubjectTypesSupported()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.OpenIdConnectEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "method_signature": "generateCode_returnsCreatedWithExpiringCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "method_signature": "retrieveCode_withValidCode_returnsExpiringCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "method_signature": "generateCode_withNullData_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "method_signature": "retrieveCode_withUnknownCode_returns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.codestore.CodeStoreEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "method_signature": "getGroup_returnsGroupById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "method_signature": "updateGroup_returnsUpdatedGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "method_signature": "createGroup_returns201()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "method_signature": "listGroups_returnsPagedResults()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "method_signature": "deleteGroup_returnsDeletedGroup()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimGroupEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.ratelimiting.RateLimitStatusControllerTest",
+      "method_signature": "getRateLimitingStatus_returnsJsonStatusDocument()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.ratelimiting.RateLimitStatusControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.ratelimiting.RateLimitStatusControllerTest",
+      "method_signature": "getRateLimitingStatus_whenDisabled_includesDisabledStatus()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.ratelimiting.RateLimitStatusControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordChangeEndpointTest",
+      "method_signature": "changePassword_asAdmin_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordChangeEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordChangeEndpointTest",
+      "method_signature": "changePassword_whenNewPasswordSameAsOld_returns422()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordChangeEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordChangeEndpointTest",
+      "method_signature": "changePassword_asClient_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordChangeEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "method_signature": "revokeTokensForUser_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "method_signature": "revokeTokenById_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "method_signature": "revokeTokensForUser_whenUserNotFound_returns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "method_signature": "revokeTokensForUserAndClient_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenRevocationEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "method_signature": "retrieveClientMetadata_whenNotFound_returns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "method_signature": "retrieveClientMetadata_returnsMetadataForClient()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "method_signature": "updateClientMetadata_returnsUpdatedMetadata()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "method_signature": "updateClientMetadata_withMismatchedClientId_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "method_signature": "retrieveAllClientMetadata_returnsListOfMetadata()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientMetadataAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "method_signature": "passwordResets_userConflict_returns409()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "method_signature": "passwordChange_withValidCode_returns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "method_signature": "passwordResets_withValidEmail_returns201()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "method_signature": "passwordResets_userNotFound_returns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "method_signature": "passwordChange_withExpiredCode_returns422()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "method_signature": "passwordChange_withoutChangeCode_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.account.PasswordResetEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "method_signature": "checkToken_withNullTokenReturnedByServices_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "method_signature": "checkToken_viaGetWithQueryString_delegatesWhenAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "method_signature": "checkToken_withEmptyToken_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "method_signature": "checkToken_withExpiredToken_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "method_signature": "checkToken_withMissingToken_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "method_signature": "checkToken_viaGetWithQueryString_returns405WhenNotAllowed()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.CheckTokenEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "method_signature": "createUser_returnsCreatedUser()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "method_signature": "listUsers_returnsPagedResults()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "method_signature": "deleteUser_returnsOk()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "method_signature": "getUser_returnsUserById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ScimUserEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.login.SessionControllerTest",
+      "method_signature": "session_withoutRequiredParams_returns400()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.login.SessionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.login.SessionControllerTest",
+      "method_signature": "session_setsModelAttributesAndReturnsViewName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.login.SessionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.login.SessionControllerTest",
+      "method_signature": "sessionManagement_setsModelAttributesAndReturnsViewName()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.login.SessionControllerTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.IntrospectEndpointTest",
+      "method_signature": "introspect_withGetMethod_returns405()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.IntrospectEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.IntrospectEndpointTest",
+      "method_signature": "introspect_withInvalidToken_returnsActiveEqualsFalse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.IntrospectEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.IntrospectEndpointTest",
+      "method_signature": "introspect_withExpiredToken_returnsActiveEqualsFalse()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.IntrospectEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "method_signature": "getIdentityProvider_returnsProviderById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "method_signature": "createIdentityProvider_returnsCreated()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "method_signature": "updateIdentityProvider_returnsUpdatedProvider()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "method_signature": "listIdentityProviders_returnsAllProviders()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "method_signature": "deleteIdentityProvider_returnsDeletedProvider()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.provider.IdentityProviderEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ChangeEmailEndpointsTest",
+      "method_signature": "changeEmail_withInvalidCode_returns422()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ChangeEmailEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ChangeEmailEndpointsTest",
+      "method_signature": "changeEmail_withValidCode_returns200()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ChangeEmailEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ChangeEmailEndpointsTest",
+      "method_signature": "generateEmailVerificationCode_returnsCreatedWithCode()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.scim.endpoints.ChangeEmailEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "method_signature": "getApprovals_returnsUserApprovals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "method_signature": "updateApprovals_replacesAllApprovals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "method_signature": "deleteApprovals_revokesUserClientApprovals()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "method_signature": "getApprovals_asClient_returnsError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.approval.ApprovalsAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "method_signature": "deleteZone_returnsDeletedZone()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "method_signature": "getZone_returnsZoneById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "method_signature": "createZone_returns201WithNewZone()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "method_signature": "updateZone_returnsUpdatedZone()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "method_signature": "listZones_returnsAllZones()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.zone.IdentityZoneEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "method_signature": "listClients_returnsPagedResults()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "method_signature": "deleteClient_returnsDeletedClient()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "method_signature": "getClientDetails_whenNotFound_returns404()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "method_signature": "createClient_returns201()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "method_signature": "getClientDetails_returnsClientById()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientAdminEndpointsTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.authentication.RemoteAuthenticationEndpointTest",
+      "method_signature": "authenticate_withInvalidCredentials_returns401()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.authentication.RemoteAuthenticationEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.authentication.RemoteAuthenticationEndpointTest",
+      "method_signature": "authenticate_withValidCredentials_returnsOkWithUsername()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.authentication.RemoteAuthenticationEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.authentication.RemoteAuthenticationEndpointTest",
+      "method_signature": "authenticate_withoutPassword_returnsMissingParamError()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.authentication.RemoteAuthenticationEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "method_signature": "getKeys_returnsKeySetAsJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "method_signature": "getKey_withMatchingEtag_returns304NotModified()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "method_signature": "getKeys_withMatchingEtag_returns304NotModified()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "method_signature": "getKey_returnsRsaKeyAsJson()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "method_signature": "getKey_returnsEtagHeader()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.oauth.TokenKeyEndpointTest",
+      "status": "passed"
+    },
+    {
+      "class_name": "org.cloudfoundry.identity.uaa.client.ClientInfoEndpointTest",
+      "method_signature": "clientinfo_returnsClientDetailsWithoutSecret()",
+      "dispatch": [
+        "in-process"
+      ],
+      "module": "server",
+      "binary_class_name": "org.cloudfoundry.identity.uaa.client.ClientInfoEndpointTest",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "scope": "api_tests",
-  "test_count": 89,
+  "test_count": 304,
   "label_split": {
     "bypassed": {
       "test_count": 0,
@@ -12,19 +12,19 @@
     },
     "test-token": {
       "test_count": 1,
-      "pct_of_tests": 1.1235955056179776
+      "pct_of_tests": 0.32894736842105265
     },
     "real-flow": {
-      "test_count": 5,
-      "pct_of_tests": 5.617977528089888
+      "test_count": 6,
+      "pct_of_tests": 1.9736842105263157
     },
     "unknown": {
       "test_count": 0,
       "pct_of_tests": 0.0
     },
     "none": {
-      "test_count": 83,
-      "pct_of_tests": 93.25842696629213
+      "test_count": 297,
+      "pct_of_tests": 97.69736842105263
     }
   }
 }

@@ -1,0 +1,80 @@
+{
+  "target": "spring-cloud-dataflow",
+  "project": "spring-cloud-dataflow",
+  "max_time": "1h",
+  "seed": 1234,
+  "until": "verify",
+  "cpus": 6,
+  "commit": "a1216d3594467afe51aaea6a1144ff67b2239498",
+  "stages": [
+    {
+      "stage": "prepare",
+      "seconds": 1.1,
+      "error": null
+    },
+    {
+      "stage": "build",
+      "seconds": 15.3,
+      "error": null
+    },
+    {
+      "stage": "schema",
+      "seconds": 23.1,
+      "error": null
+    },
+    {
+      "stage": "generate",
+      "seconds": 4310.1,
+      "error": null
+    },
+    {
+      "stage": "verify",
+      "seconds": 3820.1,
+      "error": null
+    }
+  ],
+  "schema_operations": 133,
+  "scoped_operations": 133,
+  "shadowed_operations": 0,
+  "search": {
+    "generated_tests": 8263,
+    "endpoints": 133,
+    "endpoints_2xx": 53,
+    "potential_faults": 273,
+    "covered_targets": 33887,
+    "covered_lines": 5374,
+    "total_lines": 14330,
+    "covered_branches": 1419,
+    "total_branches": 14224,
+    "sql_heuristics_evaluations": 614483,
+    "sql_parsing_failures": 37592
+  },
+  "repaired_classes": [
+    "em.generated.EvoMaster_spring_cloud_dataflow_0_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_10_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_11_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_12_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_13_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_14_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_15_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_16_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_1_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_2_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_3_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_4_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_5_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_6_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_7_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_8_Test",
+    "em.generated.EvoMaster_spring_cloud_dataflow_9_Test"
+  ],
+  "verification": {
+    "tests": 8263,
+    "passed": 6550,
+    "failed": 1713,
+    "skipped": 0,
+    "not_run": 0,
+    "unstable": 0
+  },
+  "finished": true
+}

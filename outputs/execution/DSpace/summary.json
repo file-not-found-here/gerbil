@@ -1,0 +1,241 @@
+{
+  "project": "DSpace",
+  "suites": {
+    "developer": {
+      "api_tests": 3134,
+      "status_counts": {
+        "passed": 3091,
+        "out-of-scope": 17,
+        "skipped": 26
+      },
+      "measured_tests": 3091,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 199986,
+          "missed": 228556,
+          "ratio": 0.4666660444017156
+        },
+        "BRANCH": {
+          "covered": 14071,
+          "missed": 24454,
+          "ratio": 0.3652433484750162
+        },
+        "LINE": {
+          "covered": 47786,
+          "missed": 55826,
+          "ratio": 0.461201405242636
+        },
+        "COMPLEXITY": {
+          "covered": 16630,
+          "missed": 22193,
+          "ratio": 0.42835432604384
+        },
+        "METHOD": {
+          "covered": 11933,
+          "missed": 7523,
+          "ratio": 0.6133326480263158
+        },
+        "CLASS": {
+          "covered": 2013,
+          "missed": 770,
+          "ratio": 0.7233201581027668
+        }
+      },
+      "covered_classes": 2013,
+      "mutation": {
+        "killed": 203,
+        "covered": 283,
+        "unreached": 0,
+        "line_covered": 291,
+        "untested_line_covered": 8,
+        "mutation_score": 0.3383333333333333,
+        "test_strength": 0.7173144876325088,
+        "status_counts": {
+          "SURVIVED": 80,
+          "NO_COVERAGE": 316,
+          "KILLED": 198,
+          "MEMORY_ERROR": 6
+        }
+      },
+      "errors": {}
+    },
+    "claude-code": {
+      "api_tests": 64,
+      "status_counts": {
+        "passed": 64
+      },
+      "measured_tests": 64,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 1408,
+          "missed": 427134,
+          "ratio": 0.0032855589417139976
+        },
+        "BRANCH": {
+          "covered": 57,
+          "missed": 38468,
+          "ratio": 0.0014795587280986373
+        },
+        "LINE": {
+          "covered": 337,
+          "missed": 103275,
+          "ratio": 0.0032525190132417095
+        },
+        "COMPLEXITY": {
+          "covered": 117,
+          "missed": 38706,
+          "ratio": 0.0030136774592380805
+        },
+        "METHOD": {
+          "covered": 116,
+          "missed": 19340,
+          "ratio": 0.005962171052631579
+        },
+        "CLASS": {
+          "covered": 43,
+          "missed": 2740,
+          "ratio": 0.01545095220984549
+        }
+      },
+      "covered_classes": 43,
+      "mutation": {
+        "killed": 0,
+        "covered": 1,
+        "unreached": 0,
+        "line_covered": 1,
+        "untested_line_covered": 0,
+        "mutation_score": 0.0,
+        "test_strength": 0.0,
+        "status_counts": {
+          "SURVIVED": 1,
+          "NO_COVERAGE": 599
+        }
+      },
+      "errors": {}
+    },
+    "codex": {
+      "api_tests": 6,
+      "status_counts": {
+        "passed": 6
+      },
+      "measured_tests": 6,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 443,
+          "missed": 428099,
+          "ratio": 0.001033737649985299
+        },
+        "BRANCH": {
+          "covered": 14,
+          "missed": 38511,
+          "ratio": 0.00036340038935756
+        },
+        "LINE": {
+          "covered": 104,
+          "missed": 103508,
+          "ratio": 0.0010037447399915069
+        },
+        "COMPLEXITY": {
+          "covered": 37,
+          "missed": 38786,
+          "ratio": 0.0009530432990752905
+        },
+        "METHOD": {
+          "covered": 32,
+          "missed": 19424,
+          "ratio": 0.001644736842105263
+        },
+        "CLASS": {
+          "covered": 14,
+          "missed": 2769,
+          "ratio": 0.005030542579949695
+        }
+      },
+      "covered_classes": 14,
+      "mutation": {
+        "killed": 0,
+        "covered": 0,
+        "unreached": 0,
+        "line_covered": 0,
+        "untested_line_covered": 0,
+        "mutation_score": 0.0,
+        "test_strength": null,
+        "status_counts": {
+          "NO_COVERAGE": 600
+        }
+      },
+      "errors": {}
+    },
+    "evomaster": {
+      "api_tests": 1129,
+      "status_counts": {
+        "passed": 1091,
+        "failed": 38
+      },
+      "measured_tests": 1091,
+      "coverage": {
+        "INSTRUCTION": {
+          "covered": 39516,
+          "missed": 389026,
+          "ratio": 0.09221033177611529
+        },
+        "BRANCH": {
+          "covered": 2142,
+          "missed": 36383,
+          "ratio": 0.05560025957170668
+        },
+        "LINE": {
+          "covered": 10902,
+          "missed": 92710,
+          "ratio": 0.10521947264795584
+        },
+        "COMPLEXITY": {
+          "covered": 4523,
+          "missed": 34300,
+          "ratio": 0.11650310383020375
+        },
+        "METHOD": {
+          "covered": 3998,
+          "missed": 15458,
+          "ratio": 0.20548930921052633
+        },
+        "CLASS": {
+          "covered": 1416,
+          "missed": 1367,
+          "ratio": 0.508803449514912
+        }
+      },
+      "covered_classes": 1416,
+      "mutation": {
+        "killed": 9,
+        "covered": 42,
+        "unreached": 0,
+        "line_covered": 43,
+        "untested_line_covered": 1,
+        "mutation_score": 0.015,
+        "test_strength": 0.21428571428571427,
+        "status_counts": {
+          "SURVIVED": 33,
+          "NO_COVERAGE": 558,
+          "KILLED": 9
+        }
+      },
+      "errors": {}
+    }
+  },
+  "mutation_suites": [
+    "developer",
+    "claude-code",
+    "codex",
+    "evomaster"
+  ],
+  "service_mutants": 45095,
+  "sample_seed": "gerbil",
+  "mutants": 600,
+  "non_viable_mutants": 0,
+  "kills_by_suites": {
+    "none": 397,
+    "developer": 194,
+    "developer+evomaster": 9
+  }
+}
